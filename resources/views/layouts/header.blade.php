@@ -133,7 +133,7 @@
                                 <li role="presentation"><a href="sobre" accesskey="q" @if($rota=='sobre') class="corrente" @endif>O Catálogo</a></li>
                                 <li role="presentation"><a href="publicacoes" >Publicações</a></li>
                                 <li role="presentation"><a href="orcamento"  @if($rota=='sobre') class="corrente" @endif>Orçamento</a></li>
-                                <li role="presentation"><a href="Ajuda" accesskey="c" @if($rota=='quem') class="contato" @endif>Contato</a></li>
+                                <li role="presentation"><a href="contato" accesskey="c" @if($rota=='quem') class="contato" @endif>Contato</a></li>
                             </ul>
                         </div>
                     </div>
