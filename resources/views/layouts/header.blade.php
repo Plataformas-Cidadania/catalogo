@@ -94,7 +94,7 @@
         <div class="col-8">
 
             <a href="/">
-                <h2 class="logo" style="float: left">INCLUA</h2>
+                <img src="/img/logo.png" alt="">
             </a>
         </div>
         <div class="col-xs-2"></div>
@@ -124,7 +124,9 @@
             <div class="col-md-12">
                 <nav class="navbar navbar-light">
                     <a class="navbar-brand" href="#">
-                        <h2 class="logo">INCLUA</h2>
+                        <h2 class="logo">
+                            <img src="/img/logo.png" alt="">
+                        </h2>
                     </a>
                     <div>
                         <div class="btn-group">

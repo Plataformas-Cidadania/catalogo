@@ -5,106 +5,35 @@
 
     <div class="p-3">&nbsp;</div>
     <div id="home">&nbsp;</div>
-    {{--<div class="container">
-        <div id="home">&nbsp;</div>
-        <div class="row">
-            <div class="col">
-                <div class="dorder-container">
-                    <div class="dorder-container-mai">
-                        <div class="btn-icon">
-                            <img src="img/icon-diagnostico.png" alt="Diagnóstico" title="Diagnóstico" width="100%">
-                        </div>
-                         <h2 class="btn-icon-h2">Diagnóstico</h2>
-                        <div class="clear-both"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="dorder-container">
-                    <div class="dorder-container-mai">
-                        <div class="btn-icon">
-                            <img src="img/icon-biblioteca.png" alt="Biblioteca" title="Biblioteca" width="100%">
-                        </div>
-                        <h2 class="btn-icon-h2">Biblioteca</h2>
-                        <div class="clear-both"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>--}}
 
-    <div class="container-fluid">
-        <div class="p-3">&nbsp;</div>
-        <div class="dorder-container">
-            <div class="bg-lgt dorder-container-mai">
-                <div class="dorder-container-line">
-                    <h2>Como funciona?</h2>
-                    <div class="dorder-container-box bg-lgt"></div>
-                </div>
-            </div>
-        </div>
-        <div class="p-3">&nbsp;</div>
-    </div>
 
     <div class="container">
         <div class="row">
-            <div class="col-md-3 text-center">
-                <img src="img/p1.png" alt="" title="" width="70%">
+            <div class="col-md-4">
+                <div class="box bg-pri">
+                    <i class="far fa-gem fa-4x m-5"></i>
+                    <h2>Áreas temáticas</h2>
+                    <p>Apesar de constituírem um elemento básico de organização da atuação governamental, de perpassarem cotidianamente o debate público</p>
+                </div>
             </div>
-            <div class="col-md-3 text-center">
-                <h2 class="number-circle bg-lgt2">1</h2>
+            <div class="col-md-4">
+                <div class="box bg-sec">
+                    <i class="far fa-gem fa-4x m-5"></i>
+                    <h2>Linhas do tempo</h2>
+                    <p>Apesar de constituírem um elemento básico de organização da atuação governamental, de perpassarem cotidianamente o debate público</p>
+                </div>
             </div>
-            <div class="col-md-6">
-                <h3>{{$text1->titulo}}</h3>
-                <p>{{$text1->descricao}}</p>
-                <a href="diagnostico">
-                    <p>Ir para o diagnóstico <i class="fas fa-angle-right" ></i></p>
-                </a>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-2">&nbsp;</div>
-            <div class="col-md-3  text-center">
-                <img src="img/arrow1.png" alt="" title="" width="40%">
-                <br><br>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-3 text-center">
-                <h2 class="number-circle bg-lgt2">2</h2>
-            </div>
-            <div class="col-md-6">
-                <h3>{{$text2->titulo}}</h3>
-                <p>{{$text2->descricao}}</p>
-            </div>
-            <div class="col-md-3 text-center">
-                <img src="img/p2.png" alt="" title="" width="70%">
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-2">&nbsp;</div>
-            <div class="col-md-3  text-center">
-                <img src="img/arrow2.png" alt="" title="" width="40%">
-                <br><br>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-3 text-center">
-                <img src="img/p3.png" alt="" title="" width="70%">
-            </div>
-            <div class="col-md-2 text-center">
-                <h2 class="number-circle bg-lgt2">3</h2>
-            </div>
-            <div class="col-md-6">
-                <h3>{{$text3->titulo}}</h3>
-                <p>{{$text3->descricao}}</p>
+            <div class="col-md-4">
+                <div class="box bg-ter">
+                    <i class="far fa-gem fa-4x m-5"></i>
+                    <h2>Consulta</h2>
+                    <p>Apesar de constituírem um elemento básico de organização da atuação governamental, de perpassarem cotidianamente o debate público</p>
+                </div>
             </div>
         </div>
     </div>
+
+
 
     <div class="p-3">&nbsp;</div>
     <div class="bg-lgt bg-lines">

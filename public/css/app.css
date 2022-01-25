@@ -11390,13 +11390,6 @@ time {
   color: #949494;
 }
 
-.logo {
-  font-family: "Sora", sans-serif;
-  font-size: 55px;
-  margin-top: 18px;
-  margin-left: 26px;
-}
-
 .img-rede {
   display: none;
 }
@@ -13756,6 +13749,13 @@ textarea {
   float: right;
   line-height: 19px;
   min-height: 95px;
+}
+
+.box {
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  color: #FFFFFF;
 }
 
 #chart {
