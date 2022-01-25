@@ -1,0 +1,50 @@
+.btn-plus{
+    color: $color-pri;
+    text-decoration: underline;
+    font-size: 14px;
+}
+.btn-form{
+    margin: 0;
+    padding: 0;
+}
+.btn-form li{
+    margin: 1px;
+    padding: 10px 15px;
+    list-style: none;
+    background-color: $color-lgt;
+    display: inline-block;
+    cursor: pointer;
+}
+.btn-form li:hover{
+    background-color: $color-lgt2;
+}
+.toggle{
+    margin: 0;
+    padding: 0;
+}
+.toggle li{
+    margin: 3px;
+    padding: 10px 15px;
+    list-style: none;
+    background-color: $color-lgt;
+    border: solid 1px $color-lgt2;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50px;
+}
+.toggle li:hover{
+    background-color: $color-lgt2;
+}
+.box-btn-icon{
+    width: 70px;
+    padding: 10px;
+    border: solid 1px #FFFFFF;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.box-btn-icon:hover{
+    background-color: $color-lgt;
+}
+.box-btn-icon-set{
+    background-color: $color-pri;
+}

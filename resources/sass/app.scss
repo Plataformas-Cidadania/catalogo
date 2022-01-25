@@ -1,0 +1,32 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Layout
+@import "mixins/layout/chart";
+@import "mixins/layout/fonts";
+@import "mixins/layout/items";
+@import "mixins/layout/menu";
+@import "mixins/layout/style";
+
+// Pages
+@import "mixins/pages/home";
+
+// Theme
+@import "mixins/themes/btn";
+@import "mixins/themes/form";
+@import "mixins/themes/icon";
+@import "mixins/themes/layout1";
+
+// Utils
+@import "mixins/utils/_chart";
+
+// Layout
+@import "mixins/layout/bootstrap";
+
+
