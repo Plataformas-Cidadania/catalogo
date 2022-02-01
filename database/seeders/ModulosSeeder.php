@@ -14,10 +14,11 @@ class ModulosSeeder extends Seeder
      */
     public function run()
     {
+
         DB::table('cms.modulos')->insert([
             'imagem' => '',
             'arquivo' => '',
-            'titulo' => 'O Catálogo',
+            'titulo' => 'O que é',
             'descricao' => "
             <i>Catálogo - Plataforma de recursos pró-equidade em políticas públicas</i>
             <p>O INCLUA é uma plataforma virtual de avaliação, diagnóstico e subsídio para a identificação de potenciais riscos de reprodução de desigualdades sociais em processos cotidianos de execução de políticas públicas no Brasil. Gerida pelo Instituto de Pesquisa Econômica Aplicada – Ipea, foi lançada em novembro de 2021 e conta com o apoio e engajamento de diversos parceiros nos termos em negrito vamos colocar o link para a página Parceiros.</p>
@@ -27,6 +28,18 @@ class ModulosSeeder extends Seeder
             <p>Mais do que contribuir para a visibilização do problema, a plataforma fornece recursos para intervenções voltadas à neutralização ou mitigação de tais riscos. Esses recursos estão organizados em uma biblioteca contendo diversos tipos de produtos desenvolvidos pelo Ipea e por organizações parceiras que podem ser úteis, trazer inspiração e fornecer orientações e exemplos para o desenvolvimento de intervenções focadas nos riscos identificados. Espera-se, assim, contribuir para uma inclusão mais efetiva da pluralidade dos cidadãos brasileiros nas políticas públicas.</p>
 ",
             'slug' => 'sobre',
+            'status' => 1,
+            'show' => 0,
+            'tipo_id' => 1,
+        ]);
+
+
+        DB::table('cms.modulos')->insert([
+            'imagem' => '',
+            'arquivo' => '',
+            'titulo' => 'Metodologia',
+            'descricao' => "",
+            'slug' => 'metodologia',
             'status' => 1,
             'show' => 0,
             'tipo_id' => 1,
@@ -139,6 +152,52 @@ class ModulosSeeder extends Seeder
             'status' => 1,
             'show' => 0,
             'tipo_id' => 0,
+        ]);
+
+
+        DB::table('cms.modulos')->insert([
+            'imagem' => '',
+            'arquivo' => '',
+            'titulo' => 'Ajuda',
+            'descricao' => '',
+            'slug' => 'ajuda',
+            'status' => 1,
+            'show' => 0,
+            'tipo_id' => 2,
+        ]);
+
+
+        DB::table('cms.modulos')->insert([
+            'imagem' => '',
+            'arquivo' => '',
+            'titulo' => 'Glossário',
+            'descricao' => '',
+            'slug' => 'glossario',
+            'status' => 1,
+            'show' => 0,
+            'tipo_id' => 2,
+        ]);
+
+        DB::table('cms.modulos')->insert([
+            'imagem' => '',
+            'arquivo' => '',
+            'titulo' => 'Perguntas Frequentes',
+            'descricao' => '',
+            'slug' => 'perguntas-frequentes',
+            'status' => 1,
+            'show' => 0,
+            'tipo_id' => 2,
+        ]);
+
+        DB::table('cms.modulos')->insert([
+            'imagem' => '',
+            'arquivo' => '',
+            'titulo' => 'Contato',
+            'descricao' => '',
+            'slug' => 'contato',
+            'status' => 1,
+            'show' => 0,
+            'tipo_id' => 2,
         ]);
 
     }

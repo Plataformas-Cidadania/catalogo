@@ -3,9 +3,6 @@
 @section('description', 'Uma plataforma de transparência pública colaborativa, que reúne dados das organizações da sociedade civil de todo o Brasil')
 @section('content')
 
-    <div class="p-3">&nbsp;</div>
-    <div id="home">&nbsp;</div>
-
 
     <div class="container">
         <div class="row">
@@ -34,47 +31,7 @@
     </div>
 
 
-
-    <div class="p-3">&nbsp;</div>
-    <div class="bg-lgt bg-lines">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="owl-carousel owl-theme">
-
-                        <a href="">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img src="img/d1.png" alt="" title="" width="100%"  style="padding: 5rem">
-                                </div>
-                                <div class="col-md-8">
-                                    <div style="padding: 8rem">
-                                        <h2>“Amei! Me ajudou muito! Me fez enxergar questões que não via antes!” </h2>
-                                        <h3>Maria lima</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img src="img/d2.png" alt="" title="" width="100%"  style="padding: 5rem">
-                                </div>
-                                <div class="col-md-8">
-                                    <div style="padding: 8rem">
-                                        <h2>“Amei! Me ajudou muito! Me fez enxergar questões que não via antes!” </h2>
-                                        <h3>Maria lima</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
+    <MixedChart />
 
 
 
@@ -109,32 +66,5 @@
     </div>
     <br><br>
 
-<script>
-
-    $(document).ready(function() {
-        var owl = $('.customMn');
-        owl.owlCarousel({
-            margin: 10,
-            nav: true,
-            loop: true,
-            autoplay:true,
-            dots: true,
-            navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
-            autoplayTimeout:15000,
-            responsive: {
-                0: {
-                    items: 5
-                },
-                600: {
-                    items: 8
-                },
-                1000: {
-                    items: 4
-                }
-            }
-        });
-    })
-
-</script>
 
 @endsection

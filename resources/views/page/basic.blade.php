@@ -80,10 +80,6 @@
                     {{--<p data-message="{!! $page->descricao !!}" tabindex="0">{!! $page->descricao !!}</p>--}}
 
 
-
-
-
-
                     @if($rota=="parceiros")
                         <div>
                             @include('page.about.partner')

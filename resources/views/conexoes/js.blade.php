@@ -128,68 +128,15 @@
 
     <script src="js/home.js" ></script>
     <script src="js/conf-owl-carousel.js"></script>
-
-
-
 @endif
 
-@if($rota=="diagnostico")
-    <script src="js/components/diagnostico/store.js"></script>
-    <script src="js/components/diagnostico/pergunta/options.js"></script>
-    <script src="js/components/diagnostico/pergunta/nota.js"></script>
-    <script src="js/components/diagnostico/pergunta/range.js"></script>
-    <script src="js/components/diagnostico/pergunta/index.js"></script>
-    <script src="js/components/diagnostico/perguntas.js"></script>
-    <script src="js/components/diagnostico/indicadores.js"></script>
-    <script src="js/components/diagnostico/dimensoes.js"></script>
-    <script src="js/components/diagnostico/header.js"></script>
-    <script src="js/components/diagnostico/index.js"></script>
-@endif
+
 @if($rota=="/")
-    <script src="js/components/home/store.js"></script>
-    <script src="js/components/home/header.js"></script>
-    <script src="js/components/home/index.js"></script>
-@endif
-@if($rota=="relate")
-    <script src="js/components/relate/pergunta.js"></script>
-    <script src="js/components/relate/index.js"></script>
-@endif
-@if($rota=="depoimento")
-    <script src="js/components/depoimento/pergunta.js"></script>
-    <script src="js/components/depoimento/index.js"></script>
-@endif
-@if($rota=="interaja")
-    <script src="js/components/forum/pergunta.js"></script>
-    <script src="js/components/forum/index.js"></script>
-@endif
-@if($rota=="recursos")
-    <script src="js/components/paginate.js"></script>
-    <script src="js/components/recursos/page.js"></script>
-    <script src="js/components/recursos/item.js"></script>
-    <script src="js/components/recursos/index.js"></script>
-@endif
-
-@if($rota=="resultado")
     <script src="https://cdn.jsdelivr.net/npm/prop-types@15.7.2/prop-types.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="https://cdn.jsdelivr.net/npm/react-apexcharts@1.3.6/dist/react-apexcharts.iife.min.js"></script>
-    <script src="js/components/charts/barChart.js"></script>
-
-    <script src="js/components/recursos/item.js"></script>
-    <script src="js/components/resultado/page.js"></script>
-    <script src="js/components/resultado/index.js"></script>
+    <script src="js/components/charts/mixedChart.js"></script>
 @endif
-@if($rota=="compartilhe")
-    <script src="js/components/compartilhe/edit.js"></script>
-    <script src="js/components/compartilhe/list_links.js"></script>
-    <script src="js/components/compartilhe/link.js"></script>
-    <script src="js/components/compartilhe/list.js"></script>
-    <script src="js/components/compartilhe/insert.js"></script>
-    <script src="js/components/compartilhe/index.js"></script>
-    {{--<script src="js/components/forms/compartilhe.js"></script>--}}
-@endif
-
-
 
 <script>
     $(document).ready(function(){
@@ -290,15 +237,3 @@
 @endif
 
 
-
-
-
-
-<script>
-    /*$('#ativarBox').click(function(){
-        $('.box-busca').toggle();
-    });
-    $('.box-busca').mouseleave(function(){
-        $('.box-busca').toggle();
-    });*/
-</script>

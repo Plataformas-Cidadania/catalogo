@@ -104,12 +104,13 @@
 <div class="menu-cel hidden-lg hidden-md hidden-sm menu-cel-hide" style="display: none;" id="iniciodomenu">
     <ul>
         <br>
+
         <li role="presentation"><a href="" accesskey="h" @if($rota=='/') class="corrente" @endif>Início</a></li>
-        <li role="presentation"><a href="diagnostico" >Diagnóstico</a></li>
-        <li role="presentation"><a href="recursos" >Biblioteca</a></li>
-        <li role="presentation"><a href="contribua"  @if($rota=='sobre') class="corrente" @endif>Contribua</a></li>
-        <li role="presentation"><a href="sobre" accesskey="q" @if($rota=='sobre') class="corrente" @endif>Sobre</a></li>
-        <li role="presentation"><a href="contato" accesskey="c" @if($rota=='quem') class="contato" @endif>Contato</a></li>
+        <li role="presentation"><a href="sobre" accesskey="q" @if($rota=='sobre') class="corrente" @endif>O Catálogo</a></li>
+        <li role="presentation"><a href="publicacoes" @if($rota=='sobre') class="publicacoes" @endif>Publicações</a></li>
+        <li role="presentation"><a href="https://www.siop.planejamento.gov.br"  @if($rota=='sobre') class="corrente" @endif target="_blank">Orçamento</a></li>
+        <li role="presentation"><a href="ajuda" accesskey="c" @if($rota=='quem') class="contato" @endif>Ajuda</a></li>
+
     </ul>
 </div>
 <div class="box-menu menu-cel-hide" style="display: none;"></div>
@@ -133,9 +134,9 @@
                             <ul id="menu-desk">
                                 <li role="presentation"><a href="" accesskey="h" @if($rota=='/') class="corrente" @endif>Início</a></li>
                                 <li role="presentation"><a href="sobre" accesskey="q" @if($rota=='sobre') class="corrente" @endif>O Catálogo</a></li>
-                                <li role="presentation"><a href="publicacoes" >Publicações</a></li>
-                                <li role="presentation"><a href="orcamento"  @if($rota=='sobre') class="corrente" @endif>Orçamento</a></li>
-                                <li role="presentation"><a href="contato" accesskey="c" @if($rota=='quem') class="contato" @endif>Contato</a></li>
+                                <li role="presentation"><a href="publicacoes" @if($rota=='sobre') class="publicacoes" @endif>Publicações</a></li>
+                                <li role="presentation"><a href="https://www.siop.planejamento.gov.br"  @if($rota=='sobre') class="corrente" @endif target="_blank">Orçamento</a></li>
+                                <li role="presentation"><a href="ajuda" accesskey="c" @if($rota=='quem') class="contato" @endif>Ajuda</a></li>
                             </ul>
                         </div>
                     </div>
