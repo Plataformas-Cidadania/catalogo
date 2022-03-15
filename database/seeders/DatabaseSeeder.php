@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CmsUsersTableSeeder::class);
         $this->call(SettingsSeeder::class);
         $this->call(TextsSeeder::class);
+        $this->call(TiposSeeder::class);
         $this->call(ModulosSeeder::class);
         $this->call(UrlsSeeder::class);
         $this->call(ParceirosSeeder::class);

@@ -27,6 +27,7 @@ class ModuloController extends Controller{
         $rota = Route::getCurrentRoute()->uri();
 
         $modulo = $this->obj->where('slug', $rota)->first();
+
         $subMenus = $this->obj
             ->select('id', 'titulo', 'slug')
             ->where('tipo_id', $modulo->tipo_id)
