@@ -236,4 +236,8 @@
     <script src="js/components/maps/address.js"></script>
 @endif
 
+@if($rota=="timeline")
+    <script src="js/components/timeline/index.js"></script>
+@endif
+
 
