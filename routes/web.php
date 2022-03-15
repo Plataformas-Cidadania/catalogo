@@ -92,3 +92,6 @@ if(env('DYNAMIC_ROUTES')){
     }
 }
 
+Route::get('/timeline', function () {
+    return view('timeline.timeline');
+});
