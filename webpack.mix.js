@@ -34,6 +34,10 @@ mix.scripts([
 ], 'public/js/home.js');
 
 mix.scripts([
+    'node_modules/react-horizontal-timeline/dist/react-horizontal-timeline.js',
+], 'public/js/react-horizontal-timeline.js');
+
+mix.scripts([
     'node_modules/prop-types/prop-types.js',
     'node_modules/react-apexcharts/dist/react-apexcharts.js',
     'node_modules/react-apexcharts/dist/react-apexcharts.iife.min.js',

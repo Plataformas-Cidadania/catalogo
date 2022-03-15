@@ -50,6 +50,7 @@
         "pace-js": "^1.2.4",
         "prop-types": "^15.8.1",
         "react-apexcharts": "^1.3.9",
+        "react-horizontal-timeline": "^1.5.3",
         "screenfull": "^6.0.1"
     }
 }
