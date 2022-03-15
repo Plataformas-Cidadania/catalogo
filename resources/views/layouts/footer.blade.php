@@ -61,24 +61,24 @@
                     </div>
                     <div class="col-md-3">
                         <div>
-                            <h3>Diagnóstico</h3>
-                            <ul>
+                            <h3>Título</h3>
+                            {{--<ul>
                                 <li role="presentation"><a href="diagnostico" accesskey="h" @if($rota=='/') class="corrente " @endif>Completo</a></li>
                                 <li role="presentation"><a href="diagnostico" accesskey="h" @if($rota=='/') class="corrente " @endif>Parcial</a></li>
                                 <br><br>
-                            </ul>
+                            </ul>--}}
                         </div>
                     </div>
 
                     <div class="col-md-3">
                         <div>
-                            <h3>Inclua</h3>
-                            <ul>
+                            <h3>Título</h3>
+                            {{--<ul>
                                 <li role="presentation"><a href="diagnostico" >Diagnóstico</a></li>
                                 <li role="presentation"><a href="recursos" >Biblioteca</a></li>
                                 <li role="presentation"><a href="contribua" >Contribua</a></li>
                                 <br><br>
-                            </ul>
+                            </ul>--}}
                         </div>
                     </div>
 
