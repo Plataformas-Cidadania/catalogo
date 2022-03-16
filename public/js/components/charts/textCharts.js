@@ -58,16 +58,11 @@ class TextCharts extends React.Component {
         /* if(tipoGrafico === "pie"){
              labels.push(dataChart[j].label);
              series.push(dataChart[j].value);
-<<<<<<< HEAD
                  continue;
-=======
-               continue;
->>>>>>> df028c263e547e62ae2bab713bbbd401bb6e1942
          }*/
         //Quando tiver o key///////////////////////////////
 
         /*if(dataChart[j].hasOwnProperty('key') && data[chart].tipo_grafico === "MultiBarChart"){
-<<<<<<< HEAD
                 labels.push(dataChart[j].key);
             let values = dataChart[j].values;
               for(let k in values){
@@ -75,15 +70,6 @@ class TextCharts extends React.Component {
                     series[k] = {};
                 }
                   series[k].name = values[k].label;
-=======
-              labels.push(dataChart[j].key);
-            let values = dataChart[j].values;
-             for(let k in values){
-                 if(!series[k]){
-                    series[k] = {};
-                }
-                 series[k].name = values[k].label;
->>>>>>> df028c263e547e62ae2bab713bbbd401bb6e1942
                 series[k].type = tipoGrafico;
                 if(!series[k].hasOwnProperty('data')){
                     series[k].data = [];
@@ -96,36 +82,20 @@ class TextCharts extends React.Component {
         //Quando tiver o key///////////////////////////////
 
         /* if(dataChart[j].hasOwnProperty('key') && (data[chart].tipo_grafico === "LineChart" || data[chart].tipo_grafico === "LinePlusBarChart")){
-<<<<<<< HEAD
                  let colLabel = data[chart].tipo_grafico === "LineChart" ? 'x' : 'label';
              let colValue = data[chart].tipo_grafico === "LineChart" ? 'y' : 'value';
                let values = dataChart[j].values;
                let serie = {
-=======
-               let colLabel = data[chart].tipo_grafico === "LineChart" ? 'x' : 'label';
-             let colValue = data[chart].tipo_grafico === "LineChart" ? 'y' : 'value';
-              let values = dataChart[j].values;
-              let serie = {
->>>>>>> df028c263e547e62ae2bab713bbbd401bb6e1942
                  name: dataChart[j].key,
                  type: tipoGrafico,
                  data: []
              };
-<<<<<<< HEAD
                for(let k in values) {
                  labels.push(values[k][colLabel]);
                    serie.data.push(values[k][colValue]);
              }
                series.push(serie);
                continue;
-=======
-              for(let k in values) {
-                 labels.push(values[k][colLabel]);
-                  serie.data.push(values[k][colValue]);
-             }
-              series.push(serie);
-              continue;
->>>>>>> df028c263e547e62ae2bab713bbbd401bb6e1942
          }*/
         ///////////////////////////////////////////////////
         //Não é executado se tiver o key//////////////

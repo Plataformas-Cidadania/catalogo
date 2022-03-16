@@ -87,15 +87,18 @@ const Timeline = () => {
     className: "row"
   }, /*#__PURE__*/React.createElement("div", {
     className: "col-md-3"
+  }, /*#__PURE__*/React.createElement("ul", {
+    className: "menu-left"
   }, Object.entries(areas).map((item, key) => {
-    return /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React.createElement("li", {
       key: "area_" + key,
       onClick: () => addTimeline(item[0]),
       style: {
         cursor: 'pointer'
-      }
-    }, item[0]);
-  })), /*#__PURE__*/React.createElement("div", {
+      },
+      className: "list-group-item-theme"
+    }, /*#__PURE__*/React.createElement("a", null, item[0]));
+  }))), /*#__PURE__*/React.createElement("div", {
     className: "col-md-9"
   }, timelines.map((item, key) => {
     return /*#__PURE__*/React.createElement("div", {
@@ -115,7 +118,9 @@ const Timeline = () => {
         className: "timeline__item"
       }, /*#__PURE__*/React.createElement("div", {
         className: "timeline__content"
-      }, /*#__PURE__*/React.createElement("h4", null, ano), /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React.createElement("h4", {
+        className: key % 2 === 0 ? 'timeline-ano' : 'timeline-ano-2'
+      }, ano), /*#__PURE__*/React.createElement("div", {
         style: {
           maxHeight: '100px',
           overflowY: 'auto'

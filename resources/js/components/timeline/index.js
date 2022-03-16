@@ -81,11 +81,21 @@ const Timeline = () => {
         <div className="container">
             <div className="row">
                 <div className="col-md-3">
-                    {
-                        Object.entries(areas).map((item, key) => {
-                            return (<div key={"area_"+key} onClick={() => addTimeline(item[0])} style={{cursor: 'pointer'}}>{item[0]}</div>);
-                        })
-                    }
+                    <ul className="menu-left">
+                        {
+                            Object.entries(areas).map((item, key) => {
+                                return (
+                                    <li
+                                        key={"area_"+key}
+                                        onClick={() => addTimeline(item[0])}
+                                        style={{cursor: 'pointer'}}
+                                        className="list-group-item-theme">
+                                        <a>{item[0]}</a>
+                                    </li>
+                                );
+                            })
+                        }
+                    </ul>
                 </div>
                 <div className="col-md-9">
                     {
@@ -103,7 +113,7 @@ const Timeline = () => {
                                                         return (
                                                             <div key={item.area+"_ano_"+key} className="timeline__item">
                                                                 <div className="timeline__content">
-                                                                    <h4>{ano}</h4>
+                                                                    <h4 className={key % 2 === 0 ? 'timeline-ano' : 'timeline-ano-2'}>{ano}</h4>
                                                                     <div style={{maxHeight: '100px', overflowY:'auto'}}>
                                                                         <ul>
                                                                         {
