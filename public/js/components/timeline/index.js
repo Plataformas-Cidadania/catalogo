@@ -103,7 +103,7 @@ const Timeline = () => {
   }, timelines.map((item, key) => {
     return /*#__PURE__*/React.createElement("div", {
       key: item.area + "_timeline_" + key
-    }, /*#__PURE__*/React.createElement("h3", null, item.area), /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React.createElement("h3", null, item.area), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement("div", {
       className: "timeline",
       id: 'timeline' + key
     }, /*#__PURE__*/React.createElement("div", {
@@ -125,7 +125,9 @@ const Timeline = () => {
           maxHeight: '100px',
           overflowY: 'auto'
         }
-      }, /*#__PURE__*/React.createElement("ul", null, politicas.map((politica, key) => {
+      }, /*#__PURE__*/React.createElement("ul", {
+        className: "timeline-ul"
+      }, politicas.map((politica, key) => {
         return /*#__PURE__*/React.createElement("li", {
           key: item.area + "_politica_" + key
         }, politica.nome_politica, /*#__PURE__*/React.createElement("hr", null));

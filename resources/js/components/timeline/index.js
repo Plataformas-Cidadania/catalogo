@@ -103,6 +103,7 @@ const Timeline = () => {
                             return (
                                 <div key={item.area+"_timeline_"+key}>
                                     <h3>{item.area}</h3>
+                                    <hr/>
                                     <div className="timeline" id={'timeline'+key}>
                                         <div className="timeline__wrap">
                                             <div className="timeline__items">
@@ -115,7 +116,7 @@ const Timeline = () => {
                                                                 <div className="timeline__content">
                                                                     <h4 className={key % 2 === 0 ? 'timeline-ano' : 'timeline-ano-2'}>{ano}</h4>
                                                                     <div style={{maxHeight: '100px', overflowY:'auto'}}>
-                                                                        <ul>
+                                                                        <ul className="timeline-ul">
                                                                         {
                                                                             politicas.map((politica, key) => {
                                                                                 return (
