@@ -27,9 +27,10 @@ const Timeline = () => {
     }, [timelines]);
 
     const getPoliticas = async () => {
-        const result = await axios.get('csv/politicas.csv');
-        //console.log(result.data);
-        let politicas = $.csv.toObjects(result.data, {separator: ';'});
+        //const result = await axios.get('csv/politicas.csv');
+        //let politicas = $.csv.toObjects(result.data, {separator: ';'});
+        const result = await axios.get('json/politicas-timeline.json');
+        let politicas = result.data;
         //ordena pelo ano
         politicas = politicas.sort((a, b) => (parseInt(a.ano) > parseInt(b.ano)) ? 1 : -1);
         const newAreas = groupByAreas(politicas);

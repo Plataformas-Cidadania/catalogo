@@ -1,0 +1,3317 @@
+[
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2020",
+        "nome_politica": "Programa de Residência Profissional Agrícola (AgroResidência)"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2019",
+        "nome_politica": "Auxílio Brumadinho"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2020",
+        "nome_politica": "Auxílio Emergencial de abril a junho de 2020"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2019",
+        "nome_politica": "Auxílio pescadores"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2007",
+        "nome_politica": "Programa de Acompanhamento e Monitoramento do Acesso e Permanência na Escola das Pessoas com Deficiência Beneficiárias do Benefício de Prestação Continuada da Assistência Social (BPC Escola)"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "1993",
+        "nome_politica": "Benefício de Prestação Continuada Idoso"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "1993",
+        "nome_politica": "Benefício de Prestação Continuada para pessoas com deficiência"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2012",
+        "nome_politica": "Brasil Carinhoso"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2006",
+        "nome_politica": "Carteira da pessoa idosa"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2006",
+        "nome_politica": "Diretrizes Nacionais para prevenção do suicídio"
+    },
+    {
+        "area": "Defesa Nacional",
+        "ano": "2008",
+        "nome_politica": "Estratégia Nacional de Defesa"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2020",
+        "nome_politica": "Estratégia Nacional de Fortalecimento dos Vínculos Familiares"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2020",
+        "nome_politica": "Estratégia Nacional para  Enfrentamento da Hanseníase 2019-2022"
+    },
+    {
+        "area": "Justiça e Segurança Pública",
+        "ano": "2004",
+        "nome_politica": "Força Nacional de Segurança Pública"
+    },
+    {
+        "area": "Educação",
+        "ano": "2001",
+        "nome_politica": "Fundo de Financiamento Estudantil (FIES)"
+    },
+    {
+        "area": "Desenvolvimento Regional",
+        "ano": "2008",
+        "nome_politica": "Plano Amazonia Sustentável (PAS)"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2011",
+        "nome_politica": "Plano Brasil Sem Miséria"
+    },
+    {
+        "area": "Defesa Nacional",
+        "ano": "2012",
+        "nome_politica": "Plano de Articulação e Equipamento da Defesa"
+    },
+    {
+        "area": "Desenvolvimento Regional",
+        "ano": "2017",
+        "nome_politica": "Plano de Desenvolvimento e Integração Fronteiriço (PDIF)"
+    },
+    {
+        "area": "Desenvolvimento Regional",
+        "ano": "2010",
+        "nome_politica": "Plano de Desenvolvimento Territorial Sustentável do Xingu"
+    },
+    {
+        "area": "Desenvolvimento Regional",
+        "ano": "2007",
+        "nome_politica": "Plano de Desenvolvimento Territorial Sustentável para a área de influência da Rodovia BR-163 no Trecho Cuiabá/MT - Santarém/PA (Plano BR-163 Sustentável)"
+    },
+    {
+        "area": "Desenvolvimento Regional",
+        "ano": "2006",
+        "nome_politica": "Plano de Desenvolvimento Territorial Sustentável para o Arquipélago do Marajó"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2012",
+        "nome_politica": "Plano de Expansão da Radioterapia no SUS (PER/SUS)"
+    },
+    {
+        "area": "Desenvolvimento Regional",
+        "ano": "2005",
+        "nome_politica": "Plano Estratégico de Desenvolvimento Sustentável do Semi-árido (PDSA)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2005",
+        "nome_politica": "Plano Nacional de Agroenergia"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2006",
+        "nome_politica": "Plano Nacional de Combate à Violência no Campo"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2001",
+        "nome_politica": "Plano Nacional de Mobilização e Intensifação das Ações para Eliminação da Hanseníase e Controle da Tuberculose"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2005",
+        "nome_politica": "Plano Nacional de Produção de Biodiesel (PNPB)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2009",
+        "nome_politica": "Plano Nacional de Promoção das Cadeias de Produtos da Sociobiodiversidade "
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "1985",
+        "nome_politica": "Plano Nacional de Reforma Agrária (PNRA)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2013",
+        "nome_politica": "Plano Nacional de Saneamento Básico (Plansab)"
+    },
+    {
+        "area": "Justiça e Segurança Pública",
+        "ano": "2018",
+        "nome_politica": "Plano Nacional de Segurança Pública"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2011",
+        "nome_politica": "Plano Nacional dos Direitos da Pessoa com Deficiência (Plano Viver sem Limite)"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2017",
+        "nome_politica": "Plano Progredir"
+    },
+    {
+        "area": "Desenvolvimento Regional",
+        "ano": "2007",
+        "nome_politica": "Plano Regional de Desenvolvimento da Amazônia (PRDA)"
+    },
+    {
+        "area": "Desenvolvimento Regional",
+        "ano": "2009",
+        "nome_politica": "Plano Regional de Desenvolvimento do Centro Oeste"
+    },
+    {
+        "area": "Desenvolvimento Regional",
+        "ano": "2007",
+        "nome_politica": "Plano Regional de Desenvolvimento do Nordeste (PRDNE)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2010",
+        "nome_politica": "Plano Setorial de Mitigação e de Adaptação às Mudanças Climáticas para a Consolidação de uma Economia de Baixa Emissão de Carbono na Agricultura (Plano ABC)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "1964",
+        "nome_politica": "Política Agrária (Estatuto da Terra)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "1991",
+        "nome_politica": "Política Agrícola"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2014",
+        "nome_politica": "Política Agrícola para Florestas Plantadas"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2009",
+        "nome_politica": "Política de acolhimento familiar e adoção"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "1993",
+        "nome_politica": "Política de Assistência Social (LOAS)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2007",
+        "nome_politica": "Política de Atenção Integral à Saúde Mental das Populações Indígenas"
+    },
+    {
+        "area": "Ciência e Tecnologia",
+        "ano": "2021",
+        "nome_politica": "Política de Ciência, Tecnologia e Inovação de Materiais Avançados "
+    },
+    {
+        "area": "Saúde",
+        "ano": "2004",
+        "nome_politica": "Política de Ciência, Tecnologia e Inovação em Saúde (PNCTIS)"
+    },
+    {
+        "area": "Defesa Nacional",
+        "ano": "2021",
+        "nome_politica": "Política de Ciência, Teconologia e Inovação de Defesa"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "2017",
+        "nome_politica": "Política de controle da natalidade de cães e gatos"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "1965",
+        "nome_politica": "Política de Crédito Rural (SNCR)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "1998",
+        "nome_politica": "Política de Defesa Agropecuária"
+    },
+    {
+        "area": "Ciência e Tecnologia",
+        "ano": "2007",
+        "nome_politica": "Política de Desenvolvimento da Biotecnologia"
+    },
+    {
+        "area": "Educação",
+        "ano": "2010",
+        "nome_politica": "Política de Educação do Campo"
+    },
+    {
+        "area": "Educação",
+        "ano": "2015",
+        "nome_politica": "Política de Educação para o Consumo Sustentável"
+    },
+    {
+        "area": "Defesa Nacional",
+        "ano": "2010",
+        "nome_politica": "Política de Ensino de Defesa"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "1989",
+        "nome_politica": "Política de Fiscalização de Insumos Agrícolas"
+    },
+    {
+        "area": "Educação",
+        "ano": "2017",
+        "nome_politica": "Política de Fomento à Implementação de Escolas de Ensino Médio em Tempo Integral"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "1966",
+        "nome_politica": "Política de Garantia de Preço Mínimo (PGPN)"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "2017",
+        "nome_politica": "Política de Governança da Administração Pública Federal Direta, Autárquica e Fundacional"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "2016",
+        "nome_politica": "Política de Governança Digital"
+    },
+    {
+        "area": "Educação",
+        "ano": "2021",
+        "nome_politica": "Política de Inovação Educação Conectada"
+    },
+    {
+        "area": "Política Econômica",
+        "ano": "2013",
+        "nome_politica": "Política de Livre Acesso ao Subsistema Ferroviário Federal"
+    },
+    {
+        "area": "Defesa Nacional",
+        "ano": "2010",
+        "nome_politica": "Política de Mobilização Nacional"
+    },
+    {
+        "area": "Cultura",
+        "ano": "2018",
+        "nome_politica": "Política de Patrimônio Cultural Material do Iphan"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2005",
+        "nome_politica": "Política de Prevenção e Atenção Integral à Saúde da Pessoa Portadora de Hepatite"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2001",
+        "nome_politica": "Política de Saúde Mental"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "2000",
+        "nome_politica": "Política de Segurança da Informação nos órgãos e entidades da Administração Pública Federal"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2009",
+        "nome_politica": "Política de Serviços Socioassistenciais - Tipificação Nacional"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2016",
+        "nome_politica": "Diretrizes de Vigilância, Atenção e Eliminação da Hanseníase como Problema de Saúde Pública"
+    },
+    {
+        "area": "Política Econômica",
+        "ano": "1967",
+        "nome_politica": "Política Econômica da Borracha "
+    },
+    {
+        "area": "Política Econômica",
+        "ano": "1967",
+        "nome_politica": "Política Econômica do Sal"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "1997",
+        "nome_politica": "Política Energética Nacional"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2019",
+        "nome_politica": "Política Federal de Estímulo ao Transporte Rodoviário Coletivo Interestadual e Internacional de Passageiros"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "1990",
+        "nome_politica": "Política Industrial e de Comércio Exterior"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "1984",
+        "nome_politica": "Política Marítima Nacional"
+    },
+    {
+        "area": "Justiça e Segurança Pública",
+        "ano": "2002",
+        "nome_politica": "Política Nacional Antidrogas"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2006",
+        "nome_politica": "Política Nacional da Agricultura Familiar  e Empreendimentos Familiares Rurais"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "2002",
+        "nome_politica": "Política Nacional da Biodiversidade"
+    },
+    {
+        "area": "Educação",
+        "ano": "2009",
+        "nome_politica": "Política Nacional da Educação Escolar Indígena"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2019",
+        "nome_politica": "Política Nacional da Erva-Mate"
+    },
+    {
+        "area": "Defesa Nacional",
+        "ano": "2005",
+        "nome_politica": "Política Nacional da Industria da Defesa"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "1994",
+        "nome_politica": "Política Nacional da Pessoa Idosa"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2012",
+        "nome_politica": "Política Nacional de Agroecologia e Produção Orgânica"
+    },
+    {
+        "area": "Educação",
+        "ano": "2019",
+        "nome_politica": "Política Nacional de Alfabetização"
+    },
+    {
+        "area": "Segurança Alimentar",
+        "ano": "1999",
+        "nome_politica": "Política Nacional de Alimentação e Nutrição"
+    },
+    {
+        "area": "Justiça e Segurança Pública",
+        "ano": "2016",
+        "nome_politica": "Política Nacional de Alternativas Penais"
+    },
+    {
+        "area": "Política Econômica",
+        "ano": "2019",
+        "nome_politica": "Política Nacional de Apoio e Desenvolvimento de Micro e Pequenas Empresas"
+    },
+    {
+        "area": "Justiça e Segurança Pública",
+        "ano": "1991",
+        "nome_politica": "Política Nacional de Arquivos Públicos e Privados"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2004",
+        "nome_politica": "Política Nacional de Assistência Farmacêutica"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2004",
+        "nome_politica": "Política Nacional de Assistência Social"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2010",
+        "nome_politica": "Política Nacional de Assistência Técnica e Extensão Rural"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2002",
+        "nome_politica": "Política Nacional de Atenção à Saúde dos Povos Indígenas"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2005",
+        "nome_politica": "Política Nacional de Atenção ao Portador de Doença Neurológica"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2004",
+        "nome_politica": "Política Nacional de Atenção ao Portador de Doença Renal"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2003",
+        "nome_politica": "Política Nacional de Atenção às Urgências"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2011",
+        "nome_politica": "Política Nacional de Atenção Básica"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2004",
+        "nome_politica": "Política Nacional de Atenção Cardiovascular de Alta Complexidade"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2005",
+        "nome_politica": "Política Nacional de Atenção de Alta Complexidade em Traumato-Ortopedia"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2008",
+        "nome_politica": "Política Nacional de Atenção em Oftalmologia"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2013",
+        "nome_politica": "Política Nacional de Atenção Hospitalar"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2015",
+        "nome_politica": "Política Nacional de Atenção Integral à Saúde da Criança"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2004",
+        "nome_politica": "Política Nacional de Atenção Integral à Saúde da Mulher"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2014",
+        "nome_politica": "Política Nacional de Atenção Integral à Saúde de Adolescentes em Conflito com a Lei, em Regime de Internação e Internação Provisória"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2014",
+        "nome_politica": "Política Nacional de Atenção Integral à Saúde de Pessoas Privadas de Liberdade no Sistema Prisional"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2009",
+        "nome_politica": "Política Nacional de Atenção Integral à Saúde do Homem"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2018",
+        "nome_politica": "Política Nacional de Atenção Integral à Saúde do Povo Cigano/Romani"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2005",
+        "nome_politica": "Política Nacional de Atenção Integral às Pessoas com Doença Falciforme e outras Hemoglobinopatias"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2014",
+        "nome_politica": "Política Nacional de Atenção Integral às Pessoas com Doenças Raras"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2009",
+        "nome_politica": "Política Nacional de Atenção Integral em Genética Clínica"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2005",
+        "nome_politica": "Política Nacional de Atenção Integral em Reprodução Humana Assistida"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2005",
+        "nome_politica": "Política Nacional de Atenção Obstétrica e Neonatal"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2005",
+        "nome_politica": "Política Nacional de Atenção Oncológica"
+    },
+    {
+        "area": "Educação",
+        "ano": "2018",
+        "nome_politica": "Política Nacional de Avaliação e Exames da Educação Básica"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2017",
+        "nome_politica": "Política Nacional de Biocombustíveis (Renovabio)"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2019",
+        "nome_politica": "Política Nacional de Busca de Pessoas Desaparecidas"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "1998",
+        "nome_politica": "Política Nacional de Capacitação dos Servidores para a Administração Pública Federal Direta, Autárquica e Fundacional"
+    },
+    {
+        "area": "Ciência e Tecnologia",
+        "ano": "2002",
+        "nome_politica": "Política Nacional de Ciência, Tecnologia e Inovação"
+    },
+    {
+        "area": "Cultura",
+        "ano": "2001",
+        "nome_politica": "Política Nacional de Cinema"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2015",
+        "nome_politica": "Política Nacional de Combate à Desertificação e Mitigação dos Efeitos da Seca"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "2017",
+        "nome_politica": "Política Nacional de Comunicação Social do Ministério Público Militar"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2001",
+        "nome_politica": "Política Nacional de Conservação e Uso Racional de Energia"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "1997",
+        "nome_politica": "Política Nacional de Controle a Desertificação"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2018",
+        "nome_politica": "Política Nacional de Cuidados Paliativos para o SUS"
+    },
+    {
+        "area": "Cultura",
+        "ano": "2014",
+        "nome_politica": "Política Nacional de Cultura Viva"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "2016",
+        "nome_politica": "Política Nacional de Dados Abertos"
+    },
+    {
+        "area": "Defesa Nacional",
+        "ano": "2018",
+        "nome_politica": "Política Nacional de Defesa "
+    },
+    {
+        "area": "Desenvolvimento Regional",
+        "ano": "1994",
+        "nome_politica": "Política Nacional de Defesa Civil (PNDC)"
+    },
+    {
+        "area": "Defesa Nacional",
+        "ano": "1996",
+        "nome_politica": "Política de Defesa Nacional"
+    },
+    {
+        "area": "Defesa Nacional",
+        "ano": "1994",
+        "nome_politica": "Política Nacional de Desenvolvimento das Atividades Espaciais"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "2006",
+        "nome_politica": "Política Nacional de Desenvolvimento de Pessoal"
+    },
+    {
+        "area": "Desenvolvimento Regional",
+        "ano": "2007",
+        "nome_politica": "Política Nacional de Desenvolvimento Regional"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2009",
+        "nome_politica": "Política Nacional de Desenvolvimento Sustentável da Aquicultura e Pesca"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2007",
+        "nome_politica": "Política Nacional de Desenvolvimento Sustentável dos Povos e Comunidades Tradicionais"
+    },
+    {
+        "area": "Educação",
+        "ano": "1999",
+        "nome_politica": "Política Nacional de Educação Ambiental"
+    },
+    {
+        "area": "Educação",
+        "ano": "2020",
+        "nome_politica": "Política Nacional de Educação Especial"
+    },
+    {
+        "area": "Cultura",
+        "ano": "2017",
+        "nome_politica": "Política Nacional de Educação Museal (PNEM)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2004",
+        "nome_politica": "Política Nacional de Educação Permanente em Saúde"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2013",
+        "nome_politica": "Política Nacional de Educação Popular em Saúde (PNEPS/SUS)"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "2012",
+        "nome_politica": "Política Nacional de Empreendedorismo e Negócios"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "1962",
+        "nome_politica": "Política Nacional de Energia Nuclear "
+    },
+    {
+        "area": "Justiça e Segurança Pública",
+        "ano": "2006",
+        "nome_politica": "Política Nacional de Enfrentamento ao Tráfico de Pessoas"
+    },
+    {
+        "area": "Educação",
+        "ano": "2013",
+        "nome_politica": "Política Nacional de Expansão das Escolas Médicas das Instituições Federais de Educação Superior"
+    },
+    {
+        "area": "Defesa Nacional",
+        "ano": "2018",
+        "nome_politica": "Política Nacional de Exportação e Importação de Produtos de Defesa"
+    },
+    {
+        "area": "Educação",
+        "ano": "2009",
+        "nome_politica": "Política Nacional de Formação de Profissionais do Magistério da Educação Básica"
+    },
+    {
+        "area": "Educação",
+        "ano": "2010",
+        "nome_politica": "Política Nacional de Formação dos Profissionais da Educação Básica"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2009",
+        "nome_politica": "Política Nacional de Gestão de Tecnologias em Saúde"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2004",
+        "nome_politica": "Política Nacional de Gestão do Trabalho e Educação na Saúde"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2007",
+        "nome_politica": "Política Nacional de Gestão Estratégica e Participativa (ParticipaSUS)"
+    },
+    {
+        "area": "Justiça e Segurança Pública",
+        "ano": "2012",
+        "nome_politica": "Política Nacional de Gestão Territorial e Ambiental de Terras Indígenas"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "2019",
+        "nome_politica": "Política Nacional de Governo Aberto"
+    },
+    {
+        "area": "Habitação e Urbanismo",
+        "ano": "2004",
+        "nome_politica": "Política Nacional de Habitação"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2013",
+        "nome_politica": "Política Nacional de Humanização"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2019",
+        "nome_politica": "Política Nacional de Incentivo à Ovinocaprinocultura"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2018",
+        "nome_politica": "Política Nacional de Incentivo à Produção do Cacau de Qualidade"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2011",
+        "nome_politica": "Política Nacional de Incentivo ao Manejo Sustentado e ao Cultivo do Bambu"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2015",
+        "nome_politica": "Política Nacional de Informação e Informática em Saúde"
+    },
+    {
+        "area": "Comunicação",
+        "ano": "1984",
+        "nome_politica": "Política Nacional de Informática"
+    },
+    {
+        "area": "Turismo, Desporto e Lazer",
+        "ano": "2019",
+        "nome_politica": "Política Nacional de Infraestrutura de Esporte"
+    },
+    {
+        "area": "Ciência e Tecnologia",
+        "ano": "2020",
+        "nome_politica": "Política Nacional de Inovação "
+    },
+    {
+        "area": "Saúde",
+        "ano": "2017",
+        "nome_politica": "Política Nacional de inovação tecnologica na saúde"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2013",
+        "nome_politica": "Política Nacional de Integração Lavoura-Pecuária-Floresta"
+    },
+    {
+        "area": "Defesa Nacional",
+        "ano": "2016",
+        "nome_politica": "Política Nacional de Inteligência"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2013",
+        "nome_politica": "Política Nacional de Irrigação"
+    },
+    {
+        "area": "Educação",
+        "ano": "2018",
+        "nome_politica": "Política Nacional de Leitura e Escrita"
+    },
+    {
+        "area": "Saúde",
+        "ano": "1998",
+        "nome_politica": "Política Nacional de Medicamentos"
+    },
+    {
+        "area": "Indústria e comércio",
+        "ano": "1967",
+        "nome_politica": "Política Nacional de Metrologia"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2012",
+        "nome_politica": "Política Nacional de Mobilidade Urbana"
+    },
+    {
+        "area": "Cultura",
+        "ano": "2010",
+        "nome_politica": "Política Nacional de Museus "
+    },
+    {
+        "area": "Desenvolvimento Regional",
+        "ano": "2003",
+        "nome_politica": "Política Nacional de Ordenamento Territorial"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "2021",
+        "nome_politica": "Política Nacional de Pagamento por Serviços Ambientais "
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "2014",
+        "nome_politica": "Política Nacional de Participação Social"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2018",
+        "nome_politica": "Política Nacional de Pisos Mínimos do Transporte Rodoviário de Cargas"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2006",
+        "nome_politica": "Politica Nacional de Plantas Medicinais e Fitoterápicos"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2006",
+        "nome_politica": "Política Nacional de Práticas integrativas e complementares"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2019",
+        "nome_politica": "Política Nacional de Prevenção da Automutilação e Suicídio"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2019",
+        "nome_politica": "Política Nacional de Prevenção do Diabetes e de Assistência Integral à Pessoa Diabética"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2006",
+        "nome_politica": "Política Nacional de Promoção à Saúde"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2003",
+        "nome_politica": "Política Nacional de Promoção da Igualdade Racial (PNPIR)"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2007",
+        "nome_politica": "Política Nacional de Proteção aos Defensores dos Direitos Humanos (PNPDDH)"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2012",
+        "nome_politica": "Política Nacional de Proteção dos Direitos da Pessoa com Transtorno do Espectro Autista"
+    },
+    {
+        "area": "Desenvolvimento Regional",
+        "ano": "2012",
+        "nome_politica": "Política Nacional de Proteção E Defesa Civil (PNPDEC)"
+    },
+    {
+        "area": "Turismo, Desporto e Lazer",
+        "ano": "2017",
+        "nome_politica": "Política Nacional de Qualificação no Turismo"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "2017",
+        "nome_politica": "Política Nacional de Recuperação da Vegetação Nativa"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "1997",
+        "nome_politica": "Política Nacional de Recursos Hídricos"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2001",
+        "nome_politica": "Política Nacional de Redução da Morbimortalidade por acidentes e violências"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2004",
+        "nome_politica": "Política Nacional de Redução da Mortalidade Materna"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "1993",
+        "nome_politica": "Política Nacional de Reforma Agrária"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2008",
+        "nome_politica": "Política Nacional de Regulação do Sistema Único de Saúde"
+    },
+    {
+        "area": "Justiça e Segurança Pública",
+        "ano": "2015",
+        "nome_politica": "Política Nacional de Repressão ao Furto e Roubo de Veículos e Cargas"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2010",
+        "nome_politica": "Política Nacional de Resíduos Sólidos"
+    },
+    {
+        "area": "Política Econômica",
+        "ano": "1990",
+        "nome_politica": "Política Nacional de Salários "
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "1967",
+        "nome_politica": "Política Nacional de Saneamento"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2007",
+        "nome_politica": "Política Nacional de Saneamento Básico"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2001",
+        "nome_politica": "Política Nacional de Sangue, Componentes e Hemoderivados"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2004",
+        "nome_politica": "Política Nacional de Saúde Bucal"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2002",
+        "nome_politica": "Política Nacional de Saúde da Pessoa com Deficiência"
+    },
+    {
+        "area": "Saúde",
+        "ano": "1999",
+        "nome_politica": "Política Nacional de Saúde do Idoso"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2006",
+        "nome_politica": "Política Nacional de Saúde da Pessoa Idosa (PNPI)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2012",
+        "nome_politica": "Política Nacional de Saúde do Trabalhador e da Trabalhadora"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2009",
+        "nome_politica": "Política Nacional de Saúde Integral da População Negra"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2011",
+        "nome_politica": "Política Nacional de Saúde Integral das Populações do Campo, da Floresta e das Águas (PNSIPCFA)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2011",
+        "nome_politica": "Política Nacional de Saúde Integral de Lésbicas, Gays, Bissexuais, Travestis e Transexuais"
+    },
+    {
+        "area": "Segurança Alimentar",
+        "ano": "2010",
+        "nome_politica": "Política Nacional de Segurança Alimentar e Nutricional (PNSAN)"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2010",
+        "nome_politica": "Política Nacional de Segurança de Barragens"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2018",
+        "nome_politica": "Política Nacional de Segurança de Infraestruturas Críticas"
+    },
+    {
+        "area": "Trabalho e Emprego",
+        "ano": "2011",
+        "nome_politica": "Política Nacional de Segurança e Saúde no Trabalho"
+    },
+    {
+        "area": "Justiça e Segurança Pública",
+        "ano": "2018",
+        "nome_politica": "Política Nacional de Segurança Pública e Defesa Social"
+    },
+    {
+        "area": "Comunicação",
+        "ano": "2018",
+        "nome_politica": "Política Nacional de Telecomunicações"
+    },
+    {
+        "area": "Justiça e Segurança Pública",
+        "ano": "2018",
+        "nome_politica": "Política Nacional de Trabalho no âmbito do Sistema Prisional"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2014",
+        "nome_politica": "Política Nacional de Trânsito"
+    },
+    {
+        "area": "Saúde",
+        "ano": "1997",
+        "nome_politica": "Política Nacional de Transplantes de Órgãos e Tecidos"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2018",
+        "nome_politica": "Política Nacional de Transportes"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2018",
+        "nome_politica": "Política Nacional de Vigilância em Saúde"
+    },
+    {
+        "area": "Trabalho e Emprego",
+        "ano": "1971",
+        "nome_politica": "Política Nacional do Cooperativismo "
+    },
+    {
+        "area": "Turismo, Desporto e Lazer",
+        "ano": "2005",
+        "nome_politica": "Política Nacional do Esporte"
+    },
+    {
+        "area": "Cultura",
+        "ano": "2003",
+        "nome_politica": "Política Nacional do Livro"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "1981",
+        "nome_politica": "Política Nacional do Meio Ambiente"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "1953",
+        "nome_politica": "Política Nacional do Petróleo"
+    },
+    {
+        "area": "Turismo, Desporto e Lazer",
+        "ano": "1966",
+        "nome_politica": "Política Nacional do Turismo"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2001",
+        "nome_politica": "Política Nacional para a Atenção às Pessoas com Coagulopatias, Outras Doenças Hemorrágicas Hereditárias e Plaquetopatias"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "1993",
+        "nome_politica": "Política Nacional para a Integração da Pessoa Portadora de Deficiência"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2009",
+        "nome_politica": "Política Nacional para a População em Situação de Rua"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2013",
+        "nome_politica": "Política Nacional para a Prevenção e Controle do Câncer na Rede de Atenção à Saúde das Pessoas com Doenças Crônicas no âmbito do Sistema Único de Saúde"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2004",
+        "nome_politica": "Política Nacional para os Hospitais de Pequeno Porte"
+    },
+    {
+        "area": "Defesa Nacional",
+        "ano": "2005",
+        "nome_politica": "Política Nacional para os Recursos do Mar (PNRM)"
+    },
+    {
+        "area": "Trabalho e Emprego",
+        "ano": "2013",
+        "nome_politica": "Política Nacional para os Trabalhadores Rurais Empregados"
+    },
+    {
+        "area": "Justiça e Segurança Pública",
+        "ano": "2019",
+        "nome_politica": "Política Nacional sobre Drogas"
+    },
+    {
+        "area": "Justiça e Segurança Pública",
+        "ano": "2003",
+        "nome_politica": "Política Nacional de Enfrentamento à Violência contra as Mulheres"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "2009",
+        "nome_politica": "Política Nacional sobre mudança do clima"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2007",
+        "nome_politica": "Política Nacional sobre o Álcool"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2013",
+        "nome_politica": "Política para a Juventude (Estatuto da Juventude)"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2016",
+        "nome_politica": "Política para a primeira infância"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "1990",
+        "nome_politica": "Política para as Crianças e os Adolescentes (Estatuto da Criança e do Adolescente)"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2003",
+        "nome_politica": "Política para os Idosos (Estatuto do Idoso)"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2001",
+        "nome_politica": "Política Urbana"
+    },
+    {
+        "area": "Previdência",
+        "ano": "1991",
+        "nome_politica": "Previdência Rural"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2019",
+        "nome_politica": "Previne Brasil"
+    },
+    {
+        "area": "Desenvolvimento Regional",
+        "ano": "1998",
+        "nome_politica": "Proágua Semiárido"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2004",
+        "nome_politica": "Programa Farmácia Popular do Brasil"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2021",
+        "nome_politica": "Programa Reconecte"
+    },
+    {
+        "area": "Desenvolvimento Regional",
+        "ano": "2020",
+        "nome_politica": "Programa Abrace o Marajó"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2019",
+        "nome_politica": "Programa Meninas nas Ciências Exatas, Engenharias e Computação"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2013",
+        "nome_politica": "Programa Academia da Saúde"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "2021",
+        "nome_politica": "Programa Adote um Parque"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2021",
+        "nome_politica": "Programa Alimenta Brasil"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2009",
+        "nome_politica": "Programa Amazônia Terra Legal"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "2002",
+        "nome_politica": "Programa Áreas Protegidas da Amazônia (ARPA)"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2021",
+        "nome_politica": "Programa Auxílio Brasil"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2002",
+        "nome_politica": "Programa Auxílio-Gás"
+    },
+    {
+        "area": "Habitação e Urbanismo",
+        "ano": "2021",
+        "nome_politica": "Programa Avançar Cidades (Mobilidade Urbana)"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "2015",
+        "nome_politica": "Programa Bem Mais Simples Brasil"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2018",
+        "nome_politica": "Programa Bicicleta Brasil (PBB)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2019",
+        "nome_politica": "Programa Bioeconomia Brasil (Sociobiodiversidade)"
+    },
+    {
+        "area": "Ciência e Tecnologia",
+        "ano": "2001",
+        "nome_politica": "Programa Biotecnologia e Recursos Genéticos (Genoma)"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2005",
+        "nome_politica": "Programa Bolsa Atleta"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2004",
+        "nome_politica": "Programa Bolsa Família"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2002",
+        "nome_politica": "Programa Bolsa-Renda "
+    },
+    {
+        "area": "Educação",
+        "ano": "2003",
+        "nome_politica": "Programa Brasil Alfabetizado"
+    },
+    {
+        "area": "Ciência e Tecnologia",
+        "ano": "2016",
+        "nome_politica": "Programa Brasil Inteligente"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "2020",
+        "nome_politica": "Programa Brasil Mais"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "2018",
+        "nome_politica": "Programa Brasil Mais produtivo"
+    },
+    {
+        "area": "Educação",
+        "ano": "2007",
+        "nome_politica": "Programa Brasil Profissionalizado"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2007",
+        "nome_politica": "Programa Brasil Quilombola"
+    },
+    {
+        "area": "Habitação e Urbanismo",
+        "ano": "1998",
+        "nome_politica": "Programa Brasileiro da Qualidade e Produtividade na Construção Habitacional (PBQP-H)"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "2002",
+        "nome_politica": "Programa Brasileiro de Ecologia Molecular para o Uso Sustentável da Biodiversidade da Amazônia (PROBEM)"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2001",
+        "nome_politica": "Programa Cadastro Único"
+    },
+    {
+        "area": "Habitação e Urbanismo",
+        "ano": "2017",
+        "nome_politica": "Programa Cartão Reforma"
+    },
+    {
+        "area": "Habitação e Urbanismo",
+        "ano": "2021",
+        "nome_politica": "Programa Casa Verde e Amarela"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "2005",
+        "nome_politica": "Programa Cerrado Sustentável"
+    },
+    {
+        "area": "Turismo, Desporto e Lazer",
+        "ano": "2011",
+        "nome_politica": "Programa Cidade Esportiva"
+    },
+    {
+        "area": "Ciência e Tecnologia",
+        "ano": "2019",
+        "nome_politica": "Programa Ciência na Escola"
+    },
+    {
+        "area": "Ciência e Tecnologia",
+        "ano": "2011",
+        "nome_politica": "Programa Ciência sem Fronteiras"
+    },
+    {
+        "area": "Cultura",
+        "ano": "2012",
+        "nome_politica": "Programa Cinema Perto de Você"
+    },
+    {
+        "area": "Saúde",
+        "ano": "1990",
+        "nome_politica": "Programa Complementar de Assistência Médica do Serviço Exterior"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "1995",
+        "nome_politica": "Programa Comunidade Solidária"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2020",
+        "nome_politica": "Programa Conecte SUS"
+    },
+    {
+        "area": "Educação",
+        "ano": "2020",
+        "nome_politica": "Programa Conta para Mim"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2016",
+        "nome_politica": "Programa Criança Feliz"
+    },
+    {
+        "area": "Saúde",
+        "ano": "1992",
+        "nome_politica": "Programa de Ação Social em Saneamento (PROSEGE)"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "2007",
+        "nome_politica": "Programa de Aceleração do Crescimento (PAC)"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "1986",
+        "nome_politica": "Programa de Ações Básicas para a Defesa do Meio Ambiente"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "2021",
+        "nome_politica": "Programa de Acompanhamento e Transparência Fiscal"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "1997",
+        "nome_politica": "Programa de Acompanhamento Gerencial de Gastos e Avaliação Institucional"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "1998",
+        "nome_politica": "Programa de Administração Patrimonial Imobiliária da União (PROAP)"
+    },
+    {
+        "area": "Segurança Alimentar",
+        "ano": "1976",
+        "nome_politica": "Programa de Alimentação do Trabalhador (PAT)"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "2011",
+        "nome_politica": "Programa de Apoio à Conservação Ambiental (Bolsa Verde)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2019",
+        "nome_politica": "Programa de Apoio à Informatização e Qualificação dos Dados da Atenção Primária à Saúde (Informatiza APS)"
+    },
+    {
+        "area": "Ciência e Tecnologia",
+        "ano": "1996",
+        "nome_politica": "Programa de Apoio a Núcleos de Excelência (PRONEX)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "1986",
+        "nome_politica": "Programa de Apoio a Organizações de Pequenos Produtores Rurais do Nordeste"
+    },
+    {
+        "area": "Ciência e Tecnologia",
+        "ano": "2009",
+        "nome_politica": "Programa de Apoio à Pesquisa, Desenvolvimento e Inovação em Tecnologias Digitais de Informação e Comunicação (ProTIC)"
+    },
+    {
+        "area": "Educação",
+        "ano": "2007",
+        "nome_politica": "Programa de Apoio a Planos de Reestruturação e Expansão das Universidades Federais (REUNI)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "1986",
+        "nome_politica": "Programa de Apoio à Produção Nacional do Leite"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "1982",
+        "nome_politica": "Programa de Apoio ao Complexo Industrial de Barcarena"
+    },
+    {
+        "area": "Cultura",
+        "ano": "2014",
+        "nome_politica": "Programa de Apoio ao Desenvolvimento do Audiovisual Brasileiro (PRODAV)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2009",
+        "nome_politica": "Programa de Apoio ao Desenvolvimento Institucional do Sistema Único de Saúde (PROADI/SUS)"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "2007",
+        "nome_politica": "Programa de Apoio ao Desenvolvimento Tecnológico da Indústria de Equipamentos para a TV Digital (PATVD)"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "2007",
+        "nome_politica": "Programa de Apoio ao Desenvolvimento Tecnológico da Indústria de Semicondutores (PADIS)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "1985",
+        "nome_politica": "Programa de Apoio ao Pequeno Produtor Rural"
+    },
+    {
+        "area": "Educação",
+        "ano": "2004",
+        "nome_politica": "Programa de Apoio aos Sistemas de Ensino para Atendimento à Educação de Jovens e Adultos"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "1986",
+        "nome_politica": "Programa de Apoio às Micro e Pequena Empresas das Regiões Norte e Nordeste"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2003",
+        "nome_politica": "Programa de Aquisição de Alimentos"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2001",
+        "nome_politica": "Programa de Arrendamento Residencial"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2001",
+        "nome_politica": "Programa de Arrendamento Rural para a Agricultura Familiar"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "1971",
+        "nome_politica": "Programa de Assistência ao Trabalhador Rural"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2002",
+        "nome_politica": "Programa de Assistência aos Portadores da Doença de Alzheimer"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2008",
+        "nome_politica": "Programa de Assistência Ventilatória Não Invasiva aos Portadores de Doenças Neuromusculares"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2004",
+        "nome_politica": "Programa de Atenção Integral à Família (Paif)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2004",
+        "nome_politica": "Programa de Atenção Integral a Usuários de Álcool e outras Drogas"
+    },
+    {
+        "area": "Segurança Alimentar",
+        "ano": "1997",
+        "nome_politica": "Programa de Atendimento aos Desnutridos e às Gestantes em Risco Nutricional (Programa Leite é Saúde)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2001",
+        "nome_politica": "Programa de Avaliação Externa da Qualidade em Hemocomponentes (AEQ Hemocomponentes)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2001",
+        "nome_politica": "Programa de Avaliação Externa da Qualidade em Imunohematologia (AEQ Imunohematologia)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2001",
+        "nome_politica": "Programa de Avaliação Externa da Qualidade em Sorologia (AEQ Sorologia)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2003",
+        "nome_politica": "Programa de Bibliotecas Rurais (Arca das Letras)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2011",
+        "nome_politica": "Programa de Bolsas para a Educação pelo Trabalho"
+    },
+    {
+        "area": "Ciência e Tecnologia",
+        "ano": "2001",
+        "nome_politica": "Programa de Ciência e Tecnologia para o Agronegócio"
+    },
+    {
+        "area": "Ciência e Tecnologia",
+        "ano": "2001",
+        "nome_politica": "Programa de Ciência e Tecnologia para o Setor Aeronáutico"
+    },
+    {
+        "area": "Educação",
+        "ano": "1970",
+        "nome_politica": "Programa de Colaboração Financeira para a edição de livros texto"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2015",
+        "nome_politica": "Programa de Combate à Intimidação Sistemática (bullying)"
+    },
+    {
+        "area": "Segurança Alimentar",
+        "ano": "1998",
+        "nome_politica": "Programa de Combate às Carências Nutricionais (PCCN)"
+    },
+    {
+        "area": "Educação",
+        "ano": "2004",
+        "nome_politica": "Programa de Complementação ao Atendimento Educacional Especializado às Pessoas Portadoras de Deficiência"
+    },
+    {
+        "area": "Saúde",
+        "ano": "1991",
+        "nome_politica": "Programa de Controle de Pênfigo Foliáceo Endêmico"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2021",
+        "nome_politica": "Programa de cooperação Sinal Vermelho contra a Violência Doméstica"
+    },
+    {
+        "area": "Educação",
+        "ano": "1992",
+        "nome_politica": "Programa de Crédito Educativo"
+    },
+    {
+        "area": "Cultura",
+        "ano": "2012",
+        "nome_politica": "Programa de Cultura do Trabalhador"
+    },
+    {
+        "area": "Ciência e Tecnologia",
+        "ano": "2000",
+        "nome_politica": "Programa de Desenvolvimento Científico e Tecnológico do Setor Espacial"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2004",
+        "nome_politica": "Programa de Desenvolvimento da Agricultura Orgânica (PRO-ORGÂNICO)"
+    },
+    {
+        "area": "Desenvolvimento Regional",
+        "ano": "2004",
+        "nome_politica": "Programa de Desenvolvimento da Faixa de Fronteiro (PDFF)"
+    },
+    {
+        "area": "Habitação e Urbanismo",
+        "ano": "1985",
+        "nome_politica": "Programa de Desenvolvimento da Região Nordeste"
+    },
+    {
+        "area": "Saúde",
+        "ano": "1988",
+        "nome_politica": "Programa de Desenvolvimento de Sistemas Unificados e Descentralizados de Saúde nos Estados (SUDS)"
+    },
+    {
+        "area": "Habitação e Urbanismo",
+        "ano": "1971",
+        "nome_politica": "Programa de Desenvolvimento do Centro-Oeste (PRODOESTE)"
+    },
+    {
+        "area": "Trabalho e Emprego",
+        "ano": "1992",
+        "nome_politica": "Programa de Desenvolvimento do Sistema Federal de Inspeção do Trabalho"
+    },
+    {
+        "area": "Desenvolvimento Regional",
+        "ano": "2004",
+        "nome_politica": "Programa de Desenvolvimento Integrado e Sustentável do Semiárido (Conviver)"
+    },
+    {
+        "area": "Ciência e Tecnologia",
+        "ano": "2020",
+        "nome_politica": "Programa de Desenvolvimento Integrado para o Centro Espacial de Alcântara"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2009",
+        "nome_politica": "Programa de Desenvolvimento Sustentável da Unidade de Produção Familiar (Pronaf Sustentável)"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2020",
+        "nome_politica": "Programa de Desenvolvimento Urbano (Pró-Cidades)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2014",
+        "nome_politica": "Programa de Desinstitucionalização integrante do componente Estratégias de Desinstitucionalização da Rede de Atenção Psicossocial (RAPS)"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "1997",
+        "nome_politica": "Programa de Desligamento Voluntário de Servidores civis"
+    },
+    {
+        "area": "Política Econômica",
+        "ano": "2012",
+        "nome_politica": "Programa de Dispêndios Globais (PDG)"
+    },
+    {
+        "area": "Segurança Alimentar",
+        "ano": "1994",
+        "nome_politica": "Programa de Distribuição Emergencial de Alimentos (PRODEA)"
+    },
+    {
+        "area": "Educação",
+        "ano": "2002",
+        "nome_politica": "Programa de Educação Fiscal Virtual para crianças e adolescentes "
+    },
+    {
+        "area": "Saúde",
+        "ano": "2007",
+        "nome_politica": "Programa de Educação para Diabéticos"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2010",
+        "nome_politica": "Programa de Educação pelo Trabalho para a Saúde (PET Saúde)"
+    },
+    {
+        "area": "Educação",
+        "ano": "2005",
+        "nome_politica": "Programa de Educação Tutorial (PET)"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "1987",
+        "nome_politica": "Programa de Emergência para Suprimento de Energia Elétrica ao Nordeste"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2020",
+        "nome_politica": "Programa de Equilíbrio Trabalho-Família"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "2020",
+        "nome_politica": "Programa de Equipagem e de Modernização da Infraestrutura dos Órgãos, das Entidades e das Instâncias Colegiadas de Promoção e de Defesa dos Direitos Humanos"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2001",
+        "nome_politica": "Programa de Erradicação do Trabalho Infantil (PETI)"
+    },
+    {
+        "area": "Política Econômica",
+        "ano": "1994",
+        "nome_politica": "Programa de Estabilização Econômica "
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "2016",
+        "nome_politica": "Programa de Estímulo à Competitividade da Cadeia Produtiva, ao Desenvolvimento e ao Aprimoramento de Fornecedores do Setor de Petróleo e Gás Natural (Pedefor)"
+    },
+    {
+        "area": "Educação",
+        "ano": "2000",
+        "nome_politica": "Programa de Estímulo à Interação Universidade-Empresa para o Apoio à Inovação"
+    },
+    {
+        "area": "Educação",
+        "ano": "2012",
+        "nome_politica": "Programa de Estímulo à Reestruturação e ao Fortalecimento das Instituições de Ensino Superior (PROIES)"
+    },
+    {
+        "area": "Política Econômica",
+        "ano": "2021",
+        "nome_politica": "Programa de Estímulo ao Crédito"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2020",
+        "nome_politica": "Programa de Estímulo ao Transporte por Cabotagem (BR do Mar)"
+    },
+    {
+        "area": "Educação",
+        "ano": "2012",
+        "nome_politica": "Programa de Estudantes-Convênio de Graduação (PEC-G)"
+    },
+    {
+        "area": "Educação",
+        "ano": "2008",
+        "nome_politica": "Programa de Extensão Universitária (PROEXT)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2017",
+        "nome_politica": "Programa de Financiamento Preferencial às Instituições Filantrópicas e Sem Fins Lucrativos (Pro-Santas Casas)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2007",
+        "nome_politica": "Programa de Fomento a Agroindustrialização, à comercialização e atividades pluriativas solidárias (Terra Sol)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2001",
+        "nome_politica": "Programa de Fomento à Pesquisa em Saúde"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2011",
+        "nome_politica": "Programa de Fomento às Atividades Produtivas Rurais"
+    },
+    {
+        "area": "Educação",
+        "ano": "2016",
+        "nome_politica": "Programa de Fomento às Escolas de Ensino Médio em Tempo Integral (EMTI)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2009",
+        "nome_politica": "Programa de Formação de Profissional de Nível Médio para a Saúde (PROFAPS)"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "1970",
+        "nome_politica": "Programa de Formação do Patrimônio do Servidor Público"
+    },
+    {
+        "area": "Educação",
+        "ano": "2010",
+        "nome_politica": "Programa de Formação Inicial em Serviço dos Profissionais da Educação Básica dos Sistemas de Ensino Público (Profuncionário)"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "2007",
+        "nome_politica": "Programa de Fortalecimento da Capacidade Institucional para Gestão em Regulação (PRO-REG)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2013",
+        "nome_politica": "Programa de Fortalecimento das Entidades Privadas Filantrópicas e das Entidades sem Fins Lucrativos que Atuam na Área da Saúde e que Participam de Forma Complementar do Sistema Único de Saúde (PROSUS)"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "2021",
+        "nome_politica": "Programa de Garantia aos Setores Críticos (PGSC)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2009",
+        "nome_politica": "Programa de Garantia da Atividade Agropecuária da Agricultura Familiar (PROAGRO)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2006",
+        "nome_politica": "Programa de Garantia de Preços para a Agricultura Familiar (PGPAF)"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "1991",
+        "nome_politica": "Programa de Gestão das Empresas Estatais"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "2020",
+        "nome_politica": "Programa de Gestão Estratégica e Transformação do Estado"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "2002",
+        "nome_politica": "Programa de Governo Eletrônico - Serviço de Atendimento ao Cidadão (GESAC)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2007",
+        "nome_politica": "Programa de Hipertensão e Diabetes (Hiperdia)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2000",
+        "nome_politica": "Programa de Humanização no Pré-natal e Nascimento"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2004",
+        "nome_politica": "Programa de Incentivo à Implementação de Projetos de Interesse Social (PIPS)"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "2012",
+        "nome_politica": "Programa de Incentivo à Inovação Tecnológica e Adensamento da Cadeia Produtiva de Veículos Automotores"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "1972",
+        "nome_politica": "Programa de Incentivo à Produção de Borracha Vegetal"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2021",
+        "nome_politica": "Programa de Incentivo ao Transporte Rodoviário de Cargas (Programa Gigantes do Asfalto)"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2002",
+        "nome_politica": "Programa de Incentivo às Fontes Alternativas de Energia Elétrica (Proinfa)"
+    },
+    {
+        "area": "Ciência e Tecnologia",
+        "ano": "2005",
+        "nome_politica": "Programa de Inclusão Digital"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2021",
+        "nome_politica": "Programa de Infraestrutura de Transporte e da Mobilidade Urbana (Pró-Transporte)"
+    },
+    {
+        "area": "Educação",
+        "ano": "2017",
+        "nome_politica": "Programa de Inovação Educação Conectada"
+    },
+    {
+        "area": "Ciência e Tecnologia",
+        "ano": "2001",
+        "nome_politica": "Programa de Inovação para Competitividade"
+    },
+    {
+        "area": "Educação",
+        "ano": "2005",
+        "nome_politica": "Programa de Integração da Educação Profissional ao Ensino Médio na Modalidade de Educação de Jovens e Adultos (PROEJA)"
+    },
+    {
+        "area": "Habitação e Urbanismo",
+        "ano": "1970",
+        "nome_politica": "Programa de Integração Nacional"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "1970",
+        "nome_politica": "Programa de Integração Social"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "2018",
+        "nome_politica": "Programa de Integridade da Casa Civil"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2001",
+        "nome_politica": "Programa de Interiorização do Trabalho em Saúde"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "1986",
+        "nome_politica": "Programa de Irrigação do Nordeste (PROINE)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2012",
+        "nome_politica": "Programa de Mamografia Móvel"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2015",
+        "nome_politica": "Programa de Melhoria do Acesso e Qualidade dos Centros de Especialidades Odontológicas (PMAQ-CEO)"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "2003",
+        "nome_politica": "Programa de Mobilização da Indústria Nacional de Petróleo e Gás Natural (PROMINP)"
+    },
+    {
+        "area": "Turismo, Desporto e Lazer",
+        "ano": "2015",
+        "nome_politica": "Programa de Modernização da Gestão e de Responsabilidade Fiscal do Futebol Brasileiro"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "2004",
+        "nome_politica": "Programa de Modernização do Parque Industrial Nacional (Modermaq)"
+    },
+    {
+        "area": "Relações Exteriores",
+        "ano": "1996",
+        "nome_politica": "Programa de Modernização, Agilização, Aprimoramento e Segurança da Fiscalização do Tráfego Internacional e do Passaporte Brasileiro (PROMASP)"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "2011",
+        "nome_politica": "Programa de Multiplicadores em Gestão de Pessoas"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2016",
+        "nome_politica": "Programa de Necessidades da Estrutura Física Mínima dos Polos da Academia da Saúde"
+    },
+    {
+        "area": "Desenvolvimento Regional",
+        "ano": "2004",
+        "nome_politica": "Programa de Organização Produtiva de Comunidades Pobres (Produzir)"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "2016",
+        "nome_politica": "Programa de Parcerias de Investimentos (PPI)"
+    },
+    {
+        "area": "Educação",
+        "ano": "1970",
+        "nome_politica": "Programa de Participação de Estudantes em Trabalho de Magistério"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2009",
+        "nome_politica": "Programa de Pesquisa em Saneamento Básico (Prosab)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2016",
+        "nome_politica": "Programa de Prevenção e Proteção Individual de Gestantes em Situação de Vulnerabilidade Socioeconômica contra o Aedes Aegypti"
+    },
+    {
+        "area": "Previdência",
+        "ano": "1982",
+        "nome_politica": "Programa de Previdência Social aos Estudantes "
+    },
+    {
+        "area": "Desenvolvimento Regional",
+        "ano": "2009",
+        "nome_politica": "Programa de Promoção da Sustentabilidade dos Espaços Sub-regionais (PROMESO)"
+    },
+    {
+        "area": "Desenvolvimento Regional",
+        "ano": "2004",
+        "nome_politica": "Programa de Promoção e Inserção Econômica de Sub-regiões (Promover)"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2008",
+        "nome_politica": "Programa de Prorrogação da Licença à Gestante e à Adotante"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2016",
+        "nome_politica": "Programa de Prorrogação da Licença-Paternidade para os servidores"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2007",
+        "nome_politica": "Programa de Proteção a Crianças e Adolescentes Ameaçados de Morte (PPCAAM)"
+    },
+    {
+        "area": "Trabalho e Emprego",
+        "ano": "2015",
+        "nome_politica": "Programa de Proteção ao Emprego (PPE)"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2016",
+        "nome_politica": "Programa de Proteção aos Defensores de Direitos Humanos"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2019",
+        "nome_politica": "Programa de Proteção aos Defensores de Direitos Humanos, Comunicadores e Ambientalistas"
+    },
+    {
+        "area": "Defesa Nacional",
+        "ano": "2016",
+        "nome_politica": "Programa de Proteção Integrada de Fronteiras"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2013",
+        "nome_politica": "Programa de Qualificação das Ações de Vigilância em Saúde (PQA-VS)"
+    },
+    {
+        "area": "Educação",
+        "ano": "2004",
+        "nome_politica": "Programa de Qualificação de Docente e Ensino de Língua Portuguesa no Timor-Leste"
+    },
+    {
+        "area": "Turismo, Desporto e Lazer",
+        "ano": "2007",
+        "nome_politica": "Programa de Qualificação dos Serviços Turísticos"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2006",
+        "nome_politica": "Programa de Qualificação e Estruturação da Gestão do Trabalho e da Educação no SUS (ProgeSUS)"
+    },
+    {
+        "area": "Turismo, Desporto e Lazer",
+        "ano": "2017",
+        "nome_politica": "Programa de Qualificação Internacional em Turismo e Hospitalidade."
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "1997",
+        "nome_politica": "Programa de Racionalização das Unidades Descentralizadas do Governo Federal"
+    },
+    {
+        "area": "Política Econômica",
+        "ano": "2000",
+        "nome_politica": "Programa de Recuperação Fiscal (Refis)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "1971",
+        "nome_politica": "Programa de Redistribuição de Terras e de Estímulo à Agro-indústria do Norte e do Nordeste (PROTERRA)"
+    },
+    {
+        "area": "Política Econômica",
+        "ano": "2015",
+        "nome_politica": "Programa de Redução de Litígios Tributários (PRORELIT)"
+    },
+    {
+        "area": "Turismo, Desporto e Lazer",
+        "ano": "2013",
+        "nome_politica": "Programa de Regionalização do Turismo"
+    },
+    {
+        "area": "Política Econômica",
+        "ano": "2017",
+        "nome_politica": "Programa de Regularização de Débitos não Tributários (PRD)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2018",
+        "nome_politica": "Programa de Regularização Tributária Rural (PRR)"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "1996",
+        "nome_politica": "Programa de Reorientação Institucional do Ministério da Agricultura e do Abastecimento (PRIMA)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2013",
+        "nome_politica": "Programa de Requalificação das Unidades Básicas de Saúde (Requalifica UBS)"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "2019",
+        "nome_politica": "Programa de Revisão de Benefícios por Incapacidade"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "2016",
+        "nome_politica": "Programa de Revitalização da Bacia Hidrográfica do Rio São Francisco"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "1998",
+        "nome_politica": "Programa de Revitalização de Cooperativas de Produção Agropecuária (RECOOP)"
+    },
+    {
+        "area": "Habitação e Urbanismo",
+        "ano": "2004",
+        "nome_politica": "Programa de Subsídio à Habitação de Interesse Social"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2003",
+        "nome_politica": "Programa de Subvenção ao Prêmio do Seguro Rural (PSR)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2018",
+        "nome_politica": "Programa de Treinamento em Epidemiologia Aplicada aos Serviços do Sistema Único de Saúde (EpiSUS)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2011",
+        "nome_politica": "Programa de Valorização do Profissional da Atenção Básica (PROVAB)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2003",
+        "nome_politica": "Programa de Volta pra Casa"
+    },
+    {
+        "area": "Defesa Nacional",
+        "ano": "1989",
+        "nome_politica": "Programa Desportivo Militar Anual das Forças Armadas"
+    },
+    {
+        "area": "Ciência e Tecnologia",
+        "ano": "2021",
+        "nome_politica": "Programa Digitaliza Brasil"
+    },
+    {
+        "area": "Educação",
+        "ano": "2009",
+        "nome_politica": "Programa Dinheiro Direto na Escola aos Alunos da Educação Básica"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2007",
+        "nome_politica": "Programa Disque Idoso"
+    },
+    {
+        "area": "Educação",
+        "ano": "2002",
+        "nome_politica": "Programa Diversidade na Universidade"
+    },
+    {
+        "area": "Cultura",
+        "ano": "2018",
+        "nome_politica": "Programa do Artesanato Brasileiro "
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "1989",
+        "nome_politica": "Programa do Bom Menino"
+    },
+    {
+        "area": "Trabalho e Emprego",
+        "ano": "1990",
+        "nome_politica": "Programa do Seguro-Desemprego"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "2020",
+        "nome_politica": "Programa Emergencial de Acesso a Crédito (PEAC)"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2017",
+        "nome_politica": "Programa Emergencial de Ações Sociais para o Estado do Rio de Janeiro e os seus Municípios"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "1999",
+        "nome_politica": "Programa Emergencial de Combate aos Efeitos da Seca"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "1998",
+        "nome_politica": "Programa Emergencial de Frentes Produtivas"
+    },
+    {
+        "area": "Trabalho e Emprego",
+        "ano": "2020",
+        "nome_politica": "Programa Emergencial de Manutenção do Emprego e da Renda"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "2021",
+        "nome_politica": "Programa Emergencial de Retomada do Setor de Eventos (PERSE)"
+    },
+    {
+        "area": "Trabalho e Emprego",
+        "ano": "2020",
+        "nome_politica": "Programa Emergencial de Suporte a Empregos"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2003",
+        "nome_politica": "Programa Emergencial e Excepcional de Apoio às Concessionárias de Serviços Públicos de Distribuição de Energia Elétrica"
+    },
+    {
+        "area": "Trabalho e Emprego",
+        "ano": "2008",
+        "nome_politica": "Programa Empresa Cidadã"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "1971",
+        "nome_politica": "Programa especial de assistência financeira ao setor de borracha vegetal da Amazônia"
+    },
+    {
+        "area": "Habitação e Urbanismo",
+        "ano": "2001",
+        "nome_politica": "Programa Especial de Desenvolvimento da Grande Teresina"
+    },
+    {
+        "area": "Habitação e Urbanismo",
+        "ano": "1998",
+        "nome_politica": "Programa Especial de Desenvolvimento do Entorno do Distrito Federal "
+    },
+    {
+        "area": "Habitação e Urbanismo",
+        "ano": "2001",
+        "nome_politica": "Programa Especial de Desenvolvimento do Pólo Petrolina/PE e Juazeiro/BA"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "2000",
+        "nome_politica": "Programa Especial de Financiamento"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "2001",
+        "nome_politica": "Programa Especial de Financiamento para combate aos efeitos da estiagem"
+    },
+    {
+        "area": "Educação",
+        "ano": "2010",
+        "nome_politica": "Programa Especial de Fortalecimento do Ensino Médio"
+    },
+    {
+        "area": "Habitação e Urbanismo",
+        "ano": "2004",
+        "nome_politica": "Programa Especial de Habitação Popular (PEHP)"
+    },
+    {
+        "area": "Política Econômica",
+        "ano": "2017",
+        "nome_politica": "Programa Especial de Regularização Tributária (PERT)"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "2019",
+        "nome_politica": "Programa Especial para Análise de Benefícios com Indícios de Irregularidade"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "1972",
+        "nome_politica": "Programa Especial para o Vale do São Francisco (PROVALE)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2009",
+        "nome_politica": "Programa Federal de Apoio à Regularização Ambiental de Imóveis Rurais (Programa Mais Ambiente)"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "1999",
+        "nome_politica": "Programa Federal de Assistência a Vítimas e a Testemunhas Ameaçadas"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "1986",
+        "nome_politica": "Programa Federal de Desestatização"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "1990",
+        "nome_politica": "Programa Federal de Desregulamentação"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "2009",
+        "nome_politica": "Programa Federal de Manejo Florestal Comunitário e Familiar (PMCF)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2020",
+        "nome_politica": "Programa Federativo de Enfrentamento ao Coronavírus SARS-CoV-2 (Covid-19)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "1986",
+        "nome_politica": "Programa FINOR-ALIMENTOS"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "1998",
+        "nome_politica": "Programa Florestas Nacionais"
+    },
+    {
+        "area": "Turismo, Desporto e Lazer",
+        "ano": "2019",
+        "nome_politica": "Programa Forças no Esporte (Segundo Tempo)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2002",
+        "nome_politica": "Programa Garantia Safra"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2012",
+        "nome_politica": "Programa Gestão de Riscos e Desastres"
+    },
+    {
+        "area": "Relações Exteriores",
+        "ano": "2002",
+        "nome_politica": "Programa Grande Fronteira do Mercosul"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2020",
+        "nome_politica": "Programa Horizontes"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2015",
+        "nome_politica": "Programa Identidade Jovem"
+    },
+    {
+        "area": "Educação",
+        "ano": "2010",
+        "nome_politica": "Programa Institucional de Bolsa de Iniciação à Docência (PIBID)"
+    },
+    {
+        "area": "Turismo, Desporto e Lazer",
+        "ano": "2021",
+        "nome_politica": "Programa Integra Brasil"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "2014",
+        "nome_politica": "Programa Mais Ambiente Brasil"
+    },
+    {
+        "area": "Cultura",
+        "ano": "2007",
+        "nome_politica": "Programa Mais Cultura"
+    },
+    {
+        "area": "Educação",
+        "ano": "2010",
+        "nome_politica": "Programa Mais Educação"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2015",
+        "nome_politica": "Programa Mais Leite Sustentável"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2013",
+        "nome_politica": "Programa Mais Médicos"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2008",
+        "nome_politica": "Programa Mais Saúde: Direito de Todos"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2015",
+        "nome_politica": "Programa Maria da Penha vai à escola"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2019",
+        "nome_politica": "Programa Médicos pelo Brasil"
+    },
+    {
+        "area": "Justiça e Segurança Pública",
+        "ano": "2020",
+        "nome_politica": "Programa Meio Ambiente Integrado e Seguro (Programa Brasil MAIS)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2016",
+        "nome_politica": "Programa Melhor em Casa"
+    },
+    {
+        "area": "Relações Exteriores",
+        "ano": "2008",
+        "nome_politica": "Programa Mercosul Social e Participativo"
+    },
+    {
+        "area": "Habitação e Urbanismo",
+        "ano": "2009",
+        "nome_politica": "Programa Minha Casa, Minha Vida (PMCMV)"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2020",
+        "nome_politica": "Programa Moradia Digna"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2019",
+        "nome_politica": "Programa Mulher Segura e Protegida"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2013",
+        "nome_politica": "Programa Mulher: Viver sem Violência"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2020",
+        "nome_politica": "Programa Município Amigo da Família (PMAF)"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "1994",
+        "nome_politica": "Programa Nacional da Diversidade Biológica"
+    },
+    {
+        "area": "Educação",
+        "ano": "2019",
+        "nome_politica": "Programa Nacional das Escolas Cívico-Militares"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2003",
+        "nome_politica": "Programa Nacional de Acesso à Alimentação (PNAA-Fome Zero)"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2002",
+        "nome_politica": "Programa Nacional de Ações Afirmativas"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2018",
+        "nome_politica": "Programa Nacional de Agricultura Urbana e Periurbana"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "1976",
+        "nome_politica": "Programa Nacional de Alimentação e Nutrição (PRONAN)"
+    },
+    {
+        "area": "Segurança Alimentar",
+        "ano": "2009",
+        "nome_politica": "Programa Nacional de Acesso ao Ensino Técnico e Emprego (PRONATEC)"
+    },
+    {
+        "area": "Justiça e Segurança Pública",
+        "ano": "2021",
+        "nome_politica": "Programa Nacional de Apoio à Aquisição de Habitação para Profissionais da Segurança Pública (Programa Habite Seguro)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2012",
+        "nome_politica": "Programa Nacional de Apoio à Atenção da Saúde da Pessoa com Deficiência"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2012",
+        "nome_politica": "Programa Nacional de Apoio à Atenção Oncológica"
+    },
+    {
+        "area": "Segurança Alimentar",
+        "ano": "2013",
+        "nome_politica": "Programa Nacional de Apoio à Captação de Água de Chuva e Outras Tecnologias Sociais de Acesso à Água (Programa Cisternas)"
+    },
+    {
+        "area": "Cultura",
+        "ano": "1991",
+        "nome_politica": "Programa Nacional de Apoio à Cultura (PRONAC)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2009",
+        "nome_politica": "Programa Nacional de Apoio à Formação de Médicos Especialistas em Áreas Estratégicas (Pró-Residência)"
+    },
+    {
+        "area": "Ciência e Tecnologia",
+        "ano": "2009",
+        "nome_politica": "Programa Nacional de Apoio à Inclusão Digital nas Comunidades (Telecentros.BR)"
+    },
+    {
+        "area": "Educação",
+        "ano": "2004",
+        "nome_politica": "Programa Nacional de Apoio ao Transporte do Escolar (PNATE)"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "2020",
+        "nome_politica": "Programa Nacional de Apoio às Microempresas e Empresas de Pequeno Porte (Pronampe)"
+    },
+    {
+        "area": "Habitação e Urbanismo",
+        "ano": "1986",
+        "nome_politica": "Programa Nacional de Arborização Urbana (PRO-FRUTI)"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "1975",
+        "nome_politica": "Programa Nacional de Armazenagem"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2002",
+        "nome_politica": "Programa Nacional de Arrendamento de Áreas e Instalações Portuárias"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2010",
+        "nome_politica": "Programa Nacional de Assistência Estudantil (PNAES)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2010",
+        "nome_politica": "Programa Nacional de Assistência Técnica e Extensão Rural na Agricultura Familiar e na Reforma Agrária (PRONATER)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2002",
+        "nome_politica": "Programa Nacional de Atenção Comunitária Integrada a Usuários de Álcool e Outras Drogas"
+    },
+    {
+        "area": "Saúde",
+        "ano": "1993",
+        "nome_politica": "Programa Nacional de Atenção Integral à Criança e ao Adolescente (Pronaica)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2015",
+        "nome_politica": "Programa Nacional de Avaliação de Serviços de Saúde (PNASS)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2002",
+        "nome_politica": "Programa Nacional de Avaliação do Sistema Hospitalar/Psiquiatria (PNASH/PSIQUATRIA)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2015",
+        "nome_politica": "Programa Nacional de Avaliação dos Serviços Hospitalares"
+    },
+    {
+        "area": "Ciência e Tecnologia",
+        "ano": "2010",
+        "nome_politica": "Programa Nacional de Banda Larga (PNBL)"
+    },
+    {
+        "area": "Educação",
+        "ano": "1990",
+        "nome_politica": "Programa Nacional de Bibliotecas de Instituições de Ensino Superior"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2020",
+        "nome_politica": "Programa Nacional de Bioinsumos"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2009",
+        "nome_politica": "Programa Nacional de Bolsas para Residências Multiprofissionais e em Área Profissional da Saúde (Pró-Residência em Área Profissional da Saúde)"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "2007",
+        "nome_politica": "Programa Nacional de Capacitação das Cidades"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2012",
+        "nome_politica": "Programa Nacional de Capacitação do SUAS (CapacitaSUAS)"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "1975",
+        "nome_politica": "Programa Nacional de Centros Sociais Urbanos (CSU)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2001",
+        "nome_politica": "Programa Nacional de Coagulopatias Hereditárias"
+    },
+    {
+        "area": "Saúde",
+        "ano": "1998",
+        "nome_politica": "Programa Nacional de Combate ao Câncer de Colo Uterino"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "1998",
+        "nome_politica": "Programa Nacional de Combate ao Contrabando e ao Descaminho"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2006",
+        "nome_politica": "Programa Nacional de Competitividade em Vacinas (INOVACINA)"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2019",
+        "nome_politica": "Programa Nacional de Conservação de Energia Elétrica (PROCEL)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2003",
+        "nome_politica": "Programa Nacional de Controle da Dengue (PNCD)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "1996",
+        "nome_politica": "Programa Nacional de Controle da Tuberculose"
+    },
+    {
+        "area": "Saúde",
+        "ano": "1996",
+        "nome_politica": "Programa Nacional de Controle de Qualidade Externo em Sorologia e lmunohematologia para Unidades Hemoterápicas (PNCQES)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2001",
+        "nome_politica": "Programa Nacional de Controle do Câncer de Próstata"
+    },
+    {
+        "area": "Saúde",
+        "ano": "1986",
+        "nome_politica": "Programa Nacional de Controle do Tabagismo"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2000",
+        "nome_politica": "Programa Nacional de Controle e Eliminação da Hanseníase e de Outras Dermatoses de Interesse Sanitário"
+    },
+    {
+        "area": "Relações Exteriores",
+        "ano": "1999",
+        "nome_politica": "Programa Nacional de Cooperação em Adoção Internacional"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2003",
+        "nome_politica": "Programa Nacional de Crédito Fundiário (Terra Brasil)"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "1979",
+        "nome_politica": "Programa Nacional de Desburocratização"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "1994",
+        "nome_politica": "Programa Nacional de Descentralização"
+    },
+    {
+        "area": "Cultura",
+        "ano": "1977",
+        "nome_politica": "Programa Nacional de Desenvolvimento do Artesanato"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2010",
+        "nome_politica": "Programa Nacional de Desenvolvimento Gerencial no Sistema Único de Saúde (PNDG)"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "1990",
+        "nome_politica": "Programa Nacional de Desestatização"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2004",
+        "nome_politica": "Programa Nacional de Documentação da Trabalhadora Rural (PNDTR)"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2007",
+        "nome_politica": "Programa Nacional de Dragagem Portuária e Hidroviária"
+    },
+    {
+        "area": "Educação",
+        "ano": "1991",
+        "nome_politica": "Programa Nacional de Educação e Trabalho (PLANTE)"
+    },
+    {
+        "area": "Educação",
+        "ano": "2010",
+        "nome_politica": "Programa Nacional de Educação na Reforma Agrária (PRONERA)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2006",
+        "nome_politica": "Programa Nacional de Educação Sanitária em Defesa Agropecuária"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2021",
+        "nome_politica": "Programa Nacional de Enfrentamento da Violência contra Crianças e Adolescentes"
+    },
+    {
+        "area": "Trabalho e Emprego",
+        "ano": "2003",
+        "nome_politica": "Programa Nacional de Estímulo ao Primeiro Emprego para os Jovens (PNPE)"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2004",
+        "nome_politica": "Programa Nacional de Financiamento da Ampliação e Modernização da Frota Pesqueira Nacional (Profrota Pesqueira)"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "2000",
+        "nome_politica": "Programa Nacional de Florestas (PNF)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2008",
+        "nome_politica": "Programa Nacional de Fomento à Produção Pública e Inovação no Complexo Industrial da Saúde"
+    },
+    {
+        "area": "Trabalho e Emprego",
+        "ano": "2012",
+        "nome_politica": "Programa Nacional de Fomento às Cooperativas de Trabalho (PRONACOOP)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "1996",
+        "nome_politica": "Programa Nacional de Fortalecimento da Agricultura Familiar (PRONAF)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2020",
+        "nome_politica": "Programa Nacional de Genômica e Saúde de Precisão (Genomas Brasil)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2018",
+        "nome_politica": "Programa Nacional de Gestão de Custos"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "2005",
+        "nome_politica": "Programa Nacional de Gestão Pública e Desburocratização (GESPÚBLICA)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "1973",
+        "nome_politica": "Programa Nacional de Imunizações (PNI)"
+    },
+    {
+        "area": "Cultura",
+        "ano": "1992",
+        "nome_politica": "Programa Nacional de Incentivo à Leitura (PROLER)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2002",
+        "nome_politica": "Programa Nacional de Incentivo à Parceria entre os Hospitais Filantrópicos Sem Fins Lucrativos"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2019",
+        "nome_politica": "Programa Nacional de Incentivo ao Voluntariado"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2005",
+        "nome_politica": "Programa Nacional de Inclusão de Jovens (ProJovem)"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2010",
+        "nome_politica": "Programa Nacional de Incubadoras de Cooperativas Populares (PRONINC)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "1986",
+        "nome_politica": "Programa Nacional de Irrigação (PRONI)"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "1987",
+        "nome_politica": "Programa Nacional de Material Escolar"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2015",
+        "nome_politica": "Programa Nacional de Melhoria do Acesso e da Qualidade da Atenção Básica (PMAQ-AB)"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "1987",
+        "nome_politica": "Programa Nacional de Microbacias Hidrográficas"
+    },
+    {
+        "area": "Indústria e Comércio",
+        "ano": "2005",
+        "nome_politica": "Programa Nacional de Microcrédito Produtivo Orientado (PNMPO)"
+    },
+    {
+        "area": "Ciência e Tecnologia",
+        "ano": "2014",
+        "nome_politica": "Programa Nacional de Plataformas do Conhecimento "
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "1982",
+        "nome_politica": "Programa Nacional de Política Fundiária"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2003",
+        "nome_politica": "Programa Nacional de Prevenção e Controle da Malária (PNCM)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2005",
+        "nome_politica": "Programa Nacional de Prevenção e Controle dos Distúrbios por Deficiência de Iodo (DDI)"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2012",
+        "nome_politica": "Programa Nacional de Promoção do Acesso ao Mundo do Trabalho (ACESSUAS TRABALHO)"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "1998",
+        "nome_politica": "Programa Nacional de Publicização"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2012",
+        "nome_politica": "Programa Nacional de Qualidade em Mamografia (PNQM)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2012",
+        "nome_politica": "Programa Nacional de Qualificação da Assistência Farmacêutica (QUALIFAR/SUS)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2010",
+        "nome_politica": "Programa Nacional de Qualificação para a Doação de Órgãos e de Tecidos para Transplantes"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "1990",
+        "nome_politica": "Programa Nacional de Racionalização da Produção e do Uso de Energia"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2010",
+        "nome_politica": "Programa Nacional de Reestruturação dos Hospitais Universitários Federais (REHUF)"
+    },
+    {
+        "area": "Educação",
+        "ano": "2008",
+        "nome_politica": "Programa Nacional de Reestruturação e Aquisição de Equipamentos para a Rede Escolar Pública de Educação Infantil (Pro-Infância)"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2001",
+        "nome_politica": "Programa Nacional de Renda Mínima"
+    },
+    {
+        "area": "Segurança Alimentar",
+        "ano": "2001",
+        "nome_politica": "Programa Nacional de Renda Mínima vinculado à Saúde (Bolsa Alimentação)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2005",
+        "nome_politica": "Programa Nacional de Reorientação da Formação Profissional em Saúde (Pró-Saúde)"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2010",
+        "nome_politica": "Programa Nacional de Segurança da Aviação Civil Contra Atos de Interferência Ilícita (PNAVSEC)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2013",
+        "nome_politica": "Programa Nacional de Segurança do Paciente"
+    },
+    {
+        "area": "Justiça e Segurança Pública",
+        "ano": "2021",
+        "nome_politica": "Programa Nacional de Segurança nas Fronteiras e Divisas (VIGIA-Vigilância, Integração, Governança, Interoperabilidade e Autonomia)"
+    },
+    {
+        "area": "Justiça e Segurança Pública",
+        "ano": "2007",
+        "nome_politica": "Programa Nacional de Segurança Pública com Cidadania (PRONASCI)"
+    },
+    {
+        "area": "Turismo, Desporto e Lazer",
+        "ano": "2018",
+        "nome_politica": "Programa Nacional de Segurança Turística"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2014",
+        "nome_politica": "Programa Nacional de Suplementação de Ferro (PNSF)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2005",
+        "nome_politica": "Programa Nacional de Suplementação de Vitamina A"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2013",
+        "nome_politica": "Programa Nacional de Talassemias"
+    },
+    {
+        "area": "Habitação e Urbanismo",
+        "ano": "1991",
+        "nome_politica": "Programa Nacional de Tecnologia da Habitação (PRONATH)"
+    },
+    {
+        "area": "Educação",
+        "ano": "2007",
+        "nome_politica": "Programa Nacional de Tecnologia Educacional (ProInfo)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2003",
+        "nome_politica": "Programa Nacional de Territórios Rurais (PRONAT)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2001",
+        "nome_politica": "Programa Nacional de Triagem Neonatal"
+    },
+    {
+        "area": "Turismo, Desporto e Lazer",
+        "ano": "2020",
+        "nome_politica": "Programa Nacional de Turismo Gastronômico"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2011",
+        "nome_politica": "Programa Nacional de Universalização do Acesso e Uso da Água (ÁGUA PARA TODOS)"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2003",
+        "nome_politica": "Programa Nacional de Universalização do Acesso e Uso da Energia Elétrica (LUZ PARA TODOS)"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2020",
+        "nome_politica": "Programa Nacional de Universalização do Acesso e Uso da Energia Elétrica na Amazônia Legal (Mais Luz para a Amazônia)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2005",
+        "nome_politica": "Programa Nacional de Vigilância da Qualidade da Água para Consumo Humano (VIGIAGUA)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "1985",
+        "nome_politica": "Programa Nacional de Vigilância, Prevenção e Controle das IST e do HIV/AIDS"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2017",
+        "nome_politica": "Programa Nacional de Voluntariado"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "2019",
+        "nome_politica": "Programa Nacional de Zoneamento Agrícola de Risco Climático"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2018",
+        "nome_politica": "Programa Nacional de Levantamento e Interpretação de Solos (Pronasolos)"
+    },
+    {
+        "area": "Cultura",
+        "ano": "1992",
+        "nome_politica": "Programa Nacional destinado às Comemorações do Centenário de Nascimento do Escritor Graciliano Ramos"
+    },
+    {
+        "area": "Cultura",
+        "ano": "1988",
+        "nome_politica": "Programa Nacional do Centenário da República"
+    },
+    {
+        "area": "Segurança Alimentar",
+        "ano": "1986",
+        "nome_politica": "Programa Nacional do Leite para Crianças Carentes"
+    },
+    {
+        "area": "Educação",
+        "ano": "2017",
+        "nome_politica": "Programa Nacional do Livro e do Material Didático"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "1986",
+        "nome_politica": "Programa Nacional do Milho (PROMILHO)"
+    },
+    {
+        "area": "Cultura",
+        "ano": "2000",
+        "nome_politica": "Programa Nacional do Patrimônio Imaterial"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2003",
+        "nome_politica": "Programa Nacional para a Prevenção e o Controle das Hepatites Virais"
+    },
+    {
+        "area": "Relações Exteriores",
+        "ano": "2001",
+        "nome_politica": "Programa Nacional para Cooperação no Regresso de Crianças e Adolescentes Brasileiros Seqüestrados Internacionalmente"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2008",
+        "nome_politica": "Programa Nacional para Qualificação, Produção e Inovação em Equipamentos e Materiais de Uso em Saúde no Complexo Industrial da Saúde"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2011",
+        "nome_politica": "Programa Nacional Telessaúde Brasil Redes"
+    },
+    {
+        "area": "Educação",
+        "ano": "1985",
+        "nome_politica": "Programa Nova Universidade"
+    },
+    {
+        "area": "Educação",
+        "ano": "2019",
+        "nome_politica": "Programa Novos Caminhos"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2001",
+        "nome_politica": "Programa Núcleo de Apoio à Família (NAF)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2008",
+        "nome_politica": "Programa Organização Produtiva de Mulheres Rurais (POPMR)"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2020",
+        "nome_politica": "Programa para Aprimoramento das Licitações de Exploração e Produção de Petróleo e Gás Natural"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2012",
+        "nome_politica": "Programa para o Desenvolvimento do Complexo Industrial da Saúde (PROCIS)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2002",
+        "nome_politica": "Programa Permanente de Capacitação de Recursos Humanos da rede SUS para os Serviços de Atenção aos Pacientes com Transtornos causados pelo Uso Prejudicial e/ou Dependência de Álcool e Outras Drogas"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "2003",
+        "nome_politica": "Programa Permanente de Combate à Seca (PROSECA)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2000",
+        "nome_politica": "Programa Permanente de Organização e Acompanhamento das Ações Assistenciais em Saúde Mental"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2019",
+        "nome_politica": "Programa Pesquisa para o SUS: gestão compartilhada em saúde (PPSUS)"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "1992",
+        "nome_politica": "Programa Piloto para a Proteção das Florestas Tropicais do Brasil"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2000",
+        "nome_politica": "Programa Prioritário de Termeletricidade"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2010",
+        "nome_politica": "Programa Pró-Catador"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2021",
+        "nome_politica": "Programa Pró-Leitos"
+    },
+    {
+        "area": "Infraestrutura",
+        "ano": "2018",
+        "nome_politica": "Programa Rota 2030"
+    },
+    {
+        "area": "Desenvolvimento Regional",
+        "ano": "2014",
+        "nome_politica": "Programa Rotas de Integração Nacional"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2007",
+        "nome_politica": "Programa Saúde na Escola (PSE)"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2020",
+        "nome_politica": "Programa Saúde na Hora"
+    },
+    {
+        "area": "Trabalho e Emprego",
+        "ano": "2017",
+        "nome_politica": "Programa Seguro-Emprego (PSE)"
+    },
+    {
+        "area": "Ciência e Tecnologia",
+        "ano": "1999",
+        "nome_politica": "Programa Sociedade da Informação"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2012",
+        "nome_politica": "Programa SOS Emergências"
+    },
+    {
+        "area": "Ciência e Tecnologia",
+        "ano": "1967",
+        "nome_politica": "Programa Tecnológico Nacional"
+    },
+    {
+        "area": "Educação",
+        "ano": "2020",
+        "nome_politica": "Programa Tempo de Aprender"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2008",
+        "nome_politica": "Programa Territórios da Cidadania (PTC)"
+    },
+    {
+        "area": "Agropecuária e Agrária",
+        "ano": "2020",
+        "nome_politica": "Programa Titula Brasil"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "1987",
+        "nome_politica": "Programa Trienal de Aperfeiçoamento da Arrecadação das Receitas Federais"
+    },
+    {
+        "area": "Administração Pública",
+        "ano": "1987",
+        "nome_politica": "Programa Trienal de Aperfeiçoamento da Arrecadação das Receitas Tributárias do Distrito Federal"
+    },
+    {
+        "area": "Turismo, Desporto e Lazer",
+        "ano": "2012",
+        "nome_politica": "Programa Turismo Acessível "
+    },
+    {
+        "area": "Educação",
+        "ano": "2010",
+        "nome_politica": "Programa Um Computador por Aluno (PROUCA)"
+    },
+    {
+        "area": "Educação",
+        "ano": "2005",
+        "nome_politica": "Programa Universidade para Todos (PROUNI)"
+    },
+    {
+        "area": "Educação",
+        "ano": "2020",
+        "nome_politica": "Programa Universidades e Institutos Empreendedores e Inovadores (Future-se)"
+    },
+    {
+        "area": "Turismo, Desporto e Lazer",
+        "ano": "2013",
+        "nome_politica": "Programa Viaja Mais Melhor Idade"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2019",
+        "nome_politica": "Programa Viver - Envelhecimento Ativo e Saudável"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "1998",
+        "nome_politica": "Programa Voluntários"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2012",
+        "nome_politica": "Programa Mais Alimentos "
+    },
+    {
+        "area": "Turismo, Desporto e Lazer",
+        "ano": "2011",
+        "nome_politica": "Programas Atleta Pódio"
+    },
+    {
+        "area": "Educação",
+        "ano": "2010",
+        "nome_politica": "Programas de Material Didático"
+    },
+    {
+        "area": "Saúde",
+        "ano": "2005",
+        "nome_politica": "Programas de Residência Médica em Medicina de Família e Comunidade (PRM-MFC)"
+    },
+    {
+        "area": "Meio Ambiente",
+        "ano": "2008",
+        "nome_politica": "Programas de Segurança Ambiental denominados Guarda Ambiental Nacional e Corpo de Guarda-Parques"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2001",
+        "nome_politica": "Projeto Alvorada - Programa de Combate à Pobreza IDH-14"
+    },
+    {
+        "area": "Desenvolvimento Regional",
+        "ano": "2006",
+        "nome_politica": "Projeto de Integração do Rio São Francisco (PISF)"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2020",
+        "nome_politica": "Projeto Piloto Mães Unidas"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2020",
+        "nome_politica": "Projeto Piloto Mais Mulheres no Poder"
+    },
+    {
+        "area": "Direitos Humanos",
+        "ano": "2020",
+        "nome_politica": "Projeto-piloto Qualifica Mulher"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2008",
+        "nome_politica": "Projovem Adolescente - Serviço Socioeducativo"
+    },
+    {
+        "area": "Assistência Social",
+        "ano": "2004",
+        "nome_politica": "Renda Básica de Cidadania"
+    },
+    {
+        "area": "Ciência e Tecnologia",
+        "ano": "2012",
+        "nome_politica": "Sistema de Proteção ao Programa Nuclear Brasileiro (SIPRON)"
+    },
+    {
+        "area": "Habitação e Urbanismo",
+        "ano": "2005",
+        "nome_politica": "Sistema Nacional de Habitação de Interesse Social"
+    }
+]
