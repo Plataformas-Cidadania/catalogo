@@ -14,11 +14,13 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="box bg-sec">
-                    <i class="far fa-gem fa-4x m-5"></i>
-                    <h2>Linhas do tempo</h2>
-                    <p>Apesar de constituírem um elemento básico de organização da atuação governamental, de perpassarem cotidianamente o debate público</p>
-                </div>
+                <a href="timeline">
+                    <div class="box bg-sec">
+                        <i class="far fa-gem fa-4x m-5"></i>
+                        <h2>Linhas do tempo</h2>
+                        <p>Apesar de constituírem um elemento básico de organização da atuação governamental, de perpassarem cotidianamente o debate público</p>
+                    </div>
+                </a>
             </div>
             <div class="col-md-4">
                 <div class="box bg-ter">
@@ -31,7 +33,42 @@
     </div>
 
 
-    <MixedChart />
+    <br><br>
+    <div class="bg-lgt">
+        <MixedChart id='mix-chart1'  series="" labels=""/>
+    </div>
+
+
+
+    <div class="container-fluid">
+        <div class="p-3">&nbsp;</div>
+        <div class="dorder-container">
+            <div class="bg-lgt dorder-container-mai">
+                <div class="dorder-container-line">
+                    <h2>Áreas temáticas</h2>
+                    <div class="dorder-container-box bg-lgt"></div>
+                </div>
+            </div>
+        </div>
+        <div class="p-3">&nbsp;</div>
+    </div>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-3">
+                <div class="box-list-icon">
+                    <div class="box-list-icon-i"><i class="far fa-gem fa-3x"></i></div>
+                    <h2><strong>Infraestrutura</strong></h2>
+                    <p>Apesar de constituírem um elemento básico de organização da atuação governamental</p>
+                    <h3>Acessar</h3>
+                </div>
+                <br>
+            </div>
+
+
+        </div>
+    </div>
+    <br><br>
 
 
 

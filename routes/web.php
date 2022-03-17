@@ -95,3 +95,13 @@ if(env('DYNAMIC_ROUTES')){
 Route::get('/timeline', function () {
     return view('timeline.index');
 });
+
+
+Route::get('posts/{midia}', [PostController::class , 'post']);
+Route::get('posts/{midia_id}/{midia}', [PostController::class , 'post']);
+Route::get('post/{id}/{titulo}', [PostController::class , 'details']);
+
+Route::post('/list-posts', [PostController::class , 'getList']);
+Route::post('/categories', [PostController::class , 'categories']);
+Route::post('/members', [PostController::class , 'members']);
+Route::post('/archives', [PostController::class , 'archives']);

@@ -103,7 +103,12 @@
                 <li>
                     <a href="cms/setting"><i class="fa fa-fw fa-users"></i> Configurações</a>
                 </li>
-
+                <li>
+                    <a href="cms/midias"><i class="fa fa-fw fa-anchor"></i> Mídias</a>
+                </li>
+                <li>
+                    <a href="cms/integrantes"><i class="fa fa-fw fa-anchor"></i> Autores</a>
+                </li>
 
             </ul>
         </div>

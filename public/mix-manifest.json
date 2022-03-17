@@ -30,5 +30,13 @@
     "/assets-cms/js/controllers/alterarUrlCtrl.js": "/assets-cms/js/controllers/alterarUrlCtrl.js",
     "/assets-cms/js/controllers/alterarSettingCtrl.js": "/assets-cms/js/controllers/alterarSettingCtrl.js",
     "/assets-cms/js/controllers/parceiroCtrl.js": "/assets-cms/js/controllers/parceiroCtrl.js",
-    "/assets-cms/js/controllers/alterarParceiroCtrl.js": "/assets-cms/js/controllers/alterarParceiroCtrl.js"
+    "/assets-cms/js/controllers/alterarParceiroCtrl.js": "/assets-cms/js/controllers/alterarParceiroCtrl.js",
+    "/assets-cms/js/controllers/midiaCtrl.js": "/assets-cms/js/controllers/midiaCtrl.js",
+    "/assets-cms/js/controllers/alterarMidiaCtrl.js": "/assets-cms/js/controllers/alterarMidiaCtrl.js",
+    "/assets-cms/js/controllers/categoriaCtrl.js": "/assets-cms/js/controllers/categoriaCtrl.js",
+    "/assets-cms/js/controllers/alterarCategoriaCtrl.js": "/assets-cms/js/controllers/alterarCategoriaCtrl.js",
+    "/assets-cms/js/controllers/postCtrl.js": "/assets-cms/js/controllers/postCtrl.js",
+    "/assets-cms/js/controllers/alterarPostCtrl.js": "/assets-cms/js/controllers/alterarPostCtrl.js",
+    "/assets-cms/js/controllers/integranteCtrl.js": "/assets-cms/js/controllers/integranteCtrl.js",
+    "/assets-cms/js/controllers/alterarIntegranteCtrl.js": "/assets-cms/js/controllers/alterarIntegranteCtrl.js"
 }

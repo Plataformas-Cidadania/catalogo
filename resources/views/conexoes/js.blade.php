@@ -128,13 +128,10 @@
 
     <script src="js/home.js" ></script>
     <script src="js/conf-owl-carousel.js"></script>
-@endif
 
-
-@if($rota=="/")
-    <script src="https://cdn.jsdelivr.net/npm/prop-types@15.7.2/prop-types.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="https://cdn.jsdelivr.net/npm/react-apexcharts@1.3.6/dist/react-apexcharts.iife.min.js"></script>
+    <script src="js/apexcharts/prop-types.min.js"></script>
+    <script src="js/apexcharts/apexcharts.js"></script>
+    <script src="js/apexcharts/react-apexcharts.iife.min.js"></script>
     <script src="js/components/charts/mixedChart.js"></script>
 @endif
 
@@ -242,4 +239,13 @@
     <script src="js/components/timeline/index.js"></script>
 @endif
 
+@if($rota=="posts/{midia_id}/{midia}")
+    <script src="js/components/posts/search.js"></script>
+    <script src="js/components/posts/filterCategories.js"></script>
+    <script src="js/components/posts/filterMembers.js"></script>
+    <script src="js/components/posts/filterArchives.js"></script>
+    <script src="js/components/posts/filters.js"></script>
+    <script src="js/components/posts/list.js"></script>
+    <script src="js/utils.js"></script>
+@endif
 

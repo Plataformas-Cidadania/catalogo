@@ -122,4 +122,22 @@ mix.scripts('packages/cms/resources/assets/js/controllers/alterarSettingCtrl.js'
 mix.scripts('packages/cms/resources/assets/js/controllers/parceiroCtrl.js', 'public/assets-cms/js/controllers/parceiroCtrl.js');
 mix.scripts('packages/cms/resources/assets/js/controllers/alterarParceiroCtrl.js', 'public/assets-cms/js/controllers/alterarParceiroCtrl.js');
 
+
+//Midias
+mix.scripts('packages/cms/resources/assets/js/controllers/midiaCtrl.js', 'public/assets-cms/js/controllers/midiaCtrl.js');
+mix.scripts('packages/cms/resources/assets/js/controllers/alterarMidiaCtrl.js', 'public/assets-cms/js/controllers/alterarMidiaCtrl.js');
+
+//Categorias
+mix.scripts('packages/cms/resources/assets/js/controllers/categoriaCtrl.js', 'public/assets-cms/js/controllers/categoriaCtrl.js');
+mix.scripts('packages/cms/resources/assets/js/controllers/alterarCategoriaCtrl.js', 'public/assets-cms/js/controllers/alterarCategoriaCtrl.js');
+
+//Posts
+mix.scripts('packages/cms/resources/assets/js/controllers/postCtrl.js', 'public/assets-cms/js/controllers/postCtrl.js');
+mix.scripts('packages/cms/resources/assets/js/controllers/alterarPostCtrl.js', 'public/assets-cms/js/controllers/alterarPostCtrl.js');
+
+//Integrantes
+mix.scripts('packages/cms/resources/assets/js/controllers/integranteCtrl.js', 'public/assets-cms/js/controllers/integranteCtrl.js');
+mix.scripts('packages/cms/resources/assets/js/controllers/alterarIntegranteCtrl.js', 'public/assets-cms/js/controllers/alterarIntegranteCtrl.js');
+
+
 //FIM CMS///////////////////////////////////////////////////////////////////

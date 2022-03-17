@@ -58,12 +58,28 @@ const Timeline = () => {
         return newAreas;
     }
 
-    const addTimeline = (area) => {
+    const addRemoveTimeline = (area) => {
         let newTimelines = [...timelines];
+
+        //Testa se já foi inserido a timeline da área e então remove
+        if(newTimelines.find((item) => item.area === area)){
+            newTimelines = newTimelines.filter((item,) => item.area !== area);
+            setTimelines(newTimelines)
+            return;
+        }
+
+        //adiciona a timeline da área
         newTimelines.push({
             area: area,
             anos: areas[area]
         });
+        console.log(newTimelines);
+        setTimelines(newTimelines);
+    }
+
+    const removeTimeLine = (area) => {
+        let newTimelines = [...timelines];
+        newTimelines = newTimelines.filter((item,) => item.area !== area);
         console.log(newTimelines);
         setTimelines(newTimelines);
     }
@@ -77,20 +93,25 @@ const Timeline = () => {
         return arrayAnos;
     }
 
+
     return (
         <div className="container">
             <div className="row">
                 <div className="col-md-3">
+                    <h3>Áreas Temáticas</h3>
                     <ul className="menu-left">
                         {
-                            Object.entries(areas).map((item, key) => {
+                            Object.entries(areas).map((area, key) => {
                                 return (
                                     <li
                                         key={"area_"+key}
-                                        onClick={() => addTimeline(item[0])}
-                                        style={{cursor: 'pointer'}}
+                                        onClick={() => addRemoveTimeline(area[0])}
+                                        style={{
+                                            cursor: 'pointer',
+                                            backgroundColor: (timelines.find((item) => item.area === area[0]) ? "#f6f6f6" : "#fff")
+                                        }}
                                         className="list-group-item-theme">
-                                        <a>{item[0]}</a>
+                                        <a>{area[0]}</a>
                                     </li>
                                 );
                             })
@@ -98,50 +119,98 @@ const Timeline = () => {
                     </ul>
                 </div>
                 <div className="col-md-9">
-                    {
-                        timelines.map((item, key) => {
-                            return (
-                                <div key={item.area+"_timeline_"+key}>
-                                    <h3>{item.area}</h3>
-                                    <hr/>
-                                    <div className="timeline" id={'timeline'+key}>
-                                        <div className="timeline__wrap">
-                                            <div className="timeline__items">
-                                                {
-                                                    Object.entries(item.anos).map((subitem, key) => {
-                                                        const ano = subitem[0];
-                                                        const politicas = subitem[1];
-                                                        return (
-                                                            <div key={item.area+"_ano_"+key} className="timeline__item">
-                                                                <div className="timeline__content">
-                                                                    <h4 className={key % 2 === 0 ? 'timeline-ano' : 'timeline-ano-2'}>{ano}</h4>
-                                                                    <div style={{maxHeight: '100px', overflowY:'auto'}}>
-                                                                        <ul className="timeline-ul">
-                                                                        {
-                                                                            politicas.map((politica, key) => {
-                                                                                return (
-                                                                                    <li key={item.area+"_politica_"+key}>
-                                                                                        {politica.nome_politica}
-                                                                                        <hr/>
-                                                                                    </li>
-                                                                                );
-                                                                            })
-                                                                        }
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        )
-                                                    })
+                    <div className="row">
+                        <div className="col-12">
+                            {
+                                timelines.length > 0 ? (
+                                    <div style={{padding: '10px', backgroundColor: '#f6f6f6'}}>
+                                        <strong>Áreas Selecionadas: </strong><br/>
+                                        {
+                                            Object.entries(areas).map((area, key) => {
+                                                if(timelines.find((item) => item.area === area[0])){
+                                                    return (
+                                                        <button
+                                                            key={"filtro"+key}
+                                                            className="btn btn-sm btn-default"
+                                                            style={{color: "#575757", border: "0", margin: "3px"}}
+                                                            onClick={() => removeTimeLine(area[0])}
+                                                        >
+                                                            <i className="fa fa-times"/>&nbsp;{area[0]}
+                                                        </button>
+                                                    );
                                                 }
-                                            </div>
-                                        </div>
+                                            })
+                                        }
                                     </div>
-                                    <br/><br/>
-                                </div>
-                            );
-                        })
-                    }
+                                ) : null
+                            }
+                            <br/>
+                        </div>
+                        <div className="col-12">
+                            {
+                                timelines.map((item, key) => {
+                                    return (
+                                        <div key={item.area+"_timeline_"+key}>
+                                            <h3>
+                                                <div className="row">
+                                                    <div className="col-md-11">{item.area}</div>
+                                                    <div
+                                                        className="col-md-1"
+                                                        onClick={() => removeTimeLine(item.area)}
+                                                        style={{cursor: "pointer", textAlign: "right"}}
+                                                    >
+                                                        <i className="fa fa-times"/>
+                                                    </div>
+                                                </div>
+                                            </h3>
+                                            <hr/>
+                                            <div className="timeline" id={'timeline'+key}>
+                                                <div className="timeline__wrap" style={{minHeight: '300px'}}>
+                                                    <div className="timeline__items">
+                                                        {
+                                                            Object.entries(item.anos).map((subitem, key) => {
+                                                                const ano = subitem[0];
+                                                                const politicas = subitem[1];
+                                                                return (
+                                                                    <div key={item.area+"_ano_"+key} className="timeline__item">
+                                                                        <div className="timeline__content">
+                                                                            <h4 className={key % 2 === 0 ? 'timeline-ano' : 'timeline-ano-2'}>{ano}</h4>
+                                                                            <div style={{maxHeight: '100px', overflowY:'auto'}}>
+                                                                                <ul className="timeline-ul">
+                                                                            <span
+                                                                                className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-pri"
+                                                                                style={{marginTop: '9px'}}>
+                                                                                {politicas.length}
+                                                                            </span>
+
+                                                                                    {
+                                                                                        politicas.map((politica, key) => {
+                                                                                            return (
+                                                                                                <li key={item.area+"_politica_"+key}>
+                                                                                                    {politica.nome_politica}
+                                                                                                    <hr style={{display: politicas.length-1 === key ? 'none' : ''}}/>
+                                                                                                </li>
+                                                                                            );
+                                                                                        })
+                                                                                    }
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                )
+                                                            })
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br/><br/>
+                                        </div>
+                                    );
+                                })
+                            }
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
