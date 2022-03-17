@@ -216,17 +216,7 @@ class MembersFilter extends React.Component {
         className: "fas fa-times"
       }));
     }.bind(this));
-    return /*#__PURE__*/React.createElement("div", null, membersSelected, /*#__PURE__*/React.createElement("div", {
-      className: "input-icon filter-input-icon"
-    }, /*#__PURE__*/React.createElement("input", {
-      type: "text",
-      name: "titleMember",
-      className: "filter-search",
-      onClick: this.clickSearch,
-      onChange: this.handleSearch
-    }), /*#__PURE__*/React.createElement("i", {
-      className: "fas fa-search"
-    })), firstMembers, otherMembers, /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", null, membersSelected, firstMembers, otherMembers, /*#__PURE__*/React.createElement("div", {
       style: {
         display: qtdItems - showQtdItems > 0 ? '' : 'none'
       }

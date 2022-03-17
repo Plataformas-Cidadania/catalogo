@@ -205,17 +205,7 @@ class CategoriesFilter extends React.Component {
         className: "fas fa-times"
       }));
     }.bind(this));
-    return /*#__PURE__*/React.createElement("div", null, categoriesSelected, /*#__PURE__*/React.createElement("div", {
-      className: "input-icon filter-input-icon"
-    }, /*#__PURE__*/React.createElement("input", {
-      type: "text",
-      name: "titleCategory",
-      className: "filter-search",
-      onClick: this.clickSearch,
-      onChange: this.handleSearch
-    }), /*#__PURE__*/React.createElement("i", {
-      className: "fas fa-search"
-    })), /*#__PURE__*/React.createElement("ul", {
+    return /*#__PURE__*/React.createElement("div", null, categoriesSelected, /*#__PURE__*/React.createElement("ul", {
       className: "list-group"
     }, firstCategories, otherCategories), /*#__PURE__*/React.createElement("div", {
       style: {

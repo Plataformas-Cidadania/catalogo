@@ -252,8 +252,6 @@ class List extends React.Component {
       onChange: this.changeOrder,
       value: this.state.order + '-' + this.state.directionOrder
     }, /*#__PURE__*/React.createElement("option", {
-      value: "titulo-asc"
-    }, "Nome"), /*#__PURE__*/React.createElement("option", {
       value: "id-desc"
     }, "Mais Recente"), /*#__PURE__*/React.createElement("option", {
       value: "id-asc"

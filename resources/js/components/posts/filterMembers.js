@@ -198,10 +198,10 @@ class MembersFilter extends React.Component{
         return(
             <div>
                 {membersSelected}
-                <div className="input-icon filter-input-icon">
+                {/*<div className="input-icon filter-input-icon">
                     <input type="text" name="titleMember" className="filter-search" onClick={this.clickSearch} onChange={this.handleSearch}/>
                     <i className="fas fa-search"/>
-                </div>
+                </div>*/}
                 {/*{members}*/}
                 {firstMembers}
                 {otherMembers}

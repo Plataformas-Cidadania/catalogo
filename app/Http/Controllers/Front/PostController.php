@@ -119,6 +119,15 @@ class PostController extends Controller{
 
     public function getList(Request $request){
 
+        Log::info('///////////////////////////');
+        Log::info('cms.posts.'.$request->order);
+        Log::info($request->order);
+        Log::info($request->directionOrder);
+        Log::info('///////////////////////////');
+
+
+        $columnsOby = 'cms.posts.'.$request->order;
+
         $search = '';
         if (is_array($request->filters) && array_key_exists('search', $request->filters)) {
             $search = $request->filters['search'];
@@ -172,7 +181,7 @@ class PostController extends Controller{
             })
             ->where('cms.posts.titulo', 'ilike', '%'.$search.'%')
             ->where('cms.midias.id', $request->midia_id)
-            ->orderby('cms.posts.'.$request->order, $request->directionOrder)
+            ->orderby($columnsOby, $request->directionOrder)
             ->distinct('cms.posts.id')
             ->take($request->qtdItemsLoad)
             ->get();
