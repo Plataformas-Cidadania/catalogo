@@ -121,19 +121,7 @@
 </script>
 
 
-@if($rota=='/')
-    <script>
-        app_url = "{{env('APP_URL')}}";
-    </script>
 
-    <script src="js/home.js" ></script>
-    <script src="js/conf-owl-carousel.js"></script>
-
-    <script src="js/apexcharts/prop-types.min.js"></script>
-    <script src="js/apexcharts/apexcharts.js"></script>
-    <script src="js/apexcharts/react-apexcharts.iife.min.js"></script>
-    <script src="js/components/charts/mixedChart.js"></script>
-@endif
 
 <script>
     $(document).ready(function(){
@@ -226,6 +214,26 @@
 </script>
 
 <!--///////////////////////////////REACT////////////////////////////-->
+@if($rota=='/')
+    <script>
+        app_url = "{{env('APP_URL')}}";
+    </script>
+
+    <script src="js/home.js" ></script>
+    <script src="js/conf-owl-carousel.js"></script>
+
+
+    <script src="js/apexcharts/prop-types.min.js"></script>
+    <script src="js/apexcharts/apexcharts.js"></script>
+    <script src="js/apexcharts/react-apexcharts.iife.min.js"></script>
+
+    <script src="js/components/charts/mixedChart.js"></script>
+    <script src="js/components/home/index.js" ></script>
+
+
+
+
+@endif
 @if($rota=="contato")
     <script src="js/components/forms/contact.js"></script>
     <script src="js/utils.js"></script>

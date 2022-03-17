@@ -32,11 +32,9 @@
         </div>
     </div>
 
+    <div id="home">&nbsp;</div>
 
-    <br><br>
-    <div class="bg-lgt">
-        <MixedChart id='mix-chart1'  series="" labels=""/>
-    </div>
+
 
 
 
