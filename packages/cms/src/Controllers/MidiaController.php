@@ -53,7 +53,7 @@ class MidiaController extends Controller
 
         $campos = explode(", ", $request->campos);
 
-        $midias = DB::table('midias')
+        $midias = DB::table('cms.midias')
             ->select($campos)
             ->where([
                 [$request->campoPesquisa, 'ilike', "%$request->dadoPesquisa%"],
@@ -266,9 +266,9 @@ class MidiaController extends Controller
     }
     public function status($id)
     {
-        $midia_atual = DB::table('midias')->where('id', $id)->first();
+        $midia_atual = DB::table('cms.midias')->where('id', $id)->first();
         $status = $midia_atual->status == 0 ? 1 : 0;
-        DB::table('midias')->where('id', $id)->update(['status' => $status]);
+        DB::table('cms.midias')->where('id', $id)->update(['status' => $status]);
 
     }
 

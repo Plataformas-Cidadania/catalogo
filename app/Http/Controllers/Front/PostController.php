@@ -1,14 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Front;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+use App\Http\Requests;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Mockery\Exception;
+use Illuminate\Support\Facades\Route;
 
-class PostController extends Controller
-{
+class PostController extends Controller{
 
 
     public function post($midia_id=0){
@@ -16,19 +19,19 @@ class PostController extends Controller
     }
 
     public function details($id, $titulo = null){
-        $detail = \App\Post::find($id);
+        $detail = \App\Models\Post::find($id);
 
-        $lasts = \App\Post::
+        $lasts = \App\Models\Post::
         where('id', '!=', $detail->id)
             ->orderBy('id', 'desc')
             ->take(4)
             ->get();
 
-        $members = \App\Integrante::where('conteudo', 1)
-            ->select('integrantes.titulo', 'integrantes.imagem')
-            ->join('integrantes_posts', 'integrantes_posts.integrante_id', 'integrantes.id')
-            ->join('posts', 'integrantes_posts.post_id', 'posts.id')
-            ->where('posts.id', $id)
+        $members = \App\Models\Integrante::where('conteudo', 1)
+            ->select('cms.integrantes.titulo', 'cms.integrantes.imagem')
+            ->join('cms.integrantes_posts', 'cms.integrantes_posts.integrante_id', 'cms.integrantes.id')
+            ->join('cms.posts', 'cms.integrantes_posts.post_id', 'cms.posts.id')
+            ->where('cms.posts.id', $id)
             ->get();
 
         return view('post.detail', [
@@ -50,17 +53,17 @@ class PostController extends Controller
 
     public function categories(Request $request){
 
-        $categories = \App\Categoria::select(
+        $categories = \App\Models\Categoria::select(
             DB::Raw("
-                categorias.id,
-                categorias.titulo,
-                count(categorias.id) as qtd
+                cms.categorias.id,
+                cms.categorias.titulo,
+                count(cms.categorias.id) as qtd
             "))
-            ->join('midias', 'midias.id', '=', 'categorias.midia_id')
-            ->join('posts', 'categorias.id', '=', 'posts.categoria_id')
-            ->where('posts.titulo', 'ilike', $request->search.'%')
-            ->where('midias.id', $request->midia_id)
-            ->groupBy('categorias.id', 'categorias.titulo')
+            ->join('cms.midias', 'cms.midias.id', '=', 'cms.categorias.midia_id')
+            ->join('cms.posts', 'cms.categorias.id', '=', 'cms.posts.categoria_id')
+            ->where('cms.posts.titulo', 'ilike', $request->search.'%')
+            ->where('cms.midias.id', $request->midia_id)
+            ->groupBy('cms.categorias.id', 'cms.categorias.titulo')
             ->distinct()
             ->get();
 
@@ -69,25 +72,25 @@ class PostController extends Controller
 
     public function members(Request $request){
 
-        $members = \App\Integrante::
+        $members = \App\Models\Integrante::
             select(
             DB::Raw("
-                integrantes.id,
-                integrantes.titulo,
-                count(integrantes.id) as qtd,
-                max(integrantes.imagem) as imagem
+                cms.integrantes.id,
+                cms.integrantes.titulo,
+                count(cms.integrantes.id) as qtd,
+                max(cms.integrantes.imagem) as imagem
             ")
         )
-            ->join('integrantes_posts', 'integrantes_posts.integrante_id', 'integrantes.id')
-            ->join('posts', 'integrantes_posts.post_id', 'posts.id')
-            ->join('categorias', 'posts.categoria_id', 'categorias.id')
-            ->join('midias', 'categorias.midia_id', 'midias.id')
+            ->join('cms.integrantes_posts', 'cms.integrantes_posts.integrante_id', 'cms.integrantes.id')
+            ->join('cms.posts', 'cms.integrantes_posts.post_id', 'cms.posts.id')
+            ->join('cms.categorias', 'cms.posts.categoria_id', 'cms.categorias.id')
+            ->join('cms.midias', 'cms.categorias.midia_id', 'cms.midias.id')
             ->where([
-                ['integrantes.titulo', 'ilike', $request->search.'%'],
-                ['integrantes.conteudo', 1]
+                ['cms.integrantes.titulo', 'ilike', $request->search.'%'],
+                ['cms.integrantes.conteudo', 1]
             ])
-            ->where('midias.id', $request->midia_id)
-            ->groupBy('integrantes.id', 'integrantes.titulo', 'midias.id', 'categorias.id')
+            ->where('cms.midias.id', $request->midia_id)
+            ->groupBy('cms.integrantes.id', 'cms.integrantes.titulo', 'cms.midias.id', 'cms.categorias.id')
             ->get();
 
 
@@ -96,7 +99,7 @@ class PostController extends Controller
 
     public function archives(Request $request){
 
-        $archives = \App\Post::
+        $archives = \App\Models\Post::
             select(
                 DB::Raw("
                 to_char(posts.data, 'YYYY-MM') as date_menu,
@@ -104,8 +107,8 @@ class PostController extends Controller
                 to_char(posts.data, 'TMMonth') as month,
                 to_char(posts.data, 'YYYY') as year
                 "))
-            ->join('categorias', 'posts.categoria_id', 'categorias.id')
-            ->where('categorias.midia_id', $request->midia_id)
+            ->join('cms.categorias', 'cms.posts.categoria_id', 'cms.categorias.id')
+            ->where('cms.categorias.midia_id', $request->midia_id)
             ->groupBy('date_menu', 'month', 'year')
             ->orderby('date_menu', 'desc')
             ->distinct('date_menu')
@@ -136,7 +139,7 @@ class PostController extends Controller
             $archives = $request->filters['archives'];
         }
 
-        $total = \App\Post::select('*')
+        $total = \App\Models\Post::select('*')
             ->when(count($categories) > 0, function($query) use ($categories){
                 return $query->whereIn('categoria_id', $categories);
             })
@@ -144,20 +147,20 @@ class PostController extends Controller
 
         $total = count($total);
 
-        $result = \App\Post::select(
+        $result = \App\Models\Post::select(
                 DB::Raw("
-                posts.*,
-                to_char(posts.data, 'HH12:MI:SS') as hour,
-                to_char(posts.data, 'DD') as date,
-                to_char(posts.data, 'TMMonth') as month,
-                to_char(posts.data, 'YYYY') as year,
-                posts.titulo,
-                posts.resumida,
-                posts.descricao
+                cms.posts.*,
+                to_char(cms.posts.data, 'HH12:MI:SS') as hour,
+                to_char(cms.posts.data, 'DD') as date,
+                to_char(cms.posts.data, 'TMMonth') as month,
+                to_char(cms.posts.data, 'YYYY') as year,
+                cms.posts.titulo,
+                cms.posts.resumida,
+                cms.posts.descricao
                 ")
             )
-            ->join('categorias', 'categorias.id', 'posts.categoria_id')
-            ->join('midias', 'midias.id', 'categorias.midia_id')
+            ->join('cms.categorias', 'cms.categorias.id', 'cms.posts.categoria_id')
+            ->join('cms.midias', 'cms.midias.id', 'cms.categorias.midia_id')
             ->when(count($categories) > 0, function($query) use ($categories){
                 return $query->whereIn('categoria_id', $categories);
             })
@@ -165,13 +168,12 @@ class PostController extends Controller
                 return $query->whereIn('member_id', $members);
             })
             ->when(count($archives) > 0, function($query) use ($archives){
-                return $query->whereIn(DB::Raw("to_char(posts.date, 'YYYY-MM')"), $archives);
+                return $query->whereIn(DB::Raw("to_char(cms.posts.date, 'YYYY-MM')"), $archives);
             })
-            ->where('posts.titulo', 'ilike', '%'.$search.'%')
-            ->where('posts.titulo', 'ilike', '%'.$search.'%')
-            ->where('midias.id', $request->midia_id)
-            ->orderby($request->order, $request->directionOrder)
-            ->distinct('posts.id')
+            ->where('cms.posts.titulo', 'ilike', '%'.$search.'%')
+            ->where('cms.midias.id', $request->midia_id)
+            ->orderby('cms.posts.'.$request->order, $request->directionOrder)
+            ->distinct('cms.posts.id')
             ->take($request->qtdItemsLoad)
             ->get();
 
@@ -181,14 +183,15 @@ class PostController extends Controller
 
 
         foreach($ads['data'] as $index => $ad){
-            $categories = DB::table('categorias')
-                ->select('categorias.*')
-                ->join('midias', 'midias.id', 'categorias.midia_id')
-                ->where('categorias.id', $ad->id)
+            $categories = DB::table('cms.categorias')
+                ->select('cms.categorias.*')
+                ->join('cms.midias', 'cms.midias.id', 'cms.categorias.midia_id')
+                ->where('cms.categorias.id', $ad->id)
                 ->get();
             $ads['data'][$index]->categories = $categories;
         }
 
+        Log::info($ads);
 
         return $ads;
     }

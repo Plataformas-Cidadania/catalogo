@@ -18,7 +18,7 @@ class PostController extends Controller
 
     public function __construct()
     {
-        $this->post = new \App\Post;
+        $this->post = new \App\Models\Post;
         $this->campos = [
             'imagem', 'titulo', 'resumida', 'descricao', 'arquivo', 'data', 'cmsuser_id'
         ];
@@ -37,10 +37,10 @@ class PostController extends Controller
     function index($categoria_id)
     {
 
-        $categoria = \App\Categoria::where('id', $categoria_id)->first();
-        $posts = \App\Post::all();
-        $authors = \App\Integrante::where('conteudo', 1)->pluck('titulo', 'id')->all();
-        //$idiomas = \App\Idioma::lists('titulo', 'id')->all();
+        $categoria = \App\Models\Categoria::where('id', $categoria_id)->first();
+        $posts = \App\Models\Post::all();
+        $authors = \App\Models\Integrante::where('conteudo', 1)->pluck('titulo', 'id')->all();
+        //$idiomas = \App\Models\Idioma::lists('titulo', 'id')->all();
 
 
         return view('cms::post.listar', ['posts' => $posts, 'categoria_id' => $categoria->id, 'authors' => $authors]);
@@ -56,7 +56,7 @@ class PostController extends Controller
 
         $campos = explode(", ", $request->campos);
 
-        $posts = DB::table('posts')
+        $posts = DB::table('cms.posts')
             ->select($campos)
             ->where([
                 [$request->campoPesquisa, 'ilike', "%$request->dadoPesquisa%"],
@@ -110,7 +110,7 @@ class PostController extends Controller
         if($successFile && $successArquivo){
             $insert =  $this->post->create($data['post']);
             /////////////////////////
-            $authorArtigo = new \App\IntegrantePost;
+            $authorArtigo = new \App\Models\IntegrantePost;
             $dadosAuthorArtigo = Array();
             $dadosAuthorArtigo['post_id'] = $insert->id;
 
@@ -137,8 +137,8 @@ class PostController extends Controller
 
     public function detalhar($id)
     {
-        $categorias = \App\Categoria::pluck('titulo', 'id')->all();
-        $authors = \App\Integrante::where('conteudo', 1)->pluck('titulo', 'id')->all();
+        $categorias = \App\Models\Categoria::pluck('titulo', 'id')->all();
+        $authors = \App\Models\Integrante::where('conteudo', 1)->pluck('titulo', 'id')->all();
         $post = $this->post->where([
             ['id', '=', $id],
         ])->firstOrFail();
@@ -212,8 +212,8 @@ class PostController extends Controller
         }
 
         //////////////////////
-        $authorArtigo = new \App\IntegrantePost();
-        DB::table('integrantes_posts')->where('post_id', $id)->delete();
+        $authorArtigo = new \App\Models\IntegrantePost();
+        DB::table('cms.integrantes_posts')->where('post_id', $id)->delete();
         $dadosAuthorArtigo = Array();
         $dadosAuthorArtigo['post_id'] = $id;
 
@@ -270,17 +270,17 @@ class PostController extends Controller
 
     public function status($id)
     {
-        $tipo_atual = DB::table('posts')->where('id', $id)->first();
+        $tipo_atual = DB::table('cms.posts')->where('id', $id)->first();
         $status = $tipo_atual->status == 0 ? 1 : 0;
-        DB::table('posts')->where('id', $id)->update(['status' => $status]);
+        DB::table('cms.posts')->where('id', $id)->update(['status' => $status]);
 
     }
 
     public function destaque($id)
     {
-        $tipo_atual = DB::table('posts')->where('id', $id)->first();
+        $tipo_atual = DB::table('cms.posts')->where('id', $id)->first();
         $destaque = $tipo_atual->destaque == 0 ? 1 : 0;
-        DB::table('posts')->where('id', $id)->update(['destaque' => $destaque]);
+        DB::table('cms.posts')->where('id', $id)->update(['destaque' => $destaque]);
 
     }
 

@@ -13,7 +13,7 @@
                     <header>
                         <br>
                         <h1 data-message="{{$detail->titulo}}" tabindex="0">{{$detail->titulo}}</h1>
-                        <h5><a href="/">Home</a> / <a href="artigos">Artigos</a> / {{str_limit(strip_tags($detail->titulo), 25)."..."}}</h5>
+                        <h5><a href="/">Home</a> / <a href="artigos">Artigos</a> </h5>
                         <br>
                     </header>
                 </div>

@@ -5,7 +5,7 @@
 @section('image', '')
 @section('content')
 
-    <?php $midia = DB::table('midias')->where('id', $midia_id)->first();?>
+    <?php $midia = DB::table('cms.midias')->where('id', $midia_id)->first();?>
 
     <script>
             filtros = null;
@@ -65,6 +65,16 @@
         background-color: inherit;
         border: 0;
         width: 140px;
+    }
+
+    .form-control-light {
+        background-color: inherit;
+        border: 0;
+        width: 140px;
+        margin-top: 10px;
+    }
+    .float-right {
+        float: right !important;
     }
 </style>
 

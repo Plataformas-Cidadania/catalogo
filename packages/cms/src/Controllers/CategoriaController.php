@@ -18,7 +18,7 @@ class CategoriaController extends Controller
 
     public function __construct()
     {
-        $this->categoria = new \App\Categoria;
+        $this->categoria = new \App\Models\Categoria;
         $this->campos = [
             'imagem', 'titulo', 'origin', 'cmsuser_id',
         ];
@@ -34,8 +34,8 @@ class CategoriaController extends Controller
 
     function index($midia_id)
     {
-        $midia = \App\Midia::where('id', $midia_id)->first();
-        $categorias = \App\Categoria::all();
+        $midia = \App\Models\Midia::where('id', $midia_id)->first();
+        $categorias = \App\Models\Categoria::all();
 
 
         return view('cms::categoria.listar', ['midia_id' => $midia->id, 'categorias' => $categorias]);
@@ -46,7 +46,7 @@ class CategoriaController extends Controller
 
         $campos = explode(", ", $request->campos);
 
-        $categorias = DB::table('categorias')
+        $categorias = DB::table('cms.categorias')
             ->select($campos)
             ->where([
                 [$request->campoPesquisa, 'like', "%$request->dadoPesquisa%"],

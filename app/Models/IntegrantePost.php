@@ -1,13 +1,13 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class IntegrantePost extends Model
 {
 
-    protected $table = 'integrantes_posts';
+    protected $table = 'cms.integrantes_posts';
     protected $primaryKey = 'integrante_id';
 
     protected $fillable = [

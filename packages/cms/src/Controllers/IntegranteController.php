@@ -18,7 +18,7 @@ class IntegranteController extends Controller
 
     public function __construct()
     {
-        $this->integrante = new \App\Integrante;
+        $this->integrante = new \App\Models\Integrante;
         $this->campos = [
             'imagem', 'titulo', 'url', 'arquivo', 'conteudo', 'cmsuser_id',
         ];
@@ -37,7 +37,7 @@ class IntegranteController extends Controller
     function index()
     {
 
-        $integrantes = \App\Integrante::all();
+        $integrantes = \App\Models\Integrante::all();
         //$idiomas = \App\Idioma::lists('titulo', 'id')->all();
 
 
@@ -54,7 +54,7 @@ class IntegranteController extends Controller
 
         $campos = explode(", ", $request->campos);
 
-        $integrantes = DB::table('integrantes')
+        $integrantes = DB::table('cms.integrantes')
             ->select($campos)
             ->where([
                 [$request->campoPesquisa, 'ilike', "%$request->dadoPesquisa%"],
@@ -82,7 +82,7 @@ class IntegranteController extends Controller
         $file = $request->file('file');
         $arquivo = $request->file('arquivo');
 
-	Log::info($request);
+
 
         $successFile = true;
         if($file!=null){
