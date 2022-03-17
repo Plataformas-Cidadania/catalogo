@@ -13781,6 +13781,49 @@ textarea {
   color: #FFFFFF;
 }
 
+.box-list-icon {
+  cursor: pointer;
+  border: solid 2px #00AFA4;
+  padding: 15px;
+  transition: 0.5s;
+}
+
+.box-list-icon-i {
+  background-color: #00AFA4;
+  float: left;
+  margin-bottom: 15px;
+}
+
+.box-list-icon svg {
+  float: left;
+  color: #FFFFFF;
+  padding: 2px;
+  margin: 5px;
+}
+
+.box-list-icon h3, .box-list-icon .h3 {
+  color: #FFFFFF;
+  float: right;
+  font-size: 12px;
+  position: relative;
+  margin-top: -15px;
+}
+
+.box-list-icon h2, .box-list-icon .h2 {
+  clear: both;
+  font-size: 16px;
+}
+
+.box-list-icon p {
+  clear: both;
+  min-height: 130px;
+}
+
+.box-list-icon:hover {
+  background-color: #00AFA4;
+  color: #FFFFFF;
+}
+
 #chart {
   max-width: 100%;
   margin: 35px auto;

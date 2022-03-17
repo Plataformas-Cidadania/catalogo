@@ -194,7 +194,7 @@ class ModulosSeeder extends Seeder
             'arquivo' => '',
             'titulo' => 'Contato',
             'descricao' => '',
-            'slug' => 'contato',
+            'slug' => 'contato-list',
             'status' => 1,
             'show' => 0,
             'tipo_id' => 2,

@@ -22,9 +22,13 @@ class ModuloController extends Controller{
     }
 
     public function details(){
-        //return "teste";
+
 
         $rota = Route::getCurrentRoute()->uri();
+        if($rota=="contato-list"){
+            header('Location: contato');
+        }
+
 
         $modulo = $this->obj->where('slug', $rota)->first();
 
