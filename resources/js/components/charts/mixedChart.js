@@ -96,11 +96,11 @@ class MixedChart extends React.Component {
                     }
                 }
             },
-            series: [{
+            /*series: [{
                 name: 'series1',
                 data: [31, 40, 28, 51, 42, 109, 100]
-            }]
-            /*series: props.series,*/
+            }]*/
+            series: props.series,
         };
 
     }
