@@ -107,7 +107,10 @@ const Timeline = () => {
       className: "timeline",
       id: 'timeline' + key
     }, /*#__PURE__*/React.createElement("div", {
-      className: "timeline__wrap"
+      className: "timeline__wrap",
+      style: {
+        minHeight: '300px'
+      }
     }, /*#__PURE__*/React.createElement("div", {
       className: "timeline__items"
     }, Object.entries(item.anos).map((subitem, key) => {
@@ -127,10 +130,19 @@ const Timeline = () => {
         }
       }, /*#__PURE__*/React.createElement("ul", {
         className: "timeline-ul"
-      }, politicas.map((politica, key) => {
+      }, /*#__PURE__*/React.createElement("span", {
+        className: "position-absolute top-0 start-100 translate-middle badge rounded-pill bg-pri",
+        style: {
+          marginTop: '9px'
+        }
+      }, politicas.length), politicas.map((politica, key) => {
         return /*#__PURE__*/React.createElement("li", {
           key: item.area + "_politica_" + key
-        }, politica.nome_politica, /*#__PURE__*/React.createElement("hr", null));
+        }, politica.nome_politica, /*#__PURE__*/React.createElement("hr", {
+          style: {
+            display: politicas.length - 1 === key ? 'none' : ''
+          }
+        }));
       })))));
     })))), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null));
   }))));

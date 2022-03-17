@@ -95,3 +95,7 @@ if(env('DYNAMIC_ROUTES')){
 Route::get('/timeline', function () {
     return view('timeline.index');
 });
+
+Route::get('posts/{midia}', 'PostController@post');
+Route::get('posts/{midia_id}/{midia}', 'PostController@post');
+Route::get('post/{id}/{titulo}', 'PostController@details');

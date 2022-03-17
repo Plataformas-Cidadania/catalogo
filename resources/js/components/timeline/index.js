@@ -105,7 +105,7 @@ const Timeline = () => {
                                     <h3>{item.area}</h3>
                                     <hr/>
                                     <div className="timeline" id={'timeline'+key}>
-                                        <div className="timeline__wrap">
+                                        <div className="timeline__wrap" style={{minHeight: '300px'}}>
                                             <div className="timeline__items">
                                                 {
                                                     Object.entries(item.anos).map((subitem, key) => {
@@ -117,12 +117,18 @@ const Timeline = () => {
                                                                     <h4 className={key % 2 === 0 ? 'timeline-ano' : 'timeline-ano-2'}>{ano}</h4>
                                                                     <div style={{maxHeight: '100px', overflowY:'auto'}}>
                                                                         <ul className="timeline-ul">
+                                                                            <span
+                                                                                className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-pri"
+                                                                                style={{marginTop: '9px'}}>
+                                                                                {politicas.length}
+                                                                            </span>
+
                                                                         {
                                                                             politicas.map((politica, key) => {
                                                                                 return (
                                                                                     <li key={item.area+"_politica_"+key}>
                                                                                         {politica.nome_politica}
-                                                                                        <hr/>
+                                                                                        <hr style={{display: politicas.length-1 === key ? 'none' : ''}}/>
                                                                                     </li>
                                                                                 );
                                                                             })
