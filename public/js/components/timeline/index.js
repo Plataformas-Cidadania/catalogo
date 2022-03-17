@@ -119,6 +119,17 @@ const Timeline = () => {
   }, /*#__PURE__*/React.createElement("div", {
     className: "row"
   }, /*#__PURE__*/React.createElement("div", {
+    className: "col-12",
+    style: {
+      display: timelines.length > 0 ? 'none' : ''
+    }
+  }, /*#__PURE__*/React.createElement("h3", {
+    className: "text-center",
+    style: {
+      backgroundColor: '#f6f6f6',
+      padding: '30px'
+    }
+  }, "Selecione uma \xC1rea Tem\xE1tica para adicionar a linha do tempo")), /*#__PURE__*/React.createElement("div", {
     className: "col-12"
   }, timelines.length > 0 ? /*#__PURE__*/React.createElement("div", {
     style: {

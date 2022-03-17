@@ -120,6 +120,9 @@ const Timeline = () => {
                 </div>
                 <div className="col-md-9">
                     <div className="row">
+                        <div className="col-12" style={{display: (timelines.length > 0 ? 'none' : '')}}>
+                            <h3 className="text-center" style={{backgroundColor: '#f6f6f6', padding: '30px'}}>Selecione uma Área Temática para adicionar a linha do tempo</h3>
+                        </div>
                         <div className="col-12">
                             {
                                 timelines.length > 0 ? (
