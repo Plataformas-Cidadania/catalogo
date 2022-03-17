@@ -60,12 +60,27 @@ const Timeline = () => {
     return newAreas;
   };
 
-  const addTimeline = area => {
-    let newTimelines = [...timelines];
+  const addRemoveTimeline = area => {
+    let newTimelines = [...timelines]; //Testa se já foi inserido a timeline da área e então remove
+
+    if (newTimelines.find(item => item.area === area)) {
+      newTimelines = newTimelines.filter(item => item.area !== area);
+      setTimelines(newTimelines);
+      return;
+    } //adiciona a timeline da área
+
+
     newTimelines.push({
       area: area,
       anos: areas[area]
     });
+    console.log(newTimelines);
+    setTimelines(newTimelines);
+  };
+
+  const removeTimeLine = area => {
+    let newTimelines = [...timelines];
+    newTimelines = newTimelines.filter(item => item.area !== area);
     console.log(newTimelines);
     setTimelines(newTimelines);
   };
@@ -87,23 +102,63 @@ const Timeline = () => {
     className: "row"
   }, /*#__PURE__*/React.createElement("div", {
     className: "col-md-3"
-  }, /*#__PURE__*/React.createElement("ul", {
+  }, /*#__PURE__*/React.createElement("h3", null, "\xC1reas Tem\xE1ticas"), /*#__PURE__*/React.createElement("ul", {
     className: "menu-left"
-  }, Object.entries(areas).map((item, key) => {
+  }, Object.entries(areas).map((area, key) => {
     return /*#__PURE__*/React.createElement("li", {
       key: "area_" + key,
-      onClick: () => addTimeline(item[0]),
+      onClick: () => addRemoveTimeline(area[0]),
       style: {
-        cursor: 'pointer'
+        cursor: 'pointer',
+        backgroundColor: timelines.find(item => item.area === area[0]) ? "#f6f6f6" : "#fff"
       },
       className: "list-group-item-theme"
-    }, /*#__PURE__*/React.createElement("a", null, item[0]));
+    }, /*#__PURE__*/React.createElement("a", null, area[0]));
   }))), /*#__PURE__*/React.createElement("div", {
     className: "col-md-9"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "col-12"
+  }, timelines.length > 0 ? /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '10px',
+      backgroundColor: '#f6f6f6'
+    }
+  }, /*#__PURE__*/React.createElement("strong", null, "\xC1reas Selecionadas: "), /*#__PURE__*/React.createElement("br", null), Object.entries(areas).map((area, key) => {
+    if (timelines.find(item => item.area === area[0])) {
+      return /*#__PURE__*/React.createElement("button", {
+        key: "filtro" + key,
+        className: "btn btn-sm btn-default",
+        style: {
+          color: "#575757",
+          border: "0",
+          margin: "3px"
+        },
+        onClick: () => removeTimeLine(area[0])
+      }, /*#__PURE__*/React.createElement("i", {
+        className: "fa fa-times"
+      }), "\xA0", area[0]);
+    }
+  })) : null, /*#__PURE__*/React.createElement("br", null)), /*#__PURE__*/React.createElement("div", {
+    className: "col-12"
   }, timelines.map((item, key) => {
     return /*#__PURE__*/React.createElement("div", {
       key: item.area + "_timeline_" + key
-    }, /*#__PURE__*/React.createElement("h3", null, item.area), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React.createElement("h3", null, /*#__PURE__*/React.createElement("div", {
+      className: "row"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "col-md-11"
+    }, item.area), /*#__PURE__*/React.createElement("div", {
+      className: "col-md-1",
+      onClick: () => removeTimeLine(item.area),
+      style: {
+        cursor: "pointer",
+        textAlign: "right"
+      }
+    }, /*#__PURE__*/React.createElement("i", {
+      className: "fa fa-times"
+    })))), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement("div", {
       className: "timeline",
       id: 'timeline' + key
     }, /*#__PURE__*/React.createElement("div", {
@@ -145,7 +200,7 @@ const Timeline = () => {
         }));
       })))));
     })))), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null));
-  }))));
+  }))))));
 };
 
 ReactDOM.render( /*#__PURE__*/React.createElement(Timeline, null), document.getElementById('timeline'));
