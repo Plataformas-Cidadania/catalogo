@@ -1,0 +1,21 @@
+_id: req_7aa63f40804841528abb53eaeee83cf0
+type: Request
+parentId: fld_51ba210689814a61a5b82b1d3e42c21a
+modified: 1647565730314
+created: 1647565717391
+url: http://localhost:8001/api
+name: GET Api
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1647565717391
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
