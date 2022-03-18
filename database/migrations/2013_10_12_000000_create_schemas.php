@@ -17,6 +17,7 @@ class CreateSchemas extends Migration
         DB::connection($this->getConnection())->unprepared("
             SET search_path to public;
             CREATE SCHEMA cms;
+            CREATE SCHEMA catalogo;
         ");
         // extensão para implementar busca fuzzy
         //DB::statement('CREATE EXTENSION IF NOT EXISTS pg_trgm');
@@ -32,7 +33,8 @@ class CreateSchemas extends Migration
     {
         DB::connection($this->getConnection())->unprepared("
             SET search_path to public;
-            DROP SCHEMA cms;
+            DROP SCHEMA cms cascade;
+            DROP SCHEMA catalogo cascade;
         ");
 
         //DB::statement('DROP EXTENSION IF EXISTS pg_trgm');
