@@ -231,7 +231,7 @@ class List extends React.Component{
                         <div className="col-md-8">
                                 <div className="row">
                                     <div className="col-md-12">
-                                        <select className="form-control form-control-light float-right" onChange={this.changeOrder} value={this.state.order+'-'+this.state.directionOrder}>
+                                        <select className="form-select-mais float-right" onChange={this.changeOrder} value={this.state.order+'-'+this.state.directionOrder}>
                                             {/*<option value="titulo-asc">Nome</option>*/}
                                             <option value="id-desc">Mais Recente</option>
                                             <option value="id-asc">Mais Antigo</option>

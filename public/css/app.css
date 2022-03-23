@@ -13287,6 +13287,11 @@ textarea {
   margin-top: 3px;
 }
 
+.form-select-mais {
+  background-color: inherit !important;
+  border: 0 !important;
+}
+
 .fa-svg svg {
   font-size: 25px;
   margin: 0 4px 15px 0;

@@ -205,7 +205,11 @@ class CategoriesFilter extends React.Component {
         className: "fas fa-times"
       }));
     }.bind(this));
-    return /*#__PURE__*/React.createElement("div", null, categoriesSelected, /*#__PURE__*/React.createElement("ul", {
+    return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex"
+      }
+    }, categoriesSelected), /*#__PURE__*/React.createElement("ul", {
       className: "list-group"
     }, firstCategories, otherCategories), /*#__PURE__*/React.createElement("div", {
       style: {

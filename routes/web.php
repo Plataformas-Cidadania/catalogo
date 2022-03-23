@@ -105,3 +105,8 @@ Route::post('/list-posts', [PostController::class , 'getList']);
 Route::post('/categories', [PostController::class , 'categories']);
 Route::post('/members', [PostController::class , 'members']);
 Route::post('/archives', [PostController::class , 'archives']);
+
+
+Route::get('/areas-tematicas', [AreaController::class , 'listar']);
+Route::get('/area-tematica/{id}/{titulo}', [AreaController::class , 'detalhar']);
+Route::get('/politica/{id}/{titulo}', [AreaController::class , 'politica']);

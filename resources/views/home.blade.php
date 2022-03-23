@@ -7,11 +7,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <div class="box bg-pri">
-                    <i class="far fa-gem fa-4x m-5"></i>
-                    <h2>Áreas temáticas</h2>
-                    <p>Apesar de constituírem um elemento básico de organização da atuação governamental, de perpassarem cotidianamente o debate público</p>
-                </div>
+                <a href="areas-tematicas">
+                    <div class="box bg-pri">
+                        <i class="far fa-gem fa-4x m-5"></i>
+                        <h2>Áreas temáticas</h2>
+                        <p>Apesar de constituírem um elemento básico de organização da atuação governamental, de perpassarem cotidianamente o debate público</p>
+                    </div>
+                </a>
             </div>
             <div class="col-md-4">
                 <a href="timeline">
@@ -52,6 +54,36 @@
     </div>
     <div class="container">
         <div class="row">
+
+            <div class="col-md-3">
+                <div class="box-list-icon">
+                    <div class="box-list-icon-i"><i class="far fa-gem fa-3x"></i></div>
+                    <h2><strong>Infraestrutura</strong></h2>
+                    <p>Apesar de constituírem um elemento básico de organização da atuação governamental</p>
+                    <h3>Acessar</h3>
+                </div>
+                <br>
+            </div>
+
+            <div class="col-md-3">
+                <div class="box-list-icon">
+                    <div class="box-list-icon-i"><i class="far fa-gem fa-3x"></i></div>
+                    <h2><strong>Infraestrutura</strong></h2>
+                    <p>Apesar de constituírem um elemento básico de organização da atuação governamental</p>
+                    <h3>Acessar</h3>
+                </div>
+                <br>
+            </div>
+
+            <div class="col-md-3">
+                <div class="box-list-icon">
+                    <div class="box-list-icon-i"><i class="far fa-gem fa-3x"></i></div>
+                    <h2><strong>Infraestrutura</strong></h2>
+                    <p>Apesar de constituírem um elemento básico de organização da atuação governamental</p>
+                    <h3>Acessar</h3>
+                </div>
+                <br>
+            </div>
 
             <div class="col-md-3">
                 <div class="box-list-icon">

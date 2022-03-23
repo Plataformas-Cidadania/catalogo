@@ -248,7 +248,7 @@ class List extends React.Component {
     }, /*#__PURE__*/React.createElement("div", {
       className: "col-md-12"
     }, /*#__PURE__*/React.createElement("select", {
-      className: "form-control form-control-light float-right",
+      className: "form-select-mais float-right",
       onChange: this.changeOrder,
       value: this.state.order + '-' + this.state.directionOrder
     }, /*#__PURE__*/React.createElement("option", {
