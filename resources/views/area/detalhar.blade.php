@@ -6,14 +6,19 @@
 
     <div class="container">
 
-        <div class="box-title">
-            <br>
-            <h1 aria-label="Infraestrutura" style="font-size: 30px;">Infraestrutura</h1>
-            <br>
-            <hr class="hr-title">
-            <div class="line-general line-general-little bg-pri"></div>
-            <br>
+        <div class="container-fluid">
+            <div class="p-3">&nbsp;</div>
+            <div class="dorder-container">
+                <div class="bg-lgt dorder-container-mai">
+                    <div class="dorder-container-line">
+                        <h1>Infraestrutura</h1>
+                        <div class="dorder-container-box bg-lgt"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-3">&nbsp;</div>
         </div>
+
 
         <div class="row">
             <div class="col-md-8">
@@ -28,7 +33,7 @@
                 as políticas públicas está relacionada às múltiplas possibilidades de compreensão de seus aspectos – por exemplo, seu
                 papel, formas de produção e etapas constitutivas, potencial de provocar mudanças na sociedade ou, ainda, como são
                 influenciadas pelos diferentes atores que compõem a ação política, entre outras questões.
-                <br><br>
+                <br><br><br><br>
             </div>
             <div class="col-md-4">
                 <a href="https://mapaosc.ipea.gov.br/arquivos/posts/6732-mrosccovid.pdf" target="_blank">
@@ -39,20 +44,45 @@
 
             <div class="col-md-3">
                 <h2>Lista de políticas</h2>
+                <hr/>
                 <ul class="menu-left">
+
                     <li class="list-group-item-theme">
                         <a href="politica/1/titulo">
-                            <h2>1953</h2>
-                            <p>Política Nacional do Petróleo</p>
-                            <p>Ministério da Economia</p>
-                            <p>subárea</p>
+                            <p class="m-0">
+                                <strong>1953</strong> -
+                                Política Nacional do Petróleo <br/>
+                                Ministério da Economia
+                            </p>
                         </a>
                     </li>
+
+                    <li class="list-group-item-theme">
+                        <a href="politica/1/titulo">
+                            <p class="m-0">
+                                <strong>1953</strong> -
+                                Política Nacional do Petróleo <br/>
+                                Ministério da Economia
+                            </p>
+                        </a>
+                    </li>
+
+                    <li class="list-group-item-theme">
+                        <a href="politica/1/titulo">
+                            <p class="m-0">
+                                <strong>1953</strong> -
+                                Política Nacional do Petróleo <br/>
+                                Ministério da Economia
+                            </p>
+                        </a>
+                    </li>
+
                 </ul>
 
             </div>
             <div class="col-md-9">
                 <h2>Linha do tempo</h2>
+                <hr/>
             </div>
         </div>
 

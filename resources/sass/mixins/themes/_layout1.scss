@@ -236,14 +236,15 @@
 
 /*Inclua*/
 .dorder-container{
-    border-left: solid 2px #707070;
-    padding: 0 0 0 5px;
+    border-left: solid 0px #707070;
+    padding: 0 0 0 0;
 }
 .dorder-container-mai{
     display: block;
     min-height: 23px;
     width: 100%;
     background-color: $color-lgt;
+    border-radius: 10px 0 0 10px;
 }
 .dorder-container-mai:hover{
     background-color: $color-lgt2;
@@ -266,10 +267,12 @@
     float: left;
 }
 .dorder-container-box{
-    width: 20px;
+    width: 23px;
     height: 23px;
     margin-left: 20px;
     float: left;
+    border-radius: 50%;
+    background-color: $color-pri!important;
 }
 .btn-icon{
     width: 70px;

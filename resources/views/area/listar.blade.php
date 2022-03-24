@@ -4,15 +4,18 @@
 
 
 <div class="container">
-    <div class="box-title">
-        <br>
-        <h1 aria-label="Áreas temáticas">Áreas temáticas</h1>
-        <br>
-        <hr class="hr-title">
-        <div class="line-general line-general-little bg-pri"></div>
-        <br>
+    <div class="container-fluid">
+        <div class="p-3">&nbsp;</div>
+        <div class="dorder-container">
+            <div class="bg-lgt dorder-container-mai">
+                <div class="dorder-container-line">
+                    <h1>Áreas temáticas</h1>
+                    <div class="dorder-container-box bg-lgt"></div>
+                </div>
+            </div>
+        </div>
+        <div class="p-3">&nbsp;</div>
     </div>
-    <br>
 
     <div class="container">
         <div class="row">

@@ -6,27 +6,67 @@
 
     <div class="container">
 
-        <div class="box-title">
-            <br>
-            <h1 aria-label="Infraestrutura" style="font-size: 30px;">Infraestrutura</h1>
-            <br>
-            <hr class="hr-title">
-            <div class="line-general line-general-little bg-pri"></div>
-            <br>
+        <div class="container-fluid">
+            <div class="p-3">&nbsp;</div>
+            <div class="dorder-container">
+                <div class="bg-lgt dorder-container-mai">
+                    <div class="dorder-container-line" style="width: 95%;">
+                        <h1>Populações e setores econômicos diretamente afetados por alterações no meio ambiente</h1>
+                        <div class="dorder-container-box bg-lgt"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-3">&nbsp;</div>
         </div>
 
         <div class="row">
 
             <div class="col-md-8">
 
-                <p>Título</p>
-                <p>Data de criação e revogação (quando houver)</p>
-                <p>Instrumento legal</p>
-                <p>Ministérios</p>
-                <p>Objetivos</p>
-                <p>Público Alvo</p>
+                <p><strong>Data de criação e revogação</strong></p>
+                <p>16 de junho de 2020 até 10 de julho de 2019</p>
 
 
+                <p><strong>Instrumento legal</strong></p>
+                <p>Instrução Normativa</p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Medida provisória</strong></p>
+                        <p>908/2019 <br>12 de março de 2019</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Legislacao</strong></p>
+                        <p>193/2020 <br>16 de junho de 2020 à Não encontrado</p>
+                    </div>
+                </div>
+
+                <p><strong>Ministérios</strong></p>
+                <ul>
+                    <li>Ministério da Mulher, da Família e dos Direitos Humanos</li>
+                    <li>Ministério da Educação</li>
+                    <li>Ministério da Cidadania</li>
+                    <li>Ministério da Saúde</li>
+                    <li>Casa Civil da Presidência da República</li>
+                </ul>
+
+                <p><strong>Objetivos</strong></p>
+                <p>Art. 3º São objetivos da Estratégia Nacional de Fortalecimento dos Vínculos Familiares: <br/>
+                    I - apoiar, fortalecer e articular as iniciativas existentes no âmbito das competências das políticas coordenadas pelos órgãos do Poder Executivo federal e propor ações e aprimoramentos baseados em evidências e melhores práticas;<br/>
+                    II - propor estratégias integradas que possam potencializar a articulação intersetorial, qualificar a atenção aos vínculos familiares no escopo das políticas públicas e potencializar os resultados;<br/>
+                    III - promover a avaliação do impacto familiar das políticas, dos programas e das ações em elaboração ou implementados pelos órgãos do Poder Executivo federal, visando à elaboração de proposições que aprimorem a atenção às famílias no âmbito das políticas públicas;<br/>
+                    IV - fomentar a pesquisa, a produção e a divulgação de conhecimento acerca da realidade das famílias brasileiras e da relação entre os vínculos familiares e o bem-estar da população; e<br/>
+                    V - articular os esforços entre o Governo federal e a sociedade civil, em prol da valorização, do apoio e do fortalecimento dos vínculos familiares.
+                </p>
+
+                <p><strong>Ação Orcamentaria</strong></p>
+                <p>Ação 20B0 para implantação dos CAPS (2008-2018) e 8585 (MAC) para custeio</p>
+
+                <p><strong>Público Alvo</strong></p>
+                <p>Populações e setores econômicos diretamente afetados por alterações no meio ambiente</p>
+
+
+                <br><br>
 
 
 
