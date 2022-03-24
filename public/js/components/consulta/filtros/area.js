@@ -3,5 +3,18 @@ const Area = () => {
     useEffect,
     useState
   } = React;
-  return /*#__PURE__*/React.createElement("div", null);
+  const [area, setArea] = useState(null);
+  const [areas, setAreas] = useState([]);
+
+  const listAreas = search => {
+    console.log(search);
+  };
+
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(SearchField, {
+    listSearch: listAreas,
+    qtdSearch: 3,
+    items: areas,
+    column: "area",
+    selectItem: setArea
+  }));
 };

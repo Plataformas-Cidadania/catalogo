@@ -14,7 +14,7 @@ const Consulta = () => {
             <div className="row">
                 <div className="col">
                     <div style={{padding: '10px', backgroundColor: '#f6f6f6'}}>
-                        <strong>Filtros aplicados: </strong><br/>
+                        <strong>Filtros aplicados: </strong><br/><br/>
                         <div className="row">
                             <div className="col">
                                 <strong>Área: </strong> Infraestrutura
@@ -26,6 +26,17 @@ const Consulta = () => {
                     </div>
                 </div>
             </div>
+            <br/>
+            <div className="row">
+                <div className="col">
+                    <List />
+                </div>
+            </div>
         </div>
     );
 };
+
+ReactDOM.render(
+    <Consulta />,
+    document.getElementById('consulta')
+);

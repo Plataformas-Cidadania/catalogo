@@ -13,5 +13,6 @@
         <br>
 
         <div id="consulta">&nbsp;</div>
+        <br><br>
     </div>
 @endsection
