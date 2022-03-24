@@ -247,6 +247,10 @@
     <script src="js/components/timeline/index.js"></script>
 @endif
 
+@if($rota=="consulta")
+    <script src="js/components/consulta/index.js"></script>
+@endif
+
 @if($rota=="posts/{midia_id}/{midia}")
     <script src="js/components/posts/search.js"></script>
     <script src="js/components/posts/filterCategories.js"></script>

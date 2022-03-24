@@ -96,6 +96,10 @@ Route::get('/timeline', function () {
     return view('timeline.index');
 });
 
+Route::get('/consulta', function () {
+    return view('consulta.index');
+});
+
 
 Route::get('posts/{midia}', [PostController::class , 'post']);
 Route::get('posts/{midia_id}/{midia}', [PostController::class , 'post']);
