@@ -1,9 +1,8 @@
-const SearchField = () => {
+const SearchField = (props) => {
 
     const { useEffect, useState } = React;
 
     const [showBoxSearch, setShowBoxSearch] = useState(false);
-    const [label, setLabel] = useState('Busca');
     const [qtdSearch, setQtdSearch] = useState(3);
     const [placeholder, setPlaceholder] = useState('Digite para buscar');
     const [column, setColumn] = useState('title');
@@ -13,8 +12,17 @@ const SearchField = () => {
 
 
     useEffect(() => {
-        if(props.qtdSearch >= qtdSearch){
-            props.listSearch(search);
+        setColumn(props.column);
+    }, [props.column]);
+
+    useEffect(() => {
+        setItems(props.items);
+        console.log(props.items);
+    }, [props.items]);
+
+    useEffect(() => {
+        if(props.qtdSearch){
+            setQtdSearch(props.qtdSearch);
         }
     }, [props.qtdSearch]);
 
@@ -29,23 +37,22 @@ const SearchField = () => {
     }, [itemSelected]);
 
     const handleSearch = (event) => {
-        setSearch(event.target.search)
-    }
-
-    const selectItem = (item) => {
-        setItemSelected(item);
+        setSearch(event.target.value)
     }
 
     return (
         <div>
             <div className="input-icon">
+                <label htmlFor={props.id}>{props.label}</label>
                 <input type="text" className="form-control" placeholder=""
+                       id={props.id}
+                       name={props.name}
                        style={{display: (itemSelected ? 'none' : '')}}
                        onClick={() => setShowBoxSearch(!showBoxSearch)} onChange={handleSearch}/>
                 <input type="text" className="form-control" name="tx_nome_regiao2"
                        style={{display: (itemSelected ? '' : 'none')}}
                        readOnly={itemSelected}
-                       defaultValue={itemSelected ? this.state.filters.regiao.edre_nm_regiao : ''}/>
+                       defaultValue={itemSelected ? itemSelected[column] : ''}/>
 
                 <div style={{display: (itemSelected ? 'none' : '')}}>
                     <i className="fas fa-search" style={{top: '-28px'}}/>
@@ -55,11 +62,13 @@ const SearchField = () => {
                 </div>
 
                 <div>
-                    <ul className="box-search-itens" style={{display: ((search || items) && !itemSelected) ? '' : 'none'}}>
+                    <ul className="box-search-itens" style={{display: ((search.length >= qtdSearch || items.length>0) && !itemSelected) ? '' : 'none'}}>
                         {
                             items.map((item, key) => {
                                 return (
-                                    <li onClick={() => setItemSelected(item)}>item[column]</li>
+                                    <li key={props.name + key} onClick={() => setItemSelected(item)}>
+                                        {item[column]}
+                                    </li>
                                 );
                             })
                         }

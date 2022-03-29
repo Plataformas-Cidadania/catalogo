@@ -5,9 +5,6 @@ const Area = () => {
   } = React;
   const [item, setItem] = useState(null);
   const [items, setItems] = useState([]);
-  useEffect(() => {
-    listItems('');
-  }, []);
 
   const listItems = async search => {
     console.log(search);
@@ -20,7 +17,7 @@ const Area = () => {
     name: "area",
     label: "\xC1rea Tem\xE1tica",
     listSearch: listItems,
-    qtdSearch: 1,
+    qtdSearch: 3,
     items: items,
     column: "titulo",
     selectItem: setItem

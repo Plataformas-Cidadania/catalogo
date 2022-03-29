@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers\Front;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -98,6 +99,35 @@ Route::get('/timeline', function () {
 
 Route::get('/consulta', function () {
     return view('consulta.index');
+});
+
+Route::get('/test-consulta/{search}', function ($search) {
+    $items = [
+        ['id' => 1, 'titulo' => 'Macaco'],
+        ['id' => 2, 'titulo' => 'Mico'],
+        ['id' => 3, 'titulo' => 'Leão'],
+        ['id' => 4, 'titulo' => 'Mico-leão-dourado'],
+        ['id' => 5, 'titulo' => 'Macaco Prego'],
+        ['id' => 6, 'titulo' => 'Cachorro'],
+        ['id' => 7, 'titulo' => 'Gato'],
+        ['id' => 8, 'titulo' => 'Peixe'],
+        ['id' => 9, 'titulo' => 'Peixe Gato'],
+        ['id' => 10, 'titulo' => 'Lobo']
+    ];
+
+    Log::info($search);
+
+    $result = [];
+    foreach($items as $key => $value){
+        Log::info($value['titulo']);
+        if(str_contains(strtolower($value['titulo']), strtolower($search))){
+            $result[] = $value;
+        }
+    }
+
+    Log::info($result);
+
+    return $result;
 });
 
 

@@ -3,13 +3,13 @@ const Consulta = () => {
     useEffect,
     useState
   } = React;
-  return /*#__PURE__*/React.createElement("div", {
-    className: "container"
-  }, /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "row"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "col"
-  })), /*#__PURE__*/React.createElement("div", {
+    className: "col-md-3 col-xs-12"
+  }, /*#__PURE__*/React.createElement(GrandeArea, null)), /*#__PURE__*/React.createElement("div", {
+    className: "col-md-3 col-xs-12"
+  }, /*#__PURE__*/React.createElement(Area, null))), /*#__PURE__*/React.createElement("div", {
     className: "row"
   }, /*#__PURE__*/React.createElement("div", {
     className: "col"

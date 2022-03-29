@@ -3,11 +3,13 @@ const Consulta = () => {
     const { useEffect, useState } = React;
 
     return (
-        <div className="container">
-
+        <div>
             <div className="row">
-                <div className="col">
-
+                <div className="col-md-3 col-xs-12">
+                    <GrandeArea />
+                </div>
+                <div className="col-md-3 col-xs-12">
+                    <Area />
                 </div>
             </div>
 

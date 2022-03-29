@@ -249,6 +249,7 @@
 
 @if($rota=="consulta")
     <script src="js/components/consulta/filtros/searchField.js"></script>
+    <script src="js/components/consulta/filtros/grandeArea.js"></script>
     <script src="js/components/consulta/filtros/area.js"></script>
     <script src="js/components/consulta/list.js"></script>
     <script src="js/components/consulta/index.js"></script>

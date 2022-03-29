@@ -1,24 +1,20 @@
-const Area = () => {
+const GrandeArea = () => {
   const {
     useEffect,
     useState
   } = React;
   const [item, setItem] = useState(null);
   const [items, setItems] = useState([]);
-  useEffect(() => {
-    listItems('');
-  }, []);
 
   const listItems = async search => {
-    console.log(search);
     const result = await axios.get('test-consulta/' + search);
     setItems(result.data);
   };
 
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(SearchField, {
-    id: "area",
-    name: "area",
-    label: "\xC1rea Tem\xE1tica",
+    id: "grande-area",
+    name: "grande-area",
+    label: "Grande \xC1rea",
     listSearch: listItems,
     qtdSearch: 1,
     items: items,

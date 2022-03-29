@@ -1,10 +1,9 @@
-const SearchField = () => {
+const SearchField = props => {
   const {
     useEffect,
     useState
   } = React;
   const [showBoxSearch, setShowBoxSearch] = useState(false);
-  const [label, setLabel] = useState('Busca');
   const [qtdSearch, setQtdSearch] = useState(3);
   const [placeholder, setPlaceholder] = useState('Digite para buscar');
   const [column, setColumn] = useState('title');
@@ -12,8 +11,15 @@ const SearchField = () => {
   const [items, setItems] = useState([]);
   const [itemSelected, setItemSelected] = useState(null);
   useEffect(() => {
-    if (props.qtdSearch >= qtdSearch) {
-      props.listSearch(search);
+    setColumn(props.column);
+  }, [props.column]);
+  useEffect(() => {
+    setItems(props.items);
+    console.log(props.items);
+  }, [props.items]);
+  useEffect(() => {
+    if (props.qtdSearch) {
+      setQtdSearch(props.qtdSearch);
     }
   }, [props.qtdSearch]);
   useEffect(() => {
@@ -26,19 +32,19 @@ const SearchField = () => {
   }, [itemSelected]);
 
   const handleSearch = event => {
-    setSearch(event.target.search);
-  };
-
-  const selectItem = item => {
-    setItemSelected(item);
+    setSearch(event.target.value);
   };
 
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "input-icon"
-  }, /*#__PURE__*/React.createElement("input", {
+  }, /*#__PURE__*/React.createElement("label", {
+    htmlFor: props.id
+  }, props.label), /*#__PURE__*/React.createElement("input", {
     type: "text",
     className: "form-control",
     placeholder: "",
+    id: props.id,
+    name: props.name,
     style: {
       display: itemSelected ? 'none' : ''
     },
@@ -52,7 +58,7 @@ const SearchField = () => {
       display: itemSelected ? '' : 'none'
     },
     readOnly: itemSelected,
-    defaultValue: itemSelected ? this.state.filters.regiao.edre_nm_regiao : ''
+    defaultValue: itemSelected ? itemSelected[column] : ''
   }), /*#__PURE__*/React.createElement("div", {
     style: {
       display: itemSelected ? 'none' : ''
@@ -76,11 +82,12 @@ const SearchField = () => {
   })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("ul", {
     className: "box-search-itens",
     style: {
-      display: (search || items) && !itemSelected ? '' : 'none'
+      display: (search.length >= qtdSearch || items.length > 0) && !itemSelected ? '' : 'none'
     }
   }, items.map((item, key) => {
     return /*#__PURE__*/React.createElement("li", {
+      key: props.name + key,
       onClick: () => setItemSelected(item)
-    }, "item[column]");
+    }, item[column]);
   }))), /*#__PURE__*/React.createElement("br", null)));
 };
