@@ -248,6 +248,9 @@
 @endif
 
 @if($rota=="consulta")
+    <link href="js/range/ion.rangeSlider.skinFlat.css" rel="stylesheet" />
+    <link href="js/range/ion.rangeSlider.css" rel="stylesheet" />
+    <script src="js/range/ion.rangeSlider.js"></script>
     <script src="js/components/consulta/filtros/searchField.js"></script>
     <script src="js/components/consulta/filtros/range.js"></script>
     <script src="js/components/consulta/filtros/ano.js"></script>
