@@ -6,10 +6,20 @@ const Consulta = () => {
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "row"
   }, /*#__PURE__*/React.createElement("div", {
+    className: "col-md-6 col-xs-12"
+  }, /*#__PURE__*/React.createElement(Politica, null)), /*#__PURE__*/React.createElement("div", {
+    className: "col-md-6 col-xs-12"
+  }, /*#__PURE__*/React.createElement(Ano, null)), /*#__PURE__*/React.createElement("div", {
     className: "col-md-3 col-xs-12"
   }, /*#__PURE__*/React.createElement(GrandeArea, null)), /*#__PURE__*/React.createElement("div", {
     className: "col-md-3 col-xs-12"
-  }, /*#__PURE__*/React.createElement(Area, null))), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(Area, null)), /*#__PURE__*/React.createElement("div", {
+    className: "col-md-3 col-xs-12"
+  }, /*#__PURE__*/React.createElement(Orgao, null)), /*#__PURE__*/React.createElement("div", {
+    className: "col-md-3 col-xs-12"
+  }, /*#__PURE__*/React.createElement(Tipo, null)), /*#__PURE__*/React.createElement("div", {
+    className: "col-md-3 col-xs-12"
+  }, /*#__PURE__*/React.createElement(Publico, null))), /*#__PURE__*/React.createElement("div", {
     className: "row"
   }, /*#__PURE__*/React.createElement("div", {
     className: "col"

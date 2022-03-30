@@ -249,8 +249,15 @@
 
 @if($rota=="consulta")
     <script src="js/components/consulta/filtros/searchField.js"></script>
-    <script src="js/components/consulta/filtros/grandeArea.js"></script>
+    <script src="js/components/consulta/filtros/range.js"></script>
+    <script src="js/components/consulta/filtros/ano.js"></script>
     <script src="js/components/consulta/filtros/area.js"></script>
+    <script src="js/components/consulta/filtros/grandeArea.js"></script>
+    <script src="js/components/consulta/filtros/orgao.js"></script>
+    <script src="js/components/consulta/filtros/politica.js"></script>
+    <script src="js/components/consulta/filtros/publico.js"></script>
+    <script src="js/components/consulta/filtros/subarea.js"></script>
+    <script src="js/components/consulta/filtros/tipo.js"></script>
     <script src="js/components/consulta/list.js"></script>
     <script src="js/components/consulta/index.js"></script>
 @endif

@@ -5,11 +5,26 @@ const Consulta = () => {
     return (
         <div>
             <div className="row">
+                <div className="col-md-6 col-xs-12">
+                    <Politica />
+                </div>
+                <div className="col-md-6 col-xs-12">
+                    <Ano />
+                </div>
                 <div className="col-md-3 col-xs-12">
                     <GrandeArea />
                 </div>
                 <div className="col-md-3 col-xs-12">
                     <Area />
+                </div>
+                <div className="col-md-3 col-xs-12">
+                    <Orgao />
+                </div>
+                <div className="col-md-3 col-xs-12">
+                    <Tipo />
+                </div>
+                <div className="col-md-3 col-xs-12">
+                    <Publico />
                 </div>
             </div>
 
