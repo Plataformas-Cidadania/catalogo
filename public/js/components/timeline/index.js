@@ -1,10 +1,7 @@
-const Timeline = () => {
+const TimelineIndex = () => {
   //const HorizontalTimeline = 'react-horizontal-timeline';
-  const {
-    Timeline,
-    TimelineEvent
-  } = 'horizontal-timeline'; //import HorizontalTimeline from 'react-horizontal-timeline';
-
+  //const { Timeline, TimelineEvent } = 'horizontal-timeline'
+  //import HorizontalTimeline from 'react-horizontal-timeline';
   const {
     useEffect,
     useState
@@ -168,49 +165,11 @@ const Timeline = () => {
       }
     }, /*#__PURE__*/React.createElement("i", {
       className: "fa fa-times"
-    })))), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement("div", {
-      className: "timeline",
-      id: 'timeline' + key
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "timeline__wrap",
-      style: {
-        minHeight: '300px'
-      }
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "timeline__items"
-    }, Object.entries(item.anos).map((subitem, key) => {
-      const ano = subitem[0];
-      const politicas = subitem[1];
-      return /*#__PURE__*/React.createElement("div", {
-        key: item.area + "_ano_" + key,
-        className: "timeline__item"
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "timeline__content"
-      }, /*#__PURE__*/React.createElement("h4", {
-        className: key % 2 === 0 ? 'timeline-ano' : 'timeline-ano-2'
-      }, ano), /*#__PURE__*/React.createElement("div", {
-        style: {
-          maxHeight: '100px',
-          overflowY: 'auto'
-        }
-      }, /*#__PURE__*/React.createElement("ul", {
-        className: "timeline-ul"
-      }, /*#__PURE__*/React.createElement("span", {
-        className: "position-absolute top-0 start-100 translate-middle badge rounded-pill bg-pri",
-        style: {
-          marginTop: '9px'
-        }
-      }, politicas.length), politicas.map((politica, key) => {
-        return /*#__PURE__*/React.createElement("li", {
-          key: item.area + "_politica_" + key
-        }, politica.nome_politica, /*#__PURE__*/React.createElement("hr", {
-          style: {
-            display: politicas.length - 1 === key ? 'none' : ''
-          }
-        }));
-      })))));
-    })))), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null));
+    })))), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement(Timeline, {
+      id: 'timeline' + key,
+      item: item
+    }), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null));
   }))))));
 };
 
-ReactDOM.render( /*#__PURE__*/React.createElement(Timeline, null), document.getElementById('timeline'));
+ReactDOM.render( /*#__PURE__*/React.createElement(TimelineIndex, null), document.getElementById('timeline'));

@@ -12,7 +12,7 @@ const Consulta = () => {
     className: "col-md-12 col-xs-12"
   }, /*#__PURE__*/React.createElement(Politica, null), /*#__PURE__*/React.createElement("br", null)), /*#__PURE__*/React.createElement("div", {
     className: "col-md-12 col-xs-12"
-  }, /*#__PURE__*/React.createElement(Ano, null), /*#__PURE__*/React.createElement("br", null)), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(Ano, null), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null)), /*#__PURE__*/React.createElement("div", {
     className: "col-md-4 col-xs-12"
   }, /*#__PURE__*/React.createElement(GrandeArea, {
     close: closeSearch

@@ -15,6 +15,7 @@ const Consulta = () => {
                 <div className="col-md-12 col-xs-12">
                     <Ano />
                     <br/>
+                    <br/>
                 </div>
 
                 <div className="col-md-4 col-xs-12">

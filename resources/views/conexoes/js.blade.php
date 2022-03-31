@@ -244,6 +244,7 @@
 @if($rota=="timeline")
     <script src="js/timeline/js/timeline.min.js"></script>
     <link href="js/timeline/css/timeline.min.css" rel="stylesheet" />
+    <script src="js/components/timeline.js"></script>
     <script src="js/components/timeline/index.js"></script>
 @endif
 
