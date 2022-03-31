@@ -1,5 +1,6 @@
 {
     "/css/app.css": "/css/app.css",
+    "/js/timeline/css/custom-timeline.css": "/js/timeline/css/custom-timeline.css",
     "/assets-cms/css/cms.css": "/assets-cms/css/cms.css",
     "/js/app.js": "/js/app.js",
     "/js/home.js": "/js/home.js",

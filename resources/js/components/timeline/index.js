@@ -169,7 +169,7 @@ const TimelineIndex = () => {
                                             </h3>
                                             <hr/>
 
-                                            <Timeline id={'timeline'+key} item={item}/>
+                                            <Timeline id={'timeline'+key} item={item} area={item.area}/>
 
 
                                             <br/><br/>

@@ -24,8 +24,7 @@ const Timeline = (props) => {
                                     <div key={props.item.area+"_ano_"+key} className="timeline__item">
                                         <div className="timeline__content">
                                             <h4 className={key % 2 === 0 ? 'timeline-ano' : 'timeline-ano-2'}>{ano}</h4>
-                                            <div style={{maxHeight: '100px', overflowY:'auto'}}>
-                                                <ul className="timeline-ul">
+                                            <div>
                                                 <span
                                                     className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-pri"
                                                     style={{marginTop: '9px'}}>
@@ -34,14 +33,13 @@ const Timeline = (props) => {
                                                     {
                                                         politicas.map((politica, key) => {
                                                             return (
-                                                                <li key={props.item.area+"_politica_"+key}>
+                                                                <p key={props.item.area+"_politica_"+key} style={{fontSize: '12px'}}>
                                                                     {politica.nome_politica}
-                                                                    {/*<hr style={{display: politicas.length-1 === key ? 'none' : ''}}/>*/}
-                                                                </li>
+                                                                </p>
                                                             );
                                                         })
                                                     }
-                                                </ul>
+
                                             </div>
                                         </div>
                                     </div>

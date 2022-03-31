@@ -31,22 +31,18 @@ const Timeline = props => {
       className: "timeline__content"
     }, /*#__PURE__*/React.createElement("h4", {
       className: key % 2 === 0 ? 'timeline-ano' : 'timeline-ano-2'
-    }, ano), /*#__PURE__*/React.createElement("div", {
-      style: {
-        maxHeight: '100px',
-        overflowY: 'auto'
-      }
-    }, /*#__PURE__*/React.createElement("ul", {
-      className: "timeline-ul"
-    }, /*#__PURE__*/React.createElement("span", {
+    }, ano), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", {
       className: "position-absolute top-0 start-100 translate-middle badge rounded-pill bg-pri",
       style: {
         marginTop: '9px'
       }
     }, politicas.length), politicas.map((politica, key) => {
-      return /*#__PURE__*/React.createElement("li", {
-        key: props.item.area + "_politica_" + key
+      return /*#__PURE__*/React.createElement("p", {
+        key: props.item.area + "_politica_" + key,
+        style: {
+          fontSize: '12px'
+        }
       }, politica.nome_politica);
-    })))));
+    }))));
   })))) : /*#__PURE__*/React.createElement("div", null, "\xA0");
 };

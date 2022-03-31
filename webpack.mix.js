@@ -62,8 +62,8 @@ mix.styles([
     'node_modules/leaflet.fullscreen/Control.FullScreen.css',
 ], 'public/css/leaflet.css')
 
-    .sass('resources/sass/app.scss', 'public/css');
-
+    .sass('resources/sass/app.scss', 'public/css')
+    .sass('resources/sass/timeline/css/timeline.scss', 'public/js/timeline/css/custom-timeline.css');
 
 //CMS///////////////////////////////////////////////////////////////////
 //css npm install less-loader less --save-dev --production=false

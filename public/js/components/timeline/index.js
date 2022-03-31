@@ -167,7 +167,8 @@ const TimelineIndex = () => {
       className: "fa fa-times"
     })))), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement(Timeline, {
       id: 'timeline' + key,
-      item: item
+      item: item,
+      area: item.area
     }), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null));
   }))))));
 };
