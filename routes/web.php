@@ -103,16 +103,16 @@ Route::get('/consulta', function () {
 
 Route::get('/test-consulta/{search}', function ($search) {
     $items = [
-        ['id' => 1, 'titulo' => 'Macaco'],
-        ['id' => 2, 'titulo' => 'Mico'],
-        ['id' => 3, 'titulo' => 'Leão'],
-        ['id' => 4, 'titulo' => 'Mico-leão-dourado'],
-        ['id' => 5, 'titulo' => 'Macaco Prego'],
-        ['id' => 6, 'titulo' => 'Cachorro'],
-        ['id' => 7, 'titulo' => 'Gato'],
-        ['id' => 8, 'titulo' => 'Peixe'],
-        ['id' => 9, 'titulo' => 'Peixe Gato'],
-        ['id' => 10, 'titulo' => 'Lobo']
+        ['id' => 1, 'titulo' => 'Item 1'],
+        ['id' => 2, 'titulo' => 'Item 2'],
+        ['id' => 3, 'titulo' => 'Item 3'],
+        ['id' => 4, 'titulo' => 'Item 4'],
+        ['id' => 5, 'titulo' => 'Item 5'],
+        ['id' => 6, 'titulo' => 'Item 6'],
+        ['id' => 7, 'titulo' => 'Item 7'],
+        ['id' => 8, 'titulo' => 'Item 8'],
+        ['id' => 9, 'titulo' => 'Item 9'],
+        ['id' => 10, 'titulo' => 'Item 10']
     ];
 
     Log::info($search);
