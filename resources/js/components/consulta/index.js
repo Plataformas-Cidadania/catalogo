@@ -2,8 +2,10 @@ const Consulta = () => {
 
     const { useEffect, useState } = React;
 
+    const [closeSearch, setCloseSearch] = useState(true)
+
     return (
-        <div>
+        <div onClick={() => setCloseSearch(true)}>
             <div className="row">
                 <div className="col-md-6 col-xs-12">
                     <Politica />
@@ -12,7 +14,7 @@ const Consulta = () => {
                     <Ano />
                 </div>
                 <div className="col-md-3 col-xs-12">
-                    <GrandeArea />
+                    <GrandeArea close={closeSearch} />
                 </div>
                 <div className="col-md-3 col-xs-12">
                     <Area />

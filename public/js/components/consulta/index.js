@@ -3,7 +3,10 @@ const Consulta = () => {
     useEffect,
     useState
   } = React;
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+  const [closeSearch, setCloseSearch] = useState(true);
+  return /*#__PURE__*/React.createElement("div", {
+    onClick: () => setCloseSearch(true)
+  }, /*#__PURE__*/React.createElement("div", {
     className: "row"
   }, /*#__PURE__*/React.createElement("div", {
     className: "col-md-6 col-xs-12"
@@ -11,7 +14,9 @@ const Consulta = () => {
     className: "col-md-6 col-xs-12"
   }, /*#__PURE__*/React.createElement(Ano, null)), /*#__PURE__*/React.createElement("div", {
     className: "col-md-3 col-xs-12"
-  }, /*#__PURE__*/React.createElement(GrandeArea, null)), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(GrandeArea, {
+    close: closeSearch
+  })), /*#__PURE__*/React.createElement("div", {
     className: "col-md-3 col-xs-12"
   }, /*#__PURE__*/React.createElement(Area, null)), /*#__PURE__*/React.createElement("div", {
     className: "col-md-3 col-xs-12"
