@@ -36,13 +36,11 @@ const SearchField = props => {
   };
 
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-    className: "input-icon"
-  }, /*#__PURE__*/React.createElement("label", {
-    htmlFor: props.id
-  }, props.label), /*#__PURE__*/React.createElement("input", {
+    className: "label-float input-icon"
+  }, /*#__PURE__*/React.createElement("input", {
     type: "text",
     className: "form-control",
-    placeholder: "",
+    placeholder: " ",
     id: props.id,
     name: props.name,
     style: {
@@ -50,7 +48,9 @@ const SearchField = props => {
     },
     onClick: () => setShowBoxSearch(!showBoxSearch),
     onChange: handleSearch
-  }), /*#__PURE__*/React.createElement("input", {
+  }), /*#__PURE__*/React.createElement("label", {
+    htmlFor: props.id
+  }, props.label), /*#__PURE__*/React.createElement("input", {
     type: "text",
     className: "form-control",
     name: "tx_nome_regiao2",

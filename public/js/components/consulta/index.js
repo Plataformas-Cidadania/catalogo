@@ -9,21 +9,21 @@ const Consulta = () => {
   }, /*#__PURE__*/React.createElement("div", {
     className: "row"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "col-md-6 col-xs-12"
-  }, /*#__PURE__*/React.createElement(Politica, null)), /*#__PURE__*/React.createElement("div", {
-    className: "col-md-6 col-xs-12"
-  }, /*#__PURE__*/React.createElement(Ano, null)), /*#__PURE__*/React.createElement("div", {
-    className: "col-md-3 col-xs-12"
+    className: "col-md-12 col-xs-12"
+  }, /*#__PURE__*/React.createElement(Politica, null), /*#__PURE__*/React.createElement("br", null)), /*#__PURE__*/React.createElement("div", {
+    className: "col-md-12 col-xs-12"
+  }, /*#__PURE__*/React.createElement(Ano, null), /*#__PURE__*/React.createElement("br", null)), /*#__PURE__*/React.createElement("div", {
+    className: "col-md-4 col-xs-12"
   }, /*#__PURE__*/React.createElement(GrandeArea, {
     close: closeSearch
   })), /*#__PURE__*/React.createElement("div", {
-    className: "col-md-3 col-xs-12"
+    className: "col-md-4 col-xs-12"
   }, /*#__PURE__*/React.createElement(Area, null)), /*#__PURE__*/React.createElement("div", {
-    className: "col-md-3 col-xs-12"
+    className: "col-md-4 col-xs-12"
   }, /*#__PURE__*/React.createElement(Orgao, null)), /*#__PURE__*/React.createElement("div", {
-    className: "col-md-3 col-xs-12"
+    className: "col-md-4 col-xs-12"
   }, /*#__PURE__*/React.createElement(Tipo, null)), /*#__PURE__*/React.createElement("div", {
-    className: "col-md-3 col-xs-12"
+    className: "col-md-4 col-xs-12"
   }, /*#__PURE__*/React.createElement(Publico, null))), /*#__PURE__*/React.createElement("div", {
     className: "row"
   }, /*#__PURE__*/React.createElement("div", {

@@ -52,15 +52,7 @@ const Ano = () => {
 
     return (
         <div>
-            {/*<Range
-                title="Ano"
-                min="1900"
-                max={ano}
-                step="1"
-                defaultValueStart="1900"
-                defaultValueEnd={ano}
-                setValue={setAno}
-            />*/}
+            <label htmlFor="">Ano</label>
             <input type="text" id="range" name="range" />
         </div>
     );

@@ -44,7 +44,9 @@ const Ano = () => {
 
   const handleRange = event => {};
 
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("input", {
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
+    htmlFor: ""
+  }, "Ano"), /*#__PURE__*/React.createElement("input", {
     type: "text",
     id: "range",
     name: "range"

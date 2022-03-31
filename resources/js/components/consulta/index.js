@@ -7,25 +7,29 @@ const Consulta = () => {
     return (
         <div onClick={() => setCloseSearch(true)}>
             <div className="row">
-                <div className="col-md-6 col-xs-12">
+                <div className="col-md-12 col-xs-12">
                     <Politica />
+                    <br/>
                 </div>
-                <div className="col-md-6 col-xs-12">
+
+                <div className="col-md-12 col-xs-12">
                     <Ano />
+                    <br/>
                 </div>
-                <div className="col-md-3 col-xs-12">
+
+                <div className="col-md-4 col-xs-12">
                     <GrandeArea close={closeSearch} />
                 </div>
-                <div className="col-md-3 col-xs-12">
+                <div className="col-md-4 col-xs-12">
                     <Area />
                 </div>
-                <div className="col-md-3 col-xs-12">
+                <div className="col-md-4 col-xs-12">
                     <Orgao />
                 </div>
-                <div className="col-md-3 col-xs-12">
+                <div className="col-md-4 col-xs-12">
                     <Tipo />
                 </div>
-                <div className="col-md-3 col-xs-12">
+                <div className="col-md-4 col-xs-12">
                     <Publico />
                 </div>
             </div>

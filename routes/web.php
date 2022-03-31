@@ -115,8 +115,6 @@ Route::get('/test-consulta/{search}', function ($search) {
         ['id' => 10, 'titulo' => 'Item 10']
     ];
 
-    Log::info($search);
-
     $result = [];
     foreach($items as $key => $value){
         Log::info($value['titulo']);

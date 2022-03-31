@@ -42,13 +42,13 @@ const SearchField = (props) => {
 
     return (
         <div>
-            <div className="input-icon">
-                <label htmlFor={props.id}>{props.label}</label>
-                <input type="text" className="form-control" placeholder=""
+            <div className="label-float input-icon">
+                <input type="text" className="form-control" placeholder=" "
                        id={props.id}
                        name={props.name}
                        style={{display: (itemSelected ? 'none' : '')}}
                        onClick={() => setShowBoxSearch(!showBoxSearch)} onChange={handleSearch}/>
+                <label htmlFor={props.id}>{props.label}</label>
                 <input type="text" className="form-control" name="tx_nome_regiao2"
                        style={{display: (itemSelected ? '' : 'none')}}
                        readOnly={itemSelected}
