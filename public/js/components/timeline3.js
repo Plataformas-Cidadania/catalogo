@@ -35,7 +35,7 @@ const Timeline = props => {
     "aria-labelledby": "modal" + props.id + "Label",
     "aria-hidden": "true"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "modal-dialog"
+    className: "modal-dialog modal-dialog-centered"
   }, /*#__PURE__*/React.createElement("div", {
     className: "modal-content"
   }, /*#__PURE__*/React.createElement("div", {

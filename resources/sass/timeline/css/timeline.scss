@@ -162,7 +162,7 @@
         vertical-align: top;
         white-space: normal;
         &::after {
-            left: 50%;
+            left: 60%;//default: 50%
             right: auto;
             transform: translate(-50%, -50%);
             top: 100%;
@@ -170,7 +170,7 @@
         .timeline__item__inner {
             display: table;
             height: 100%;
-            width: 100%;
+            width: 120%;//default: 100%
         }
         .timeline__content__wrap {
             display: table-cell;

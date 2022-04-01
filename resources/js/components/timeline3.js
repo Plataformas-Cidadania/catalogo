@@ -33,7 +33,7 @@ const Timeline = (props) => {
         props.item ? (
             <div>
                 <div className="modal fade" id={"modal"+props.id} tabIndex="-1" aria-labelledby={"modal"+props.id+"Label"} aria-hidden="true">
-                    <div className="modal-dialog">
+                    <div className="modal-dialog modal-dialog-centered">
                         <div className="modal-content">
                             <div className="modal-header">
                                 <h5 className="modal-title" id={"modal"+props.id+"Label"}>{props.area} - {anoModal}</h5>
