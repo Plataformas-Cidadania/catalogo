@@ -232,7 +232,7 @@
     .top-links{
         margin-top: -18px;
     }
-}
+}gi
 
 /*Inclua*/
 .dorder-container{
@@ -450,4 +450,15 @@
 .box-list-icon:hover{
     background-color: $color-ter;
     color: #FFFFFF;
+}
+.bg-img-l{
+    background-image: url("/img/bg-img-l.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.bg-img-r{
+    background-image: url("/img/bg-img-r.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: contain;
 }

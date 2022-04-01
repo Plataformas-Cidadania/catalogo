@@ -13595,8 +13595,7 @@ textarea {
     margin-top: -18px;
   }
 }
-/*Inclua*/
-.dorder-container {
+gi .dorder-container {
   border-left: solid 0px #707070;
   padding: 0 0 0 0;
 }
@@ -13830,6 +13829,19 @@ textarea {
 .box-list-icon:hover {
   background-color: #00AFA4;
   color: #FFFFFF;
+}
+
+.bg-img-l {
+  background-image: url("/img/bg-img-l.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.bg-img-r {
+  background-image: url("/img/bg-img-r.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: contain;
 }
 
 #chart {

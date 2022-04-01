@@ -6,7 +6,22 @@
 @section('content')
 
 
-    <div class="container-fluid">
+    <div class=" bg-lgt">
+        <div class="bg-img-l">
+            <div class="bg-img-r">
+                <div class="container pt-5 pb-5 bg-lgt">
+                    <div class=" ps-2 pe-2">
+                        <h1>{{$detail->titulo}}</h1>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+
+    {{--<div class="container-fluid">
         <div class="p-3">&nbsp;</div>
         <div class="dorder-container">
             <div class="bg-lgt dorder-container-mai">
@@ -17,7 +32,7 @@
             </div>
         </div>
         <div class="p-3">&nbsp;</div>
-    </div>
+    </div>--}}
 
     <div class="container">
         <div class="row">

@@ -1,5 +1,4 @@
 {
-    "/css/app.css": "/css/app.css",
     "/js/timeline/css/custom-timeline.css": "/js/timeline/css/custom-timeline.css",
     "/assets-cms/css/cms.css": "/assets-cms/css/cms.css",
     "/js/app.js": "/js/app.js",
@@ -39,5 +38,6 @@
     "/assets-cms/js/controllers/postCtrl.js": "/assets-cms/js/controllers/postCtrl.js",
     "/assets-cms/js/controllers/alterarPostCtrl.js": "/assets-cms/js/controllers/alterarPostCtrl.js",
     "/assets-cms/js/controllers/integranteCtrl.js": "/assets-cms/js/controllers/integranteCtrl.js",
-    "/assets-cms/js/controllers/alterarIntegranteCtrl.js": "/assets-cms/js/controllers/alterarIntegranteCtrl.js"
+    "/assets-cms/js/controllers/alterarIntegranteCtrl.js": "/assets-cms/js/controllers/alterarIntegranteCtrl.js",
+    "/css/app.css": "/css/app.css"
 }
