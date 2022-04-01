@@ -10,33 +10,20 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Exception;
-use App\Models\Politica;
-use App\Repository\PoliticaRepository;
+use App\Models\Orgao;
+use App\Repository\OrgaoRepository;
 
-class PoliticaController extends Controller
+class OrgaoController extends Controller
 {
-    private PoliticaRepository $repo;
+    private OrgaoRepository $repo;
 
 ;  
     private $rules = [
         'id' => 'int|min:1',
         'nome' => 'string|min:1',
-        'ano' => 'int|min:1',
-        'medida_provisoria' => 'string|min:1|nullable',
-        'medida_provisoria_inicio_vigencia' => 'string|min:1|nullable', 
-        'legislacao' => 'string|nullable', 
-        'vigencia_inicio' => 'date|nullable', 
-        'vigencia_fim' => 'date|nullable', 
-        'objetivos' => 'string|nullable',  
-        'observacao' => 'string|nullable',  
-        'acao_orcamentaria_assoc' => 'string|nullable',
-        'publico_alvo_categ' => 'string|nullable',
-        'tipo_politica' => 'int|min:1|nullable',
-        'grande_area' => 'int|min:1|nullable',
-        'area' => 'int|min:1|nullable',
     ];
 
-    public function __construct(PoliticaController $repo)
+    public function __construct(OrgaoController $repo)
     {
         $this->repo = $repo;
     }
@@ -53,7 +40,7 @@ class PoliticaController extends Controller
     {
         $res = $this->repo->all();
         return $this->successResponse(
-            'Politicas retornadas com sucesso',
+            'Orgãos retornadas com sucesso',
             $res
         );
     }
@@ -77,7 +64,7 @@ class PoliticaController extends Controller
             $data = $this->getData($request);
             $res = $this->repo->create($data);
             return $this->successResponse(
-			    'Politica '.$res->id.' foi adicionado',
+			    'Orgão '.$res->id.' foi adicionado',
 			    $this->transform($res)
 			);
         } catch (Exception $exception) {
@@ -192,29 +179,16 @@ class PoliticaController extends Controller
     /**
      * Transformar em um array
      *
-     * @param Politica $model
+     * @param Orgão $model
      *
      * @return array
      */
 
-    protected function transform(Politica $model): array
+    protected function transform(Orgão $model): array
     {
         return [
             'id' => $model->id,
             'nome' => $model->nome,
-            'ano' => $model->ano,
-            'medida_provisoria' => $model->medida_provisoria,
-            'medida_provisoria_inicio_vigencia' => $model->medida_provisoria_inicio_vigencia,
-            'legislacao' => $model->legislacao,
-            'vigencia_inicio' => $model->vigencia_inicio,
-            'vigencia_fim' => $model->vigencia_fim,
-            'objetivos' => $model->objetivos,
-            'observacao' => $model->observacao,
-            'acao_orcamentaria_assoc' => $model->acao_orcamentaria_assoc,
-            'publico_alvo_categ' => $model->publico_alvo_categ,
-            'tipo_politica' => $model->tipo_politica,
-            'grande_area' => $model->grande_area,
-            'area' => $model->area,
         ];
     }
 

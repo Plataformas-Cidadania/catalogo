@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Repository;
+
+use App\Models\Orgao;
+
+class OrgaoRepository extends BaseRepository
+{
+    /**
+     * @var Orgao
+     */
+    protected $model;
+
+    /**
+     * CuradorRepository constructor.
+     *
+     * @param Orgao $model
+     */
+    public function __construct(Orgao $model)
+    {
+        $this->model = $model;
+    }
+}
