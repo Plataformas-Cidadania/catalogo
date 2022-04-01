@@ -89,16 +89,16 @@
                         </thead>
                         <tbody>
                         <tr ng-repeat="area in areas">
-                            <td><% area.id_area %></td>
+                            <td><% area.id %></td>
                            {{-- <td><img ng-show="area.imagem" ng-src="imagens/areas/xs-<% area.imagem %>" width="60"></td>--}}
                             <td><% area.tema_recorte %></td>
                             <td><% area.mes %></td>
                             <td class="text-right">
                                 <div>
                                     {{--<a href="cms/items/<% area.id %>"><i class="fa fa-sitemap fa-2x" title="Itens"></i></a>&nbsp;&nbsp;--}}
-                                    <a href="cms/area/<% area.id_area %>"><i class="fa fa-edit fa-2x" title="Editar"></i></a>&nbsp;&nbsp;{{--<% mensagemStatus %><% idStatus %>--}}
-                                    {{--<a  ng-class="<% area.status %> == 1 ? 'color-success' : 'color-success-inactive'"  style="cursor: pointer;"><i class="fa fa-check-circle fa-2x" aria-hidden="true" ng-click="status(area.id_area, area.status);"></i></a>&nbsp;&nbsp;--}}
-                                    <a><i data-toggle="modal" data-target="#modalExcluir" class="fa fa-remove fa-2x" style="cursor:pointer;"  ng-click="perguntaExcluir(area.id_area, area.tema_recorte, area.imagem)"></i></a>
+                                    <a href="cms/area/<% area.id %>"><i class="fa fa-edit fa-2x" title="Editar"></i></a>&nbsp;&nbsp;{{--<% mensagemStatus %><% idStatus %>--}}
+                                    {{--<a  ng-class="<% area.status %> == 1 ? 'color-success' : 'color-success-inactive'"  style="cursor: pointer;"><i class="fa fa-check-circle fa-2x" aria-hidden="true" ng-click="status(area.id, area.status);"></i></a>&nbsp;&nbsp;--}}
+                                    <a><i data-toggle="modal" data-target="#modalExcluir" class="fa fa-remove fa-2x" style="cursor:pointer;"  ng-click="perguntaExcluir(area.id, area.tema_recorte, area.imagem)"></i></a>
                                 </div>
                             </td>
                         </tr>

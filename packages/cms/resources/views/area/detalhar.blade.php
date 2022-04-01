@@ -6,7 +6,7 @@
         <div class="box-padrao">
             <h1><a href="javascript:history.back();"><i class="fa fa-arrow-circle-left"></i></a>&nbsp;&nbsp;Area</h1>
             <?php //print_r($area);?>
-            <div ng-init="carregaImagem('{{$area->imagem}}', '{{$area->arquivo}}'); id_area={{$area->id_area}};">
+            <div ng-init="carregaImagem('{{$area->imagem}}', '{{$area->arquivo}}'); id={{$area->id}};">
                 <span class="texto-obrigatorio">* campos obrigatórios</span><br><br>
                 {!! Form::model($area, ['name' =>'form']) !!}
                 <div class="container-thumb" style="display: none;">
@@ -34,7 +34,7 @@
 
                 <br><br>
                 @include('cms::area._form')
-                <input type="hidden" name="id" ng-model="id" ng-init="id='{{$area->id_area}}'"/>
+                <input type="hidden" name="id" ng-model="id" ng-init="id='{{$area->id}}'"/>
                 <div class="row">
                     <div class="col-md-1 col-lg-1 col-xs-3">
                         <br>
