@@ -4,6 +4,7 @@
         border-color: red;
     }
 </style>
+<link rel="stylesheet" href="css/card.css">
 @if($rota=='/')
     <link rel="stylesheet" href="css/home.css">
 @endif
