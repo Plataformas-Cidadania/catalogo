@@ -196,61 +196,9 @@ Route::group(['middleware' => 'cms'], function () {
 
         //ROTAS DO CRUD PELA API////////////////////////////////////////////////////////////
 
-        //Dimensão
-        Route::get('/cms/dimensoes', 'Cms\Controllers\DimensaoController@index');
-        Route::get('/cms/dimensao/{id}', 'Cms\Controllers\DimensaoController@detalhar');
-
-        //Indicador
-        Route::get('/cms/indicadores/{id_dimensao}', 'Cms\Controllers\IndicadorController@index');
-        Route::get('/cms/indicador/{id}', 'Cms\Controllers\IndicadorController@detalhar');
-
-        //Perguntas
-        Route::get('/cms/perguntas/{id_indicador}', 'Cms\Controllers\PerguntaController@index');
-        Route::get('/cms/pergunta/{id}', 'Cms\Controllers\PerguntaController@detalhar');
-
-        //Autor
-        Route::get('/cms/autores', 'Cms\Controllers\AutorController@index');
-        Route::get('/cms/autor/{id}', 'Cms\Controllers\AutorController@detalhar');
-
-        //Categoria
-        Route::get('/cms/categorias', 'Cms\Controllers\CategoriaController@index');
-        Route::get('/cms/categoria/{id}', 'Cms\Controllers\CategoriaController@detalhar');
-
-        //Formato Recurso
-        Route::get('/cms/formatos-recursos', 'Cms\Controllers\FormatoRecursoController@index');
-        Route::get('/cms/formato-recurso/{id}', 'Cms\Controllers\FormatoRecursoController@detalhar');
-
-        //Tipo Recurso
-        Route::get('/cms/tipos-recursos', 'Cms\Controllers\TipoRecursoController@index');
-        Route::get('/cms/tipo-recurso/{id}', 'Cms\Controllers\TipoRecursoController@detalhar');
-
-        //Recurso
-        Route::get('/cms/recursos', 'Cms\Controllers\RecursoController@index');
-        Route::get('/cms/recurso/{id}', 'Cms\Controllers\RecursoController@detalhar');
-
-        //Link
-        Route::get('/cms/links/{id_recurso}', 'Cms\Controllers\LinkController@index');
-        Route::get('/cms/link/{id}', 'Cms\Controllers\LinkController@detalhar');
-
-        //PerguntaRelate
-        Route::get('/cms/perguntas-relate/', 'Cms\Controllers\PerguntaRelateController@index');
-        Route::get('/cms/pergunta-relate/{id}', 'Cms\Controllers\PerguntaRelateController@detalhar');
-
-        //RespostaRelate
-        Route::get('/cms/respostas-relate/{id_pergunta}', 'Cms\Controllers\RespostaRelateController@index');
-        Route::get('/cms/resposta-relate/{id}', 'Cms\Controllers\RespostaRelateController@detalhar');
-
-        //Depoimento
-        Route::get('/cms/depoimentos', 'Cms\Controllers\DepoimentoController@index');
-        Route::get('/cms/depoimento/{id}', 'Cms\Controllers\DepoimentoController@detalhar');
-
-        //Curador
-        Route::get('/cms/curadores', 'Cms\Controllers\CuradorController@index');
-        Route::get('/cms/curador/{id}', 'Cms\Controllers\CuradorController@detalhar');
-
-        //Curadoria
-        Route::get('/cms/curadorias', 'Cms\Controllers\CuradoriaController@index');
-        Route::get('/cms/curadoria/{id}', 'Cms\Controllers\CuradoriaController@detalhar');
+        //Area
+        Route::get('/cms/areas', 'Cms\Controllers\AreaController@index');
+        Route::get('/cms/area/{id}', 'Cms\Controllers\AreaController@detalhar');
 
         ////////////////////////////////////////////////////////////////////////////////////
 

@@ -163,7 +163,5 @@
             </div>
         </div>
         <!-- Fim Modal Excluir-->
-
-        @include("cms::area.area_recurso")
     </div>
 @endsection

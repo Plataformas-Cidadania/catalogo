@@ -17,7 +17,7 @@ class CategoriaController extends Controller
 {
     private CategoriaRepository $repo;
 
-;  
+;
     private $rules = [
         'id' => 'int|min:1',
         'nome' => 'string|min:1',

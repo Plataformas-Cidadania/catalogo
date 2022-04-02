@@ -140,4 +140,9 @@ mix.scripts('packages/cms/resources/assets/js/controllers/integranteCtrl.js', 'p
 mix.scripts('packages/cms/resources/assets/js/controllers/alterarIntegranteCtrl.js', 'public/assets-cms/js/controllers/alterarIntegranteCtrl.js');
 
 
+//Area
+mix.scripts('packages/cms/resources/assets/js/controllers/areaCtrl.js', 'public/assets-cms/js/controllers/areaCtrl.js');
+mix.scripts('packages/cms/resources/assets/js/controllers/alterarAreaCtrl.js', 'public/assets-cms/js/controllers/alterarAreaCtrl.js');
+
+
 //FIM CMS///////////////////////////////////////////////////////////////////
