@@ -17,7 +17,7 @@ class PoliticaController extends Controller
 {
     private PoliticaRepository $repo;
 
-;
+
     private $rules = [
         'id' => 'int|min:1',
         'nome' => 'string|min:1',
