@@ -1,0 +1,26 @@
+_id: req_34343047c2df48f788f9751104e766ef
+type: Request
+parentId: fld_c0b20e31759e4c40aae8101feb415402
+modified: 1649090254540
+created: 1649090254540
+url: http://localhost:{{ _.porta_app }}/api/categoria/1
+name: delete
+description: ""
+method: DELETE
+body:
+  mimeType: multipart/form-data
+  params: []
+parameters: []
+headers:
+  - name: Content-Type
+    value: multipart/form-data
+    id: pair_bab563c835fb48018cde20b450fb3f63
+authentication: {}
+metaSortKey: -1640204653233.125
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

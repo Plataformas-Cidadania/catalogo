@@ -1,17 +1,17 @@
-_id: req_7aa63f40804841528abb53eaeee83cf0
+_id: req_497087a7c09a4f77a0dc26577f6badba
 type: Request
-parentId: fld_51ba210689814a61a5b82b1d3e42c21a
-modified: 1647565730314
-created: 1647565717391
-url: http://localhost:8001/api
-name: GET Api
+parentId: fld_c0b20e31759e4c40aae8101feb415402
+modified: 1649090254500
+created: 1649090254500
+url: http://localhost:{{ _.porta_app }}/api/categoria/1
+name: get
 description: ""
 method: GET
 body: {}
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1647565717391
+metaSortKey: -1644351012969
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true
