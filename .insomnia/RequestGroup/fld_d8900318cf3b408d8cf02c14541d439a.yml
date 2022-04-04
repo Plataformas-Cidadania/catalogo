@@ -1,0 +1,13 @@
+_id: fld_d8900318cf3b408d8cf02c14541d439a
+type: RequestGroup
+parentId: wrk_16e411491eef4d5fa61bbb4e01884c3f
+modified: 1649090254446
+created: 1649090254446
+name: Catalogo API local
+description: ""
+environment:
+  porta_app: "8001"
+environmentPropertyOrder:
+  "&":
+    - porta_app
+metaSortKey: -1000000000

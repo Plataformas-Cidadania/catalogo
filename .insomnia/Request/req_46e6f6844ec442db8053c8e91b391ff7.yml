@@ -1,0 +1,21 @@
+_id: req_46e6f6844ec442db8053c8e91b391ff7
+type: Request
+parentId: fld_c0b20e31759e4c40aae8101feb415402
+modified: 1649090254473
+created: 1649090254473
+url: http://localhost:{{ _.porta_app }}/api/categoria/
+name: getAll
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1649089709810
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
