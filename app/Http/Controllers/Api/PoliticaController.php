@@ -17,18 +17,18 @@ class PoliticaController extends Controller
 {
     private PoliticaRepository $repo;
 
-;  
+
     private $rules = [
         'id' => 'int|min:1',
         'nome' => 'string|min:1',
         'ano' => 'int|min:1',
         'medida_provisoria' => 'string|min:1|nullable',
-        'medida_provisoria_inicio_vigencia' => 'string|min:1|nullable', 
-        'legislacao' => 'string|nullable', 
-        'vigencia_inicio' => 'date|nullable', 
-        'vigencia_fim' => 'date|nullable', 
-        'objetivos' => 'string|nullable',  
-        'observacao' => 'string|nullable',  
+        'medida_provisoria_inicio_vigencia' => 'string|min:1|nullable',
+        'legislacao' => 'string|nullable',
+        'vigencia_inicio' => 'date|nullable',
+        'vigencia_fim' => 'date|nullable',
+        'objetivos' => 'string|nullable',
+        'observacao' => 'string|nullable',
         'acao_orcamentaria_assoc' => 'string|nullable',
         'publico_alvo_categ' => 'string|nullable',
         'tipo_politica' => 'int|min:1|nullable',

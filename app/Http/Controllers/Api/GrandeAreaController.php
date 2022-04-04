@@ -17,7 +17,7 @@ class GrandeAreaController extends Controller
 {
     private GrandeAreaRepository $repo;
 
-;  
+
     private $rules = [
         'id' => 'int|min:1',
         'nome' => 'string|min:1',

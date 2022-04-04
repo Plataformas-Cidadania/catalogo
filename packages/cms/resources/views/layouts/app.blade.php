@@ -99,15 +99,19 @@
                 <li>
                     <a href="cms/usuarios"><i class="fa fa-fw fa-users"></i> Usuários</a>
                 </li>
-
-                <li>
-                    <a href="cms/setting"><i class="fa fa-fw fa-users"></i> Configurações</a>
-                </li>
                 <li>
                     <a href="cms/midias"><i class="fa fa-fw fa-anchor"></i> Mídias</a>
                 </li>
                 <li>
                     <a href="cms/integrantes"><i class="fa fa-fw fa-anchor"></i> Autores</a>
+                </li>
+                <li>
+                    <a href="cms/areas"><i class="fa fa-fw fa-square"></i> Áreas Temáticas</a>
+                </li>
+
+
+                <li>
+                    <a href="cms/setting"><i class="fa fa-fw fa-users"></i> Configurações</a>
                 </li>
 
             </ul>

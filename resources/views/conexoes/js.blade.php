@@ -247,8 +247,9 @@
     {{--<link href="js/timeline/css/timeline.min.css" rel="stylesheet" />--}}
     <link href="js/timeline/css/custom-timeline.css" rel="stylesheet" />
     {{--<script src="js/components/timeline.js"></script>--}}
-    <script src="js/components/timeline3.js"></script>
+    <script src="js/components/timelineCard.js"></script>
     <script src="js/components/timeline/index.js"></script>
+    <script src="js/card.js" defer>
 @endif
 
 @if($rota=="consulta")
