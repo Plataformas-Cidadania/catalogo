@@ -18,7 +18,7 @@ class CreatePoliticaTable extends Migration
             $table->string('nome');
             $table->date('ano');
             $table->string('medida_provisoria')->nullable();
-            $table->date('medida_provisoria_inicio_vigencia')->nullable();
+            $table->string('medida_provisoria_inicio_vigencia')->nullable();
             $table->string('legislacao')->nullable();
             $table->date('vigencia_inicio')->nullable();
             $table->date('vigencia_fim')->nullable();
@@ -27,7 +27,7 @@ class CreatePoliticaTable extends Migration
             $table->string('acao_orcamentaria_assoc')->nullable();
             $table->enum('instrumento_legal', ['Resolução','Projeto de Lei','Portaria',
                 'Norma de execução','Norma operacional','Lei ordinária','Medida Provisória',
-                'Decreto','Decreto-Lei','Instrução Normativa','Lei Complementar'])->nullable()->comment('Tipo de instrumento legal');
+                'Decreto','Decreto-Lei','Instrução Normativa','Lei Complementar','Não se aplica'])->nullable()->comment('Tipo de instrumento legal');
             $table->string('publico_alvo_categ');
 
             $table->integer('tipo_politica')->nullable();
