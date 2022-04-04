@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Api\Controller;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\Eloquent\RelationNotFoundException;
+use Illuminate\Foundation\Mix;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -23,7 +24,7 @@ class TipoPoliticaController extends Controller
         'nome' => 'string|min:1',
     ];
 
-    public function __construct(TipoPoliticaController $repo)
+    public function __construct(TipoPoliticaRepository $repo)
     {
         $this->repo = $repo;
     }
@@ -33,16 +34,11 @@ class TipoPoliticaController extends Controller
      *
      * @param null
      *
-     * @return JsonResponse
      */
 
-    public function getAll(): JsonResponse
+    public function getAll()
     {
-        $res = $this->repo->all();
-        return $this->successResponse(
-            'Tipos de Politicas retornadas com sucesso',
-            $res
-        );
+        return $this->repo->all();
     }
 
     /**
@@ -50,9 +46,9 @@ class TipoPoliticaController extends Controller
      *
      * @param Request $request
      *
-     * @return JsonResponse
+     * @return Mix
      */
-    public function store(Request $request): JsonResponse
+    public function store(Request $request)
     {
         try {
             $validator = $this->getValidator($request);
@@ -62,35 +58,28 @@ class TipoPoliticaController extends Controller
             }
 
             $data = $this->getData($request);
-            $res = $this->repo->create($data);
-            return $this->successResponse(
-			    'Tipo de Politica '.$res->id.' foi adicionado',
-			    $this->transform($res)
-			);
+            return $this->repo->create($data);
+
         } catch (Exception $exception) {
             return $this->errorResponse('Erro inesperado.'.$exception);
         }
     }
 
     /**
-     * Obter especificado pelo id
+     * Obter especificado pelo id'
      *
      * @param int $id
      *
-     * @return JsonResponse
+     * @return \Illuminate\Database\Eloquent\Model
      */
-    public function get($id): JsonResponse
+    public function get($id)
     {
         try {
-            $res = $this->repo->findById($id);
-            return $this->successResponse(
-                'Retornado com sucesso',
-                $res
-            );
+            return $this->repo->findById($id);
         }catch (Exception $exception) {
             if ($exception instanceof ModelNotFoundException)
                 return $this->errorResponse('Not found');
-            return $this->errorResponse('Erro inesperado.'.$exception);
+            return $this->errorResponse($exception);
         }
     }
 
@@ -100,26 +89,18 @@ class TipoPoliticaController extends Controller
      * @param int $id
      * @param Request $request
      *
-     * @return JsonResponse
+     * @return Mix
      */
-    public function update($id, Request $request): JsonResponse
+    public function update($id, Request $request)
     {
 
         try {
             $validator = $this->getValidator($request);
-
             if ($validator->fails()) {
                 return $this->errorResponse($validator->errors()->all());
             }
-
             $data = $this->getData($request);
-
-            $res = $this->repo->update($id,$data);
-
-            return $this->successResponse(
-			    'Atualizado com sucesso.',
-			    $this->transform($res)
-			);
+            return $this->repo->update($id,$data);
         } catch (Exception $exception) {
             if ($exception instanceof ModelNotFoundException)
                 return $this->errorResponse('Not found');
@@ -132,17 +113,12 @@ class TipoPoliticaController extends Controller
      *
      * @param int $id
      *
-     * @return JsonResponse
+     * @return Mix
      */
-    public function destroy($id): JsonResponse
+    public function destroy($id)
     {
         try {
-            $res = $this->repo->deleteById($id);
-
-            return $this->successResponse(
-			    ''.$id.' deletado com sucesso',
-			    $this->transform($res)
-			);
+            return $this->repo->deleteById($id);
         } catch (Exception $exception) {
             if ($exception instanceof ModelNotFoundException)
                 return $this->errorResponse('Not found');
@@ -172,24 +148,7 @@ class TipoPoliticaController extends Controller
      */
     protected function getData(Request $request): array
     {
-
         return $request->validate($this->rules);
-    }
-
-    /**
-     * Transformar em um array
-     *
-     * @param TipoPolitica $model
-     *
-     * @return array
-     */
-
-    protected function transform(TipoPolitica $model): array
-    {
-        return [
-            'id' => $model->id,
-            'nome' => $model->nome,
-        ];
     }
 
 

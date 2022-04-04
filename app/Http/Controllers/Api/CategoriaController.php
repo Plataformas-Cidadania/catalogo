@@ -6,11 +6,11 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\Eloquent\RelationNotFoundException;
+use Illuminate\Foundation\Mix;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Exception;
-use App\Models\CategoriaPolitica;
 use App\Repository\CategoriaRepository;
 
 class CategoriaController extends Controller
@@ -24,7 +24,6 @@ class CategoriaController extends Controller
 
     public function __construct(CategoriaRepository $repo)
     {
-
         $this->repo = $repo;
     }
 
@@ -45,9 +44,9 @@ class CategoriaController extends Controller
      *
      * @param Request $request
      *
-     * @return JsonResponse
+     * @return Mix
      */
-    public function store(Request $request): JsonResponse
+    public function store(Request $request)
     {
         try {
             $validator = $this->getValidator($request);
@@ -57,8 +56,8 @@ class CategoriaController extends Controller
             }
 
             $data = $this->getData($request);
-            $res = $this->repo->create($data);
-            return $this->transform($res);
+            return $this->repo->create($data);
+
         } catch (Exception $exception) {
             return $this->errorResponse('Erro inesperado.'.$exception);
         }
@@ -88,23 +87,18 @@ class CategoriaController extends Controller
      * @param int $id
      * @param Request $request
      *
-     * @return JsonResponse
+     * @return Mix
      */
     public function update($id, Request $request)
     {
 
         try {
             $validator = $this->getValidator($request);
-
             if ($validator->fails()) {
                 return $this->errorResponse($validator->errors()->all());
             }
-
             $data = $this->getData($request);
-
             return $this->repo->update($id,$data);
-
-
         } catch (Exception $exception) {
             if ($exception instanceof ModelNotFoundException)
                 return $this->errorResponse('Not found');
@@ -117,14 +111,12 @@ class CategoriaController extends Controller
      *
      * @param int $id
      *
-     * @return JsonResponse
+     * @return Mix
      */
-    public function destroy($id): JsonResponse
+    public function destroy($id)
     {
         try {
-            $res = $this->repo->deleteById($id);
-
-            return $res;
+            return $this->repo->deleteById($id);
         } catch (Exception $exception) {
             if ($exception instanceof ModelNotFoundException)
                 return $this->errorResponse('Not found');
@@ -154,7 +146,6 @@ class CategoriaController extends Controller
      */
     protected function getData(Request $request): array
     {
-
         return $request->validate($this->rules);
     }
 

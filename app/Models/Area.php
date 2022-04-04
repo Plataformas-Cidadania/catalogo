@@ -8,7 +8,7 @@ class Area extends Model
 {
     protected $table = 'catalogo.area';
 	protected $primaryKey = 'id';
-
+    public $timestamps = false;
     protected $fillable = [
         'nome'
     ];
