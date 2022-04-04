@@ -2,21 +2,21 @@
 
 namespace App\Repository;
 
-use App\Models\Categoria;
+use App\Models\CategoriaPolitica;
 
 class CategoriaRepository extends BaseRepository
 {
     /**
-     * @var Categoria
+     * @var CategoriaPolitica
      */
-    protected $model;
+    protected \Illuminate\Database\Eloquent\Model $model;
 
     /**
      * CuradorRepository constructor.
      *
-     * @param Categoria $model
+     * @param CategoriaPolitica $model
      */
-    public function __construct(Categoria $model)
+    public function __construct(CategoriaPolitica $model)
     {
         $this->model = $model;
     }

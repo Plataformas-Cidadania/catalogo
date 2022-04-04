@@ -9,7 +9,7 @@ class AreaRepository extends BaseRepository
     /**
      * @var Area
      */
-    protected $model;
+    protected \Illuminate\Database\Eloquent\Model $model;
 
     /**
      * CuradorRepository constructor.

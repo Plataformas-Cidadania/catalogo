@@ -9,7 +9,7 @@ class GrandeAreaRepository extends BaseRepository
     /**
      * @var GrandeArea
      */
-    protected $model;
+    protected \Illuminate\Database\Eloquent\Model $model;
 
     /**
      * CuradorRepository constructor.

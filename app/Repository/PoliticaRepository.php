@@ -9,7 +9,7 @@ class PoliticaRepository extends BaseRepository
     /**
      * @var Politica
      */
-    protected $model;
+    protected \Illuminate\Database\Eloquent\Model $model;
 
     /**
      * CuradorRepository constructor.

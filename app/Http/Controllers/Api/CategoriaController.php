@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Api\Controller;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\Eloquent\RelationNotFoundException;
@@ -10,21 +10,21 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Exception;
-use App\Models\Categoria;
+use App\Models\CategoriaPolitica;
 use App\Repository\CategoriaRepository;
 
 class CategoriaController extends Controller
 {
     private CategoriaRepository $repo;
 
-;  
     private $rules = [
         'id' => 'int|min:1',
         'nome' => 'string|min:1',
     ];
 
-    public function __construct(CategoriaController $repo)
+    public function __construct(CategoriaRepository $repo)
     {
+
         $this->repo = $repo;
     }
 
@@ -33,16 +33,11 @@ class CategoriaController extends Controller
      *
      * @param null
      *
-     * @return JsonResponse
      */
 
-    public function getAll(): JsonResponse
+    public function getAll()
     {
-        $res = $this->repo->all();
-        return $this->successResponse(
-            'Categorias retornadas com sucesso',
-            $res
-        );
+        return $this->repo->all();
     }
 
     /**
@@ -63,34 +58,27 @@ class CategoriaController extends Controller
 
             $data = $this->getData($request);
             $res = $this->repo->create($data);
-            return $this->successResponse(
-			    'Categoria '.$res->id.' foi adicionado',
-			    $this->transform($res)
-			);
+            return $this->transform($res);
         } catch (Exception $exception) {
             return $this->errorResponse('Erro inesperado.'.$exception);
         }
     }
 
     /**
-     * Obter especificado pelo id
+     * Obter especificado pelo id'
      *
      * @param int $id
      *
-     * @return JsonResponse
+     * @return \Illuminate\Database\Eloquent\Model
      */
-    public function get($id): JsonResponse
+    public function get($id)
     {
         try {
-            $res = $this->repo->findById($id);
-            return $this->successResponse(
-                'Retornado com sucesso',
-                $res
-            );
+            return $this->repo->findById($id);
         }catch (Exception $exception) {
             if ($exception instanceof ModelNotFoundException)
                 return $this->errorResponse('Not found');
-            return $this->errorResponse('Erro inesperado.'.$exception);
+            return $this->errorResponse($exception);
         }
     }
 
@@ -102,7 +90,7 @@ class CategoriaController extends Controller
      *
      * @return JsonResponse
      */
-    public function update($id, Request $request): JsonResponse
+    public function update($id, Request $request)
     {
 
         try {
@@ -114,12 +102,9 @@ class CategoriaController extends Controller
 
             $data = $this->getData($request);
 
-            $res = $this->repo->update($id,$data);
+            return $this->repo->update($id,$data);
 
-            return $this->successResponse(
-			    'Atualizado com sucesso.',
-			    $this->transform($res)
-			);
+
         } catch (Exception $exception) {
             if ($exception instanceof ModelNotFoundException)
                 return $this->errorResponse('Not found');
@@ -139,10 +124,7 @@ class CategoriaController extends Controller
         try {
             $res = $this->repo->deleteById($id);
 
-            return $this->successResponse(
-			    ''.$id.' deletado com sucesso',
-			    $this->transform($res)
-			);
+            return $res;
         } catch (Exception $exception) {
             if ($exception instanceof ModelNotFoundException)
                 return $this->errorResponse('Not found');
@@ -176,21 +158,7 @@ class CategoriaController extends Controller
         return $request->validate($this->rules);
     }
 
-    /**
-     * Transformar em um array
-     *
-     * @param Orgão $model
-     *
-     * @return array
-     */
 
-    protected function transform(Categoria $model): array
-    {
-        return [
-            'id' => $model->id,
-            'nome' => $model->nome,
-        ];
-    }
 
 
 }

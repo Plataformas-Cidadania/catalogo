@@ -9,7 +9,7 @@ class OrgaoRepository extends BaseRepository
     /**
      * @var Orgao
      */
-    protected $model;
+    protected \Illuminate\Database\Eloquent\Model $model;
 
     /**
      * CuradorRepository constructor.
