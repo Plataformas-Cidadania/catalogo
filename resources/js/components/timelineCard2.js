@@ -84,13 +84,15 @@ const Timeline = (props) => {
                                         <div key={props.item.area+"_ano_"+key} className="timeline__item">
                                             <div className="timeline__content">
                                                 <h3 className={key % 2 === 0 ? 'timeline-ano' : 'timeline-ano-2'}>{ano}</h3>
-                                                <div className="tariffCards" style={{top: key % 2 === 0 ? 35 : 175}}>
+                                                {/*<div className="tariffCards" style={{top: key % 2 === 0 ? 35 : 175}}>*/}
+                                                <div className="tariffCards" style={{top: key % 2 === 0 ? 0 : 0}}>
 
                                                     {
                                                         politicas.map((politica, key) => {
                                                             let id = 1;
                                                             let partePolitica = politica.nome_politica.substr(0, 50);
-                                                            partePolitica += politica.nome_politica.length > 30 ? ' ...' : ''
+                                                            //partePolitica += politica.nome_politica.length > 30 ? ' ...' : ''
+                                                            partePolitica += politica.nome_politica.length > 30 ? ' ' : ''
                                                             return (
                                                                 <div className={"cor"+key} key={props.item.area+"_politica_"+key}>
                                                                     <h3>{partePolitica}</h3>

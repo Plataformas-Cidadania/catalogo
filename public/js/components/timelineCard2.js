@@ -74,12 +74,13 @@ const Timeline = props => {
     }, ano), /*#__PURE__*/React.createElement("div", {
       className: "tariffCards",
       style: {
-        top: key % 2 === 0 ? 35 : 175
+        top: key % 2 === 0 ? 0 : 0
       }
     }, politicas.map((politica, key) => {
       let id = 1;
-      let partePolitica = politica.nome_politica.substr(0, 50);
-      partePolitica += politica.nome_politica.length > 30 ? ' ...' : '';
+      let partePolitica = politica.nome_politica.substr(0, 50); //partePolitica += politica.nome_politica.length > 30 ? ' ...' : ''
+
+      partePolitica += politica.nome_politica.length > 30 ? ' ' : '';
       return /*#__PURE__*/React.createElement("div", {
         className: "cor" + key,
         key: props.item.area + "_politica_" + key
