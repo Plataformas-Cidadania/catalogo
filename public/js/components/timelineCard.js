@@ -22,22 +22,21 @@ const Timeline = props => {
         [...stack.children].reverse().forEach(i => stack.append(i));
       }); //CARD DE TESTE////////////////////
 
-      let stack1 = document.getElementById('stack1');
+      /*let stack1 = document.getElementById('stack1');
       [...stack1.children].reverse().forEach(i => stack1.append(i));
       stack1.addEventListener("click", swap);
-
-      function swap(e) {
-        console.log('card');
-        console.log(e.target.parentNode.id);
-        let card = e.target.parentNode.querySelector(".card:last-child");
-        if (e.target !== card) return;
-        card.style.animation = "swap 700ms forwards";
-        setTimeout(() => {
-          card.style.animation = "";
-          e.target.parentNode.prepend(card);
-        }, 700);
-      } ////////////////////////////////////
-
+       function swap(e){
+          console.log('card');
+          console.log(e.target.parentNode.id);
+          let card = e.target.parentNode.querySelector(".card:last-child");
+          if (e.target !== card) return;
+          card.style.animation = "swap 700ms forwards";
+           setTimeout(() => {
+              card.style.animation = "";
+              e.target.parentNode.prepend(card);
+          }, 700);
+      }*/
+      ////////////////////////////////////
     }
   }, [props.item]);
 
@@ -70,19 +69,6 @@ const Timeline = props => {
   };
 
   return props.item ? /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-    id: "stack1",
-    className: "stack"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "card"
-  }, "1"), /*#__PURE__*/React.createElement("div", {
-    className: "card"
-  }, "2"), /*#__PURE__*/React.createElement("div", {
-    className: "card"
-  }, "3"), /*#__PURE__*/React.createElement("div", {
-    className: "card"
-  }, "4"), /*#__PURE__*/React.createElement("div", {
-    className: "card"
-  }, "5")), /*#__PURE__*/React.createElement("div", {
     className: "modal fade",
     id: "modal" + props.id,
     tabIndex: "-1",

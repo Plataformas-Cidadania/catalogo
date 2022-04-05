@@ -25,7 +25,7 @@ const Timeline = (props) => {
             });
 
             //CARD DE TESTE////////////////////
-            let stack1 = document.getElementById('stack1');
+            /*let stack1 = document.getElementById('stack1');
             [...stack1.children].reverse().forEach(i => stack1.append(i));
             stack1.addEventListener("click", swap);
 
@@ -40,7 +40,7 @@ const Timeline = (props) => {
                     card.style.animation = "";
                     e.target.parentNode.prepend(card);
                 }, 700);
-            }
+            }*/
             ////////////////////////////////////
 
         }
@@ -80,7 +80,7 @@ const Timeline = (props) => {
     return (
         props.item ? (
             <div>
-                <div id="stack1" className="stack">
+                {/*<div id="stack1" className="stack">
                     <div className="card">1
                     </div>
                     <div className="card">2
@@ -91,7 +91,7 @@ const Timeline = (props) => {
                     </div>
                     <div className="card">5
                     </div>
-                </div>
+                </div>*/}
                 <div className="modal fade" id={"modal"+props.id} tabIndex="-1" aria-labelledby={"modal"+props.id+"Label"} aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered">
                         <div className="modal-content">
