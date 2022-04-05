@@ -25,7 +25,7 @@
   align-items: center;
   border-radius: 2rem;
   font-family: sans-serif;
-  font-size: 18px;
+  /*font-size: 18px;*/
   color: #00000080;
   box-shadow: 0 5px 10px 0 #00000040, 0 15px 20px 0#00000020;
   transition: transform 200ms;
