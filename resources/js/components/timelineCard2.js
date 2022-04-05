@@ -91,7 +91,8 @@ const Timeline = (props) => {
                                                         politicas.map((politica, key) => {
                                                             let id = 1;
                                                             let partePolitica = politica.nome_politica.substr(0, 50);
-                                                            partePolitica += politica.nome_politica.length > 30 ? ' ...' : ''
+                                                            //partePolitica += politica.nome_politica.length > 30 ? ' ...' : ''
+                                                            partePolitica += politica.nome_politica.length > 30 ? ' ' : ''
                                                             return (
                                                                 <div className={"cor"+key} key={props.item.area+"_politica_"+key}>
                                                                     <h3>{partePolitica}</h3>

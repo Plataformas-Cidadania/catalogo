@@ -78,8 +78,9 @@ const Timeline = props => {
       }
     }, politicas.map((politica, key) => {
       let id = 1;
-      let partePolitica = politica.nome_politica.substr(0, 50);
-      partePolitica += politica.nome_politica.length > 30 ? ' ...' : '';
+      let partePolitica = politica.nome_politica.substr(0, 50); //partePolitica += politica.nome_politica.length > 30 ? ' ...' : ''
+
+      partePolitica += politica.nome_politica.length > 30 ? ' ' : '';
       return /*#__PURE__*/React.createElement("div", {
         className: "cor" + key,
         key: props.item.area + "_politica_" + key
