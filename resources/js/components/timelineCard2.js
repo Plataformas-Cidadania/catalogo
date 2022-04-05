@@ -74,7 +74,7 @@ const Timeline = (props) => {
                     </div>
                 </div>
                 <div className="timeline" id={props.id}>
-                    <div className="timeline__wrap" style={{minHeight: '300px'}}>
+                    <div className="timeline__wrap" style={{minHeight: '450px'}}>
                         <div className="timeline__items">
                             {
                                 Object.entries(props.item.anos).map((subitem, key) => {

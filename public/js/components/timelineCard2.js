@@ -57,7 +57,7 @@ const Timeline = props => {
   }, /*#__PURE__*/React.createElement("div", {
     className: "timeline__wrap",
     style: {
-      minHeight: '300px'
+      minHeight: '450px'
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "timeline__items"
