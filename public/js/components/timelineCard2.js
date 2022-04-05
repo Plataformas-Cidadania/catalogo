@@ -74,7 +74,7 @@ const Timeline = props => {
     }, ano), /*#__PURE__*/React.createElement("div", {
       className: "tariffCards",
       style: {
-        top: key % 2 === 0 ? 35 : 0
+        top: key % 2 === 0 ? 0 : 0
       }
     }, politicas.map((politica, key) => {
       let id = 1;

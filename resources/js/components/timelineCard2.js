@@ -85,7 +85,7 @@ const Timeline = (props) => {
                                             <div className="timeline__content">
                                                 <h3 className={key % 2 === 0 ? 'timeline-ano' : 'timeline-ano-2'}>{ano}</h3>
                                                 {/*<div className="tariffCards" style={{top: key % 2 === 0 ? 35 : 175}}>*/}
-                                                <div className="tariffCards" style={{top: key % 2 === 0 ? 35 : 0}}>
+                                                <div className="tariffCards" style={{top: key % 2 === 0 ? 0 : 0}}>
 
                                                     {
                                                         politicas.map((politica, key) => {
