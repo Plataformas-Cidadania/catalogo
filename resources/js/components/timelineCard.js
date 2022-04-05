@@ -18,37 +18,47 @@ const Timeline = (props) => {
     useEffect(() => {
         //CARD
         if(props.item){
-            console.log(props.item);
 
+            Object.entries(props.item.anos).forEach((item, key) => {
+                let stack = document.getElementById(props.item.area+"_ano_"+key);
+                [...stack.children].reverse().forEach(i => stack.append(i));
+            });
+
+            //CARD DE TESTE////////////////////
             let stack1 = document.getElementById('stack1');
-            let stack2 = document.getElementById('stack2');
+            [...stack1.children].reverse().forEach(i => stack1.append(i));
+            stack1.addEventListener("click", swap);
 
-            //stack1.children.reverse().forEach(i => newStack.append(i));
+            function swap(e){
+                console.log('card');
+                console.log(e.target.parentNode.id);
+                let card = e.target.parentNode.querySelector(".card:last-child");
+                if (e.target !== card) return;
+                card.style.animation = "swap 700ms forwards";
 
-            let newStack = document.querySelector(".stack");
-
-            console.log(stack1.children);
-            console.log(newStack);
-
-            [...newStack.children].reverse().forEach(i => newStack.append(i));
-
-            newStack.addEventListener("click", swap);
-
-            setStack(newStack)
+                setTimeout(() => {
+                    card.style.animation = "";
+                    e.target.parentNode.prepend(card);
+                }, 700);
+            }
+            ////////////////////////////////////
 
         }
 
     }, [props.item]);
 
-    function swap(e){
-        console.log('card');
-        let card = document.querySelector(".card:last-child");
+    function swap2(e){
+        console.log('card timeline');
+        e.persist();
+        console.log(e.target.parentNode.id);
+        let card = e.target.parentNode.querySelector(".card:last-child");
         if (e.target !== card) return;
         card.style.animation = "swap 700ms forwards";
 
         setTimeout(() => {
             card.style.animation = "";
-            stack.prepend(card);
+            e.target.parentNode.prepend(card);
+            //stack1.prepend(card);
         }, 700);
     }
 
@@ -80,18 +90,6 @@ const Timeline = (props) => {
                     <div className="card">4
                     </div>
                     <div className="card">5
-                    </div>
-                </div>
-                <div id="stack2" className="stack">
-                    <div className="card">1111111
-                    </div>
-                    <div className="card">2222222
-                    </div>
-                    <div className="card">333333333
-                    </div>
-                    <div className="card">444444
-                    </div>
-                    <div className="card">555555
                     </div>
                 </div>
                 <div className="modal fade" id={"modal"+props.id} tabIndex="-1" aria-labelledby={"modal"+props.id+"Label"} aria-hidden="true">
@@ -126,14 +124,14 @@ const Timeline = (props) => {
                                         <div key={props.item.area+"_ano_"+key} className="timeline__item">
                                             <div className="timeline__content">
                                                 <h3 className={key % 2 === 0 ? 'timeline-ano' : 'timeline-ano-2'}>{ano}</h3>
-                                                <div className="stack">
+                                                <div id={props.item.area+"_ano_"+key} className="stack">
                                                     {
                                                         politicas.map((politica, index) => {
                                                             let id = 1;
                                                             return (
                                                                 <div key={props.item.area+"_politica_"+key.toString()+index}
                                                                      className="card"
-                                                                     onClick={swap}
+                                                                     onClick={swap2}
                                                                 >
                                                                     {politica.nome_politica}
                                                                 </div>
