@@ -33,7 +33,7 @@ const Timeline = (props) => {
         props.item ? (
             <div>
 
-                <div className="tariffCards">
+                {/*<div className="tariffCards">
                     <div className="economy">
                         <h3>Programa Nacional do Milho (PROMILHO)</h3>
                         <span>Full Insurance</span>
@@ -50,7 +50,7 @@ const Timeline = (props) => {
                         <h3>Programa de Irrigação do Nordeste (PROINE)</h3>
                         <span>Full Insurance</span>
                     </div>
-                </div>
+                </div>*/}
 
                 <div className="modal fade" id={"modal"+props.id} tabIndex="-1" aria-labelledby={"modal"+props.id+"Label"} aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered">
@@ -84,7 +84,7 @@ const Timeline = (props) => {
                                         <div key={props.item.area+"_ano_"+key} className="timeline__item">
                                             <div className="timeline__content">
                                                 <h3 className={key % 2 === 0 ? 'timeline-ano' : 'timeline-ano-2'}>{ano}</h3>
-                                                <div className="tariffCards">
+                                                <div className="tariffCards" style={{top: key % 2 === 0 ? 35 : 175}}>
 
                                                     {
                                                         politicas.map((politica, key) => {
@@ -92,7 +92,7 @@ const Timeline = (props) => {
                                                             let partePolitica = politica.nome_politica.substr(0, 50);
                                                             partePolitica += politica.nome_politica.length > 30 ? ' ...' : ''
                                                             return (
-                                                                <div className="economy" key={props.item.area+"_politica_"+key}>
+                                                                <div className={"cor"+key} key={props.item.area+"_politica_"+key}>
                                                                     <h3>{partePolitica}</h3>
                                                                     <span>Full Insurance</span>
                                                                 </div>

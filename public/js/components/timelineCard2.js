@@ -29,16 +29,6 @@ const Timeline = props => {
   };
 
   return props.item ? /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-    className: "tariffCards"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "economy"
-  }, /*#__PURE__*/React.createElement("h3", null, "Programa Nacional do Milho (PROMILHO)"), /*#__PURE__*/React.createElement("span", null, "Full Insurance")), /*#__PURE__*/React.createElement("div", {
-    className: "premiumeconomy"
-  }, /*#__PURE__*/React.createElement("h3", null, "Programa Nacional de Irriga\xE7\xE3o (PRONI)"), /*#__PURE__*/React.createElement("span", null, "Full Insurance")), /*#__PURE__*/React.createElement("div", {
-    className: "business"
-  }, /*#__PURE__*/React.createElement("h3", null, "Programa FINOR-ALIMENTOS"), /*#__PURE__*/React.createElement("span", null, "Full Insurance")), /*#__PURE__*/React.createElement("div", {
-    className: "first"
-  }, /*#__PURE__*/React.createElement("h3", null, "Programa de Irriga\xE7\xE3o do Nordeste (PROINE)"), /*#__PURE__*/React.createElement("span", null, "Full Insurance"))), /*#__PURE__*/React.createElement("div", {
     className: "modal fade",
     id: "modal" + props.id,
     tabIndex: "-1",
@@ -82,13 +72,16 @@ const Timeline = props => {
     }, /*#__PURE__*/React.createElement("h3", {
       className: key % 2 === 0 ? 'timeline-ano' : 'timeline-ano-2'
     }, ano), /*#__PURE__*/React.createElement("div", {
-      className: "tariffCards"
+      className: "tariffCards",
+      style: {
+        top: key % 2 === 0 ? 35 : 175
+      }
     }, politicas.map((politica, key) => {
       let id = 1;
       let partePolitica = politica.nome_politica.substr(0, 50);
       partePolitica += politica.nome_politica.length > 30 ? ' ...' : '';
       return /*#__PURE__*/React.createElement("div", {
-        className: "economy",
+        className: "cor" + key,
         key: props.item.area + "_politica_" + key
       }, /*#__PURE__*/React.createElement("h3", null, partePolitica), /*#__PURE__*/React.createElement("span", null, "Full Insurance"));
     }))));
