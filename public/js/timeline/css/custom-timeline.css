@@ -85,8 +85,8 @@
 
 .timeline__content {
   background-color: #FFF;
-  border: 1px solid #CCC;
-  border-radius: 10px;
+  /*border: 1px solid #CCC;
+  border-radius: 10px;*/
   color: #333;
   display: block;
   padding: 10px;
@@ -126,8 +126,12 @@
 }
 
 .timeline__content:hover {
-  box-shadow: 2px 2px 8px #9b9898;
-  transform: scale(1.05);
+  /*box-shadow: 2px 2px 8px #9b9898;
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);*/
 }
 
 .timeline--horizontal {

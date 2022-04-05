@@ -242,6 +242,7 @@
 @endif
 
 @if($rota=="timeline")
+    {{--<script src="js/card.js" defer>--}}
     <script src="js/timeline/js/timeline.js"></script>
     {{--<script src="js/timeline/js/timeline.min.js"></script>--}}
     {{--<link href="js/timeline/css/timeline.min.css" rel="stylesheet" />--}}
@@ -249,7 +250,6 @@
     {{--<script src="js/components/timeline.js"></script>--}}
     <script src="js/components/timelineCard.js"></script>
     <script src="js/components/timeline/index.js"></script>
-    <script src="js/card.js" defer>
 @endif
 
 @if($rota=="consulta")
