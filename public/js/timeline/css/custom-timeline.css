@@ -164,7 +164,7 @@
   white-space: normal;
 }
 .timeline--horizontal .timeline__item::after {
-  left: 60%;
+  left: 70%;
   right: auto;
   transform: translate(-50%, -50%);
   top: 100%;
@@ -172,7 +172,7 @@
 .timeline--horizontal .timeline__item .timeline__item__inner {
   display: table;
   height: 100%;
-  width: 120%;
+  width: 140%;
 }
 .timeline--horizontal .timeline__item .timeline__content__wrap {
   display: table-cell;
