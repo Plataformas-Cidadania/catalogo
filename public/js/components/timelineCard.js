@@ -5,6 +5,7 @@ const Timeline = props => {
   } = React;
   const [anoModal, setAnoModal] = useState(null);
   const [politicasModal, setPoliticasModal] = useState([]);
+  const [stack, setStack] = useState(null);
   const style = {
     politica: {
       maxWidth: "15ch",
@@ -13,6 +14,33 @@ const Timeline = props => {
       whiteSpace: "nowrap"
     }
   };
+  useEffect(() => {
+    //CARD
+    if (props.item) {
+      console.log(props.item);
+      let stack1 = document.getElementById('stack1');
+      let stack2 = document.getElementById('stack2'); //stack1.children.reverse().forEach(i => newStack.append(i));
+
+      let newStack = document.querySelector(".stack");
+      console.log(stack1.children);
+      console.log(newStack);
+      [...newStack.children].reverse().forEach(i => newStack.append(i));
+      newStack.addEventListener("click", swap);
+      setStack(newStack);
+    }
+  }, [props.item]);
+
+  function swap(e) {
+    console.log('card');
+    let card = document.querySelector(".card:last-child");
+    if (e.target !== card) return;
+    card.style.animation = "swap 700ms forwards";
+    setTimeout(() => {
+      card.style.animation = "";
+      stack.prepend(card);
+    }, 700);
+  }
+
   useEffect(() => {
     if (props.item) {
       timeline(document.querySelectorAll('#' + props.id), {
@@ -29,6 +57,7 @@ const Timeline = props => {
   };
 
   return props.item ? /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    id: "stack1",
     className: "stack"
   }, /*#__PURE__*/React.createElement("div", {
     className: "card"
@@ -41,6 +70,19 @@ const Timeline = props => {
   }, "4"), /*#__PURE__*/React.createElement("div", {
     className: "card"
   }, "5")), /*#__PURE__*/React.createElement("div", {
+    id: "stack2",
+    className: "stack"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "card"
+  }, "1111111"), /*#__PURE__*/React.createElement("div", {
+    className: "card"
+  }, "2222222"), /*#__PURE__*/React.createElement("div", {
+    className: "card"
+  }, "333333333"), /*#__PURE__*/React.createElement("div", {
+    className: "card"
+  }, "444444"), /*#__PURE__*/React.createElement("div", {
+    className: "card"
+  }, "555555")), /*#__PURE__*/React.createElement("div", {
     className: "modal fade",
     id: "modal" + props.id,
     tabIndex: "-1",
@@ -83,19 +125,15 @@ const Timeline = props => {
       className: "timeline__content"
     }, /*#__PURE__*/React.createElement("h3", {
       className: key % 2 === 0 ? 'timeline-ano' : 'timeline-ano-2'
-    }, ano), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", {
-      className: "position-absolute top-0 start-100 translate-middle badge rounded-pill bg-pri",
-      style: {
-        marginTop: '9px'
-      }
-    }, politicas.length), politicas.map((politica, key) => {
+    }, ano), /*#__PURE__*/React.createElement("div", {
+      className: "stack"
+    }, politicas.map((politica, index) => {
       let id = 1;
-      let partePolitica = politica.nome_politica.substr(0, 50);
-      partePolitica += politica.nome_politica.length > 30 ? ' ...' : '';
-      return /*#__PURE__*/React.createElement("p", {
-        key: props.item.area + "_politica_" + key,
-        title: politica.nome_politica.length > 30 ? politica.nome_politica : null
-      }, partePolitica);
+      return /*#__PURE__*/React.createElement("div", {
+        key: props.item.area + "_politica_" + key.toString() + index,
+        className: "card",
+        onClick: swap
+      }, politica.nome_politica);
     }))));
   }))))) : /*#__PURE__*/React.createElement("div", null, "\xA0");
 };
