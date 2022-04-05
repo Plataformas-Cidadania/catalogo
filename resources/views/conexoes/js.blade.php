@@ -248,7 +248,8 @@
     {{--<link href="js/timeline/css/timeline.min.css" rel="stylesheet" />--}}
     <link href="js/timeline/css/custom-timeline.css" rel="stylesheet" />
     {{--<script src="js/components/timeline.js"></script>--}}
-    <script src="js/components/timelineCard.js"></script>
+    {{--<script src="js/components/timelineCard.js"></script>--}}
+    <script src="js/components/timelineCard2.js"></script>
     <script src="js/components/timeline/index.js"></script>
 @endif
 
