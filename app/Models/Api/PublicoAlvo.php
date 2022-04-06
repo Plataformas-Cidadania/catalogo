@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Api;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Orgao extends Model
+class PublicoAlvo extends Model
 {
-    protected $table = 'catalogo.orgao';
+    protected $table = 'catalogo.publico_alvo';
 	protected $primaryKey = 'id';
     public $timestamps = false;
     protected $fillable = [

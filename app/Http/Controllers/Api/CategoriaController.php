@@ -30,8 +30,7 @@ class CategoriaController extends Controller
     /**
      * Mostrar todos.
      *
-     * @param null
-     *
+     * @return \Illuminate\Database\Eloquent\Collection
      */
 
     public function getAll()

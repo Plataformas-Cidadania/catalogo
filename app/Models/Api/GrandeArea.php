@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Api;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Area extends Model
+class GrandeArea extends Model
 {
-    protected $table = 'catalogo.area';
+    protected $table = 'catalogo.grande_area';
 	protected $primaryKey = 'id';
     public $timestamps = false;
     protected $fillable = [

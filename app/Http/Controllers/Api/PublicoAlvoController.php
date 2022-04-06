@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 
+use App\Repository\GrandeAreaRepository;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\Eloquent\RelationNotFoundException;
 use Illuminate\Foundation\Mix;
@@ -11,36 +12,22 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Exception;
-use App\Repository\PoliticaRepository;
+use App\Repository\PublicoAlvoRepository;
 
-class PoliticaController extends Controller
+class PublicoAlvoController extends Controller
 {
-    private PoliticaRepository $repo;
+    private PublicoAlvoRepository $repo;
 
 
     private $rules = [
         'id' => 'int|min:1',
         'nome' => 'string|min:1',
-        'ano' => 'string',
-        'medida_provisoria' => 'string|min:1|nullable',
-        'medida_provisoria_inicio_vigencia' => 'string|min:1|nullable',
-        'legislacao' => 'string|nullable',
-        'vigencia_inicio' => 'date|nullable',
-        'vigencia_fim' => 'date|nullable',
-        'objetivos' => 'string|nullable',
-        'observacao' => 'string|nullable',
-        'acao_orcamentaria_assoc' => 'string|nullable',
-        'publico_alvo_categ' => 'string|nullable',
-        'tipo_politica' => 'int|min:1|nullable',
-        'grande_area' => 'int|min:1|nullable',
-        'area' => 'int|min:1|nullable',
     ];
 
-    public function __construct(PoliticaRepository $repo)
+    public function __construct(PublicoAlvoRepository $repo)
     {
         $this->repo = $repo;
     }
-
     /**
      * Mostrar todos.
      *

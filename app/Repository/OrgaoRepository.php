@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Models\Orgao;
+use App\Models\Api\Orgao;
 
 class OrgaoRepository extends BaseRepository
 {

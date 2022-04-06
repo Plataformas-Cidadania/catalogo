@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Api;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CategoriaPolitica extends Model
+class Categoria extends Model
 {
     protected $table = 'catalogo.categoria';
 	protected $primaryKey = 'id';

@@ -145,3 +145,51 @@ Route::group([
           ->name('api.politica.destroy');
 
  });
+
+
+Route::group([
+    'prefix' => 'publico_alvo',
+], function () {
+
+    Route::get('/', [App\Http\Controllers\Api\PublicoAlvoController::class, 'getAll'])
+        ->name('api.publico_alvo.getAll');
+
+    Route::get('/{public_alvo}',[App\Http\Controllers\Api\PublicoAlvoController::class, 'get'])
+        ->name('api.publico_alvo.get');
+
+    Route::post('/', [App\Http\Controllers\Api\PublicoAlvoController::class, 'store'])
+        ->name('api.publico_alvo.store');
+
+    Route::put('/{public_alvo}', [App\Http\Controllers\Api\PublicoAlvoController::class, 'update'])
+        ->name('api.publico_alvo.update');
+
+    Route::delete('/{public_alvo}',[App\Http\Controllers\Api\PublicoAlvoController::class, 'destroy'])
+        ->name('api.publico_alvo.destroy');
+
+});
+
+
+
+Route::group([
+    'prefix' => 'politica_categoria',
+], function () {
+    Route::get('/',[App\Http\Controllers\Api\PoliticaCategoriaController::class, 'getAll'])
+        ->name('api.politica_categoria.getAll');
+
+    Route::get('/{id_politica}',[App\Http\Controllers\Api\PoliticaCategoriaController::class, 'getAllCategoriaPorIdPolitica'])
+        ->name('api.politica_categoria.getAllCategoriaPorIdPolitica');
+
+    Route::get('nomes/{politica_categoria}',[App\Http\Controllers\Api\PoliticaCategoriaController::class, 'getAllNomeCategoriaPorIdPolitica'])
+        ->name('api.politica_categoria.getAllNomeCategoriaPorIdPolitica');
+
+    Route::post('/', [App\Http\Controllers\Api\PoliticaCategoriaController::class, 'store'])
+        ->name('api.politica_categoria.store');
+
+    Route::post('/storeMany/', [App\Http\Controllers\Api\PoliticaCategoriaController::class, 'storeMany'])
+        ->name('api.politica_categoria.storeMany');
+
+
+    Route::delete('/{id_politica}/{id_categoria}',[App\Http\Controllers\Api\PoliticaCategoriaController::class, 'destroy'])
+        ->name('api.politica_categoria.destroy');
+
+});

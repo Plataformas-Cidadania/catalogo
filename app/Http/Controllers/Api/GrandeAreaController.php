@@ -11,7 +11,6 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Exception;
-use App\Models\GrandeArea;
 use App\Repository\GrandeAreaRepository;
 
 class GrandeAreaController extends Controller

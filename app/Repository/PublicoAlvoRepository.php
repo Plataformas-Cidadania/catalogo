@@ -2,21 +2,21 @@
 
 namespace App\Repository;
 
-use App\Models\Api\Politica;
+use App\Models\Api\PublicoAlvo;
 
-class PoliticaRepository extends BaseRepository
+class PublicoAlvoRepository extends BaseRepository
 {
     /**
-     * @var Politica
+     * @var Orgao
      */
     protected \Illuminate\Database\Eloquent\Model $model;
 
     /**
      * CuradorRepository constructor.
      *
-     * @param Politica $model
+     * @param PublicoAlvo $model
      */
-    public function __construct(Politica $model)
+    public function __construct(PublicoAlvo $model)
     {
         $this->model = $model;
     }

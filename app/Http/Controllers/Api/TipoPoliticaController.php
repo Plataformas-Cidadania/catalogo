@@ -11,7 +11,6 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Exception;
-use App\Models\TipoPolitica;
 use App\Repository\TipoPoliticaRepository;
 
 class TipoPoliticaController extends Controller

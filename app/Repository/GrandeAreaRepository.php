@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Models\GrandeArea;
+use App\Models\Api\GrandeArea;
 
 class GrandeAreaRepository extends BaseRepository
 {

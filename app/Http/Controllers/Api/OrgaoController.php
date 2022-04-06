@@ -12,7 +12,6 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Exception;
-use App\Models\Orgao;
 use App\Repository\OrgaoRepository;
 
 class OrgaoController extends Controller

@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Models\TipoPolitica;
+use App\Models\Api\TipoPolitica;
 
 class TipoPoliticaRepository extends BaseRepository
 {
