@@ -4,7 +4,8 @@
         border-color: red;
     }
 </style>
-<link rel="stylesheet" href="css/card2.css">
+<link rel="stylesheet" href="css/card.css">
+{{--<link rel="stylesheet" href="css/card2.css">--}}
 @if($rota=='/')
     <link rel="stylesheet" href="css/home.css">
 @endif
