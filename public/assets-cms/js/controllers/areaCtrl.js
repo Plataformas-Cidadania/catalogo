@@ -53,9 +53,9 @@ cmsApp.controller('areaCtrl', ['$scope', '$http', 'Upload', '$timeout', function
             }
         }).success(function(data, status, headers, config){
             //console.log(data.data);
-            $scope.areas = data.data;
+            $scope.areas = data;//data.data
             //$scope.lastPage = pesquisa ? 1 : data.last_page;
-            $scope.totalItens = data.data.length;
+            $scope.totalItens = data.length;//data.data.length
             /*$scope.primeiroDaPagina = pesquisa ? 1 : data.from;
             $scope.ultimoDaPagina = pesquisa ? 1 : data.to;*/
             $listar = true;
@@ -172,16 +172,16 @@ cmsApp.controller('areaCtrl', ['$scope', '$http', 'Upload', '$timeout', function
             method: 'DELETE'
         }).success(function(data, status, headers, config){
             console.log(data);
-            if(data.success){
-                $scope.processandoExcluir = false;
-                $scope.excluido = true;
-                $scope.mensagemExcluido = data.message;
-                listarAreas();
-                return;
-            }
+
             $scope.processandoExcluir = false;
+            $scope.excluido = true;
+            $scope.mensagemExcluido = "Excluído com sucesso!";
+            listarAreas();
+            return;
+
+            /*$scope.processandoExcluir = false;
             $scope.excluido = false;
-            $scope.mensagemExcluido = data.message;
+            $scope.mensagemExcluido = data.message;*/
         }).error(function(data){
             $scope.message = "Ocorreu um erro: "+data;
             $scope.processandoExcluir = false;
@@ -200,127 +200,6 @@ cmsApp.controller('areaCtrl', ['$scope', '$http', 'Upload', '$timeout', function
             console.log(data);
         });
     }
-
-    //Area Recurso////////////////////////////////////
-    $scope.area_recurso = {};
-    $scope.dimensao = null;
-    $scope.categoria = null;
-    $scope.recursoArea = [];
-    $scope.totalRecursoArea = 0;
-    $scope.processandoRecursos = false;
-    $scope.processandoInserirarea_recurso = false;
-    $scope.processandoListagemRecursoArea = false;
-
-    $scope.listarRecursos = function(){
-        $scope.processandoRecursos = true;
-        $http({
-            url: 'api/recurso',
-            method: 'GET',
-            params: {
-
-            }
-        }).success(function(data, status, headers, config){
-            //console.log(data.data);
-            $scope.recursos = data.data;
-            $scope.processandoRecursos = false;
-        }).error(function(data){
-            $scope.message = "Ocorreu um erro: "+data;
-            $scope.processandoRecursos = false;
-        });
-    }
-
-    $scope.getRecursos = function(id_recurso){
-        let recurso = $scope.recursos.find(function(item){
-            return item.id_recurso === id_recurso;
-        });
-        return recurso.nome;
-    }
-
-    $scope.getArea = function(id){
-        let area = $scope.areas.find(function(item){
-            return item.id === id;
-        });
-        return area.nome;
-    }
-
-
-    $scope.modalAreaRecurso = function (id, titulo){
-        $scope.area_recurso.id = id;
-        $scope.tituloarea_recurso = titulo;
-        $scope.listarRecursos();
-        $scope.listarRecursoArea();
-    }
-
-    $scope.inserirarea_recurso = function(){
-        console.log($scope.area_recurso);
-        $scope.processandoInserirarea_recurso= true;
-        $scope.mensagemInserirarea_recurso = "";
-        $scope.area_recurso.id_recurso = $scope.recurso.id_recurso;
-        $http.post("api/area_recurso", $scope.area_recurso).success(function (data){
-            $scope.listarRecursoArea();
-            $scope.mensagemInserirarea_recurso =  "Gravado com sucesso!";
-            $scope.processandoInserirarea_recurso = false;
-            //$scope.area_recurso = {};
-        }).error(function(data){
-            $scope.mensagemInserirarea_recurso = "Ocorreu um erro!";
-            $scope.processandoInserirarea_recurso = false;
-        });
-    }
-
-
-
-    $scope.listarRecursoArea = function(){
-        $scope.processandoListagemAreaRecurso = true;
-        $http({
-            url: 'api/area_recurso/'+$scope.area_recurso.id,
-            method: 'GET',
-            params: {
-
-            }
-        }).success(function(data, status, headers, config){
-            $scope.areasRecursos = data.data;
-            console.log( $scope.areasRecursos);
-            $scope.totalAreaRecurso = $scope.areasRecursos.length;
-            $scope.processandoListagemAreaRecurso = false;
-        }).error(function(data){
-            $scope.message = "Ocorreu um erro: "+data;
-            $scope.processandoListagemAreaRecurso = false;
-        });
-    }
-
-    $scope.perguntaExcluirarea_recurso = function (idArea, idRecurso, titulo){
-        $scope.idExcluirAreaRecursoIdArea = idArea;
-        $scope.idExcluirAreaRecursoidRecurso = idRecurso;
-        $scope.tituloExcluirarea_recurso = titulo;
-        $scope.excluidoarea_recurso = false;
-        $scope.mensagemExcluidoarea_recurso = "";
-    }
-
-    $scope.excluirarea_recurso = function(idArea, idRecurso){
-        $scope.processandoExcluirarea_recurso = true;
-        $http({
-            url: 'api/area_recurso/'+idArea+'/'+idRecurso,
-            method: 'DELETE'
-        }).success(function(data, status, headers, config){
-            console.log(data);
-            if(data.success){
-                $scope.processandoExcluirarea_recurso = false;
-                $scope.excluidoarea_recurso = true;
-                $scope.mensagemExcluidoarea_recurso = data.message;
-                $scope.listarRecursoArea();
-                return;
-            }
-            $scope.processandoExcluirarea_recurso = false;
-            $scope.excluidoarea_recurso = false;
-            $scope.mensagemExcluidoarea_recurso = data.message;
-        }).error(function(data){
-            $scope.message = "Ocorreu um erro: "+data;
-            $scope.processandoExcluirarea_recurso = false;
-            $scope.mensagemExcluidoarea_recurso = "Erro ao tentar excluir!";
-        });
-    };
-
-    ///////////////////////////////////////////////
 
 
 

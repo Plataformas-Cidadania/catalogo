@@ -4,9 +4,9 @@
     {!! Html::script(config('app.url').'assets-cms/js/controllers/alterarAreaCtrl.js') !!}
     <div ng-controller="alterarAreaCtrl">
         <div class="box-padrao">
-            <h1><a href="javascript:history.back();"><i class="fa fa-arrow-circle-left"></i></a>&nbsp;&nbsp;Area</h1>
+            <h1><a href="cms/areas"><i class="fa fa-arrow-circle-left"></i></a>&nbsp;&nbsp;Area</h1>
             <?php //print_r($area);?>
-            <div ng-init="carregaImagem('{{$area->imagem}}', '{{$area->arquivo}}'); id={{$area->id}};">
+            <div ng-init="carregaImagem('{{$area->imagem}}', '{{$area->arquivo}}'); detalhar({{$area->id}})">
                 <span class="texto-obrigatorio">* campos obrigatórios</span><br><br>
                 {!! Form::model($area, ['name' =>'form']) !!}
                 <div class="container-thumb" style="display: none;">

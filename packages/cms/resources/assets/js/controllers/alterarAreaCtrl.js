@@ -25,14 +25,7 @@ cmsApp.controller('alterarAreaCtrl', ['$scope', '$http', 'Upload', '$timeout', f
 
             }
         }).success(function(data, status, headers, config){
-            $scope.area = data.data;
-            //console.log($scope.area);
-            delete $scope.area.ultimo_acesso;
-            $scope.curadores.forEach(function (item){
-                if(item.id_curador === $scope.area.id_curador){
-                    $scope.curador = item;
-                }
-            });
+            $scope.area = data;//data.data
             $scope.processandoDetalhar = false;
         }).error(function(data){
             $scope.message = "Ocorreu um erro: "+data;
