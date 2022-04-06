@@ -12,11 +12,13 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 class AreaController extends Controller{
-    public function listar(){
+    public function listar(\App\Http\Controllers\Api\AreaController $areaController){
         //$notices = DB::table('notices')->orderBy('id', 'desc')->paginate(12);
         //return view('notice.listar', ['notices' => $notices]);
 
-        return view('area.listar');
+        $areas = $areaController->getAll();
+
+        return view('area.listar', ['areas' => $areas]);
     }
 
     public function detalhar($id){
