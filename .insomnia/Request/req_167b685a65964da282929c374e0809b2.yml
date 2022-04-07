@@ -1,0 +1,34 @@
+_id: req_167b685a65964da282929c374e0809b2
+type: Request
+parentId: fld_63e02587dbab4117814de214a0214427
+modified: 1649340627075
+created: 1649340458332
+url: http://localhost:{{porta_app}}/api/politica_orgao/storeMany/
+name: Insert orgaos
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+  params:
+    - type: text
+      name: politica_id
+      disabled: false
+      value: "15"
+      id: pair_ca2b83737fae46bab3a3cf6bdb84780b
+    - id: pair_b4905ddf781740699770e57595c3f7da
+      name: orgaos
+      value: "[5,6,9,8]"
+      description: ""
+      type: text
+      multiline: application/json
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1639610718711.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

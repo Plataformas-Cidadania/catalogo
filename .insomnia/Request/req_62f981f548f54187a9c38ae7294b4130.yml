@@ -1,0 +1,33 @@
+_id: req_62f981f548f54187a9c38ae7294b4130
+type: Request
+parentId: fld_63e02587dbab4117814de214a0214427
+modified: 1649340584290
+created: 1649340458290
+url: http://localhost:{{porta_app}}/api/politica_orgao/
+name: Insert
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+  params:
+    - type: text
+      name: politica_id
+      disabled: false
+      value: "3"
+      id: pair_3556452a107b483ba36e25118d2b4239
+    - type: text
+      name: orgao_id
+      disabled: false
+      value: "15"
+      id: pair_ca2b83737fae46bab3a3cf6bdb84780b
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1639610718712
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

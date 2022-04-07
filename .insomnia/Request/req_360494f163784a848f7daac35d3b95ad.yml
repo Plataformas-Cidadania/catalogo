@@ -1,17 +1,17 @@
-_id: req_34343047c2df48f788f9751104e766ef
+_id: req_360494f163784a848f7daac35d3b95ad
 type: Request
-parentId: fld_c0b20e31759e4c40aae8101feb415402
-modified: 1649112312337
-created: 1649090254540
-url: http://localhost:{{ _.porta_app }}/api/categoria/2
-name: delete
+parentId: fld_63e02587dbab4117814de214a0214427
+modified: 1649340530018
+created: 1649340458323
+url: http://localhost:{{porta_app}}/api/politica_orgao/3
+name: get all by id politica
 description: ""
-method: DELETE
+method: GET
 body: {}
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1640204653233.125
+metaSortKey: -1639610718713.5
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

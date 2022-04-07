@@ -1,9 +1,9 @@
-_id: req_34343047c2df48f788f9751104e766ef
+_id: req_107d45d3189340f985ac1830daef68fc
 type: Request
-parentId: fld_c0b20e31759e4c40aae8101feb415402
-modified: 1649112312337
-created: 1649090254540
-url: http://localhost:{{ _.porta_app }}/api/categoria/2
+parentId: fld_3d74f2e5fc6d4876842f1c4cca827ef9
+modified: 1649112309867
+created: 1649110334158
+url: http://localhost:{{ _.porta_app }}/api/area/3
 name: delete
 description: ""
 method: DELETE

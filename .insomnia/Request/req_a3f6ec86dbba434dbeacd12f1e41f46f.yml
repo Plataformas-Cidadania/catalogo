@@ -1,0 +1,33 @@
+_id: req_a3f6ec86dbba434dbeacd12f1e41f46f
+type: Request
+parentId: fld_dcb749d65b7f414da68875ce17431b8b
+modified: 1649190041420
+created: 1649187239096
+url: http://localhost:{{porta_app}}/api/politica_categoria/
+name: Insert
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+  params:
+    - type: text
+      name: politica_id
+      disabled: false
+      value: "3"
+      id: pair_3556452a107b483ba36e25118d2b4239
+    - type: text
+      name: categoria_id
+      disabled: false
+      value: "3"
+      id: pair_ca2b83737fae46bab3a3cf6bdb84780b
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1639610718712
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
