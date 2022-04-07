@@ -45,7 +45,7 @@
         <div class="dorder-container">
             <div class="bg-lgt dorder-container-mai">
                 <div class="dorder-container-line">
-                    <h2>Áreas temáticas</h2>
+                    <h2>Grandes Áreas</h2>
                     <div class="dorder-container-box bg-lgt"></div>
                 </div>
             </div>
