@@ -1,9 +1,9 @@
-_id: req_8345aa9bb61f4b56af017a1d28e2b3fb
+_id: req_d02f707f01944ce799610b685dc68d68
 type: Request
-parentId: fld_c0b20e31759e4c40aae8101feb415402
-modified: 1649106853668
-created: 1649090254522
-url: http://localhost:{{ _.porta_app }}/api/categoria
+parentId: fld_68ff298c05dc4dae93e09c099a05f127
+modified: 1649112385995
+created: 1649111440322
+url: http://localhost:{{ _.porta_app }}/api/tipo_politica
 name: insert
 description: ""
 method: POST

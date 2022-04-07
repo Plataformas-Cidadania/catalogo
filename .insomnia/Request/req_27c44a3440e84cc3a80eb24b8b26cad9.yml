@@ -1,0 +1,33 @@
+_id: req_27c44a3440e84cc3a80eb24b8b26cad9
+type: Request
+parentId: fld_357b23d2a1354443a6bde8e472e2e2d5
+modified: 1649339639344
+created: 1649339525442
+url: http://localhost:{{porta_app}}/api/politica_publico_alvo/
+name: Insert
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+  params:
+    - type: text
+      name: politica_id
+      disabled: false
+      value: "3"
+      id: pair_3556452a107b483ba36e25118d2b4239
+    - type: text
+      name: publico_alvo_id
+      disabled: false
+      value: "1"
+      id: pair_ca2b83737fae46bab3a3cf6bdb84780b
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1639610718712
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

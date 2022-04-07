@@ -1,9 +1,9 @@
-_id: req_34343047c2df48f788f9751104e766ef
+_id: req_d7d8b957ae7140589ba3778e18cdb12c
 type: Request
-parentId: fld_c0b20e31759e4c40aae8101feb415402
-modified: 1649112312337
-created: 1649090254540
-url: http://localhost:{{ _.porta_app }}/api/categoria/2
+parentId: fld_357b23d2a1354443a6bde8e472e2e2d5
+modified: 1649340436626
+created: 1649339525408
+url: http://localhost:{{porta_app}}/api/politica_publico_alvo/3/15
 name: delete
 description: ""
 method: DELETE
@@ -11,7 +11,7 @@ body: {}
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1640204653233.125
+metaSortKey: -1639610718711
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

@@ -1,0 +1,21 @@
+_id: req_5e5242798f1e4f9d88985223af995eec
+type: Request
+parentId: fld_dcb749d65b7f414da68875ce17431b8b
+modified: 1649187435591
+created: 1649187239176
+url: http://localhost:{{porta_app}}/api/politica_categoria/nomes/12
+name: get all nome by id politica
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1639610718713.25
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
