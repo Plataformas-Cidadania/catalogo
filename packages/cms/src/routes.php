@@ -200,6 +200,10 @@ Route::group(['middleware' => 'cms'], function () {
         Route::get('/cms/areas', 'Cms\Controllers\AreaController@index');
         Route::get('/cms/area/{id}', 'Cms\Controllers\AreaController@detalhar');
 
+        //Orgao
+        Route::get('/cms/orgaos', 'Cms\Controllers\OrgaoController@index');
+        Route::get('/cms/orgao/{id}', 'Cms\Controllers\OrgaoController@detalhar');
+
         ////////////////////////////////////////////////////////////////////////////////////
 
 

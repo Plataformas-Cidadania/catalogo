@@ -41,5 +41,7 @@
     "/assets-cms/js/controllers/integranteCtrl.js": "/assets-cms/js/controllers/integranteCtrl.js",
     "/assets-cms/js/controllers/alterarIntegranteCtrl.js": "/assets-cms/js/controllers/alterarIntegranteCtrl.js",
     "/assets-cms/js/controllers/areaCtrl.js": "/assets-cms/js/controllers/areaCtrl.js",
-    "/assets-cms/js/controllers/alterarAreaCtrl.js": "/assets-cms/js/controllers/alterarAreaCtrl.js"
+    "/assets-cms/js/controllers/alterarAreaCtrl.js": "/assets-cms/js/controllers/alterarAreaCtrl.js",
+    "/assets-cms/js/controllers/orgaoCtrl.js": "/assets-cms/js/controllers/orgaoCtrl.js",
+    "/assets-cms/js/controllers/alterarOrgaoCtrl.js": "/assets-cms/js/controllers/alterarOrgaoCtrl.js"
 }
