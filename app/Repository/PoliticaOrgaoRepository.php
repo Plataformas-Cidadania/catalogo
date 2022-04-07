@@ -2,48 +2,48 @@
 
 namespace App\Repository;
 
-use App\Models\Api\PoliticaCategoria;
+use App\Models\Api\PoliticaOrgao;
 use App\Models\Api\Politica;
-use App\Models\Api\Categoria;
+use App\Models\Api\Orgao;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
 
-class PoliticaCategoriaRepository extends BaseRepository
+class PoliticaOrgaoRepository extends BaseRepository
 {
     /**
-     * @var PoliticaCategoria
+     * @var PoliticaOrgao
      */
     protected \Illuminate\Database\Eloquent\Model $model;
 
     /**
      * IndicadorRepository constructor.
      *
-     * @param PoliticaCategoria $model
+     * @param PoliticaOrgao $model
      */
-    public function __construct(PoliticaCategoria $model)
+    public function __construct(PoliticaOrgao $model)
     {
         $this->model = $model;
     }
 
 
-    public function storeMany(int $politica_id, array $categorias)
+    public function storeMany(int $politica_id, array $orgaos)
     {
         $id = Politica::where('id', $politica_id)->get();
         if ($id->isEmpty()) throw new \Illuminate\Database\Eloquent\ModelNotFoundException;
 
-        foreach ($categorias as $categoria)
+        foreach ($orgaos as $orgao)
         {
             $data = [];
             $data['politica_id'] = $politica_id;
-            $data['categoria_id'] = $categoria;
+            $data['orgao_id'] = $orgao;
             $this->createCompositeId($data);
         }
-        return $categorias;
+        return $orgaos;
     }
 
     public function getAllByIdPolitica($politica_id)
     {
-        $res = PoliticaCategoria::where('politica_id', '=', $politica_id)->select('categoria_id')
+        $res = PoliticaOrgao::where('politica_id', '=', $politica_id)->select('orgao_id')
             ->get();
         if (!$res) throw new \Illuminate\Database\Eloquent\ModelNotFoundException;
         else return $res;
@@ -51,15 +51,15 @@ class PoliticaCategoriaRepository extends BaseRepository
 
     public function getAllNomeByIdPolitica($politica_id)
     {
-        $categPoliticas = PoliticaCategoria::with('categoria')->where('politica_id', '=', $politica_id)->select('categoria_id')
+        $orgaoPoliticas = PoliticaOrgao::with('orgao')->where('politica_id', '=', $politica_id)->select('orgao_id')
             ->get();
-        if (!$categPoliticas) throw new \Illuminate\Database\Eloquent\ModelNotFoundException;
-        $nomeCategorias = [];
-        foreach($categPoliticas as $categPolitica)
+        if (!$orgaoPoliticas) throw new \Illuminate\Database\Eloquent\ModelNotFoundException;
+        $nomeOrgaos = [];
+        foreach($orgaoPoliticas as $orgaoPolitica)
 
-            array_push($nomeCategorias,$categPolitica->categoria->nome);
+            array_push($nomeOrgaos,$orgaoPolitica->orgao->nome);
 
-        return $nomeCategorias;
+        return $nomeOrgaos;
     }
 
     /**
@@ -71,12 +71,12 @@ class PoliticaCategoriaRepository extends BaseRepository
      */
     public function deleteByCompositeId(int $firstId,int $secondId): Model
     {
-        $res = PoliticaCategoria::where('politica_id', '=', $firstId)
-            ->where('categoria_id', '=', $secondId)
+        $res = PoliticaOrgao::where('politica_id', '=', $firstId)
+            ->where('orgao_id', '=', $secondId)
             ->first();
         if (!$res) throw new \Illuminate\Database\Eloquent\ModelNotFoundException;
         else {
-            PoliticaCategoria::where('politica_id', '=', $firstId)->where('categoria_id', '=', $secondId)->delete();
+            PoliticaOrgao::where('politica_id', '=', $firstId)->where('orgao_id', '=', $secondId)->delete();
             return $res;
         }
     }

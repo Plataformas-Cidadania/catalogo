@@ -9,16 +9,16 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Exception;
-use App\Repository\PoliticaCategoriaRepository;
+use App\Repository\PoliticaPublicoAlvoRepository;
 
-class PoliticaCategoriaController extends Controller
+class PoliticaPublicoAlvoController extends Controller
 {
-    private PoliticaCategoriaRepository $repo;
+    private PoliticaPublicoAlvoRepository $repo;
     private $rules = [
         'politica_id' => 'int|min:1',
-        'categoria_id' => 'int|min:1',
+        'publico_alvo_id' => 'int|min:1',
     ];
-    public function __construct(PoliticaCategoriaRepository $repo)
+    public function __construct(PoliticaPublicoAlvoRepository $repo)
     {
         $this->repo = $repo;
     }
@@ -39,7 +39,7 @@ class PoliticaCategoriaController extends Controller
      *
      * @return Mix
      */
-    public function getAllCategoriaPorIdPolitica($politica_id)
+    public function getAllPublicoAlvoPorIdPolitica($politica_id)
     {
         try {
             return  $this->repo->getAllByIdPolitica($politica_id);
@@ -50,7 +50,7 @@ class PoliticaCategoriaController extends Controller
         }
     }
 
-    public function getAllNomeCategoriaPorIdPolitica($politica_id)
+    public function getAllNomePublicoAlvoPorIdPolitica($politica_id)
     {
         try {
             return $this->repo->getAllNomeByIdPolitica($politica_id);
@@ -77,10 +77,10 @@ class PoliticaCategoriaController extends Controller
                 return $this->errorResponse($validator->errors()->all());
             }
             $politica_id = $request->get('politica_id');
-            $categorias = $request->get('categorias');
-            $categorias = json_decode($categorias);
+            $publicos_alvo = $request->get('publicos_alvo');
+            $publicos_alvo = json_decode($publicos_alvo);
 
-            return $this->repo->storeMany($politica_id,$categorias);
+            return $this->repo->storeMany($politica_id,$publicos_alvo);
 
         } catch (Exception $exception) {
             if ($exception instanceof ModelNotFoundException)
@@ -89,14 +89,13 @@ class PoliticaCategoriaController extends Controller
         }
     }
 
-
-    public function simpleStoreMany(string $politica_id, array $categorias)
+    public function simpleStoreMany(string $politica_id, array $publicos_alvo)
     {
         try {
-            return $this->repo->storeMany($politica_id,$categorias);
+            return $this->repo->storeMany($politica_id,$publicos_alvo);
         } catch (Exception $exception) {
             if ($exception instanceof ModelNotFoundException)
-                return $this->errorResponse('id Not found');
+                return $this->errorResponse('id_diagnostico Not found');
             return $this->errorResponse("erro inesperado ".$exception);
         }
     }
