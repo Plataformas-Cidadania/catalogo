@@ -139,6 +139,10 @@ mix.scripts('packages/cms/resources/assets/js/controllers/alterarPostCtrl.js', '
 mix.scripts('packages/cms/resources/assets/js/controllers/integranteCtrl.js', 'public/assets-cms/js/controllers/integranteCtrl.js');
 mix.scripts('packages/cms/resources/assets/js/controllers/alterarIntegranteCtrl.js', 'public/assets-cms/js/controllers/alterarIntegranteCtrl.js');
 
+//GrandeArea
+mix.scripts('packages/cms/resources/assets/js/controllers/grandeAreaCtrl.js', 'public/assets-cms/js/controllers/grandeAreaCtrl.js');
+mix.scripts('packages/cms/resources/assets/js/controllers/alterarGrandeAreaCtrl.js', 'public/assets-cms/js/controllers/alterarGrandeAreaCtrl.js');
+
 //Area
 mix.scripts('packages/cms/resources/assets/js/controllers/areaCtrl.js', 'public/assets-cms/js/controllers/areaCtrl.js');
 mix.scripts('packages/cms/resources/assets/js/controllers/alterarAreaCtrl.js', 'public/assets-cms/js/controllers/alterarAreaCtrl.js');

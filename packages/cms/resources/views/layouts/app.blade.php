@@ -106,7 +106,10 @@
                     <a href="cms/integrantes"><i class="fa fa-fw fa-anchor"></i> Autores</a>
                 </li>
                 <li>
-                    <a href="cms/areas"><i class="fa fa-fw fa-square"></i> Áreas Temáticas</a>
+                    <a href="cms/grandes-areas"><i class="fa fa-fw fa-square"></i> Grandes Áreas</a>
+                </li>
+                <li>
+                    <a href="cms/areas"><i class="fa fa-fw fa-square"></i> Áreas</a>
                 </li>
                 <li>
                     <a href="cms/orgaos"><i class="fa fa-fw fa-square"></i> Órgãos</a>

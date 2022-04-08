@@ -4,7 +4,7 @@
     {!! Html::script(config('app.url').'assets-cms/js/controllers/alterarGrandeAreaCtrl.js') !!}
     <div ng-controller="alterarGrandeAreaCtrl">
         <div class="box-padrao">
-            <h1><a href="cms/grande-areas"><i class="fa fa-arrow-circle-left"></i></a>&nbsp;&nbsp;Grande Area</h1>
+            <h1><a href="cms/grandes-areas"><i class="fa fa-arrow-circle-left"></i></a>&nbsp;&nbsp;Grande Area</h1>
             <?php //print_r($grandeArea);?>
             <div ng-init="carregaImagem('{{$grandeArea->imagem}}', '{{$grandeArea->arquivo}}'); detalhar({{$grandeArea->id}})">
                 <span class="texto-obrigatorio">* campos obrigatórios</span><br><br>

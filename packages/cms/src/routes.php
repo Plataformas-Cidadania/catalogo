@@ -196,6 +196,10 @@ Route::group(['middleware' => 'cms'], function () {
 
         //ROTAS DO CRUD PELA API////////////////////////////////////////////////////////////
 
+        //Grande Area
+        Route::get('/cms/grandes-areas', 'Cms\Controllers\GrandeAreaController@index');
+        Route::get('/cms/grande-area/{id}', 'Cms\Controllers\GrandeAreaController@detalhar');
+
         //Area
         Route::get('/cms/areas', 'Cms\Controllers\AreaController@index');
         Route::get('/cms/area/{id}', 'Cms\Controllers\AreaController@detalhar');
