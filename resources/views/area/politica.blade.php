@@ -1,6 +1,5 @@
 @extends('layout')
-<?php /*?>@section('title', $area->title)<?php */?>
-@section('title', 'Infraestrutura')
+@section('title', $politica->nome)
 @section('content')
 
     <div class=" bg-lgt">
@@ -8,12 +7,8 @@
             <div class="bg-img-r">
                 <div class="container pt-5 pb-5 bg-lgt">
                     <div class=" ps-2 pe-2">
-                        <h1>Populações e setores econômicos diretamente afetados por alterações no meio ambiente</h1>
-                        <p>
-                            Reunimos neste espaço uma ampla biblioteca de recursos produzidos por organizações governamentais e não-governamentais em torno da agenda pró-equidade. São materiais de intervenção –
-                            ideias, casos, cursos, vídeos, ferramentas, publicações, guias, relatos de experiências etc. – que têm como principal objetivo apoiar e estimular a criatividade, a reflexão e a inovação
-                            na adoção de medidas que permitam, em cada contexto específico, os avanços necessários para a efetivação da inclusão de todas as pessoas que devem se beneficiar das ofertas de bens e serviços públicos.
-                        </p>
+                        <h1>{{$politica->nome}}</h1>
+                        <p>{!! $politica->observacao !!}</p>
                     </div>
                 </div>
             </div>
@@ -45,16 +40,16 @@
 
 
                 <p><strong>Instrumento legal</strong></p>
-                <p>Instrução Normativa</p>
+                <p>{!! $politica->instrumento_legal !!}</p>
 
                 <div class="row">
                     <div class="col-md-6">
                         <p><strong>Medida provisória</strong></p>
-                        <p>908/2019 <br>12 de março de 2019</p>
+                        <p>{{$politica->medida_provisoria}} <br>{{$politica->medida_provisoria_inicio_vigencia}}</p>
                     </div>
                     <div class="col-md-6">
                         <p><strong>Legislacao</strong></p>
-                        <p>193/2020 <br>16 de junho de 2020 à Não encontrado</p>
+                        <p>{{$politica->legislacao}} <br>{{$politica->vigencia_inicio}} à {{$politica->vigencia_fim}}</p>
                     </div>
                 </div>
 
@@ -68,19 +63,13 @@
                 </ul>
 
                 <p><strong>Objetivos</strong></p>
-                <p>Art. 3º São objetivos da Estratégia Nacional de Fortalecimento dos Vínculos Familiares: <br/>
-                    I - apoiar, fortalecer e articular as iniciativas existentes no âmbito das competências das políticas coordenadas pelos órgãos do Poder Executivo federal e propor ações e aprimoramentos baseados em evidências e melhores práticas;<br/>
-                    II - propor estratégias integradas que possam potencializar a articulação intersetorial, qualificar a atenção aos vínculos familiares no escopo das políticas públicas e potencializar os resultados;<br/>
-                    III - promover a avaliação do impacto familiar das políticas, dos programas e das ações em elaboração ou implementados pelos órgãos do Poder Executivo federal, visando à elaboração de proposições que aprimorem a atenção às famílias no âmbito das políticas públicas;<br/>
-                    IV - fomentar a pesquisa, a produção e a divulgação de conhecimento acerca da realidade das famílias brasileiras e da relação entre os vínculos familiares e o bem-estar da população; e<br/>
-                    V - articular os esforços entre o Governo federal e a sociedade civil, em prol da valorização, do apoio e do fortalecimento dos vínculos familiares.
-                </p>
+                <p>{!! $politica->objetivos !!}</p>
 
                 <p><strong>Ação Orcamentaria</strong></p>
-                <p>Ação 20B0 para implantação dos CAPS (2008-2018) e 8585 (MAC) para custeio</p>
+                <p>{!! $politica->acao_orcamentaria_assoc !!}</p>
 
                 <p><strong>Público Alvo</strong></p>
-                <p>Populações e setores econômicos diretamente afetados por alterações no meio ambiente</p>
+                <p>{!! $politica->publico_alvo_categ !!}</p>
 
 
                 <br><br>
