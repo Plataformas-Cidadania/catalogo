@@ -8,6 +8,14 @@
 {{--<link rel="stylesheet" href="css/card2.css">--}}
 @if($rota=='/')
     <link rel="stylesheet" href="css/home.css">
+    <style>
+        .active{
+            transform: scale(1.5);
+        }
+        .owl-dots{
+            text-align: center;
+        }
+    </style>
 @endif
 @if($rota=='contato')
     <link rel="stylesheet" href="css/leaflet.css">

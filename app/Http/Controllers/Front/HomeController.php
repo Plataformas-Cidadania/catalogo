@@ -11,11 +11,19 @@ use Illuminate\Support\Facades\DB;
 
 
 
-class HomeController extends Controller
-{
+class HomeController extends Controller{
+
+    private $areaController;
+
+    public function __construct(\App\Http\Controllers\Api\AreaController $areaController){
+        $this->areaController = $areaController;
+    }
+
     public function index(){
 
-        //return view('home');
+        $areas = $this->areaController->getAll();
+
+        //return $areas;
 
         $webdoors = \App\Models\Webdoor::orderBy('posicao')->where('status', 1)->get();
         $text1 = \App\Models\Text::where('slug', 'diagnostico')->first();
@@ -30,6 +38,7 @@ class HomeController extends Controller
             'text2' => $text2,
             'text3' => $text3,
             'partners' => $partners,
+            'areas' => $areas,
         ]);
 
 

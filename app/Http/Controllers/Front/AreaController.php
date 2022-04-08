@@ -40,15 +40,12 @@ class AreaController extends Controller{
 
     }
 
-    public function politica($id){
+   /* public function politica($id){
+        $area = $this->areaController->get($id);
 
-        /*$notice = new \App\Area;
-        $notice = $notice->find($id);
+        return view('area.politica', ['politica' => $politica]);
 
-        return view('notice.detalhar', ['notice' => $notice]);*/
-        return view('area.politica');
-
-    }
+    }*/
 
 
 }
