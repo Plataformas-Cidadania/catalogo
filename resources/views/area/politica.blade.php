@@ -59,42 +59,6 @@
 
 
 
-                <p><br><strong>Ministérios</strong></p>
-
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="bg-lgt p-3 mb-4 linsLeft">
-                            Ministério da Mulher, da Família e dos Direitos Humanos
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="bg-lgt p-3 mb-4 linsLeft">
-                            Ministério da Educação
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="bg-lgt p-3 mb-4 linsLeft">
-                            Ministério da Cidadania
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="bg-lgt p-3 mb-4 linsLeft">
-                            Ministério da Saúde
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="bg-lgt p-3 mb-4 linsLeft">
-                            Casa Civil da Presidência da República
-                        </div>
-                    </div>
-                </div>
-
-
-                <br><br>
-
-
-
-
             </div>
 
             <div class="col-md-4">
@@ -182,6 +146,52 @@
         </div><?php */?>
 
     </div>
+    <style>
+        .flexRow {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .flexCol {
+            flex: 1;
+            justify-content: space-between;
+            margin: 5px 15px;
+            min-width: 17%;
+
+        }
+    </style>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center">
+                    <br><br><br><br><strong>Ministérios</strong><br><br>
+                </h2>
+
+
+                <div class="flexRow">
+                    @foreach($politica->orgaos as $orgao)
+                        <div class="flexCol">
+                            <div class="bg-lgt p-3 mb-4 linsLeft">
+                                {{$orgao->nome}}
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+
+
+                {{--<div class="row">
+                    @foreach($politica->orgaos as $orgao)
+                        <div class="col-md-3">
+                            <div class="bg-lgt p-3 mb-4 linsLeft">
+                                {{$orgao->nome}}
+                            </div>
+                        </div>
+                    @endforeach
+                </div>--}}
+                <br><br>
+            </div>
+        </div>
+    </div>
 
 
     <div>
@@ -191,8 +201,8 @@
                 <div class="container pt-5 pb-5 bg-lgt">
                     <div class=" ps-2 pe-2">
                         <br><br>
-                        <h2 class="text-center">Objetivos</h2>
-                        <p class="text-center">{!! $politica->objetivos !!}</p>
+                        <h2 class="text-center">Objetivos</h2><br>
+                        <p>{!! $politica->objetivos !!}</p>
                         <br><br>
                     </div>
                 </div>
