@@ -151,5 +151,8 @@ mix.scripts('packages/cms/resources/assets/js/controllers/alterarAreaCtrl.js', '
 mix.scripts('packages/cms/resources/assets/js/controllers/orgaoCtrl.js', 'public/assets-cms/js/controllers/orgaoCtrl.js');
 mix.scripts('packages/cms/resources/assets/js/controllers/alterarOrgaoCtrl.js', 'public/assets-cms/js/controllers/alterarOrgaoCtrl.js');
 
+//Tipo Política
+mix.scripts('packages/cms/resources/assets/js/controllers/tipoPoliticaCtrl.js', 'public/assets-cms/js/controllers/tipoPoliticaCtrl.js');
+mix.scripts('packages/cms/resources/assets/js/controllers/alterarTipoPoliticaCtrl.js', 'public/assets-cms/js/controllers/alterarTipoPoliticaCtrl.js');
 
 //FIM CMS///////////////////////////////////////////////////////////////////
