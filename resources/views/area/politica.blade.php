@@ -16,6 +16,7 @@
     </div>
 
 
+
     <div class="container">
         <br><br>
         {{--<div class="container-fluid">
@@ -36,40 +37,57 @@
             <div class="col-md-8">
 
                 <p><strong>Data de criação e revogação</strong></p>
-                <p>16 de junho de 2020 até 10 de julho de 2019</p>
+                <p>
+                    <i class="far fa-clock"></i>
+                    16 de junho de 2020 até 10 de julho de 2019</p>
 
 
-                <p><strong>Instrumento legal</strong></p>
+                <p><br><strong>Instrumento legal</strong></p>
                 <p>{!! $politica->instrumento_legal !!}</p>
 
                 <div class="row">
                     <div class="col-md-6">
-                        <p><strong>Medida provisória</strong></p>
+                        <p><br><strong>Medida provisória</strong></p>
                         <p>{{$politica->medida_provisoria}} <br>{{$politica->medida_provisoria_inicio_vigencia}}</p>
                     </div>
                     <div class="col-md-6">
-                        <p><strong>Legislacao</strong></p>
-                        <p>{{$politica->legislacao}} <br>{{$politica->vigencia_inicio}} à {{$politica->vigencia_fim}}</p>
+                        <p><br><strong>Legislacao</strong></p>
+                        <p>{{$politica->legislacao}} <br><i class="far fa-clock"></i> {{$politica->vigencia_inicio}} à {{$politica->vigencia_fim}}</p>
                     </div>
                 </div>
 
-                <p><strong>Ministérios</strong></p>
-                <ul>
-                    <li>Ministério da Mulher, da Família e dos Direitos Humanos</li>
-                    <li>Ministério da Educação</li>
-                    <li>Ministério da Cidadania</li>
-                    <li>Ministério da Saúde</li>
-                    <li>Casa Civil da Presidência da República</li>
-                </ul>
 
-                <p><strong>Objetivos</strong></p>
-                <p>{!! $politica->objetivos !!}</p>
 
-                <p><strong>Ação Orcamentaria</strong></p>
-                <p>{!! $politica->acao_orcamentaria_assoc !!}</p>
 
-                <p><strong>Público Alvo</strong></p>
-                <p>{!! $politica->publico_alvo_categ !!}</p>
+                <p><br><strong>Ministérios</strong></p>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="bg-lgt p-3 mb-4 linsLeft">
+                            Ministério da Mulher, da Família e dos Direitos Humanos
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="bg-lgt p-3 mb-4 linsLeft">
+                            Ministério da Educação
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="bg-lgt p-3 mb-4 linsLeft">
+                            Ministério da Cidadania
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="bg-lgt p-3 mb-4 linsLeft">
+                            Ministério da Saúde
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="bg-lgt p-3 mb-4 linsLeft">
+                            Casa Civil da Presidência da República
+                        </div>
+                    </div>
+                </div>
 
 
                 <br><br>
@@ -80,9 +98,55 @@
             </div>
 
             <div class="col-md-4">
-                <a href="https://mapaosc.ipea.gov.br/arquivos/posts/6732-mrosccovid.pdf" target="_blank">
-                    <img src="https://mapaosc.ipea.gov.br/imagens/posts/2279-mrosc-covid.jpg" alt="" width="100%">
-                </a>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Título</h3>
+                        <br>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="https://mapaosc.ipea.gov.br/arquivos/posts/6732-mrosccovid.pdf" target="_blank">
+                            <img src="https://mapaosc.ipea.gov.br/imagens/posts/2279-mrosc-covid.jpg" alt="" width="100%">
+                        </a>
+                    </div>
+                    <div class="col-md-9">Ministério da Mulher, da Família e dos Direitos Humanos<br/>visualizar</div>
+                    <div class="col-md-12"><hr/></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="https://mapaosc.ipea.gov.br/arquivos/posts/6732-mrosccovid.pdf" target="_blank">
+                            <img src="https://mapaosc.ipea.gov.br/imagens/posts/2279-mrosc-covid.jpg" alt="" width="100%">
+                        </a>
+                    </div>
+                    <div class="col-md-9">Ministério da Mulher, da Família e dos Direitos Humanos</div>
+                    <div class="col-md-12"><hr/></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="https://mapaosc.ipea.gov.br/arquivos/posts/6732-mrosccovid.pdf" target="_blank">
+                            <img src="https://mapaosc.ipea.gov.br/imagens/posts/2279-mrosc-covid.jpg" alt="" width="100%">
+                        </a>
+                    </div>
+                    <div class="col-md-9">Ministério da Mulher, da Família e dos Direitos Humanos</div>
+                    <div class="col-md-12"><hr/></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="https://mapaosc.ipea.gov.br/arquivos/posts/6732-mrosccovid.pdf" target="_blank">
+                            <img src="https://mapaosc.ipea.gov.br/imagens/posts/2279-mrosc-covid.jpg" alt="" width="100%">
+                        </a>
+                    </div>
+                    <div class="col-md-9">Ministério da Mulher, da Família e dos Direitos Humanos</div>
+                    <div class="col-md-12"><hr/></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="https://mapaosc.ipea.gov.br/arquivos/posts/6732-mrosccovid.pdf" target="_blank">
+                            <img src="https://mapaosc.ipea.gov.br/imagens/posts/2279-mrosc-covid.jpg" alt="" width="100%">
+                        </a>
+                    </div>
+                    <div class="col-md-9">Ministério da Mulher, da Família e dos Direitos Humanos</div>
+                </div>
 
             </div>
 
@@ -118,4 +182,41 @@
         </div><?php */?>
 
     </div>
+
+
+    <div>
+        <br><br>
+        <div class=" bg-lgt">
+            <div class="bg-img-r">
+                <div class="container pt-5 pb-5 bg-lgt">
+                    <div class=" ps-2 pe-2">
+                        <br><br>
+                        <h2 class="text-center">Objetivos</h2>
+                        <p class="text-center">{!! $politica->objetivos !!}</p>
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </div>
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                    <p><strong>Ação Orcamentaria</strong></p>
+                    <p>{!! $politica->acao_orcamentaria_assoc !!}</p>
+
+                    <p><strong>Público Alvo</strong></p>
+                    <p>{!! $politica->publico_alvo_categ !!}</p>
+
+
+                    <br><br>
+            </div>
+        </div>
+    </div>
+
 @endsection

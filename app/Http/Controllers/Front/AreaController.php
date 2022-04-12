@@ -36,6 +36,7 @@ class AreaController extends Controller{
 
         $area = $this->areaController->get($id);
 
+
         return view('area.detalhar', ['area' => $area]);
 
     }
@@ -49,3 +50,4 @@ class AreaController extends Controller{
 
 
 }
+

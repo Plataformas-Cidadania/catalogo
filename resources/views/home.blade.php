@@ -57,7 +57,7 @@
 
             <div class="custom0 owl-carousel owl-theme">
                 @foreach($areas as $area)
-                    <a href="area-tematica/{{$area->id}}/{{clean($area->nome)}}" target="_blank">
+                    <a href="area-tematica/{{$area->id}}/{{clean($area->nome)}}" >
                         <div class="item    box-list-icon">
                             <div class="box-list-icon-i"><i class="far fa-gem fa-3x"></i></div>
                             <h2><strong>{{$area->nome}}</strong></h2>
