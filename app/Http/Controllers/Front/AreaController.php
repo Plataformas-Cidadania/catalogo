@@ -39,7 +39,13 @@ class AreaController extends Controller{
         //return $teste;
 
         $area = $this->areaController->get($id);
+        //return $area;
+        /*foreach($area['politicas'] as $politica){
+            return $politica->nome;
+        }*/
 
+
+        //return $area;
 
         return view('area.detalhar', ['area' => $area]);
 

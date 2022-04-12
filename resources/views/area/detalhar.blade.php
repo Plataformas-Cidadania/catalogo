@@ -56,49 +56,48 @@
 
             </div>
 
-            <div class="col-md-3">
-                <h2>Lista de políticas</h2>
-                <hr/>
-                <ul class="menu-left">
-
-                    <li class="list-group-item-theme">
-                        <a href="politica/1/titulo">
-                            <p class="m-0">
-                                <strong>1953</strong> -
-                                Política Nacional do Petróleo <br/>
-                                Ministério da Economia
-                            </p>
-                        </a>
-                    </li>
-
-                    <li class="list-group-item-theme">
-                        <a href="politica/1/titulo">
-                            <p class="m-0">
-                                <strong>1953</strong> -
-                                Política Nacional do Petróleo <br/>
-                                Ministério da Economia
-                            </p>
-                        </a>
-                    </li>
-
-                    <li class="list-group-item-theme">
-                        <a href="politica/1/titulo">
-                            <p class="m-0">
-                                <strong>1953</strong> -
-                                Política Nacional do Petróleo <br/>
-                                Ministério da Economia
-                            </p>
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-            <div class="col-md-9">
+            <div class="col-md-12">
                 <h2>Linha do tempo</h2>
                 <hr/>
                 <div id="areaTematica">&nbsp;</div>
             </div>
+
+            <div class="col-md-12">
+                <h2>Lista de políticas</h2>
+                <hr/>
+
+
+                <div class="row">
+                    @foreach($area['politicas'] as $politica)
+                    <div class="col-md-4" >
+                        <div class="bg-lgt p-3 mb-4 linsLeft">
+                            <a href="politica/{{$politica->id}}/{{clean($politica->nome)}}" style="display: block; min-height: 188px">
+                                <p class="m-0">
+                                    <strong>{{$politica->legislacao}}</strong><br>
+                                    <strong>{{$politica->nome}}</strong><br>
+                                    {{$politica->publico_alvo_categ}}<br>
+                                    <strong>{{$politica->ano}}</strong>
+                                </p>
+                            </a>
+                        </div>
+
+
+                    </div>
+                    @endforeach
+                </div>
+                {{--<ul class="menu-left">
+                    <li class="list-group-item-theme">
+                        <a href="politica/1/titulo">
+                            <p class="m-0">
+                                <strong>1953</strong> -
+                                {{$politica->nome}}
+                            </p>
+                        </a>
+                    </li>
+                </ul>--}}
+
+            </div>
+
         </div>
 
 
