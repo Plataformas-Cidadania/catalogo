@@ -119,7 +119,8 @@ const Timeline = (props) => {
                             {
                                 Object.entries(props.item.anos).map((subitem, key) => {
                                     const ano = subitem[0];
-                                    const politicas = subitem[1];
+                                    let politicas = subitem[1];
+                                    politicas = politicas.sort((a, b) => (a.nome_politica > b.nome_politica) ? 1 : -1);
                                     return (
                                         <div key={props.item.area+"_ano_"+key} className="timeline__item">
                                             <div className="timeline__content">

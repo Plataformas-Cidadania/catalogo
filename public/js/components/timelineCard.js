@@ -101,7 +101,8 @@ const Timeline = props => {
     className: "timeline__items"
   }, Object.entries(props.item.anos).map((subitem, key) => {
     const ano = subitem[0];
-    const politicas = subitem[1];
+    let politicas = subitem[1];
+    politicas = politicas.sort((a, b) => a.nome_politica > b.nome_politica ? 1 : -1);
     return /*#__PURE__*/React.createElement("div", {
       key: props.item.area + "_ano_" + key,
       className: "timeline__item"
