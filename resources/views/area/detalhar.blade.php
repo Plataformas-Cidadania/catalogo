@@ -60,6 +60,9 @@
             <div class="col-md-12">
                 <h2>Linha do tempo</h2>
                 <hr/>
+                <script>
+                    area = "{{$area->nome}}";
+                </script>
                 <div id="areaTematica">&nbsp;</div>
             </div>
 

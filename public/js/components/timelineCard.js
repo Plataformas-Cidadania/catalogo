@@ -17,6 +17,7 @@ const Timeline = props => {
   useEffect(() => {
     //CARD
     if (props.item) {
+      console.log('PROPS TIMELINE CARD', props);
       Object.entries(props.item.anos).forEach((item, key) => {
         let stack = document.getElementById(props.item.area + "_ano_" + key);
         [...stack.children].reverse().forEach(i => stack.append(i));
@@ -99,7 +100,7 @@ const Timeline = props => {
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "timeline__items"
-  }, Object.entries(props.item.anos).map((subitem, key) => {
+  }, props.item.anos ? Object.entries(props.item.anos).map((subitem, key) => {
     const ano = subitem[0];
     let politicas = subitem[1];
     politicas = politicas.sort((a, b) => a.nome_politica > b.nome_politica ? 1 : -1);
@@ -123,5 +124,5 @@ const Timeline = props => {
         onClick: swap2
       }, politica.nome_politica);
     }))));
-  }))))) : /*#__PURE__*/React.createElement("div", null, "\xA0");
+  }) : null)))) : /*#__PURE__*/React.createElement("div", null, "\xA0");
 };

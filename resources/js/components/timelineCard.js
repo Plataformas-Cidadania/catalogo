@@ -18,7 +18,7 @@ const Timeline = (props) => {
     useEffect(() => {
         //CARD
         if(props.item){
-
+            console.log('PROPS TIMELINE CARD', props);
             Object.entries(props.item.anos).forEach((item, key) => {
                 let stack = document.getElementById(props.item.area+"_ano_"+key);
                 [...stack.children].reverse().forEach(i => stack.append(i));
@@ -117,32 +117,33 @@ const Timeline = (props) => {
                     <div className="timeline__wrap" style={{minHeight: '300px'}}>
                         <div className="timeline__items">
                             {
-                                Object.entries(props.item.anos).map((subitem, key) => {
-                                    const ano = subitem[0];
-                                    let politicas = subitem[1];
-                                    politicas = politicas.sort((a, b) => (a.nome_politica > b.nome_politica) ? 1 : -1);
-                                    return (
-                                        <div key={props.item.area+"_ano_"+key} className="timeline__item">
-                                            <div className="timeline__content">
-                                                <h3 className={key % 2 === 0 ? 'timeline-ano' : 'timeline-ano-2'}>{ano}</h3>
-                                                <div id={props.item.area+"_ano_"+key} className="stack">
-                                                    {
-                                                        politicas.map((politica, index) => {
-                                                            let id = 1;
-                                                            return (
-                                                                <div key={props.item.area+"_politica_"+key.toString()+index}
-                                                                     /*className="card"*/
-                                                                     className={"card-tl cor"+(Math.floor(Math.random() * 4))}
-                                                                     onClick={swap2}
-                                                                >
-                                                                    {politica.nome_politica}
-                                                                </div>
+                                props.item.anos ? (
+                                    Object.entries(props.item.anos).map((subitem, key) => {
+                                        const ano = subitem[0];
+                                        let politicas = subitem[1];
+                                        politicas = politicas.sort((a, b) => (a.nome_politica > b.nome_politica) ? 1 : -1);
+                                        return (
+                                            <div key={props.item.area+"_ano_"+key} className="timeline__item">
+                                                <div className="timeline__content">
+                                                    <h3 className={key % 2 === 0 ? 'timeline-ano' : 'timeline-ano-2'}>{ano}</h3>
+                                                    <div id={props.item.area+"_ano_"+key} className="stack">
+                                                        {
+                                                            politicas.map((politica, index) => {
+                                                                let id = 1;
+                                                                return (
+                                                                    <div key={props.item.area+"_politica_"+key.toString()+index}
+                                                                        /*className="card"*/
+                                                                         className={"card-tl cor"+(Math.floor(Math.random() * 4))}
+                                                                         onClick={swap2}
+                                                                    >
+                                                                        {politica.nome_politica}
+                                                                    </div>
 
-                                                            );
-                                                        })
-                                                    }
-                                                </div>
-                                                {/*<div>
+                                                                );
+                                                            })
+                                                        }
+                                                    </div>
+                                                    {/*<div>
                                                     <span
                                                         className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-pri"
                                                         style={{marginTop: '9px'}}>
@@ -166,10 +167,12 @@ const Timeline = (props) => {
                                                         })
                                                     }
                                                 </div>*/}
+                                                </div>
                                             </div>
-                                        </div>
-                                    )
-                                })
+                                        )
+                                    })
+                                ) : null
+
                             }
                         </div>
                     </div>
