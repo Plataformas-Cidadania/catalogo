@@ -132,6 +132,9 @@ Route::group([
      Route::get('/', [App\Http\Controllers\Api\PoliticaController::class, 'getAll'])
           ->name('api.politica.getAll');
 
+     Route::get('/timeline', [App\Http\Controllers\Api\PoliticaController::class, 'getAllTimeline'])
+         ->name('api.politica.getAllTimeline');
+
      Route::get('/{politica}',[App\Http\Controllers\Api\PoliticaController::class, 'get'])
           ->name('api.politica.get');
 

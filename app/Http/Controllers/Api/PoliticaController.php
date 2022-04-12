@@ -54,6 +54,12 @@ class PoliticaController extends Controller
         return $models;
     }
 
+    public function getAllTimeline()
+    {
+        $models =  $this->repo->getAllTimeline();
+        return $models;
+    }
+
     /**
      * Adicionar um novo
      *
