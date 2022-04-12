@@ -24,7 +24,7 @@ class PoliticaController extends Controller{
         $politica = $this->politicaController->get($id);
         $politica = (object) $politica;
 
-        //return $politica->orgaos;
+        //return $politica;
 
         //return count($politica);
 
