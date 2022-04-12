@@ -97,7 +97,7 @@
             <div class="col-md-9">
                 <h2>Linha do tempo</h2>
                 <hr/>
-                <div id="area-tematica">&nbsp;</div>
+                <div id="areaTematica">&nbsp;</div>
             </div>
         </div>
 
