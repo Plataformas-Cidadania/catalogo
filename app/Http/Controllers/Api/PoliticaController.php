@@ -51,9 +51,6 @@ class PoliticaController extends Controller
     public function getAll()
     {
         $models =  $this->repo->all(relations: ['politica_orgao']);
-        foreach($models as $model)
-            foreach ($model->politica_orgao as $rel)
-            $rel->orgao;
         return $models;
     }
 
@@ -92,9 +89,12 @@ class PoliticaController extends Controller
     {
         try {
             $model = $this->repo->findById($id);
+            $orgaoArray = [];
             foreach($model->politica_orgao as $rel)
-                $rel->orgao;
-            return $model;
+                array_push($orgaoArray,$rel->orgao);
+            $arr = $model->withoutRelations('politica_orgao')->toArray();
+            $arr['orgaos']= $orgaoArray;
+            return $arr;
         }catch (Exception $exception) {
             if ($exception instanceof ModelNotFoundException)
                 return $this->errorResponse('Not found');
