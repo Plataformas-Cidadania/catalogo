@@ -462,3 +462,9 @@
     background-position: top right;
     background-size: contain;
 }
+
+.linsLeft{
+    border-left: 4px solid $color-pri;
+    min-height: 120px;
+    border-radius: 5px;
+}

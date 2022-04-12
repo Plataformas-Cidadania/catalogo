@@ -12,11 +12,18 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 class AreaController extends Controller{
-    public function listar(\App\Http\Controllers\Api\AreaController $areaController){
+
+    private $areaController;
+
+    public function __construct(\App\Http\Controllers\Api\AreaController $areaController){
+        $this->areaController = $areaController;
+    }
+
+    public function listar(){
         //$notices = DB::table('notices')->orderBy('id', 'desc')->paginate(12);
         //return view('notice.listar', ['notices' => $notices]);
 
-        $areas = $areaController->getAll();
+        $areas = $this->areaController->getAll();
 
         return view('area.listar', ['areas' => $areas]);
     }
@@ -25,21 +32,22 @@ class AreaController extends Controller{
 
         /*$notice = new \App\Area;
         $notice = $notice->find($id);
-
         return view('notice.detalhar', ['notice' => $notice]);*/
-        return view('area.detalhar');
+
+        $area = $this->areaController->get($id);
+
+
+        return view('area.detalhar', ['area' => $area]);
 
     }
 
-    public function politica($id){
+   /* public function politica($id){
+        $area = $this->areaController->get($id);
 
-        /*$notice = new \App\Area;
-        $notice = $notice->find($id);
+        return view('area.politica', ['politica' => $politica]);
 
-        return view('notice.detalhar', ['notice' => $notice]);*/
-        return view('area.politica');
-
-    }
+    }*/
 
 
 }
+

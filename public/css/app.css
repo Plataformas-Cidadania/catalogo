@@ -13844,6 +13844,12 @@ gi .dorder-container {
   background-size: contain;
 }
 
+.linsLeft {
+  border-left: 4px solid #E26442;
+  min-height: 120px;
+  border-radius: 5px;
+}
+
 #chart {
   max-width: 100%;
   margin: 35px auto;

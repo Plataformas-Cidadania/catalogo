@@ -281,3 +281,11 @@
     <script src="js/utils.js"></script>
 @endif
 
+
+@if($rota=="area-tematica/{id}/{titulo}")
+    <script src="js/timeline/js/timeline.js"></script>
+    <link href="js/timeline/css/custom-timeline.css" rel="stylesheet" />
+    <script src="js/components/timelineCard.js"></script>
+    <script src="js/components/areaTematica/index.js"></script>
+@endif
+

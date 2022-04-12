@@ -141,4 +141,4 @@ Route::post('/archives', [PostController::class , 'archives']);
 
 Route::get('/areas-tematicas', [AreaController::class , 'listar']);
 Route::get('/area-tematica/{id}/{titulo}', [AreaController::class , 'detalhar']);
-Route::get('/politica/{id}/{titulo}', [AreaController::class , 'politica']);
+Route::get('/politica/{id}/{titulo}', [PoliticaController::class , 'politica']);
