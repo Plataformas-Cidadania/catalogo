@@ -12,7 +12,10 @@ class Area extends Model
     protected $fillable = [
         'nome'
     ];
-
+    public function politicas()
+    {
+        return $this->hasMany(Politica::class, 'area');
+    }
 }
 
 

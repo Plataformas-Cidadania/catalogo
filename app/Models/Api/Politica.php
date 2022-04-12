@@ -27,6 +27,10 @@ class Politica extends Model
 	{
 		return $this->belongsTo(Area::class, 'area');
 	}
+    public function politica_orgao()
+    {
+        return $this->hasMany(PoliticaOrgao::class, 'politica_id');
+    }
 
 
 }

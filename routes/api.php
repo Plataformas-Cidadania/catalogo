@@ -144,6 +144,10 @@ Route::group([
      Route::delete('/{politica}',[App\Http\Controllers\Api\PoliticaController::class, 'destroy'])
           ->name('api.politica.destroy');
 
+     Route::get('area/{id_area}',[App\Http\Controllers\Api\PoliticaController::class, 'get'])
+         ->name('api.politica.get');
+
+
  });
 
 
@@ -190,6 +194,7 @@ Route::group([
 
     Route::delete('/{id_politica}/{id_categoria}',[App\Http\Controllers\Api\PoliticaCategoriaController::class, 'destroy'])
         ->name('api.politica_categoria.destroy');
+
 });
 
 Route::group([

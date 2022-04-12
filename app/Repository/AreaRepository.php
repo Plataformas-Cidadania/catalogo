@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Models\Api\Area;
+use Illuminate\Database\Eloquent\Collection;
 
 class AreaRepository extends BaseRepository
 {
@@ -20,4 +21,9 @@ class AreaRepository extends BaseRepository
     {
         $this->model = $model;
     }
+    public function all(array $columns = ['*'], array $relations = []): Collection
+    {
+        return $this->model->with($relations)->get($columns);
+    }
+
 }

@@ -25,7 +25,6 @@ class PoliticaOrgaoRepository extends BaseRepository
         $this->model = $model;
     }
 
-
     public function storeMany(int $politica_id, array $orgaos)
     {
         $id = Politica::where('id', $politica_id)->get();

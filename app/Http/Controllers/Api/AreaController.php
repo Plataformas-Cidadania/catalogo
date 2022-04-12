@@ -73,7 +73,7 @@ class AreaController extends Controller
     public function get($id)
     {
         try {
-            return $this->repo->findById($id);
+            return $this->repo->findById($id,relations: ['politicas']);
         }catch (Exception $exception) {
             if ($exception instanceof ModelNotFoundException)
                 return $this->errorResponse('Not found');
