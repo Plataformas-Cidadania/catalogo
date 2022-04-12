@@ -47,5 +47,7 @@
     "/assets-cms/js/controllers/orgaoCtrl.js": "/assets-cms/js/controllers/orgaoCtrl.js",
     "/assets-cms/js/controllers/alterarOrgaoCtrl.js": "/assets-cms/js/controllers/alterarOrgaoCtrl.js",
     "/assets-cms/js/controllers/tipoPoliticaCtrl.js": "/assets-cms/js/controllers/tipoPoliticaCtrl.js",
-    "/assets-cms/js/controllers/alterarTipoPoliticaCtrl.js": "/assets-cms/js/controllers/alterarTipoPoliticaCtrl.js"
+    "/assets-cms/js/controllers/alterarTipoPoliticaCtrl.js": "/assets-cms/js/controllers/alterarTipoPoliticaCtrl.js",
+    "/assets-cms/js/controllers/publicoAlvoCtrl.js": "/assets-cms/js/controllers/publicoAlvoCtrl.js",
+    "/assets-cms/js/controllers/alterarPublicoAlvoCtrl.js": "/assets-cms/js/controllers/alterarPublicoAlvoCtrl.js"
 }
