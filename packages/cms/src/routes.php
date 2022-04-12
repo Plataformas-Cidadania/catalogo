@@ -212,6 +212,10 @@ Route::group(['middleware' => 'cms'], function () {
         Route::get('/cms/tipos-politicas', 'Cms\Controllers\TipoPoliticaController@index');
         Route::get('/cms/tipo-politica/{id}', 'Cms\Controllers\TipoPoliticaController@detalhar');
 
+        //Publico Alvo
+        Route::get('/cms/publicos-alvos', 'Cms\Controllers\PublicoAlvoController@index');
+        Route::get('/cms/publico-alvo/{id}', 'Cms\Controllers\PublicoAlvoController@detalhar');
+
         ////////////////////////////////////////////////////////////////////////////////////
 
 
