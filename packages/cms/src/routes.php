@@ -196,6 +196,10 @@ Route::group(['middleware' => 'cms'], function () {
 
         //ROTAS DO CRUD PELA API////////////////////////////////////////////////////////////
 
+        //Grande Area
+        Route::get('/cms/grandes-areas', 'Cms\Controllers\GrandeAreaController@index');
+        Route::get('/cms/grande-area/{id}', 'Cms\Controllers\GrandeAreaController@detalhar');
+
         //Area
         Route::get('/cms/areas', 'Cms\Controllers\AreaController@index');
         Route::get('/cms/area/{id}', 'Cms\Controllers\AreaController@detalhar');
@@ -203,6 +207,10 @@ Route::group(['middleware' => 'cms'], function () {
         //Orgao
         Route::get('/cms/orgaos', 'Cms\Controllers\OrgaoController@index');
         Route::get('/cms/orgao/{id}', 'Cms\Controllers\OrgaoController@detalhar');
+
+        //Tipo Politica
+        Route::get('/cms/tipos-politicas', 'Cms\Controllers\TipoPoliticaController@index');
+        Route::get('/cms/tipo-politica/{id}', 'Cms\Controllers\TipoPoliticaController@detalhar');
 
         ////////////////////////////////////////////////////////////////////////////////////
 

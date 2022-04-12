@@ -1,16 +1,16 @@
 @extends('cms::layouts.app')
 
 @section('content')
-    {!! Html::script(config('app.url').'assets-cms/js/controllers/grandeAreaCtrl.js') !!}
+    {!! Html::script(config('app.url').'assets-cms/js/controllers/publicoAlvoCtrl.js') !!}
 <script>
     $(function () {
         $('[data-toggle="popover"]').popover()
     })
 </script>
-    <div ng-controller="grandeAreaCtrl">
+    <div ng-controller="publicoAlvoCtrl">
         <div class="box-padrao">
-            <h1><i class="fa fa-grandeArea" aria-hidden="true"></i>&nbsp;GrandeAreas</h1>
-            <button class="btn btn-primary" ng-click="mostrarForm=!mostrarForm" ng-show="!mostrarForm">Nova Grande Area</button>
+            <h1><i class="fa fa-publicoAlvo" aria-hidden="true"></i>&nbsp;PublicoAlvos</h1>
+            <button class="btn btn-primary" ng-click="mostrarForm=!mostrarForm" ng-show="!mostrarForm">Novo Publico Alvo</button>
             <button class="btn btn-warning" ng-click="mostrarForm=!mostrarForm" ng-show="mostrarForm">Cancelar</button>
             <br><br>
             <div ng-show="mostrarForm">
@@ -27,7 +27,7 @@
                 </span>
                 <button class="btn btn-danger" ng-click="picFile = null" ng-show="picFile" type="button">Remover Imagem</button>
                 <i ng-show="form.file.$error.maxSize || form.fileDrop.$error.maxSize" style="margin-left: 10px;">
-                    Arquivo muito grande <% errorFile.size / 1000000|number:1 %>MB: máximo 2MB
+                    Arquivo muito publico <% errorFile.size / 1000000|number:1 %>MB: máximo 2MB
                     <div class="btn btn-danger" ng-click="limparImagem()">Cancelar</div>
                 </i>
 
@@ -40,7 +40,7 @@
 
 
                 {{--<br><br>--}}
-                @include('cms::grande-area._form')
+                @include('cms::publico-alvo._form')
                 <div class="row">
                     <div class="col-md-1 col-lg-1 col-xs-3">
                         <br>
@@ -77,7 +77,7 @@
                         <input class="form-control" type="text" ng-model="dadoPesquisa" placeholder="Faça sua busca"/>
                     </div>
                     <br>
-                    <div><% mensagemGrandeArea %></div>
+                    <div><% mensagemPublicoAlvo %></div>
                     <div ng-show="processandoListagem"><i class="fa fa-spinner fa-spin"></i> Processando...</div>
                     <h2 class="tabela_vazia" ng-show="!processandoListagem && totalItens==0">Nenhum registro encontrado!</h2>
                     <table ng-show="totalItens>0" class="table table-striped">
@@ -88,17 +88,17 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="grandeArea in grandeAreas">
-                            <td><% grandeArea.id %></td>
-                           {{-- <td><img ng-show="grandeArea.imagem" ng-src="imagens/grandeAreas/xs-<% grandeArea.imagem %>" width="60"></td>--}}
-                            <td><% grandeArea.nome %></td>
-                            <td><% grandeArea.mes %></td>
+                        <tr ng-repeat="publicoAlvo in publicoAlvos">
+                            <td><% publicoAlvo.id %></td>
+                           {{-- <td><img ng-show="publicoAlvo.imagem" ng-src="imagens/publicoAlvos/xs-<% publicoAlvo.imagem %>" width="60"></td>--}}
+                            <td><% publicoAlvo.nome %></td>
+                            <td><% publicoAlvo.mes %></td>
                             <td class="text-right">
                                 <div>
-                                    {{--<a href="cms/items/<% grandeArea.id %>"><i class="fa fa-sitemap fa-2x" title="Itens"></i></a>&nbsp;&nbsp;--}}
-                                    <a href="cms/grande-area/<% grandeArea.id %>"><i class="fa fa-edit fa-2x" title="Editar"></i></a>&nbsp;&nbsp;{{--<% mensagemStatus %><% idStatus %>--}}
-                                    {{--<a  ng-class="<% grandeArea.status %> == 1 ? 'color-success' : 'color-success-inactive'"  style="cursor: pointer;"><i class="fa fa-check-circle fa-2x" aria-hidden="true" ng-click="status(grandeArea.id, grandeArea.status);"></i></a>&nbsp;&nbsp;--}}
-                                    <a><i data-toggle="modal" data-target="#modalExcluir" class="fa fa-remove fa-2x" style="cursor:pointer;"  ng-click="perguntaExcluir(grandeArea.id, grandeArea.nome, grandeArea.imagem)"></i></a>
+                                    {{--<a href="cms/items/<% publicoAlvo.id %>"><i class="fa fa-sitemap fa-2x" title="Itens"></i></a>&nbsp;&nbsp;--}}
+                                    <a href="cms/publico-alvo/<% publicoAlvo.id %>"><i class="fa fa-edit fa-2x" title="Editar"></i></a>&nbsp;&nbsp;{{--<% mensagemStatus %><% idStatus %>--}}
+                                    {{--<a  ng-class="<% publicoAlvo.status %> == 1 ? 'color-success' : 'color-success-inactive'"  style="cursor: pointer;"><i class="fa fa-check-circle fa-2x" aria-hidden="true" ng-click="status(publicoAlvo.id, publicoAlvo.status);"></i></a>&nbsp;&nbsp;--}}
+                                    <a><i data-toggle="modal" data-target="#modalExcluir" class="fa fa-remove fa-2x" style="cursor:pointer;"  ng-click="perguntaExcluir(publicoAlvo.id, publicoAlvo.nome, publicoAlvo.imagem)"></i></a>
                                 </div>
                             </td>
                         </tr>
@@ -143,7 +143,7 @@
                     <div class="modal-body">
                         <div class="row">
                             {{--<div class="col-md-3">
-                                <img  ng-src="imagens/grandeAreas/xs-<% imagemExcluir %>" width="100">
+                                <img  ng-src="imagens/publicoAlvos/xs-<% imagemExcluir %>" width="100">
                             </div>--}}
                             <div class="col-md-9">
                                 <p><% tituloExcluir %></p>
