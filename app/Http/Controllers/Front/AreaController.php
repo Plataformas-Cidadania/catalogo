@@ -34,6 +34,10 @@ class AreaController extends Controller{
         $notice = $notice->find($id);
         return view('notice.detalhar', ['notice' => $notice]);*/
 
+        //$teste = \App\Http\Controllers\Api\PoliticaController::get($id);
+
+        //return $teste;
+
         $area = $this->areaController->get($id);
 
 
