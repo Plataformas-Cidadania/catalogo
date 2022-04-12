@@ -114,8 +114,9 @@
                 <li>
                     <a href="cms/orgaos"><i class="fa fa-fw fa-square"></i> Órgãos</a>
                 </li>
-
-
+                <li>
+                    <a href="cms/tipos-politicas"><i class="fa fa-fw fa-square"></i> Tipos Políticas</a>
+                </li>
                 <li>
                     <a href="cms/setting"><i class="fa fa-fw fa-users"></i> Configurações</a>
                 </li>

@@ -208,6 +208,10 @@ Route::group(['middleware' => 'cms'], function () {
         Route::get('/cms/orgaos', 'Cms\Controllers\OrgaoController@index');
         Route::get('/cms/orgao/{id}', 'Cms\Controllers\OrgaoController@detalhar');
 
+        //Tipo Politica
+        Route::get('/cms/tipos-politicas', 'Cms\Controllers\TipoPoliticaController@index');
+        Route::get('/cms/tipo-politica/{id}', 'Cms\Controllers\TipoPoliticaController@detalhar');
+
         ////////////////////////////////////////////////////////////////////////////////////
 
 
