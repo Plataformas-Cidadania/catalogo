@@ -34,8 +34,18 @@ class AreaController extends Controller{
         $notice = $notice->find($id);
         return view('notice.detalhar', ['notice' => $notice]);*/
 
-        $area = $this->areaController->get($id);
+        //$teste = \App\Http\Controllers\Api\PoliticaController::get($id);
 
+        //return $teste;
+
+        $area = $this->areaController->get($id);
+        //return $area;
+        /*foreach($area['politicas'] as $politica){
+            return $politica->nome;
+        }*/
+
+
+        //return $area;
 
         return view('area.detalhar', ['area' => $area]);
 

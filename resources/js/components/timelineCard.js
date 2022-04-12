@@ -131,7 +131,7 @@ const Timeline = (props) => {
                                                             return (
                                                                 <div key={props.item.area+"_politica_"+key.toString()+index}
                                                                      /*className="card"*/
-                                                                     className={"card cor"+(Math.floor(Math.random() * 4))}
+                                                                     className={"card-tl cor"+(Math.floor(Math.random() * 4))}
                                                                      onClick={swap2}
                                                                 >
                                                                     {politica.nome_politica}
