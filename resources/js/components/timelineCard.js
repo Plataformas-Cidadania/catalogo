@@ -51,7 +51,7 @@ const Timeline = (props) => {
 
         e.persist();
 
-        let card = e.target.parentNode.querySelector(".card:last-child");
+        let card = e.target.parentNode.querySelector(".card-tl:last-child");
         if (e.target !== card) return;
         card.style.animation = "swap 700ms forwards";
 
