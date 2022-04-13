@@ -28,7 +28,7 @@ class PoliticaRepository extends BaseRepository
         $arr = [];
         foreach ($models as $model) {
             $modelArr  = $model->toArray();
-            $tmp['íd'] = $modelArr['id'];
+            $tmp['id'] = $modelArr['id'];
             $tmp['nome'] = $modelArr['nome'];
             $tmp['ano'] = $modelArr['ano'];
             $tmp['area'] = $modelArr['area']['nome'];
@@ -44,7 +44,7 @@ class PoliticaRepository extends BaseRepository
         $arr = [];
         foreach ($models as $model) {
             $modelArr  = $model->toArray();
-            $tmp['íd'] = $modelArr['id'];
+            $tmp['id'] = $modelArr['id'];
             $tmp['nome'] = $modelArr['nome'];
             $tmp['ano'] = $modelArr['ano'];
             array_push($arr, $tmp);
