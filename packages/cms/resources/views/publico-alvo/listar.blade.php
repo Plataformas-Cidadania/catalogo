@@ -9,7 +9,7 @@
 </script>
     <div ng-controller="publicoAlvoCtrl">
         <div class="box-padrao">
-            <h1><i class="fa fa-publicoAlvo" aria-hidden="true"></i>&nbsp;PublicoAlvos</h1>
+            <h1><i class="fa fa-square" aria-hidden="true"></i>&nbsp;PublicoAlvos</h1>
             <button class="btn btn-primary" ng-click="mostrarForm=!mostrarForm" ng-show="!mostrarForm">Novo Publico Alvo</button>
             <button class="btn btn-warning" ng-click="mostrarForm=!mostrarForm" ng-show="mostrarForm">Cancelar</button>
             <br><br>
@@ -27,7 +27,7 @@
                 </span>
                 <button class="btn btn-danger" ng-click="picFile = null" ng-show="picFile" type="button">Remover Imagem</button>
                 <i ng-show="form.file.$error.maxSize || form.fileDrop.$error.maxSize" style="margin-left: 10px;">
-                    Arquivo muito publico <% errorFile.size / 1000000|number:1 %>MB: máximo 2MB
+                    Arquivo muito grande <% errorFile.size / 1000000|number:1 %>MB: máximo 2MB
                     <div class="btn btn-danger" ng-click="limparImagem()">Cancelar</div>
                 </i>
 

@@ -1,14 +1,14 @@
 @extends('cms::layouts.app')
 
 @section('content')
-    {!! Html::script(config('app.url').'assets-cms/js/controllers/alterarPublicoAlvoCtrl.js') !!}
-    <div ng-controller="alterarPublicoAlvoCtrl">
+    {!! Html::script(config('app.url').'assets-cms/js/controllers/alterarCategoriaPoliticaCtrl.js') !!}
+    <div ng-controller="alterarCategoriaPoliticaCtrl">
         <div class="box-padrao">
-            <h1><a href="cms/publicos-alvos"><i class="fa fa-arrow-circle-left"></i></a>&nbsp;&nbsp;Publico Alvo</h1>
-            <?php //print_r($publicoAlvo);?>
-            <div ng-init="carregaImagem('{{$publicoAlvo->imagem}}', '{{$publicoAlvo->arquivo}}'); detalhar({{$publicoAlvo->id}})">
+            <h1><a href="cms/categorias-politicas"><i class="fa fa-arrow-circle-left"></i></a>&nbsp;&nbsp;Categoria Politica</h1>
+            <?php //print_r($categoriaPolitica);?>
+            <div ng-init="carregaImagem('{{$categoriaPolitica->imagem}}', '{{$categoriaPolitica->arquivo}}'); detalhar({{$categoriaPolitica->id}})">
                 <span class="texto-obrigatorio">* campos obrigatórios</span><br><br>
-                {!! Form::model($publicoAlvo, ['name' =>'form']) !!}
+                {!! Form::model($categoriaPolitica, ['name' =>'form']) !!}
                 <div class="container-thumb" style="display: none;">
                     <div class="box-thumb" name="fileDrop" ngf-drag-over-class="'box-thumb-hover'" ngf-drop ngf-select ng-model="picFile"
                          ng-show="!picFile && !imagemBD" accept="image/*" ngf-max-size="2MB">Solte uma imagem aqui!</div>
@@ -28,17 +28,17 @@
                     Escolher Arquivo <input  type="file" ngf-select ng-model="fileArquivo" name="fileArquivo" accept="application/pdf,.zip,.rar,.doc,.docx,.xlsx,.xls" ngf-max-size="100MB" ngf-model-invalid="errorFile">
                 </span>
                 <button class="btn btn-danger" ng-click="limparArquivo()" ng-show="fileArquivo || arquivoBD" type="button">Remover Arquivo</button>
-                <a href="arquivos/publicoAlvos/<% arquivoBD %>" target="_blank" ng-show="arquivoBD"><% arquivoBD %></a>
+                <a href="arquivos/categoriaPoliticas/<% arquivoBD %>" target="_blank" ng-show="arquivoBD"><% arquivoBD %></a>
                 <a ng-show="fileArquivo"><% fileArquivo.name %></a>
                 {{--<br><br>--}}
 
                 <br><br>
-                @include('cms::publico-alvo._form')
-                <input type="hidden" name="id" ng-model="id" ng-init="id='{{$publicoAlvo->id}}'"/>
+                @include('cms::categoria-politica._form')
+                <input type="hidden" name="id" ng-model="id" ng-init="id='{{$categoriaPolitica->id}}'"/>
                 <div class="row">
                     <div class="col-md-1 col-lg-1 col-xs-3">
                         <br>
-                        <button class="btn btn-info" type="button" ng-click="alterar(picFile, fileArquivo)" ng-disabled="form.$invalid && form.publicoAlvo.$dirty">Salvar</button>
+                        <button class="btn btn-info" type="button" ng-click="alterar(picFile, fileArquivo)" ng-disabled="form.$invalid && form.categoriaPolitica.$dirty">Salvar</button>
                     </div>
                     <div class="col-md-2 col-lg-2 col-xs-6">
                         <span class="progress" ng-show="picFile.progress >= 0">

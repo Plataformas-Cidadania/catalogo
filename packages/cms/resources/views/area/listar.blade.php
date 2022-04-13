@@ -9,7 +9,7 @@
 </script>
     <div ng-controller="areaCtrl">
         <div class="box-padrao">
-            <h1><i class="fa fa-area" aria-hidden="true"></i>&nbsp;Areas</h1>
+            <h1><i class="fa fa-square" aria-hidden="true"></i>&nbsp;Areas</h1>
             <button class="btn btn-primary" ng-click="mostrarForm=!mostrarForm" ng-show="!mostrarForm">Nova Area</button>
             <button class="btn btn-warning" ng-click="mostrarForm=!mostrarForm" ng-show="mostrarForm">Cancelar</button>
             <br><br>

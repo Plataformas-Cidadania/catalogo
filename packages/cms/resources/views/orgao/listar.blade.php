@@ -9,7 +9,7 @@
 </script>
     <div ng-controller="orgaoCtrl">
         <div class="box-padrao">
-            <h1><i class="fa fa-orgao" aria-hidden="true"></i>&nbsp;Orgaos</h1>
+            <h1><i class="fa fa-square" aria-hidden="true"></i>&nbsp;Orgaos</h1>
             <button class="btn btn-primary" ng-click="mostrarForm=!mostrarForm" ng-show="!mostrarForm">Nova Orgao</button>
             <button class="btn btn-warning" ng-click="mostrarForm=!mostrarForm" ng-show="mostrarForm">Cancelar</button>
             <br><br>
