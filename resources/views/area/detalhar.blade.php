@@ -62,6 +62,7 @@
                 <hr/>
                 <script>
                     area = "{{$area->nome}}";
+                    id_area = {{$area->id}};
                 </script>
                 <div id="areaTematica">&nbsp;</div>
             </div>
