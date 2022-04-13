@@ -67,7 +67,10 @@
                 <div id="areaTematica">&nbsp;</div>
             </div>
 
+
+
             <div class="col-md-12">
+                <br><br><br>
                 <h2>Lista de políticas</h2>
                 <hr/>
 
