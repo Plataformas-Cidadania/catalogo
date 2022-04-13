@@ -28,9 +28,25 @@ class PoliticaRepository extends BaseRepository
         $arr = [];
         foreach ($models as $model) {
             $modelArr  = $model->toArray();
+            $tmp['íd'] = $modelArr['id'];
             $tmp['nome'] = $modelArr['nome'];
             $tmp['ano'] = $modelArr['ano'];
             $tmp['area'] = $modelArr['area']['nome'];
+            array_push($arr, $tmp);
+        }
+        return $arr;
+    }
+
+    public function getTimelineArea($area_id)
+    {
+        $models = $this->model->with('area')->where('area','=',$area_id)->get();
+
+        $arr = [];
+        foreach ($models as $model) {
+            $modelArr  = $model->toArray();
+            $tmp['íd'] = $modelArr['id'];
+            $tmp['nome'] = $modelArr['nome'];
+            $tmp['ano'] = $modelArr['ano'];
             array_push($arr, $tmp);
         }
         return $arr;

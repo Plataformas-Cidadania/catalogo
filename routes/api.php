@@ -135,6 +135,9 @@ Route::group([
      Route::get('/timeline', [App\Http\Controllers\Api\PoliticaController::class, 'getAllTimeline'])
          ->name('api.politica.getAllTimeline');
 
+     Route::get('/timeline/{area_id}', [App\Http\Controllers\Api\PoliticaController::class, 'getTimelineArea'])
+         ->name('api.politica.getTimelineArea');
+
      Route::get('/{politica}',[App\Http\Controllers\Api\PoliticaController::class, 'get'])
           ->name('api.politica.get');
 
