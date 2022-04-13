@@ -10,10 +10,11 @@ const AreaTematica = (props) => {
     }, []);
 
     const getPoliticas = async () => {
-        const result = await axios.get('api/politica/timeline');
+        //const result = await axios.get('api/politica/timeline');
+        const result = await axios.get('api/politica/timeline/' + props.id_area);
         let politicas = result.data;
         //linha temporario enquanto a rota não traz apenas as políticas da área.
-        politicas = politicas.filter((item) => item.area === props.area);
+        //politicas = politicas.filter((item) => item.area === props.area);
         politicas = politicas.sort((a, b) => (parseInt(a.ano.substring(0, 4)) > parseInt(b.ano.substring(0, 4))) ? 1 : -1);
         console.log(politicas);
         const newTimeline = {
@@ -56,6 +57,6 @@ const AreaTematica = (props) => {
 };
 
 ReactDOM.render(
-    <AreaTematica area={area}/>,
+    <AreaTematica area={area} id_area={id_area}/>,
     document.getElementById('areaTematica')
 );
