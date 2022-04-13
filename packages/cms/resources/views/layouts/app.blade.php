@@ -112,6 +112,9 @@
                     <a href="cms/areas"><i class="fa fa-fw fa-square"></i> Áreas</a>
                 </li>
                 <li>
+                    <a href="cms/categorias-politicas"><i class="fa fa-fw fa-square"></i> Categorias Políticas</a>
+                </li>
+                <li>
                     <a href="cms/orgaos"><i class="fa fa-fw fa-square"></i> Órgãos</a>
                 </li>
                 <li>

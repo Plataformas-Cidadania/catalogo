@@ -261,13 +261,13 @@
   left: 0;
 }
 .timeline-nav-button--prev::before {
-  background-image: url(/images/arrow-left.svg?718e015d853542a54f5deb9e19e81900);
+  background-image: url(/images/arrow-left.svg?c9f1f97b287cd97f761dfbac40ec3a2f);
 }
 .timeline-nav-button--next {
   right: 0;
 }
 .timeline-nav-button--next::before {
-  background-image: url(/images/arrow-right.svg?dda8414b2452a56845923234ea1628ce);
+  background-image: url(/images/arrow-right.svg?2f364df6ab46755fc481a18c07d9c4f5);
 }
 
 .timeline--mobile {

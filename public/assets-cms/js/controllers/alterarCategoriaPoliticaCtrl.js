@@ -1,11 +1,11 @@
-cmsApp.controller('alterarPublicoAlvoCtrl', ['$scope', '$http', 'Upload', '$timeout', function($scope, $http, Upload, $timeout){
+cmsApp.controller('alterarCategoriaPoliticaCtrl', ['$scope', '$http', 'Upload', '$timeout', function($scope, $http, Upload, $timeout){
 
     $scope.processandoSalvar = false;
     $scope.processandoDetalhar = false;
 
     $scope.id = 0;
     $scope.formatos = [];
-    $scope.tipo = null;
+    $scope.categoria = null;
     $scope.formato = null;
 
     //ALTERAR/////////////////////////////
@@ -19,13 +19,13 @@ cmsApp.controller('alterarPublicoAlvoCtrl', ['$scope', '$http', 'Upload', '$time
     $scope.detalhar = function(id){
         $scope.processandoDetalhar = true;
         $http({
-            url: 'api/publico_alvo/'+id,
+            url: 'api/categoria/'+id,
             method: 'GET',
             params: {
 
             }
         }).success(function(data, status, headers, config){
-            $scope.publicoAlvo = data;//data.data
+            $scope.categoriaPolitica = data;//data.data
             $scope.processandoDetalhar = false;
         }).error(function(data){
             $scope.message = "Ocorreu um erro: "+data;
@@ -41,7 +41,7 @@ cmsApp.controller('alterarPublicoAlvoCtrl', ['$scope', '$http', 'Upload', '$time
         if(file==null){
 
             $scope.processandoSalvar = true;
-            $http.put("api/publico_alvo/"+$scope.id, $scope.publicoAlvo).success(function (data){
+            $http.put("api/categoria/"+$scope.id, $scope.categoriaPolitica).success(function (data){
                 //console.log(data);
                 $scope.processandoSalvar = false;
                 $scope.mensagemSalvar = data.message;
@@ -55,7 +55,7 @@ cmsApp.controller('alterarPublicoAlvoCtrl', ['$scope', '$http', 'Upload', '$time
         }else{
 
             file.upload = Upload.upload({
-                url: 'api/publico_alvo/'+$scope.id,
+                url: 'api/categoria/'+$scope.id,
                 data: {text: $scope.text, file: file},
             });
 
@@ -90,7 +90,7 @@ cmsApp.controller('alterarPublicoAlvoCtrl', ['$scope', '$http', 'Upload', '$time
 
     $scope.carregaImagem  = function(img) {
         if(img!=''){
-            $scope.imagemBD = 'imagens/publico-alvos/xs-'+img;
+            $scope.imagemBD = 'imagens/categoria-politicas/xs-'+img;
             //console.log($scope.imagemBD);
         }
     };

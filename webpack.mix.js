@@ -160,4 +160,9 @@ mix.scripts('packages/cms/resources/assets/js/controllers/publicoAlvoCtrl.js', '
 mix.scripts('packages/cms/resources/assets/js/controllers/alterarPublicoAlvoCtrl.js', 'public/assets-cms/js/controllers/alterarPublicoAlvoCtrl.js');
 
 
+//Categoria Política
+mix.scripts('packages/cms/resources/assets/js/controllers/categoriaPoliticaCtrl.js', 'public/assets-cms/js/controllers/categoriaPoliticaCtrl.js');
+mix.scripts('packages/cms/resources/assets/js/controllers/alterarCategoriaPoliticaCtrl.js', 'public/assets-cms/js/controllers/alterarCategoriaPoliticaCtrl.js');
+
+
 //FIM CMS///////////////////////////////////////////////////////////////////
