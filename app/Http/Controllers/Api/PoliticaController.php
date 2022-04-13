@@ -60,6 +60,13 @@ class PoliticaController extends Controller
         return $models;
     }
 
+    public function getTimelineArea($area_id)
+    {
+        $models =  $this->repo->getTimelineArea($area_id);
+        return $models;
+    }
+
+
     /**
      * Adicionar um novo
      *
