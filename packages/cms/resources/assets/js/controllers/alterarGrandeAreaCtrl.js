@@ -55,7 +55,7 @@ cmsApp.controller('alterarGrandeAreaCtrl', ['$scope', '$http', 'Upload', '$timeo
         }else{
 
             file.upload = Upload.upload({
-                url: 'api/grande_rea/'+$scope.id,
+                url: 'api/grande_area/'+$scope.id,
                 data: {text: $scope.text, file: file},
             });
 

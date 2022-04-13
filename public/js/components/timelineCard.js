@@ -17,6 +17,7 @@ const Timeline = props => {
   useEffect(() => {
     //CARD
     if (props.item) {
+      console.log('PROPS TIMELINE CARD', props);
       Object.entries(props.item.anos).forEach((item, key) => {
         let stack = document.getElementById(props.item.area + "_ano_" + key);
         [...stack.children].reverse().forEach(i => stack.append(i));
@@ -42,7 +43,7 @@ const Timeline = props => {
 
   function swap2(e) {
     e.persist();
-    let card = e.target.parentNode.querySelector(".card:last-child");
+    let card = e.target.parentNode.querySelector(".card-tl:last-child");
     if (e.target !== card) return;
     card.style.animation = "swap 700ms forwards";
     setTimeout(() => {
@@ -99,9 +100,10 @@ const Timeline = props => {
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "timeline__items"
-  }, Object.entries(props.item.anos).map((subitem, key) => {
+  }, props.item.anos ? Object.entries(props.item.anos).map((subitem, key) => {
     const ano = subitem[0];
-    const politicas = subitem[1];
+    let politicas = subitem[1];
+    politicas = politicas.sort((a, b) => a.nome_politica > b.nome_politica ? 1 : -1);
     return /*#__PURE__*/React.createElement("div", {
       key: props.item.area + "_ano_" + key,
       className: "timeline__item"
@@ -122,5 +124,5 @@ const Timeline = props => {
         onClick: swap2
       }, politica.nome_politica);
     }))));
-  }))))) : /*#__PURE__*/React.createElement("div", null, "\xA0");
+  }) : null)))) : /*#__PURE__*/React.createElement("div", null, "\xA0");
 };

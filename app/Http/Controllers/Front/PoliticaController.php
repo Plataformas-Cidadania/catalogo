@@ -26,6 +26,8 @@ class PoliticaController extends Controller{
 
         //return $politica;
 
+        //return count($politica);
+
         return view('area.politica', ['politica' => $politica]);
 
     }

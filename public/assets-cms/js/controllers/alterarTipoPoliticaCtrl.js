@@ -55,7 +55,7 @@ cmsApp.controller('alterarTipoPoliticaCtrl', ['$scope', '$http', 'Upload', '$tim
         }else{
 
             file.upload = Upload.upload({
-                url: 'api/tipo_rea/'+$scope.id,
+                url: 'api/tipo_politica/'+$scope.id,
                 data: {text: $scope.text, file: file},
             });
 

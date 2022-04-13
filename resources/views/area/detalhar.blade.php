@@ -3,6 +3,7 @@
 @section('content')
 
 
+
     <div class=" bg-lgt">
         <div class="bg-img-l">
             <div class="bg-img-r">
@@ -59,6 +60,9 @@
             <div class="col-md-12">
                 <h2>Linha do tempo</h2>
                 <hr/>
+                <script>
+                    area = "{{$area->nome}}";
+                </script>
                 <div id="areaTematica">&nbsp;</div>
             </div>
 
@@ -66,22 +70,20 @@
                 <h2>Lista de políticas</h2>
                 <hr/>
 
-
                 <div class="row">
                     @foreach($area['politicas'] as $politica)
                     <div class="col-md-4" >
                         <div class="bg-lgt p-3 mb-4 linsLeft">
                             <a href="politica/{{$politica->id}}/{{clean($politica->nome)}}" style="display: block; min-height: 188px">
-                                <p class="m-0">
+                                <div class="m-0">
+                                    <h2>{{substr($politica->ano, 0, 4)}}</h2>
                                     <strong>{{$politica->legislacao}}</strong><br>
                                     <strong>{{$politica->nome}}</strong><br>
                                     {{$politica->publico_alvo_categ}}<br>
-                                    <strong>{{$politica->ano}}</strong>
-                                </p>
+
+                                </div>
                             </a>
                         </div>
-
-
                     </div>
                     @endforeach
                 </div>

@@ -26,12 +26,18 @@ const TimelineIndex = () => {
   const getPoliticas = async () => {
     //const result = await axios.get('csv/politicas.csv');
     //let politicas = $.csv.toObjects(result.data, {separator: ';'});
-    const result = await axios.get('json/politicas-timeline.json');
+    const result = await axios.get('api/politica/timeline'); //const result = await axios.get('json/politicas-timeline.json');
+
     let politicas = result.data; //ordena pelo ano
 
-    politicas = politicas.sort((a, b) => parseInt(a.ano) > parseInt(b.ano) ? 1 : -1);
-    const newAreas = groupByAreas(politicas); //console.log(newAreas);
+    politicas = politicas.sort((a, b) => parseInt(a.ano.substring(0, 4)) > parseInt(b.ano.substring(0, 4)) ? 1 : -1); //politicas = politicas.sort((a, b) => (parseInt(a.ano) > parseInt(b.ano)) ? 1 : -1);
 
+    let newAreas = groupByAreas(politicas); //ordena o objeto pelo nome da propriedade (neste caso a área).
+
+    newAreas = Object.keys(newAreas).sort().reduce((acc, currValue) => {
+      acc[currValue] = newAreas[currValue];
+      return acc;
+    }, {});
     setAreas(newAreas); //console.log(Object.entries(newAreas));
   };
 
@@ -42,15 +48,19 @@ const TimelineIndex = () => {
       if (!newAreas.hasOwnProperty(item.area)) {
         newAreas[item.area] = {};
       } //cria a propriedade ano dentro do objeto de area com um array vazio
+      //if(!newAreas[item.area].hasOwnProperty(item.ano)){
 
 
-      if (!newAreas[item.area].hasOwnProperty(item.ano)) {
-        newAreas[item.area][item.ano] = [];
+      if (!newAreas[item.area].hasOwnProperty(item.ano.substring(0, 4))) {
+        //newAreas[item.area][item.ano] = [];
+        newAreas[item.area][item.ano.substring(0, 4)] = [];
       } //adiciona um objeto de politica no array do ano
+      //newAreas[item.area][item.ano].push({
 
 
-      newAreas[item.area][item.ano].push({
-        nome_politica: item.nome_politica
+      newAreas[item.area][item.ano.substring(0, 4)].push({
+        nome_politica: item.nome //nome_politica: item.nome_politica
+
       });
     });
     return newAreas;

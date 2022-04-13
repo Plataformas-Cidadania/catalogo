@@ -55,7 +55,7 @@ cmsApp.controller('alterarPublicoAlvoCtrl', ['$scope', '$http', 'Upload', '$time
         }else{
 
             file.upload = Upload.upload({
-                url: 'api/publico_rea/'+$scope.id,
+                url: 'api/publico_alvo/'+$scope.id,
                 data: {text: $scope.text, file: file},
             });
 

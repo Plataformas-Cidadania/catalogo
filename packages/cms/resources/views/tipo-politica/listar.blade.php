@@ -9,7 +9,7 @@
 </script>
     <div ng-controller="tipoPoliticaCtrl">
         <div class="box-padrao">
-            <h1><i class="fa fa-tipoPolitica" aria-hidden="true"></i>&nbsp;TipoPoliticas</h1>
+            <h1><i class="fa fa-square" aria-hidden="true"></i>&nbsp;TipoPoliticas</h1>
             <button class="btn btn-primary" ng-click="mostrarForm=!mostrarForm" ng-show="!mostrarForm">Novo Tipo Politica</button>
             <button class="btn btn-warning" ng-click="mostrarForm=!mostrarForm" ng-show="mostrarForm">Cancelar</button>
             <br><br>

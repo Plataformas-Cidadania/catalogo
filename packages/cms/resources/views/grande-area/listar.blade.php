@@ -9,7 +9,7 @@
 </script>
     <div ng-controller="grandeAreaCtrl">
         <div class="box-padrao">
-            <h1><i class="fa fa-grandeArea" aria-hidden="true"></i>&nbsp;GrandeAreas</h1>
+            <h1><i class="fa fa-square" aria-hidden="true"></i>&nbsp;GrandeAreas</h1>
             <button class="btn btn-primary" ng-click="mostrarForm=!mostrarForm" ng-show="!mostrarForm">Nova Grande Area</button>
             <button class="btn btn-warning" ng-click="mostrarForm=!mostrarForm" ng-show="mostrarForm">Cancelar</button>
             <br><br>

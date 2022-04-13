@@ -112,10 +112,16 @@
                     <a href="cms/areas"><i class="fa fa-fw fa-square"></i> Áreas</a>
                 </li>
                 <li>
+                    <a href="cms/categorias-politicas"><i class="fa fa-fw fa-square"></i> Categorias Políticas</a>
+                </li>
+                <li>
                     <a href="cms/orgaos"><i class="fa fa-fw fa-square"></i> Órgãos</a>
                 </li>
                 <li>
                     <a href="cms/tipos-politicas"><i class="fa fa-fw fa-square"></i> Tipos Políticas</a>
+                </li>
+                <li>
+                    <a href="cms/publicos-alvos"><i class="fa fa-fw fa-square"></i> Públicos Alvos</a>
                 </li>
                 <li>
                     <a href="cms/setting"><i class="fa fa-fw fa-users"></i> Configurações</a>
