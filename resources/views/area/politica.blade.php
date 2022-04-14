@@ -56,12 +56,12 @@
                     </div>
                 </div>
 
-                <div class="row">
+                {{--<div class="row">
                     <div class="col-md-12">
                         <p><br><strong>OBS.:</strong></p>
                        <p>{{$politica->observacao}} </p>
                     </div>
-                </div>
+                </div>--}}
 
 
 
