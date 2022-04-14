@@ -129,6 +129,7 @@ const Timeline = (props) => {
                                                     <div id={props.item.area+"_ano_"+key} className="stack">
                                                         {
                                                             politicas.map((politica, index) => {
+
                                                                 let id = 1;
                                                                 return (
                                                                     <div key={props.item.area+"_politica_"+key.toString()+index}
@@ -137,6 +138,10 @@ const Timeline = (props) => {
                                                                          onClick={swap2}
                                                                     >
                                                                         {politica.nome_politica}
+                                                                        {/*<a href={'politica/' + politica.id+'/' + politica.id} style={{textAlign: 'end'}}>*/}
+                                                                        <a href="politica/10/plano-nacional-de-saneamento-basico-plansab" style={{textAlign: 'end'}}>
+                                                                            Acessar <i className="far fa-arrow-alt-circle-right"/>
+                                                                        </a>
                                                                     </div>
 
                                                                 );

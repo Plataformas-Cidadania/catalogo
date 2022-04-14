@@ -122,7 +122,14 @@ const Timeline = props => {
         ,
         className: "card-tl cor" + Math.floor(Math.random() * 4),
         onClick: swap2
-      }, politica.nome_politica);
+      }, politica.nome_politica, /*#__PURE__*/React.createElement("a", {
+        href: "politica/10/plano-nacional-de-saneamento-basico-plansab",
+        style: {
+          textAlign: 'end'
+        }
+      }, "Acessar ", /*#__PURE__*/React.createElement("i", {
+        className: "far fa-arrow-alt-circle-right"
+      })));
     }))));
   }) : null)))) : /*#__PURE__*/React.createElement("div", null, "\xA0");
 };
