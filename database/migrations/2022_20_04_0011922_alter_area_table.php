@@ -13,6 +13,7 @@ class AlterAreaTable extends Migration
      */
     public function up()
     {
+
         Schema::table('catalogo.area', function (Blueprint $table) {
             $table->string('icone')->nullable();
             $table->string('resumo',200)->nullable();
