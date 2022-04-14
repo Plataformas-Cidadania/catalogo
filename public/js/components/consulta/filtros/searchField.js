@@ -4,17 +4,19 @@ const SearchField = props => {
     useState
   } = React;
   const [showBoxSearch, setShowBoxSearch] = useState(false);
-  const [qtdSearch, setQtdSearch] = useState(3);
+  const [qtdSearch, setQtdSearch] = useState(1);
   const [placeholder, setPlaceholder] = useState('Digite para buscar');
   const [column, setColumn] = useState('title');
   const [search, setSearch] = useState('');
   const [items, setItems] = useState([]);
+  const [showItems, setShowItems] = useState([]);
   const [itemSelected, setItemSelected] = useState(null);
   useEffect(() => {
     setColumn(props.column);
   }, [props.column]);
   useEffect(() => {
     setItems(props.items);
+    setShowItems(props.items);
     console.log(props.items);
   }, [props.items]);
   useEffect(() => {
@@ -23,9 +25,12 @@ const SearchField = props => {
     }
   }, [props.qtdSearch]);
   useEffect(() => {
-    if (search.length >= qtdSearch) {
-      props.listSearch(search);
+    if (search.length >= qtdSearch && props.dynamicSearch) {
+      props.dynamicSearch(search);
+      return;
     }
+
+    listSearch(search);
   }, [search]);
   useEffect(() => {
     props.selectItem(itemSelected);
@@ -35,9 +40,21 @@ const SearchField = props => {
     setSearch(event.target.value);
   };
 
+  const listSearch = search => {
+    if (search) {
+      const newShowItems = items.filter(item => item[column].toLowerCase().includes(search.toLowerCase()));
+      setShowItems(newShowItems);
+      return;
+    }
+
+    setShowItems(items);
+  };
+
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-    className: "label-float input-icon"
-  }, /*#__PURE__*/React.createElement("input", {
+    className: "input-icon"
+  }, /*#__PURE__*/React.createElement("label", {
+    htmlFor: props.id
+  }, props.label), /*#__PURE__*/React.createElement("input", {
     type: "text",
     className: "form-control",
     placeholder: " ",
@@ -48,9 +65,7 @@ const SearchField = props => {
     },
     onClick: () => setShowBoxSearch(!showBoxSearch),
     onChange: handleSearch
-  }), /*#__PURE__*/React.createElement("label", {
-    htmlFor: props.id
-  }, props.label), /*#__PURE__*/React.createElement("input", {
+  }), /*#__PURE__*/React.createElement("input", {
     type: "text",
     className: "form-control",
     name: "tx_nome_regiao2",
@@ -82,9 +97,9 @@ const SearchField = props => {
   })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("ul", {
     className: "box-search-itens",
     style: {
-      display: (search.length >= qtdSearch || items.length > 0) && !itemSelected ? '' : 'none'
+      display: (search.length >= qtdSearch || showBoxSearch) && !itemSelected ? '' : 'none'
     }
-  }, items.map((item, key) => {
+  }, showItems.map((item, key) => {
     return /*#__PURE__*/React.createElement("li", {
       key: props.name + key,
       onClick: () => setItemSelected(item)

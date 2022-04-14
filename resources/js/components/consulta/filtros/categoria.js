@@ -1,4 +1,4 @@
-const Area = () => {
+const Categoria = () => {
 
     const { useEffect, useState } = React;
 
@@ -12,7 +12,7 @@ const Area = () => {
     }, []);
 
     const listItems = async () => {
-        const result = await axios.get('api/area/');
+        const result = await axios.get('api/categoria/');
         const newItems = result.data.sort((a, b) => (a.nome > b.nome) ? 1 : -1);
         setItems(newItems);
     }
@@ -20,11 +20,9 @@ const Area = () => {
     return (
         <div>
             <SearchField
-                id="area"
-                name="area"
-                label="Área Temática"
-                /*dynamicSearch={listItems}*/
-                /*qtdSearch={1}*/
+                id="categoria"
+                name="categoria"
+                label="Categoria"
                 items={items}
                 column="nome"
                 selectItem={setItem}

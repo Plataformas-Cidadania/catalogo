@@ -3,35 +3,52 @@ const Consulta = () => {
     const { useEffect, useState } = React;
 
     const [closeSearch, setCloseSearch] = useState(true)
+    const [filters, setFilters] = useState({});
+
+    const options = [
+        { value: 'chocolate', label: 'Chocolate' },
+        { value: 'strawberry', label: 'Strawberry' },
+        { value: 'vanilla', label: 'Vanilla' }
+    ]
+
+    const addFilter = (filter) => {
+        let newFilters = {...filters};
+
+        setFilters(newFilters);
+    }
+
+    const removeFilter = (filter) => {
+
+    }
 
     return (
         <div onClick={() => setCloseSearch(true)}>
             <div className="row">
                 <div className="col-md-12 col-xs-12">
-                    <Politica />
+                    <Politica addFilter={addFilter} removeFilter={removeFilter} />
                     <br/>
                 </div>
 
                 <div className="col-md-12 col-xs-12">
-                    <Ano />
+                    <Ano addFilter={addFilter} removeFilter={removeFilter} />
                     <br/>
                     <br/>
                 </div>
 
                 <div className="col-md-4 col-xs-12">
-                    <GrandeArea close={closeSearch} />
+                    <GrandeArea close={closeSearch} addFilter={addFilter} removeFilter={removeFilter} />
                 </div>
                 <div className="col-md-4 col-xs-12">
-                    <Area />
+                    <Area addFilter={addFilter} removeFilter={removeFilter} />
                 </div>
                 <div className="col-md-4 col-xs-12">
-                    <Orgao />
+                    <Orgao addFilter={addFilter} removeFilter={removeFilter} />
                 </div>
                 <div className="col-md-4 col-xs-12">
-                    <Tipo />
+                    <Tipo addFilter={addFilter} removeFilter={removeFilter} />
                 </div>
                 <div className="col-md-4 col-xs-12">
-                    <Publico />
+                    <Publico addFilter={addFilter} removeFilter={removeFilter} />
                 </div>
             </div>
 

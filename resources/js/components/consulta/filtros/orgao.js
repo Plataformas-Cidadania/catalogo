@@ -5,9 +5,16 @@ const Orgao = () => {
     const [item, setItem] = useState(null);
     const [items, setItems] = useState([]);
 
-    const listItems = async (search) => {
-        const result = await axios.get('test-consulta/' + search);
-        setItems(result.data);
+    useEffect(() => {
+        listItems().then(() => {
+            console.log('ok');
+        });
+    }, []);
+
+    const listItems = async () => {
+        const result = await axios.get('api/orgao/');
+        const newItems = result.data.sort((a, b) => (a.nome > b.nome) ? 1 : -1);
+        setItems(newItems);
     }
 
     return (
@@ -16,10 +23,8 @@ const Orgao = () => {
                 id="orgao"
                 name="orgao"
                 label="Órgão"
-                listSearch={listItems}
-                qtdSearch={1}
                 items={items}
-                column="titulo"
+                column="nome"
                 selectItem={setItem}
             />
         </div>

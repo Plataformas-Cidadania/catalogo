@@ -5,20 +5,24 @@ const Publico = () => {
   } = React;
   const [item, setItem] = useState(null);
   const [items, setItems] = useState([]);
+  useEffect(() => {
+    listItems().then(() => {
+      console.log('ok');
+    });
+  }, []);
 
-  const listItems = async search => {
-    const result = await axios.get('test-consulta/' + search);
-    setItems(result.data);
+  const listItems = async () => {
+    const result = await axios.get('api/publico_alvo/');
+    const newItems = result.data.sort((a, b) => a.nome > b.nome ? 1 : -1);
+    setItems(newItems);
   };
 
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(SearchField, {
     id: "publico",
     name: "publico",
     label: "P\xFAblico Alvo",
-    listSearch: listItems,
-    qtdSearch: 1,
     items: items,
-    column: "titulo",
+    column: "nome",
     selectItem: setItem
   }));
 };

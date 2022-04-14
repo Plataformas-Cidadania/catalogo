@@ -1,4 +1,4 @@
-const GrandeArea = () => {
+const Categoria = () => {
   const {
     useEffect,
     useState
@@ -12,24 +12,17 @@ const GrandeArea = () => {
   }, []);
 
   const listItems = async () => {
-    const result = await axios.get('api/grande_area/');
+    const result = await axios.get('api/categoria/');
     const newItems = result.data.sort((a, b) => a.nome > b.nome ? 1 : -1);
     setItems(newItems);
   };
 
-  const addItem = () => {};
-
-  const removeItem = () => {};
-
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(SearchField, {
-    id: "grande-area",
-    name: "grande-area",
-    label: "Grande \xC1rea"
-    /*dynamicSearch={listItems}*/
-    ,
+    id: "categoria",
+    name: "categoria",
+    label: "Categoria",
     items: items,
     column: "nome",
-    selectItem: setItem,
-    removeItem: setItem
+    selectItem: setItem
   }));
 };

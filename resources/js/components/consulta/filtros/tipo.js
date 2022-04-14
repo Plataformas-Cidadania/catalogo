@@ -5,9 +5,16 @@ const Tipo = () => {
     const [item, setItem] = useState(null);
     const [items, setItems] = useState([]);
 
-    const listItems = async (search) => {
-        const result = await axios.get('test-consulta/' + search);
-        setItems(result.data);
+    useEffect(() => {
+        listItems().then(() => {
+            console.log('ok');
+        });
+    }, []);
+
+    const listItems = async () => {
+        const result = await axios.get('api/tipo_politica/');
+        const newItems = result.data.sort((a, b) => (a.nome > b.nome) ? 1 : -1);
+        setItems(newItems);
     }
 
     return (
@@ -16,10 +23,8 @@ const Tipo = () => {
                 id="tipo"
                 name="tipo"
                 label="Tipo de Política"
-                listSearch={listItems}
-                qtdSearch={1}
                 items={items}
-                column="titulo"
+                column="nome"
                 selectItem={setItem}
             />
         </div>
