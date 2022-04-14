@@ -7,7 +7,7 @@
             <div class="bg-img-r">
                 <div class="container pt-5 pb-5 bg-lgt">
                     <div class=" ps-2 pe-2">
-                        <h1>{{$politica->nome}}</h1>
+                        <h1><strong>{{substr($politica->ano, 0, 4)}}</strong> - {{$politica->nome}}</h1>
                         <p>{!! $politica->observacao !!}</p>
                     </div>
                 </div>
@@ -52,8 +52,29 @@
                     </div>
                     <div class="col-md-6">
                         <p><br><strong>Legislacao</strong></p>
-                        <p>{{$politica->legislacao}} <br><i class="far fa-clock"></i> {{$politica->vigencia_inicio}} à {{$politica->vigencia_fim}}</p>
+                        <p>{{$politica->legislacao}} <br><i class="far fa-clock"></i> {{$politica->vigencia_inicio}} {{$politica->vigencia_fim ? 'à' : ''}} {{$politica->vigencia_fim}}</p>
                     </div>
+                </div>
+                <br><br>
+
+                <div class="flexRow">
+
+                        <div class="flexCol" style="margin-left: 0">
+                            <div class="p-3 mb-4 linsLeft linsBor">
+                                Desenvolvimento Econômico
+                            </div>
+                        </div>
+
+                        <i class="fas fa-angle-right mt-5"></i>
+
+                        <div class="flexCol" style="margin-rigth: 0">
+                            <a href="area-tematica/{{$politica->area}}/{{clean($politica->nome)}}">
+                                <div class="p-3 mb-4 linsLeft linsBor" >
+                                    Agropecuária e Agrária
+                                </div>
+                            </a>
+                        </div>
+
                 </div>
 
                 {{--<div class="row">
