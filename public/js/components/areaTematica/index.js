@@ -33,7 +33,8 @@ const AreaTematica = props => {
 
 
       area[item.ano.substring(0, 4)].push({
-        nome_politica: item.nome
+        nome_politica: item.nome,
+        id: item.id
       });
     });
     return area;

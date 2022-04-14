@@ -123,7 +123,7 @@ const Timeline = props => {
         className: "card-tl cor" + Math.floor(Math.random() * 4),
         onClick: swap2
       }, politica.nome_politica, /*#__PURE__*/React.createElement("a", {
-        href: "politica/10/plano-nacional-de-saneamento-basico-plansab",
+        href: "politica/" + politica.id + "/" + clean(politica.nome_politica),
         style: {
           textAlign: 'end'
         }
