@@ -23,6 +23,7 @@ const Publico = () => {
     label: "P\xFAblico Alvo",
     items: items,
     column: "nome",
-    selectItem: setItem
+    selectItem: setItem,
+    multiple: true
   }));
 };

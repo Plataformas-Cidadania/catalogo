@@ -13,7 +13,20 @@ const SearchField = (props) => {
     const [search, setSearch] = useState('');
     const [items, setItems] = useState([]);
     const [showItems, setShowItems] = useState([]);
-    const [itemSelected, setItemSelected] = useState(null);
+    const [itemsSelected, setItemsSelected] = useState([]);
+
+
+    /*const Input = styled.input`
+        font-size: 18px;
+        padding: 10px;
+        margin: 10px;
+        background: papayawhip;
+        border: none;
+        border-radius: 3px;
+        ::placeholder {
+        color: palevioletred;
+        }
+    `;*/
 
     //cria uma propriedade com o ref do component
     wrapperRef[props.id] = useRef(null);
@@ -32,7 +45,7 @@ const SearchField = (props) => {
                 console.log(ref.current.contains(event.target));
                 console.log(event.target);*/
                 if (ref.current && !ref.current.contains(event.target)) {
-                    console.log("Click fora do component " + props.id);
+                    //console.log("Click fora do component " + props.id);
                     setShowBoxSearch(false);
                 }
             }
@@ -71,11 +84,12 @@ const SearchField = (props) => {
     }, [search]);
 
     useEffect(() => {
-        props.selectItem(itemSelected);
-    }, [itemSelected]);
+        props.selectItem(itemsSelected);
+    }, [itemsSelected]);
 
     const handleSearch = (event) => {
         setSearch(event.target.value)
+        setShowBoxSearch(true);
     }
 
     const listSearch = (search) => {
@@ -87,34 +101,95 @@ const SearchField = (props) => {
         setShowItems(items);
     }
 
+    const addItem = (item) => (event) => {
+        event.stopPropagation();
+        let newItemsSelected = [...itemsSelected];
+        newItemsSelected.push(item);
+        setItemsSelected(newItemsSelected);
+        setShowBoxSearch(false);
+    }
+
+    const removeItem = (item) => (event) => {
+        console.log(item);
+        event.stopPropagation();
+        let newItemsSelected = [...itemsSelected];
+        newItemsSelected = newItemsSelected.filter((i) => i.id !== item.id)
+        setItemsSelected(newItemsSelected);
+    }
+
+    //foco no input
+    const clickDiv = (event) => {
+        //console.log('clickDiv', event.target.type);
+        if(itemsSelected.length > 0){
+            if(event.target.children[itemsSelected.length]){
+                event.target.children[itemsSelected.length].focus();
+            }
+            return;
+        }
+        event.target.children[0].focus()
+        setShowBoxSearch(true);
+    }
+
+    const clickInput = (event) => {
+        event.stopPropagation();
+        setShowBoxSearch(true);
+    }
+
     return (
         <div ref={wrapperRef[props.id]}>
-            <div className="input-icon">
-                <label htmlFor={props.id}>{props.label}</label>
-                <input type="text" className="form-control" placeholder=" "
-                       id={props.id}
-                       name={props.name}
-                       style={{display: (itemSelected ? 'none' : '')}}
-                       onClick={() => setShowBoxSearch(!showBoxSearch)} onChange={handleSearch}/>
+            <label htmlFor={props.id}>{props.label}</label>
+            <div
+                style={{
+                    border: 'solid 1px #ccc',
+                    padding: '5px',
+                }}
+                onClick={clickDiv}
+            >
 
-                <input type="text" className="form-control" name="tx_nome_regiao2"
-                       style={{display: (itemSelected ? '' : 'none')}}
-                       readOnly={itemSelected}
-                       defaultValue={itemSelected ? itemSelected[column] : ''}/>
 
-                <div style={{display: (itemSelected ? 'none' : '')}}>
-                    <i className="fas fa-search" style={{top: '-28px'}}/>
-                </div>
-                <div style={{display: (itemSelected ? '' : 'none')}} onClick={() => setItemSelected(null)}>
-                    <i className="fas fa-times" style={{top: '-28px', cursor:'pointer'}}/>
-                </div>
+                {
+                    itemsSelected.map((item) => {
+                        return (
+                            <button
+                                onClick={removeItem(item)}
+                                style={{
+                                    margin: '2px',
+                                    border: 0,
+                                    borderRadius: "3px",
+                                    backgroundColor: '#dedede',
+                                    padding: '4px',
+                                    fontSize: '12px'
+                            }}
+                            >
+                                {item[props.column].substring(0, 20)}
+                                &nbsp;&nbsp;
+                                <i
+                                    className="fa fa-times"
+                                    style={{cursor: 'pointer'}}
+                                />
+                            </button>
+                        );
+                    })
+                }
+                {/*<Input type="text" placeholder="Name" onClick={() => {setShowBoxSearch(true)}} onChange={() => {console.log(event.target.value)}}/>*/}
+                <input
+                    className="input-select-search"
+                    type="text" placeholder=""
+                    id={props.id}
+                    name={props.name}
+                    style={{
+                        display: (itemsSelected.length > 0 && !props.multiple ? 'none' : ''),
+                    }}
+                    onClick={clickInput}
+                    onChange={handleSearch}
+                />
 
                 <div>
-                    <ul className="box-search-itens" style={{display: ((search.length >= qtdSearch || showBoxSearch) && !itemSelected) ? '' : 'none'}}>
+                    <ul className="box-search-itens" style={{display: showBoxSearch ? '' : 'none'}}>
                         {
                             showItems.map((item, key) => {
                                 return (
-                                    <li key={props.name + key} onClick={() => setItemSelected(item)}>
+                                    <li key={props.name + key} onClick={addItem(item)}>
                                         {item[column]}
                                     </li>
                                 );
@@ -122,7 +197,6 @@ const SearchField = (props) => {
                         }
                     </ul>
                 </div>
-                <br/>
             </div>
         </div>
     );

@@ -27,6 +27,7 @@ const Area = () => {
     ,
     items: items,
     column: "nome",
-    selectItem: setItem
+    selectItem: setItem,
+    multiple: true
   }));
 };

@@ -30,6 +30,7 @@ const GrandeArea = () => {
     items: items,
     column: "nome",
     selectItem: setItem,
-    removeItem: setItem
+    removeItem: setItem,
+    multiple: true
   }));
 };

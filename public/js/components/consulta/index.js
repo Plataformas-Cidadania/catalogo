@@ -68,7 +68,7 @@ const Consulta = () => {
     className: "row"
   }, /*#__PURE__*/React.createElement("div", {
     className: "col"
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("div", {
     style: {
       padding: '10px',
       backgroundColor: '#f6f6f6'

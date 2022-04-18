@@ -26,6 +26,7 @@ const Orgao = () => {
                 items={items}
                 column="nome"
                 selectItem={setItem}
+                multiple={true}
             />
         </div>
     );

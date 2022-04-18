@@ -14,7 +14,19 @@ const SearchField = props => {
   const [search, setSearch] = useState('');
   const [items, setItems] = useState([]);
   const [showItems, setShowItems] = useState([]);
-  const [itemSelected, setItemSelected] = useState(null); //cria uma propriedade com o ref do component
+  const [itemsSelected, setItemsSelected] = useState([]);
+  /*const Input = styled.input`
+      font-size: 18px;
+      padding: 10px;
+      margin: 10px;
+      background: papayawhip;
+      border: none;
+      border-radius: 3px;
+      ::placeholder {
+      color: palevioletred;
+      }
+  `;*/
+  //cria uma propriedade com o ref do component
 
   wrapperRef[props.id] = useRef(null);
   useOutsideAlerter(wrapperRef[props.id]); //função para veririficar se o evento do click está fora do componente searchField
@@ -32,7 +44,7 @@ const SearchField = props => {
         console.log(ref.current.contains(event.target));
         console.log(event.target);*/
         if (ref.current && !ref.current.contains(event.target)) {
-          console.log("Click fora do component " + props.id);
+          //console.log("Click fora do component " + props.id);
           setShowBoxSearch(false);
         }
       } // Bind the event listener
@@ -67,11 +79,12 @@ const SearchField = props => {
     listSearch(search);
   }, [search]);
   useEffect(() => {
-    props.selectItem(itemSelected);
-  }, [itemSelected]);
+    props.selectItem(itemsSelected);
+  }, [itemsSelected]);
 
   const handleSearch = event => {
     setSearch(event.target.value);
+    setShowBoxSearch(true);
   };
 
   const listSearch = search => {
@@ -84,61 +97,89 @@ const SearchField = props => {
     setShowItems(items);
   };
 
+  const addItem = item => event => {
+    event.stopPropagation();
+    let newItemsSelected = [...itemsSelected];
+    newItemsSelected.push(item);
+    setItemsSelected(newItemsSelected);
+    setShowBoxSearch(false);
+  };
+
+  const removeItem = item => event => {
+    console.log(item);
+    event.stopPropagation();
+    let newItemsSelected = [...itemsSelected];
+    newItemsSelected = newItemsSelected.filter(i => i.id !== item.id);
+    setItemsSelected(newItemsSelected);
+  }; //foco no input
+
+
+  const clickDiv = event => {
+    //console.log('clickDiv', event.target.type);
+    if (itemsSelected.length > 0) {
+      if (event.target.children[itemsSelected.length]) {
+        event.target.children[itemsSelected.length].focus();
+      }
+
+      return;
+    }
+
+    event.target.children[0].focus();
+    setShowBoxSearch(true);
+  };
+
+  const clickInput = event => {
+    event.stopPropagation();
+    setShowBoxSearch(true);
+  };
+
   return /*#__PURE__*/React.createElement("div", {
     ref: wrapperRef[props.id]
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "input-icon"
   }, /*#__PURE__*/React.createElement("label", {
     htmlFor: props.id
-  }, props.label), /*#__PURE__*/React.createElement("input", {
+  }, props.label), /*#__PURE__*/React.createElement("div", {
+    style: {
+      border: 'solid 1px #ccc',
+      padding: '5px'
+    },
+    onClick: clickDiv
+  }, itemsSelected.map(item => {
+    return /*#__PURE__*/React.createElement("button", {
+      onClick: removeItem(item),
+      style: {
+        margin: '2px',
+        border: 0,
+        borderRadius: "3px",
+        backgroundColor: '#dedede',
+        padding: '4px',
+        fontSize: '12px'
+      }
+    }, item[props.column].substring(0, 20), "\xA0\xA0", /*#__PURE__*/React.createElement("i", {
+      className: "fa fa-times",
+      style: {
+        cursor: 'pointer'
+      }
+    }));
+  }), /*#__PURE__*/React.createElement("input", {
+    className: "input-select-search",
     type: "text",
-    className: "form-control",
-    placeholder: " ",
+    placeholder: "",
     id: props.id,
     name: props.name,
     style: {
-      display: itemSelected ? 'none' : ''
+      display: itemsSelected.length > 0 && !props.multiple ? 'none' : ''
     },
-    onClick: () => setShowBoxSearch(!showBoxSearch),
+    onClick: clickInput,
     onChange: handleSearch
-  }), /*#__PURE__*/React.createElement("input", {
-    type: "text",
-    className: "form-control",
-    name: "tx_nome_regiao2",
-    style: {
-      display: itemSelected ? '' : 'none'
-    },
-    readOnly: itemSelected,
-    defaultValue: itemSelected ? itemSelected[column] : ''
-  }), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: itemSelected ? 'none' : ''
-    }
-  }, /*#__PURE__*/React.createElement("i", {
-    className: "fas fa-search",
-    style: {
-      top: '-28px'
-    }
-  })), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: itemSelected ? '' : 'none'
-    },
-    onClick: () => setItemSelected(null)
-  }, /*#__PURE__*/React.createElement("i", {
-    className: "fas fa-times",
-    style: {
-      top: '-28px',
-      cursor: 'pointer'
-    }
-  })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("ul", {
+  }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("ul", {
     className: "box-search-itens",
     style: {
-      display: (search.length >= qtdSearch || showBoxSearch) && !itemSelected ? '' : 'none'
+      display: showBoxSearch ? '' : 'none'
     }
   }, showItems.map((item, key) => {
     return /*#__PURE__*/React.createElement("li", {
       key: props.name + key,
-      onClick: () => setItemSelected(item)
+      onClick: addItem(item)
     }, item[column]);
-  }))), /*#__PURE__*/React.createElement("br", null)));
+  })))));
 };

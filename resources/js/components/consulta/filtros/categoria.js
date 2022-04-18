@@ -26,6 +26,7 @@ const Categoria = () => {
                 items={items}
                 column="nome"
                 selectItem={setItem}
+                multiple={true}
             />
         </div>
     );

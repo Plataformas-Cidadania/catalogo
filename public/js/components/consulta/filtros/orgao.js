@@ -23,6 +23,7 @@ const Orgao = () => {
     label: "\xD3rg\xE3o",
     items: items,
     column: "nome",
-    selectItem: setItem
+    selectItem: setItem,
+    multiple: true
   }));
 };

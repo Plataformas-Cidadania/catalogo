@@ -254,7 +254,9 @@
 @endif
 
 @if($rota=="consulta")
-
+    {{--<script crossorigin src="//unpkg.com/react-is/umd/react-is.production.min.js"></script>--}}
+    <script crossorigin src="https://unpkg.com/react-is@18.0.0/umd/react-is.production.min.js"></script>
+    <script src="https://unpkg.com/styled-components/dist/styled-components.min.js"></script>
 
     <link href="js/range/ion.rangeSlider.skinFlat.css" rel="stylesheet" />
     <link href="js/range/ion.rangeSlider.css" rel="stylesheet" />

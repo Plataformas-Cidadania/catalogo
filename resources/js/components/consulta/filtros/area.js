@@ -28,6 +28,7 @@ const Area = () => {
                 items={items}
                 column="nome"
                 selectItem={setItem}
+                multiple={true}
             />
         </div>
     );

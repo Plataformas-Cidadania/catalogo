@@ -36,6 +36,7 @@ const GrandeArea = () => {
                 column="nome"
                 selectItem={setItem}
                 removeItem={setItem}
+                multiple={true}
             />
         </div>
     );

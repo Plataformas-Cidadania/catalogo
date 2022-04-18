@@ -54,6 +54,7 @@ const Consulta = () => {
 
             <div className="row">
                 <div className="col">
+                    <br/>
                     <div style={{padding: '10px', backgroundColor: '#f6f6f6'}}>
                         <strong>Filtros aplicados: </strong><br/><br/>
                         <div className="row">

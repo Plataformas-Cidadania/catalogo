@@ -23,6 +23,7 @@ const Categoria = () => {
     label: "Categoria",
     items: items,
     column: "nome",
-    selectItem: setItem
+    selectItem: setItem,
+    multiple: true
   }));
 };
