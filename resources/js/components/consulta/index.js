@@ -6,6 +6,7 @@ const Consulta = () => {
     const [filters, setFilters] = useState({});
     const [filtersJson, setFiltersJson] = useState({});
     const [appliedFilters, setAppliedFilters] = useState({});
+    const [tipoConsulta, setTipoConsulta] = useState(1);// 1 - Básica | 2 - Avançada
 
     const labelsFilters = {
         grande_area: 'Grande Área',
@@ -22,6 +23,13 @@ const Consulta = () => {
         { value: 'vanilla', label: 'Vanilla' }
     ]
 
+    /*useEffect(() => {
+        if(tipoConsulta === 1){
+            setFilters({});
+            setAppliedFilters({});
+        }
+    }, [tipoConsulta]);*/
+
     const addFilter = (item) => {
         let newFilters = {...filters};
         newFilters[item.filter] = item.value;
@@ -36,20 +44,39 @@ const Consulta = () => {
         console.log(newFilters);
     }
 
+    const list = async () => {
+        console.log('list politicas');
+    }
+
     return (
         <div onClick={() => setCloseSearch(true)}>
             <div className="row">
                 <div className="col-md-12 col-xs-12">
                     <Politica addFilter={addFilter} removeFilter={removeFilter} />
-                    <br/>
-                </div>
 
+                    <button
+                        className="btn btn-sm btn-primary"
+                        style={{display: tipoConsulta === 1 ? '' : 'none', marginTop: '5px'}}
+                        onClick={() => setTipoConsulta(2)}
+                    >
+                        Consulta Avançada
+                    </button>
+                    <button
+                        className="btn btn-sm btn-primary"
+                        style={{display: tipoConsulta === 2 ? '' : 'none', marginTop: '5px'}}
+                        onClick={() => setTipoConsulta(1)}
+                    >
+                        Consulta Básica
+                    </button>
+                    <br/><br/>
+                </div>
+            </div>
+            <div className="row" style={{display: tipoConsulta === 2 ? '' : 'none'}}>
                 <div className="col-md-12 col-xs-12">
                     <Ano addFilter={addFilter} removeFilter={removeFilter} />
                     <br/>
                     <br/>
                 </div>
-
                 <div className="col-md-4 col-xs-12">
                     <GrandeArea addFilter={addFilter} removeFilter={removeFilter} />
                 </div>
@@ -70,7 +97,7 @@ const Consulta = () => {
                 </div>
             </div>
 
-            <div className="row">
+            <div className="row" style={{display: tipoConsulta === 2 ? '' : 'none'}}>
                 <div className="col-12 text-center">
                     <br/>
                     <button className="btn btn-primary btn-lg" onClick={() => setAppliedFilters(filters)}>Aplicar Filtros</button>
@@ -91,7 +118,7 @@ const Consulta = () => {
                                             {
                                                 item[1].map((value, index) => {
                                                     return (
-                                                        <span key={'value' + index}>{value.nome}{ index < item[1].length ? ',' : ''} </span>
+                                                        <span key={'value' + index}>{value.nome}{ index < item[1].length - 1 ? ',' : ''} </span>
                                                     )
                                                 })
                                             }

@@ -7,6 +7,8 @@ const Consulta = () => {
   const [filters, setFilters] = useState({});
   const [filtersJson, setFiltersJson] = useState({});
   const [appliedFilters, setAppliedFilters] = useState({});
+  const [tipoConsulta, setTipoConsulta] = useState(1); // 1 - Básica | 2 - Avançada
+
   const labelsFilters = {
     grande_area: 'Grande Área',
     area: 'Área',
@@ -25,6 +27,12 @@ const Consulta = () => {
     value: 'vanilla',
     label: 'Vanilla'
   }];
+  /*useEffect(() => {
+      if(tipoConsulta === 1){
+          setFilters({});
+          setAppliedFilters({});
+      }
+  }, [tipoConsulta]);*/
 
   const addFilter = item => {
     let newFilters = { ...filters
@@ -42,6 +50,10 @@ const Consulta = () => {
     console.log(newFilters);
   };
 
+  const list = async () => {
+    console.log('list politicas');
+  };
+
   return /*#__PURE__*/React.createElement("div", {
     onClick: () => setCloseSearch(true)
   }, /*#__PURE__*/React.createElement("div", {
@@ -51,7 +63,26 @@ const Consulta = () => {
   }, /*#__PURE__*/React.createElement(Politica, {
     addFilter: addFilter,
     removeFilter: removeFilter
-  }), /*#__PURE__*/React.createElement("br", null)), /*#__PURE__*/React.createElement("div", {
+  }), /*#__PURE__*/React.createElement("button", {
+    className: "btn btn-sm btn-primary",
+    style: {
+      display: tipoConsulta === 1 ? '' : 'none',
+      marginTop: '5px'
+    },
+    onClick: () => setTipoConsulta(2)
+  }, "Consulta Avan\xE7ada"), /*#__PURE__*/React.createElement("button", {
+    className: "btn btn-sm btn-primary",
+    style: {
+      display: tipoConsulta === 2 ? '' : 'none',
+      marginTop: '5px'
+    },
+    onClick: () => setTipoConsulta(1)
+  }, "Consulta B\xE1sica"), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null))), /*#__PURE__*/React.createElement("div", {
+    className: "row",
+    style: {
+      display: tipoConsulta === 2 ? '' : 'none'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
     className: "col-md-12 col-xs-12"
   }, /*#__PURE__*/React.createElement(Ano, {
     addFilter: addFilter,
@@ -87,7 +118,10 @@ const Consulta = () => {
     addFilter: addFilter,
     removeFilter: removeFilter
   }))), /*#__PURE__*/React.createElement("div", {
-    className: "row"
+    className: "row",
+    style: {
+      display: tipoConsulta === 2 ? '' : 'none'
+    }
   }, /*#__PURE__*/React.createElement("div", {
     className: "col-12 text-center"
   }, /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("button", {
@@ -114,7 +148,7 @@ const Consulta = () => {
     }, /*#__PURE__*/React.createElement("strong", null, labelsFilters[item[0]], ": "), "\xA0", item[1].map((value, index) => {
       return /*#__PURE__*/React.createElement("span", {
         key: 'value' + index
-      }, value.nome, index < item[1].length ? ',' : '', " ");
+      }, value.nome, index < item[1].length - 1 ? ',' : '', " ");
     }));
   }))))), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("div", {
     className: "row"

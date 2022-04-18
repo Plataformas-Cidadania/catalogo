@@ -3,9 +3,9 @@ const Politica = () => {
     const { useEffect, useState } = React;
 
     return (
-        <div className="label-float">
-            <input type="text" className="form-control" placeholder=" "/>
+        <div>
             <label htmlFor="politica">Política</label>
+            <input type="text" className="form-control" placeholder=" "/>
         </div>
     );
 };
