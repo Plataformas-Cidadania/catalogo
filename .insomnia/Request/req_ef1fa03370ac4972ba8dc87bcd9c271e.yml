@@ -1,17 +1,17 @@
-_id: req_4abfd623232449648152ef772e022b21
+_id: req_ef1fa03370ac4972ba8dc87bcd9c271e
 type: Request
 parentId: fld_06dabb87ad16494aaa58fe3d45250f4c
-modified: 1649786479057
-created: 1649112073817
-url: http://localhost:{{ _.porta_app }}/api/politica/12
-name: get
+modified: 1649820681946
+created: 1649820420074
+url: http://localhost:{{ _.porta_app }}/api/politica/timeline/3
+name: getParaTimelineArea
 description: ""
 method: GET
 body: {}
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1644351012969
+metaSortKey: -1643462507311.3125
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true
