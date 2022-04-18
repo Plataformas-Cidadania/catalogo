@@ -107,6 +107,7 @@ const SearchField = (props) => {
         newItemsSelected.push(item);
         setItemsSelected(newItemsSelected);
         setShowBoxSearch(false);
+        setSearch('');
     }
 
     const removeItem = (item) => (event) => {
@@ -182,6 +183,7 @@ const SearchField = (props) => {
                     }}
                     onClick={clickInput}
                     onChange={handleSearch}
+                    value={search}
                 />
 
                 <div>

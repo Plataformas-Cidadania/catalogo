@@ -103,6 +103,7 @@ const SearchField = props => {
     newItemsSelected.push(item);
     setItemsSelected(newItemsSelected);
     setShowBoxSearch(false);
+    setSearch('');
   };
 
   const removeItem = item => event => {
@@ -170,7 +171,8 @@ const SearchField = props => {
       display: itemsSelected.length > 0 && !props.multiple ? 'none' : ''
     },
     onClick: clickInput,
-    onChange: handleSearch
+    onChange: handleSearch,
+    value: search
   }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("ul", {
     className: "box-search-itens",
     style: {

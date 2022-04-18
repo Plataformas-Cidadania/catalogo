@@ -13075,6 +13075,11 @@ label, input, .btn-number {
 
 .box-search-itens li {
   cursor: pointer;
+  padding: 3px;
+}
+
+.box-search-itens li:hover {
+  background-color: #E1F5FE;
 }
 
 .btn-close {
