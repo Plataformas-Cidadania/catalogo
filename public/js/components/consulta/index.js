@@ -5,6 +5,16 @@ const Consulta = () => {
   } = React;
   const [closeSearch, setCloseSearch] = useState(true);
   const [filters, setFilters] = useState({});
+  const [filtersJson, setFiltersJson] = useState({});
+  const [appliedFilters, setAppliedFilters] = useState({});
+  const labelsFilters = {
+    grande_area: 'Grande Área',
+    area: 'Área',
+    categoria: 'Categoria',
+    orgao: 'Órgão',
+    publico_alvo: 'Público Alvo',
+    tipo_politica: 'Tipo de Política'
+  };
   const options = [{
     value: 'chocolate',
     label: 'Chocolate'
@@ -16,13 +26,21 @@ const Consulta = () => {
     label: 'Vanilla'
   }];
 
-  const addFilter = filter => {
+  const addFilter = item => {
     let newFilters = { ...filters
     };
+    newFilters[item.filter] = item.value;
     setFilters(newFilters);
+    console.log(newFilters);
   };
 
-  const removeFilter = filter => {};
+  const removeFilter = item => {
+    let newFilters = { ...filters
+    };
+    delete newFilters[item.filter];
+    setFilters(newFilters);
+    console.log(newFilters);
+  };
 
   return /*#__PURE__*/React.createElement("div", {
     onClick: () => setCloseSearch(true)
@@ -41,7 +59,6 @@ const Consulta = () => {
   }), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null)), /*#__PURE__*/React.createElement("div", {
     className: "col-md-4 col-xs-12"
   }, /*#__PURE__*/React.createElement(GrandeArea, {
-    close: closeSearch,
     addFilter: addFilter,
     removeFilter: removeFilter
   })), /*#__PURE__*/React.createElement("div", {
@@ -56,7 +73,7 @@ const Consulta = () => {
     removeFilter: removeFilter
   })), /*#__PURE__*/React.createElement("div", {
     className: "col-md-4 col-xs-12"
-  }, /*#__PURE__*/React.createElement(Tipo, {
+  }, /*#__PURE__*/React.createElement(Categoria, {
     addFilter: addFilter,
     removeFilter: removeFilter
   })), /*#__PURE__*/React.createElement("div", {
@@ -64,8 +81,23 @@ const Consulta = () => {
   }, /*#__PURE__*/React.createElement(Publico, {
     addFilter: addFilter,
     removeFilter: removeFilter
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "col-md-4 col-xs-12"
+  }, /*#__PURE__*/React.createElement(Tipo, {
+    addFilter: addFilter,
+    removeFilter: removeFilter
   }))), /*#__PURE__*/React.createElement("div", {
     className: "row"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "col-12 text-center"
+  }, /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("button", {
+    className: "btn btn-primary btn-lg",
+    onClick: () => setAppliedFilters(filters)
+  }, "Aplicar Filtros"))), /*#__PURE__*/React.createElement("div", {
+    className: "row",
+    style: {
+      display: Object.entries(appliedFilters).length > 0 ? '' : 'none'
+    }
   }, /*#__PURE__*/React.createElement("div", {
     className: "col"
   }, /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("div", {
@@ -75,11 +107,16 @@ const Consulta = () => {
     }
   }, /*#__PURE__*/React.createElement("strong", null, "Filtros aplicados: "), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("div", {
     className: "row"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "col"
-  }, /*#__PURE__*/React.createElement("strong", null, "\xC1rea: "), " Infraestrutura"), /*#__PURE__*/React.createElement("div", {
-    className: "col"
-  }, /*#__PURE__*/React.createElement("strong", null, "Ano: "), " 2020"))))), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("div", {
+  }, Object.entries(appliedFilters).map((item, key) => {
+    return /*#__PURE__*/React.createElement("div", {
+      key: 'filter' + key,
+      className: "col-md-4 col-sm-6 col-xs-12"
+    }, /*#__PURE__*/React.createElement("strong", null, labelsFilters[item[0]], ": "), "\xA0", item[1].map((value, index) => {
+      return /*#__PURE__*/React.createElement("span", {
+        key: 'value' + index
+      }, value.nome, index < item[1].length ? ',' : '', " ");
+    }));
+  }))))), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("div", {
     className: "row"
   }, /*#__PURE__*/React.createElement("div", {
     className: "col"

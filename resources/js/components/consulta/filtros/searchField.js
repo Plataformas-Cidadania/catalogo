@@ -84,7 +84,9 @@ const SearchField = (props) => {
     }, [search]);
 
     useEffect(() => {
-        props.selectItem(itemsSelected);
+        if(props.selectItems){
+            props.selectItems(itemsSelected);
+        }
     }, [itemsSelected]);
 
     const handleSearch = (event) => {

@@ -269,7 +269,7 @@
     <script src="js/components/consulta/filtros/orgao.js"></script>
     <script src="js/components/consulta/filtros/politica.js"></script>
     <script src="js/components/consulta/filtros/publico.js"></script>
-    <script src="js/components/consulta/filtros/subarea.js"></script>
+    <script src="js/components/consulta/filtros/categoria.js"></script>
     <script src="js/components/consulta/filtros/tipo.js"></script>
     <script src="js/components/consulta/list.js"></script>
     <script src="js/components/consulta/index.js"></script>
