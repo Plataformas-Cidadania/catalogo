@@ -1,5 +1,9 @@
+//objeto para guardar os refs de cada componente searchField criado
+let wrapperRef = {};
+
 const SearchField = props => {
   const {
+    useRef,
     useEffect,
     useState
   } = React;
@@ -10,14 +14,44 @@ const SearchField = props => {
   const [search, setSearch] = useState('');
   const [items, setItems] = useState([]);
   const [showItems, setShowItems] = useState([]);
-  const [itemSelected, setItemSelected] = useState(null);
+  const [itemSelected, setItemSelected] = useState(null); //cria uma propriedade com o ref do component
+
+  wrapperRef[props.id] = useRef(null);
+  useOutsideAlerter(wrapperRef[props.id]); //função para veririficar se o evento do click está fora do componente searchField
+
+  function useOutsideAlerter(ref) {
+    const {
+      useEffect
+    } = React;
+    useEffect(() => {
+      /**
+       * Alert if clicked on outside of element
+       */
+      function handleClickOutside(event) {
+        /*console.log(ref.current);
+        console.log(ref.current.contains(event.target));
+        console.log(event.target);*/
+        if (ref.current && !ref.current.contains(event.target)) {
+          console.log("Click fora do component " + props.id);
+          setShowBoxSearch(false);
+        }
+      } // Bind the event listener
+
+
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        // Unbind the event listener on clean up
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [ref]);
+  }
+
   useEffect(() => {
     setColumn(props.column);
   }, [props.column]);
   useEffect(() => {
     setItems(props.items);
-    setShowItems(props.items);
-    console.log(props.items);
+    setShowItems(props.items); //console.log(props.items);
   }, [props.items]);
   useEffect(() => {
     if (props.qtdSearch) {
@@ -50,7 +84,9 @@ const SearchField = props => {
     setShowItems(items);
   };
 
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
+    ref: wrapperRef[props.id]
+  }, /*#__PURE__*/React.createElement("div", {
     className: "input-icon"
   }, /*#__PURE__*/React.createElement("label", {
     htmlFor: props.id

@@ -1,6 +1,10 @@
+
+//objeto para guardar os refs de cada componente searchField criado
+let wrapperRef = {};
+
 const SearchField = (props) => {
 
-    const { useEffect, useState } = React;
+    const { useRef, useEffect, useState } = React;
 
     const [showBoxSearch, setShowBoxSearch] = useState(false);
     const [qtdSearch, setQtdSearch] = useState(1);
@@ -11,6 +15,37 @@ const SearchField = (props) => {
     const [showItems, setShowItems] = useState([]);
     const [itemSelected, setItemSelected] = useState(null);
 
+    //cria uma propriedade com o ref do component
+    wrapperRef[props.id] = useRef(null);
+    useOutsideAlerter(wrapperRef[props.id]);
+    //função para veririficar se o evento do click está fora do componente searchField
+    function useOutsideAlerter(ref) {
+
+        const { useEffect } = React;
+
+        useEffect(() => {
+            /**
+             * Alert if clicked on outside of element
+             */
+            function handleClickOutside(event) {
+                /*console.log(ref.current);
+                console.log(ref.current.contains(event.target));
+                console.log(event.target);*/
+                if (ref.current && !ref.current.contains(event.target)) {
+                    console.log("Click fora do component " + props.id);
+                    setShowBoxSearch(false);
+                }
+            }
+            // Bind the event listener
+            document.addEventListener("mousedown", handleClickOutside);
+            return () => {
+                // Unbind the event listener on clean up
+                document.removeEventListener("mousedown", handleClickOutside);
+            };
+        }, [ref]);
+    }
+
+
     useEffect(() => {
         setColumn(props.column);
     }, [props.column]);
@@ -18,7 +53,7 @@ const SearchField = (props) => {
     useEffect(() => {
         setItems(props.items);
         setShowItems(props.items);
-        console.log(props.items);
+        //console.log(props.items);
     }, [props.items]);
 
     useEffect(() => {
@@ -53,7 +88,7 @@ const SearchField = (props) => {
     }
 
     return (
-        <div>
+        <div ref={wrapperRef[props.id]}>
             <div className="input-icon">
                 <label htmlFor={props.id}>{props.label}</label>
                 <input type="text" className="form-control" placeholder=" "
