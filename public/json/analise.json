@@ -1,0 +1,25 @@
+[
+    {
+        "titulo": "Agropecuária e Agrária",
+        "series": [{
+            "name": "TEAM A",
+            "type": "column",
+            "data": [23, 11, 22, 27, 13, 22]
+        }, {
+            "name": "TEAM B",
+            "type": "area",
+            "data": [44, 55, 41, 67, 22, 43]
+        }],
+        "labels": ["2004", "2005", "2006", "2007", "2008", "2009"]
+    },
+    {
+        "titulo": "Agropecuária e Agrária",
+        "series": [{
+            "name": "TEAM A",
+            "type": "line",
+            "data": [23, 11, 22, 27, 13, 22]
+        }],
+        "labels": ["2004", "2005", "2006", "2007", "2008", "2009"]
+    }
+
+]
