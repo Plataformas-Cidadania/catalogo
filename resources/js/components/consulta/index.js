@@ -10,6 +10,7 @@ const Consulta = () => {
 
     const labelsFilters = {
         politica: 'Política',
+        ano: 'Período',
         grande_area: 'Grande Área',
         area: 'Área',
         categoria: 'Categoria',
@@ -24,12 +25,25 @@ const Consulta = () => {
         { value: 'vanilla', label: 'Vanilla' }
     ]
 
-    /*useEffect(() => {
+    useEffect(() => {
         if(tipoConsulta === 1){
-            setFilters({});
-            setAppliedFilters({});
+            let newFilters = {...filters};
+            delete newFilters.ano;
+            delete newFilters.grande_area;
+            delete newFilters.area;
+            delete newFilters.categoria;
+            delete newFilters.orgao;
+            delete newFilters.publico_alvo;
+            delete newFilters.tipo_politica;
+            setFilters(newFilters);
         }
-    }, [tipoConsulta]);*/
+    }, [tipoConsulta]);
+
+    useEffect(() => {
+        if(tipoConsulta === 1){
+            setAppliedFilters(filters);
+        }
+    }, [filters]);
 
     const addFilter = (item) => {
         let newFilters = {...filters};

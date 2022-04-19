@@ -52,7 +52,7 @@ const Ano = () => {
 
     return (
         <div>
-            <label htmlFor="">Ano</label>
+            <label htmlFor="">Período</label>
             <input type="text" id="range" name="range" />
         </div>
     );

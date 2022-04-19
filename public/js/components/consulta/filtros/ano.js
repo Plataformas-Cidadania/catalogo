@@ -46,7 +46,7 @@ const Ano = () => {
 
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
     htmlFor: ""
-  }, "Ano"), /*#__PURE__*/React.createElement("input", {
+  }, "Per\xEDodo"), /*#__PURE__*/React.createElement("input", {
     type: "text",
     id: "range",
     name: "range"

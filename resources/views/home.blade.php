@@ -25,11 +25,13 @@
                 </a>
             </div>
             <div class="col-md-4">
-                <div class="box bg-ter">
-                    <i class="far fa-gem fa-4x m-5"></i>
-                    <h2>Consulta</h2>
-                    <p>Apesar de constituírem um elemento básico de organização da atuação governamental, de perpassarem cotidianamente o debate público</p>
-                </div>
+                <a href="consulta">
+                    <div class="box bg-ter">
+                        <i class="far fa-gem fa-4x m-5"></i>
+                        <h2>Consulta</h2>
+                        <p>Apesar de constituírem um elemento básico de organização da atuação governamental, de perpassarem cotidianamente o debate público</p>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
