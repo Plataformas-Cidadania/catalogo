@@ -43,12 +43,23 @@ const Timeline = props => {
 
   function swap2(e) {
     e.persist();
-    let card = e.target.parentNode.querySelector(".card-tl:last-child");
-    if (e.target !== card) return;
+    e.stopPropagation(); //Bloco adicionado para quando for clicado no div do nome da politica em vez do div do card.
+
+    let parent = e.target.parentNode;
+    let target = e.target;
+
+    if (parent.classList[0] === 'card-tl') {
+      parent = parent.parentNode;
+      target = e.target.parentNode;
+    } //------------------------------------------------------------------------------------
+
+
+    let card = parent.querySelector(".card-tl:last-child");
+    if (target !== card) return;
     card.style.animation = "swap 700ms forwards";
     setTimeout(() => {
       card.style.animation = "";
-      e.target.parentNode.prepend(card); //stack1.prepend(card);
+      parent.prepend(card); //stack1.prepend(card);
     }, 700);
   }
 
@@ -129,7 +140,8 @@ const Timeline = props => {
         style: {
           overflow: 'auto',
           height: '57px'
-        }
+        },
+        onClick: swap2
       }, politica.nome_politica), /*#__PURE__*/React.createElement("div", {
         className: "btn-p"
       }, /*#__PURE__*/React.createElement("a", {
