@@ -73,10 +73,10 @@ class Filters extends React.Component{
             <div>
                 <br/><br/>
                 <Search setSearch={this.props.setSearch} />
-                <br/>
+                {/*<br/>*/}
 
 
-                <div>
+                <div style={{display: 'none'}}>
                     <div className="line-color"/>
                     <h2><i className="far fa-calendar"/> Arquivo</h2>
                     <ArchivesFilter filterArchives={this.filterArchives} archivesUrl={this.props.archivesUrl}/>
