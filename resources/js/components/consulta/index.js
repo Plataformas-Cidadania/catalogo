@@ -9,6 +9,7 @@ const Consulta = () => {
     const [tipoConsulta, setTipoConsulta] = useState(1);// 1 - Básica | 2 - Avançada
 
     const labelsFilters = {
+        politica: 'Política',
         grande_area: 'Grande Área',
         area: 'Área',
         categoria: 'Categoria',
@@ -116,11 +117,15 @@ const Consulta = () => {
                                         <div key={'filter' + key} className="col-md-4 col-sm-6 col-xs-12">
                                             <strong>{labelsFilters[item[0]]}: </strong>&nbsp;
                                             {
-                                                item[1].map((value, index) => {
-                                                    return (
-                                                        <span key={'value' + index}>{value.nome}{ index < item[1].length - 1 ? ',' : ''} </span>
-                                                    )
-                                                })
+                                                item[0] === 'politica' ? (
+                                                    <span>{item[1]}</span>
+                                                ) : (
+                                                    item[1].map((value, index) => {
+                                                        return (
+                                                            <span key={'value' + index}>{value.nome}{ index < item[1].length - 1 ? ',' : ''} </span>
+                                                        )
+                                                    })
+                                                )
                                             }
                                         </div>
                                     );
