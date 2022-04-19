@@ -1,9 +1,9 @@
-const Area = () => {
+const Area = props => {
   const {
     useEffect,
     useState
   } = React;
-  const [item, setItem] = useState(null);
+  const [itemsSelected, setItemsSelected] = useState([]);
   const [items, setItems] = useState([]);
   useEffect(() => {
     listItems().then(() => {
@@ -17,6 +17,17 @@ const Area = () => {
     setItems(newItems);
   };
 
+  useEffect(() => {
+    if (itemsSelected.length > 0) {
+      props.addFilter({
+        filter: 'area',
+        value: itemsSelected
+      });
+      return;
+    }
+
+    props.removeFilter('area');
+  }, [itemsSelected]);
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(SearchField, {
     id: "area",
     name: "area",
@@ -27,6 +38,7 @@ const Area = () => {
     ,
     items: items,
     column: "nome",
-    selectItem: setItem
+    selectItems: setItemsSelected,
+    multiple: true
   }));
 };

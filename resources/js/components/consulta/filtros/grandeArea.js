@@ -1,8 +1,8 @@
-const GrandeArea = () => {
+const GrandeArea = (props) => {
 
     const { useEffect, useState } = React;
 
-    const [item, setItem] = useState(null);
+    const [itemsSelected, setItemsSelected] = useState([]);
     const [items, setItems] = useState([]);
 
     useEffect(() => {
@@ -17,13 +17,13 @@ const GrandeArea = () => {
         setItems(newItems);
     }
 
-    const addItem = () => {
-
-    }
-
-    const removeItem = () => {
-
-    }
+    useEffect(() => {
+        if(itemsSelected.length > 0){
+            props.addFilter({filter: 'grande_area', value: itemsSelected});
+            return;
+        }
+        props.removeFilter('grande_area');
+    }, [itemsSelected]);
 
     return (
         <div>
@@ -34,8 +34,8 @@ const GrandeArea = () => {
                 /*dynamicSearch={listItems}*/
                 items={items}
                 column="nome"
-                selectItem={setItem}
-                removeItem={setItem}
+                selectItems={setItemsSelected}
+                multiple={true}
             />
         </div>
     );

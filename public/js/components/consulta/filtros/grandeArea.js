@@ -1,9 +1,9 @@
-const GrandeArea = () => {
+const GrandeArea = props => {
   const {
     useEffect,
     useState
   } = React;
-  const [item, setItem] = useState(null);
+  const [itemsSelected, setItemsSelected] = useState([]);
   const [items, setItems] = useState([]);
   useEffect(() => {
     listItems().then(() => {
@@ -17,10 +17,17 @@ const GrandeArea = () => {
     setItems(newItems);
   };
 
-  const addItem = () => {};
+  useEffect(() => {
+    if (itemsSelected.length > 0) {
+      props.addFilter({
+        filter: 'grande_area',
+        value: itemsSelected
+      });
+      return;
+    }
 
-  const removeItem = () => {};
-
+    props.removeFilter('grande_area');
+  }, [itemsSelected]);
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(SearchField, {
     id: "grande-area",
     name: "grande-area",
@@ -29,7 +36,7 @@ const GrandeArea = () => {
     ,
     items: items,
     column: "nome",
-    selectItem: setItem,
-    removeItem: setItem
+    selectItems: setItemsSelected,
+    multiple: true
   }));
 };

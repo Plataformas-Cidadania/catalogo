@@ -1,8 +1,8 @@
-const Categoria = () => {
+const Categoria = (props) => {
 
     const { useEffect, useState } = React;
 
-    const [item, setItem] = useState(null);
+    const [itemsSelected, setItemsSelected] = useState([]);
     const [items, setItems] = useState([]);
 
     useEffect(() => {
@@ -17,6 +17,14 @@ const Categoria = () => {
         setItems(newItems);
     }
 
+    useEffect(() => {
+        if(itemsSelected.length > 0){
+            props.addFilter({filter: 'categoria', value: itemsSelected});
+            return;
+        }
+        props.removeFilter('categoria');
+    }, [itemsSelected]);
+
     return (
         <div>
             <SearchField
@@ -25,7 +33,8 @@ const Categoria = () => {
                 label="Categoria"
                 items={items}
                 column="nome"
-                selectItem={setItem}
+                selectItems={setItemsSelected}
+                multiple={true}
             />
         </div>
     );
