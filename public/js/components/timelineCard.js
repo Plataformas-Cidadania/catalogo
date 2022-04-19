@@ -26,13 +26,13 @@ const Timeline = props => {
       /*let stack1 = document.getElementById('stack1');
       [...stack1.children].reverse().forEach(i => stack1.append(i));
       stack1.addEventListener("click", swap);
-        function swap(e){
+       function swap(e){
           console.log('card');
           console.log(e.target.parentNode.id);
           let card = e.target.parentNode.querySelector(".card:last-child");
           if (e.target !== card) return;
           card.style.animation = "swap 700ms forwards";
-            setTimeout(() => {
+           setTimeout(() => {
               card.style.animation = "";
               e.target.parentNode.prepend(card);
           }, 700);
@@ -119,17 +119,28 @@ const Timeline = props => {
       return /*#__PURE__*/React.createElement("div", {
         key: props.item.area + "_politica_" + key.toString() + index
         /*className="card"*/
+
+        /*className={"card-tl cor"+(Math.floor(Math.random() * 4))}*/
         ,
-        className: "card-tl cor" + Math.floor(Math.random() * 4),
+        className: "card-tl cor" + index,
         onClick: swap2
-      }, politica.nome_politica, /*#__PURE__*/React.createElement("a", {
-        href: "politica/10/plano-nacional-de-saneamento-basico-plansab",
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "text-start",
         style: {
-          textAlign: 'end'
+          overflow: 'auto',
+          height: '57px'
         }
-      }, "Acessar ", /*#__PURE__*/React.createElement("i", {
+      }, politica.nome_politica), /*#__PURE__*/React.createElement("div", {
+        className: "btn-p"
+      }, /*#__PURE__*/React.createElement("a", {
+        href: "politica/10/plano-nacional-de-saneamento-basico-plansab"
+      }, /*#__PURE__*/React.createElement("span", {
+        style: {
+          fontWeight: 'bold'
+        }
+      }, "acessar"), " ", /*#__PURE__*/React.createElement("i", {
         className: "far fa-arrow-alt-circle-right"
-      })));
+      }))));
     }))));
   }) : null)))) : /*#__PURE__*/React.createElement("div", null, "\xA0");
 };

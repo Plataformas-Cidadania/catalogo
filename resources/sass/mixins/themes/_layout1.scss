@@ -480,3 +480,35 @@
 .linsBor:hover{
     background-color: #F5F5F5;
 }
+
+.btn-p{
+    text-align: right;
+    border: solid 1px #FFFFFF;
+    padding: 0px 5px;
+    border-radius: 5px;
+    float: right;
+    width: 97px;
+    margin-top: 5px;
+    margin-left: 110px;
+}
+/**/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #CCCCCC;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #E26442;
+}
+/**/
