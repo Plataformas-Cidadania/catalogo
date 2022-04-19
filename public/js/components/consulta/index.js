@@ -160,7 +160,7 @@ const Consulta = () => {
     return /*#__PURE__*/React.createElement("div", {
       key: 'filter' + key,
       className: "col-md-4 col-sm-6 col-xs-12"
-    }, /*#__PURE__*/React.createElement("strong", null, labelsFilters[item[0]], ": "), "\xA0", item[0] === 'politica' ? /*#__PURE__*/React.createElement("span", null, item[1]) : item[1].map((value, index) => {
+    }, /*#__PURE__*/React.createElement("strong", null, labelsFilters[item[0]], ": "), "\xA0", item[0] === 'politica' ? /*#__PURE__*/React.createElement("span", null, item[1]) : item[0] === 'ano' ? /*#__PURE__*/React.createElement("span", null, item[1].inicio, " - ", item[1].fim) : item[1].map((value, index) => {
       return /*#__PURE__*/React.createElement("span", {
         key: 'value' + index
       }, value.nome, index < item[1].length - 1 ? ',' : '', " ");

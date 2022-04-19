@@ -1,10 +1,12 @@
-const Ano = () => {
+const Ano = (props) => {
 
     const { useEffect, useState } = React;
 
     const date = new Date();
     const anoAtual = date.getFullYear();
 
+    const [from, setFrom] = useState('1900');
+    const [to, setTo] = useState(anoAtual);
 
     useEffect(() => {
         let anos = [];
@@ -32,8 +34,10 @@ const Ano = () => {
                 //console.log('change', data);
             },
             onFinish: function (data) {
-                console.log(data);
+                //console.log(data);
                 console.log('finish', data.from_value, data.to_value);
+                setFrom(data.from_value);
+                setTo(data.to_value);
             },
             onUpdate: function (data) {
                 console.log('update', data);
@@ -43,12 +47,11 @@ const Ano = () => {
         const slider = $("#range").data("ionRangeSlider");
     }, []);
 
-    const [from, setFrom] = useState('1900');
-    const [to, setTo] = useState(anoAtual);
-
-    const handleRange = (event) => {
-
-    }
+    useEffect(() => {
+        if(from && to){
+            props.addFilter({filter: 'ano', value: {inicio: from, fim: to}});
+        }
+    }, [from, to]);
 
     return (
         <div>

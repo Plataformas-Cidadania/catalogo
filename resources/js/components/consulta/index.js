@@ -134,11 +134,15 @@ const Consulta = () => {
                                                 item[0] === 'politica' ? (
                                                     <span>{item[1]}</span>
                                                 ) : (
-                                                    item[1].map((value, index) => {
-                                                        return (
-                                                            <span key={'value' + index}>{value.nome}{ index < item[1].length - 1 ? ',' : ''} </span>
-                                                        )
-                                                    })
+                                                    item[0] === 'ano' ? (
+                                                        <span>{item[1].inicio} - {item[1].fim}</span>
+                                                    ) : (
+                                                        item[1].map((value, index) => {
+                                                            return (
+                                                                <span key={'value' + index}>{value.nome}{ index < item[1].length - 1 ? ',' : ''} </span>
+                                                            )
+                                                        })
+                                                    )
                                                 )
                                             }
                                         </div>
