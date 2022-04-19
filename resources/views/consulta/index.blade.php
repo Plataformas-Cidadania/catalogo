@@ -1,19 +1,22 @@
 @extends('.layout')
 @section('title', 'Consulta')
 @section('content')
-    <div class="container">
-        <div class="container-fluid">
-            <div class="p-3">&nbsp;</div>
-            <div class="dorder-container">
-                <div class="bg-lgt dorder-container-mai">
-                    <div class="dorder-container-line">
+
+    <div class=" bg-lgt">
+        <div class="bg-img-l">
+            <div class="bg-img-r">
+                <div class="container pt-5 pb-5 bg-lgt">
+                    <div class=" ps-2 pe-2">
                         <h1>Consulta</h1>
-                        <div class="dorder-container-box bg-lgt"></div>
                     </div>
                 </div>
             </div>
-            <div class="p-3">&nbsp;</div>
         </div>
+    </div>
+
+    <br><br>
+
+    <div class="container">
         <?php /*
         --------------------<br>
         <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
