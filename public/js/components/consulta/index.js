@@ -10,6 +10,7 @@ const Consulta = () => {
   const [tipoConsulta, setTipoConsulta] = useState(1); // 1 - Básica | 2 - Avançada
 
   const labelsFilters = {
+    politica: 'Política',
     grande_area: 'Grande Área',
     area: 'Área',
     categoria: 'Categoria',
@@ -34,6 +35,13 @@ const Consulta = () => {
       }
   }, [tipoConsulta]);*/
 
+  useEffect(() => {
+    if (tipoConsulta === 1) {
+      setAppliedFilters(filters);
+      list(filters);
+    }
+  }, [filters]);
+
   const addFilter = item => {
     let newFilters = { ...filters
     };
@@ -50,8 +58,18 @@ const Consulta = () => {
     console.log(newFilters);
   };
 
-  const list = async () => {
-    console.log('list politicas');
+  const list = async filters => {
+    console.log('list');
+    console.log(filters);
+    let json = {};
+    Object.entries(appliedFilters).map(item => {
+      if (item[0] === 'politica') {
+        json[item[0]] = item[1];
+      }
+
+      json[item[0]] = item[1].map(value => item.id);
+    });
+    console.log(json);
   };
 
   return /*#__PURE__*/React.createElement("div", {
@@ -145,7 +163,7 @@ const Consulta = () => {
     return /*#__PURE__*/React.createElement("div", {
       key: 'filter' + key,
       className: "col-md-4 col-sm-6 col-xs-12"
-    }, /*#__PURE__*/React.createElement("strong", null, labelsFilters[item[0]], ": "), "\xA0", item[1].map((value, index) => {
+    }, /*#__PURE__*/React.createElement("strong", null, labelsFilters[item[0]], ": "), "\xA0", item[0] === 'politica' ? /*#__PURE__*/React.createElement("span", null, item[1]) : item[1].map((value, index) => {
       return /*#__PURE__*/React.createElement("span", {
         key: 'value' + index
       }, value.nome, index < item[1].length - 1 ? ',' : '', " ");
