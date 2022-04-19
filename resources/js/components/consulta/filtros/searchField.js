@@ -192,11 +192,13 @@ const SearchField = (props) => {
                     <ul className="box-search-itens" style={{display: showBoxSearch ? '' : 'none'}}>
                         {
                             showItems.map((item, key) => {
-                                return (
-                                    <li key={props.name + key} onClick={addItem(item)}>
-                                        {item[column]}
-                                    </li>
-                                );
+                                if(!itemsSelected.includes(item)){
+                                    return (
+                                        <li key={props.name + key} onClick={addItem(item)}>
+                                            {item[column]}
+                                        </li>
+                                    );
+                                }
                             })
                         }
                     </ul>

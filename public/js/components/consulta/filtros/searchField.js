@@ -181,9 +181,11 @@ const SearchField = props => {
       display: showBoxSearch ? '' : 'none'
     }
   }, showItems.map((item, key) => {
-    return /*#__PURE__*/React.createElement("li", {
-      key: props.name + key,
-      onClick: addItem(item)
-    }, item[column]);
+    if (!itemsSelected.includes(item)) {
+      return /*#__PURE__*/React.createElement("li", {
+        key: props.name + key,
+        onClick: addItem(item)
+      }, item[column]);
+    }
   })))));
 };
