@@ -7,6 +7,7 @@ const Consulta = () => {
   const [filters, setFilters] = useState({});
   const [filtersJson, setFiltersJson] = useState({});
   const [appliedFilters, setAppliedFilters] = useState({});
+  const [backupFilters, setBackupFilters] = useState({});
   const [tipoConsulta, setTipoConsulta] = useState(1); // 1 - Básica | 2 - Avançada
 
   const labelsFilters = {
@@ -30,6 +31,7 @@ const Consulta = () => {
     label: 'Vanilla'
   }];
   useEffect(() => {
+    //Quando troca para consulta básica
     if (tipoConsulta === 1) {
       let newFilters = { ...filters
       };
@@ -40,7 +42,23 @@ const Consulta = () => {
       delete newFilters.orgao;
       delete newFilters.publico_alvo;
       delete newFilters.tipo_politica;
-      setFilters(newFilters);
+      setFilters(newFilters); //Faz um backup dos filtros anterires para retornar caso o usuário volte pra consulta avançada
+
+      setBackupFilters(filters);
+      return;
+    } //Quando o usuário volta pra consulta avançada então pega os filtros do backup com exceção de política
+
+
+    if (tipoConsulta === 2) {
+      let newBackupFilters = { ...backupFilters
+      };
+
+      if (filters.politica) {
+        newBackupFilters.politica = filters.politica;
+      }
+
+      setBackupFilters(newBackupFilters);
+      setFilters(newBackupFilters);
     }
   }, [tipoConsulta]);
   useEffect(() => {
