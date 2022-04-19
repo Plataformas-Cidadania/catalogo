@@ -139,7 +139,7 @@ const Timeline = (props) => {
                                                                     >
                                                                         {politica.nome_politica}
                                                                         {/*<a href={'politica/' + politica.id+'/' + politica.id} style={{textAlign: 'end'}}>*/}
-                                                                        <a href={"politica/" + politica.id + "/" + clean(politica.nome_politica)} style={{textAlign: 'end'}}>
+                                                                        <a href="politica/10/plano-nacional-de-saneamento-basico-plansab" style={{textAlign: 'end'}}>
                                                                             Acessar <i className="far fa-arrow-alt-circle-right"/>
                                                                         </a>
                                                                     </div>
