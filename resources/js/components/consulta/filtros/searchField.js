@@ -126,6 +126,7 @@ const SearchField = (props) => {
         if(itemsSelected.length > 0){
             if(event.target.children[itemsSelected.length]){
                 event.target.children[itemsSelected.length].focus();
+                setShowBoxSearch(true);
             }
             return;
         }
