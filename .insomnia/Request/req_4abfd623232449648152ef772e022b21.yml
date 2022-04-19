@@ -1,9 +1,9 @@
 _id: req_4abfd623232449648152ef772e022b21
 type: Request
 parentId: fld_06dabb87ad16494aaa58fe3d45250f4c
-modified: 1649786479057
+modified: 1649112268140
 created: 1649112073817
-url: http://localhost:{{ _.porta_app }}/api/politica/12
+url: http://localhost:{{ _.porta_app }}/api/politica/666
 name: get
 description: ""
 method: GET

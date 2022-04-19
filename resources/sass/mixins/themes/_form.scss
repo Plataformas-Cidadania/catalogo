@@ -315,10 +315,6 @@ label, input, .btn-number {
 }
 .box-search-itens li{
     cursor: pointer;
-    padding: 3px;
-}
-.box-search-itens li:hover{
-    background-color: #E1F5FE;
 }
 .btn-close{
     float: left;
@@ -437,16 +433,6 @@ input{
     border: solid 1px $color-lgt2 !important;
     border-radius: 0 !important;
     padding: 10px !important;
-}
-
-.input-select-search {
-    border: 0 !important;
-    padding: 3px !important;
-    background-color: #fff !important;
-    min-width: 2px !important;
-}
-.input-select-search:focus {
-    border: 0 !important;
 }
 
 .input100{

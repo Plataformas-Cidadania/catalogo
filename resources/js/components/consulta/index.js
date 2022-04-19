@@ -40,16 +40,8 @@ const Consulta = () => {
 
     const addFilter = (item) => {
         let newFilters = {...filters};
-        newFilters[item.filter] = item.value;
-        setFilters(newFilters);
-        console.log(newFilters);
-    }
 
-    const removeFilter = (item) => {
-        let newFilters = {...filters};
-        delete newFilters[item.filter];
         setFilters(newFilters);
-        console.log(newFilters);
     }
 
     const list = async (filters) => {
@@ -70,32 +62,17 @@ const Consulta = () => {
             <div className="row">
                 <div className="col-md-12 col-xs-12">
                     <Politica addFilter={addFilter} removeFilter={removeFilter} />
-
-                    <button
-                        className="btn btn-sm btn-primary"
-                        style={{display: tipoConsulta === 1 ? '' : 'none', marginTop: '5px'}}
-                        onClick={() => setTipoConsulta(2)}
-                    >
-                        Consulta Avançada
-                    </button>
-                    <button
-                        className="btn btn-sm btn-primary"
-                        style={{display: tipoConsulta === 2 ? '' : 'none', marginTop: '5px'}}
-                        onClick={() => setTipoConsulta(1)}
-                    >
-                        Consulta Básica
-                    </button>
-                    <br/><br/>
+                    <br/>
                 </div>
-            </div>
-            <div className="row" style={{display: tipoConsulta === 2 ? '' : 'none'}}>
+
                 <div className="col-md-12 col-xs-12">
                     <Ano addFilter={addFilter} removeFilter={removeFilter} />
                     <br/>
                     <br/>
                 </div>
+
                 <div className="col-md-4 col-xs-12">
-                    <GrandeArea addFilter={addFilter} removeFilter={removeFilter} />
+                    <GrandeArea close={closeSearch} addFilter={addFilter} removeFilter={removeFilter} />
                 </div>
                 <div className="col-md-4 col-xs-12">
                     <Area addFilter={addFilter} removeFilter={removeFilter} />
@@ -104,26 +81,15 @@ const Consulta = () => {
                     <Orgao addFilter={addFilter} removeFilter={removeFilter} />
                 </div>
                 <div className="col-md-4 col-xs-12">
-                    <Categoria addFilter={addFilter} removeFilter={removeFilter} />
+                    <Tipo addFilter={addFilter} removeFilter={removeFilter} />
                 </div>
                 <div className="col-md-4 col-xs-12">
                     <Publico addFilter={addFilter} removeFilter={removeFilter} />
                 </div>
-                <div className="col-md-4 col-xs-12">
-                    <Tipo addFilter={addFilter} removeFilter={removeFilter} />
-                </div>
             </div>
 
-            <div className="row" style={{display: tipoConsulta === 2 ? '' : 'none'}}>
-                <div className="col-12 text-center">
-                    <br/>
-                    <button className="btn btn-primary btn-lg" onClick={() => setAppliedFilters(filters)}>Aplicar Filtros</button>
-                </div>
-            </div>
-
-            <div className="row" style={{display: Object.entries(appliedFilters).length > 0 ? '' : 'none'}}>
+            <div className="row">
                 <div className="col">
-                    <br/>
                     <div style={{padding: '10px', backgroundColor: '#f6f6f6'}}>
                         <strong>Filtros aplicados: </strong><br/><br/>
                         <div className="row">

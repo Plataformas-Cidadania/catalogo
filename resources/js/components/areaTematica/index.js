@@ -33,8 +33,7 @@ const AreaTematica = (props) => {
             }
             //adiciona um objeto de politica no array do ano
             area[item.ano.substring(0, 4)].push({
-                nome_politica: item.nome,
-                id: item.id
+                nome_politica: item.nome
             })
         });
 

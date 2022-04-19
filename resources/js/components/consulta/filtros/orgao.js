@@ -1,8 +1,8 @@
-const Orgao = (props) => {
+const Orgao = () => {
 
     const { useEffect, useState } = React;
 
-    const [itemsSelected, setItemsSelected] = useState([]);
+    const [item, setItem] = useState(null);
     const [items, setItems] = useState([]);
 
     useEffect(() => {
@@ -17,14 +17,6 @@ const Orgao = (props) => {
         setItems(newItems);
     }
 
-    useEffect(() => {
-        if(itemsSelected.length > 0){
-            props.addFilter({filter: 'orgao', value: itemsSelected});
-            return;
-        }
-        props.removeFilter('orgao');
-    }, [itemsSelected]);
-
     return (
         <div>
             <SearchField
@@ -33,8 +25,7 @@ const Orgao = (props) => {
                 label="Órgão"
                 items={items}
                 column="nome"
-                selectItems={setItemsSelected}
-                multiple={true}
+                selectItem={setItem}
             />
         </div>
     );

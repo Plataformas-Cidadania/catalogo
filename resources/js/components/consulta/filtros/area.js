@@ -1,8 +1,8 @@
-const Area = (props) => {
+const Area = () => {
 
     const { useEffect, useState } = React;
 
-    const [itemsSelected, setItemsSelected] = useState([]);
+    const [item, setItem] = useState(null);
     const [items, setItems] = useState([]);
 
     useEffect(() => {
@@ -17,14 +17,6 @@ const Area = (props) => {
         setItems(newItems);
     }
 
-    useEffect(() => {
-        if(itemsSelected.length > 0){
-            props.addFilter({filter: 'area', value: itemsSelected});
-            return;
-        }
-        props.removeFilter('area');
-    }, [itemsSelected]);
-
     return (
         <div>
             <SearchField
@@ -35,8 +27,7 @@ const Area = (props) => {
                 /*qtdSearch={1}*/
                 items={items}
                 column="nome"
-                selectItems={setItemsSelected}
-                multiple={true}
+                selectItem={setItem}
             />
         </div>
     );

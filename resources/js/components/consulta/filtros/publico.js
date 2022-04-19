@@ -1,8 +1,8 @@
-const Publico = (props) => {
+const Publico = () => {
 
     const { useEffect, useState } = React;
 
-    const [itemsSelected, setItemsSelected] = useState([]);
+    const [item, setItem] = useState(null);
     const [items, setItems] = useState([]);
 
 
@@ -18,14 +18,6 @@ const Publico = (props) => {
         setItems(newItems);
     }
 
-    useEffect(() => {
-        if(itemsSelected.length > 0){
-            props.addFilter({filter: 'publico_alvo', value: itemsSelected});
-            return;
-        }
-        props.removeFilter('publico_alvo');
-    }, [itemsSelected]);
-
     return (
         <div>
             <SearchField
@@ -34,8 +26,7 @@ const Publico = (props) => {
                 label="Público Alvo"
                 items={items}
                 column="nome"
-                selectItems={setItemsSelected}
-                multiple={true}
+                selectItem={setItem}
             />
         </div>
     );

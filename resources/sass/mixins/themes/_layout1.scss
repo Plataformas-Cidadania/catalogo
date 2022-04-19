@@ -468,3 +468,15 @@
     min-height: 120px;
     border-radius: 5px;
 }
+
+
+.linsBor{
+    border: solid 1px #cccccc;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.linsBor:hover{
+    background-color: #F5F5F5;
+}

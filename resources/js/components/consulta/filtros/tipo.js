@@ -1,8 +1,8 @@
-const Tipo = (props) => {
+const Tipo = () => {
 
     const { useEffect, useState } = React;
 
-    const [itemsSelected, setItemsSelected] = useState([]);
+    const [item, setItem] = useState(null);
     const [items, setItems] = useState([]);
 
     useEffect(() => {
@@ -17,14 +17,6 @@ const Tipo = (props) => {
         setItems(newItems);
     }
 
-    useEffect(() => {
-        if(itemsSelected.length > 0){
-            props.addFilter({filter: 'tipo_politica', value: itemsSelected});
-            return;
-        }
-        props.removeFilter('tipo_politica');
-    }, [itemsSelected]);
-
     return (
         <div>
             <SearchField
@@ -33,8 +25,7 @@ const Tipo = (props) => {
                 label="Tipo de Política"
                 items={items}
                 column="nome"
-                selectItems={setItemsSelected}
-                multiple={true}
+                selectItem={setItem}
             />
         </div>
     );

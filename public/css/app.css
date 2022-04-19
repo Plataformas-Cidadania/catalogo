@@ -13075,11 +13075,6 @@ label, input, .btn-number {
 
 .box-search-itens li {
   cursor: pointer;
-  padding: 3px;
-}
-
-.box-search-itens li:hover {
-  background-color: #E1F5FE;
 }
 
 .btn-close {
@@ -13211,17 +13206,6 @@ input {
   border: solid 1px #E6E6E6 !important;
   border-radius: 0 !important;
   padding: 10px !important;
-}
-
-.input-select-search {
-  border: 0 !important;
-  padding: 3px !important;
-  background-color: #fff !important;
-  min-width: 2px !important;
-}
-
-.input-select-search:focus {
-  border: 0 !important;
 }
 
 .input100 {
@@ -13864,6 +13848,18 @@ gi .dorder-container {
   border-left: 4px solid #E26442;
   min-height: 120px;
   border-radius: 5px;
+}
+
+.linsBor {
+  border: solid 1px #cccccc;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.linsBor:hover {
+  background-color: #F5F5F5;
 }
 
 #chart {
