@@ -8,6 +8,8 @@ const Consulta = () => {
     const [appliedFilters, setAppliedFilters] = useState({});
     const [backupFilters, setBackupFilters] = useState({});
     const [tipoConsulta, setTipoConsulta] = useState(1);// 1 - Básica | 2 - Avançada
+    //Para informar ao usuário que deve clicar em pesquisar filtros no caso de consulta avançada
+    const [textoPoliticaAlterado, setTextPoliticaAlterado] = useState(false);
 
     const labelsFilters = {
         politica: 'Política',
@@ -59,6 +61,10 @@ const Consulta = () => {
         }
     }, [filters]);
 
+    useEffect(() => {
+        setTextPoliticaAlterado(false);
+    }, [appliedFilters]);
+
     const addFilter = (item) => {
         let newFilters = {...filters};
         newFilters[item.filter] = item.value;
@@ -83,7 +89,14 @@ const Consulta = () => {
             <div className="row">
                 <div className="col-md-12 col-xs-12">
                     <Politica addFilter={addFilter} removeFilter={removeFilter} />
-
+                    <div
+                        className="text-warning"
+                        style={{
+                            display: (tipoConsulta === 2 && textoPoliticaAlterado) ? '' : 'none',
+                        }}
+                    >
+                        Clique em aplicar filtros ou pressione enter para pesquisar
+                    </div>
                     <button
                         className="btn btn-sm btn-primary"
                         style={{display: tipoConsulta === 1 ? '' : 'none', marginTop: '5px'}}

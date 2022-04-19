@@ -51,13 +51,25 @@ const Timeline = (props) => {
 
         e.persist();
 
-        let card = e.target.parentNode.querySelector(".card-tl:last-child");
-        if (e.target !== card) return;
+        e.stopPropagation();
+
+        //Bloco adicionado para quando for clicado no div do nome da politica em vez do div do card.
+        let parent = e.target.parentNode;
+        let target = e.target;
+        if(parent.classList[0] === 'card-tl'){
+            parent = parent.parentNode;
+            target = e.target.parentNode;
+        }
+        //------------------------------------------------------------------------------------
+
+
+        let card = parent.querySelector(".card-tl:last-child");
+        if (target !== card) return;
         card.style.animation = "swap 700ms forwards";
 
         setTimeout(() => {
             card.style.animation = "";
-            e.target.parentNode.prepend(card);
+            parent.prepend(card);
             //stack1.prepend(card);
         }, 700);
     }
@@ -138,7 +150,9 @@ const Timeline = (props) => {
                                                                          className={"card-tl cor"+index}
                                                                          onClick={swap2}
                                                                     >
-                                                                        <div className="text-start" style={{overflow: 'auto', height: '57px'}}>{politica.nome_politica}</div>
+                                                                        <div className="text-start" style={{overflow: 'auto', height: '57px'}} onClick={swap2}>
+                                                                            {politica.nome_politica}
+                                                                        </div>
                                                                         {/*<a href={'politica/' + politica.id+'/' + politica.id} style={{textAlign: 'end'}}>*/}
                                                                         <div className="btn-p">
                                                                             <a href="politica/10/plano-nacional-de-saneamento-basico-plansab" >

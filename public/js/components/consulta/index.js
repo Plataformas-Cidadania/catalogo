@@ -9,7 +9,9 @@ const Consulta = () => {
   const [appliedFilters, setAppliedFilters] = useState({});
   const [backupFilters, setBackupFilters] = useState({});
   const [tipoConsulta, setTipoConsulta] = useState(1); // 1 - Básica | 2 - Avançada
+  //Para informar ao usuário que deve clicar em pesquisar filtros no caso de consulta avançada
 
+  const [textoPoliticaAlterado, setTextPoliticaAlterado] = useState(false);
   const labelsFilters = {
     politica: 'Política',
     ano: 'Período',
@@ -66,6 +68,9 @@ const Consulta = () => {
       setAppliedFilters(filters);
     }
   }, [filters]);
+  useEffect(() => {
+    setTextPoliticaAlterado(false);
+  }, [appliedFilters]);
 
   const addFilter = item => {
     let newFilters = { ...filters
@@ -97,7 +102,12 @@ const Consulta = () => {
   }, /*#__PURE__*/React.createElement(Politica, {
     addFilter: addFilter,
     removeFilter: removeFilter
-  }), /*#__PURE__*/React.createElement("button", {
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "text-warning",
+    style: {
+      display: tipoConsulta === 2 && textoPoliticaAlterado ? '' : 'none'
+    }
+  }, "Clique em aplicar filtros ou pressione enter para pesquisar"), /*#__PURE__*/React.createElement("button", {
     className: "btn btn-sm btn-primary",
     style: {
       display: tipoConsulta === 1 ? '' : 'none',
