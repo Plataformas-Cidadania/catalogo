@@ -66,11 +66,12 @@ const Consulta = () => {
         console.log(newFilters);
     }
 
-    const removeFilter = (item) => {
+    const removeFilter = (filter) => {
         let newFilters = {...filters};
-        delete newFilters[item.filter];
+        //console.log(filter);
+        delete newFilters[filter];
+        //console.log('removeFilter', newFilters);
         setFilters(newFilters);
-        console.log(newFilters);
     }
 
     const list = async () => {
