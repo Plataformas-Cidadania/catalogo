@@ -48,7 +48,7 @@
             <div class="container">
                 <br>
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div>
                             <h3>Sobre</h3>
                             <ul>
@@ -59,9 +59,9 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div>
-                            <h3>Título</h3>
+                            <h3>O Catalogo</h3>
                             <ul>
                                 <li role="presentation"><a href="areas-tematicas" accesskey="" >Áreas temáticas</a></li>
                                 <li role="presentation"><a href="timeline" accesskey="" >Linhas do tempo</a></li>
@@ -71,20 +71,20 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    {{--<div class="col-md-3">
                         <div>
                             <h3>Título</h3>
-                            {{--<ul>
+                            <ul>
                                 <li role="presentation"><a href="diagnostico" >Diagnóstico</a></li>
                                 <li role="presentation"><a href="recursos" >Biblioteca</a></li>
                                 <li role="presentation"><a href="contribua" >Contribua</a></li>
                                 <br><br>
-                            </ul>--}}
+                            </ul>
                         </div>
-                    </div>
+                    </div>--}}
 
                     @if($setting->twitter!="" || $setting->youtube!="" || $setting->facebook!="" || $setting->pinterest!="")
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div>
                                 <h3>Ajuda</h3>
                                 <ul>

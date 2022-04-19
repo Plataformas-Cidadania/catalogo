@@ -134,14 +134,18 @@ const Timeline = (props) => {
                                                                 return (
                                                                     <div key={props.item.area+"_politica_"+key.toString()+index}
                                                                         /*className="card"*/
-                                                                         className={"card-tl cor"+(Math.floor(Math.random() * 4))}
+                                                                         /*className={"card-tl cor"+(Math.floor(Math.random() * 4))}*/
+                                                                         className={"card-tl cor"+index}
                                                                          onClick={swap2}
                                                                     >
-                                                                        {politica.nome_politica}
+                                                                        <div className="text-start" style={{overflow: 'auto', height: '57px'}}>{politica.nome_politica}</div>
                                                                         {/*<a href={'politica/' + politica.id+'/' + politica.id} style={{textAlign: 'end'}}>*/}
-                                                                        <a href="politica/10/plano-nacional-de-saneamento-basico-plansab" style={{textAlign: 'end'}}>
-                                                                            Acessar <i className="far fa-arrow-alt-circle-right"/>
-                                                                        </a>
+                                                                        <div className="btn-p">
+                                                                            <a href="politica/10/plano-nacional-de-saneamento-basico-plansab" >
+                                                                                <span style={{fontWeight: 'bold'}}>acessar</span> <i className="far fa-arrow-alt-circle-right"/>
+                                                                            </a>
+                                                                        </div>
+
                                                                     </div>
 
                                                                 );

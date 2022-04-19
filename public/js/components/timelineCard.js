@@ -119,17 +119,28 @@ const Timeline = props => {
       return /*#__PURE__*/React.createElement("div", {
         key: props.item.area + "_politica_" + key.toString() + index
         /*className="card"*/
+
+        /*className={"card-tl cor"+(Math.floor(Math.random() * 4))}*/
         ,
-        className: "card-tl cor" + Math.floor(Math.random() * 4),
+        className: "card-tl cor" + index,
         onClick: swap2
-      }, politica.nome_politica, /*#__PURE__*/React.createElement("a", {
-        href: "politica/10/plano-nacional-de-saneamento-basico-plansab",
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "text-start",
         style: {
-          textAlign: 'end'
+          overflow: 'auto',
+          height: '57px'
         }
-      }, "Acessar ", /*#__PURE__*/React.createElement("i", {
+      }, politica.nome_politica), /*#__PURE__*/React.createElement("div", {
+        className: "btn-p"
+      }, /*#__PURE__*/React.createElement("a", {
+        href: "politica/10/plano-nacional-de-saneamento-basico-plansab"
+      }, /*#__PURE__*/React.createElement("span", {
+        style: {
+          fontWeight: 'bold'
+        }
+      }, "acessar"), " ", /*#__PURE__*/React.createElement("i", {
         className: "far fa-arrow-alt-circle-right"
-      })));
+      }))));
     }))));
   }) : null)))) : /*#__PURE__*/React.createElement("div", null, "\xA0");
 };

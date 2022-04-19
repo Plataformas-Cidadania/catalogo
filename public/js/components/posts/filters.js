@@ -82,7 +82,11 @@ class Filters extends React.Component {
   render() {
     return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement(Search, {
       setSearch: this.props.setSearch
-    }), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'none'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
       className: "line-color"
     }), /*#__PURE__*/React.createElement("h2", null, /*#__PURE__*/React.createElement("i", {
       className: "far fa-calendar"
