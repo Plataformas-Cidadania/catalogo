@@ -43,13 +43,23 @@
                     <a href="area-tematica/{{$area->id}}/{{clean($area->nome)}}">
                         <div class="box-list-icon">
                             <div class="box-list-icon-i"><i class="far fa-gem fa-3x"></i></div>
+                            <h2>{{$area->nome}}</h2>
+                            <h3>Acessar</h3>
+                        </div>
+                    </a>
+                    <br>
+                </div>
+                {{--<div class="col-md-3">
+                    <a href="area-tematica/{{$area->id}}/{{clean($area->nome)}}">
+                        <div class="box-list-icon">
+                            <div class="box-list-icon-i"><i class="far fa-gem fa-3x"></i></div>
                             <h2><strong>{{$area->nome}}</strong></h2>
                             <p>Apesar de constituírem um elemento básico de organização da atuação governamental</p>
                             <h3>Acessar</h3>
                         </div>
                     </a>
                     <br>
-                </div>
+                </div>--}}
             @endforeach
 
 

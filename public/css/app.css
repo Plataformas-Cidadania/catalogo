@@ -13809,24 +13809,26 @@ gi .dorder-container {
   border: solid 2px #00AFA4;
   padding: 15px;
   transition: 0.5s;
+  text-align: center;
 }
 
 .box-list-icon-i {
   background-color: #00AFA4;
-  float: left;
-  margin-bottom: 15px;
+  /*float: left;*/
+  margin: 5px auto 15px auto;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
 }
 
 .box-list-icon svg {
-  float: left;
   color: #FFFFFF;
   padding: 2px;
-  margin: 5px;
+  margin: 20px auto;
 }
 
 .box-list-icon h3, .box-list-icon .h3 {
   color: #FFFFFF;
-  float: right;
   font-size: 12px;
   position: relative;
   margin-top: -15px;
@@ -13834,7 +13836,9 @@ gi .dorder-container {
 
 .box-list-icon h2, .box-list-icon .h2 {
   clear: both;
-  font-size: 16px;
+  font-size: 20px;
+  text-align: center;
+  min-height: 56px;
 }
 
 .box-list-icon p {
