@@ -12,6 +12,8 @@ const Consulta = () => {
   //Para informar ao usuário que deve clicar em pesquisar filtros no caso de consulta avançada
 
   const [textoPoliticaAlterado, setTextPoliticaAlterado] = useState(false);
+  const [politicas, setPoliticas] = useState([]);
+  const [loading, setLoading] = useState(false);
   const labelsFilters = {
     politica: 'Política',
     ano: 'Período',
@@ -70,6 +72,7 @@ const Consulta = () => {
   }, [filters]);
   useEffect(() => {
     setTextPoliticaAlterado(false);
+    list();
   }, [appliedFilters]);
 
   const addFilter = item => {
@@ -90,7 +93,10 @@ const Consulta = () => {
   };
 
   const list = async () => {
-    console.log('list politicas');
+    setLoading(true);
+    const result = await axios.get('api/politica');
+    setPoliticas(result.data);
+    setLoading(false);
   };
 
   return /*#__PURE__*/React.createElement("div", {
@@ -198,7 +204,10 @@ const Consulta = () => {
     className: "row"
   }, /*#__PURE__*/React.createElement("div", {
     className: "col"
-  }, /*#__PURE__*/React.createElement(List, null))));
+  }, /*#__PURE__*/React.createElement(List, {
+    items: politicas,
+    loading: loading
+  }))));
 };
 
 ReactDOM.render( /*#__PURE__*/React.createElement(Consulta, null), document.getElementById('consulta'));

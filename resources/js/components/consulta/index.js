@@ -10,6 +10,8 @@ const Consulta = () => {
     const [tipoConsulta, setTipoConsulta] = useState(1);// 1 - Básica | 2 - Avançada
     //Para informar ao usuário que deve clicar em pesquisar filtros no caso de consulta avançada
     const [textoPoliticaAlterado, setTextPoliticaAlterado] = useState(false);
+    const [politicas, setPoliticas] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     const labelsFilters = {
         politica: 'Política',
@@ -63,7 +65,9 @@ const Consulta = () => {
 
     useEffect(() => {
         setTextPoliticaAlterado(false);
+        list();
     }, [appliedFilters]);
+
 
     const addFilter = (item) => {
         let newFilters = {...filters};
@@ -81,7 +85,10 @@ const Consulta = () => {
     }
 
     const list = async () => {
-        console.log('list politicas');
+        setLoading(true);
+        const result = await axios.get('api/politica');
+        setPoliticas(result.data);
+        setLoading(false);
     }
 
     return (
@@ -184,7 +191,9 @@ const Consulta = () => {
             <br/>
             <div className="row">
                 <div className="col">
-                    <List />
+                    {
+                        <List items={politicas} loading={loading} />
+                    }
                 </div>
             </div>
         </div>

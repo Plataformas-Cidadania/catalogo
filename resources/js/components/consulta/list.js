@@ -1,13 +1,19 @@
-const List = () => {
+const List = (props) => {
 
     const { useEffect, useState } = React;
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        if(props.items){
+            setItems(props.items);
+        }
+    }, [props.items]);
 
     return (
         <div>
             <table className="table">
                 <thead className="thead-light">
                     <tr>
-                        <th>#</th>
                         <th>Política</th>
                         <th>Grande Área</th>
                         <th>Área</th>
@@ -16,19 +22,37 @@ const List = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td colSpan="6">
-                            <h4 className="text-center">Listagem em desenvolvimento</h4>
-                        </td>
-                    </tr>
-                    {/*<tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>*/}
+                {
+                    props.loading ? (
+                        <tr>
+                            <td colSpan={5}>
+                                <div className="text-center">
+                                    <i className="fa fa-spinner fa-spin fa-4x"/>
+                                </div>
+                            </td>
+                        </tr>
+                    ) : (
+                        items.length > 0 ? (
+                            items.map((item) => {
+                                return (
+                                    <tr>
+                                        <td>{item.nome}</td>
+                                        <td>{item.grande_area}</td>
+                                        <td>{item.area}</td>
+                                        <td>{item.ano.substring(0, 4)}</td>
+                                        <td>{item.vigencia_inicio}</td>
+                                    </tr>
+                                );
+                            })
+                        ) : (
+                            <tr>
+                                <td colSpan={5}>
+                                    <h4 className="text-center">Não foram encontradas políticas para esta consulta!</h4>
+                                </td>
+                            </tr>
+                        )
+                    )
+                }
                 </tbody>
             </table>
         </div>
