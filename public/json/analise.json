@@ -1,25 +1,58 @@
 [
     {
-        "titulo": "Agropecuária e Agrária",
+        "id": 1,
+        "tipo": "mix",
+        "titulo": "Frequência absoluta e relativa de políticas segundo tipo da política",
+        "fonte": "Catálogo de Políticas Públicas (Ipea).",
         "series": [{
-            "name": "TEAM A",
+            "name": "Nº",
             "type": "column",
-            "data": [23, 11, 22, 27, 13, 22]
+            "data": [434, 197, 32]
         }, {
-            "name": "TEAM B",
-            "type": "area",
-            "data": [44, 55, 41, 67, 22, 43]
+            "name": "%",
+            "type": "column",
+            "data": [65.5, 29.7, 4.9]
         }],
-        "labels": ["2004", "2005", "2006", "2007", "2008", "2009"]
+        "labels": ["Programa governamental", "Política nacional", "Outros"]
     },
     {
-        "titulo": "Agropecuária e Agrária",
+        "id": 2,
+        "tipo": "mix",
+        "titulo": "Frequência de políticas segundo ano",
+        "fonte": "Catálogo de Políticas Públicas (Ipea).",
         "series": [{
-            "name": "TEAM A",
+            "name": "Ano",
             "type": "line",
             "data": [23, 11, 22, 27, 13, 22]
         }],
         "labels": ["2004", "2005", "2006", "2007", "2008", "2009"]
+    },
+    {
+        "id": 3,
+        "tipo": "stacked",
+        "titulo": "Frequência absoluta e relativa de políticas segundo tipo da política",
+        "fonte": "Catálogo de Políticas Públicas (Ipea).",
+        "series": [{
+            "name": "PRODUCT A",
+            "data": [44, 55, 41, 67, 22, 43]
+        }, {
+            "name": "PRODUCT B",
+            "data": [13, 23, 20, 8, 13, 27]
+        }, {
+            "name": "PRODUCT C",
+            "data": [11, 17, 15, 15, 21, 14]
+        }, {
+            "name": "PRODUCT D",
+            "data": [21, 7, 25, 13, 22, 8]
+        }],
+        "labels": ["Diretrizes", "Estratégia", "Plano", "Outros", "Política nacional", "Programa"]
+    },
+    {
+        "id": 4,
+        "tipo": "pie",
+        "titulo": "Frequência absoluta e relativa de políticas segundo a Área",
+        "fonte": "Catálogo de Políticas Públicas (Ipea).",
+        "series": [44, 55, 13, 43, 22],
+        "labels": ["Team A", "Team B", "Team C", "Team D", "Team E"]
     }
-
 ]

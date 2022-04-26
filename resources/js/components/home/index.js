@@ -7,7 +7,8 @@ const Home = () => {
     }, []);
 
     const [list, setList] = useState([]);
-    const [divSelected, setDivSelected] = useState(0);
+    const [divSelected, setDivSelected] = useState(1);
+    const [divSelectedTipo, setDivSelectedTipo] = useState("mix");
 
 
     const listData = async () => {
@@ -19,8 +20,9 @@ const Home = () => {
         }
     }
 
-    const clickChart = (id) => {
+    const clickChart = (id, tipo) => {
         setDivSelected(id);
+        setDivSelectedTipo(tipo);
     }
 
 
@@ -33,14 +35,13 @@ const Home = () => {
                             {
                                 list ?
                                     list.map((item, key) => {
-                                        return <li className={"list-group-item-theme  cursor " + (divSelected === key ? 'menu-left-active' : '')} onClick={() => clickChart(key)}>
-                                            <a href>{item.titulo}</a>
+                                        return <li className={"list-group-item-theme  cursor " + (divSelected === item.id ? 'menu-left-active' : '')} onClick={() => clickChart(item.id, item.tipo)} key={'menu'+item.id}>
+                                            <a href>{item.id} - {item.titulo}</a>
                                         </li>
                                     })
                                     :
                                     null
                             }
-
 
                         </ul>
                     </div>
@@ -48,7 +49,21 @@ const Home = () => {
                         {
                             list ?
                                 list.map((item, index) => {
-                                    return <div style={{display: divSelected === index ? 'none' : ''}}><MixedChart id={'mix-chart'+index}  series={item.series} labels={item.labels}/></div>
+                                        let selectedChart = "";
+                                        if(divSelectedTipo==="mix"){
+                                            selectedChart = <MixedChart id={'mix-chart'+item.id}  series={item.series} labels={item.labels}/>
+                                        }
+                                        if(divSelectedTipo==="stacked"){
+                                            selectedChart = <StackedChart id={'stackedChart'}  series={item.series} labels={item.labels} />
+                                        }
+                                        if(divSelectedTipo==="pie"){
+                                            selectedChart = <PieChart id={'stackedChart'}  series={item.series} labels={item.labels} width={500}/>
+                                        }
+                                    return (
+                                        <div style={{display: divSelected === item.id ? '' : 'none'}} key={'abas'+item.id}>
+                                            {selectedChart}
+                                        </div>
+                                    )
                                 })
                                 :
                                 null
@@ -66,6 +81,7 @@ const Home = () => {
                             type: 'line',
                             data: [30, 25, 36, 30, 45, 35]
                         }]} labels={['01 Jan 2001', '02 Jan 2001', '03 Jan 2001', '04 Jan 2001', '05 Jan 2001', '05 Jan 2001']}/>*/}
+
 
                     </div>
                 </div>

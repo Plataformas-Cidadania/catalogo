@@ -228,6 +228,8 @@
     <script src="js/apexcharts/react-apexcharts.iife.min.js"></script>
 
     <script src="js/components/charts/mixedChart.js"></script>
+    <script src="js/components/charts/stackedChart.js"></script>
+    <script src="js/components/charts/pieChart.js"></script>
     <script src="js/components/home/index.js" ></script>
 
 

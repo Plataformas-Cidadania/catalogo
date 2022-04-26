@@ -7,7 +7,8 @@ const Home = () => {
     listData();
   }, []);
   const [list, setList] = useState([]);
-  const [divSelected, setDivSelected] = useState(0);
+  const [divSelected, setDivSelected] = useState(1);
+  const [divSelectedTipo, setDivSelectedTipo] = useState("mix");
 
   const listData = async () => {
     try {
@@ -18,8 +19,9 @@ const Home = () => {
     }
   };
 
-  const clickChart = id => {
+  const clickChart = (id, tipo) => {
     setDivSelected(id);
+    setDivSelectedTipo(tipo);
   };
 
   return /*#__PURE__*/React.createElement("div", {
@@ -34,23 +36,48 @@ const Home = () => {
     className: "menu-left"
   }, list ? list.map((item, key) => {
     return /*#__PURE__*/React.createElement("li", {
-      className: "list-group-item-theme  cursor " + (divSelected === key ? 'menu-left-active' : ''),
-      onClick: () => clickChart(key)
+      className: "list-group-item-theme  cursor " + (divSelected === item.id ? 'menu-left-active' : ''),
+      onClick: () => clickChart(item.id, item.tipo),
+      key: 'menu' + item.id
     }, /*#__PURE__*/React.createElement("a", {
       href: true
-    }, item.titulo));
+    }, item.id, " - ", item.titulo));
   }) : null)), /*#__PURE__*/React.createElement("div", {
     className: "col-md-9 mt-5 mb-5"
   }, list ? list.map((item, index) => {
+    let selectedChart = "";
+
+    if (divSelectedTipo === "mix") {
+      selectedChart = /*#__PURE__*/React.createElement(MixedChart, {
+        id: 'mix-chart' + item.id,
+        series: item.series,
+        labels: item.labels
+      });
+    }
+
+    if (divSelectedTipo === "stacked") {
+      selectedChart = /*#__PURE__*/React.createElement(StackedChart, {
+        id: 'stackedChart',
+        series: item.series,
+        labels: item.labels
+      });
+    }
+
+    if (divSelectedTipo === "pie") {
+      selectedChart = /*#__PURE__*/React.createElement(PieChart, {
+        id: 'stackedChart',
+        series: item.series,
+        labels: item.labels,
+        width: 500
+      });
+    }
+
     return /*#__PURE__*/React.createElement("div", {
       style: {
-        display: divSelected === index ? 'none' : ''
-      }
-    }, /*#__PURE__*/React.createElement(MixedChart, {
-      id: 'mix-chart' + index,
-      series: item.series,
-      labels: item.labels
-    }));
+        display: divSelected === item.id ? '' : 'none'
+      },
+      key: 'abas' + item.id
+    }, selectedChart);
   }) : null))));
 };
 
