@@ -23,7 +23,11 @@ const Politica = props => {
   };
 
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
-    htmlFor: "politica"
+    htmlFor: "politica",
+    style: {
+      fontSize: '15px',
+      fontWeight: 'bold'
+    }
   }, "Pol\xEDtica"), /*#__PURE__*/React.createElement("input", {
     type: "text",
     className: "form-control",

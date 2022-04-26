@@ -140,7 +140,11 @@ const SearchField = props => {
   return /*#__PURE__*/React.createElement("div", {
     ref: wrapperRef[props.id]
   }, /*#__PURE__*/React.createElement("label", {
-    htmlFor: props.id
+    htmlFor: props.id,
+    style: {
+      fontSize: '15px',
+      fontWeight: 'bold'
+    }
   }, props.label), /*#__PURE__*/React.createElement("div", {
     style: {
       border: 'solid 1px #ccc',
@@ -156,8 +160,9 @@ const SearchField = props => {
         borderRadius: "3px",
         backgroundColor: '#dedede',
         padding: '4px',
-        fontSize: '12px'
-      }
+        fontSize: '14px'
+      },
+      title: item[props.column]
     }, item[props.column].substring(0, 20), "\xA0\xA0", /*#__PURE__*/React.createElement("i", {
       className: "fa fa-times",
       style: {
@@ -185,6 +190,9 @@ const SearchField = props => {
     if (!itemsSelected.includes(item)) {
       return /*#__PURE__*/React.createElement("li", {
         key: props.name + key,
+        style: {
+          fontSize: '16px'
+        },
         onClick: addItem(item)
       }, item[column]);
     }

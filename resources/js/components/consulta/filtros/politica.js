@@ -20,7 +20,7 @@ const Politica = (props) => {
 
     return (
         <div>
-            <label htmlFor="politica">Política</label>
+            <label htmlFor="politica" style={{fontSize: '15px', fontWeight: 'bold'}}>Política</label>
             <input type="text" className="form-control" placeholder=" " onChange={handleSearch}/>
         </div>
     );

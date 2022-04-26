@@ -26,13 +26,13 @@ const Timeline = props => {
       /*let stack1 = document.getElementById('stack1');
       [...stack1.children].reverse().forEach(i => stack1.append(i));
       stack1.addEventListener("click", swap);
-        function swap(e){
+       function swap(e){
           console.log('card');
           console.log(e.target.parentNode.id);
           let card = e.target.parentNode.querySelector(".card:last-child");
           if (e.target !== card) return;
           card.style.animation = "swap 700ms forwards";
-            setTimeout(() => {
+           setTimeout(() => {
               card.style.animation = "";
               e.target.parentNode.prepend(card);
           }, 700);
