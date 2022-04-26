@@ -55,7 +55,7 @@ const Ano = (props) => {
 
     return (
         <div>
-            <label htmlFor="">Período</label>
+            <label htmlFor="" style={{fontSize: '15px', fontWeight: 'bold'}}>Período</label>
             <input type="text" id="range" name="range" />
         </div>
     );

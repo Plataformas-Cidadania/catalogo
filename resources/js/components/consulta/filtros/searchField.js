@@ -140,7 +140,7 @@ const SearchField = (props) => {
     }
 
     return (
-        <div ref={wrapperRef[props.id]}>
+        <div ref={wrapperRef[props.id]} style={{marginTop: '10px'}}>
             <label htmlFor={props.id} style={{fontSize: '15px', fontWeight: 'bold'}}>{props.label}</label>
             <div
                 style={{

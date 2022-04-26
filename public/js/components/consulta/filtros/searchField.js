@@ -138,7 +138,10 @@ const SearchField = props => {
   };
 
   return /*#__PURE__*/React.createElement("div", {
-    ref: wrapperRef[props.id]
+    ref: wrapperRef[props.id],
+    style: {
+      marginTop: '10px'
+    }
   }, /*#__PURE__*/React.createElement("label", {
     htmlFor: props.id,
     style: {

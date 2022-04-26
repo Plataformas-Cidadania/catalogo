@@ -12,6 +12,8 @@ const Consulta = () => {
     const [textoPoliticaAlterado, setTextPoliticaAlterado] = useState(false);
     const [politicas, setPoliticas] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [disabledAplicarFiltros, setDisabledAplicarFiltros] = useState(true);
+    const [showMessageFiltroPolitica, setShowMessageFiltroPolitica] = useState(false);
 
     const labelsFilters = {
         politica: 'Política',
@@ -42,25 +44,39 @@ const Consulta = () => {
             delete newFilters.publico_alvo;
             delete newFilters.tipo_politica;
             setFilters(newFilters);
-            //Faz um backup dos filtros anterires para retornar caso o usuário volte pra consulta avançada
-            setBackupFilters(filters);
+            //Remove política do backup para não trocar o que for digitado na básica ao voltar pra consulta avançada
+            let newBackupFilters = {...backupFilters};
+            delete newBackupFilters.politica;
+            setBackupFilters(newBackupFilters);
             return;
         }
         //Quando o usuário volta pra consulta avançada então pega os filtros do backup com exceção de política
         if(tipoConsulta === 2){
-            let newBackupFilters = {...backupFilters};
+            let newFilters = {...backupFilters};
             if(filters.politica){
-                newBackupFilters.politica = filters.politica;
+                newFilters.politica = filters.politica;
             }
-            setBackupFilters(newBackupFilters);
-            setFilters(newBackupFilters);
+            //setBackupFilters(newBackupFilters);
+            setFilters(newFilters);
         }
     }, [tipoConsulta]);
 
     useEffect(() => {
         if(tipoConsulta === 1){
             setAppliedFilters(filters);
+            return;
         }
+        setDisabledAplicarFiltros(false);
+
+        //Faz um backup dos filtros anteriores (exceto política) para retornar caso o usuário volte pra consulta avançada
+        let newBackupFilters = {...filters};
+        setBackupFilters(newBackupFilters);
+
+        //verifica se existe backupFilters para mostrar a mensagem de que precisa aplicar os filtros para os filtros serem aplicados
+        if(Object.keys(backupFilters).length > 0){
+            setShowMessageFiltroPolitica(true);
+        }
+
     }, [filters]);
 
     useEffect(() => {
@@ -86,8 +102,13 @@ const Consulta = () => {
 
     const list = async () => {
         setLoading(true);
+        setShowMessageFiltroPolitica(false);
+        setDisabledAplicarFiltros(true);
+
         const result = await axios.get('api/politica');
-        setPoliticas(result.data);
+        let newPoliticas = result.data
+        newPoliticas = newPoliticas.splice(0, 50);
+        setPoliticas(newPoliticas);
         setLoading(false);
     }
 
@@ -118,14 +139,17 @@ const Consulta = () => {
                     >
                         Consulta Básica
                     </button>
-                    <br/><br/>
+                    <div className="text-center text-info">
+                        <span style={{display: showMessageFiltroPolitica ? '' : 'none'}}>
+                            &nbsp;&nbsp;Clique em <strong>Aplicar filtros</strong> para pesquisar
+                        </span>
+                    </div>
+                    <br/>
                 </div>
             </div>
             <div className="row" style={{display: tipoConsulta === 2 ? '' : 'none'}}>
                 <div className="col-md-12 col-xs-12">
                     <Ano addFilter={addFilter} removeFilter={removeFilter} />
-                    <br/>
-                    <br/>
                 </div>
                 <div className="col-md-4 col-xs-12">
                     <GrandeArea addFilter={addFilter} removeFilter={removeFilter} />
@@ -150,7 +174,13 @@ const Consulta = () => {
             <div className="row" style={{display: tipoConsulta === 2 ? '' : 'none'}}>
                 <div className="col-12 text-center">
                     <br/>
-                    <button className="btn btn-primary btn-lg" onClick={() => setAppliedFilters(filters)}>Aplicar Filtros</button>
+                    <button
+                        className="btn btn-primary btn-lg"
+                        onClick={() => setAppliedFilters(filters)}
+                        disabled={disabledAplicarFiltros}
+                    >
+                        Aplicar Filtros
+                    </button>
                 </div>
             </div>
 
