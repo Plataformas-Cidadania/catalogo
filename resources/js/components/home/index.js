@@ -62,6 +62,8 @@ const Home = () => {
                                     return (
                                         <div style={{display: divSelected === item.id ? '' : 'none'}} key={'abas'+item.id}>
                                             {selectedChart}
+                                            <br/><br/>
+                                            <div style={{textAlign: 'right'}}><strong>Fonte: </strong>{item.fonte}</div>
                                         </div>
                                     )
                                 })

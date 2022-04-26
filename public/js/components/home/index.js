@@ -77,7 +77,11 @@ const Home = () => {
         display: divSelected === item.id ? '' : 'none'
       },
       key: 'abas' + item.id
-    }, selectedChart);
+    }, selectedChart, /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("div", {
+      style: {
+        textAlign: 'right'
+      }
+    }, /*#__PURE__*/React.createElement("strong", null, "Fonte: "), item.fonte));
   }) : null))));
 };
 
