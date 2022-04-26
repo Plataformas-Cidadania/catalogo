@@ -15,44 +15,83 @@
         </div>
     </div>
 
-
+    <style>
+        .circle-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            /*width: 220px;*/
+            min-height: 220px;
+            /*border-radius:50%;*/
+            text-align: center;
+            color: #FFFFFF;
+            border: 10px double #FFFFFF;
+            padding: 15px;
+            cursor: inherit;
+            transition: .3s;
+        }
+        .circle-item:hover {
+            transform: scale(1.1);
+        }
+        .circle-item h2{
+            font-size: 20px;
+        }
+        .circle-item p{
+            font-size: 18px;
+        }
+        .tx-top{
+            line-height: 40px;
+            margin-bottom: 50px;
+        }
+    </style>
 
     <div class="container">
         <br><br>
-        {{--<div class="container-fluid">
-            <div class="p-3">&nbsp;</div>
-            <div class="dorder-container">
-                <div class="bg-lgt dorder-container-mai">
-                    <div class="dorder-container-line" style="width: 95%;">
-                        <h1>Populações e setores econômicos diretamente afetados por alterações no meio ambiente</h1>
-                        <div class="dorder-container-box bg-lgt"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="p-3">&nbsp;</div>
-        </div>--}}
+
+        <div style="float: right;">
+            <a href="/imprimir-politica/{{$politica->id}}" target="_blank" >
+                <i class="fas fa-print cursor fa-2x"></i>
+            </a>
+        </div>
 
         <div class="row">
 
+
             <div class="col-md-7">
 
-                <p><strong>Data de criação e revogação</strong></p>
-                <p>
+
+
+                <h2 class="text-center tx-top">
+                    <strong>Data de criação e revogação</strong><br>
                     <i class="far fa-clock"></i>
-                    16 de junho de 2020 até 10 de julho de 2019</p>
+                    {{formatBr($politica->vigencia_inicio, 'ext')}} {{$politica->vigencia_fim ? 'até' : ''}} {{formatBr($politica->vigencia_fim)}}
+                    <br>
+                </h2>
 
 
-                <p><br><strong>Instrumento legal</strong></p>
-                <p>{!! $politica->instrumento_legal !!}</p>
+
+
 
                 <div class="row">
-                    <div class="col-md-6">
-                        <p><br><strong>Medida provisória</strong></p>
-                        <p>{{$politica->medida_provisoria}} <br>{{$politica->medida_provisoria_inicio_vigencia}}</p>
+                    <div class="col-md-4">
+                        <div class="circle-item bg-pri">
+                            <h2><br><strong>Instrumento legal</strong></h2>
+                            <p>{!! $politica->instrumento_legal !!}</p>
+                        </div>
+
                     </div>
-                    <div class="col-md-6">
-                        <p><br><strong>Legislacao</strong></p>
-                        <p>{{$politica->legislacao}} <br><i class="far fa-clock"></i> {{$politica->vigencia_inicio}} {{$politica->vigencia_fim ? 'à' : ''}} {{$politica->vigencia_fim}}</p>
+                    <div class="col-md-4">
+                        <div class="circle-item bg-sec">
+                            <h2><br><strong>Medida provisória</strong></h2>
+                            <p>{{$politica->medida_provisoria}} <br>{{$politica->medida_provisoria_inicio_vigencia}}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="circle-item bg-ter">
+                            <h2><br><strong>Legislacao</strong></h2>
+                            <p>{{$politica->legislacao}} <br> {{formatBr($politica->vigencia_inicio, 'num')}} {{$politica->vigencia_fim ? 'à' : ''}} {{formatBr($politica->vigencia_fim), 'num'}}</p>
+                        </div>
                     </div>
                 </div>
                 <br><br>
@@ -193,7 +232,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h2 class="text-center">
-                    <br><br><br><br><strong>Ministérios</strong><br><br>
+                    <br><br><br><strong>Ministérios</strong><br>
                 </h2>
 
 

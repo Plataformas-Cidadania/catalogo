@@ -165,7 +165,7 @@ const TimelineIndex = () => {
     }, /*#__PURE__*/React.createElement("h3", null, /*#__PURE__*/React.createElement("div", {
       className: "row"
     }, /*#__PURE__*/React.createElement("div", {
-      className: "col-md-11"
+      className: "col-md-10"
     }, item.area), /*#__PURE__*/React.createElement("div", {
       className: "col-md-1",
       onClick: () => removeTimeLine(item.area),
@@ -175,7 +175,14 @@ const TimelineIndex = () => {
       }
     }, /*#__PURE__*/React.createElement("i", {
       className: "fa fa-times"
-    })))), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement(Timeline, {
+    })), /*#__PURE__*/React.createElement("div", {
+      className: "col-md-1"
+    }, /*#__PURE__*/React.createElement("a", {
+      href: "/imprimir-timeline/10",
+      target: "_blank"
+    }, /*#__PURE__*/React.createElement("i", {
+      className: "fas fa-print cursor"
+    }))))), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement(Timeline, {
       id: 'timeline' + key,
       item: item,
       area: item.area

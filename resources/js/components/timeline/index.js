@@ -164,17 +164,23 @@ const TimelineIndex = () => {
                         <div className="col-12">
                             {
                                 timelines.map((item, key) => {
+
                                     return (
                                         <div key={item.area+"_timeline_"+key}>
                                             <h3>
                                                 <div className="row">
-                                                    <div className="col-md-11">{item.area}</div>
+                                                    <div className="col-md-10">{item.area}</div>
                                                     <div
                                                         className="col-md-1"
                                                         onClick={() => removeTimeLine(item.area)}
                                                         style={{cursor: "pointer", textAlign: "right"}}
                                                     >
                                                         <i className="fa fa-times"/>
+                                                    </div>
+                                                    <div className="col-md-1">
+                                                        <a href={"/imprimir-timeline/10"} target="_blank">
+                                                            <i className="fas fa-print cursor"/>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </h3>
