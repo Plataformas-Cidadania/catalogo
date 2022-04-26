@@ -270,6 +270,7 @@
     <script src="js/components/consulta/filtros/categoria.js"></script>
     <script src="js/components/consulta/filtros/tipo.js"></script>
     <script src="js/components/consulta/list.js"></script>
+    <script src="js/components/paginate.js"></script>
     <script src="js/components/consulta/index.js"></script>
 @endif
 

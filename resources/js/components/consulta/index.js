@@ -14,6 +14,9 @@ const Consulta = () => {
     const [loading, setLoading] = useState(false);
     const [disabledAplicarFiltros, setDisabledAplicarFiltros] = useState(true);
     const [showMessageFiltroPolitica, setShowMessageFiltroPolitica] = useState(false);
+    const [total, setTotal] = useState(0);
+    const [page, setPage] = useState(0);
+    const [perPage, setPerpage] = useState(30);
 
     const labelsFilters = {
         politica: 'Política',
@@ -84,6 +87,9 @@ const Consulta = () => {
         list();
     }, [appliedFilters]);
 
+    useEffect(() => {
+        list();
+    }, [page]);
 
     const addFilter = (item) => {
         let newFilters = {...filters};
@@ -106,9 +112,13 @@ const Consulta = () => {
         setDisabledAplicarFiltros(true);
 
         const result = await axios.get('api/politica');
+
         let newPoliticas = result.data
-        newPoliticas = newPoliticas.splice(0, 50);
+        newPoliticas = newPoliticas.splice(0, 30);
         setPoliticas(newPoliticas);
+
+        setTotal(result.data.length);
+
         setLoading(false);
     }
 
@@ -224,6 +234,16 @@ const Consulta = () => {
                     {
                         <List items={politicas} loading={loading} />
                     }
+                </div>
+            </div>
+            <div className="row">
+                <div className="col">
+                    <Paginate
+                        setPage={setPage}
+                        total={total}
+                        page={page}
+                        perPage={perPage}
+                    />
                 </div>
             </div>
         </div>
