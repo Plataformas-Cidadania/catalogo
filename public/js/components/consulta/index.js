@@ -12,6 +12,13 @@ const Consulta = () => {
   //Para informar ao usuário que deve clicar em pesquisar filtros no caso de consulta avançada
 
   const [textoPoliticaAlterado, setTextPoliticaAlterado] = useState(false);
+  const [politicas, setPoliticas] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [disabledAplicarFiltros, setDisabledAplicarFiltros] = useState(true);
+  const [showMessageFiltroPolitica, setShowMessageFiltroPolitica] = useState(false);
+  const [total, setTotal] = useState(0);
+  const [page, setPage] = useState(0);
+  const [perPage, setPerpage] = useState(30);
   const labelsFilters = {
     politica: 'Política',
     ano: 'Período',
@@ -44,33 +51,51 @@ const Consulta = () => {
       delete newFilters.orgao;
       delete newFilters.publico_alvo;
       delete newFilters.tipo_politica;
-      setFilters(newFilters); //Faz um backup dos filtros anterires para retornar caso o usuário volte pra consulta avançada
+      setFilters(newFilters); //Remove política do backup para não trocar o que for digitado na básica ao voltar pra consulta avançada
 
-      setBackupFilters(filters);
+      let newBackupFilters = { ...backupFilters
+      };
+      delete newBackupFilters.politica;
+      setBackupFilters(newBackupFilters);
       return;
     } //Quando o usuário volta pra consulta avançada então pega os filtros do backup com exceção de política
 
 
     if (tipoConsulta === 2) {
-      let newBackupFilters = { ...backupFilters
+      let newFilters = { ...backupFilters
       };
 
       if (filters.politica) {
-        newBackupFilters.politica = filters.politica;
-      }
+        newFilters.politica = filters.politica;
+      } //setBackupFilters(newBackupFilters);
 
-      setBackupFilters(newBackupFilters);
-      setFilters(newBackupFilters);
+
+      setFilters(newFilters);
     }
   }, [tipoConsulta]);
   useEffect(() => {
     if (tipoConsulta === 1) {
       setAppliedFilters(filters);
+      return;
+    }
+
+    setDisabledAplicarFiltros(false); //Faz um backup dos filtros anteriores (exceto política) para retornar caso o usuário volte pra consulta avançada
+
+    let newBackupFilters = { ...filters
+    };
+    setBackupFilters(newBackupFilters); //verifica se existe backupFilters para mostrar a mensagem de que precisa aplicar os filtros para os filtros serem aplicados
+
+    if (Object.keys(backupFilters).length > 0) {
+      setShowMessageFiltroPolitica(true);
     }
   }, [filters]);
   useEffect(() => {
     setTextPoliticaAlterado(false);
+    list();
   }, [appliedFilters]);
+  useEffect(() => {
+    list();
+  }, [page]);
 
   const addFilter = item => {
     let newFilters = { ...filters
@@ -90,7 +115,15 @@ const Consulta = () => {
   };
 
   const list = async () => {
-    console.log('list politicas');
+    setLoading(true);
+    setShowMessageFiltroPolitica(false);
+    setDisabledAplicarFiltros(true);
+    const result = await axios.get('api/politica');
+    let newPoliticas = result.data;
+    newPoliticas = newPoliticas.splice(0, 30);
+    setPoliticas(newPoliticas);
+    setTotal(result.data.length);
+    setLoading(false);
   };
 
   return /*#__PURE__*/React.createElement("div", {
@@ -121,7 +154,13 @@ const Consulta = () => {
       marginTop: '5px'
     },
     onClick: () => setTipoConsulta(1)
-  }, "Consulta B\xE1sica"), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null))), /*#__PURE__*/React.createElement("div", {
+  }, "Consulta B\xE1sica"), /*#__PURE__*/React.createElement("div", {
+    className: "text-center text-info"
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: showMessageFiltroPolitica ? '' : 'none'
+    }
+  }, "\xA0\xA0Clique em ", /*#__PURE__*/React.createElement("strong", null, "Aplicar filtros"), " para pesquisar")), /*#__PURE__*/React.createElement("br", null))), /*#__PURE__*/React.createElement("div", {
     className: "row",
     style: {
       display: tipoConsulta === 2 ? '' : 'none'
@@ -131,7 +170,7 @@ const Consulta = () => {
   }, /*#__PURE__*/React.createElement(Ano, {
     addFilter: addFilter,
     removeFilter: removeFilter
-  }), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null)), /*#__PURE__*/React.createElement("div", {
+  })), /*#__PURE__*/React.createElement("div", {
     className: "col-md-4 col-xs-12"
   }, /*#__PURE__*/React.createElement(GrandeArea, {
     addFilter: addFilter,
@@ -170,7 +209,8 @@ const Consulta = () => {
     className: "col-12 text-center"
   }, /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("button", {
     className: "btn btn-primary btn-lg",
-    onClick: () => setAppliedFilters(filters)
+    onClick: () => setAppliedFilters(filters),
+    disabled: disabledAplicarFiltros
   }, "Aplicar Filtros"))), /*#__PURE__*/React.createElement("div", {
     className: "row",
     style: {
@@ -198,7 +238,19 @@ const Consulta = () => {
     className: "row"
   }, /*#__PURE__*/React.createElement("div", {
     className: "col"
-  }, /*#__PURE__*/React.createElement(List, null))));
+  }, /*#__PURE__*/React.createElement(List, {
+    items: politicas,
+    loading: loading
+  }))), /*#__PURE__*/React.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "col"
+  }, /*#__PURE__*/React.createElement(Paginate, {
+    setPage: setPage,
+    total: total,
+    page: page,
+    perPage: perPage
+  }))));
 };
 
 ReactDOM.render( /*#__PURE__*/React.createElement(Consulta, null), document.getElementById('consulta'));

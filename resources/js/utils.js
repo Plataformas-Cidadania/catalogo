@@ -23,3 +23,12 @@ function numberDecimalPtBR(number, decimals){
         maximumFractionDigits: decimals
     }).format(number);
 }
+
+function formatDate(date){
+    let data = new Date(date);
+    return ((data.getDate() )) + "/" + ((data.getMonth() + 1)) + "/" + data.getFullYear();
+}
+
+
+
+

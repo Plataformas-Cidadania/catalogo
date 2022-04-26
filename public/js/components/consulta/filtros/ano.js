@@ -55,7 +55,11 @@ const Ano = props => {
     }
   }, [from, to]);
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
-    htmlFor: ""
+    htmlFor: "",
+    style: {
+      fontSize: '15px',
+      fontWeight: 'bold'
+    }
   }, "Per\xEDodo"), /*#__PURE__*/React.createElement("input", {
     type: "text",
     id: "range",

@@ -140,8 +140,8 @@ const SearchField = (props) => {
     }
 
     return (
-        <div ref={wrapperRef[props.id]}>
-            <label htmlFor={props.id}>{props.label}</label>
+        <div ref={wrapperRef[props.id]} style={{marginTop: '10px'}}>
+            <label htmlFor={props.id} style={{fontSize: '15px', fontWeight: 'bold'}}>{props.label}</label>
             <div
                 style={{
                     border: 'solid 1px #ccc',
@@ -162,8 +162,9 @@ const SearchField = (props) => {
                                     borderRadius: "3px",
                                     backgroundColor: '#dedede',
                                     padding: '4px',
-                                    fontSize: '12px'
+                                    fontSize: '14px'
                                 }}
+                                title={item[props.column]}
                             >
                                 {item[props.column].substring(0, 20)}
                                 &nbsp;&nbsp;
@@ -195,7 +196,7 @@ const SearchField = (props) => {
                             showItems.map((item, key) => {
                                 if(!itemsSelected.includes(item)){
                                     return (
-                                        <li key={props.name + key} onClick={addItem(item)}>
+                                        <li key={props.name + key} style={{fontSize: '16px'}} onClick={addItem(item)}>
                                             {item[column]}
                                         </li>
                                     );
