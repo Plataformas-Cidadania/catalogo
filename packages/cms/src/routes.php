@@ -220,6 +220,9 @@ Route::group(['middleware' => 'cms'], function () {
         Route::get('/cms/categorias-politicas', 'Cms\Controllers\CategoriaPoliticaController@index');
         Route::get('/cms/categoria-politica/{id}', 'Cms\Controllers\CategoriaPoliticaController@detalhar');
 
+        //Politica
+        Route::get('/cms/politicas', 'Cms\Controllers\PoliticaController@index');
+        Route::get('/cms/politica/{id}', 'Cms\Controllers\PoliticaController@detalhar');
         ////////////////////////////////////////////////////////////////////////////////////
 
 

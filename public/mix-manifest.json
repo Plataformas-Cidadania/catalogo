@@ -51,5 +51,7 @@
     "/assets-cms/js/controllers/publicoAlvoCtrl.js": "/assets-cms/js/controllers/publicoAlvoCtrl.js",
     "/assets-cms/js/controllers/alterarPublicoAlvoCtrl.js": "/assets-cms/js/controllers/alterarPublicoAlvoCtrl.js",
     "/assets-cms/js/controllers/categoriaPoliticaCtrl.js": "/assets-cms/js/controllers/categoriaPoliticaCtrl.js",
-    "/assets-cms/js/controllers/alterarCategoriaPoliticaCtrl.js": "/assets-cms/js/controllers/alterarCategoriaPoliticaCtrl.js"
+    "/assets-cms/js/controllers/alterarCategoriaPoliticaCtrl.js": "/assets-cms/js/controllers/alterarCategoriaPoliticaCtrl.js",
+    "/assets-cms/js/controllers/politicaCtrl.js": "/assets-cms/js/controllers/politicaCtrl.js",
+    "/assets-cms/js/controllers/alterarPoliticaCtrl.js": "/assets-cms/js/controllers/alterarPoliticaCtrl.js"
 }
