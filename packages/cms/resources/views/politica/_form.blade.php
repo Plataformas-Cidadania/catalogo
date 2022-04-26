@@ -43,31 +43,47 @@
 
 <label for="nome">Nome *</label>
 <input type="text" name="nome" class="form-control width-grande <% validar(politica.nome)%>" ng-model="politica.nome" ng-required="true">
+<br>
 
 <label for="ano">Ano *</label>
 <input type="number" name="ano" class="form-control width-grande <% validar(politica.ano)%>" ng-model="politica.ano" ng-required="true">
+<br>
 
 <label for="medida_provisoria">Medida Provisória</label>
 <input type="text" name="medida_provisoria" class="form-control width-medio <% validar(politica.medida_provisoria)%>" ng-model="politica.medida_provisoria" ng-required="true">
+<br>
 
 <label for="medida_provisoria_inicio_vigencia">Medida Provisória Início Vigência</label>
 <input type="text" name="medida_provisoria_inicio_vigencia" class="form-control width-medio <% validar(politica.medida_provisoria_inicio_vigencia)%>" ng-model="politica.medida_provisoria_inicio_vigencia" ng-required="true">
+<br>
 
 <label for="legislacao">Legislação</label>
 <input type="text" name="legislacao" class="form-control width-grande <% validar(politica.legislacao)%>" ng-model="politica.legislacao" ng-required="false">
+<br>
 
 <label for="vigencia_inicio">Vigência Início</label>
 <input type="date" name="vigencia_inicio" class="form-control width-grande <% validar(politica.vigencia_inicio)%>" ng-model="politica.vigencia_inicio" ng-required="false">
+<br>
 
 <label for="vigencia_fim">Vigência Fim</label>
 <input type="date" name="vigencia_fim" class="form-control width-grande <% validar(politica.vigencia_fim)%>" ng-model="politica.vigencia_fim" ng-required="true">
+<br>
 
 <label for="acao_orcamentaria_assoc">Ação Orçamentária Assoc</label>
 <input type="text" name="acao_orcamentaria_assoc" class="form-control width-grande <% validar(politica.acao_orcamentaria_assoc)%>" ng-model="politica.acao_orcamentaria_assoc" ng-required="true">
+<br>
 
 <label for="objetivos">Objetivos</label>
-<textarea name="objetitos" rows="20" class="form-control width-grande <% validar(politica.objetivos)%>" ng-model="politica.objetivos"></textarea>
+<textarea name="objetitos" rows="10" class="form-control width-grande <% validar(politica.objetivos)%>" ng-model="politica.objetivos"></textarea>
+<br>
 
+<label for="observacao">Observação</label>
+<textarea name="observacao" rows="10" class="form-control width-grande <% validar(politica.observacao)%>" ng-model="politica.observacao"></textarea>
+<br>
+
+<label for="publico_alvo_categ">Público Alvo Categ</label>
+<input type="text" name="publico_alvo_categ" class="form-control width-grande <% validar(politica.publico_alvo_categ)%>" ng-model="politica.publico_alvo_categ" ng-required="false">
+<br>
 
 {{--
 {!! Form::label('observacao', 'Observacao ') !!}<br>
