@@ -41,10 +41,34 @@ class PrintController extends Controller{
     public function timeline($area_id){
         $timeline = $this->politicaController->getTimelineArea($area_id);
         $area = $this->areaController->get($area_id);
-        ///$timeline = (object) $timeline;
+
+        //Ordena as policias por ano-----------------------------
+        $anos = array();
+        foreach ($timeline as $key => $item)
+        {
+            $item['ano'] = substr($item['ano'], 0, 4);
+            $anos[$key] = $item['ano'];
+        }
+        array_multisort($anos, SORT_ASC, $timeline);
+        //--------------------------------------------------------
+
+        //reorganiza a timeline agrupada por anos
+        $newTimeline = [];
+        foreach($timeline as $item){
+            //cria a key ano dentro do objeto de area com um array vazio
+            $item['ano'] = substr($item['ano'], 0, 4);
+            if(!array_key_exists(substr($item['ano'], 0, 4), $newTimeline)){
+                $newTimeline[$item['ano']] = [];
+            }
+            //adiciona um array de politica no array do ano
+            $newTimeline[$item['ano']][] = [
+                "nome" => $item['nome']
+            ];
+        }
+
+        $timeline = $newTimeline;
 
         //return $timeline;
-        //return count($timeline);
 
         return view('prints.timeline', ['timeline' => $timeline, 'area' => $area]);
 

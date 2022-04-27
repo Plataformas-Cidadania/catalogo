@@ -12,9 +12,12 @@
 </head>
 <body>
     <h1>{{$area['nome']}}</h1>
-    @foreach($timeline as $politica)
-        <p>{{substr($politica['ano'], 0 , 4)}}</p>
-        <p>{{$politica['nome']}}</p>
+    @foreach($timeline as $ano => $politicas)
+        <h3>{{$ano}}</h3>
+        @foreach($politicas as $politica)
+            <p>{{$politica['nome']}}</p>
+        @endforeach
+
     @endforeach
 </body>
 </html>
