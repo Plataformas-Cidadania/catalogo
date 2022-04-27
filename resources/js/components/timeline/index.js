@@ -63,15 +63,15 @@ const TimelineIndex = () => {
             //newAreas[item.area][item.ano].push({
             newAreas[item.area][item.ano.substring(0, 4)].push({
                 id: item.id,
-                nome_politica: item.nome
-                //nome_politica: item.nome_politica
+                nome_politica: item.nome,
+                area_id: item.area_id,
             })
         });
 
         return newAreas;
     }
 
-    const addRemoveTimeline = (area) => {
+    const addRemoveTimeline = (area, area_id) => {
         let newTimelines = [...timelines];
 
         //Testa se já foi inserido a timeline da área e então remove
@@ -84,16 +84,17 @@ const TimelineIndex = () => {
         //adiciona a timeline da área
         newTimelines.push({
             area: area,
+            area_id: area_id,
             anos: areas[area]
         });
-        console.log(newTimelines);
+        //console.log(newTimelines);
         setTimelines(newTimelines);
     }
 
     const removeTimeLine = (area) => {
         let newTimelines = [...timelines];
         newTimelines = newTimelines.filter((item,) => item.area !== area);
-        console.log(newTimelines);
+        //console.log(newTimelines);
         setTimelines(newTimelines);
     }
 
@@ -102,7 +103,7 @@ const TimelineIndex = () => {
         for(let i in anos){
             arrayAnos.push(i);
         }
-        console.log(arrayAnos);
+        //console.log(arrayAnos);
         return arrayAnos;
     }
 
@@ -115,10 +116,11 @@ const TimelineIndex = () => {
                     <ul className="menu-left">
                         {
                             Object.entries(areas).map((area, key) => {
+                                const area_id = area[1][Object.keys(area[1])[0]][0].area_id;
                                 return (
                                     <li
                                         key={"area_"+key}
-                                        onClick={() => addRemoveTimeline(area[0])}
+                                        onClick={() => addRemoveTimeline(area[0], area_id)}
                                         style={{
                                             cursor: 'pointer',
                                             backgroundColor: (timelines.find((item) => item.area === area[0]) ? "#f6f6f6" : "#fff")
@@ -165,7 +167,6 @@ const TimelineIndex = () => {
                         <div className="col-12">
                             {
                                 timelines.map((item, key) => {
-
                                     return (
                                         <div key={item.area+"_timeline_"+key}>
                                             <h3>
@@ -179,7 +180,7 @@ const TimelineIndex = () => {
                                                         <i className="fa fa-times"/>
                                                     </div>
                                                     <div className="col-md-1">
-                                                        <a href={"/imprimir-timeline/10"} target="_blank">
+                                                        <a href={"/imprimir-timeline/"+item.area_id} target="_blank">
                                                             <i className="fas fa-print cursor"/>
                                                         </a>
                                                     </div>
