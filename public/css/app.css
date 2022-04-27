@@ -13827,6 +13827,10 @@ gi .dorder-container {
   height: 80px;
 }
 
+.box-list-icon-i img {
+  padding: 10px;
+}
+
 .box-list-icon svg {
   color: #FFFFFF;
   padding: 2px;
@@ -13855,6 +13859,7 @@ gi .dorder-container {
 .box-list-icon:hover {
   background-color: #00AFA4;
   color: #FFFFFF;
+  transform: scale(1.1);
 }
 
 .bg-img-l {
