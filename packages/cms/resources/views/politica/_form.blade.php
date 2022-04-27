@@ -46,7 +46,7 @@
 <br>
 
 <label for="ano">Ano *</label>
-<input type="number" name="ano" class="form-control width-grande <% validar(politica.ano)%>" ng-model="politica.ano" ng-required="true">
+<input type="number" name="ano" class="form-control width-pequeno <% validar(politica.ano)%>" ng-model="politica.ano" ng-required="true" min="1900" max="2100">
 <br>
 
 <label for="medida_provisoria">Medida Provisória</label>
@@ -62,15 +62,11 @@
 <br>
 
 <label for="vigencia_inicio">Vigência Início</label>
-<input type="date" name="vigencia_inicio" class="form-control width-grande <% validar(politica.vigencia_inicio)%>" ng-model="politica.vigencia_inicio" ng-required="false">
+<input type="date" name="vigencia_inicio" class="form-control width-medio <% validar(politica.vigencia_inicio)%>" ng-model="politica.vigencia_inicio" ng-required="false">
 <br>
 
 <label for="vigencia_fim">Vigência Fim</label>
-<input type="date" name="vigencia_fim" class="form-control width-grande <% validar(politica.vigencia_fim)%>" ng-model="politica.vigencia_fim" ng-required="true">
-<br>
-
-<label for="acao_orcamentaria_assoc">Ação Orçamentária Assoc</label>
-<input type="text" name="acao_orcamentaria_assoc" class="form-control width-grande <% validar(politica.acao_orcamentaria_assoc)%>" ng-model="politica.acao_orcamentaria_assoc" ng-required="true">
+<input type="date" name="vigencia_fim" class="form-control width-medio <% validar(politica.vigencia_fim)%>" ng-model="politica.vigencia_fim" ng-required="true">
 <br>
 
 <label for="objetivos">Objetivos</label>
@@ -79,6 +75,31 @@
 
 <label for="observacao">Observação</label>
 <textarea name="observacao" rows="10" class="form-control width-grande <% validar(politica.observacao)%>" ng-model="politica.observacao"></textarea>
+<br>
+
+<?php
+    $instrumentos_legais = ['Resolução','Projeto de Lei','Portaria',
+        'Norma de execução','Norma operacional','Lei ordinária','Medida Provisória',
+        'Decreto','Decreto-Lei','Instrução Normativa','Lei Complementar','Não se aplica'];
+?>
+
+<label for="acao_orcamentaria_assoc">Ação Orçamentária Assoc</label>
+<input type="text" name="acao_orcamentaria_assoc" class="form-control width-grande <% validar(politica.acao_orcamentaria_assoc)%>" ng-model="politica.acao_orcamentaria_assoc" ng-required="true">
+<br>
+
+<label for="instrumento_legal">Instrumento Legal</label>
+<select
+    name="instrumento_legal"
+    class="form-control width-medio"
+    ng-model="politica.instrumento_legal"
+    ng-init="politica.instrumento_legal = null"
+    placeholder="Selecione"
+>
+    <option value="">Selecione</option>
+    <?php foreach ($instrumentos_legais as $instrumento_legal) { ?>
+    <option value="{{$instrumento_legal}}">{{$instrumento_legal}}</option>
+    <?php } ?>
+</select>
 <br>
 
 <label for="publico_alvo_categ">Público Alvo Categ</label>
