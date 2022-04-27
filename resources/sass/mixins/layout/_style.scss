@@ -446,12 +446,18 @@ figcaption{
 .timeline-ano{
     position: absolute;
     bottom: -100px;
-    left: 125px;//85px
+    /*left: 125px;*///85px
+    margin: auto;
+    text-align: center;
+    width: 100%;
 }
 .timeline-ano-2{
     position: absolute;
     top: -90px;
-    left: 125px;//85px
+    /*left: 125px;*///85px
+    margin: auto;
+    text-align: center;
+    width: 100%;
 }
 .timeline-ul{
     margin: 0;

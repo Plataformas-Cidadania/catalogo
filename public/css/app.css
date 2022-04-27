@@ -12523,13 +12523,19 @@ figcaption {
 .timeline-ano {
   position: absolute;
   bottom: -100px;
-  left: 125px;
+  /*left: 125px;*/
+  margin: auto;
+  text-align: center;
+  width: 100%;
 }
 
 .timeline-ano-2 {
   position: absolute;
   top: -90px;
-  left: 125px;
+  /*left: 125px;*/
+  margin: auto;
+  text-align: center;
+  width: 100%;
 }
 
 .timeline-ul {
@@ -13889,8 +13895,7 @@ gi .dorder-container {
   border-radius: 5px;
   float: right;
   width: 97px;
-  margin-top: 5px;
-  margin-left: 110px;
+  margin: auto;
 }
 
 /**/
