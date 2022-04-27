@@ -3,10 +3,28 @@
 @section('description', 'Uma plataforma de transparência pública colaborativa, que reúne dados das organizações da sociedade civil de todo o Brasil')
 @section('content')
 
+    <?php
+        $colors = ['bg-pri', 'bg-sec', 'bg-ter'];
+    ?>
+
 
     <div class="container">
         <div class="row">
+
+            @foreach($destaques as $key => $destaque)
             <div class="col-md-4">
+                <a href="{{$destaque->slug}}">
+                    <div class="box {{$colors[$key]}}">
+                        <img src="/img/pre-img.gif" data-src="/imagens/parceiros/md-{{$destaque->imagem}}" alt="Imagem sobre {{$destaque->titulo}}" title="Imagem sobre {{$destaque->titulo}}" width="100" class="lazyload">
+                        {{--<i class="far fa-gem fa-4x m-5"></i>--}}
+                        <h2>{{$destaque->titulo}}</h2>
+                        <p>{{$destaque->resumida}}</p>
+                    </div>
+                </a>
+            </div>
+            @endforeach
+
+            {{--<div class="col-md-4">
                 <a href="areas-tematicas">
                     <div class="box bg-pri">
                         <i class="far fa-gem fa-4x m-5"></i>
@@ -32,7 +50,7 @@
                         <p>Apesar de constituírem um elemento básico de organização da atuação governamental, de perpassarem cotidianamente o debate público</p>
                     </div>
                 </a>
-            </div>
+            </div>--}}
         </div>
     </div>
 

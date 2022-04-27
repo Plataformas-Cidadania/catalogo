@@ -11,17 +11,16 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
-class RecursoController extends Controller{
+class TimelineController extends Controller{
 
-    public function listar(){
+    public function timeline(){
+
 
         $rota = Route::getCurrentRoute()->uri();
+        $destaques = \App\Models\Modulo::where('slug', $rota)->first();
 
-        $modulo = \App\Models\Modulo::first();
-
-        return view('recurso.listar', [
-            'page' => $modulo,
-        ]);
-
+        return view('timeline.index', ['destaques' => $destaques]);
     }
+
 }
+

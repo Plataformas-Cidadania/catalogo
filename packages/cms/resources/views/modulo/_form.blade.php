@@ -11,6 +11,9 @@ null, ['class'=>"form-control width-medio <% validar(modulo.tipo_id) %>", 'ng-mo
 {!! Form::label('titulo', 'Título *') !!}<br>
 {!! Form::text('titulo', null, ['class'=>"form-control width-grande <% validar(modulo.titulo) %>", 'ng-model'=>'modulo.titulo', 'ng-required'=>'true', 'init-model'=>'modulo.titulo', 'placeholder' => '']) !!}<br>
 
+{!! Form::label('resumida', 'Chamada') !!}<br>
+{!! Form::text('resumida', null, ['class'=>"form-control width-grande <% validar(modulo.resumida) %>", 'ng-model'=>'modulo.resumida', 'init-model'=>'modulo.resumida', 'placeholder' => '']) !!}<br>
+
 {!! Form::label('slug', 'slug *') !!}<br>
 {!! Form::text('slug', null, ['class'=>"form-control width-medio <% validar(modulo.slug) %>", 'ng-model'=>'modulo.slug', 'ng-required'=>'true', 'init-model'=>'modulo.slug', 'placeholder' => '']) !!}<br>
 

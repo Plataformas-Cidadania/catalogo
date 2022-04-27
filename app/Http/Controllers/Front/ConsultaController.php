@@ -11,18 +11,17 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
-class ResultadoController extends Controller{
+class ConsultaController extends Controller{
 
-    public function listar(){
+    public function consulta(){
 
-        //$rota = Route::getCurrentRoute()->uri();
-        //$modulo = \App\Models\Modulo::first();
 
-        return view('resultado.listar');
+        $rota = Route::getCurrentRoute()->uri();
+        $destaques = \App\Models\Modulo::where('slug', $rota)->first();
 
+        return view('consulta.index', ['destaques' => $destaques]);
     }
 
-    public function print(){
-        return view('resultado.print');
-    }
+
 }
+
