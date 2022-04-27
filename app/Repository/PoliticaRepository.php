@@ -49,7 +49,7 @@ class PoliticaRepository extends BaseRepository
             ->with('politica_publico_alvo');
 
         if($data['politica']){
-            $models->where('nome','LIKE', '%'.$data['politica'].'%');
+            $models->where('nome','ILIKE', '%'.$data['politica'].'%');
         }
         if($data['ano']){
                 $startDate = Carbon::createFromFormat('Y', $data['ano']['inicio']);
@@ -66,7 +66,7 @@ class PoliticaRepository extends BaseRepository
             $models->whereHas('politica_publico_alvo', function($q) use($data) {
                 $q->whereIn('publico_alvo_id', $data['publico_alvo']);
             })->get();
-        return $models->get();
+        return $models->paginate(30);
 
 
         $arr = [];

@@ -91,6 +91,7 @@ const Consulta = () => {
   }, [filters]);
   useEffect(() => {
     setTextPoliticaAlterado(false);
+    setPage(0);
     list();
   }, [appliedFilters]);
   useEffect(() => {
@@ -161,12 +162,13 @@ const Consulta = () => {
       "area": area,
       "orgao": orgao,
       "tipo_politica": tipo_politica,
-      "publico_alvo": publico_alvo
+      "publico_alvo": publico_alvo,
+      "page": page + 1
     });
-    let newPoliticas = result.data;
+    let newPoliticas = result.data.data;
     newPoliticas = newPoliticas.splice(0, 30);
     setPoliticas(newPoliticas);
-    setTotal(result.data.length);
+    setTotal(result.data.total);
     setLoading(false);
   };
 
