@@ -59,6 +59,7 @@ const TimelineIndex = () => {
 
 
       newAreas[item.area][item.ano.substring(0, 4)].push({
+        id: item.id,
         nome_politica: item.nome //nome_politica: item.nome_politica
 
       });

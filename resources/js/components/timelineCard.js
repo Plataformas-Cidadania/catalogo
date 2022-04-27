@@ -142,7 +142,7 @@ const Timeline = (props) => {
                                                         {
                                                             politicas.map((politica, index) => {
 
-                                                                let id = 1;
+
                                                                 return (
                                                                     <div key={props.item.area+"_politica_"+key.toString()+index}
                                                                         /*className="card"*/
@@ -155,7 +155,7 @@ const Timeline = (props) => {
                                                                         </div>
                                                                         {/*<a href={'politica/' + politica.id+'/' + politica.id} style={{textAlign: 'end'}}>*/}
                                                                         <div className="btn-p">
-                                                                            <a href="politica/10/plano-nacional-de-saneamento-basico-plansab" >
+                                                                            <a href={"politica/" + politica.id + "/" + clean(politica.nome_politica)} >
                                                                                 <span style={{fontWeight: 'bold'}}>acessar</span> <i className="far fa-arrow-alt-circle-right"/>
                                                                             </a>
                                                                         </div>

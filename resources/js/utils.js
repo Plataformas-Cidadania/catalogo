@@ -29,6 +29,19 @@ function formatDate(date){
     return ((data.getDate() )) + "/" + ((data.getMonth() + 1)) + "/" + data.getFullYear();
 }
 
+function clean(text){
+    text = text.toLowerCase();
+    text = text.replace(/[áàãâä]/g,'a');
+    text = text.replace(/[éèêë]/g,'e');
+    text = text.replace(/[íìîï]/g,'i');
+    text = text.replace(/[óòõôö]/g,'o');
+    text = text.replace(/[úùûü]/g,'u');
+    text = text.replace(/[ç]/g,'c');
 
+    text = text.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()'"]/g,'');
+    text = text.replace(/[ ]/g,'-');
+
+    return text;
+}
 
 

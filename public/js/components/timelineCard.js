@@ -126,7 +126,6 @@ const Timeline = props => {
       id: props.item.area + "_ano_" + key,
       className: "stack"
     }, politicas.map((politica, index) => {
-      let id = 1;
       return /*#__PURE__*/React.createElement("div", {
         key: props.item.area + "_politica_" + key.toString() + index
         /*className="card"*/
@@ -145,7 +144,7 @@ const Timeline = props => {
       }, politica.nome_politica), /*#__PURE__*/React.createElement("div", {
         className: "btn-p"
       }, /*#__PURE__*/React.createElement("a", {
-        href: "politica/10/plano-nacional-de-saneamento-basico-plansab"
+        href: "politica/" + politica.id + "/" + clean(politica.nome_politica)
       }, /*#__PURE__*/React.createElement("span", {
         style: {
           fontWeight: 'bold'
