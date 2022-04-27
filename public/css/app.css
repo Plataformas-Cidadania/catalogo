@@ -13816,6 +13816,7 @@ gi .dorder-container {
   padding: 15px;
   transition: 0.5s;
   text-align: center;
+  border-radius: 10px;
 }
 
 .box-list-icon-i {
@@ -13901,6 +13902,11 @@ gi .dorder-container {
   float: right;
   width: 97px;
   margin: auto;
+}
+
+.box-icone {
+  padding: 30px;
+  border-radius: 15px;
 }
 
 /**/
