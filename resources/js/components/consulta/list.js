@@ -37,8 +37,8 @@ const List = (props) => {
                                 return (
                                     <tr>
                                         <td>{item.nome}</td>
-                                        <td>{item.grande_area}</td>
-                                        <td>{item.area}</td>
+                                        <td>{item.grande_area.nome}</td>
+                                        <td>{item.area.nome}</td>
                                         <td>{item.ano.substring(0, 4)}</td>
                                         <td>{item.vigencia_inicio}</td>
                                     </tr>

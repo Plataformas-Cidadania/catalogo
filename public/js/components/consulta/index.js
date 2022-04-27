@@ -118,7 +118,51 @@ const Consulta = () => {
     setLoading(true);
     setShowMessageFiltroPolitica(false);
     setDisabledAplicarFiltros(true);
-    const result = await axios.get('api/politica');
+    console.log(appliedFilters);
+    let politica = appliedFilters.politica ? appliedFilters.politica : "";
+    let ano = appliedFilters.ano ? {
+      "inicio": appliedFilters.ano.inicio,
+      "fim": appliedFilters.ano.fim
+    } : null;
+    let grande_area = [];
+
+    if (appliedFilters.grande_area) {
+      grande_area = appliedFilters.grande_area.map(item => item.id);
+    }
+
+    let area = [];
+
+    if (appliedFilters.area) {
+      area = appliedFilters.area.map(item => item.id);
+    }
+
+    let orgao = [];
+
+    if (appliedFilters.orgao) {
+      orgao = appliedFilters.orgao.map(item => item.id);
+    }
+
+    let tipo_politica = [];
+
+    if (appliedFilters.tipo_politica) {
+      tipo_politica = appliedFilters.tipo_politica.map(item => item.id);
+    }
+
+    let publico_alvo = [];
+
+    if (appliedFilters.tipo_politica) {
+      publico_alvo = appliedFilters.tipo_politica.map(item => item.id);
+    }
+
+    const result = await axios.post('api/politica/buscaAvancada', {
+      "politica": politica,
+      "ano": ano,
+      "grande_area": grande_area,
+      "area": area,
+      "orgao": orgao,
+      "tipo_politica": tipo_politica,
+      "publico_alvo": publico_alvo
+    });
     let newPoliticas = result.data;
     newPoliticas = newPoliticas.splice(0, 30);
     setPoliticas(newPoliticas);
