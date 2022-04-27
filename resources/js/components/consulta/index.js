@@ -123,6 +123,10 @@ const Consulta = () => {
         if(appliedFilters.area){
             area = appliedFilters.area.map(item => item.id);
         }
+        let categoria = [];
+        if(appliedFilters.categoria){
+            categoria = appliedFilters.categoria.map(item => item.id);
+        }
         let orgao = [];
         if(appliedFilters.orgao){
             orgao = appliedFilters.orgao.map(item => item.id);
@@ -132,8 +136,8 @@ const Consulta = () => {
             tipo_politica = appliedFilters.tipo_politica.map(item => item.id);
         }
         let publico_alvo = [];
-        if(appliedFilters.tipo_politica){
-            publico_alvo = appliedFilters.tipo_politica.map(item => item.id);
+        if(appliedFilters.publico_alvo){
+            publico_alvo = appliedFilters.publico_alvo.map(item => item.id);
         }
 
         const result = await axios.post('api/politica/buscaAvancada', {
@@ -141,6 +145,7 @@ const Consulta = () => {
             "ano": ano,
             "grande_area": grande_area,
             "area": area,
+            "categoria": categoria,
             "orgao": orgao,
             "tipo_politica": tipo_politica,
             "publico_alvo": publico_alvo,
