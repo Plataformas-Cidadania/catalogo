@@ -118,8 +118,8 @@ const Consulta = () => {
   const list = async () => {
     setLoading(true);
     setShowMessageFiltroPolitica(false);
-    setDisabledAplicarFiltros(true);
-    console.log(appliedFilters);
+    setDisabledAplicarFiltros(true); //console.log(appliedFilters);
+
     let politica = appliedFilters.politica ? appliedFilters.politica : "";
     let ano = appliedFilters.ano ? {
       "inicio": appliedFilters.ano.inicio,

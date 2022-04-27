@@ -36,7 +36,7 @@ const List = (props) => {
                             items.map((item) => {
                                 return (
                                     <tr>
-                                        <td>{item.nome}</td>
+                                        <td><a href={"politica/"+item.id+"/"+clean(item.nome)}>{item.nome}</a></td>
                                         <td>{item.grande_area.nome}</td>
                                         <td>{item.area.nome}</td>
                                         <td>{item.ano.substring(0, 4)}</td>

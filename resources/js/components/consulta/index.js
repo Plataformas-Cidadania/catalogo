@@ -112,7 +112,7 @@ const Consulta = () => {
         setShowMessageFiltroPolitica(false);
         setDisabledAplicarFiltros(true);
 
-        console.log(appliedFilters);
+        //console.log(appliedFilters);
         let politica = appliedFilters.politica ? appliedFilters.politica : "";
         let ano = appliedFilters.ano ? {"inicio": appliedFilters.ano.inicio, "fim": appliedFilters.ano.fim} : null;
         let grande_area = [];

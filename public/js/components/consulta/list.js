@@ -20,7 +20,9 @@ const List = props => {
   }, /*#__PURE__*/React.createElement("i", {
     className: "fa fa-spinner fa-spin fa-4x"
   })))) : items.length > 0 ? items.map(item => {
-    return /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, item.nome), /*#__PURE__*/React.createElement("td", null, item.grande_area.nome), /*#__PURE__*/React.createElement("td", null, item.area.nome), /*#__PURE__*/React.createElement("td", null, item.ano.substring(0, 4)), /*#__PURE__*/React.createElement("td", null, item.vigencia_inicio));
+    return /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("a", {
+      href: "politica/" + item.id + "/" + clean(item.nome)
+    }, item.nome)), /*#__PURE__*/React.createElement("td", null, item.grande_area.nome), /*#__PURE__*/React.createElement("td", null, item.area.nome), /*#__PURE__*/React.createElement("td", null, item.ano.substring(0, 4)), /*#__PURE__*/React.createElement("td", null, item.vigencia_inicio));
   }) : /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {
     colSpan: 5
   }, /*#__PURE__*/React.createElement("h4", {
