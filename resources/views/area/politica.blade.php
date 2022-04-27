@@ -24,6 +24,7 @@
             /*width: 220px;*/
             min-height: 220px;
             /*border-radius:50%;*/
+            border-radius:10%;
             text-align: center;
             color: #FFFFFF;
             border: 10px double #FFFFFF;
