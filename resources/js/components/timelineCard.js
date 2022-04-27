@@ -150,7 +150,7 @@ const Timeline = (props) => {
                                                                          className={"card-tl cor"+index}
                                                                          onClick={swap2}
                                                                     >
-                                                                        <div className="text-start" style={{overflow: 'auto', height: '57px'}} onClick={swap2}>
+                                                                        <div className="text-start" style={{overflow: 'auto', height: '57px', marginBottom: '8px'}} onClick={swap2}>
                                                                             {politica.nome_politica}
                                                                         </div>
                                                                         {/*<a href={'politica/' + politica.id+'/' + politica.id} style={{textAlign: 'end'}}>*/}

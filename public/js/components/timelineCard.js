@@ -138,7 +138,8 @@ const Timeline = props => {
         className: "text-start",
         style: {
           overflow: 'auto',
-          height: '57px'
+          height: '57px',
+          marginBottom: '8px'
         },
         onClick: swap2
       }, politica.nome_politica), /*#__PURE__*/React.createElement("div", {
