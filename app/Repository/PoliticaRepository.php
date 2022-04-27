@@ -32,6 +32,7 @@ class PoliticaRepository extends BaseRepository
             $tmp['nome'] = $modelArr['nome'];
             $tmp['ano'] = $modelArr['ano'];
             $tmp['area'] = $modelArr['area']['nome'];
+            $tmp['area_id'] = $modelArr['area']['id'];
             array_push($arr, $tmp);
         }
         return $arr;
