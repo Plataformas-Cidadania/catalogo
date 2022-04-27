@@ -115,6 +115,34 @@ class PoliticaController extends Controller
         }
     }
 
+
+    /**
+     * Faz uma busca avançada
+     *
+     * @param Request $request
+     *
+     * @return Mix
+     */
+    public function buscaAvancada(Request $request)
+    {
+        try {
+            $validator = $this->getValidator($request);
+
+            //$data = $this->getData($request);
+            $data['politica'] = $request->get('politica');
+            $data['ano'] = $request->get('ano');
+            $data['grande_area'] = $request->get('grande_area');
+            $data['area'] = $request->get('area');
+            $data['orgao'] = $request->get('orgao');
+            $data['tipo_politica'] = $request->get('tipo_politica');
+            $data['publico_alvo'] = $request->get('publico_alvo');
+
+            return $this->repo->buscaAvancada($data);
+
+        } catch (Exception $exception) {
+            return $this->errorResponse('Erro inesperado.'.$exception);
+        }
+    }
     /**
      * Atualizar especificado pelo id
      *

@@ -153,6 +153,9 @@ Route::group([
      Route::get('area/{id_area}',[App\Http\Controllers\Api\PoliticaController::class, 'get'])
          ->name('api.politica.get');
 
+     Route::post('/buscaAvancada', [App\Http\Controllers\Api\PoliticaController::class, 'buscaAvancada'])
+         ->name('api.politica.buscaAvancada');
+
 
  });
 
@@ -246,3 +249,4 @@ Route::group([
     Route::delete('/{id_politica}/{id_categoria}',[App\Http\Controllers\Api\PoliticaPublicoAlvoController::class, 'destroy'])
         ->name('api.politica_publico_alvo.destroy');
 });
+
