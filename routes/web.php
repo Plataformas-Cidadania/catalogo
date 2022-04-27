@@ -144,4 +144,4 @@ Route::get('/area-tematica/{id}/{titulo}', [AreaController::class , 'detalhar'])
 Route::get('/politica/{id}/{titulo}', [PoliticaController::class , 'politica']);
 
 Route::get('/imprimir-politica/{id}', [PrintController::class , 'politica']);
-Route::get('/imprimir-timeline/{id}', [PrintController::class , 'timeline']);
+Route::get('/imprimir-timeline/{area_id}', [PrintController::class , 'timeline']);

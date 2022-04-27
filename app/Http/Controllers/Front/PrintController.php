@@ -14,9 +14,14 @@ use Illuminate\Support\Facades\Route;
 class PrintController extends Controller{
 
     private $politicaController;
+    private $areaController;
 
-    public function __construct(\App\Http\Controllers\Api\PoliticaController $politicaController){
+    public function __construct(
+        \App\Http\Controllers\Api\PoliticaController $politicaController,
+        \App\Http\Controllers\Api\AreaController $areaController
+    ){
         $this->politicaController = $politicaController;
+        $this->areaController = $areaController;
     }
 
 
@@ -33,14 +38,15 @@ class PrintController extends Controller{
 
 
 
-    public function timeline($id){
-        $timeline = $this->politicaController->get($id);
-        $timeline = (object) $timeline;
+    public function timeline($area_id){
+        $timeline = $this->politicaController->getTimelineArea($area_id);
+        $area = $this->areaController->get($area_id);
+        ///$timeline = (object) $timeline;
 
         //return $timeline;
         //return count($timeline);
 
-        return view('prints.timeline', ['timeline' => $timeline]);
+        return view('prints.timeline', ['timeline' => $timeline, 'area' => $area]);
 
     }
 
