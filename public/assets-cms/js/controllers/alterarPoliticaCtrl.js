@@ -8,6 +8,13 @@ cmsApp.controller('alterarPoliticaCtrl', ['$scope', '$http', 'Upload', '$timeout
     $scope.tipo = null;
     $scope.formato = null;
 
+    $scope.grandes_areas = [];
+    $scope.grande_area = null;
+    $scope.areas = [];
+    $scope.area = null;
+    $scope.tipos_politicas = [];
+    $scope.tipo_politica = null;
+
     //ALTERAR/////////////////////////////
 
     $scope.tinymceOptions = tinymceOptions;
@@ -16,8 +23,57 @@ cmsApp.controller('alterarPoliticaCtrl', ['$scope', '$http', 'Upload', '$timeout
 
     $scope.removerImagem = false;
 
-    $scope.detalhar = function(id){
+    var listarGrandesAreas= function(){
         $scope.processandoDetalhar = true;
+        $http({
+            url: 'api/grande_area',
+            method: 'GET',
+            params: {
+
+            }
+        }).success(function(data, status, headers, config){
+            //console.log(data);
+            $scope.grandes_areas = data;
+            listarAreas();
+        }).error(function(data){
+            $scope.message = "Ocorreu um erro: "+data;
+        });
+    }
+
+    var listarAreas= function(){
+        $http({
+            url: 'api/area',
+            method: 'GET',
+            params: {
+
+            }
+        }).success(function(data, status, headers, config){
+            //console.log(data);
+            $scope.areas = data;
+            listarTipos();
+        }).error(function(data){
+            $scope.message = "Ocorreu um erro: "+data;
+        });
+    }
+
+    var listarTipos= function(){
+        $http({
+            url: 'api/tipo_politica',
+            method: 'GET',
+            params: {
+
+            }
+        }).success(function(data, status, headers, config){
+            //console.log(data);
+            $scope.tipos_politicas = data;
+            $scope.detalhar($scope.id);
+        }).error(function(data){
+            $scope.message = "Ocorreu um erro: "+data;
+        });
+    }
+
+    $scope.detalhar = function(id){
+        //$scope.processandoDetalhar = true;
         $http({
             url: 'api/politica/'+id,
             method: 'GET',
@@ -26,6 +82,28 @@ cmsApp.controller('alterarPoliticaCtrl', ['$scope', '$http', 'Upload', '$timeout
             }
         }).success(function(data, status, headers, config){
             $scope.politica = data;//data.data
+            $scope.politica.ano = parseInt($scope.politica.ano.substring(0, 4));
+
+            console.log($scope.politica.vigencia_inicio, $scope.politica.vigencia_fim);
+            $scope.politica.vigencia_inicio = new Date($scope.politica.vigencia_inicio+'T00:00');
+            $scope.politica.vigencia_fim = new Date($scope.politica.vigencia_fim+'T00:00');
+
+            $scope.grandes_areas.forEach(function (item){
+                if(item.id === $scope.politica.grande_area){
+                    $scope.grande_area = item;
+                }
+            });
+            $scope.areas.forEach(function (item){
+                if(item.id === $scope.politica.area){
+                    $scope.area = item;
+                }
+            });
+            $scope.tipos_politicas.forEach(function (item){
+                if(item.id === $scope.politica.tipo_politica){
+                    $scope.tipo_politica = item;
+                }
+            });
+
             $scope.processandoDetalhar = false;
         }).error(function(data){
             $scope.message = "Ocorreu um erro: "+data;
@@ -33,7 +111,7 @@ cmsApp.controller('alterarPoliticaCtrl', ['$scope', '$http', 'Upload', '$timeout
         });
     };
 
-
+    listarGrandesAreas();
 
 
     $scope.alterar = function (file){
