@@ -156,6 +156,8 @@ cmsApp.controller('politicaCtrl', ['$scope', '$http', 'Upload', '$timeout', func
         $scope.politica.tipo_politica = $scope.tipo_politica.id;
         $scope.politica.ano = $scope.politica.ano + '-01-01';
 
+        //console.log($scope.politica);
+
         if(file==null && arquivo==null){
             $scope.processandoInserir = true;
             $http.post("api/politica", $scope.politica).success(function (data){
@@ -259,7 +261,9 @@ cmsApp.controller('politicaCtrl', ['$scope', '$http', 'Upload', '$timeout', func
         });
     }
 
-
-
+    $scope.teste = function(){
+        console.log('teste');
+        console.log($scope.politica);
+    };
 
 }]);

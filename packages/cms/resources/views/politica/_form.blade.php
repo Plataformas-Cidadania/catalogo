@@ -100,7 +100,6 @@
     <option value="{{$instrumento_legal}}">{{$instrumento_legal}}</option>
     <?php } ?>
 </select>
-<br>
 
 <label for="publico_alvo_categ">Público Alvo Categ</label>
 <input type="text" name="publico_alvo_categ" class="form-control width-grande <% validar(politica.publico_alvo_categ)%>" ng-model="politica.publico_alvo_categ" ng-required="false">
