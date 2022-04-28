@@ -89,19 +89,19 @@
                         </thead>
                         <tbody>
                         <tr ng-repeat="politica in politicas">
-                            <td><% politica.id_politica %></td>
+                            <td><% politica.id %></td>
                            {{-- <td><img ng-show="politica.imagem" ng-src="imagens/politicas/xs-<% politica.imagem %>" width="60"></td>--}}
                             <td><% politica.nome %></td>
                             <td class="text-right">
                                 <div>
                                     {{--<a href="cms/items/<% politica.id %>"><i class="fa fa-sitemap fa-2x" title="Itens"></i></a>&nbsp;&nbsp;--}}
-                                    <a href="cms/politica/<% politica.id_politica %>"><i class="fa fa-edit fa-2x" title="Editar"></i></a>&nbsp;&nbsp;{{--<% mensagemStatus %><% idStatus %>--}}
-                                    {{--<a href="cms/links/<% politica.id_politica %>"><i class="fa fa-link fa-2x" title="Links"></i></a>&nbsp;&nbsp;--}}{{--<% mensagemStatus %><% idStatus %>--}}
-                                    {{--<a  ng-class="<% politica.status %> == 1 ? 'color-success' : 'color-success-inactive'"  style="cursor: pointer;"><i class="fa fa-check-circle fa-2x" aria-hidden="true" ng-click="status(politica.id_politica, politica.status);"></i></a>&nbsp;&nbsp;--}}
-                                    {{--<a><i data-toggle="modal" data-target="#modalIndicacao" class="fa fa-tachometer fa-2x" style="cursor:pointer;" ng-click="modalIndicacao(politica.id_politica, politica.nome)"></i></a>
-                                    <a><i data-toggle="modal" data-target="#modalCategorizacao" class="fa fa-cubes fa-2x" style="cursor:pointer;"  ng-click="modalCategorizacao(politica.id_politica, politica.nome)"></i></a>
-                                    <a><i data-toggle="modal" data-target="#modalAutoria" class="fa fa-users fa-2x" style="cursor:pointer;"  ng-click="modalAutoria(politica.id_politica, politica.nome)"></i></a>--}}
-                                    <a><i data-toggle="modal" data-target="#modalExcluir" class="fa fa-remove fa-2x" style="cursor:pointer;"  ng-click="perguntaExcluir(politica.id_politica, politica.nome, politica.imagem)"></i></a>
+                                    <a href="cms/politica/<% politica.id %>"><i class="fa fa-edit fa-2x" title="Editar"></i></a>&nbsp;&nbsp;{{--<% mensagemStatus %><% idStatus %>--}}
+                                    {{--<a href="cms/links/<% politica.id %>"><i class="fa fa-link fa-2x" title="Links"></i></a>&nbsp;&nbsp;--}}{{--<% mensagemStatus %><% idStatus %>--}}
+                                    {{--<a  ng-class="<% politica.status %> == 1 ? 'color-success' : 'color-success-inactive'"  style="cursor: pointer;"><i class="fa fa-check-circle fa-2x" aria-hidden="true" ng-click="status(politica.id, politica.status);"></i></a>&nbsp;&nbsp;--}}
+                                    {{--<a><i data-toggle="modal" data-target="#modalIndicacao" class="fa fa-tachometer fa-2x" style="cursor:pointer;" ng-click="modalIndicacao(politica.id, politica.nome)"></i></a>
+                                    <a><i data-toggle="modal" data-target="#modalCategorizacao" class="fa fa-cubes fa-2x" style="cursor:pointer;"  ng-click="modalCategorizacao(politica.id, politica.nome)"></i></a>
+                                    <a><i data-toggle="modal" data-target="#modalAutoria" class="fa fa-users fa-2x" style="cursor:pointer;"  ng-click="modalAutoria(politica.id, politica.nome)"></i></a>--}}
+                                    <a><i data-toggle="modal" data-target="#modalExcluir" class="fa fa-remove fa-2x" style="cursor:pointer;"  ng-click="perguntaExcluir(politica.id, politica.nome, politica.imagem)"></i></a>
                                 </div>
                             </td>
                         </tr>
