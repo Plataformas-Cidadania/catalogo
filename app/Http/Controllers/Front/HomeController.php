@@ -29,6 +29,7 @@ class HomeController extends Controller{
         $text1 = \App\Models\Text::where('slug', 'diagnostico')->first();
         $text2 = \App\Models\Text::where('slug', 'resultado')->first();
         $text3 = \App\Models\Text::where('slug', 'recursos')->first();
+        $destaques = \App\Models\Modulo::where('tipo_id', 3)->get();
         $partners = \App\Models\Parceiro::orderBy('id')->get();
 
 
@@ -39,6 +40,7 @@ class HomeController extends Controller{
             'text3' => $text3,
             'partners' => $partners,
             'areas' => $areas,
+            'destaques' => $destaques,
         ]);
 
 

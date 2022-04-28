@@ -13816,6 +13816,7 @@ gi .dorder-container {
   padding: 15px;
   transition: 0.5s;
   text-align: center;
+  border-radius: 10px;
 }
 
 .box-list-icon-i {
@@ -13825,6 +13826,10 @@ gi .dorder-container {
   border-radius: 50%;
   width: 80px;
   height: 80px;
+}
+
+.box-list-icon-i img {
+  padding: 10px;
 }
 
 .box-list-icon svg {
@@ -13855,6 +13860,7 @@ gi .dorder-container {
 .box-list-icon:hover {
   background-color: #00AFA4;
   color: #FFFFFF;
+  transform: scale(1.1);
 }
 
 .bg-img-l {
@@ -13896,6 +13902,11 @@ gi .dorder-container {
   float: right;
   width: 97px;
   margin: auto;
+}
+
+.box-icone {
+  padding: 30px;
+  border-radius: 15px;
 }
 
 /**/

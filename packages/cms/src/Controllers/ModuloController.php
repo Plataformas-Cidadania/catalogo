@@ -20,7 +20,7 @@ class ModuloController extends Controller
     {
         $this->modulo = new \App\Models\Modulo;
         $this->campos = [
-            'imagem', 'titulo', 'descricao', 'arquivo', 'slug', 'tipo_id', 'show', 'cmsuser_id',
+            'imagem', 'titulo', 'descricao', 'arquivo', 'slug', 'tipo_id', 'show', 'cmsuser_id', 'resumida',
         ];
         $this->pathImagem = public_path().'/imagens/modulos';
         $this->sizesImagem = [

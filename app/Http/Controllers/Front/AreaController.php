@@ -23,9 +23,14 @@ class AreaController extends Controller{
         //$notices = DB::table('notices')->orderBy('id', 'desc')->paginate(12);
         //return view('notice.listar', ['notices' => $notices]);
 
-        $areas = $this->areaController->getAll();
+        $rota = Route::getCurrentRoute()->uri();
 
-        return view('area.listar', ['areas' => $areas]);
+        $areas = $this->areaController->getAll();
+        $destaques = \App\Models\Modulo::where('slug', $rota)->first();
+
+
+
+        return view('area.listar', ['areas' => $areas, 'destaques' => $destaques]);
     }
 
     public function detalhar($id){

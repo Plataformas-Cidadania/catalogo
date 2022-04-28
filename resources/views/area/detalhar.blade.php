@@ -9,7 +9,10 @@
             <div class="bg-img-r">
                 <div class="container pt-5 pb-5 bg-lgt">
                     <div class=" ps-2 pe-2">
-                        <h1>{{$area->nome}}</h1>
+                        <h1>
+                            <img src="/img/icones/{{$area->icone}}" alt="" width="60" style="filter : brightness(0.3);">&nbsp;
+                            {{$area->nome}}
+                        </h1>
                         {{--<p>{!! $area->nome !!}</p>--}}
                     </div>
                 </div>
@@ -37,23 +40,20 @@
 
         <div class="row">
             <div class="col-md-8">
-                Apesar de constituírem um elemento básico de organização da atuação governamental, de perpassarem cotidianamente
-                o debate público sobre a realidade dos países, e de serem objeto de análise de inúmeros estudos e pesquisas desenvolvidos nas mais variadas áreas do conhecimento, não há, assim como observado em diferentes fenômenos das ciências
-                humanas, uma definição única sobre o que são políticas públicas. A diversidade polissêmica adotada para caracterizar
-                as políticas públicas está relacionada às múltiplas possibilidades de compreensão de seus aspectos – por exemplo, seu
-                papel, formas de produção e etapas constitutivas, potencial de provocar mudanças na sociedade ou, ainda, como são
-                influenciadas pelos diferentes atores que compõem a ação política, entre outras questões <br><br>
-
-                A diversidade polissêmica adotada para caracterizar
-                as políticas públicas está relacionada às múltiplas possibilidades de compreensão de seus aspectos – por exemplo, seu
-                papel, formas de produção e etapas constitutivas, potencial de provocar mudanças na sociedade ou, ainda, como são
-                influenciadas pelos diferentes atores que compõem a ação política, entre outras questões.
+                <div>
+                    {{$area->descricao}}
+                </div>
                 <br><br><br><br>
             </div>
             <div class="col-md-4">
-                <a href="https://mapaosc.ipea.gov.br/arquivos/posts/6732-mrosccovid.pdf" target="_blank">
+                <div class="bg-pri box-icone">
+                    <img src="/img/icones/{{$area->icone}}" alt="" width="100%">
+                </div>
+
+
+                {{--<a href="https://mapaosc.ipea.gov.br/arquivos/posts/6732-mrosccovid.pdf" target="_blank">
                     <img src="https://mapaosc.ipea.gov.br/imagens/posts/2279-mrosc-covid.jpg" alt="" width="100%">
-                </a>
+                </a>--}}
 
             </div>
 

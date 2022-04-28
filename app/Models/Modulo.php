@@ -46,6 +46,7 @@ class Modulo extends Model
 		'imagem',
 		'titulo',
 		'descricao',
+		'resumida',
 		'arquivo',
 		'slug',
 		'status',

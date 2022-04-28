@@ -93,13 +93,7 @@ if(env('DYNAMIC_ROUTES')){
     }
 }
 
-Route::get('/timeline', function () {
-    return view('timeline.index');
-});
 
-Route::get('/consulta', function () {
-    return view('consulta.index');
-});
 
 Route::get('/test-consulta/{search}', function ($search) {
     $items = [
@@ -123,7 +117,6 @@ Route::get('/test-consulta/{search}', function ($search) {
         }
     }
 
-    Log::info($result);
 
     return $result;
 });
@@ -145,3 +138,16 @@ Route::get('/politica/{id}/{titulo}', [PoliticaController::class , 'politica']);
 
 Route::get('/imprimir-politica/{id}', [PrintController::class , 'politica']);
 Route::get('/imprimir-timeline/{area_id}', [PrintController::class , 'timeline']);
+
+
+Route::get('/timeline', [TimelineController::class , 'timeline']);
+Route::get('/consulta', [ConsultaController::class , 'consulta']);
+
+
+/*Route::get('/timeline', function () {
+    return view('timeline.index');
+});
+
+Route::get('/consulta', function () {
+    return view('consulta.index');
+});*/

@@ -1,5 +1,6 @@
 @extends('.layout')
-@section('title', 'Consulta')
+@section('title', $destaques->titulo)
+@section('description', $destaques->resumida)
 @section('content')
 
     <div class=" bg-lgt">
@@ -7,7 +8,8 @@
             <div class="bg-img-r">
                 <div class="container pt-5 pb-5 bg-lgt">
                     <div class=" ps-2 pe-2">
-                        <h1>Consulta</h1>
+                        <h1>{{$destaques->titulo}}</h1>
+                        <p>{!! $destaques->descricao !!}</p>
                     </div>
                 </div>
             </div>
