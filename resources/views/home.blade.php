@@ -15,7 +15,12 @@
             <div class="col-md-4">
                 <a href="{{$destaque->slug}}">
                     <div class="box {{$colors[$key]}}">
-                        <img src="/img/pre-img.gif" data-src="/imagens/parceiros/md-{{$destaque->imagem}}" alt="Imagem sobre {{$destaque->titulo}}" title="Imagem sobre {{$destaque->titulo}}" width="100" class="lazyload">
+                        @if($destaque->imagem)
+                            <img src="/img/pre-img.gif" data-src="/imagens/parceiros/md-{{$destaque->imagem}}" alt="Imagem sobre {{$destaque->titulo}}" title="Imagem sobre {{$destaque->titulo}}" width="100" class="lazyload">
+                        @else
+                            <i class="far fa-gem fa-4x m-5"></i>
+                        @endif
+
                         {{--<i class="far fa-gem fa-4x m-5"></i>--}}
                         <h2>{{$destaque->titulo}}</h2>
                         <p>{{$destaque->resumida}}</p>
