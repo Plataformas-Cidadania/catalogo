@@ -6,6 +6,7 @@
 @section('content')
 
     <?php $midia = DB::table('cms.midias')->where('id', $midia_id)->first();?>
+    <?php $text = DB::table('cms.texts')->where('slug', 'biblioteca')->first();?>
 
     <script>
             filtros = null;
@@ -31,11 +32,7 @@
                 <div class="container pt-5 pb-5 bg-lgt">
                     <div class=" ps-2 pe-2">
                         <h1>{{$midia->titulo}}</h1>
-                        <p>
-                            Reunimos neste espaço uma ampla biblioteca de recursos produzidos por organizações governamentais e não-governamentais em torno da agenda pró-equidade. São materiais de intervenção –
-                            ideias, casos, cursos, vídeos, ferramentas, publicações, guias, relatos de experiências etc. – que têm como principal objetivo apoiar e estimular a criatividade, a reflexão e a inovação
-                            na adoção de medidas que permitam, em cada contexto específico, os avanços necessários para a efetivação da inclusão de todas as pessoas que devem se beneficiar das ofertas de bens e serviços públicos.
-                        </p>
+                        <p>{!! $text->descricao !!}</p>
                     </div>
                 </div>
             </div>
