@@ -51,6 +51,13 @@ class ModulosDestaquesSeeder extends Seeder
             'tipo_id' => 1,
         ]);
 
+        DB::table('cms.texts')->insert([
+            'imagem' => '',
+            'titulo' => 'Consulta',
+            'descricao' => "Apesar de constituírem um elemento básico de organização da atuação governamental, de perpassarem cotidianamente o debate público",
+            'slug' => 'biblioteca',
+        ]);
+
 
 
     }
