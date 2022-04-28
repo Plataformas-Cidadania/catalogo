@@ -98,9 +98,9 @@
                                     <a href="cms/politica/<% politica.id %>"><i class="fa fa-edit fa-2x" title="Editar"></i></a>&nbsp;&nbsp;{{--<% mensagemStatus %><% idStatus %>--}}
                                     {{--<a href="cms/links/<% politica.id %>"><i class="fa fa-link fa-2x" title="Links"></i></a>&nbsp;&nbsp;--}}{{--<% mensagemStatus %><% idStatus %>--}}
                                     {{--<a  ng-class="<% politica.status %> == 1 ? 'color-success' : 'color-success-inactive'"  style="cursor: pointer;"><i class="fa fa-check-circle fa-2x" aria-hidden="true" ng-click="status(politica.id, politica.status);"></i></a>&nbsp;&nbsp;--}}
-                                    {{--<a><i data-toggle="modal" data-target="#modalIndicacao" class="fa fa-tachometer fa-2x" style="cursor:pointer;" ng-click="modalIndicacao(politica.id, politica.nome)"></i></a>
-                                    <a><i data-toggle="modal" data-target="#modalCategorizacao" class="fa fa-cubes fa-2x" style="cursor:pointer;"  ng-click="modalCategorizacao(politica.id, politica.nome)"></i></a>
-                                    <a><i data-toggle="modal" data-target="#modalAutoria" class="fa fa-users fa-2x" style="cursor:pointer;"  ng-click="modalAutoria(politica.id, politica.nome)"></i></a>--}}
+                                    <a><i data-toggle="modal" data-target="#modalPoliticaCategoria" class="fa fa-square fa-2x" style="cursor:pointer;" ng-click="modalPoliticaCategoria(politica.id, politica.nome)"></i></a>
+                                    {{--<a><i data-toggle="modal" data-target="#modalCategorizacao" class="fa fa-cubes fa-2x" style="cursor:pointer;"  ng-click="modalCategorizacao(politica.id, politica.nome)"></i></a>--}}
+                                    {{--<a><i data-toggle="modal" data-target="#modalAutoria" class="fa fa-users fa-2x" style="cursor:pointer;"  ng-click="modalAutoria(politica.id, politica.nome)"></i></a>--}}
                                     <a><i data-toggle="modal" data-target="#modalExcluir" class="fa fa-remove fa-2x" style="cursor:pointer;"  ng-click="perguntaExcluir(politica.id, politica.nome, politica.imagem)"></i></a>
                                 </div>
                             </td>
@@ -167,6 +167,6 @@
         </div>
         <!-- Fim Modal Excluir-->
 
-        {{--@include("cms::politica.indicacao")--}}
+        @include("cms::politica.politica-categoria")
     </div>
 @endsection

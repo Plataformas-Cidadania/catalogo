@@ -261,9 +261,127 @@ cmsApp.controller('politicaCtrl', ['$scope', '$http', 'Upload', '$timeout', func
         });
     }
 
-    $scope.teste = function(){
-        console.log('teste');
-        console.log($scope.politica);
+
+    //PoliticaCategoria////////////////////////////////////
+    $scope.politicaCategoria = {};
+    $scope.dimensao = null;
+    $scope.categoria = null;
+    $scope.politicaCategorias = [];
+    $scope.totalPoliticaCategorias = 0;
+    $scope.processandoCategorias = false;
+    $scope.processandoInserirPoliticaCategoria = false;
+    $scope.processandoListagemPoliticaCategorias = false;
+
+    $scope.listarCategorias = function(){
+        $scope.processandoCategorias = true;
+        $http({
+            url: 'api/categoria',
+            method: 'GET',
+            params: {
+
+            }
+        }).success(function(data, status, headers, config){
+            //console.log(data.data);
+            $scope.categorias = data;
+            $scope.processandoCategorias = false;
+        }).error(function(data){
+            $scope.message = "Ocorreu um erro: "+data;
+            $scope.processandoCategorias = false;
+        });
+    }
+
+    $scope.getCategoria = function(categoria_id){
+        let categoria = $scope.categorias.find(function(item){
+            return item.id === categoria_id;
+        });
+        return categoria.nome;
+    }
+
+
+    $scope.getPolitica = function(politica_id){
+        if(politica_id){
+            let politica = $scope.politicas.find(function(item){
+                return item.id === politica_id;
+            });
+            return politica.nome;
+        }
+    }
+
+    $scope.modalPoliticaCategoria = function (id, titulo){
+        $scope.politicaCategoria.politica_id = id;
+        $scope.tituloPoliticaCategoria = titulo;
+        $scope.listarCategorias();
+        $scope.listarPoliticaCategorias();
+    }
+
+    $scope.inserirPoliticaCategoria = function(){
+        console.log($scope.politicaCategoria);
+        $scope.processandoInserirPoliticaCategoria= true;
+        $scope.mensagemInserirPoliticaCategoria = "";
+        $scope.politicaCategoria.categoria_id = $scope.categoria.id;
+        $http.post("api/politica_categoria", $scope.politicaCategoria).success(function (data){
+            $scope.listarPoliticaCategorias();
+            $scope.mensagemInserirPoliticaCategoria =  "Gravado com sucesso!";
+            $scope.processandoInserirPoliticaCategoria = false;
+            //$scope.politicaCategoria = {};
+        }).error(function(data){
+            $scope.mensagemInserirPoliticaCategoria = "Ocorreu um erro!";
+            $scope.processandoInserirPoliticaCategoria = false;
+        });
+    }
+
+    $scope.listarPoliticaCategorias = function(){
+        $scope.processandoListagemPoliticaCategorias = true;
+        $http({
+            url: 'api/politica_categoria/'+$scope.politicaCategoria.politica_id,
+            method: 'GET',
+            params: {
+
+            }
+        }).success(function(data, status, headers, config){
+            $scope.politicaCategorias = data;
+            $scope.totalPoliticaCategorias = $scope.politicaCategorias.length;
+            $scope.processandoListagemPoliticaCategorias = false;
+        }).error(function(data){
+            $scope.politicaCategorias = [];
+            $scope.message = "Ocorreu um erro: "+data;
+            $scope.processandoListagemPoliticaCategorias = false;
+        });
+    }
+
+    $scope.perguntaExcluirPoliticaCategoria = function (idCategoria, titulo){
+        $scope.idExcluirPoliticaCategoriaCategoria = idCategoria;
+        $scope.idExcluirPoliticaCategoriaPolitica = $scope.politicaCategoria.politica_id;
+        $scope.tituloExcluirPoliticaCategoria = titulo;
+        $scope.excluidoPoliticaCategoria = false;
+        $scope.mensagemExcluidoPoliticaCategoria = "";
+    }
+
+
+    $scope.excluirPoliticaCategoria = function(idCategoria, idPolitica){
+        $scope.processandoExcluirPoliticaCategoria = true;
+        $http({
+            url: 'api/politica_categoria/'+idPolitica+'/'+idCategoria,
+            method: 'DELETE'
+        }).success(function(data, status, headers, config){
+            console.log(data);
+            //if(data.success){
+                $scope.processandoExcluirPoliticaCategoria = false;
+                $scope.excluidoPoliticaCategoria = true;
+                $scope.mensagemExcluidoPoliticaCategoria = data.message;
+                $scope.listarPoliticaCategorias();
+                //return;
+            //}
+            //$scope.processandoExcluirPoliticaCategoria = false;
+            //$scope.excluidoPoliticaCategoria = false;
+            //$scope.mensagemExcluidoPoliticaCategoria = data.message;
+        }).error(function(data){
+            $scope.message = "Ocorreu um erro: "+data;
+            $scope.processandoExcluirPoliticaCategoria = false;
+            $scope.mensagemExcluidoPoliticaCategoria = "Erro ao tentar excluir!";
+        });
     };
+
+    ///////////////////////////////////////////////
 
 }]);

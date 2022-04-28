@@ -6,6 +6,7 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Categorias</h4>
+                <h5 class="modal-title"><% tituloPoliticaCategoria %></h5>
             </div>
             <div class="modal-body">
                 <form action="frmPoliticaCategoria">
@@ -16,7 +17,7 @@
                         ng-model="categoria"
                         ng-init="categoria = null"
                         ng-required="true"
-                        ng-options="option.titulo for option in categorias track by option.id_categoria"
+                        ng-options="option.nome for option in categorias track by option.id"
                         placeholder="Selecione"
                     >
                         <option value="" ng-disabled="!!politicaCategoria.id_categoria">Selecione</option>
@@ -28,7 +29,7 @@
                 <div ng-show="processandoListagemIndicacoes"><i class="fa fa-spinner fa-spin"></i> Processando...</div>
                 <h2 class="tabela_vazia" ng-show="!processandoListagemIndicacoes && totalIndicaoes==0">Nenhum registro encontrado!</h2>
                 <div style="height: 300px;  overflow-y: auto;">
-                    <table ng-show="totalIndicacoes>0" class="table table-striped">
+                    <table ng-show="totalPoliticaCategorias>0" class="table table-striped">
                         <thead>
                         <tr>
                             {{--<th>Recurso</th>--}}
@@ -36,12 +37,11 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="politicaCategoria in indicacoes">
-                            {{--<td><% politicaCategoria.recurso.nome %></td>--}}
-                            <td><% politicaCategoria.categoria.titulo %></td>
+                        <tr ng-repeat="politicaCategoria in politicaCategorias">
+                            <td><% getCategoria(politicaCategoria.categoria_id) %></td>
                             <td class="text-right">
                                 <div>
-                                    <a><i data-toggle="modal" data-target="#modalExcluirPoliticaCategoria" class="fa fa-remove fa-2x" ng-click="perguntaExcluirPoliticaCategoria(politicaCategoria.id_categoria, politicaCategoria.id_recurso, politicaCategoria.categoria.titulo)"></i></a>
+                                    <a><i data-toggle="modal" data-target="#modalExcluirPoliticaCategoria" class="fa fa-remove fa-2x" ng-click="perguntaExcluirPoliticaCategoria(politicaCategoria.categoria_id, getCategoria(politicaCategoria.categoria_id))"></i></a>
                                 </div>
                             </td>
                         </tr>
@@ -81,7 +81,7 @@
                 <div class="mensagem-ok text-center text-danger"><% mensagemExcluidoPoliticaCategoria %></div>
             </div>
             <div id="opcoesExcluirPoliticaCategoria" class="modal-footer" ng-show="!excluidoPoliticaCategoria">
-                <button id="btnExcluirPoliticaCategoria" type="button" class="btn btn-default" ng-click="excluirPoliticaCategoria(idExcluirPoliticaCategoriaCategoria, idExcluirPoliticaCategoriaRecurso);">Sim</button>
+                <button id="btnExcluirPoliticaCategoria" type="button" class="btn btn-default" ng-click="excluirPoliticaCategoria(idExcluirPoliticaCategoriaCategoria, idExcluirPoliticaCategoriaPolitica);">Sim</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
             </div>
             <div id="fecharExcluirPoliticaCategoria" class="modal-footer" ng-show="excluidoPoliticaCategoria">
