@@ -24,7 +24,7 @@ class ModulosDestaquesSeeder extends Seeder
             'slug' => 'areas-tematicas',
             'status' => 1,
             'show' => 0,
-            'tipo_id' => 1,
+            'tipo_id' => 3,
         ]);
 
         DB::table('cms.modulos')->insert([
@@ -36,7 +36,7 @@ class ModulosDestaquesSeeder extends Seeder
             'slug' => 'timeline',
             'status' => 1,
             'show' => 0,
-            'tipo_id' => 1,
+            'tipo_id' => 3,
         ]);
 
         DB::table('cms.modulos')->insert([
@@ -48,7 +48,7 @@ class ModulosDestaquesSeeder extends Seeder
             'slug' => 'consulta',
             'status' => 1,
             'show' => 0,
-            'tipo_id' => 1,
+            'tipo_id' => 3,
         ]);
 
         DB::table('cms.texts')->insert([
