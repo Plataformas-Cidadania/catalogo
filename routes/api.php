@@ -250,3 +250,16 @@ Route::group([
         ->name('api.politica_publico_alvo.destroy');
 });
 
+Route::group([
+    'prefix' => 'arquivo',
+], function () {
+
+    Route::post('/', [App\Http\Controllers\Api\ArquivoController::class, 'store'])
+        ->name('api.arquivo.store');
+
+    Route::delete('/{id}', [App\Http\Controllers\Api\ArquivoController::class, 'destroy'])
+        ->name('api.arquivo.destroy');
+
+
+});
+
