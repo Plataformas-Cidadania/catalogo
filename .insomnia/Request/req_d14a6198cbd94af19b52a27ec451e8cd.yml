@@ -1,0 +1,35 @@
+_id: req_d14a6198cbd94af19b52a27ec451e8cd
+type: Request
+parentId: fld_06dabb87ad16494aaa58fe3d45250f4c
+modified: 1651171295900
+created: 1651012057000
+url: http://localhost:{{ _.porta_app }}/api/politica/buscaAvancada
+name: buscaAvancada
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"politica": "",
+    	"ano": {"inicio": 1980, "fim": 2015},
+    	"grande_area": [2, 3, 4],
+    	"area": [3,4],
+    	"orgao": [1,2],
+    	"tipo_politica": [3,4],
+    	"publico_alvo": []
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_bab563c835fb48018cde20b450fb3f63
+authentication: {}
+metaSortKey: -1641389327443.375
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
