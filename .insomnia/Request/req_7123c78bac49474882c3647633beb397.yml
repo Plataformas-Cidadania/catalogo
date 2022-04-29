@@ -1,0 +1,39 @@
+_id: req_7123c78bac49474882c3647633beb397
+type: Request
+parentId: fld_d7512ece19d7482bbba8a4c3fa08858d
+modified: 1651251603162
+created: 1651173748049
+url: http://localhost:{{porta_app}}/api/arquivo
+name: store arquivos
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+  params:
+    - id: pair_53161554b0054891afffc2216c2f3240
+      name: arquivo
+      value: ""
+      description: ""
+      type: file
+      fileName: C:\Users\rapha\Desktop\Centro de devoluções.pdf
+    - id: pair_ae035c2d194d493baf615b18d3a39160
+      name: imagem
+      value: ""
+      description: ""
+      type: file
+      fileName: C:\Users\rapha\Desktop\scientific_method.jpeg
+      disabled: false
+parameters: []
+headers:
+  - name: Content-Type
+    value: multipart/form-data
+    id: pair_4c884ad81adf4a4fb870ed2b71ad0cd3
+authentication: {}
+metaSortKey: -1651173748049
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
