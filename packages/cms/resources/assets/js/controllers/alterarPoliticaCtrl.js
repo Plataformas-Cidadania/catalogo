@@ -84,7 +84,7 @@ cmsApp.controller('alterarPoliticaCtrl', ['$scope', '$http', 'Upload', '$timeout
             $scope.politica = data;//data.data
             $scope.politica.ano = parseInt($scope.politica.ano.substring(0, 4));
 
-            console.log($scope.politica.vigencia_inicio, $scope.politica.vigencia_fim);
+            //console.log($scope.politica.vigencia_inicio, $scope.politica.vigencia_fim);
             $scope.politica.vigencia_inicio = new Date($scope.politica.vigencia_inicio+'T00:00');
             $scope.politica.vigencia_fim = new Date($scope.politica.vigencia_fim+'T00:00');
 
@@ -115,6 +115,11 @@ cmsApp.controller('alterarPoliticaCtrl', ['$scope', '$http', 'Upload', '$timeout
 
 
     $scope.alterar = function (file){
+
+        $scope.politica.grande_area = $scope.grande_area.id;
+        $scope.politica.area = $scope.area.id;
+        $scope.politica.tipo_politica = $scope.tipo_politica.id;
+        $scope.politica.ano = $scope.politica.ano + '-01-01';
 
         if(file==null){
 
