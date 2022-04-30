@@ -93,7 +93,8 @@ const Home = () => {
     }, /*#__PURE__*/React.createElement(Tables, {
       series: item.series,
       labels: item.labels,
-      index: index
+      index: index,
+      tipo: item.tipo
     })), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("div", {
       onClick: () => clickIcon(item.id, 'table'),
       style: {

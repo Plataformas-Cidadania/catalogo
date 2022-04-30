@@ -72,7 +72,12 @@ const Home = () => {
                                                 {selectedChart}
                                             </div>
                                             <div style={{display: icon === 'table' ? '' : 'none'}}>
-                                                <Tables series={item.series} labels={item.labels} index={index}/>
+                                                <Tables
+                                                    series={item.series}
+                                                    labels={item.labels}
+                                                    index={index}
+                                                    tipo={item.tipo}
+                                                />
                                             </div>
 
                                             <br/><br/>
