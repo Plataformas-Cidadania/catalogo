@@ -10,6 +10,8 @@ const Home = () => {
     const [divSelected, setDivSelected] = useState(1);
     const [divSelectedTipo, setDivSelectedTipo] = useState("mix");
 
+    const [icon, setIcon] = useState('chart');
+
 
     const listData = async () => {
         try {
@@ -23,6 +25,10 @@ const Home = () => {
     const clickChart = (id, tipo) => {
         setDivSelected(id);
         setDivSelectedTipo(tipo);
+    }
+
+    const clickIcon = (id, tipo) => {
+        setIcon(tipo)
     }
 
 
@@ -61,8 +67,23 @@ const Home = () => {
                                         }
                                     return (
                                         <div style={{display: divSelected === item.id ? '' : 'none'}} key={'abas'+item.id}>
-                                            {selectedChart}
+
+                                            <div style={{display: icon === 'chart' ? '' : 'none'}}>
+                                                {selectedChart}
+                                            </div>
+                                            <div style={{display: icon === 'table' ? '' : 'none'}}>
+                                                <Tables series={item.series} labels={item.labels} index={index}/>
+                                            </div>
+
                                             <br/><br/>
+
+                                            <div onClick={() => clickIcon(item.id, 'table')} style={{display: icon === 'chart' ? '' : 'none'}} className="cursor">
+                                                <i className="fas fa-table fa-2x"/>
+                                            </div>
+                                            <div onClick={() => clickIcon(item.id, 'chart')} style={{display: icon === 'table' ? '' : 'none'}} className="cursor">
+                                                <i className="fas fa-chart-area fa-2x"/>
+                                            </div>
+
                                             <div style={{textAlign: 'right'}}><strong>Fonte: </strong>{item.fonte}</div>
                                         </div>
                                     )
@@ -70,19 +91,7 @@ const Home = () => {
                                 :
                                 null
                         }
-                        {/*<MixedChart id='mix-chart1'  series={[{
-                            name: 'TEAM A',
-                            type: 'column',
-                            data: [23, 11, 22, 27, 13, 22]
-                        }, {
-                            name: 'TEAM B',
-                            type: 'area',
-                            data: [44, 55, 41, 67, 22, 43]
-                        }, {
-                            name: 'TEAM C',
-                            type: 'line',
-                            data: [30, 25, 36, 30, 45, 35]
-                        }]} labels={['01 Jan 2001', '02 Jan 2001', '03 Jan 2001', '04 Jan 2001', '05 Jan 2001', '05 Jan 2001']}/>*/}
+
 
 
                     </div>

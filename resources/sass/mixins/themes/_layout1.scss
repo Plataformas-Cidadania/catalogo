@@ -525,3 +525,14 @@
     background: #E26442;
 }
 /**/
+
+.tableFlex{
+    display: flex;
+}
+.tableCol{
+    flex: 1
+}
+.tableRow{
+    border-bottom: solid 1px #CCCCCC;
+    padding: 10px;
+}

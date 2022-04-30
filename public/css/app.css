@@ -13931,6 +13931,19 @@ gi .dorder-container {
 }
 
 /**/
+.tableFlex {
+  display: flex;
+}
+
+.tableCol {
+  flex: 1;
+}
+
+.tableRow {
+  border-bottom: solid 1px #CCCCCC;
+  padding: 10px;
+}
+
 #chart {
   max-width: 100%;
   margin: 35px auto;

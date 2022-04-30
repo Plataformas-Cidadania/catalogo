@@ -46,6 +46,13 @@
             "data": [21, 7, 25, 13, 22, 8]
         }],
         "labels": ["Diretrizes", "Estratégia", "Plano", "Outros", "Política nacional", "Programa"]
+    },
+    {
+        "id": 4,
+        "tipo": "pie",
+        "titulo": "Frequência absoluta e relativa de políticas segundo a Área",
+        "fonte": "Catálogo de Políticas Públicas (Ipea).",
+        "series": [44, 55, 13, 43, 22],
+        "labels": ["Team A", "Team B", "Team C", "Team D", "Team E"]
     }
-
 ]
