@@ -88,7 +88,8 @@ const Home = () => {
       }
     }, selectedChart), /*#__PURE__*/React.createElement("div", {
       style: {
-        display: icon === 'table' ? '' : 'none'
+        display: icon === 'table' ? '' : 'none',
+        overflow: 'auto'
       }
     }, /*#__PURE__*/React.createElement(Tables, {
       series: item.series,

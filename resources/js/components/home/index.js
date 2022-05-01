@@ -71,7 +71,7 @@ const Home = () => {
                                             <div style={{display: icon === 'chart' ? '' : 'none'}}>
                                                 {selectedChart}
                                             </div>
-                                            <div style={{display: icon === 'table' ? '' : 'none'}}>
+                                            <div style={{display: (icon === 'table' ? '' : 'none'), overflow: 'auto'}}>
                                                 <Tables
                                                     series={item.series}
                                                     labels={item.labels}
@@ -79,6 +79,7 @@ const Home = () => {
                                                     tipo={item.tipo}
                                                 />
                                             </div>
+
 
                                             <br/><br/>
 

@@ -13933,6 +13933,7 @@ gi .dorder-container {
 /**/
 .tableFlex {
   display: flex;
+  min-width: 950px;
 }
 
 .tableCol {

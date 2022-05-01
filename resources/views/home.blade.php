@@ -12,7 +12,7 @@
         <div class="row">
 
             @foreach($destaques as $key => $destaque)
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <a href="{{$destaque->slug}}">
                     <div class="box {{$colors[$key]}}">
                         @if($destaque->imagem)
