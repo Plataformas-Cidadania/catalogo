@@ -384,4 +384,127 @@ cmsApp.controller('politicaCtrl', ['$scope', '$http', 'Upload', '$timeout', func
 
     ///////////////////////////////////////////////
 
+
+    //PoliticaOrgao////////////////////////////////////
+    $scope.politicaOrgao = {};
+    $scope.dimensao = null;
+    $scope.orgao = null;
+    $scope.politicaOrgaos = [];
+    $scope.totalPoliticaOrgaos = 0;
+    $scope.processandoOrgaos = false;
+    $scope.processandoInserirPoliticaOrgao = false;
+    $scope.processandoListagemPoliticaOrgaos = false;
+
+    $scope.listarOrgaos = function(){
+        $scope.processandoOrgaos = true;
+        $http({
+            url: 'api/orgao',
+            method: 'GET',
+            params: {
+
+            }
+        }).success(function(data, status, headers, config){
+            //console.log(data.data);
+            $scope.orgaos = data;
+            $scope.processandoOrgaos = false;
+        }).error(function(data){
+            $scope.message = "Ocorreu um erro: "+data;
+            $scope.processandoOrgaos = false;
+        });
+    }
+
+    $scope.getOrgao = function(orgao_id){
+        let orgao = $scope.orgaos.find(function(item){
+            return item.id === orgao_id;
+        });
+        return orgao.nome;
+    }
+
+
+    $scope.getPolitica = function(politica_id){
+        if(politica_id){
+            let politica = $scope.politicas.find(function(item){
+                return item.id === politica_id;
+            });
+            return politica.nome;
+        }
+    }
+
+    $scope.modalPoliticaOrgao = function (id, titulo){
+        $scope.politicaOrgao.politica_id = id;
+        $scope.tituloPoliticaOrgao = titulo;
+        $scope.listarOrgaos();
+        $scope.listarPoliticaOrgaos();
+    }
+
+    $scope.inserirPoliticaOrgao = function(){
+        console.log($scope.politicaOrgao);
+        $scope.processandoInserirPoliticaOrgao= true;
+        $scope.mensagemInserirPoliticaOrgao = "";
+        $scope.politicaOrgao.orgao_id = $scope.orgao.id;
+        $http.post("api/politica_orgao", $scope.politicaOrgao).success(function (data){
+            $scope.listarPoliticaOrgaos();
+            $scope.mensagemInserirPoliticaOrgao =  "Gravado com sucesso!";
+            $scope.processandoInserirPoliticaOrgao = false;
+            //$scope.politicaOrgao = {};
+        }).error(function(data){
+            $scope.mensagemInserirPoliticaOrgao = "Ocorreu um erro!";
+            $scope.processandoInserirPoliticaOrgao = false;
+        });
+    }
+
+    $scope.listarPoliticaOrgaos = function(){
+        $scope.processandoListagemPoliticaOrgaos = true;
+        $http({
+            url: 'api/politica_orgao/'+$scope.politicaOrgao.politica_id,
+            method: 'GET',
+            params: {
+
+            }
+        }).success(function(data, status, headers, config){
+            $scope.politicaOrgaos = data;
+            $scope.totalPoliticaOrgaos = $scope.politicaOrgaos.length;
+            $scope.processandoListagemPoliticaOrgaos = false;
+        }).error(function(data){
+            $scope.politicaOrgaos = [];
+            $scope.message = "Ocorreu um erro: "+data;
+            $scope.processandoListagemPoliticaOrgaos = false;
+        });
+    }
+
+    $scope.perguntaExcluirPoliticaOrgao = function (idOrgao, titulo){
+        $scope.idExcluirPoliticaOrgaoOrgao = idOrgao;
+        $scope.idExcluirPoliticaOrgaoPolitica = $scope.politicaOrgao.politica_id;
+        $scope.tituloExcluirPoliticaOrgao = titulo;
+        $scope.excluidoPoliticaOrgao = false;
+        $scope.mensagemExcluidoPoliticaOrgao = "";
+    }
+
+
+    $scope.excluirPoliticaOrgao = function(idOrgao, idPolitica){
+        $scope.processandoExcluirPoliticaOrgao = true;
+        $http({
+            url: 'api/politica_orgao/'+idPolitica+'/'+idOrgao,
+            method: 'DELETE'
+        }).success(function(data, status, headers, config){
+            console.log(data);
+            //if(data.success){
+            $scope.processandoExcluirPoliticaOrgao = false;
+            $scope.excluidoPoliticaOrgao = true;
+            $scope.mensagemExcluidoPoliticaOrgao = data.message;
+            $scope.listarPoliticaOrgaos();
+            //return;
+            //}
+            //$scope.processandoExcluirPoliticaOrgao = false;
+            //$scope.excluidoPoliticaOrgao = false;
+            //$scope.mensagemExcluidoPoliticaOrgao = data.message;
+        }).error(function(data){
+            $scope.message = "Ocorreu um erro: "+data;
+            $scope.processandoExcluirPoliticaOrgao = false;
+            $scope.mensagemExcluidoPoliticaOrgao = "Erro ao tentar excluir!";
+        });
+    };
+
+    ///////////////////////////////////////////////
+
 }]);
