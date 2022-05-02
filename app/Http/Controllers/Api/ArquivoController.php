@@ -16,7 +16,6 @@ use Exception;
 use App\Repository\ArquivoRepository;
 use Imagick;
 
-
 class ArquivoController extends Controller
 {
     private ArquivoRepository $repo;
