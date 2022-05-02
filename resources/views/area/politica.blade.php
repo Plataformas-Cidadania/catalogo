@@ -2,6 +2,8 @@
 @section('title', $politica->nome)
 @section('content')
 
+
+
     <div class=" bg-lgt">
         <div class="bg-img-l">
             <div class="bg-img-r">
@@ -134,52 +136,32 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <h3>Título</h3>
-                        <br>
+                        <h3>Arquivos</h3>
                     </div>
-                    <div class="col-md-3">
-                        <a href="https://mapaosc.ipea.gov.br/arquivos/posts/6732-mrosccovid.pdf" target="_blank">
-                            <img src="https://mapaosc.ipea.gov.br/imagens/posts/2279-mrosc-covid.jpg" alt="" width="100%">
-                        </a>
-                    </div>
-                    <div class="col-md-9">Ministério da Mulher, da Família e dos Direitos Humanos<br/>visualizar</div>
-                    <div class="col-md-12"><hr/></div>
                 </div>
+
                 <div class="row">
+                    @foreach($politica->orgaos as $orgao)
+                        <a href="/arquivos/arquivos/{{$orgao->imagem}}" target="_blank">
+                            <div class="col-md-12">
+                                <img src="/imagens/arquivos/arquivos/{{$orgao->caminho_arquivo}}" alt="" width="100%">
+                            </div>
+                            <div class="col-md-9">{{$orgao->nome}}</div>
+                        </a>
+                        <div class="col-md-12"><hr/></div>
+                    @endforeach
+
+                </div>
+
+
+                {{--<div class="row">
                     <div class="col-md-3">
                         <a href="https://mapaosc.ipea.gov.br/arquivos/posts/6732-mrosccovid.pdf" target="_blank">
                             <img src="https://mapaosc.ipea.gov.br/imagens/posts/2279-mrosc-covid.jpg" alt="" width="100%">
                         </a>
                     </div>
                     <div class="col-md-9">Ministério da Mulher, da Família e dos Direitos Humanos</div>
-                    <div class="col-md-12"><hr/></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <a href="https://mapaosc.ipea.gov.br/arquivos/posts/6732-mrosccovid.pdf" target="_blank">
-                            <img src="https://mapaosc.ipea.gov.br/imagens/posts/2279-mrosc-covid.jpg" alt="" width="100%">
-                        </a>
-                    </div>
-                    <div class="col-md-9">Ministério da Mulher, da Família e dos Direitos Humanos</div>
-                    <div class="col-md-12"><hr/></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <a href="https://mapaosc.ipea.gov.br/arquivos/posts/6732-mrosccovid.pdf" target="_blank">
-                            <img src="https://mapaosc.ipea.gov.br/imagens/posts/2279-mrosc-covid.jpg" alt="" width="100%">
-                        </a>
-                    </div>
-                    <div class="col-md-9">Ministério da Mulher, da Família e dos Direitos Humanos</div>
-                    <div class="col-md-12"><hr/></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <a href="https://mapaosc.ipea.gov.br/arquivos/posts/6732-mrosccovid.pdf" target="_blank">
-                            <img src="https://mapaosc.ipea.gov.br/imagens/posts/2279-mrosc-covid.jpg" alt="" width="100%">
-                        </a>
-                    </div>
-                    <div class="col-md-9">Ministério da Mulher, da Família e dos Direitos Humanos</div>
-                </div>
+                </div>--}}
 
             </div>
 

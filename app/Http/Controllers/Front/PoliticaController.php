@@ -20,15 +20,15 @@ class PoliticaController extends Controller{
     }
 
 
-    public function politica($id){
+    public function politica($id, /*\App\Http\Controllers\Api\ArquivoController $arquivos*/){
         $politica = $this->politicaController->get($id);
         $politica = (object) $politica;
 
-        //return $politica;
+        /*print_r($arquivos);*/
 
         //return count($politica);
 
-        return view('area.politica', ['politica' => $politica]);
+        return view('area.politica', ['politica' => $politica/*, 'arquivos' => $arquivos*/]);
 
     }
 
