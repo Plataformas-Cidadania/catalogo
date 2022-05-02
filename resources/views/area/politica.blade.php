@@ -142,9 +142,9 @@
 
                 <div class="row">
                     @foreach($politica->orgaos as $orgao)
-                        <a href="/arquivos/arquivos/{{$orgao->imagem}}" target="_blank">
+                        <a href="/uploads/{{$orgao->imagem}}" target="_blank">
                             <div class="col-md-12">
-                                <img src="/imagens/arquivos/arquivos/{{$orgao->caminho_arquivo}}" alt="" width="100%">
+                                <img src="/uploads/{{$orgao->caminho_arquivo}}" alt="" width="100%">
                             </div>
                             <div class="col-md-9">{{$orgao->nome}}</div>
                         </a>
