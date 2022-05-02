@@ -507,4 +507,127 @@ cmsApp.controller('politicaCtrl', ['$scope', '$http', 'Upload', '$timeout', func
 
     ///////////////////////////////////////////////
 
+
+    //PoliticaPublicoAlvo////////////////////////////////////
+    $scope.politicaPublicoAlvo = {};
+    $scope.dimensao = null;
+    $scope.publicoAlvo = null;
+    $scope.politicaPublicoAlvos = [];
+    $scope.totalPoliticaPublicoAlvos = 0;
+    $scope.processandoPublicoAlvos = false;
+    $scope.processandoInserirPoliticaPublicoAlvo = false;
+    $scope.processandoListagemPoliticaPublicoAlvos = false;
+
+    $scope.listarPublicoAlvos = function(){
+        $scope.processandoPublicoAlvos = true;
+        $http({
+            url: 'api/publico_alvo',
+            method: 'GET',
+            params: {
+
+            }
+        }).success(function(data, status, headers, config){
+            //console.log(data.data);
+            $scope.publicoAlvos = data;
+            $scope.processandoPublicoAlvos = false;
+        }).error(function(data){
+            $scope.message = "Ocorreu um erro: "+data;
+            $scope.processandoPublicoAlvos = false;
+        });
+    }
+
+    $scope.getPublicoAlvo = function(publico_alvo_id){
+        let publicoAlvo = $scope.publicoAlvos.find(function(item){
+            return item.id === publico_alvo_id;
+        });
+        return publicoAlvo.nome;
+    }
+
+
+    $scope.getPolitica = function(politica_id){
+        if(politica_id){
+            let politica = $scope.politicas.find(function(item){
+                return item.id === politica_id;
+            });
+            return politica.nome;
+        }
+    }
+
+    $scope.modalPoliticaPublicoAlvo = function (id, titulo){
+        $scope.politicaPublicoAlvo.politica_id = id;
+        $scope.tituloPoliticaPublicoAlvo = titulo;
+        $scope.listarPublicoAlvos();
+        $scope.listarPoliticaPublicoAlvos();
+    }
+
+    $scope.inserirPoliticaPublicoAlvo = function(){
+        console.log($scope.politicaPublicoAlvo);
+        $scope.processandoInserirPoliticaPublicoAlvo= true;
+        $scope.mensagemInserirPoliticaPublicoAlvo = "";
+        $scope.politicaPublicoAlvo.publico_alvo_id = $scope.publicoAlvo.id;
+        $http.post("api/politica_publico_alvo", $scope.politicaPublicoAlvo).success(function (data){
+            $scope.listarPoliticaPublicoAlvos();
+            $scope.mensagemInserirPoliticaPublicoAlvo =  "Gravado com sucesso!";
+            $scope.processandoInserirPoliticaPublicoAlvo = false;
+            //$scope.politicaPublicoAlvo = {};
+        }).error(function(data){
+            $scope.mensagemInserirPoliticaPublicoAlvo = "Ocorreu um erro!";
+            $scope.processandoInserirPoliticaPublicoAlvo = false;
+        });
+    }
+
+    $scope.listarPoliticaPublicoAlvos = function(){
+        $scope.processandoListagemPoliticaPublicoAlvos = true;
+        $http({
+            url: 'api/politica_publico_alvo/'+$scope.politicaPublicoAlvo.politica_id,
+            method: 'GET',
+            params: {
+
+            }
+        }).success(function(data, status, headers, config){
+            $scope.politicaPublicoAlvos = data;
+            $scope.totalPoliticaPublicoAlvos = $scope.politicaPublicoAlvos.length;
+            $scope.processandoListagemPoliticaPublicoAlvos = false;
+        }).error(function(data){
+            $scope.politicaPublicoAlvos = [];
+            $scope.message = "Ocorreu um erro: "+data;
+            $scope.processandoListagemPoliticaPublicoAlvos = false;
+        });
+    }
+
+    $scope.perguntaExcluirPoliticaPublicoAlvo = function (idPublicoAlvo, titulo){
+        $scope.idExcluirPoliticaPublicoAlvoPublicoAlvo = idPublicoAlvo;
+        $scope.idExcluirPoliticaPublicoAlvoPolitica = $scope.politicaPublicoAlvo.politica_id;
+        $scope.tituloExcluirPoliticaPublicoAlvo = titulo;
+        $scope.excluidoPoliticaPublicoAlvo = false;
+        $scope.mensagemExcluidoPoliticaPublicoAlvo = "";
+    }
+
+
+    $scope.excluirPoliticaPublicoAlvo = function(idPublicoAlvo, idPolitica){
+        $scope.processandoExcluirPoliticaPublicoAlvo = true;
+        $http({
+            url: 'api/politica_publico_alvo/'+idPolitica+'/'+idPublicoAlvo,
+            method: 'DELETE'
+        }).success(function(data, status, headers, config){
+            console.log(data);
+            //if(data.success){
+            $scope.processandoExcluirPoliticaPublicoAlvo = false;
+            $scope.excluidoPoliticaPublicoAlvo = true;
+            $scope.mensagemExcluidoPoliticaPublicoAlvo = data.message;
+            $scope.listarPoliticaPublicoAlvos();
+            //return;
+            //}
+            //$scope.processandoExcluirPoliticaPublicoAlvo = false;
+            //$scope.excluidoPoliticaPublicoAlvo = false;
+            //$scope.mensagemExcluidoPoliticaPublicoAlvo = data.message;
+        }).error(function(data){
+            $scope.message = "Ocorreu um erro: "+data;
+            $scope.processandoExcluirPoliticaPublicoAlvo = false;
+            $scope.mensagemExcluidoPoliticaPublicoAlvo = "Erro ao tentar excluir!";
+        });
+    };
+
+    ///////////////////////////////////////////////
+
 }]);
