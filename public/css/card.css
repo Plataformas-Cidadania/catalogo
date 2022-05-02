@@ -101,10 +101,30 @@
     background: linear-gradient(-56deg,  #de4313 0%,#fec163 100%);
 }
 
-.card-tl:nth-last-child(n + 4) {
+.card-tl:nth-last-child(n + 9) {
   --y: calc(-50% + -30px);
-  transform: translate(-50%, var(--y)) scale(0.9);
+  transform: translate(-105%, var(--y)) scale(0.65);
   box-shadow: 0 0 1px 1px #00000003;
+}
+.card-tl:nth-last-child(8) {
+    --y: calc(-50% + -90px);
+    transform: translate(-50%, var(--y)) scale(0.70);
+}
+.card-tl:nth-last-child(7) {
+    --y: calc(-50% + -75px);
+    transform: translate(-50%, var(--y)) scale(0.75);
+}
+.card-tl:nth-last-child(6) {
+    --y: calc(-50% + -60px);
+    transform: translate(-50%, var(--y)) scale(0.80);
+}
+.card-tl:nth-last-child(5) {
+    --y: calc(-50% + -45px);
+    transform: translate(-50%, var(--y)) scale(0.85);
+}
+.card-tl:nth-last-child(4) {
+    --y: calc(-50% + -30px);
+    transform: translate(-50%, var(--y)) scale(0.9);
 }
 .card-tl:nth-last-child(3) {
   --y: calc(-50% + -15px);
