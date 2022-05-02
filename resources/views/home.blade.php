@@ -12,11 +12,11 @@
         <div class="row">
 
             @foreach($destaques as $key => $destaque)
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <a href="{{$destaque->slug}}">
                     <div class="box {{$colors[$key]}}">
                         @if($destaque->imagem)
-                            <img src="/img/pre-img.gif" data-src="/imagens/parceiros/md-{{$destaque->imagem}}" alt="Imagem sobre {{$destaque->titulo}}" title="Imagem sobre {{$destaque->titulo}}" width="100" class="lazyload">
+                            <img src="/img/pre-img.gif" data-src="/imagens/modulos/md-{{$destaque->imagem}}" alt="Imagem sobre {{$destaque->titulo}}" title="Imagem sobre {{$destaque->titulo}}" width="170" class="lazyload">
                         @else
                             <i class="far fa-gem fa-4x m-5"></i>
                         @endif
@@ -84,7 +84,10 @@
                 @foreach($areas as $area)
                     <a href="area-tematica/{{$area->id}}/{{clean($area->nome)}}" >
                         <div class="item    box-list-icon">
-                            <div class="box-list-icon-i"><i class="far fa-gem fa-3x"></i></div>
+                            <div class="box-list-icon-i">
+                                {{--<i class="far fa-gem fa-3x"></i>--}}
+                                <img src="/img/icones/{{$area->icone}}" alt="" width="100%">
+                            </div>
                             <h2>{{$area->nome}}</h2>
                             {{--<p>Apesar de constituírem um elemento básico de organização da atuação governamental</p>--}}
                             <h3>Acessar</h3>

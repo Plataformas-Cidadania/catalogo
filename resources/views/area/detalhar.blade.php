@@ -46,10 +46,15 @@
                 <br><br><br><br>
             </div>
             <div class="col-md-4">
-                <div class="bg-pri box-icone">
-                    <img src="/img/icones/{{$area->icone}}" alt="" width="100%">
-                </div>
-
+                @if($area->caminho_arquivo)
+                    <a href="/arquivos/areas/{{$area->caminho_arquivo}}">
+                        <img src="/imagens/areas/{{$area->imagem}}" alt="" width="100%">
+                    </a>
+                @else
+                    <div class="bg-pri box-icone">
+                        <img src="/img/icones/{{$area->icone}}" alt="" width="100%">
+                    </div>
+                @endif
 
                 {{--<a href="https://mapaosc.ipea.gov.br/arquivos/posts/6732-mrosccovid.pdf" target="_blank">
                     <img src="https://mapaosc.ipea.gov.br/imagens/posts/2279-mrosc-covid.jpg" alt="" width="100%">

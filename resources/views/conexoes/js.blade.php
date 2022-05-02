@@ -219,6 +219,9 @@
         app_url = "{{env('APP_URL')}}";
     </script>
 
+    {{--<script src="js/components/tables/column.js"></script>--}}
+    <script src="js/components/tables/index.js"></script>
+
     <script src="js/home.js" ></script>
     <script src="js/conf-owl-carousel.js"></script>
 
@@ -231,6 +234,8 @@
     <script src="js/components/charts/stackedChart.js"></script>
     <script src="js/components/charts/pieChart.js"></script>
     <script src="js/components/home/index.js" ></script>
+
+
 
 
 

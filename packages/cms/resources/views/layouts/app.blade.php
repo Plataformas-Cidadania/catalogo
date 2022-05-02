@@ -124,6 +124,9 @@
                     <a href="cms/publicos-alvos"><i class="fa fa-fw fa-square"></i> Públicos Alvos</a>
                 </li>
                 <li>
+                    <a href="cms/politicas"><i class="fa fa-fw fa-square"></i> Políticas</a>
+                </li>
+                <li>
                     <a href="cms/setting"><i class="fa fa-fw fa-users"></i> Configurações</a>
                 </li>
 

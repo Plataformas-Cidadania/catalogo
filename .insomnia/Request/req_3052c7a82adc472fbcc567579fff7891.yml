@@ -1,0 +1,26 @@
+_id: req_3052c7a82adc472fbcc567579fff7891
+type: Request
+parentId: fld_d7512ece19d7482bbba8a4c3fa08858d
+modified: 1651239751984
+created: 1651200441957
+url: http://localhost:{{porta_app}}/api/arquivo/32
+name: delete arquivos
+description: ""
+method: DELETE
+body:
+  mimeType: multipart/form-data
+  params: []
+parameters: []
+headers:
+  - name: Content-Type
+    value: multipart/form-data
+    id: pair_4c884ad81adf4a4fb870ed2b71ad0cd3
+authentication: {}
+metaSortKey: -1650652738489.25
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -9,6 +9,7 @@ const Home = () => {
   const [list, setList] = useState([]);
   const [divSelected, setDivSelected] = useState(1);
   const [divSelectedTipo, setDivSelectedTipo] = useState("mix");
+  const [icon, setIcon] = useState('chart');
 
   const listData = async () => {
     try {
@@ -22,6 +23,10 @@ const Home = () => {
   const clickChart = (id, tipo) => {
     setDivSelected(id);
     setDivSelectedTipo(tipo);
+  };
+
+  const clickIcon = (id, tipo) => {
+    setIcon(tipo);
   };
 
   return /*#__PURE__*/React.createElement("div", {
@@ -77,7 +82,37 @@ const Home = () => {
         display: divSelected === item.id ? '' : 'none'
       },
       key: 'abas' + item.id
-    }, selectedChart, /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: icon === 'chart' ? '' : 'none'
+      }
+    }, selectedChart), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: icon === 'table' ? '' : 'none',
+        overflow: 'auto'
+      }
+    }, /*#__PURE__*/React.createElement(Tables, {
+      series: item.series,
+      labels: item.labels,
+      index: index,
+      tipo: item.tipo
+    })), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("div", {
+      onClick: () => clickIcon(item.id, 'table'),
+      style: {
+        display: icon === 'chart' ? '' : 'none'
+      },
+      className: "cursor"
+    }, /*#__PURE__*/React.createElement("i", {
+      className: "fas fa-table fa-2x"
+    })), /*#__PURE__*/React.createElement("div", {
+      onClick: () => clickIcon(item.id, 'chart'),
+      style: {
+        display: icon === 'table' ? '' : 'none'
+      },
+      className: "cursor"
+    }, /*#__PURE__*/React.createElement("i", {
+      className: "fas fa-chart-area fa-2x"
+    })), /*#__PURE__*/React.createElement("div", {
       style: {
         textAlign: 'right'
       }
