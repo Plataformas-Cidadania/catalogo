@@ -168,5 +168,8 @@ mix.scripts('packages/cms/resources/assets/js/controllers/alterarCategoriaPoliti
 mix.scripts('packages/cms/resources/assets/js/controllers/politicaCtrl.js', 'public/assets-cms/js/controllers/politicaCtrl.js');
 mix.scripts('packages/cms/resources/assets/js/controllers/alterarPoliticaCtrl.js', 'public/assets-cms/js/controllers/alterarPoliticaCtrl.js');
 
+//Arquivo
+mix.scripts('packages/cms/resources/assets/js/controllers/arquivoCtrl.js', 'public/assets-cms/js/controllers/arquivoCtrl.js');
+mix.scripts('packages/cms/resources/assets/js/controllers/alterarArquivoCtrl.js', 'public/assets-cms/js/controllers/alterarArquivoCtrl.js');
 
 //FIM CMS///////////////////////////////////////////////////////////////////
