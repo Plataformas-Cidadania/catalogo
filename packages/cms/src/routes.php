@@ -223,7 +223,13 @@ Route::group(['middleware' => 'cms'], function () {
         //Politica
         Route::get('/cms/politicas', 'Cms\Controllers\PoliticaController@index');
         Route::get('/cms/politica/{id}', 'Cms\Controllers\PoliticaController@detalhar');
+
+
+        //Arquivo
+        Route::get('/cms/arquivos', 'Cms\Controllers\ArquivoController@index');
         ////////////////////////////////////////////////////////////////////////////////////
+
+
 
 
     });

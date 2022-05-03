@@ -21,6 +21,8 @@ class AreaController extends Controller
     private $rules = [
         'id' => 'int|min:1',
         'nome' => 'string|min:1',
+        'resumo' => 'string',
+        'descricao' => 'string',
     ];
     public function __construct(AreaRepository $repo)
     {

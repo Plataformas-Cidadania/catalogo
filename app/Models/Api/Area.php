@@ -10,7 +10,7 @@ class Area extends Model
 	protected $primaryKey = 'id';
     public $timestamps = false;
     protected $fillable = [
-        'nome'
+        'nome', 'resumo', 'descricao'
     ];
     public function politicas()
     {

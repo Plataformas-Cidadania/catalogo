@@ -207,10 +207,10 @@ const Consulta = () => {
                     <Area addFilter={addFilter} removeFilter={removeFilter} />
                 </div>
                 <div className="col-md-4 col-xs-12">
-                    <Orgao addFilter={addFilter} removeFilter={removeFilter} />
+                    <Categoria addFilter={addFilter} removeFilter={removeFilter} />
                 </div>
                 <div className="col-md-4 col-xs-12">
-                    <Categoria addFilter={addFilter} removeFilter={removeFilter} />
+                    <Orgao addFilter={addFilter} removeFilter={removeFilter} />
                 </div>
                 <div className="col-md-4 col-xs-12">
                     <Publico addFilter={addFilter} removeFilter={removeFilter} />

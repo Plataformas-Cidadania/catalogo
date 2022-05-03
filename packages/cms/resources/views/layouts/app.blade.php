@@ -85,49 +85,49 @@
                     <a href="cms/webdoors"><i class="fa fa-fw fa-desktop"></i> Webdoor</a>
                 </li>
                 <li>
-                    <a href="cms/texts"><i class="fa fa-fw fa-link"></i> Textos</a>
+                    <a href="cms/texts"><i class="fa fa-fw fa-file-text"></i> Textos</a>
                 </li>
                 <li>
                     <a href="cms/urls"><i class="fa fa-fw fa-link"></i> Urls</a>
                 </li>
                 <li>
-                    <a href="cms/parceiros"><i class="fa fa-fw fa-link"></i> Parceiros</a>
+                    <a href="cms/parceiros"><i class="fa fa-fw fa-briefcase"></i> Parceiros</a>
                 </li>
                 {{--<li>
                     <a href="cms/apoios"><i class="fa fa-fw fa-anchor"></i> Apoio</a>
                 </li>--}}
                 <li>
-                    <a href="cms/usuarios"><i class="fa fa-fw fa-users"></i> Usuários</a>
+                    <a href="cms/midias"><i class="fa fa-fw fa-picture-o"></i> Mídias</a>
                 </li>
                 <li>
-                    <a href="cms/midias"><i class="fa fa-fw fa-anchor"></i> Mídias</a>
+                    <a href="cms/integrantes"><i class="fa fa-fw fa-pencil"></i> Autores</a>
                 </li>
                 <li>
-                    <a href="cms/integrantes"><i class="fa fa-fw fa-anchor"></i> Autores</a>
+                    <a href="cms/grandes-areas"><i class="fa fa-fw fa-folder"></i> Grandes Áreas</a>
                 </li>
                 <li>
-                    <a href="cms/grandes-areas"><i class="fa fa-fw fa-square"></i> Grandes Áreas</a>
+                    <a href="cms/areas"><i class="fa fa-fw fa-folder-open"></i> Áreas</a>
                 </li>
                 <li>
-                    <a href="cms/areas"><i class="fa fa-fw fa-square"></i> Áreas</a>
+                    <a href="cms/categorias-politicas"><i class="fa fa-fw fa-tags"></i> Categorias Políticas</a>
                 </li>
                 <li>
-                    <a href="cms/categorias-politicas"><i class="fa fa-fw fa-square"></i> Categorias Políticas</a>
+                    <a href="cms/orgaos"><i class="fa fa-fw fa-building"></i> Órgãos</a>
                 </li>
                 <li>
-                    <a href="cms/orgaos"><i class="fa fa-fw fa-square"></i> Órgãos</a>
+                    <a href="cms/tipos-politicas"><i class="fa fa-fw fa-ticket"></i> Tipos Políticas</a>
                 </li>
                 <li>
-                    <a href="cms/tipos-politicas"><i class="fa fa-fw fa-square"></i> Tipos Políticas</a>
+                    <a href="cms/publicos-alvos"><i class="fa fa-fw fa-bullseye"></i> Públicos Alvos</a>
                 </li>
                 <li>
-                    <a href="cms/publicos-alvos"><i class="fa fa-fw fa-square"></i> Públicos Alvos</a>
-                </li>
-                <li>
-                    <a href="cms/politicas"><i class="fa fa-fw fa-square"></i> Políticas</a>
+                    <a href="cms/politicas"><i class="fa fa-fw fa-file-powerpoint-o"></i> Políticas</a>
                 </li>
                 <li>
                     <a href="cms/setting"><i class="fa fa-fw fa-users"></i> Configurações</a>
+                </li>
+                <li>
+                    <a href="cms/usuarios"><i class="fa fa-fw fa-users"></i> Usuários</a>
                 </li>
 
             </ul>
