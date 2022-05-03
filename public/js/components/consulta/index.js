@@ -235,12 +235,12 @@ const Consulta = () => {
     removeFilter: removeFilter
   })), /*#__PURE__*/React.createElement("div", {
     className: "col-md-4 col-xs-12"
-  }, /*#__PURE__*/React.createElement(Orgao, {
+  }, /*#__PURE__*/React.createElement(Categoria, {
     addFilter: addFilter,
     removeFilter: removeFilter
   })), /*#__PURE__*/React.createElement("div", {
     className: "col-md-4 col-xs-12"
-  }, /*#__PURE__*/React.createElement(Categoria, {
+  }, /*#__PURE__*/React.createElement(Orgao, {
     addFilter: addFilter,
     removeFilter: removeFilter
   })), /*#__PURE__*/React.createElement("div", {

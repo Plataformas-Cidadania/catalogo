@@ -30,7 +30,7 @@ const Categoria = (props) => {
             <SearchField
                 id="categoria"
                 name="categoria"
-                label="Categoria"
+                label="Subáreas"
                 items={items}
                 column="nome"
                 selectItems={setItemsSelected}

@@ -31,7 +31,7 @@ const Categoria = props => {
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(SearchField, {
     id: "categoria",
     name: "categoria",
-    label: "Categoria",
+    label: "Sub\xE1reas",
     items: items,
     column: "nome",
     selectItems: setItemsSelected,
