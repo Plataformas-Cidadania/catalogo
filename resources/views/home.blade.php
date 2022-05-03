@@ -18,12 +18,12 @@
                         @if($destaque->imagem)
                             <img src="/img/pre-img.gif" data-src="/imagens/modulos/md-{{$destaque->imagem}}" alt="Imagem sobre {{$destaque->titulo}}" title="Imagem sobre {{$destaque->titulo}}" width="170" class="lazyload">
                         @else
-                            <i class="far fa-gem fa-4x m-5"></i>
+                            <i class="far fa-gem fa-4x mt-5 mb-4 "></i>
                         @endif
 
                         {{--<i class="far fa-gem fa-4x m-5"></i>--}}
-                        <h2>{{$destaque->titulo}}</h2>
-                        <p>{{$destaque->resumida}}</p>
+                        <h2>{{$destaque->titulo}}<br><br></h2>
+                        {{--<p>{{$destaque->resumida}}</p>--}}
                     </div>
                 </a>
             </div>
