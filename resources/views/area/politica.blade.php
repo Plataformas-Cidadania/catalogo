@@ -3,8 +3,8 @@
 @section('content')
 
 
-
-    <div class=" bg-lgt">
+    <div class="bg-politica"></div>
+    <div class=" bg-lgt " style="position: relative; z-index: 1;">
         <div class="bg-img-l">
             <div class="bg-img-r">
                 <div class="container pt-5 pb-5 bg-lgt">
@@ -23,6 +23,17 @@
     </div>
 
     <style>
+        .bg-politica{
+            background-image: url("/img/icones/saude.png");
+            filter: brightness(0.6);
+            width: 600px;
+            height: 600px;
+            position: absolute;
+            z-index: 0;
+            right: 0;
+            opacity: 0.1;
+            top: 40%;
+        }
         .circle-item {
             display: flex;
             align-items: center;
@@ -54,7 +65,7 @@
         }
     </style>
 
-    <div class="container">
+    <div class="container" style="position: relative; z-index: 1;">
         <br><br>
 
 

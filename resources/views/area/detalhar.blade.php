@@ -51,8 +51,8 @@
                         <img src="/imagens/areas/{{$area->imagem}}" alt="" width="100%">
                     </a>
                 @else
-                    <div class="bg-pri box-icone">
-                        <img src="/img/icones/{{$area->icone}}" alt="" width="100%">
+                    <div class="box-icone">
+                        <img src="/img/icones/{{$area->icone}}" alt="" width="75%">
                     </div>
                 @endif
 
