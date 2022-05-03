@@ -64,22 +64,21 @@
 
             <div class="col-md-8">
 
-                <h2 class="tx-top">
-                    <strong>Data de criação e revogação</strong><br>
-                    <i class="far fa-clock"></i>
-                    {{formatBr($politica->vigencia_inicio, 'ext')}} {{$politica->vigencia_fim ? 'até' : ''}} {{formatBr($politica->vigencia_fim, 'ext')}}
-                </h2>
 
                 <div>
-                    <hr>
                     <div>
-                        <h2><strong>Instrumento legal</strong></h2>
-                        <p>{!! $politica->instrumento_legal !!}</p>
+                        <p>Data de criação e revogação</p>
+                        <h2><strong><i class="far fa-clock"></i> {{formatBr($politica->vigencia_inicio, 'ext')}} {{$politica->vigencia_fim ? '' : 'até'}} {{formatBr($politica->vigencia_fim, 'ext')}}</strong></h2>
                     </div>
                     <hr>
                     <div>
-                        <h2><br><strong>Legislacao</strong></h2>
-                        <p>{{$politica->legislacao}} <br> {{formatBr($politica->vigencia_inicio, 'num')}} {{$politica->vigencia_fim ? 'à' : ''}} {{formatBr($politica->vigencia_fim), 'num'}}</p>
+                        <p>Instrumento legal</p>
+                        <h2><strong>{!! $politica->instrumento_legal !!}</strong></h2>
+                    </div>
+                    <hr>
+                    <div>
+                        <p>Legislacao</p>
+                        <h2><strong>{{$politica->legislacao}} <br> {{formatBr($politica->vigencia_inicio, 'num')}} {{$politica->vigencia_fim ? 'à' : ''}} {{formatBr($politica->vigencia_fim), 'num'}}</strong></h2>
                     </div>
                 </div>
 
