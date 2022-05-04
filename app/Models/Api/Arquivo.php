@@ -11,9 +11,13 @@ class Arquivo extends Model
     public $timestamps = true;
     protected $fillable = [
         'imagem',
-        'caminho_arquivo'
+        'caminho_arquivo',
+        'politica_id'
     ];
-
+    public function politica()
+    {
+        return $this->belongsTo(Politica::class, 'politica_id');
+    }
 }
 
 

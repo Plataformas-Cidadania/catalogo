@@ -66,15 +66,18 @@ class AreaController extends Controller
             $data = $this->getData($request);
 
             $arr = [];
-            if(isset($data['icone']))  $arr['icone'] = $data['icone'];
-            if(isset($data['imagem'])) $arr['imagem'] = $data['imagem'];
-            if(isset($data['caminho_arquivo'])) $arr['arquivo'] = $data['caminho_arquivo'];
+            if(isset($data['icone']))  $arr['area_icone'] = $data['icone'];
+            if(isset($data['imagem'])) $arr['area_imagem'] = $data['imagem'];
+            if(isset($data['caminho_arquivo'])) $arr['area_arquivo'] = $data['caminho_arquivo'];
 
             $res = createFiles($arr,true);
+            // mudando para o nome para o nome correto da tabela
 
-            $res['caminho_arquivo'] = $res['arquivo'];
+            if(isset($res['area_icone'])) $res['icone'] = $res['area_icone'];
+            if(isset($res['area_imagem'])) $res['imagem'] = $res['area_imagem'];
+            if(isset($res['area_arquivo'])) $res['caminho_arquivo'] = $res['area_arquivo'];
 
-            unset($res['arquivo']);
+            unset($res['area_icone'],$res['area_imagem'],$res['area_arquivo']);
 
             $data = array_merge($data,$res);
 
@@ -120,26 +123,31 @@ class AreaController extends Controller
                 return $this->errorResponse($validator->errors()->all());
             }
             $data = $this->get($id);
-            $res = [];
+            // deletando arquivos antigos
             if( $data  instanceof \Illuminate\Database\Eloquent\Model){
-                if(isset($data->icone))
+                if(isset($request->icone))
                     deleteFiles($data->icone);
-                if(isset($data->imagem))
+                if(isset($request->imagem))
                     deleteFiles($data->imagem);
-                if(isset($data->caminho_arquivo))
+                if(isset($request->caminho_arquivo))
                     deleteFiles($data->caminho_arquivo);
             }
 
             // Criando novos
             $arr = [];
 
-            if(isset($request->icone))  $arr['icone'] = $request->icone;
-            if(isset($request->imagem)) $arr['imagem'] = $request->imagem;
-            if(isset($request->caminho_arquivo)) $arr['arquivo'] = $request->caminho_arquivo;
+            if(isset($request->icone))  $arr['area_icone'] = $request->icone;
+            if(isset($request->imagem)) $arr['area_imagem'] = $request->imagem;
+            if(isset($request->caminho_arquivo)) $arr['area_arquivo'] = $request->caminho_arquivo;
 
             $res = createFiles($arr,true);
-            $res['caminho_arquivo'] = $res['arquivo'];
-            unset($res['arquivo']);
+
+            // mudando para o nome para o nome correto da tabela
+            if(isset($res['area_icone'])) $res['icone'] = $res['area_icone'];
+            if(isset($res['area_imagem'])) $res['imagem'] = $res['area_imagem'];
+            if(isset($res['area_arquivo'])) $res['caminho_arquivo'] = $res['area_arquivo'];
+
+            unset($res['area_icone'],$res['area_imagem'],$res['area_arquivo']);
 
             return $this->repo->update($id,$res);
         } catch (Exception $exception) {
