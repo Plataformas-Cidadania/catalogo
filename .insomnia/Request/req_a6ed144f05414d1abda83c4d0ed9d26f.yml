@@ -1,7 +1,7 @@
 _id: req_a6ed144f05414d1abda83c4d0ed9d26f
 type: Request
 parentId: fld_06dabb87ad16494aaa58fe3d45250f4c
-modified: 1649433987927
+modified: 1651693850571
 created: 1649433980625
 url: http://localhost:{{ _.porta_app }}/api/politica/area/21
 name: get politicas por area
