@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Models\Api\Arquivo;
+use App\Models\Api\Politica;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Storage;
 
@@ -21,6 +22,14 @@ class ArquivoRepository extends BaseRepository
     public function __construct(Arquivo $model)
     {
         $this->model = $model;
+    }
+
+    public function getArquivosPorPoliticaId($politica_id)
+    {
+        $models = $this->model->get();
+        $models->where('politica_id','=', $politica_id);
+        //dd($models);
+        return $models;
     }
 
 }

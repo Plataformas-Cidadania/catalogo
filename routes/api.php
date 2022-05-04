@@ -258,6 +258,8 @@ Route::group([
         ->name('api.arquivo.getAll');
     Route::get('/{id}', [App\Http\Controllers\Api\ArquivoController::class, 'get'])
         ->name('api.arquivo.get');
+    Route::get('/politica/{politica_id}', [App\Http\Controllers\Api\ArquivoController::class, 'getArquivosPorPoliticaId'])
+        ->name('api.arquivo.getArquivosPorPoliticaId');
     Route::post('/', [App\Http\Controllers\Api\ArquivoController::class, 'store'])
         ->name('api.arquivo.store');
     Route::put('/{id}', [App\Http\Controllers\Api\ArquivoController::class, 'update'])

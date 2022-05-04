@@ -63,6 +63,11 @@ class ArquivoController extends Controller
         }
     }
 
+    public function getArquivosPorPoliticaId($politica_id)
+    {
+        return $this->repo->getArquivosPorPoliticaId($politica_id);
+    }
+
     /**
      * Adicionar um novo
      *
