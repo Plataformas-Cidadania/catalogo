@@ -1,23 +1,51 @@
 _id: req_b23776d3e3444ec1b40f3a70562f02dc
 type: Request
 parentId: fld_3d74f2e5fc6d4876842f1c4cca827ef9
-modified: 1651186711329
+modified: 1651693618425
 created: 1649110334141
-url: http://localhost:{{ _.porta_app }}/api/area
+url: http://localhost:{{ _.porta_app }}/api/area/
 name: insert
 description: ""
 method: POST
 body:
-  mimeType: application/x-www-form-urlencoded
+  mimeType: multipart/form-data
   params:
     - id: pair_bbc949a9949c4d658f6b567dd7eccadd
       name: nome
       value: teste
       description: ""
+    - id: pair_c9b462b120174aea851637fc8ebde5d7
+      name: icone
+      value: http://...
+      description: ""
+      type: file
+      fileName: C:\Users\rapha\Desktop\guia.jpg
+      disabled: false
+    - id: pair_ece09e37a4ca4c6f8a427a781b27a4d0
+      name: resumo
+      value: resumo1
+      description: ""
+    - id: pair_abdb1579f7de4b818dc83864cef247d6
+      name: descricao
+      value: desc1
+      description: ""
+    - id: pair_b8d2842d792e46e394623470a9a045ce
+      name: imagem
+      value: ""
+      description: ""
+      type: file
+      fileName: C:\Users\rapha\Desktop\guia.jpg
+      disabled: false
+    - id: pair_28df4658a74541b9a969bfeb71899fb2
+      name: caminho_arquivo
+      value: ""
+      description: ""
+      type: file
+      fileName: C:\Users\rapha\Desktop\consistencia.pdf
 parameters: []
 headers:
   - name: Content-Type
-    value: application/x-www-form-urlencoded
+    value: multipart/form-data
     id: pair_bab563c835fb48018cde20b450fb3f63
 authentication: {}
 metaSortKey: -1641981664548.5

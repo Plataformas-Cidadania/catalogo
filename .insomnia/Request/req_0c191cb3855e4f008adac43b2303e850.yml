@@ -1,19 +1,15 @@
-_id: req_67e21204cb2f4975b7bf1f19d6d4d026
+_id: req_0c191cb3855e4f008adac43b2303e850
 type: Request
-parentId: fld_3d74f2e5fc6d4876842f1c4cca827ef9
-modified: 1651693622051
-created: 1649110334150
-url: http://localhost:{{ _.porta_app }}/api/area/11
+parentId: fld_d7512ece19d7482bbba8a4c3fa08858d
+modified: 1651693592451
+created: 1651603952661
+url: http://localhost:{{porta_app}}/api/arquivo/16
 name: update
 description: ""
 method: POST
 body:
   mimeType: multipart/form-data
   params:
-    - id: pair_2d1761fd522e4218849972e020eba4fe
-      name: nome
-      value: testou atualizar
-      description: ""
     - id: pair_cdbc672b4d0641728023bb6f30a97458
       name: imagem
       value: ""
@@ -27,6 +23,7 @@ body:
       description: ""
       type: file
       fileName: C:\Users\rapha\Desktop\consistencia.pdf
+      disabled: false
     - id: pair_d055a55334b0437da2227c16505374e1
       name: _method
       value: PUT
@@ -34,7 +31,7 @@ body:
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1640796990338.25
+metaSortKey: -1650913243269.125
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true
