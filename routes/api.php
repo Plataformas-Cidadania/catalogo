@@ -254,12 +254,16 @@ Route::group([
     'prefix' => 'arquivo',
 ], function () {
 
+    Route::get('/', [App\Http\Controllers\Api\ArquivoController::class, 'getAll'])
+        ->name('api.arquivo.getAll');
+    Route::get('/{id}', [App\Http\Controllers\Api\ArquivoController::class, 'get'])
+        ->name('api.arquivo.get');
     Route::post('/', [App\Http\Controllers\Api\ArquivoController::class, 'store'])
         ->name('api.arquivo.store');
-
+    Route::put('/{id}', [App\Http\Controllers\Api\ArquivoController::class, 'update'])
+        ->name('api.arquivo.update');
     Route::delete('/{id}', [App\Http\Controllers\Api\ArquivoController::class, 'destroy'])
         ->name('api.arquivo.destroy');
-
 
 });
 

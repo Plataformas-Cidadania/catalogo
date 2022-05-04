@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\RelationNotFoundException;
 use Illuminate\Foundation\Mix;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 use Exception;
 use App\Repository\AreaRepository;
@@ -21,9 +22,14 @@ class AreaController extends Controller
     private $rules = [
         'id' => 'int|min:1',
         'nome' => 'string|min:1',
-        'resumo' => 'string',
-        'descricao' => 'string',
+        'icone'=> 'mimes:png,gif,jpg|max:2048',
+        'resumo'=> 'string|min:1',
+        'descricao'=> 'string|min:1',
+        'imagem' => 'mimes:png,gif,jpg|max:2048',
+        'caminho_arquivo' => 'mimes:pdf,xlx,csv,jpg,png|max:4048', // maximo para php é 5mb
     ];
+
+
     public function __construct(AreaRepository $repo)
     {
         $this->repo = $repo;
@@ -58,7 +64,21 @@ class AreaController extends Controller
             }
 
             $data = $this->getData($request);
-            return $this->repo->create($data);
+
+            $arr = [];
+            if(isset($data['icone']))  $arr['icone'] = $data['icone'];
+            if(isset($data['imagem'])) $arr['imagem'] = $data['imagem'];
+            if(isset($data['caminho_arquivo'])) $arr['arquivo'] = $data['caminho_arquivo'];
+
+            $res = createFiles($arr,true);
+
+            $res['caminho_arquivo'] = $res['arquivo'];
+
+            unset($res['arquivo']);
+
+            $data = array_merge($data,$res);
+
+            return $id = $this->repo->create($data);
 
         } catch (Exception $exception) {
             return $this->errorResponse('Erro inesperado.'.$exception);
@@ -99,8 +119,29 @@ class AreaController extends Controller
             if ($validator->fails()) {
                 return $this->errorResponse($validator->errors()->all());
             }
-            $data = $this->getData($request);
-            return $this->repo->update($id,$data);
+            $data = $this->get($id);
+            $res = [];
+            if( $data  instanceof \Illuminate\Database\Eloquent\Model){
+                if(isset($data->icone))
+                    deleteFiles($data->icone);
+                if(isset($data->imagem))
+                    deleteFiles($data->imagem);
+                if(isset($data->caminho_arquivo))
+                    deleteFiles($data->caminho_arquivo);
+            }
+
+            // Criando novos
+            $arr = [];
+
+            if(isset($request->icone))  $arr['icone'] = $request->icone;
+            if(isset($request->imagem)) $arr['imagem'] = $request->imagem;
+            if(isset($request->caminho_arquivo)) $arr['arquivo'] = $request->caminho_arquivo;
+
+            $res = createFiles($arr,true);
+            $res['caminho_arquivo'] = $res['arquivo'];
+            unset($res['arquivo']);
+
+            return $this->repo->update($id,$res);
         } catch (Exception $exception) {
             if ($exception instanceof ModelNotFoundException)
                 return $this->errorResponse('Not found');
@@ -118,6 +159,16 @@ class AreaController extends Controller
     public function destroy($id)
     {
         try {
+            $data = $this->get($id);
+
+            if( $data  instanceof \Illuminate\Database\Eloquent\Model){
+                if(isset($data->icone))
+                    deleteFiles($data->icone);
+                if(isset($data->imagem))
+                    deleteFiles($data->imagem);
+                if(isset($data->caminho_arquivo))
+                    deleteFiles($data->caminho_arquivo);
+            }
             return $this->repo->deleteById($id);
         } catch (Exception $exception) {
             if ($exception instanceof ModelNotFoundException)

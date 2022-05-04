@@ -10,7 +10,12 @@ class Area extends Model
 	protected $primaryKey = 'id';
     public $timestamps = false;
     protected $fillable = [
-        'nome', 'resumo', 'descricao'
+        'nome',
+        'icone',
+        'resumo',
+        'descricao',
+        'imagem',
+        'caminho_arquivo'
     ];
     public function politicas()
     {
