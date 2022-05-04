@@ -51,8 +51,8 @@
                         <img src="/imagens/areas/{{$area->imagem}}" alt="" width="100%">
                     </a>
                 @else
-                    <div class="bg-pri box-icone">
-                        <img src="/img/icones/{{$area->icone}}" alt="" width="100%">
+                    <div class="box-icone">
+                        <img src="/img/icones/{{$area->icone}}" alt="" width="75%">
                     </div>
                 @endif
 
@@ -83,12 +83,12 @@
                     @foreach($area['politicas'] as $politica)
                     <div class="col-md-4" >
                         <div class="bg-lgt p-3 mb-4 linsLeft">
-                            <a href="politica/{{$politica->id}}/{{clean($politica->nome)}}" style="display: block; min-height: 188px">
+                            <a href="politica/{{$politica->id}}/{{clean($politica->nome)}}" style="display: block; min-height: 160px">
                                 <div class="m-0">
                                     <h2>{{substr($politica->ano, 0, 4)}}</h2>
                                     <strong>{{$politica->legislacao}}</strong><br>
                                     <strong>{{$politica->nome}}</strong><br>
-                                    {{$politica->publico_alvo_categ}}<br>
+                                    {{--{{$politica->publico_alvo_categ}}<br>--}}
 
                                 </div>
                             </a>

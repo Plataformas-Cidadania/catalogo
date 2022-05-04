@@ -481,11 +481,16 @@
 .linsBor{
     border: solid 1px #cccccc;
     font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: 5px;
 }
-.linsBor:hover{
+
+.linsBor img {
+    filter: invert(1);
+    float: right;
+    padding: 10px;
+}
+
+.linsBorhover:hover{
     background-color: #F5F5F5;
 }
 
@@ -502,6 +507,8 @@
 .box-icone{
     padding: 30px;
     border-radius: 15px;
+    filter : brightness(0.3);
+    opacity: 0.4;
 }
 
 /**/
