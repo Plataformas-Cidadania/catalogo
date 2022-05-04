@@ -1,7 +1,7 @@
 _id: req_7123c78bac49474882c3647633beb397
 type: Request
 parentId: fld_d7512ece19d7482bbba8a4c3fa08858d
-modified: 1651251603162
+modified: 1651672827787
 created: 1651173748049
 url: http://localhost:{{porta_app}}/api/arquivo
 name: store arquivos
@@ -11,17 +11,22 @@ body:
   mimeType: multipart/form-data
   params:
     - id: pair_53161554b0054891afffc2216c2f3240
-      name: arquivo
+      name: caminho_arquivo
       value: ""
       description: ""
       type: file
-      fileName: C:\Users\rapha\Desktop\Centro de devoluções.pdf
+      fileName: C:\Users\rapha\Desktop\7370636.pdf
     - id: pair_ae035c2d194d493baf615b18d3a39160
       name: imagem
       value: ""
       description: ""
       type: file
-      fileName: C:\Users\rapha\Desktop\scientific_method.jpeg
+      fileName: C:\Users\rapha\Desktop\guia.jpg
+      disabled: false
+    - id: pair_b5abb7d92fbf4264b84152c21e028ab3
+      name: politica_id
+      value: "3"
+      description: ""
       disabled: false
 parameters: []
 headers:

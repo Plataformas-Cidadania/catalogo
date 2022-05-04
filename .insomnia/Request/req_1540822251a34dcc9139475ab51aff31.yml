@@ -1,7 +1,7 @@
 _id: req_1540822251a34dcc9139475ab51aff31
 type: Request
 parentId: fld_06dabb87ad16494aaa58fe3d45250f4c
-modified: 1649112258411
+modified: 1651669813852
 created: 1649112073834
 url: http://localhost:{{ _.porta_app }}/api/politica
 name: insert
@@ -19,7 +19,7 @@ body:
       value: 2000-12-31
       description: ""
     - id: pair_f526c3cdaa6047d785ffc2c705dc1414
-      name: publico_alvo_categ
+      name: publico_alvo_legislacao
       value: teste
       description: ""
 parameters: []

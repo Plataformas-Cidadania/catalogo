@@ -12,7 +12,7 @@ class Politica extends Model
     protected $fillable = [
         'nome','ano','medida_provisoria','medida_provisoria_inicio_vigencia','legislacao',
         'vigencia_inicio','vigencia_fim','objetivos','observacao','acao_orcamentaria_assoc',
-        'publico_alvo_categ','tipo_politica','grande_area','area',
+        'publico_alvo_legislacao','tipo_politica','grande_area','area',
     ];
 
 	public function tipo_politica()
@@ -30,6 +30,10 @@ class Politica extends Model
     public function politica_orgao()
     {
         return $this->hasMany(PoliticaOrgao::class, 'politica_id');
+    }
+    public function politica_arquivo()
+    {
+        return $this->hasMany(Arquivo::class, 'politica_id');
     }
     public function politica_publico_alvo()
     {

@@ -7,6 +7,7 @@ if ( ! function_exists('deleteFiles') ) {
         foreach($files as $file){
             $filePath = public_path('uploads') . '/' . $file;
             File::delete($filePath);
+
         }
     }
 }
