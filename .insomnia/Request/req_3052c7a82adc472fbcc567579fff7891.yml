@@ -1,9 +1,9 @@
 _id: req_3052c7a82adc472fbcc567579fff7891
 type: Request
 parentId: fld_d7512ece19d7482bbba8a4c3fa08858d
-modified: 1651239751984
+modified: 1651693597623
 created: 1651200441957
-url: http://localhost:{{porta_app}}/api/arquivo/32
+url: http://localhost:{{porta_app}}/api/arquivo/16
 name: delete arquivos
 description: ""
 method: DELETE

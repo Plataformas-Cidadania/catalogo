@@ -121,10 +121,10 @@
                     <p>{!! $politica->acao_orcamentaria_assoc !!}</p>--}}
 
                     <p><strong>Público alvo agregado</strong></p>
-                    <p>{!! $politica->publico_alvo_categ !!}</p>
+                    {{--<p>{!! $politica->publico_alvo_categ !!}</p>--}}
 
                     <p><strong>Público alvo legislação</strong></p>
-                    <p>{!! $politica->publico_alvo_categ !!}</p>
+                    <p>{!! $politica->publico_alvo_legislacao !!}</p>
 
 
 

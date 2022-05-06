@@ -1,17 +1,17 @@
-_id: req_107d45d3189340f985ac1830daef68fc
+_id: req_edbee69212dd46a3ba28bd90ba50f6ac
 type: Request
-parentId: fld_3d74f2e5fc6d4876842f1c4cca827ef9
-modified: 1651693653839
-created: 1649110334158
-url: http://localhost:{{ _.porta_app }}/api/area/5
-name: delete
+parentId: fld_d7512ece19d7482bbba8a4c3fa08858d
+modified: 1651602895382
+created: 1651602884766
+url: http://localhost:{{porta_app}}/api/arquivo
+name: get all
 description: ""
-method: DELETE
+method: GET
 body: {}
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1640204653233.125
+metaSortKey: -1651602866926
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

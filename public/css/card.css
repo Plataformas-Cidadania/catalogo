@@ -101,12 +101,61 @@
     background: linear-gradient(-56deg,  #de4313 0%,#fec163 100%);
 }
 
-.card-tl:nth-last-child(n + 9) {
-  --y: calc(-50% + -30px);
-  transform: translate(-105%, var(--y)) scale(0.65);
-  box-shadow: 0 0 1px 1px #00000003;
+.cor10 {
+    color: #FFFFFF;
+    background-color: #8063e1;
+    background-image: linear-gradient(135deg, #bd7be8, #8063e1);
+    box-shadow: 20px 20px 60px rgba(34,50,84,0.5), 1px 1px 0px 1px #8063e1;
 }
-.card-tl:nth-last-child(8) {
+.cor11 {
+    color: #FFFFFF;
+    background-color: #3f58e3;
+    background-image: linear-gradient(135deg, #7f94fc, #3f58e3);
+    box-shadow: 20px 20px 60px rgba(34,50,84,0.5), 1px 1px 0px 1px #3f58e3;
+}
+.cor12 {
+    color: #FFFFFF;
+    background: #d4145a;
+    background: -moz-linear-gradient(45deg,  #d4145a 0%,#fbb03b 100%);
+    background: -webkit-linear-gradient(45deg,  #d4145a 0%,#fbb03b 100%);
+    background: linear-gradient(45deg,  #d4145a 0%,#fbb03b 100%);
+}
+.cor13 {
+    color: #FFFFFF;
+    background-color: #352f64;
+    background-image: linear-gradient(135deg, #415197, #352f64);
+    box-shadow: 5px 5px 60px rgba(34,50,84,0.1), 1px 1px 0px 1px #352f64;
+}
+.cor14 {
+    color: #FFFFFF;
+    background-color: #352f64;
+    background: -moz-linear-gradient(135deg,  #fcee21 0%,#009245 100%);
+    background: -webkit-linear-gradient(135deg,  #fcee21 0%,#009245 100%);
+    background: linear-gradient(135deg,  #fcee21 0%,#009245 100%);
+}
+
+/*.card-tl:nth-last-child(n + 13) {
+  --y: calc(-50% + -165px);
+  transform: translate(-105%, var(--y)) scale(0.45);
+}
+.card-tl:nth-last-child(12) {
+  --y: calc(-50% + -150px);
+  transform: translate(-105%, var(--y)) scale(0.50);
+}
+.card-tl:nth-last-child(11) {
+  --y: calc(-50% + -135px);
+  transform: translate(-105%, var(--y)) scale(0.55);
+}
+.card-tl:nth-last-child(10) {
+  --y: calc(-50% + -120px);
+  transform: translate(-105%, var(--y)) scale(0.60);
+}
+.card-tl:nth-last-child(9) {
+  --y: calc(-50% + -105px);
+  transform: translate(-105%, var(--y)) scale(0.65);
+}
+*/
+.card-tl:nth-last-child(n + 8) {
     --y: calc(-50% + -90px);
     transform: translate(-50%, var(--y)) scale(0.70);
 }

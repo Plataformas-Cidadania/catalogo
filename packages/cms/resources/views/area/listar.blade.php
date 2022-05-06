@@ -21,9 +21,13 @@
                          ng-show="!picFile" accept="image/*" ngf-max-size="2MB">Solte uma imagem aqui!</div>
                     <img  ngf-thumbnail="picFile" class="thumb">
                 </div>
-                {{--<br>--}}
-                <span class="btn btn-primary btn-file" ng-show="!picFile" style="display: none;">
-                    Escolher imagem <input  type="file" ngf-select ng-model="picFile" name="file" accept="image/*" ngf-max-size="2MB" ngf-model-invalid="errorFile">
+                <br><br>
+                <span class="btn btn-primary btn-file" ng-show="!icone" >
+                    Escolher Ícone <input  type="file" ngf-select ng-model="icone" name="icone" accept="image/*" ngf-max-size="2MB" ngf-model-invalid="errorFile">
+                </span>
+                <br><br>
+                <span class="btn btn-primary btn-file" ng-show="!picFile" >
+                    Escolher Imagem do Arquivo <input  type="file" ngf-select ng-model="picFile" name="file" accept="image/*" ngf-max-size="2MB" ngf-model-invalid="errorFile">
                 </span>
                 <button class="btn btn-danger" ng-click="picFile = null" ng-show="picFile" type="button">Remover Imagem</button>
                 <i ng-show="form.file.$error.maxSize || form.fileDrop.$error.maxSize" style="margin-left: 10px;">
@@ -31,20 +35,20 @@
                     <div class="btn btn-danger" ng-click="limparImagem()">Cancelar</div>
                 </i>
 
-                {{--<br><br>--}}
+                <br><br>
 
-                <span class="btn btn-primary btn-file" ng-show="!fileArquivo" style="display: none;">
+                <span class="btn btn-primary btn-file" ng-show="!fileArquivo" >
                     Escolher Arquivo <input  type="file" ngf-select ng-model="fileArquivo" name="fileArquivo" accept="application/pdf,.zip,.rar,.doc,.docx,.xlsx,.xls" ngf-max-size="100MB" ngf-model-invalid="errorFile">
                 </span>
                 <a ng-show="fileArquivo"><% fileArquivo.name %></a>
 
 
-                {{--<br><br>--}}
+               <br><br>
                 @include('cms::area._form')
                 <div class="row">
                     <div class="col-md-1 col-lg-1 col-xs-3">
                         <br>
-                        <button class="btn btn-info" type="button" ng-click="inserir(picFile, fileArquivo)" ng-disabled="form.$invalid">Salvar</button>
+                        <button class="btn btn-info" type="button" ng-click="inserir(picFile, fileArquivo, icone)" ng-disabled="form.$invalid">Salvar</button>
                     </div>
                     <div class="col-md-2 col-lg-2 col-xs-6">
                         <span class="progress" ng-show="picFile.progress >= 0">
