@@ -96,13 +96,13 @@
                         <tbody>
                         <tr ng-repeat="arquivo in arquivos">
                             <td><% arquivo.id %></td>
-                            <td><img ng-show="arquivo.imagem" ng-src="imagens/arquivos/xs-<% arquivo.imagem %>" width="60"></td>
-                            <td><a href="cms/arquivo/<% arquivo.id %>"><% arquivo.titulo %></a></td>
+                            <td><img ng-show="arquivo.imagem" ng-src="uploads/<% arquivo.imagem %>" width="60"></td>
+                            <td><a href="uploads/<% arquivo.caminho_arquivo %>" target="_blank"><% arquivo.caminho_arquivo %></a></td>
                             <td class="text-right">
                                 <div>
-                                    <a href="cms/arquivo/<% arquivo.id %>"><i class="fa fa-edit fa-2x" title="Editar"></i></a>&nbsp;&nbsp;
+                                    {{--<a href="cms/arquivo/<% arquivo.id %>"><i class="fa fa-edit fa-2x" title="Editar"></i></a>&nbsp;&nbsp;--}}
                                     {{--<a  ng-class="<% arquivo.status %> == 1 ? 'color-success' : 'color-success-inactive'"  style="cursor: pointer;"><i class="fa fa-check-circle fa-2x" aria-hidden="true" ng-click="status(arquivo.id);"></i></a>--}}
-                                    <a><i data-toggle="modal" data-target="#modalExcluir" class="fa fa-remove fa-2x" ng-click="perguntaExcluir(arquivo.id, arquivo.titulo, arquivo.imagem)"></i></a>
+                                    <a><i data-toggle="modal" data-target="#modalExcluir" class="fa fa-remove fa-2x" ng-click="perguntaExcluir(arquivo.id, arquivo.caminho_arquivo, arquivo.imagem)"></i></a>
                                 </div>
                             </td>
                         </tr>
@@ -146,7 +146,7 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-3">
-                                <img  ng-src="imagens/arquivos/xs-<% imagemExcluir %>" width="100">
+                                <img  ng-src="uploads/<% imagemExcluir %>" width="100">
                             </div>
                             <div class="col-md-9">
                                 <p><% tituloExcluir %></p>
