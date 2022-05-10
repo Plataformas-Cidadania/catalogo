@@ -89,10 +89,12 @@
                     <hr>
                     <div>
                         <p>Legislacao</p>
-                        <h2><strong>{{$politica->legislacao}} <br> {{formatBr($politica->vigencia_inicio, 'num')}} {{$politica->vigencia_fim ? 'à' : ''}} {{formatBr($politica->vigencia_fim), 'num'}}</strong></h2>
+                        <h2><strong>{{$politica->legislacao}}</strong>
+                        </h2>
+                        <p>Data</p>
+                        <h2>{{formatBr($politica->vigencia_inicio, 'ext')}} {{$politica->vigencia_fim ? 'à' : ''}} {{formatBr($politica->vigencia_fim), 'ext'}}</strong></h2>
                     </div>
                 </div>
-
 
 
                 {{----}}
@@ -124,7 +126,7 @@
                     {{--<p>{!! $politica->publico_alvo_categ !!}</p>--}}
 
                     <p><strong>Público alvo legislação</strong></p>
-                    <p>{!! $politica->publico_alvo_legislacao !!}</p>
+                    {{--<p>{!! $politica->publico_alvo_legislacao !!}</p>--}}
 
 
 
