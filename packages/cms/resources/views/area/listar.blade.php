@@ -16,20 +16,27 @@
             <div ng-show="mostrarForm">
                 <span class="texto-obrigatorio" ng-show="form.$invalid">* campos obrigatórios</span><br><br>
                 {!! Form::open(['name' =>'form']) !!}
-                <div class="container-thumb" style="display: none;">
-                    <div class="box-thumb" name="fileDrop" ngf-drag-over-class="'box-thumb-hover'" ngf-drop ngf-select ng-model="picFile"
-                         ng-show="!picFile" accept="image/*" ngf-max-size="2MB">Solte uma imagem aqui!</div>
-                    <img  ngf-thumbnail="picFile" class="thumb">
+                <div class="container-thumb">
+                    <div class="box-thumb" name="fileDrop" ngf-drag-over-class="'box-thumb-hover'" ngf-drop ngf-select ng-model="icone"
+                         ng-show="!icone" accept="image/*" ngf-max-size="2MB">Solte uma imagem aqui!</div>
+                    <img  ngf-thumbnail="icone" class="thumb">
                 </div>
                 <br><br>
                 <span class="btn btn-primary btn-file" ng-show="!icone" >
                     Escolher Ícone <input  type="file" ngf-select ng-model="icone" name="icone" accept="image/*" ngf-max-size="2MB" ngf-model-invalid="errorFile">
                 </span>
+                <button class="btn btn-danger" ng-click="icone = null" ng-show="icone" type="button">Remover Ícone</button>
+                <br><br>
+                <div class="container-thumb">
+                    <div class="box-thumb" name="fileDrop2" ngf-drag-over-class="'box-thumb-hover'" ngf-drop ngf-select ng-model="picFile"
+                         ng-show="!picFile" accept="image/*" ngf-max-size="2MB">Solte uma imagem aqui!</div>
+                    <img  ngf-thumbnail="picFile" class="thumb">
+                </div>
                 <br><br>
                 <span class="btn btn-primary btn-file" ng-show="!picFile" >
                     Escolher Imagem do Arquivo <input  type="file" ngf-select ng-model="picFile" name="file" accept="image/*" ngf-max-size="2MB" ngf-model-invalid="errorFile">
                 </span>
-                <button class="btn btn-danger" ng-click="picFile = null" ng-show="picFile" type="button">Remover Imagem</button>
+                <button class="btn btn-danger" ng-click="picFile = null" ng-show="picFile" type="button">Remover Imagem do Arquivo</button>
                 <i ng-show="form.file.$error.maxSize || form.fileDrop.$error.maxSize" style="margin-left: 10px;">
                     Arquivo muito grande <% errorFile.size / 1000000|number:1 %>MB: máximo 2MB
                     <div class="btn btn-danger" ng-click="limparImagem()">Cancelar</div>
