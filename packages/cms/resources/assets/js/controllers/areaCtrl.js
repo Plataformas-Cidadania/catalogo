@@ -94,11 +94,11 @@ cmsApp.controller('areaCtrl', ['$scope', '$http', 'Upload', '$timeout', function
     $scope.mostrarForm = false;
     $scope.processandoInserir = false;
 
-    $scope.inserir = function (file, arquivo, icone){
+    $scope.inserir = function (imagemArquivo, arquivo, icone){
 
         $scope.mensagemInserir = "";
 
-        if(file==null && arquivo==null && icone==null){
+        if(imagemArquivo==null && arquivo==null && icone==null){
             $scope.processandoInserir = true;
             $http.post("api/area", $scope.area).success(function (data){
                  listarAreas();
@@ -112,9 +112,8 @@ cmsApp.controller('areaCtrl', ['$scope', '$http', 'Upload', '$timeout', function
              });
         }else{
 
-            //area.file = file;
-            $scope.area.imagem = file;
-            //area.arquivo = arquivo;
+            $scope.area.icone = icone;
+            $scope.area.imagem = imagemArquivo;//imagem do arquivo
             $scope.area.caminho_arquivo = arquivo;
             Upload.upload({
                 url: 'api/area',
@@ -126,8 +125,9 @@ cmsApp.controller('areaCtrl', ['$scope', '$http', 'Upload', '$timeout', function
                 });
                 //console.log(response.data);
                 delete $scope.area;//limpa o form
-                $scope.picFile = null;//limpa o file
-                $scope.fileArquivo = null;//limpa o file
+                $scope.icone = null;//limpa o icone
+                $scope.picFile = null;//limpa a imagemArquivo
+                $scope.fileArquivo = null;//limpa o arquivo
                 listarAreas();
                 $scope.mensagemInserir =  "Gravado com sucesso!";
             }, function (response) {

@@ -25,7 +25,11 @@ cmsApp.controller('alterarAreaCtrl', ['$scope', '$http', 'Upload', '$timeout', f
 
             }
         }).success(function(data, status, headers, config){
-            $scope.area = data;//data.data
+            //console.log(data);
+            $scope.area = data;
+            $scope.iconeBD = $scope.area.icone;
+            $scope.imagemBD = $scope.area.imagem;//Imagem do Arquivo
+            $scope.arquivoBD = $scope.area.caminho_arquivo;
             $scope.processandoDetalhar = false;
         }).error(function(data){
             $scope.message = "Ocorreu um erro: "+data;
@@ -34,18 +38,21 @@ cmsApp.controller('alterarAreaCtrl', ['$scope', '$http', 'Upload', '$timeout', f
     };
 
 
+    $scope.alterar = function (imagemArquivo, arquivo, icone){
 
-
-    $scope.alterar = function (file){
-
-        if(file==null){
+        if(imagemArquivo==null && arquivo==null && icone==null){
 
             $scope.processandoSalvar = true;
+            delete $scope.area.icone;
+            delete $scope.area.imagem;
+            delete $scope.area.caminho_arquivo;
             $http.put("api/area/"+$scope.id, $scope.area).success(function (data){
                 //console.log(data);
                 $scope.processandoSalvar = false;
                 $scope.mensagemSalvar = data.message;
+                $scope.removericone = false;
                 $scope.removerImagem = false;
+                $scope.removerArquivo = false;
             }).error(function(data){
                 //console.log(data);
                 $scope.mensagemSalvar = "Ocorreu um erro: "+data;
@@ -54,38 +61,55 @@ cmsApp.controller('alterarAreaCtrl', ['$scope', '$http', 'Upload', '$timeout', f
 
         }else{
 
-            file.upload = Upload.upload({
-                url: 'api/area/'+$scope.id,
-                data: {text: $scope.text, file: file},
-            });
+            $scope.area.icone = icone;
+            $scope.area.imagem = imagemArquivo;//imagem do arquivo
+            $scope.area.caminho_arquivo = arquivo;
 
-            file.upload.then(function (response) {
+            Upload.upload({
+                url: 'api/area/'+$scope.id,
+                data: $scope.area,
+                method: 'PUT',
+            }).then(function (response) {
                 $timeout(function () {
-                    file.result = response.data;
+                    $scope.result = response.data;
                 });
-                $scope.picFile = null;//limpa o form
-                $scope.mensagemSalvar =  "Gravado com sucesso!";
-                $scope.removerImagem = false;
-                $scope.imagemBD = 'imagens/texts/'+response.data;
-                console.log($scope.imagemDB);
+                //console.log(response.data);
+                $scope.icone = null;//limpa o icone
+                $scope.picFile = null;//limpa a imagemArquivo
+                $scope.fileArquivo = null;//limpa o arquivo
+                $scope.mensagemInserir =  "Gravado com sucesso!";
+                $scope.detalhar(response.data.id);
             }, function (response) {
+                console.log(response.data);
                 if (response.status > 0){
                     $scope.errorMsg = response.status + ': ' + response.data;
                 }
             }, function (evt) {
                 //console.log(evt);
                 // Math.min is to fix IE which reports 200% sometimes
-                file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
+                $scope.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
             });
 
         }
 
     };
 
+    $scope.limparIcone = function(){
+        $scope.icone = null;
+        $scope.iconeBD = null;
+        $scope.removerIcone = true;
+    };
+
     $scope.limparImagem = function(){
         $scope.picFile = null;
         $scope.imagemBD = null;
         $scope.removerImagem = true;
+    };
+
+    $scope.limparArquivo = function(){
+        $scope.arquivo = null;
+        $scope.arquivoBD = null;
+        $scope.removerArquivo = true;
     };
 
     $scope.carregaImagem  = function(img) {

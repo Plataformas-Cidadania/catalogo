@@ -148,6 +148,7 @@ class AreaController extends Controller
             if(isset($res['area_arquivo'])) $res['caminho_arquivo'] = $res['area_arquivo'];
 
             unset($res['area_icone'],$res['area_imagem'],$res['area_arquivo']);
+            \Illuminate\Support\Facades\Log::info($res);
 
             return $this->repo->update($id,$res);
         } catch (Exception $exception) {
