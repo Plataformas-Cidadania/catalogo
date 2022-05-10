@@ -169,7 +169,7 @@ mix.scripts('packages/cms/resources/assets/js/controllers/politicaCtrl.js', 'pub
 mix.scripts('packages/cms/resources/assets/js/controllers/alterarPoliticaCtrl.js', 'public/assets-cms/js/controllers/alterarPoliticaCtrl.js');
 
 //Arquivo
-mix.scripts('packages/cms/resources/assets/js/controllers/arquivoCtrl.js', 'public/assets-cms/js/controllers/arquivoCtrl.js');
-mix.scripts('packages/cms/resources/assets/js/controllers/alterarArquivoCtrl.js', 'public/assets-cms/js/controllers/alterarArquivoCtrl.js');
+mix.scripts('packages/cms/resources/assets/js/controllers/arquivoPoliticaCtrl.js', 'public/assets-cms/js/controllers/arquivoPoliticaCtrl.js');
+mix.scripts('packages/cms/resources/assets/js/controllers/alterarArquivoPoliticaCtrl.js', 'public/assets-cms/js/controllers/alterarArquivoPoliticaCtrl.js');
 
 //FIM CMS///////////////////////////////////////////////////////////////////

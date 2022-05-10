@@ -1,16 +1,15 @@
 @extends('cms::layouts.app')
 
 @section('content')
-    {!! Html::script(config('app.url').'assets-cms/js/controllers/arquivoCtrl.js') !!}
+    {!! Html::script(config('app.url').'assets-cms/js/controllers/arquivoPoliticaCtrl.js') !!}
 <script>
     $(function () {
         $('[data-toggle="popover"]').popover()
     })
 </script>
-    <div ng-controller="arquivoCtrl">
+    <div ng-controller="arquivoPoliticaCtrl" ng-init="politica_id={{$politica_id}}; listarArquivos({{$politica_id}})">
         <div class="box-padrao">
-            <h1><i class="fa fa-arquivo" aria-hidden="true"></i>&nbsp;Arquivos</h1>
-            <br><br>
+            <h1><i class="fa fa-arquivo" aria-hidden="true"></i>&nbsp;Arquivos Política ({{$politica['nome']}})</h1>
             <div>
                 <span class="texto-obrigatorio" ng-show="form.$invalid">* campos obrigatórios</span><br><br>
                 {!! Form::open(['name' =>'form']) !!}
@@ -38,7 +37,7 @@
 
 
                 <br><br>
-                @include('cms::arquivo._form')
+                @include('cms::arquivo-politica._form')
                 <div class="row">
                     <div class="col-md-1 col-lg-1 col-xs-3">
                         <button class="btn btn-info" type="button" ng-click="inserir(picFile, fileArquivo)" ng-disabled="form.$invalid">Salvar</button>
@@ -101,9 +100,8 @@
                             <td><a href="cms/arquivo/<% arquivo.id %>"><% arquivo.titulo %></a></td>
                             <td class="text-right">
                                 <div>
-                                    <a href="cms/items/<% arquivo.id %>"><i class="fa fa-sitemap fa-2x" title="Itens"></i></a>&nbsp;&nbsp;
                                     <a href="cms/arquivo/<% arquivo.id %>"><i class="fa fa-edit fa-2x" title="Editar"></i></a>&nbsp;&nbsp;
-                                    <a  ng-class="<% arquivo.status %> == 1 ? 'color-success' : 'color-success-inactive'"  style="cursor: pointer;"><i class="fa fa-check-circle fa-2x" aria-hidden="true" ng-click="status(arquivo.id);"></i></a>
+                                    {{--<a  ng-class="<% arquivo.status %> == 1 ? 'color-success' : 'color-success-inactive'"  style="cursor: pointer;"><i class="fa fa-check-circle fa-2x" aria-hidden="true" ng-click="status(arquivo.id);"></i></a>--}}
                                     <a><i data-toggle="modal" data-target="#modalExcluir" class="fa fa-remove fa-2x" ng-click="perguntaExcluir(arquivo.id, arquivo.titulo, arquivo.imagem)"></i></a>
                                 </div>
                             </td>

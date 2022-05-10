@@ -96,6 +96,7 @@
                                 <div>
                                     {{--<a href="cms/items/<% politica.id %>"><i class="fa fa-sitemap fa-2x" title="Itens"></i></a>&nbsp;&nbsp;--}}
                                     <a href="cms/politica/<% politica.id %>"><i class="fa fa-edit fa-2x" title="Editar"></i></a>&nbsp;&nbsp;{{--<% mensagemStatus %><% idStatus %>--}}
+                                    <a href="cms/arquivos-politica/<% politica.id %>" target="_blank"><i class="fa fa-file-pdf-o fa-2x" title="Arquivos"></i></a>&nbsp;&nbsp;{{--<% mensagemStatus %><% idStatus %>--}}
                                     {{--<a href="cms/links/<% politica.id %>"><i class="fa fa-link fa-2x" title="Links"></i></a>&nbsp;&nbsp;--}}{{--<% mensagemStatus %><% idStatus %>--}}
                                     {{--<a  ng-class="<% politica.status %> == 1 ? 'color-success' : 'color-success-inactive'"  style="cursor: pointer;"><i class="fa fa-check-circle fa-2x" aria-hidden="true" ng-click="status(politica.id, politica.status);"></i></a>&nbsp;&nbsp;--}}
                                     <a><i data-toggle="modal" data-target="#modalPoliticaCategoria" class="fa fa-tags fa-2x" style="cursor:pointer;" ng-click="modalPoliticaCategoria(politica.id, politica.nome)" title="Categorias"></i></a>

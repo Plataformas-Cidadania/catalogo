@@ -1,7 +1,8 @@
-cmsApp.controller('arquivoCtrl', ['$scope', '$http', 'Upload', '$timeout', function($scope, $http, Upload, $timeout){
+cmsApp.controller('arquivoPoliticaCtrl', ['$scope', '$http', 'Upload', '$timeout', function($scope, $http, Upload, $timeout){
 
     $scope.arquivo = {
     };
+    $scope.politica_id = 0;
     $scope.arquivos = [];
     $scope.currentPage = 1;
     $scope.lastPage = 0;
@@ -19,28 +20,31 @@ cmsApp.controller('arquivoCtrl', ['$scope', '$http', 'Upload', '$timeout', funct
 
     $scope.$watch('currentPage', function(){
         if($listar){
-            listarArquivos();
+            listarArquivos($scope.politica_id);
         }
     });
     $scope.$watch('itensPerPage', function(){
         if($listar){
-            listarArquivos();
+            listarArquivos($scope.politica_id);
         }
     });
     $scope.$watch('dadoPesquisa', function(){
         if($listar){
             if($scope.dadoPesquisa.length > 2 || $scope.dadoPesquisa.length === 0){
-                listarArquivos();
+                listarArquivos($scope.politica_id);
             }
         }
     });
 
+    $scope.$watch('politica_id', function(){
+        listarArquivos($scope.politica_id);
+    });
 
-
-    var listarArquivos = function(){
+    var listarArquivos = function(politica_id){
+        console.log(politica_id);
         $scope.processandoListagem = true;
         $http({
-            url: 'api/arquivo/',
+            url: 'api/arquivo/politica/'+politica_id,
             method: 'GET',
             params: {
                 /*page: $scope.currentPage,
@@ -78,19 +82,14 @@ cmsApp.controller('arquivoCtrl', ['$scope', '$http', 'Upload', '$timeout', funct
             $scope.sentidoOrdem = "asc";
         }
 
-        listarArquivos();
+        //listarArquivos();
     };
 
     $scope.validar = function(){
 
     };
 
-
     //listarArquivos();
-
-
-
-
 
     //INSERIR/////////////////////////////
 
@@ -103,7 +102,7 @@ cmsApp.controller('arquivoCtrl', ['$scope', '$http', 'Upload', '$timeout', funct
         $scope.mensagemInserir = "";
 
         if(file==null && arquivo==null){
-            $scope.processandoInserir = true;
+            /*$scope.processandoInserir = true;
             $http.post("api/arquivo", $scope.arquivo).success(function (data){
                  listarArquivos();
                  //delete $scope.arquivo;//limpa o form
@@ -113,13 +112,12 @@ cmsApp.controller('arquivoCtrl', ['$scope', '$http', 'Upload', '$timeout', funct
              }).error(function(data){
                 $scope.mensagemInserir = "Ocorreu um erro!";
                 $scope.processandoInserir = false;
-             });
+             });*/
         }else{
-
-
             //arquivo.file = file;
             arquivo.imagem = file;
-            arquivo.arquivo = arquivo;
+            arquivo.caminho_arquivo = arquivo;
+            arquivo.politica_id = $scope.politica_id;
             Upload.upload({
                 url: 'api/arquivo',
                 data: arquivo,
