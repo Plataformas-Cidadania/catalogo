@@ -24,8 +24,10 @@ class PoliticaController extends Controller{
         $politica = $this->politicaController->get($id);
         $politica = (object) $politica;
 
+        $arquivos = $arquivos->getArquivosPorPoliticaId($id);
+        $arquivos = (object) $arquivos;
 
-        //$arquivos = getArquivosPorPoliticaId-
+
 
         /*print_r($arquivos);*/
 
