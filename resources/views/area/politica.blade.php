@@ -24,7 +24,7 @@
 
     <style>
         .bg-politica{
-            background-image: url("/uploads/saude.png");
+            background-image: url("/img/icones/saude.png");
             filter: brightness(0.6);
             width: 600px;
             height: 600px;
@@ -118,28 +118,30 @@
                 </div>
 
 
-                <div class="col-md-12">
-                    {{--<p><strong>Ação Orcamentaria</strong></p>
-                    <p>{!! $politica->acao_orcamentaria_assoc !!}</p>--}}
+                <div class="row">
+                    <div class="col-md-6">
+                        {{--<p><strong>Ação Orcamentaria</strong></p>
+                        <p>{!! $politica->acao_orcamentaria_assoc !!}</p>--}}
 
-                    <p><strong>Público alvo agregado</strong></p>
-                    {{--<p>{!! $politica->publico_alvo_categ !!}</p>--}}
+                        <p>Público alvo agregado</p>
+                        {{--<p>{!! $politica->publico_alvo_categ !!}</p>--}}
 
-                    <p><strong>Público alvo legislação</strong></p>
-                    {{--<p>{!! $politica->publico_alvo_legislacao !!}</p>--}}
+                    </div>
 
+                    <div class="col-md-6">
+                        {{--<p><strong>Ação Orcamentaria</strong></p>
+                        <p>{!! $politica->acao_orcamentaria_assoc !!}</p>--}}
 
+                        <p>Público alvo legislação</p>
+                        <h2>{!! $politica->publico_alvo_legislacao !!}</h2>
 
-
-                    <br><br>
+                    </div>
                 </div>
-
-
 
 
                 <div class="col-md-12">
                     <h2 class="text-center">
-                        <br><br><br><strong>Órgãos</strong><br>
+                        <br><br><strong>Órgãos</strong><br>
                     </h2>
 
 
