@@ -15,7 +15,7 @@ class AlterPoliticaTable extends Migration
     {
         Schema::table('catalogo.politica', function (Blueprint $table) {
             $table->dropColumn('publico_alvo_categ');
-            $table->text('publico_alvo_legislacao')->nulable();
+            $table->text('publico_alvo_legislacao')->nullable();
         });
     }
     public function down(){
