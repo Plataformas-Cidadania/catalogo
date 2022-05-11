@@ -226,7 +226,7 @@ Route::group(['middleware' => 'cms'], function () {
 
 
         //Arquivo
-        Route::get('/cms/arquivos', 'Cms\Controllers\ArquivoController@index');
+        Route::get('/cms/arquivos-politica/{politica_id}', 'Cms\Controllers\ArquivoPoliticaController@index');
         ////////////////////////////////////////////////////////////////////////////////////
 
 

@@ -54,6 +54,6 @@
     "/assets-cms/js/controllers/alterarCategoriaPoliticaCtrl.js": "/assets-cms/js/controllers/alterarCategoriaPoliticaCtrl.js",
     "/assets-cms/js/controllers/politicaCtrl.js": "/assets-cms/js/controllers/politicaCtrl.js",
     "/assets-cms/js/controllers/alterarPoliticaCtrl.js": "/assets-cms/js/controllers/alterarPoliticaCtrl.js",
-    "/assets-cms/js/controllers/arquivoCtrl.js": "/assets-cms/js/controllers/arquivoCtrl.js",
-    "/assets-cms/js/controllers/alterarArquivoCtrl.js": "/assets-cms/js/controllers/alterarArquivoCtrl.js"
+    "/assets-cms/js/controllers/arquivoPoliticaCtrl.js": "/assets-cms/js/controllers/arquivoPoliticaCtrl.js",
+    "/assets-cms/js/controllers/alterarArquivoPoliticaCtrl.js": "/assets-cms/js/controllers/alterarArquivoPoliticaCtrl.js"
 }

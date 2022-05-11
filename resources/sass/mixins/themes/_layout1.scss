@@ -453,11 +453,10 @@
     clear: both;
     min-height: 130px;
 }
-
 .box-list-icon:hover{
     background-color: $color-ter;
     color: #FFFFFF;
-    transform: scale(1.1);
+    transform: scale(0.95);
 }
 .bg-img-l{
     background-image: url("/img/bg-img-l.png");

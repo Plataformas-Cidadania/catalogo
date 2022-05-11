@@ -1,8 +1,9 @@
-cmsApp.controller('areaCtrl', ['$scope', '$http', 'Upload', '$timeout', function($scope, $http, Upload, $timeout){
+cmsApp.controller('arquivoPoliticaCtrl', ['$scope', '$http', 'Upload', '$timeout', function($scope, $http, Upload, $timeout){
 
-    $scope.area = {
+    $scope.arquivo = {
     };
-    $scope.areas = [];
+    $scope.politica_id = 0;
+    $scope.arquivos = [];
     $scope.currentPage = 1;
     $scope.lastPage = 0;
     $scope.totalItens = 0;
@@ -19,28 +20,31 @@ cmsApp.controller('areaCtrl', ['$scope', '$http', 'Upload', '$timeout', function
 
     $scope.$watch('currentPage', function(){
         if($listar){
-            listarAreas();
+            listarArquivos($scope.politica_id);
         }
     });
     $scope.$watch('itensPerPage', function(){
         if($listar){
-            listarAreas();
+            listarArquivos($scope.politica_id);
         }
     });
     $scope.$watch('dadoPesquisa', function(){
         if($listar){
             if($scope.dadoPesquisa.length > 2 || $scope.dadoPesquisa.length === 0){
-                listarAreas();
+                listarArquivos($scope.politica_id);
             }
         }
     });
 
+    $scope.$watch('politica_id', function(){
+        listarArquivos($scope.politica_id);
+    });
 
-
-    var listarAreas = function(){
+    var listarArquivos = function(politica_id){
+        console.log(politica_id);
         $scope.processandoListagem = true;
         $http({
-            url: 'api/area/',
+            url: 'api/arquivo/politica/'+politica_id,
             method: 'GET',
             params: {
                 /*page: $scope.currentPage,
@@ -53,13 +57,13 @@ cmsApp.controller('areaCtrl', ['$scope', '$http', 'Upload', '$timeout', function
             }
         }).success(function(data, status, headers, config){
             //console.log(data.data);
-            $scope.areas = data;//data.data
+            $scope.arquivos = data;//data.data
             //$scope.lastPage = pesquisa ? 1 : data.last_page;
             $scope.totalItens = data.length;//data.data.length
             /*$scope.primeiroDaPagina = pesquisa ? 1 : data.from;
             $scope.ultimoDaPagina = pesquisa ? 1 : data.to;*/
             $listar = true;
-            console.log($scope.areas);
+            console.log($scope.arquivos);
             $scope.processandoListagem = false;
         }).error(function(data){
             $scope.message = "Ocorreu um erro: "+data;
@@ -78,15 +82,14 @@ cmsApp.controller('areaCtrl', ['$scope', '$http', 'Upload', '$timeout', function
             $scope.sentidoOrdem = "asc";
         }
 
-        listarAreas();
+        //listarArquivos();
     };
 
     $scope.validar = function(){
 
     };
 
-
-    listarAreas();
+    //listarArquivos();
 
     //INSERIR/////////////////////////////
 
@@ -94,41 +97,41 @@ cmsApp.controller('areaCtrl', ['$scope', '$http', 'Upload', '$timeout', function
     $scope.mostrarForm = false;
     $scope.processandoInserir = false;
 
-    $scope.inserir = function (imagemArquivo, arquivo, icone){
+    $scope.inserir = function (file, arquivo){
 
         $scope.mensagemInserir = "";
 
-        if(imagemArquivo==null && arquivo==null && icone==null){
-            $scope.processandoInserir = true;
-            $http.post("api/area", $scope.area).success(function (data){
-                 listarAreas();
-                 //delete $scope.area;//limpa o form
-                $scope.area = {};//limpa o form
+        if(file==null && arquivo==null){
+            /*$scope.processandoInserir = true;
+            $http.post("api/arquivo", $scope.arquivo).success(function (data){
+                 listarArquivos();
+                 //delete $scope.arquivo;//limpa o form
+                $scope.arquivo = {};//limpa o form
                 $scope.mensagemInserir =  "Gravado com sucesso!";
                 $scope.processandoInserir = false;
              }).error(function(data){
                 $scope.mensagemInserir = "Ocorreu um erro!";
                 $scope.processandoInserir = false;
-             });
+             });*/
         }else{
-
-            $scope.area.icone = icone;
-            $scope.area.imagem = imagemArquivo;//imagem do arquivo
-            $scope.area.caminho_arquivo = arquivo;
+            //arquivo.file = file;
+            arquivo.imagem = file;
+            arquivo.caminho_arquivo = arquivo;
+            arquivo.politica_id = $scope.politica_id;
             Upload.upload({
-                url: 'api/area',
-                data: $scope.area,
-                //data: {area: $scope.area, file: file, arquivo: arquivo},
+                url: 'api/arquivo',
+                data: arquivo,
+                method: 'POST',
+                //data: {arquivo: $scope.arquivo, file: file, arquivo: arquivo},
             }).then(function (response) {
                 $timeout(function () {
                     $scope.result = response.data;
                 });
-                //console.log(response.data);
-                delete $scope.area;//limpa o form
-                $scope.icone = null;//limpa o icone
-                $scope.picFile = null;//limpa a imagemArquivo
-                $scope.fileArquivo = null;//limpa o arquivo
-                listarAreas();
+                console.log(response.data);
+                delete $scope.arquivo;//limpa o form
+                $scope.picFile = null;//limpa o file
+                $scope.fileArquivo = null;//limpa o file
+                listarArquivos();
                 $scope.mensagemInserir =  "Gravado com sucesso!";
             }, function (response) {
                 console.log(response.data);
@@ -170,7 +173,7 @@ cmsApp.controller('areaCtrl', ['$scope', '$http', 'Upload', '$timeout', function
     $scope.excluir = function(id){
         $scope.processandoExcluir = true;
         $http({
-            url: 'api/area/'+id,
+            url: 'api/arquivo/'+id,
             method: 'DELETE'
         }).success(function(data, status, headers, config){
             console.log(data);
@@ -178,7 +181,7 @@ cmsApp.controller('areaCtrl', ['$scope', '$http', 'Upload', '$timeout', function
             $scope.processandoExcluir = false;
             $scope.excluido = true;
             $scope.mensagemExcluido = "Excluído com sucesso!";
-            listarAreas();
+            listarArquivos();
             return;
 
             /*$scope.processandoExcluir = false;
@@ -192,12 +195,12 @@ cmsApp.controller('areaCtrl', ['$scope', '$http', 'Upload', '$timeout', function
     };
 
     $scope.status = function(id, statusAtual){
-        let areaStatus = {
+        let arquivoStatus = {
             status: statusAtual === 0 ? 1 : 0
         }
-        $http.put("api/area/"+id, areaStatus).success(function (data){
+        $http.put("api/arquivo/"+id, arquivoStatus).success(function (data){
             //console.log(data);
-            listarAreas();
+            listarArquivos();
         }).error(function(data){
             console.log(data);
         });

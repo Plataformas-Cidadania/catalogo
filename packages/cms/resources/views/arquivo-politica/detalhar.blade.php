@@ -2,7 +2,7 @@
 
 @section('content')
     {!! Html::script(config('app.url').'assets-cms/js/controllers/alterarArquivoCtrl.js') !!}
-    <div ng-controller="alterarArquivoCtrl">
+    <div ng-controller="alterarArquivoPoliticaCtrl">
         <div class="box-padrao">
             <h1><a href="javascript:history.back();"><i class="fa fa-arrow-circle-left"></i></a>&nbsp;&nbsp;Arquivos</h1>
             <?php //print_r($arquivo);?>
@@ -33,7 +33,7 @@
                 <br><br>
 
                 <br><br>
-                @include('cms::arquivo._form')
+                @include('cms::arquivo-politica._form')
                 <input type="hidden" name="id" ng-model="id" ng-init="id='{{$arquivo->id}}'"/>
                 <div class="row">
                     <div class="col-md-1 col-lg-1 col-xs-3">

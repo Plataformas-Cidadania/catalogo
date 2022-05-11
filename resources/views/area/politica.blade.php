@@ -89,10 +89,12 @@
                     <hr>
                     <div>
                         <p>Legislacao</p>
-                        <h2><strong>{{$politica->legislacao}} <br> {{formatBr($politica->vigencia_inicio, 'num')}} {{$politica->vigencia_fim ? 'à' : ''}} {{formatBr($politica->vigencia_fim), 'num'}}</strong></h2>
+                        <h2><strong>{{$politica->legislacao}}</strong>
+                        </h2>
+                        <p>Data</p>
+                        <h2>{{formatBr($politica->vigencia_inicio, 'ext')}} {{$politica->vigencia_fim ? 'à' : ''}} {{formatBr($politica->vigencia_fim), 'ext'}}</strong></h2>
                     </div>
                 </div>
-
 
 
                 {{----}}
@@ -124,7 +126,7 @@
                     {{--<p>{!! $politica->publico_alvo_categ !!}</p>--}}
 
                     <p><strong>Público alvo legislação</strong></p>
-                    <p>{!! $politica->publico_alvo_legislacao !!}</p>
+                    {{--<p>{!! $politica->publico_alvo_legislacao !!}</p>--}}
 
 
 
@@ -201,12 +203,12 @@
                 </div>
 
                 <div class="row">
-                    @foreach($politica->orgaos as $orgao)
-                        <a href="/uploads/{{$orgao->imagem}}" target="_blank">
+                    @foreach($arquivos as $arquivo)
+                        <a href="/uploads/{{$arquivo->caminho_arquivo}}" target="_blank">
                             <div class="col-md-12">
-                                <img src="/uploads/{{$orgao->caminho_arquivo}}" alt="" width="100%">
+                                <img src="/uploads/{{$arquivo->imagem}}" alt="" width="100%">
                             </div>
-                            <div class="col-md-9">{{$orgao->nome}}</div>
+                            <div class="col-md-9">{{$arquivo->nome}}</div>
                         </a>
                         <div class="col-md-12"><hr/></div>
                     @endforeach
