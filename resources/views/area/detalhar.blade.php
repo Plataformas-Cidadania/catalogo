@@ -10,7 +10,7 @@
                 <div class="container pt-5 pb-5 bg-lgt">
                     <div class=" ps-2 pe-2">
                         <h1>
-                            <img src="/img/icones/{{$area->icone}}" alt="" width="60" style="filter : brightness(0.3);">&nbsp;
+                            <img src="/uploads/{{$area->icone}}" alt="" width="60" style="filter : brightness(0.3);">&nbsp;
                             {{$area->nome}}
                         </h1>
                         {{--<p>{!! $area->nome !!}</p>--}}
@@ -47,12 +47,12 @@
             </div>
             <div class="col-md-4">
                 @if($area->caminho_arquivo)
-                    <a href="/arquivos/areas/{{$area->caminho_arquivo}}">
-                        <img src="/imagens/areas/{{$area->imagem}}" alt="" width="100%">
+                    <a href="/uploads/{{$area->caminho_arquivo}}" target="_blank">
+                        <img src="/uploads/{{$area->imagem}}" alt="" width="100%">
                     </a>
                 @else
                     <div class="box-icone">
-                        <img src="/img/icones/{{$area->icone}}" alt="" width="75%">
+                        <img src="/uploads/{{$area->icone}}" alt="" width="75%">
                     </div>
                 @endif
 

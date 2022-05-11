@@ -24,7 +24,7 @@
 
     <style>
         .bg-politica{
-            background-image: url("/img/icones/saude.png");
+            background-image: url("/uploads/saude.png");
             filter: brightness(0.6);
             width: 600px;
             height: 600px;
@@ -204,12 +204,18 @@
 
                 <div class="row">
                     @foreach($arquivos as $arquivo)
-                        <a href="/uploads/{{$arquivo->caminho_arquivo}}" target="_blank">
-                            <div class="col-md-12">
-                                <img src="/uploads/{{$arquivo->imagem}}" alt="" width="100%">
+
+                            <div class="col-md-3">
+                                <a href="/uploads/{{$arquivo->caminho_arquivo}}" target="_blank">
+                                    <img src="/uploads/{{$arquivo->imagem}}" alt="" width="100%">
+                                </a>
                             </div>
-                            <div class="col-md-9">{{$arquivo->nome}}</div>
-                        </a>
+                            <div class="col-md-9">
+                                <a href="/uploads/{{$arquivo->caminho_arquivo}}" target="_blank">
+                                    {{$arquivo->nome}}
+                                </a>
+                            </div>
+
                         <div class="col-md-12"><hr/></div>
                     @endforeach
 
