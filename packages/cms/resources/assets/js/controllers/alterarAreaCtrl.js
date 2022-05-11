@@ -38,7 +38,13 @@ cmsApp.controller('alterarAreaCtrl', ['$scope', '$http', 'Upload', '$timeout', f
     };
 
 
+
+
+
     $scope.alterar = function (imagemArquivo, arquivo, icone){
+
+        $scope.area.resumo = $scope.area.resumo ? $scope.area.resumo : '.';
+        $scope.area.descricao = $scope.area.descricao ? $scope.area.descricao : '.';
 
         if(imagemArquivo==null && arquivo==null && icone==null){
 
