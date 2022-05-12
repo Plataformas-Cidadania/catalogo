@@ -40,7 +40,7 @@
                     <a href="area-tematica/{{$area->id}}/{{clean($area->nome)}}">
                         <div class="box-list-icon">
                             <div class="box-list-icon-i">
-                                <img src="/img/icones/{{$area->icone}}" alt="" width="100%">
+                                <img src="/uploads/{{$area->icone}}" alt="" width="100%">
                                 {{--<i class="far fa-gem fa-3x"></i>--}}
                             </div>
                             <h2>{{$area->nome}}</h2>

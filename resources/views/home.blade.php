@@ -86,7 +86,7 @@
                         <div class="item    box-list-icon">
                             <div class="box-list-icon-i">
                                 {{--<i class="far fa-gem fa-3x"></i>--}}
-                                <img src="/img/icones/{{$area->icone}}" alt="" width="100%">
+                                <img src="/uploads/{{$area->icone}}" alt="" width="100%">
                             </div>
                             <h2>{{$area->nome}}</h2>
                             {{--<p>Apesar de constituírem um elemento básico de organização da atuação governamental</p>--}}

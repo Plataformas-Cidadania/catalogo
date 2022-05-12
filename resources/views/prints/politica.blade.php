@@ -21,26 +21,46 @@
     <div style="clear: both;" class="poContainer">
         <br><br>
         <h1 class="text-center" style="font-size: 25px;">{{substr($politica->ano, 0, 4)}} - {{$politica->nome}}</h1>
-        <p class="text-center">{!! $politica->observacao !!}</p><br>
-        <h2 class="text-center">Data de criação e revogação <br>{{$politica->vigencia_inicio}} {{$politica->vigencia_fim ? 'até' : ''}} {{$politica->vigencia_fim}}</h2>
+        {{--<p class="text-center">{!! $politica->observacao !!}</p><br>--}}
+        <h3 class="text-center">Data de criação e revogação <br>{{formatBr($politica->vigencia_inicio, 'num')}} {{$politica->vigencia_fim ? 'até' : ''}} {{formatBr($politica->vigencia_fim, 'num')}}</h3>
         <br>
         <div class="boxContainer">
-            <p class="box">
-                <strong>Instrumento legal:</strong><br>
-                {{$politica->instrumento_legal}}<br>
-            </p>
-            <p class="box">
+            <div class="box">
+                Instrumento legal:<br>
+                <h2>{{$politica->instrumento_legal}}</h2><br>
+            </div>
+            {{--<p class="box">
                 <strong>Medida provisória:</strong><br>
                 {{$politica->medida_provisoria}}<br>
                 {{$politica->medida_provisoria_inicio_vigencia}}
-            </p>
+            </p>--}}
+            <div class="box">
+                Legislacao:<br>
+                <h2>{{$politica->legislacao}}</h2>
+                {{formatBr($politica->vigencia_inicio, 'num')}} até {{formatBr($politica->vigencia_fim, 'num')}}
+            </div>
+        </div>
+
+        <div class="boxContainer">
             <p class="box">
-                <strong>Legislacao:</strong><br>
-                {{$politica->legislacao}}<br>
-                {{$politica->vigencia_inicio}}<br>
-                {{$politica->vigencia_fim}}
+                <strong>Objetivos:</strong><br><br>
+                {{$politica->objetivos}}<br>
             </p>
         </div>
+
+
+
+        <div class="boxContainer">
+            <p class="box">
+                <strong>Público alvo agregado:</strong><br><br>
+                {{$politica->acao_orcamentaria_assoc}}<br>
+            </p>
+            <p class="box">
+                <strong>Público alvo legislação:</strong><br><br>
+                {{$politica->publico_alvo_legislacao}}
+            </p>
+        </div>
+
 
         <h3 class="text-center">Ministérios</h3>
 
@@ -50,26 +70,6 @@
                     {{$orgao->nome}}
                 </div>
             @endforeach
-        </div>
-
-
-
-        <div class="boxContainer">
-            <p class="box">
-                <strong>Objetivos:</strong><br>
-                {{$politica->objetivos}}<br>
-            </p>
-        </div>
-
-        <div class="boxContainer">
-            <p class="box">
-                <strong>Ação Orcamentaria:</strong><br>
-                {{$politica->acao_orcamentaria_assoc}}<br>
-            </p>
-            <p class="box">
-                <strong>Público Alvo:</strong><br>
-                {{$politica->publico_alvo_categ}}
-            </p>
         </div>
 
     </div>
@@ -89,7 +89,7 @@
         flex:3;
         min-height: 80px;
         padding:15px;
-        border: solid 1px #333333;
+        border-bottom: solid 1px #CCCCCC;
     }
 </style>
 </body>

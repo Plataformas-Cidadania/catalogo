@@ -118,28 +118,30 @@
                 </div>
 
 
-                <div class="col-md-12">
-                    {{--<p><strong>Ação Orcamentaria</strong></p>
-                    <p>{!! $politica->acao_orcamentaria_assoc !!}</p>--}}
+                <div class="row">
+                    <div class="col-md-6">
+                        {{--<p><strong>Ação Orcamentaria</strong></p>
+                        <p>{!! $politica->acao_orcamentaria_assoc !!}</p>--}}
 
-                    <p><strong>Público alvo agregado</strong></p>
-                    {{--<p>{!! $politica->publico_alvo_categ !!}</p>--}}
+                        <p>Público alvo agregado</p>
+                        {{--<p>{!! $politica->publico_alvo_categ !!}</p>--}}
 
-                    <p><strong>Público alvo legislação</strong></p>
-                    {{--<p>{!! $politica->publico_alvo_legislacao !!}</p>--}}
+                    </div>
 
+                    <div class="col-md-6">
+                        {{--<p><strong>Ação Orcamentaria</strong></p>
+                        <p>{!! $politica->acao_orcamentaria_assoc !!}</p>--}}
 
+                        <p>Público alvo legislação</p>
+                        <h2>{!! $politica->publico_alvo_legislacao !!}</h2>
 
-
-                    <br><br>
+                    </div>
                 </div>
-
-
 
 
                 <div class="col-md-12">
                     <h2 class="text-center">
-                        <br><br><br><strong>Órgãos</strong><br>
+                        <br><br><strong>Órgãos</strong><br>
                     </h2>
 
 
@@ -204,12 +206,18 @@
 
                 <div class="row">
                     @foreach($arquivos as $arquivo)
-                        <a href="/uploads/{{$arquivo->caminho_arquivo}}" target="_blank">
-                            <div class="col-md-12">
-                                <img src="/uploads/{{$arquivo->imagem}}" alt="" width="100%">
+
+                            <div class="col-md-3">
+                                <a href="/uploads/{{$arquivo->caminho_arquivo}}" target="_blank">
+                                    <img src="/uploads/{{$arquivo->imagem}}" alt="" width="100%">
+                                </a>
                             </div>
-                            <div class="col-md-9">{{$arquivo->nome}}</div>
-                        </a>
+                            <div class="col-md-9">
+                                <a href="/uploads/{{$arquivo->caminho_arquivo}}" target="_blank">
+                                    {{$arquivo->nome}}
+                                </a>
+                            </div>
+
                         <div class="col-md-12"><hr/></div>
                     @endforeach
 
