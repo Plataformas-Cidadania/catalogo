@@ -122,7 +122,10 @@ class AreaController extends Controller
             if ($validator->fails()) {
                 return $this->errorResponse($validator->errors()->all());
             }
+
             $data = $this->get($id);
+            $reqData = $this->getData($request);
+
             // deletando arquivos antigos
             if( $data  instanceof \Illuminate\Database\Eloquent\Model){
                 if(isset($request->icone))
@@ -146,11 +149,11 @@ class AreaController extends Controller
             if(isset($res['area_icone'])) $res['icone'] = $res['area_icone'];
             if(isset($res['area_imagem'])) $res['imagem'] = $res['area_imagem'];
             if(isset($res['area_arquivo'])) $res['caminho_arquivo'] = $res['area_arquivo'];
-
             unset($res['area_icone'],$res['area_imagem'],$res['area_arquivo']);
-            \Illuminate\Support\Facades\Log::info($res);
 
-            return $this->repo->update($id,$res);
+            $reqData = array_merge($reqData,$res);
+
+            return $this->repo->update($id,$reqData);
         } catch (Exception $exception) {
             if ($exception instanceof ModelNotFoundException)
                 return $this->errorResponse('Not found');
