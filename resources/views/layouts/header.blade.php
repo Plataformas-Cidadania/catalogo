@@ -106,10 +106,10 @@
         <br>
 
         <li role="presentation"><a href="" accesskey="h" @if($rota=='/') class="corrente" @endif>Início</a></li>
-        <li role="presentation"><a href="sobre" accesskey="q" @if($rota=='sobre') class="corrente" @endif>O Catálogo</a></li>
-        <li role="presentation"><a href="posts/1/publicacoes" @if($rota=='sobre') class="publicacoes" @endif>Publicações</a></li>
+        <li role="presentation"><a href="posts/1/biblioteca" @if($rota=='sobre') class="publicacoes" @endif>Biblioteca</a></li>
         <li role="presentation"><a href="https://www.siop.planejamento.gov.br"  @if($rota=='sobre') class="corrente" @endif target="_blank">Orçamento</a></li>
-        <li role="presentation"><a href="ajuda" accesskey="c" @if($rota=='quem') class="contato" @endif>Ajuda</a></li>
+        <li role="presentation"><a href="sobre" accesskey="q" @if($rota=='sobre') class="corrente" @endif>Sobre</a></li>
+        <li role="presentation"><a href="contato" accesskey="c" @if($rota=='contato') class="contato" @endif>Contato</a></li>
 
     </ul>
 </div>
@@ -133,10 +133,10 @@
                         <div class="btn-group">
                             <ul id="menu-desk">
                                 <li role="presentation"><a href="" accesskey="h" @if($rota=='/') class="corrente" @endif>Início</a></li>
-                                <li role="presentation"><a href="sobre" accesskey="q" @if($rota=='sobre') class="corrente" @endif>O Catálogo</a></li>
                                 <li role="presentation"><a href="posts/1/biblioteca" @if($rota=='sobre') class="publicacoes" @endif>Biblioteca</a></li>
                                 <li role="presentation"><a href="https://www.siop.planejamento.gov.br"  @if($rota=='sobre') class="corrente" @endif target="_blank">Orçamento</a></li>
-                                <li role="presentation"><a href="ajuda" accesskey="c" @if($rota=='quem') class="contato" @endif>Ajuda</a></li>
+                                <li role="presentation"><a href="sobre" accesskey="q" @if($rota=='sobre') class="corrente" @endif>Sobre</a></li>
+                                <li role="presentation"><a href="contato" accesskey="c" @if($rota=='contato') class="contato" @endif>Contato</a></li>
                             </ul>
                         </div>
                     </div>
