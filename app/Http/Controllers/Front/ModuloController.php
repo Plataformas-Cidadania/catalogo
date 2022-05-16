@@ -25,9 +25,9 @@ class ModuloController extends Controller{
 
 
         $rota = Route::getCurrentRoute()->uri();
-        if($rota=="contato-list"){
+        /*if($rota=="contato-list"){
             header('Location: contato');
-        }
+        }*/
 
 
         $modulo = $this->obj->where('slug', $rota)->first();
