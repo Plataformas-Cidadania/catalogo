@@ -3,7 +3,7 @@
 <?php
     $setting = DB::table('cms.settings')->orderBy('id', 'desc')->first();
     $mnPortal = DB::table('cms.modulos')->where('tipo_id', 1)->where('status', 1)->orderBy('id')->get();
-    $mnAjuda = DB::table('cms.modulos')->where('tipo_id', 2)->where('status', 1)->orderBy('id')->get();
+    $mnAjuda = DB::table('cms.modulos')->where('tipo_id', 2)->where('status', 1)->orderBy('titulo')->get();
     $base_href = config('app.url');
     $barra = "";
 
