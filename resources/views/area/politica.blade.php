@@ -24,7 +24,7 @@
 
     <style>
         .bg-politica{
-            background-image: url("/img/icones/saude.png");
+            background-image: url("/uploads/{{$area->icone}}");
             filter: brightness(0.6);
             width: 600px;
             height: 600px;
@@ -119,7 +119,7 @@
 
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         {{--<p><strong>Ação Orcamentaria</strong></p>
                         <p>{!! $politica->acao_orcamentaria_assoc !!}</p>--}}
 
@@ -128,7 +128,7 @@
 
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         {{--<p><strong>Ação Orcamentaria</strong></p>
                         <p>{!! $politica->acao_orcamentaria_assoc !!}</p>--}}
 
@@ -175,15 +175,15 @@
                     <div class="col-md-12">
                         <div class="p-2 mb-4 linsBor">
                             <strong>Grande área</strong><br>
-                            Desenvolvimento Econômico
+                            {{$grande_area->nome}}
                         </div>
                     </div>
                     <div class="col-md-12">
                         <a href="area-tematica/{{$politica->area}}/{{clean($politica->nome)}}">
                             <div class="p-2 mb-4  linsBor linsBorhover">
-                                <img src="/img/icones/saude.png" alt="" width="50">
+                                <img src="/uploads/{{$area->icone}}" alt="" width="50">
                                 <strong>Área temática</strong><br>
-                                Agropecuária e Agrária
+                                {{$area->nome}}
                             </div>
                         </a>
                     </div>
@@ -191,7 +191,7 @@
                         <a href="area-tematica/{{$politica->area}}/{{clean($politica->nome)}}">
                             <div class="p-2 mb-4 linsBor">
                                 <strong>Subarea</strong><br>
-                                Agropecuária e Agrária
+                                ??
                             </div>
                         </a>
                     </div>
@@ -206,15 +206,16 @@
 
                 <div class="row">
                     @foreach($arquivos as $arquivo)
-
+                        @if(!empty($arquivo->imagem))
                             <div class="col-md-3">
                                 <a href="/uploads/{{$arquivo->caminho_arquivo}}" target="_blank">
                                     <img src="/uploads/{{$arquivo->imagem}}" alt="" width="100%">
                                 </a>
                             </div>
-                            <div class="col-md-9">
+                        @endif
+                            <div class=" @if($arquivo->imagem) col-md-9 @else col-md-12 @endif ">
                                 <a href="/uploads/{{$arquivo->caminho_arquivo}}" target="_blank">
-                                    {{$arquivo->nome}}
+                                    {{$arquivo->titulo}}
                                 </a>
                             </div>
 
