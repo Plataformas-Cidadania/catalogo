@@ -88,7 +88,10 @@
                             <div>
                                 <h3>Ajuda</h3>
                                 <ul>
-                                    <li role="presentation"><a href="contato" accesskey="a" @if($rota=='quem') class="contato" @endif>Fale conosco</a></li>
+                                    @foreach($mnAjuda as $mn)
+                                        <li><a href="{{$mn->slug}}">{{$mn->titulo}}</a></li>
+                                    @endforeach
+                                    {{--<li role="presentation"><a href="contato" accesskey="a" @if($rota=='quem') class="contato" @endif>Fale conosco</a></li>--}}
                                     <br><br>
                                 </ul>
                             </div>
