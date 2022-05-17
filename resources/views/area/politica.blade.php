@@ -190,8 +190,8 @@
                     <div class="col-md-12">
                         <a href="area-tematica/{{$politica->area}}/{{clean($politica->nome)}}">
                             <div class="p-2 mb-4 linsBor">
-                                <strong>Subarea</strong><br>
-                                ??
+                                <strong>Subárea</strong><br>
+                                {{$politica->politica_categoria[0]['categoria']['nome']}}
                             </div>
                         </a>
                     </div>
