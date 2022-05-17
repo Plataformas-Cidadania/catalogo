@@ -131,7 +131,7 @@ cmsApp.controller('arquivoPoliticaCtrl', ['$scope', '$http', 'Upload', '$timeout
                 delete $scope.arquivo;//limpa o form
                 $scope.picFile = null;//limpa o file
                 $scope.fileArquivo = null;//limpa o file
-                listarArquivos();
+                listarArquivos($scope.politica_id);
                 $scope.mensagemInserir =  "Gravado com sucesso!";
             }, function (response) {
                 console.log(response.data);
