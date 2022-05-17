@@ -50,10 +50,10 @@
     {
         "id": 4,
         "tipo": "pie",
-        "titulo": "Frequência absoluta e relativa de políticas segundo a Área",
-        "fonte": "Catálogo de Políticas Públicas (Ipea).",
-        "series": [44, 55, 13, 43, 22],
-        "labels": ["Team A", "Team B", "Team C", "Team D", "Team E"]
+        "titulo": "Frequência absoluta e relativa de políticas segundo Grande Área",
+        "fonte": "Catálogo de Políticas Públicas (Ipea)",
+        "series": [397, 140, 49, 29, 28, 20],
+        "labels": ["Social", "Desenvolvimento Econômico", "Infraestrutura", "Meio Ambiente", "Administração", "Defesa e Segurança"]
     }
 
 ]
