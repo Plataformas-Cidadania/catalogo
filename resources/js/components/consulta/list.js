@@ -17,6 +17,7 @@ const List = (props) => {
                         <th>Política</th>
                         <th>Grande Área</th>
                         <th>Área</th>
+                        <th>Subáreas</th>
                         <th>Ano</th>
                         <th>Ínicio Vigência</th>
                     </tr>
@@ -39,6 +40,13 @@ const List = (props) => {
                                         <td><a href={"politica/"+item.id+"/"+clean(item.nome)}>{item.nome}</a></td>
                                         <td>{item.grande_area.nome}</td>
                                         <td>{item.area.nome}</td>
+                                        <td>
+                                            {
+                                                item.politica_categoria.map((categoria, index) => {
+                                                    return categoria.categoria.nome + (index < item.politica_categoria.length-1 ? " - " : "");
+                                                })
+                                            }
+                                        </td>
                                         <td>{item.ano.substring(0, 4)}</td>
                                         <td>{item.vigencia_inicio}</td>
                                     </tr>
