@@ -96,6 +96,7 @@
                         <tbody>
                         <tr ng-repeat="arquivo in arquivos">
                             <td><% arquivo.id %></td>
+                            <td><% arquivo.titulo %></td>
                             <td><img ng-show="arquivo.imagem" ng-src="uploads/<% arquivo.imagem %>" width="60"></td>
                             <td><a href="uploads/<% arquivo.caminho_arquivo %>" target="_blank"><% arquivo.caminho_arquivo %></a></td>
                             <td class="text-right">

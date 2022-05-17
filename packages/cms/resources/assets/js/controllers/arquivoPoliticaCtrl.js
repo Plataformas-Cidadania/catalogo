@@ -115,12 +115,12 @@ cmsApp.controller('arquivoPoliticaCtrl', ['$scope', '$http', 'Upload', '$timeout
              });*/
         }else{
             //arquivo.file = file;
-            arquivo.imagem = file;
-            arquivo.caminho_arquivo = arquivo;
-            arquivo.politica_id = $scope.politica_id;
+            $scope.arquivo.imagem = file;
+            $scope.arquivo.caminho_arquivo = arquivo;
+            $scope.arquivo.politica_id = $scope.politica_id;
             Upload.upload({
                 url: 'api/arquivo',
-                data: arquivo,
+                data: $scope.arquivo,
                 method: 'POST',
                 //data: {arquivo: $scope.arquivo, file: file, arquivo: arquivo},
             }).then(function (response) {
