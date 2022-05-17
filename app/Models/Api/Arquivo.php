@@ -10,6 +10,7 @@ class Arquivo extends Model
 	protected $primaryKey = 'id';
     public $timestamps = true;
     protected $fillable = [
+        'titulo',
         'imagem',
         'caminho_arquivo',
         'politica_id'

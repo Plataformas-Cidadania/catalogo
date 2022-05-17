@@ -70,11 +70,10 @@ cmsApp.controller('alterarAreaCtrl', ['$scope', '$http', 'Upload', '$timeout', f
             $scope.area.icone = icone;
             $scope.area.imagem = imagemArquivo;//imagem do arquivo
             $scope.area.caminho_arquivo = arquivo;
-
+            $scope.area._method = 'PUT';
             Upload.upload({
                 url: 'api/area/'+$scope.id,
                 data: $scope.area,
-                method: 'PUT',
             }).then(function (response) {
                 $timeout(function () {
                     $scope.result = response.data;
