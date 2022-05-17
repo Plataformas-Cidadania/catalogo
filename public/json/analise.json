@@ -13,7 +13,7 @@
             "type": "column",
             "data": [65.5, 29.7, 3.5, 0.6, 0.5, 0.3]
         }],
-        "labels": ["Programa governamental", "Política nacional", "Plano", "Projeto", "Estratégia", "Diretrizes"]
+        "labels": [["Programa", "governamental"], ["Política", "nacional"], "Plano", "Projeto", "Estratégia", "Diretrizes"]
     },
     {
         "id": 2,
@@ -34,42 +34,42 @@
         "fonte": "Catálogo de Políticas Públicas (Ipea).",
         "series": [{
             "name": "Decreto",
-            "data": [0, 2, 10, 51, 157, 1, 221]
+            "data": [0, 2, 10, 51, 157, 1]
         }, {
             "name": "Lei ordinária",
-            "data": [0, 0, 1, 65, 122, 0, 188]
+            "data": [0, 0, 1, 65, 122, 0]
         }, {
             "name": "Portaria",
-            "data": [2, 0, 3, 52, 92, 3, 152]
+            "data": [2, 0, 3, 52, 92, 3]
         }, {
             "name": "Decreto-Lei",
-            "data": [0, 0, 0, 4, 9, 0, 13]
+            "data": [0, 0, 0, 4, 9, 0]
         }, {
             "name": "Resolução",
-            "data": [0, 0, 0, 10, 2, 0, 12]
+            "data": [0, 0, 0, 10, 2, 0]
         }, {
             "name": "Lei Complementar",
-            "data": [0, 0, 3, 0, 8, 0, 11]
+            "data": [0, 0, 3, 0, 8, 0]
         }, {
             "name": "Instrução Normativa",
-            "data": [0, 0, 0, 0, 3, 0, 3]
+            "data": [0, 0, 0, 0, 3, 0]
         }, {
             "name": "Medida Provisória",
-            "data": [0, 0, 0, 0, 2, 0, 2]
+            "data": [0, 0, 0, 0, 2, 0]
         }, {
             "name": "Projeto de Lei",
-            "data": [0, 0, 0, 0, 2, 0, 2]
+            "data": [0, 0, 0, 0, 2, 0]
         }, {
             "name": "Norma de execução",
-            "data": [0, 0, 0, 0, 1, 0, 1]
+            "data": [0, 0, 0, 0, 1, 0]
         }, {
             "name": "Norma operacional",
-            "data": [0, 0, 0, 0, 1, 0, 1]
+            "data": [0, 0, 0, 0, 1, 0]
         }, {
             "name": "Não se aplica",
-            "data": [0, 1, 6, 15, 35, 0, 57]
+            "data": [0, 1, 6, 15, 35, 0]
         }],
-        "labels": ["Diretrizes", "Estratégia", "Plano", "Política nacional", "Política governamental", "Projeto"]
+        "labels": ["Diretrizes", "Estratégia", "Plano", ["Política", "nacional"], ["Política", "governamental"], "Projeto"]
     },
     {
         "id": 4,

@@ -63,7 +63,7 @@ const Home = () => {
                                             selectedChart = <StackedChart id={'stackedChart'}  series={item.series} labels={item.labels} />
                                         }
                                         if(divSelectedTipo==="pie"){
-                                            selectedChart = <PieChart id={'stackedChart'}  series={item.series} labels={item.labels} width={500}/>
+                                            selectedChart = <PieChart id={'stackedChart'}  series={item.series} labels={item.labels} width={1000}/>
                                         }
                                     return (
                                         <div style={{display: divSelected === item.id ? '' : 'none'}} key={'abas'+item.id}>

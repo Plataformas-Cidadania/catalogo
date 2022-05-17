@@ -11,16 +11,17 @@ class PieChart extends React.Component {
         },
         labels: props.labels,
         legend: {
-          position: 'bottom'
+          position: 'right',
+          width: 550
         },
         responsive: [{
           breakpoint: 480,
           options: {
             chart: {
-              width: 200
+              width: 380
             },
             legend: {
-              position: 'bottom'
+              position: 'right'
             }
           }
         }]
