@@ -13,7 +13,7 @@ const List = props => {
     className: "table"
   }, /*#__PURE__*/React.createElement("thead", {
     className: "thead-light"
-  }, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "Pol\xEDtica"), /*#__PURE__*/React.createElement("th", null, "Grande \xC1rea"), /*#__PURE__*/React.createElement("th", null, "\xC1rea"), /*#__PURE__*/React.createElement("th", null, "Ano"), /*#__PURE__*/React.createElement("th", null, "\xCDnicio Vig\xEAncia"))), /*#__PURE__*/React.createElement("tbody", null, props.loading ? /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {
+  }, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "Pol\xEDtica"), /*#__PURE__*/React.createElement("th", null, "Grande \xC1rea"), /*#__PURE__*/React.createElement("th", null, "\xC1rea"), /*#__PURE__*/React.createElement("th", null, "Sub\xE1reas"), /*#__PURE__*/React.createElement("th", null, "Ano"), /*#__PURE__*/React.createElement("th", null, "\xCDnicio Vig\xEAncia"))), /*#__PURE__*/React.createElement("tbody", null, props.loading ? /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {
     colSpan: 5
   }, /*#__PURE__*/React.createElement("div", {
     className: "text-center"
@@ -22,7 +22,9 @@ const List = props => {
   })))) : items.length > 0 ? items.map(item => {
     return /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("a", {
       href: "politica/" + item.id + "/" + clean(item.nome)
-    }, item.nome)), /*#__PURE__*/React.createElement("td", null, item.grande_area.nome), /*#__PURE__*/React.createElement("td", null, item.area.nome), /*#__PURE__*/React.createElement("td", null, item.ano.substring(0, 4)), /*#__PURE__*/React.createElement("td", null, item.vigencia_inicio));
+    }, item.nome)), /*#__PURE__*/React.createElement("td", null, item.grande_area.nome), /*#__PURE__*/React.createElement("td", null, item.area.nome), /*#__PURE__*/React.createElement("td", null, item.politica_categoria.map((categoria, index) => {
+      return categoria.categoria.nome + (index < item.politica_categoria.length - 1 ? " - " : "");
+    })), /*#__PURE__*/React.createElement("td", null, item.ano.substring(0, 4)), /*#__PURE__*/React.createElement("td", null, item.vigencia_inicio));
   }) : /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {
     colSpan: 5
   }, /*#__PURE__*/React.createElement("h4", {
