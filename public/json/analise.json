@@ -7,13 +7,13 @@
         "series": [{
             "name": "Nº",
             "type": "column",
-            "data": [434, 197, 32]
+            "data": [434, 197, 23, 4, 3, 2]
         }, {
             "name": "%",
             "type": "column",
-            "data": [65.5, 29.7, 4.9]
+            "data": [65.5, 29.7, 3.5, 0.6, 0.5, 0.3]
         }],
-        "labels": ["Programa governamental", "Política nacional", "Outros"]
+        "labels": ["Programa governamental", "Política nacional", "Plano", "Projeto", "Estratégia", "Diretrizes"]
     },
     {
         "id": 2,
@@ -30,30 +30,78 @@
     {
         "id": 3,
         "tipo": "stacked",
-        "titulo": "Frequência absoluta e relativa de políticas segundo tipo da política",
+        "titulo": "Frequência de políticas por instrumento legal, segundo tipo de política",
         "fonte": "Catálogo de Políticas Públicas (Ipea).",
         "series": [{
             "name": "Decreto",
-            "data": [44, 55, 41, 67, 22, 43]
-        }, {
-            "name": "Resolução",
-            "data": [13, 23, 20, 8, 13, 27]
-        }, {
-            "name": "Projeto de lei",
-            "data": [11, 17, 15, 15, 21, 14]
+            "data": [0, 2, 10, 51, 157, 1, 221]
         }, {
             "name": "Lei ordinária",
-            "data": [21, 7, 25, 13, 22, 8]
+            "data": [0, 0, 1, 65, 122, 0, 188]
+        }, {
+            "name": "Portaria",
+            "data": [2, 0, 3, 52, 92, 3, 152]
+        }, {
+            "name": "Decreto-Lei",
+            "data": [0, 0, 0, 4, 9, 0, 13]
+        }, {
+            "name": "Resolução",
+            "data": [0, 0, 0, 10, 2, 0, 12]
+        }, {
+            "name": "Lei Complementar",
+            "data": [0, 0, 3, 0, 8, 0, 11]
+        }, {
+            "name": "Instrução Normativa",
+            "data": [0, 0, 0, 0, 3, 0, 3]
+        }, {
+            "name": "Medida Provisória",
+            "data": [0, 0, 0, 0, 2, 0, 2]
+        }, {
+            "name": "Projeto de Lei",
+            "data": [0, 0, 0, 0, 2, 0, 2]
+        }, {
+            "name": "Norma de execução",
+            "data": [0, 0, 0, 0, 1, 0, 1]
+        }, {
+            "name": "Norma operacional",
+            "data": [0, 0, 0, 0, 1, 0, 1]
+        }, {
+            "name": "Não se aplica",
+            "data": [0, 1, 6, 15, 35, 0, 57]
         }],
-        "labels": ["Diretrizes", "Estratégia", "Plano", "Outros", "Política nacional", "Programa"]
+        "labels": ["Diretrizes", "Estratégia", "Plano", "Política nacional", "Política governamental", "Projeto"]
     },
     {
         "id": 4,
+        "tipo": "pie",
+        "titulo": "Frequência absoluta e relativa de políticas segundo público alvo",
+        "fonte": "Catálogo de Políticas Públicas (Ipea)",
+        "series": [91, 53, 49, 47, 46, 43, 41, 36, 31, 31, 27, 26, 26, 22, 18, 11, 10, 10, 10, 10, 7, 7, 6, 5],
+        "labels": ["População em geral", "População em situação de vulnerabilidade social", "Estudantes e Professores", "Trabalhadores Rurais", "Sistema de Saúde", "Administração pública e servidores públicos", "Cadeias produtivas de setores econômicas incentivados e/ou regulados", "Populações e setores econômicos diretamente afetados por alterações no meio ambiente", "Empresários dos setores urbanos e rurais", "Pessoas afetadas por doenças", "Instituições de pesquisa e inovação", "Crianças e Idosos", "Minorias sociais (negros", " mulheres", "comunidade LGBTQIA+ e pessoas com deficiência)", "Populações fronteiriças e de territórios economicamente deprimidos", "Outros", "Sistema Nacional de Defesa", "Jovens de 12 a 24 anos", "Sistema de Segurança Pública", "Sistemas de arrecadação e de controle fiscal", "Trabalhadores e trabalhadoras", "Artistas", " Artesãos e Patrimônio histórico e cultural brasileiro", "Povos e comunidades tradicionais", "Gestantes", "puérperas e recém-nascidos", "Populações metropolitanas e urbanas"]
+    },
+    {
+        "id": 5,
+        "tipo": "pie",
+        "titulo": "Frequência absoluta e relativa de políticas segundo público alvo",
+        "fonte": "Catálogo de Políticas Públicas (Ipea)",
+        "series": [91, 53, 52, 49, 47, 46, 43, 41, 36, 31, 31, 27, 22, 94],
+        "labels": ["População em geral", "População em situação de vulnerabilidade social", "Minorias sociais (negros", " mulheres", " comunidade LGBTQIA+ e pessoas com deficiência", " crianças e idosos)", "Estudantes e Professores", "Trabalhadores Rurais", "Sistema de Saúde", "Administração pública e servidores públicos", "Cadeias produtivas de setores econômicas incentivados e/ou regulados", "Populações e setores econômicos diretamente afetados por alterações no meio ambiente", "Empresários dos setores urbanos e rurais", "Pessoas afetadas por doenças", "Instituições de pesquisa e inovação", "Populações fronteiriças e de territórios economicamente deprimidos", "Outros"]
+    },
+    {
+        "id": 6,
         "tipo": "pie",
         "titulo": "Frequência absoluta e relativa de políticas segundo Grande Área",
         "fonte": "Catálogo de Políticas Públicas (Ipea)",
         "series": [397, 140, 49, 29, 28, 20],
         "labels": ["Social", "Desenvolvimento Econômico", "Infraestrutura", "Meio Ambiente", "Administração", "Defesa e Segurança"]
+    },
+    {
+        "id": 7,
+        "tipo": "pie",
+        "titulo": "Frequência absoluta e relativa de políticas segundo a Área",
+        "fonte": "Catálogo de Políticas Públicas (Ipea)",
+        "series": [158, 66, 56, 54, 38, 35, 35, 27, 25, 23, 22, 17, 17, 16, 16, 14, 12, 12, 10, 5, 2, 2, 1],
+        "labels": ["Saúde", "Agropecuária e Agrária", "Assistência Social", "Educação", "Infraestrutura", "Administração Pública", "Direitos Humanos", "Meio Ambiente", "Indústria e Comércio", "Ciência e Tecnologia", "Desenvolvimento Regional", "Cultura", "Habitação e Urbanismo", "Justiça e Segurança Pública", "Turismo", "Desporto e Lazer", "Defesa Nacional", "Política Econômica", "Trabalho e Emprego", "Segurança Alimentar", "Relações Exteriores", "Comunicação", "Previdência", "Indústria e comércio"]
     }
 
 ]
