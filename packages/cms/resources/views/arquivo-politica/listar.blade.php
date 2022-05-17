@@ -84,8 +84,9 @@
                                 <i ng-if="ordem=='id' && sentidoOrdem=='asc'" class="fa fa-angle-double-down"></i>
                                 <i ng-if="ordem=='id' && sentidoOrdem=='desc'" class="fa fa-angle-double-up"></i>
                             </th>
+                            <th>Título</th>
                             <th>Imagem</th>
-                            <th ng-click="ordernarPor('arquivo')" style="arquivor:pointer;">
+                            <th style="arquivor:pointer;">
                                 Arquivo
                                 <i ng-if="ordem=='arquivo' && sentidoOrdem=='asc'" class="fa fa-angle-double-down"></i>
                                 <i ng-if="ordem=='arquivo' && sentidoOrdem=='desc'" class="fa fa-angle-double-up"></i>
