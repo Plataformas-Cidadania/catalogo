@@ -124,7 +124,7 @@
                         <p>{!! $politica->acao_orcamentaria_assoc !!}</p>--}}
 
                         <p>Público alvo agregado</p>
-                        {{--<p>{!! $politica->publico_alvo_categ !!}</p>--}}
+                        <h2>{{$politica->politica_publico_alvo[0]['publico_alvo']['nome']}}</h2>
 
                     </div>
 
