@@ -14,3 +14,7 @@ yarn-error.log
 /.idea
 /.vscode
 composer.lock
+phpunit.xml
+phpunit.xml
+composer.json
+docker-compose.yml

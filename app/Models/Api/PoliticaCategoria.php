@@ -20,7 +20,7 @@ class PoliticaCategoria extends Model
         'categoria_id'
     ];
 
-
+    public $with = ['categoria'];
     public function politica()
     {
         return $this->belongsTo(Politica::class, 'politica_id');

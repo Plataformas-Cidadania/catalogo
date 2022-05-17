@@ -39,6 +39,11 @@ class Politica extends Model
     {
         return $this->hasMany(PoliticaPublicoAlvo::class, 'politica_id');
     }
+    public function politica_categoria()
+    {
+        return $this->hasMany(PoliticaCategoria::class, 'politica_id');
+    }
+
 
 }
 

@@ -14,7 +14,7 @@ class PoliticaOrgao extends Model
         'politica_id',
         'orgao_id'
     ];
-
+    public $with = ['orgao'];
     public function politica()
     {
         return $this->belongsTo(Politica::class, 'politica_id');

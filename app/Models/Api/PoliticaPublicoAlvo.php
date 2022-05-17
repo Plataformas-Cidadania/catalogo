@@ -15,7 +15,7 @@ class PoliticaPublicoAlvo extends Model
         'politica_id',
         'publico_alvo_id'
     ];
-
+    public $with = ['publico_alvo'];
     public function politica()
     {
         return $this->belongsTo(Politica::class, 'politica_id');

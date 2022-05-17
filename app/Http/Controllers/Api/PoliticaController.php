@@ -101,11 +101,13 @@ class PoliticaController extends Controller
     public function get($id)
     {
         try {
-            $model = $this->repo->findById($id);
+            $model = $this->repo->findById($id,relations: ['politica_publico_alvo','politica_categoria']);
+            
             $orgaoArray = [];
             foreach($model->politica_orgao as $rel)
                 array_push($orgaoArray,$rel->orgao);
-            $arr = $model->withoutRelations('politica_orgao')->toArray();
+            $arr = $model->toArray();
+            unset($arr['politica_orgao']);
             $arr['orgaos']= $orgaoArray;
             return $arr;
         }catch (Exception $exception) {
@@ -133,6 +135,7 @@ class PoliticaController extends Controller
             $data['ano'] = $request->get('ano');
             $data['grande_area'] = $request->get('grande_area');
             $data['area'] = $request->get('area');
+            $data['categoria'] = $request->get('categoria');
             $data['orgao'] = $request->get('orgao');
             $data['tipo_politica'] = $request->get('tipo_politica');
             $data['publico_alvo'] = $request->get('publico_alvo');

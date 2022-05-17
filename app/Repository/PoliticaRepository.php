@@ -46,6 +46,7 @@ class PoliticaRepository extends BaseRepository
             ->with('area')
             ->with('grande_area')
             ->with('politica_orgao')
+            ->with('politica_categoria')
             ->with('politica_publico_alvo');
 
         if($data['politica']){
@@ -65,7 +66,17 @@ class PoliticaRepository extends BaseRepository
         if($data['publico_alvo'])
             $models->whereHas('politica_publico_alvo', function($q) use($data) {
                 $q->whereIn('publico_alvo_id', $data['publico_alvo']);
-            })->get();
+         })->get();
+         if($data['orgao'])
+         $models->whereHas('politica_orgao', function($q) use($data) {
+             $q->whereIn('orgao_id', $data['orgao']);
+     })->get();
+     
+        if($data['categoria'])
+            $models->whereHas('politica_categoria', function($q) use($data) {
+                $q->whereIn('categoria_id', $data['categoria']);
+        })->get();
+            
         return $models->paginate(30);
 
 
