@@ -84,8 +84,9 @@
                                 <i ng-if="ordem=='id' && sentidoOrdem=='asc'" class="fa fa-angle-double-down"></i>
                                 <i ng-if="ordem=='id' && sentidoOrdem=='desc'" class="fa fa-angle-double-up"></i>
                             </th>
+                            <th>Título</th>
                             <th>Imagem</th>
-                            <th ng-click="ordernarPor('arquivo')" style="arquivor:pointer;">
+                            <th style="arquivor:pointer;">
                                 Arquivo
                                 <i ng-if="ordem=='arquivo' && sentidoOrdem=='asc'" class="fa fa-angle-double-down"></i>
                                 <i ng-if="ordem=='arquivo' && sentidoOrdem=='desc'" class="fa fa-angle-double-up"></i>
@@ -96,6 +97,7 @@
                         <tbody>
                         <tr ng-repeat="arquivo in arquivos">
                             <td><% arquivo.id %></td>
+                            <td><% arquivo.titulo %></td>
                             <td><img ng-show="arquivo.imagem" ng-src="uploads/<% arquivo.imagem %>" width="60"></td>
                             <td><a href="uploads/<% arquivo.caminho_arquivo %>" target="_blank"><% arquivo.caminho_arquivo %></a></td>
                             <td class="text-right">

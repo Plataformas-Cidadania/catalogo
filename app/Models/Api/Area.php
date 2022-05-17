@@ -19,7 +19,7 @@ class Area extends Model
     ];
     public function politicas()
     {
-        return $this->hasMany(Politica::class, 'area');
+        return $this->hasMany(Politica::class, 'area')->orderBy('ano', 'desc');
     }
 }
 
