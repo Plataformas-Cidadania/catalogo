@@ -39,7 +39,7 @@ class PoliticaRepository extends BaseRepository
         return $arr;
     }
 
-    public function buscaAvancada($data)
+    public function buscaAvancada($data, $paginar = true)
     {
 
         $models = $this->model
@@ -71,13 +71,13 @@ class PoliticaRepository extends BaseRepository
          $models->whereHas('politica_orgao', function($q) use($data) {
              $q->whereIn('orgao_id', $data['orgao']);
      })->get();
-     
+
         if($data['categoria'])
             $models->whereHas('politica_categoria', function($q) use($data) {
                 $q->whereIn('categoria_id', $data['categoria']);
         })->get();
-            
-        return $models->paginate(30);
+
+        return $paginar ? $models->paginate(30) : $models->get();
 
 
         $arr = [];
