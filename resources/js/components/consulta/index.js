@@ -186,7 +186,7 @@ const Consulta = () => {
 
         let url = URL.createObjectURL(blobObject);
         downloadLink.href = url;
-        downloadLink.download = "products.csv";
+        downloadLink.download = "politicas.csv";
 
         /* Actually download CSV */
         document.body.appendChild(downloadLink);
