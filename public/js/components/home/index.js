@@ -73,7 +73,7 @@ const Home = () => {
         id: 'stackedChart',
         series: item.series,
         labels: item.labels,
-        width: 500
+        width: 1000
       });
     }
 
