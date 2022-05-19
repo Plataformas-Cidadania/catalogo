@@ -35,6 +35,7 @@ class PoliticaController extends Controller{
         $area = (object) $area;
 
         //return $area;
+        //return $politica;
 
         /*print_r($arquivos);*/
 
