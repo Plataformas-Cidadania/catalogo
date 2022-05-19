@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\RelationNotFoundException;
 use Illuminate\Foundation\Mix;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use Exception;
 use App\Repository\PoliticaRepository;
@@ -102,7 +103,7 @@ class PoliticaController extends Controller
     {
         try {
             $model = $this->repo->findById($id,relations: ['politica_publico_alvo','politica_categoria']);
-            
+
             $orgaoArray = [];
             foreach($model->politica_orgao as $rel)
                 array_push($orgaoArray,$rel->orgao);
@@ -125,7 +126,7 @@ class PoliticaController extends Controller
      *
      * @return Mix
      */
-    public function buscaAvancada(Request $request)
+    public function buscaAvancada(Request $request, $paginar = true)
     {
         try {
             $validator = $this->getValidator($request);
@@ -140,10 +141,50 @@ class PoliticaController extends Controller
             $data['tipo_politica'] = $request->get('tipo_politica');
             $data['publico_alvo'] = $request->get('publico_alvo');
 
-            return $this->repo->buscaAvancada($data);
+            return $this->repo->buscaAvancada($data, $paginar);
 
         } catch (Exception $exception) {
             return $this->errorResponse('Erro inesperado.'.$exception);
+        }
+    }
+    /**
+     * Exporta a busca avançada
+     *
+     * @param Request $request
+     *
+     * @return Mix
+     */
+    public function exportarBuscaAvancada(Request $request)
+    {
+        $politicas = $this->buscaAvancada($request, false);
+
+        $politicas = json_encode($politicas);
+        $politicas = json_decode($politicas);
+
+        $separador = ";";
+
+        if ( count($politicas) > 0 ) {
+            $fp = fopen('php://output', 'w');
+            fputcsv($fp, ["politica","grande_area","area","subareas","ano","vigencia_inicio"], $separador);
+
+            foreach ($politicas as $politica):
+                $subareas = "";
+                foreach ($politica->politica_categoria as $key => $item) {
+                    if($key > 0){
+                        $subareas .= " - ";
+                    }
+                    $subareas .= $item->categoria->nome;
+                }
+                fputcsv($fp, [
+                    $politica->nome,
+                    $politica->grande_area->nome,
+                    $politica->area->nome,
+                    $subareas, substr($politica->ano, 0, 4),
+                    $politica->vigencia_inicio
+                ], $separador);
+            endforeach;
+
+            fclose($fp);
         }
     }
     /**

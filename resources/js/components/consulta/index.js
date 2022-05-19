@@ -12,6 +12,7 @@ const Consulta = () => {
     const [textoPoliticaAlterado, setTextPoliticaAlterado] = useState(false);
     const [politicas, setPoliticas] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [loadingExportar, setLoadingExportar] = useState(false);
     const [disabledAplicarFiltros, setDisabledAplicarFiltros] = useState(true);
     const [showMessageFiltroPolitica, setShowMessageFiltroPolitica] = useState(false);
     const [total, setTotal] = useState(0);
@@ -107,12 +108,7 @@ const Consulta = () => {
         setFilters(newFilters);
     }
 
-    const list = async () => {
-        setLoading(true);
-        setShowMessageFiltroPolitica(false);
-        setDisabledAplicarFiltros(true);
-
-        //console.log(appliedFilters);
+    const prepareFilters = () => {
         let politica = appliedFilters.politica ? appliedFilters.politica : "";
         let ano = appliedFilters.ano ? {"inicio": appliedFilters.ano.inicio, "fim": appliedFilters.ano.fim} : null;
         let grande_area = [];
@@ -140,7 +136,7 @@ const Consulta = () => {
             publico_alvo = appliedFilters.publico_alvo.map(item => item.id);
         }
 
-        const result = await axios.post('api/politica/buscaAvancada', {
+        return {
             "politica": politica,
             "ano": ano,
             "grande_area": grande_area,
@@ -150,7 +146,19 @@ const Consulta = () => {
             "tipo_politica": tipo_politica,
             "publico_alvo": publico_alvo,
             "page": page+1
-        });
+        }
+    }
+
+    const list = async () => {
+        setLoading(true);
+        setShowMessageFiltroPolitica(false);
+        setDisabledAplicarFiltros(true);
+
+        //console.log(appliedFilters);
+
+        let filtros = prepareFilters();
+
+        const result = await axios.post('api/politica/buscaAvancada', filtros);
 
         let newPoliticas = result.data.data
         newPoliticas = newPoliticas.splice(0, 30);
@@ -159,6 +167,33 @@ const Consulta = () => {
         setTotal(result.data.total);
 
         setLoading(false);
+    }
+
+    const exportar = async () => {
+        setLoadingExportar(true);
+
+        let filtros = prepareFilters();
+
+        const result = await axios.post('api/politica/exportarBuscaAvancada', filtros);
+
+        /* Make CSV downloadable */
+        let downloadLink = document.createElement("a");
+        let fileData = ['\ufeff'+result.data];
+
+        let blobObject = new Blob(fileData,{
+            type: "text/csv;charset=utf-8;"
+        });
+
+        let url = URL.createObjectURL(blobObject);
+        downloadLink.href = url;
+        downloadLink.download = "politicas.csv";
+
+        /* Actually download CSV */
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+
+        setLoadingExportar(false);
     }
 
     return (
@@ -268,6 +303,27 @@ const Consulta = () => {
                 </div>
             </div>
             <br/>
+            {
+                politicas.length > 0 ? (
+                    <div className="row">
+                        <div className="col">
+                            <div style={{textAlign: 'right'}}>
+                                {
+                                    !loadingExportar ? (
+                                        <button className="btn btn-primary" onClick={() => exportar()}>
+                                            <i className="fa fa-file-csv"/> Exportar
+                                        </button>
+                                    ) : (
+                                        <button className="btn btn-primary" disabled>
+                                            <i className="fa fa-spinner fa-spin"/> Processando
+                                        </button>
+                                    )
+                                }
+                            </div>
+                        </div>
+                    </div>
+                ) : null
+            }
             <div className="row">
                 <div className="col">
                     {

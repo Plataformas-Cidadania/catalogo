@@ -156,6 +156,9 @@ Route::group([
      Route::post('/buscaAvancada', [App\Http\Controllers\Api\PoliticaController::class, 'buscaAvancada'])
          ->name('api.politica.buscaAvancada');
 
+     Route::post('/exportarBuscaAvancada', [App\Http\Controllers\Api\PoliticaController::class, 'exportarBuscaAvancada'])
+         ->name('api.politica.exportarBuscaAvancada');
+
 
  });
 

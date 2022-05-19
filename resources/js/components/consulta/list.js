@@ -26,7 +26,7 @@ const List = (props) => {
                 {
                     props.loading ? (
                         <tr>
-                            <td colSpan={5}>
+                            <td colSpan={6}>
                                 <div className="text-center">
                                     <i className="fa fa-spinner fa-spin fa-4x"/>
                                 </div>
@@ -54,7 +54,7 @@ const List = (props) => {
                             })
                         ) : (
                             <tr>
-                                <td colSpan={5}>
+                                <td colSpan={6}>
                                     <h4 className="text-center">Não foram encontradas políticas para esta consulta!</h4>
                                 </td>
                             </tr>
