@@ -101,8 +101,12 @@
     <?php } ?>
 </select>
 
-<label for="publico_alvo_categ">Público Alvo Categ</label>
+{{--<label for="publico_alvo_categ">Público Alvo Categ</label>
 <input type="text" name="publico_alvo_categ" class="form-control width-grande <% validar(politica.publico_alvo_categ)%>" ng-model="politica.publico_alvo_categ" ng-required="false">
+<br>--}}
+
+<label for="publico_alvo_legislacao">Público Alvo Legislação</label>
+<input type="text" name="publico_alvo_legislacao" class="form-control width-grande <% validar(politica.publico_alvo_legislacao)%>" ng-model="politica.publico_alvo_legislacao" ng-required="false">
 <br>
 
 {{--
