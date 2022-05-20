@@ -6,6 +6,7 @@
         <div id="menu-usuario-mobile"></div>
     </div>
     {{--CEL--}}
+
     <div class="footer-cel d-block d-sm-none">
         <div class="container">
             <div class="row">
@@ -15,15 +16,16 @@
                 </div>
                 <div class="col-3 col-md-3 text-center">
                     <i class="fa fa-archive" aria-hidden="true"></i>
-                    <p><a href="mapa">Mapa</a></p>
+                    <p><a href="areas-tematicas">Áreas</a></p>
+                </div>
+
+                <div class="col-3 col-md-3 text-center">
+                    <i class="fas fa-info-circle"></i>
+                    <p><a href="sobre">Sobre</a></p>
                 </div>
                 <div class="col-3 col-md-3 text-center">
                     <i class="fa fa-paper-plane"></i>
                     <p><a href="contato">Contato</a></p>
-                </div>
-                <div class="col-3 col-md-3 text-center">
-                    <i class="fa fa-user"></i>
-                    <p><a id="btn-cel-login">Login</a></p>
                 </div>
             </div>
         </div>
