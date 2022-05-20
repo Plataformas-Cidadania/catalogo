@@ -119,23 +119,20 @@
 
 
                 <div class="row">
-                    <div class="col-md-12">
-                        {{--<p><strong>Ação Orcamentaria</strong></p>
-                        <p>{!! $politica->acao_orcamentaria_assoc !!}</p>--}}
-
-                        <p>Público alvo agregado</p>
-                        <h2>{{$politica->politica_publico_alvo[0]['publico_alvo']['nome']}}</h2>
-
-                    </div>
 
                     <div class="col-md-12">
-                        {{--<p><strong>Ação Orcamentaria</strong></p>
-                        <p>{!! $politica->acao_orcamentaria_assoc !!}</p>--}}
-
                         <p>Público alvo legislação</p>
                         <h2>{!! $politica->publico_alvo_legislacao !!}</h2>
-
                     </div>
+                    <div class="col-md-12">
+                        <br>
+                        <p>Público alvo agregado</p>
+                        @foreach($politica->politica_publico_alvo as $key => $politica_publico_alvo)
+                            @if($key)<hr>@endif
+                                <h2>{{$politica_publico_alvo['publico_alvo']['nome']}}</h2>
+                        @endforeach
+                    </div>
+
                 </div>
 
 
@@ -191,7 +188,11 @@
                         {{--<a href="area-tematica/{{$politica->area}}/{{clean($politica->nome)}}">--}}
                             <div class="p-2 mb-4 linsBor">
                                 <strong>Subárea</strong><br>
-                                {{$politica->politica_categoria[0]['categoria']['nome']}}
+                                @foreach($politica->politica_categoria as $key => $categorias)
+                                    @if($key)<hr>@endif
+                                    {{$categorias['categoria']['nome']}}
+                                @endforeach
+                                <br>
                             </div>
                         {{--</a>--}}
                     </div>
