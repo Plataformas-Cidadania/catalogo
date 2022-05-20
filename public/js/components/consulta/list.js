@@ -9,7 +9,9 @@ const List = props => {
       setItems(props.items);
     }
   }, [props.items]);
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("table", {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "table-responsive mb-3"
+  }, /*#__PURE__*/React.createElement("table", {
     className: "table"
   }, /*#__PURE__*/React.createElement("thead", {
     className: "thead-light"
