@@ -544,4 +544,8 @@
 .tableRow{
     border-bottom: solid 1px #CCCCCC;
     padding: 10px;
+    min-height: 70px;
+    min-width: 90px;
+    display: flex;
+    align-items: center;
 }
