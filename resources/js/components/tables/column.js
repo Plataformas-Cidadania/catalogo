@@ -7,7 +7,7 @@ const Column = () => {
         <div className="container">
             <div className="row">
                 <div className="col-md-12">
-                    sss
+
                 </div>
             </div>
         </div>

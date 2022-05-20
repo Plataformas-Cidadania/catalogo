@@ -6,7 +6,10 @@ const Tables = props => {
   }, /*#__PURE__*/React.createElement("div", {
     className: "tableCol"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "tableRow"
+    className: "tableRow bg-pri",
+    style: {
+      color: '#FFFFFF'
+    }
   }, /*#__PURE__*/React.createElement("strong", null, "T\xEDtulo")), props.labels.map((item, key) => {
     return /*#__PURE__*/React.createElement("div", {
       className: "tableRow",
@@ -15,7 +18,10 @@ const Tables = props => {
   })), /*#__PURE__*/React.createElement("div", {
     className: "tableCol"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "tableRow"
+    className: "tableRow bg-pri",
+    style: {
+      color: '#FFFFFF'
+    }
   }, /*#__PURE__*/React.createElement("strong", null, "Valor")), props.series.map((item, key) => {
     return /*#__PURE__*/React.createElement("div", {
       className: "tableRow",
@@ -26,7 +32,10 @@ const Tables = props => {
   }, /*#__PURE__*/React.createElement("div", {
     className: "tableCol"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "tableRow"
+    className: "tableRow bg-pri",
+    style: {
+      color: '#FFFFFF'
+    }
   }, /*#__PURE__*/React.createElement("strong", null, "T\xEDtulo")), props.labels.map((item, key) => {
     return /*#__PURE__*/React.createElement("div", {
       className: "tableRow",
@@ -49,7 +58,10 @@ const Tables = props => {
         textAlign: 'center'
       }
     }, /*#__PURE__*/React.createElement("div", {
-      className: "tableRow"
+      className: "tableRow  bg-pri",
+      style: {
+        color: '#FFFFFF'
+      }
     }, /*#__PURE__*/React.createElement("strong", null, item.name)), teste);
   }));
 };
