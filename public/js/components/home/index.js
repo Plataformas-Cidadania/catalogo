@@ -49,6 +49,8 @@ const Home = () => {
     }, item.id, " - ", item.titulo));
   }) : null)), /*#__PURE__*/React.createElement("div", {
     className: "col-md-9 mt-5 mb-5"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "table-responsive mb-3"
   }, list ? list.map((item, index) => {
     let selectedChart = "";
 
@@ -117,7 +119,7 @@ const Home = () => {
         textAlign: 'right'
       }
     }, /*#__PURE__*/React.createElement("strong", null, "Fonte: "), item.fonte));
-  }) : null))));
+  }) : null)))));
 };
 
 ReactDOM.render( /*#__PURE__*/React.createElement(Home, null), document.getElementById('home'));
