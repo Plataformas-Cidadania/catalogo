@@ -468,3 +468,15 @@ figcaption{
     padding: 0;
     font-size: 15px;
 }
+@media  only screen and (max-width : 480px) {
+    .topM{
+        margin-top: 76px;
+        padding-top: 23px;
+    }
+    .celHider{
+        display: none;
+    }
+    .top-ipea{
+        margin-bottom: 15px;
+    }
+}

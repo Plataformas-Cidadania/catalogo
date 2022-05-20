@@ -12549,6 +12549,20 @@ figcaption {
   font-size: 15px;
 }
 
+@media only screen and (max-width: 480px) {
+  .topM {
+    margin-top: 76px;
+    padding-top: 23px;
+  }
+
+  .celHider {
+    display: none;
+  }
+
+  .top-ipea {
+    margin-bottom: 15px;
+  }
+}
 /*/////////*/
 /*.thumbs {
     width: 100%;
@@ -13585,6 +13599,11 @@ textarea {
 
 .box-item-model h2, .box-item-model .h2 {
   font-size: 18px;
+  margin-top: -4px;
+}
+
+.top-ipea {
+  width: 180px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -13603,10 +13622,6 @@ textarea {
   .icon-next {
     margin-top: 138px !important;
     margin-left: 130px !important;
-  }
-
-  .top-ipea {
-    width: 39%;
   }
 
   .top-icons {
