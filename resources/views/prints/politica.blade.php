@@ -54,35 +54,72 @@
 
         <div class="row">
             <div class="col">
-                <strong>Público alvo agregado:</strong><br><br>
-                {{$politica->acao_orcamentaria_assoc}}<br>
-                <br>
-                <strong>Público alvo legislação:</strong><br><br>
+                <strong>Público alvo legislação:</strong><br>
                 {{$politica->publico_alvo_legislacao}}
+                <br><br><br>
+
+                <strong>Público alvo agregado:</strong>
+                @foreach($politica->politica_publico_alvo as $key => $politica_publico_alvo)
+                    @if($key)<hr>@endif
+                    <p>{{$politica_publico_alvo['publico_alvo']['nome']}}</p>
+                @endforeach
             </div>
             <div class="col">
                 <div class="bg">
-                    <p>Grande área</p>
-                    <h2></h2>
+                    <p class="line-title">Grande área</p>
+                    <h3 class="line"><strong>{{$grande_area->nome}}</strong></h3>
+                </div>
+                <div class="bg mt">
+                    <p class="line-title">Área temática</p>
+                    <h3 class="line"><strong>{{$area->nome}}</strong></h3>
+                </div>
+                <div class="bg mt">
+                    <p class="line-title">Subárea</p>
+                    @foreach($politica->politica_categoria as $key => $categorias)
+                        @if($key)<hr>@endif
+                            <p class="line"><strong>{{$categorias['categoria']['nome']}}</strong></p>
+                    @endforeach
+
                 </div>
             </div>
         </div>
 
 
 
-        <h3 class="text-center">Ministérios</h3>
+        <div class="row break">
 
-        <div class="boxContainer">
-            @foreach($politica->orgaos as $orgao)
-                <div class="box">
-                    {{$orgao->nome}}
-                </div>
-            @endforeach
+            <div class="bg-title2">Ministérios</div>
+
+
+
+            <div class="boxContainer" style="margin: 15px 15px 15px 15px;">
+                @foreach($politica->orgaos as $orgao)
+                    <div class="box" style="min-width: 350px;">
+                        {{$orgao->nome}}
+                    </div>
+                @endforeach
+            </div>
         </div>
+
 
     </div>
 
 <style>
+
+    .break{
+        page-break-before: always;
+        page-break-inside: avoid;
+    }
+    .mt{
+        margin-top: 6px;
+    }
+    .line-title{
+        border-bottom: 3px solid #DD4A4D;
+        padding: 0 15px 15px 15px;
+    }
+    .line{
+        padding: 0 15px 0 15px;
+    }
     .row{
         padding: 15px;
         display: flex;
@@ -124,11 +161,12 @@
 
     .boxContainer{
         display: flex;
+        flex-wrap: wrap;
     }
     .box{
-        flex:3;
-        min-height: 80px;
-        padding:0 15px 30px 15px;
+        flex:5;
+        /*min-height: 80px;*/
+        padding:0 15px 20px 15px;
     }
     .bg{
         background-color: #EDEDED;
