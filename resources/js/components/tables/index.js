@@ -10,7 +10,7 @@ const Tables = (props) => {
             <div className="tableFlex">
 
                 <div className="tableCol">
-                    <div className="tableRow" ><strong>Título</strong></div>
+                    <div className="tableRow bg-pri" style={{color: '#FFFFFF'}} ><strong>Título</strong></div>
                     {
                         props.labels.map((item, key) => {
                             return (
@@ -23,7 +23,7 @@ const Tables = (props) => {
                 </div>
 
                 <div className="tableCol">
-                    <div className="tableRow" ><strong>Valor</strong></div>
+                    <div className="tableRow bg-pri" style={{color: '#FFFFFF'}} ><strong>Valor</strong></div>
                     {
                         props.series.map((item, key) => {
                             return (
@@ -56,7 +56,7 @@ const Tables = (props) => {
             <div className="tableFlex">
 
                 <div className="tableCol">
-                    <div className="tableRow" ><strong>Título</strong></div>
+                    <div className="tableRow bg-pri" style={{color: '#FFFFFF'}}><strong>Título</strong></div>
                     {
                         props.labels.map((item, key) => {
                             return (
@@ -77,7 +77,7 @@ const Tables = (props) => {
 
                         return (
                             <div className="tableCol"  key={'tableCol'+key}  style={{textAlign: 'center'}}>
-                                <div className="tableRow"><strong>{item.name}</strong></div>
+                                <div className="tableRow  bg-pri" style={{color: '#FFFFFF'}}><strong>{item.name}</strong></div>
                                 {teste}
                             </div>
                         )

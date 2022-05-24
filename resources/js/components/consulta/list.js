@@ -10,7 +10,7 @@ const List = (props) => {
     }, [props.items]);
 
     return (
-        <div>
+        <div className="table-responsive mb-3">
             <table className="table">
                 <thead className="thead-light">
                     <tr>

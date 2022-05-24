@@ -207,6 +207,10 @@
 }
 .box-item-model h2{
     font-size: 18px;
+    margin-top: -4px;
+}
+.top-ipea{
+    width: 180px;
 }
 @media  only screen and (max-width : 768px) {
     .circle {
@@ -223,9 +227,7 @@
         margin-top: 138px!important;
         margin-left: 130px!important;
     }
-    .top-ipea{
-        width: 39%;
-    }
+
     .top-icons{
         width: 61%;
     }
@@ -542,4 +544,8 @@
 .tableRow{
     border-bottom: solid 1px #CCCCCC;
     padding: 10px;
+    min-height: 70px;
+    min-width: 90px;
+    display: flex;
+    align-items: center;
 }

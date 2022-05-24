@@ -25,14 +25,22 @@ class PrintController extends Controller{
     }
 
 
-    public function politica($id){
+    public function politica($id, \App\Http\Controllers\Api\ArquivoController $arquivos, \App\Http\Controllers\Api\GrandeAreaController $grande_area, \App\Http\Controllers\Api\AreaController $area){
         $politica = $this->politicaController->get($id);
         $politica = (object) $politica;
 
-        //return $politica;
-        //return count($politica);
+        $arquivos = $arquivos->getArquivosPorPoliticaId($id);
+        $arquivos = (object) $arquivos;
 
-        return view('prints.politica', ['politica' => $politica]);
+        $grande_area = $grande_area->get($politica->grande_area);
+        $grande_area = (object) $grande_area;
+
+        $area = $area->get($politica->area);
+        $area = (object) $area;
+
+        //return $area;
+
+        return view('prints.politica', ['politica' => $politica, 'arquivos' => $arquivos, 'grande_area' => $grande_area, 'area' => $area]);
 
     }
 

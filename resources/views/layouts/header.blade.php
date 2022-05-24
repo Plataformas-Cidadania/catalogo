@@ -10,10 +10,10 @@
     <div  id="progress" class="progress-bar bg-success" role="progressbar"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 
-<div class="bg-lgt d-print-none" id="acessibilidade" >
+<div class="bg-lgt d-print-none topM" id="acessibilidade" >
     <div class="container">
         <div class="row">
-            <div class="col-6">
+            <div class="col-6 celHider">
                 <ul id="atalhos" class="top-links">
                     <li><a href="<?php if($rota != '/'){?>{{$rota}}<?php }?>#iniciodoconteudo" accesskey="1">Ir para o Conteúdo [1]</a></li>
                     <li><a href="<?php if($rota != '/'){?>{{$rota}}<?php }?>#iniciodomenu" accesskey="2">Ir para o Menu [2]</a></li>
@@ -21,8 +21,8 @@
                     <li><a href="<?php if($rota != '/'){?>{{$rota}}<?php }?>#iniciodorodape" accesskey="4" class="link-to-menu">Ir para o rodapé [4]</a></li>
                 </ul>
             </div>
-            <div class="col text-lg-right text-md-right top-ipea">
-                <a href="https://www.ipea.gov.br" target="_blank" alt="Link externo para o IPEA." title="Link externo para o IPEA."><img src="img/logo-ipea.png" width="150"/></a>
+            <div class="col text-lg-right text-md-right">
+                <a href="https://www.ipea.gov.br" target="_blank" alt="Link externo para o IPEA." title="Link externo para o IPEA."><img src="img/logo-ipea.png" class="top-ipea"/></a>
             </div>
             <div class="col text-right top-icons">
                 <ul id="botoes" >

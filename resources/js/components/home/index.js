@@ -52,6 +52,7 @@ const Home = () => {
                         </ul>
                     </div>
                     <div className="col-md-9 mt-5 mb-5" >
+                        <div className="table-responsive mb-3">
                         {
                             list ?
                                 list.map((item, index) => {
@@ -98,7 +99,7 @@ const Home = () => {
                                 null
                         }
 
-
+                        </div>
 
                     </div>
                 </div>

@@ -9,5 +9,5 @@ const Column = () => {
     className: "row"
   }, /*#__PURE__*/React.createElement("div", {
     className: "col-md-12"
-  }, "sss")));
+  })));
 };
