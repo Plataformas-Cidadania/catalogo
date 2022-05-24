@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Models\Api\Politica;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\DB;
 
 class PoliticaRepository extends BaseRepository
 {
@@ -39,6 +40,13 @@ class PoliticaRepository extends BaseRepository
         return $arr;
     }
 
+    public function getSeriePoliticaAno(){
+        return DB::select("SELECT
+          COUNT(id) AS politicas_totais,
+          EXTRACT(year FROM ano) AS year
+        FROM catalogo.politica
+        GROUP BY EXTRACT(year FROM ano);");
+    }
     public function buscaAvancada($data, $paginar = true)
     {
 

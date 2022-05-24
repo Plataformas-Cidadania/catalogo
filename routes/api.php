@@ -164,6 +164,19 @@ Route::group([
 
 
 Route::group([
+    'prefix' => 'metricas',
+], function () {
+
+    Route::get('/politicas_por_ano', [App\Http\Controllers\Api\PoliticaController::class, 'getSeriePoliticaAno'])
+        ->name('api.politica.getSeriePoliticaAno');
+
+
+
+});
+
+
+
+Route::group([
     'prefix' => 'publico_alvo',
 ], function () {
 

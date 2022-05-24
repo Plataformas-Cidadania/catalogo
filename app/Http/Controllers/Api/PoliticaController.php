@@ -68,6 +68,29 @@ class PoliticaController extends Controller
     }
 
 
+    public function getSeriePoliticaAno()
+    {
+        $result = $this->repo->getSeriePoliticaAno();
+        $res = json_decode('{
+            "id": 2,
+            "tipo": "mix",
+            "titulo": "Frequência de políticas segundo ano",
+            "fonte": "Catálogo de Políticas Públicas (Ipea).",
+            "series": [{
+                "name": "Ano",
+                "type": "line",
+                "data": [23, 11, 22, 27, 13, 22]
+            }],
+            "labels": ["2004", "2005", "2006", "2007", "2008", "2009"]
+            }',true);
+
+        $res["labels"] = array_column($result, 'year');
+        $res["series"][0]["data"]  = array_column($result, 'politicas_totais');
+
+        return  $res;
+    }
+
+
     /**
      * Adicionar um novo
      *
