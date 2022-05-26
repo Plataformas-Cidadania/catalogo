@@ -4,6 +4,7 @@ const Home = () => {
 
     useEffect(() => {
         listData()
+        politicasPorAno()
     }, []);
 
     const [list, setList] = useState([]);
@@ -16,6 +17,16 @@ const Home = () => {
     const listData = async () => {
         try {
             const result = await axios.get('json/analise.json');
+            setList(result.data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+
+    const politicasPorAno = async () => {
+        try {
+            const result = await axios.get('api/metricas/politicas_por_ano');
             setList(result.data);
         } catch (error) {
             console.log(error);
