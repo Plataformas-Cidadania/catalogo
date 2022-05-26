@@ -79,9 +79,9 @@ class PoliticaController extends Controller
             "series": [{
                 "name": "Ano",
                 "type": "line",
-                "data": [23, 11, 22, 27, 13, 22]
+                "data": []
             }],
-            "labels": ["2004", "2005", "2006", "2007", "2008", "2009"]
+            "labels": []
             }',true);
 
         $res["labels"] = array_column($result, 'year');
