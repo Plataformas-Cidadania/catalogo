@@ -2,37 +2,48 @@ const Home = () => {
 
     const { useEffect, useState } = React;
 
-    useEffect(() => {
-        listData()
-    }, []);
-
-    const [list, setList] = useState([]);
+    const [lista, setLista] = useState([]);
+    const [json, setJson] = useState(false);
     const [divSelected, setDivSelected] = useState(1);
     const [divSelectedTipo, setDivSelectedTipo] = useState("mix");
 
     const [icon, setIcon] = useState('chart');
 
+    useEffect(() => {
+        listaData()
+    }, []);
 
-    const listData = async () => {
+    useEffect(() => {
+        if(json){
+            politicasPorAno();
+        }
+    }, [lista])
+
+    const listaData = async () => {
         try {
             const result = await axios.get('json/analise.json');
-            setList(result.data);
-            politicasPorAno()
+            setJson(true);
+            setLista(result.data);
+            //politicasPorAno()
         } catch (error) {
             console.log(error);
         }
     }
 
     const politicasPorAno = async () => {
+        setJson(false);
         try {
             const result = await axios.get('api/metricas/politicas_por_ano');
-            setList(list[1].push(result));
+            let newLista = lista;
+            newLista[1] = result.data;
+            setLista(newLista);
+
         } catch (error) {
             console.log(error);
         }
     }
 
-    console.log('------', list)
+    //console.log('------', lista)
 
     const clickChart = (id, tipo) => {
         setDivSelected(id);
@@ -51,8 +62,8 @@ const Home = () => {
                     <div className="col-md-3 mt-5 mb-5" >
                         <ul className="menu-left">
                             {
-                                list ?
-                                    list.map((item, key) => {
+                                lista ?
+                                    lista.map((item, key) => {
                                         return <li className={"list-group-item-theme  cursor " + (divSelected === item.id ? 'menu-left-active' : '')} onClick={() => clickChart(item.id, item.tipo)} key={'menu'+item.id}>
                                             <a href>{item.id} - {item.titulo}</a>
                                         </li>
@@ -66,8 +77,8 @@ const Home = () => {
                     <div className="col-md-9 mt-5 mb-5" >
                         <div className="table-responsive mb-3">
                         {
-                            list ?
-                                list.map((item, index) => {
+                            lista ?
+                                lista.map((item, index) => {
                                         let selectedChart = "";
                                         if(divSelectedTipo==="mix"){
                                             selectedChart = <MixedChart id={'mix-chart'+item.id}  series={item.series} labels={item.labels}/>
