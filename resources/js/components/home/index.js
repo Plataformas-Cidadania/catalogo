@@ -3,6 +3,7 @@ const Home = () => {
     const { useEffect, useState } = React;
 
     const [lista, setLista] = useState([]);
+    const [listaAtualizado, setListaAtualizado] = useState([]);
     const [json, setJson] = useState(false);
     const [divSelected, setDivSelected] = useState(1);
     const [divSelectedTipo, setDivSelectedTipo] = useState("mix");
@@ -36,7 +37,7 @@ const Home = () => {
             const result = await axios.get('api/metricas/politicas_por_ano');
             let newLista = lista;
             newLista[1] = result.data;
-            setLista(newLista);
+            setListaAtualizado(newLista);
 
         } catch (error) {
             console.log(error);
@@ -62,8 +63,8 @@ const Home = () => {
                     <div className="col-md-3 mt-5 mb-5" >
                         <ul className="menu-left">
                             {
-                                lista ?
-                                    lista.map((item, key) => {
+                                listaAtualizado ?
+                                    listaAtualizado.map((item, key) => {
                                         return <li className={"list-group-item-theme  cursor " + (divSelected === item.id ? 'menu-left-active' : '')} onClick={() => clickChart(item.id, item.tipo)} key={'menu'+item.id}>
                                             <a href>{item.id} - {item.titulo}</a>
                                         </li>
@@ -77,8 +78,8 @@ const Home = () => {
                     <div className="col-md-9 mt-5 mb-5" >
                         <div className="table-responsive mb-3">
                         {
-                            lista ?
-                                lista.map((item, index) => {
+                            listaAtualizado ?
+                                listaAtualizado.map((item, index) => {
                                         let selectedChart = "";
                                         if(divSelectedTipo==="mix"){
                                             selectedChart = <MixedChart id={'mix-chart'+item.id}  series={item.series} labels={item.labels}/>
