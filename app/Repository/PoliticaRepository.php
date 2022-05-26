@@ -45,7 +45,7 @@ class PoliticaRepository extends BaseRepository
           COUNT(id) AS politicas_totais,
           EXTRACT(year FROM ano) AS year
         FROM catalogo.politica
-        GROUP BY EXTRACT(year FROM ano);");
+        GROUP BY EXTRACT(year FROM ano) ORDER BY year;");
     }
     public function buscaAvancada($data, $paginar = true)
     {
