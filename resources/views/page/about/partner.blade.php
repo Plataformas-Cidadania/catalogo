@@ -9,7 +9,11 @@
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
                         <div class="items-img text-center">
                             <a href="{{$partner->url}}" target="_blank" data-toggle="modal" data-target="#myModal{{$key}}">
-                                <object data="img/sem-imagem.png" type="image/png">
+                                @if(empty($partner->imagem))
+                                    <object data="img/sem-imagem.png" type="image/png" class="img-responsive">
+                                @else
+                                    <object data="/imagens/parceiros/xs-{{$partner->imagem}}" type="image/png" class="img-responsive">
+                                @endif
                                     <picture>
                                         <source srcset="imagens/parceiros/sm-{{$partner->imagem}}" media="(max-width: 468px)">
                                         <source srcset="imagens/parceiros/md-{{$partner->imagem}}" media="(max-width: 768px)">

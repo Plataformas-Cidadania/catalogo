@@ -133,12 +133,16 @@
         <div class="row">
             @foreach($partners as $partner)
                 <div class="col-xs-6 col-sm-4 col-md-2 item-logo">
-                    <object data="img/sem-imagem.png" type="image/png">
+                    @if(empty($partner->imagem))
+                        <object data="img/sem-imagem.png" type="image/png" class="img-responsive">
+                    @else
+                        <object data="/imagens/parceiros/xs-{{$partner->imagem}}" type="image/png" class="img-responsive">
+                    @endif
                         <picture>
-                            <source data-src="/imagens/parceiros/md-{{$partner->imagem}}" media="(max-width: 468px)">
-                            <source data-src="/imagens/parceiros/md-{{$partner->imagem}}" media="(max-width: 768px)">
-                            <source data-src="/imagens/parceiros/md-{{$partner->imagem}}" class="img-responsive">
-                            <img src="/img/pre-img.gif" data-src="/imagens/parceiros/md-{{$partner->imagem}}" alt="Imagem sobre {{$partner->title}}" title="Imagem sobre {{$partner->title}}" width="100%" class="cliente-list-img-hover lazyload">
+                            <source data-src="/imagens/parceiros/xs-{{$partner->imagem}}" media="(max-width: 468px)">
+                            <source data-src="/imagens/parceiros/xs-{{$partner->imagem}}" media="(max-width: 768px)">
+                            <source data-src="/imagens/parceiros/xs-{{$partner->imagem}}" class="img-responsive">
+                            <img src="/img/pre-img.gif" data-src="/imagens/parceiros/xs-{{$partner->imagem}}" alt="Imagem sobre {{$partner->title}}" title="Imagem sobre {{$partner->title}}" width="100%" class="cliente-list-img-hover lazyload">
                         </picture>
                     </object>
                 </div>

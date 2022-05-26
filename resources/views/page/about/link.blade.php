@@ -5,7 +5,11 @@
         <div class="col-md-12">
             <div class="items-link">
                 <a href="{{$link->url}}" target="_blank">
-                    <object data="img/sem-imagem.png" type="image/png" class="img-responsive">
+                    @if(empty($link->imagem))
+                        <object data="img/sem-imagem.png" type="image/png" >
+                    @else
+                        <object data="/imagens/urls/xs-{{$link->imagem}}" type="image/png">
+                    @endif
                         <picture>
                             <source srcset="imagens/urls/sm-{{$link->imagem}}" media="(max-width: 468px)">
                             <source srcset="imagens/urls/md-{{$link->imagem}}" media="(max-width: 768px)">
