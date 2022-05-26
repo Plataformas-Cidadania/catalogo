@@ -4,7 +4,6 @@ const Home = () => {
 
     useEffect(() => {
         listData()
-        politicasPorAno()
     }, []);
 
     const [list, setList] = useState([]);
@@ -18,20 +17,22 @@ const Home = () => {
         try {
             const result = await axios.get('json/analise.json');
             setList(result.data);
+            politicasPorAno()
         } catch (error) {
             console.log(error);
         }
     }
-
 
     const politicasPorAno = async () => {
         try {
             const result = await axios.get('api/metricas/politicas_por_ano');
-            setList(result.data);
+            setList(list[1].push(result));
         } catch (error) {
             console.log(error);
         }
     }
+
+    console.log('------', list)
 
     const clickChart = (id, tipo) => {
         setDivSelected(id);
