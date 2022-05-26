@@ -40,7 +40,7 @@
 
         <div class="row">
             <div class="col-md-8">
-                <div>
+                <div style="text-align: justify;">
                     {{$area->descricao}}
                 </div>
                 <br><br><br><br>
