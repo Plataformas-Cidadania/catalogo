@@ -75,9 +75,10 @@ const TimelineIndex = () => {
       setTimelines(newTimelines);
       return;
     } //adiciona a timeline da área
+    //newTimelines.push({
 
 
-    newTimelines.push({
+    newTimelines.unshift({
       area: area,
       area_id: area_id,
       anos: areas[area]
