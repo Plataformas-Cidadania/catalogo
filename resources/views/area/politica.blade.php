@@ -111,22 +111,22 @@
                                     <p>{!! $politica->objetivos !!}</p>
                                     <br>
                                 </div>
+                                <div class="col-md-12">
+                                    <p><strong>Público alvo na legislação</strong></p>
+                                    <h2>{!! $politica->publico_alvo_legislacao !!}</h2>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                     <br><br>
                 </div>
 
 
                 <div class="row">
-
-                    <div class="col-md-12">
-                        <p>Público alvo legislação</p>
-                        <h2>{!! $politica->publico_alvo_legislacao !!}</h2>
-                    </div>
                     <div class="col-md-12">
                         <br>
-                        <p>Público alvo agregado</p>
+                        <p>Categoria de público alvo </p>
                         @foreach($politica->politica_publico_alvo as $key => $politica_publico_alvo)
                             @if($key)<hr>@endif
                                 <h2>{{$politica_publico_alvo['publico_alvo']['nome']}}</h2>
