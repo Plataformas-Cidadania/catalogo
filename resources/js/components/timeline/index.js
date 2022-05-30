@@ -109,6 +109,8 @@ const TimelineIndex = () => {
     }
 
 
+
+
     return (
         <div className="container">
             <div className="row">
@@ -145,19 +147,17 @@ const TimelineIndex = () => {
                                     <div style={{padding: '10px', backgroundColor: '#f6f6f6'}}>
                                         <strong>Áreas Selecionadas: </strong><br/>
                                         {
-                                            Object.entries(areas).map((area, key) => {
-                                                if(timelines.find((item) => item.area === area[0])){
-                                                    return (
-                                                        <button
-                                                            key={"filtro"+key}
-                                                            className="btn btn-sm btn-default"
-                                                            style={{color: "#575757", border: "0", margin: "3px"}}
-                                                            onClick={() => removeTimeLine(area[0])}
-                                                        >
-                                                            <i className="fa fa-times"/>&nbsp;{area[0]}
-                                                        </button>
-                                                    );
-                                                }
+                                            timelines.map((item, key) => {
+                                                return (
+                                                    <button
+                                                    key={"filtro"+key}
+                                                    className="btn btn-sm btn-default"
+                                                    style={{color: "#575757", margin: "3px"}}
+                                                    onClick={() => removeTimeLine(item.area)}
+                                                    >
+                                                    <i className="fa fa-times"/>&nbsp;{item.area}
+                                                    </button>
+                                                );
                                             })
                                         }
                                     </div>
