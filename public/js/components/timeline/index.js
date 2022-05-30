@@ -152,6 +152,7 @@ const TimelineIndex = () => {
       className: "btn btn-sm btn-default",
       style: {
         color: "#575757",
+        border: "solid 1px #ccc",
         margin: "3px"
       },
       onClick: () => removeTimeLine(item.area)
