@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{$politica->nome}}</title>
     <script>
-        //window.print();
+        window.print();
     </script>
 </head>
 <body>
