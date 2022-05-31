@@ -83,14 +83,23 @@
                     </div>
                     <hr>
                     <div>
-                        <p>Instrumento legal</p>
-                        <h2><strong>{!! $politica->instrumento_legal !!}</strong></h2>
-                    </div>
-                    <hr>
-                    <div>
-                        <p>Legislacao</p>
-                        <h2><strong>{{$politica->legislacao}}</strong>
-                        </h2>
+
+                        @if($politica->medida_provisoria != 'Não se aplica')
+                            <p>Medida provisória</p>
+                            <h2><strong>{!! $politica->medida_provisoria !!}</strong>
+                            </h2>
+                            <hr>
+                        @endif
+
+                        @if($politica->instrumento_legal != 'Não se aplica')
+                            <p>Legislação</p>
+                            <h2><strong>{!! $politica->instrumento_legal !!} - {{$politica->legislacao}}</strong>
+                            </h2>
+                                <hr>
+                        @endif
+
+
+
                         <p>Data</p>
                         <h2>{{formatBr($politica->vigencia_inicio, 'ext')}} {{$politica->vigencia_fim ? 'à' : ''}} {{formatBr($politica->vigencia_fim), 'ext'}}</strong></h2>
                     </div>
