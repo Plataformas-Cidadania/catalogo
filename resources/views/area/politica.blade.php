@@ -95,7 +95,7 @@
                             <p>Legislação</p>
                             <h2><strong>{!! $politica->instrumento_legal !!} - {{$politica->legislacao}}</strong>
                             </h2>
-                                <hr>
+                            <hr>
                         @endif
 
 

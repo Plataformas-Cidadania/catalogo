@@ -30,14 +30,28 @@
             <h3 class="text-center">Data de criação e revogação {{formatBr($politica->vigencia_inicio, 'num')}} {{$politica->vigencia_fim ? '' : 'até'}} {{formatBr($politica->vigencia_fim, 'num')}}</h3>
         </div>
         <div class="row">
+
+
+            @if($politica->medida_provisoria != 'Não se aplica')
+                <div class="col">
+                    <p>Medida provisória:</p>
+                    <h2>{{$politica->medida_provisoria}} </h2>
+                </div>
+            @endif
+
+
+
+            @if($politica->instrumento_legal != 'Não se aplica')
+                <div class="col">
+                    <p>Legislacao:</p>
+                    <h2>{{$politica->instrumento_legal}} - {{$politica->legislacao}}</h2>
+                </div>
+            @endif
+
             <div class="col">
-                <p>Instrumento legal:</p>
-                <h2>{{$politica->instrumento_legal}}</h2>
+                <p>&nbsp;</p>
             </div>
-            <div class="col">
-                <p>Legislacao:</p>
-                <h2>{{$politica->legislacao}}</h2>
-            </div>
+
             <div class="col">
                 <img src="/uploads/{{$area->icone}}" alt="" width="180" class="imgColor">
             </div>
