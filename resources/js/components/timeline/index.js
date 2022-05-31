@@ -152,7 +152,7 @@ const TimelineIndex = () => {
                                                     <button
                                                     key={"filtro"+key}
                                                     className="btn btn-sm btn-default"
-                                                    style={{color: "#575757", margin: "3px"}}
+                                                    style={{color: "#575757", border: "solid 1px #ccc", margin: "3px"}}
                                                     onClick={() => removeTimeLine(item.area)}
                                                     >
                                                     <i className="fa fa-times"/>&nbsp;{item.area}
