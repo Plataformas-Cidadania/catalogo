@@ -31,15 +31,12 @@
         </div>
         <div class="row">
 
-
             @if($politica->medida_provisoria != 'Não se aplica')
                 <div class="col">
                     <p>Medida provisória:</p>
                     <h2>{{$politica->medida_provisoria}} </h2>
                 </div>
             @endif
-
-
 
             @if($politica->instrumento_legal != 'Não se aplica')
                 <div class="col">
