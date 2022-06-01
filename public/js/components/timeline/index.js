@@ -75,9 +75,10 @@ const TimelineIndex = () => {
       setTimelines(newTimelines);
       return;
     } //adiciona a timeline da área
+    //newTimelines.push({
 
 
-    newTimelines.push({
+    newTimelines.unshift({
       area: area,
       area_id: area_id,
       anos: areas[area]
@@ -145,21 +146,19 @@ const TimelineIndex = () => {
       padding: '10px',
       backgroundColor: '#f6f6f6'
     }
-  }, /*#__PURE__*/React.createElement("strong", null, "\xC1reas Selecionadas: "), /*#__PURE__*/React.createElement("br", null), Object.entries(areas).map((area, key) => {
-    if (timelines.find(item => item.area === area[0])) {
-      return /*#__PURE__*/React.createElement("button", {
-        key: "filtro" + key,
-        className: "btn btn-sm btn-default",
-        style: {
-          color: "#575757",
-          border: "0",
-          margin: "3px"
-        },
-        onClick: () => removeTimeLine(area[0])
-      }, /*#__PURE__*/React.createElement("i", {
-        className: "fa fa-times"
-      }), "\xA0", area[0]);
-    }
+  }, /*#__PURE__*/React.createElement("strong", null, "\xC1reas Selecionadas: "), /*#__PURE__*/React.createElement("br", null), timelines.map((item, key) => {
+    return /*#__PURE__*/React.createElement("button", {
+      key: "filtro" + key,
+      className: "btn btn-sm btn-default",
+      style: {
+        color: "#575757",
+        border: "solid 1px #ccc",
+        margin: "3px"
+      },
+      onClick: () => removeTimeLine(item.area)
+    }, /*#__PURE__*/React.createElement("i", {
+      className: "fa fa-times"
+    }), "\xA0", item.area);
   })) : null, /*#__PURE__*/React.createElement("br", null)), /*#__PURE__*/React.createElement("div", {
     className: "col-12"
   }, timelines.map((item, key) => {
