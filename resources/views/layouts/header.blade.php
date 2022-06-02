@@ -109,7 +109,7 @@
         <li role="presentation"><a href="posts/1/biblioteca" @if($rota=='sobre') class="publicacoes" @endif>Biblioteca</a></li>
         <li role="presentation"><a href="https://www.siop.planejamento.gov.br"  @if($rota=='sobre') class="corrente" @endif target="_blank">Orçamento</a></li>
         <li role="presentation"><a href="sobre" accesskey="q" @if($rota=='sobre') class="corrente" @endif>Sobre</a></li>
-        <li role="presentation"><a href="ajuda" accesskey="c" @if($rota=='contato') class="contato" @endif>Ajuda</a></li>
+        <li role="presentation"><a href="mapa-do-site" accesskey="c" @if($rota=='contato') class="contato" @endif>Ajuda</a></li>
 
     </ul>
 </div>
@@ -136,7 +136,7 @@
                                 <li role="presentation"><a href="posts/1/biblioteca" @if($rota=='sobre') class="publicacoes" @endif>Biblioteca</a></li>
                                 <li role="presentation"><a href="https://www.siop.planejamento.gov.br"  @if($rota=='sobre') class="corrente" @endif target="_blank">Orçamento</a></li>
                                 <li role="presentation"><a href="sobre" accesskey="q" @if($rota=='sobre') class="corrente" @endif>Sobre</a></li>
-                                <li role="presentation"><a href="ajuda" accesskey="c" @if($rota=='contato') class="contato" @endif>Ajuda</a></li>
+                                <li role="presentation"><a href="mapa-do-site" accesskey="c" @if($rota=='contato') class="contato" @endif>Ajuda</a></li>
                             </ul>
                         </div>
                     </div>
