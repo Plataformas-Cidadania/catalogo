@@ -121,8 +121,8 @@
                                     <br>
                                 </div>
                                 <div class="col-md-12">
-                                    <p><strong>Público alvo na legislação</strong></p>
-                                    <h2>{!! $politica->publico_alvo_legislacao !!}</h2>
+                                    <h2><strong>Público alvo na legislação</strong></h2>
+                                    <p>{!! $politica->publico_alvo_legislacao !!}</p>
                                 </div>
                             </div>
                         </div>
