@@ -69,12 +69,21 @@
 <input type="date" name="vigencia_fim" class="form-control width-medio <% validar(politica.vigencia_fim)%>" ng-model="politica.vigencia_fim" ng-required="true">
 <br>
 
-<label for="objetivos">Objetivos</label>
-<textarea name="objetitos" rows="10" class="form-control width-grande <% validar(politica.objetivos)%>" ng-model="politica.objetivos"></textarea>
+{{--<label for="objetivos">Objetivos</label>
+<textarea name="objetivos" rows="10" class="form-control width-grande <% validar(politica.objetivos)%>" ng-model="politica.objetivos"></textarea>
+<br>--}}
+
+{!! Form::label('objetivos', 'Objetivos') !!}<br>
+{!! Form::textarea('objetivos', null, ['class'=>"form-control width-grande <% validar(politica.objetivos) %>", 'ui-tinymce'=>'tinymceOptions', 'ng-required'=>'false', 'ng-model'=>'politica.objetivos', 'init-model'=>'politica.objetivos']) !!}
 <br>
 
-<label for="observacao">Observação</label>
+
+{{--<label for="observacao">Observação</label>
 <textarea name="observacao" rows="10" class="form-control width-grande <% validar(politica.observacao)%>" ng-model="politica.observacao"></textarea>
+<br>--}}
+
+{!! Form::label('observacao', 'Objetivos') !!}<br>
+{!! Form::textarea('observacao', null, ['class'=>"form-control width-grande <% validar(politica.observacao) %>", 'ui-tinymce'=>'tinymceOptions', 'ng-required'=>'false', 'ng-model'=>'politica.observacao', 'init-model'=>'politica.observacao']) !!}
 <br>
 
 <?php
@@ -100,13 +109,18 @@
     <option value="{{$instrumento_legal}}">{{$instrumento_legal}}</option>
     <?php } ?>
 </select>
+<br>
 
 {{--<label for="publico_alvo_categ">Público Alvo Categ</label>
 <input type="text" name="publico_alvo_categ" class="form-control width-grande <% validar(politica.publico_alvo_categ)%>" ng-model="politica.publico_alvo_categ" ng-required="false">
 <br>--}}
 
-<label for="publico_alvo_legislacao">Público Alvo Legislação</label>
+{{--<label for="publico_alvo_legislacao">Público Alvo Legislação</label>
 <input type="text" name="publico_alvo_legislacao" class="form-control width-grande <% validar(politica.publico_alvo_legislacao)%>" ng-model="politica.publico_alvo_legislacao" ng-required="false">
+<br>--}}
+
+{!! Form::label('publico_alvo_legislacao', 'Público Alvo Legislação') !!}<br>
+{!! Form::textarea('publico_alvo_legislacao', null, ['class'=>"form-control width-grande <% validar(politica.publico_alvo_legislacao) %>", 'ui-tinymce'=>'tinymceOptions', 'ng-required'=>'false', 'ng-model'=>'politica.publico_alvo_legislacao', 'init-model'=>'politica.publico_alvo_legislacao']) !!}
 <br>
 
 {{--

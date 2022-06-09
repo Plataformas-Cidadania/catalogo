@@ -129,7 +129,7 @@
                             <option>100</option>
                         </select>
                     </div>--}}
-                    <div class="item-paginacao">
+                    <div class="item-paginacao" style="display:none">
                         <div class="resumo-pagina">&nbsp; <% primeiroDaPagina %> - <% (ultimoDaPagina) %> de <% totalItens %></div>
                     </div>
                 </div>
