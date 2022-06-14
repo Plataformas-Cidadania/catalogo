@@ -82,7 +82,7 @@
 <textarea name="observacao" rows="10" class="form-control width-grande <% validar(politica.observacao)%>" ng-model="politica.observacao"></textarea>
 <br>--}}
 
-{!! Form::label('observacao', 'Objetivos') !!}<br>
+{!! Form::label('observacao', 'Observação') !!}<br>
 {!! Form::textarea('observacao', null, ['class'=>"form-control width-grande <% validar(politica.observacao) %>", 'ui-tinymce'=>'tinymceOptions', 'ng-required'=>'false', 'ng-model'=>'politica.observacao', 'init-model'=>'politica.observacao']) !!}
 <br>
 
