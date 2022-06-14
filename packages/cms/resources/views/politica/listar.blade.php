@@ -114,7 +114,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row" style="display:none">
             <div class="col-md-12">
                 <!--<button class="btn btn-primary btn-block" ng-click="loadMore()" ng-hide="currentPage==lastPage">Load More</button>-->
                 <div ng-show="totalItens > 0" class="clan-paginacao">

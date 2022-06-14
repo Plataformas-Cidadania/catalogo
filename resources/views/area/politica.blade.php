@@ -78,21 +78,21 @@
 
                 <div>
                     <div>
-                        <p>Data de criação e revogação</p>
+                        <h4><strong>Data de criação e revogação</strong></h4>
                         <h2><strong><i class="far fa-clock"></i> {{formatBr($politica->vigencia_inicio, 'ext')}} {{$politica->vigencia_fim ? '' : 'até'}} {{formatBr($politica->vigencia_fim, 'ext')}}</strong></h2>
                     </div>
                     <hr>
                     <div>
 
                         @if($politica->medida_provisoria != 'Não se aplica')
-                            <p>Medida provisória</p>
+                            <h4><strong>Medida provisória</strong></h4>
                             <h2><strong>{!! $politica->medida_provisoria !!}</strong>
                             </h2>
                             <hr>
                         @endif
 
                         @if($politica->instrumento_legal != 'Não se aplica')
-                            <p>Legislação</p>
+                            <h4><strong>Legislação</strong></h4>
                             <h2><strong>{!! $politica->instrumento_legal !!} - {{$politica->legislacao}}</strong>
                             </h2>
                             <hr>
@@ -100,7 +100,7 @@
 
 
 
-                        <p>Data</p>
+                        <h4><strong>Data</strong></h4>
                         <h2>{{formatBr($politica->vigencia_inicio, 'ext')}} {{$politica->vigencia_fim ? 'à' : ''}} {{formatBr($politica->vigencia_fim), 'ext'}}</strong></h2>
                     </div>
                 </div>
@@ -116,13 +116,13 @@
                             <div class="container pt-5 pb-5 bg-lgt">
                                 <div class=" ps-2 pe-2">
                                     <br>
-                                    <h2 class="text-center">Objetivos</h2><br>
+                                    <h4 ><strong>Objetivos</strong></h4><br>
                                     <p>{!! $politica->objetivos !!}</p>
                                     <br>
                                 </div>
                                 <div class="col-md-12">
-                                    <p><strong>Público alvo na legislação</strong></p>
-                                    <h2>{!! $politica->publico_alvo_legislacao !!}</h2>
+                                    <h4><strong>Público alvo na legislação</strong></h4>
+                                    <p>{!! $politica->publico_alvo_legislacao !!}</p>
                                 </div>
                             </div>
                         </div>
@@ -135,7 +135,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <br>
-                        <p>Categoria de público alvo </p>
+                        <h4><strong>Categoria de público alvo </strong></h4>
                         @foreach($politica->politica_publico_alvo as $key => $politica_publico_alvo)
                             @if($key)<hr>@endif
                                 <h2>{{$politica_publico_alvo['publico_alvo']['nome']}}</h2>
