@@ -78,8 +78,8 @@
 
                 <div>
                     <div>
-                        <h4><strong>Data de criação e revogação</strong></h4>
-                        <h2><strong><i class="far fa-clock"></i> {{formatBr($politica->vigencia_inicio, 'ext')}} {{$politica->vigencia_fim ? '' : 'até'}} {{formatBr($politica->vigencia_fim, 'ext')}}</strong></h2>
+                        <h4><strong>Data de criação e revogação.</strong></h4>
+                        <h2><strong><i class="far fa-clock"></i> {{$politica->vigencia_inicio ? formatBr($politica->vigencia_inicio, 'ext') : 'Não encontrada'}} {{$politica->vigencia_fim ? 'até ' . formatBr($politica->vigencia_fim, 'ext') : ''}} </strong></h2>
                     </div>
                     <hr>
                     <div>
@@ -99,9 +99,14 @@
                         @endif
 
 
+                        @if($politica->medida_provisoria_inicio_vigencia != "Não se aplica")
+                            <h4><strong>Data</strong></h4>
+                            <h2>{{$politica->medida_provisoria_inicio_vigencia}}</strong></h2>
+                        @else
+                            <h4><strong>Data</strong></h4>
+                            <h2>{{$politica->vigencia_inicio ? formatBr($politica->vigencia_inicio, 'ext') : 'Não encontrada'}}</strong></h2>
+                        @endif
 
-                        <h4><strong>Data</strong></h4>
-                        <h2>{{formatBr($politica->vigencia_inicio, 'ext')}} {{$politica->vigencia_fim ? 'à' : ''}} {{formatBr($politica->vigencia_fim), 'ext'}}</strong></h2>
                     </div>
                 </div>
 

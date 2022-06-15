@@ -205,10 +205,10 @@ class List extends React.Component {
             key: "ads_" + item.id
           }, /*#__PURE__*/React.createElement("a", {
             href: "post/" + item.id + "/" + clean(item.titulo)
-          }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("div", {
-            style: {
-              display: item.imagem == '' ? 'none' : ''
-            }
+          }, /*#__PURE__*/React.createElement("div", {
+            className: "row"
+          }, item.imagem == '' ? null : /*#__PURE__*/React.createElement("div", {
+            className: "col-md-4"
           }, /*#__PURE__*/React.createElement("img", {
             className: "img-fluid",
             alt: item.titulo,
@@ -216,7 +216,9 @@ class List extends React.Component {
             src: "imagens/posts/" + item.imagem,
             "data-holder-rendered": "true",
             width: "100%"
-          }), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null)), /*#__PURE__*/React.createElement("div", {
+          })), /*#__PURE__*/React.createElement("div", {
+            className: item.imagem == '' ? "col-md-12" : "col-md-8"
+          }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
             className: "row"
           }, /*#__PURE__*/React.createElement("div", {
             className: "col-md-6 item-calendar"
@@ -232,7 +234,7 @@ class List extends React.Component {
             tabIndex: "0"
           }, item.resumida), /*#__PURE__*/React.createElement("h4", {
             className: "btn-plus"
-          }, "Continue lendo"), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("hr", null))))
+          }, "Continue lendo")), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null)), /*#__PURE__*/React.createElement("hr", null))))
         );
       }.bind(this));
     }

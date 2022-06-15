@@ -27,7 +27,7 @@
             <div class="bg-title2">{{$politica->nome}}</div>
         </div>
         <div>
-            <h3 class="text-center">Data de criação e revogação {{formatBr($politica->vigencia_inicio, 'num')}} {{$politica->vigencia_fim ? '' : 'até'}} {{formatBr($politica->vigencia_fim, 'num')}}</h3>
+            <h3 class="text-center">Data de criação e revogação {{$politica->vigencia_inicio ? formatBr($politica->vigencia_inicio, 'num') : 'Não encontrada'}} {{$politica->vigencia_fim ? 'até ' . formatBr($politica->vigencia_fim, 'num') : ''}}</h3>
         </div>
         <div class="row">
 
@@ -35,6 +35,9 @@
                 <div class="col">
                     <p>Medida provisória:</p>
                     <h2>{{$politica->medida_provisoria}} </h2>
+                    @if($politica->medida_provisoria_inicio_vigencia != "Não se aplica")
+                        <p>Data: {{$politica->medida_provisoria_inicio_vigencia}}</p>
+                    @endif
                 </div>
             @endif
 
