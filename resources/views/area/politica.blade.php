@@ -99,9 +99,14 @@
                         @endif
 
 
+                        @if($politica->medida_provisoria_inicio_vigencia != "Não se aplica")
+                            <h4><strong>Data</strong></h4>
+                            <h2>{{$politica->medida_provisoria_inicio_vigencia}}</strong></h2>
+                        @else
+                            <h4><strong>Data</strong></h4>
+                            <h2>{{$politica->vigencia_inicio ? formatBr($politica->vigencia_inicio, 'ext') : 'Não encontrada'}}</strong></h2>
+                        @endif
 
-                        <h4><strong>Data</strong></h4>
-                        <h2>{{$politica->vigencia_inicio ? formatBr($politica->vigencia_inicio, 'ext') : ''}} {{$politica->vigencia_fim ? 'à ' . formatBr($politica->vigencia_fim, 'ext') : ''}} </strong></h2>
                     </div>
                 </div>
 
