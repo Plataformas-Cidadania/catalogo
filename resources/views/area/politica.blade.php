@@ -79,7 +79,7 @@
                 <div>
                     <div>
                         <h4><strong>Data de criação e revogação</strong></h4>
-                        <h2><strong><i class="far fa-clock"></i> {{formatBr($politica->vigencia_inicio, 'ext')}} {{$politica->vigencia_fim ? '' : 'até'}} {{formatBr($politica->vigencia_fim, 'ext')}}</strong></h2>
+                        <h2><strong><i class="far fa-clock"></i> {{formatBr($politica->vigencia_inicio, 'ext')}} / {{$politica->vigencia_fim ? '' : 'até'}} {{formatBr($politica->vigencia_fim, 'ext')}}</strong></h2>
                     </div>
                     <hr>
                     <div>
