@@ -207,9 +207,9 @@ class List extends React.Component {
             href: "post/" + item.id + "/" + clean(item.titulo)
           }, /*#__PURE__*/React.createElement("div", {
             className: "row"
-          }, /*#__PURE__*/React.createElement("div", {
+          }, item.imagem == '' ? null : /*#__PURE__*/React.createElement("div", {
             className: "col-md-4"
-          }, item.imagem == '' ? null : /*#__PURE__*/React.createElement("img", {
+          }, /*#__PURE__*/React.createElement("img", {
             className: "img-fluid",
             alt: item.titulo,
             title: item.titulo,
@@ -217,7 +217,7 @@ class List extends React.Component {
             "data-holder-rendered": "true",
             width: "100%"
           })), /*#__PURE__*/React.createElement("div", {
-            className: "col-md-8"
+            className: item.imagem == '' ? "col-md-12" : "col-md-8"
           }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
             className: "row"
           }, /*#__PURE__*/React.createElement("div", {

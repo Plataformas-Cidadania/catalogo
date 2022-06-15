@@ -198,14 +198,14 @@ class List extends React.Component{
                     <div key={"ads_"+item.id}>
                         <a href={"post/"+item.id+"/"+clean(item.titulo)}>
                             <div className="row">
-                                <div className="col-md-4">
-                                    {
-                                        item.imagem == '' ? null : (
-                                                <img className="img-fluid" alt={item.titulo} title={item.titulo} src={"imagens/posts/"+item.imagem} data-holder-rendered="true" width="100%"/>
-                                        )
-                                    }
-                                </div>
-                                <div className="col-md-8">
+                                {
+                                    item.imagem == '' ? null : (
+                                        <div className="col-md-4">
+                                            <img className="img-fluid" alt={item.titulo} title={item.titulo} src={"imagens/posts/"+item.imagem} data-holder-rendered="true" width="100%"/>
+                                        </div>
+                                    )
+                                }
+                                <div className={item.imagem == '' ? "col-md-12" : "col-md-8"}>
                                     <div>
 
                                         <div className="row">
