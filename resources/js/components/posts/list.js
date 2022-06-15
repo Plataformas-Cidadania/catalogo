@@ -197,25 +197,33 @@ class List extends React.Component{
                      /*OPCAO 2 UTILIZAR NA TROCA*/
                     <div key={"ads_"+item.id}>
                         <a href={"post/"+item.id+"/"+clean(item.titulo)}>
-                            <div>
-                                <br/>
-                                <div style={{display: item.imagem == '' ? 'none' : ''}}>
-                                    <img className="img-fluid" alt={item.titulo} title={item.titulo} src={"imagens/posts/"+item.imagem} data-holder-rendered="true" width="100%"/>
+                            <div className="row">
+                                <div className="col-md-4">
+                                    {
+                                        item.imagem == '' ? null : (
+                                                <img className="img-fluid" alt={item.titulo} title={item.titulo} src={"imagens/posts/"+item.imagem} data-holder-rendered="true" width="100%"/>
+                                        )
+                                    }
+                                </div>
+                                <div className="col-md-8">
+                                    <div>
+
+                                        <div className="row">
+                                            <div className="col-md-6 item-calendar">
+                                                <time className="item-calendar"><i
+                                                    className="far fa-clock"/> {item.date} de {item.month} de {item.year} às {item.hour}
+                                                </time>
+                                            </div>
+                                        </div>
+                                        <h2 data-message={item.titulo} tabIndex="0">{item.titulo}</h2>
+                                        <p data-message={item.resumida} tabIndex="0">{item.resumida}</p>
+                                        <h4 className="btn-plus">Continue lendo</h4>
+                                    </div>
                                     <br/><br/>
                                 </div>
-                                <div className="row">
-                                    <div className="col-md-6 item-calendar">
-                                        <time className="item-calendar"><i
-                                            className="far fa-clock"/> {item.date} de {item.month} de {item.year} às {item.hour}
-                                        </time>
-                                    </div>
-                                </div>
-                                <h2 data-message={item.titulo} tabIndex="0">{item.titulo}</h2>
-                                <p data-message={item.resumida} tabIndex="0">{item.resumida}</p>
-                                <h4 className="btn-plus">Continue lendo</h4>
-                                <br/>
                                 <hr/>
                             </div>
+
                         </a>
                     </div>
 
