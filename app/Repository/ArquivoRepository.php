@@ -26,9 +26,7 @@ class ArquivoRepository extends BaseRepository
 
     public function getArquivosPorPoliticaId($politica_id)
     {
-        $models = $this->model->get();
-        $models->where('politica_id','=', $politica_id);
-        //dd($models);
+        $models = $this->model->where('politica_id','=', $politica_id)->get();
         return $models;
     }
 
