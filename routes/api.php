@@ -170,6 +170,10 @@ Route::group([
     Route::get('/politicas_por_ano', [App\Http\Controllers\Api\PoliticaController::class, 'getSeriePoliticaAno'])
         ->name('api.politica.getSeriePoliticaAno');
 
+    Route::get('/frequencia_politica_por_instrumento', [App\Http\Controllers\Api\PoliticaController::class, 'getFrequenciaPoliticaPorInstrumento'])
+        ->name('api.politica.getFrequenciaPoliticaPorInstrumento');
+
+
 
 
 });

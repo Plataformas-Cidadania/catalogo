@@ -71,7 +71,7 @@ class PoliticaController extends Controller
     public function getSeriePoliticaAno()
     {
         $result = $this->repo->getSeriePoliticaAno();
-        $res = json_decode('{
+        $response = json_decode('{
             "id": 2,
             "tipo": "mix",
             "titulo": "Frequência de políticas segundo ano",
@@ -84,12 +84,79 @@ class PoliticaController extends Controller
             "labels": []
             }',true);
 
-        $res["labels"] = array_column($result, 'year');
-        $res["series"][0]["data"]  = array_column($result, 'politicas_totais');
+        $response["labels"] = array_column($result, 'year');
+        $response["series"][0]["data"]  = array_column($result, 'politicas_totais');
 
-        return  $res;
+        return  $response;
     }
 
+
+
+    public function getFrequenciaPoliticaPorInstrumento()
+    {
+        $result = $this->repo->getFrequenciaPoliticaPorInstrumento();
+        $response = json_decode('{
+                "id": 3,
+                "tipo": "stacked",
+                "titulo": "Frequência de políticas por instrumento legal, segundo tipo de política",
+                "fonte": "Catálogo de Políticas Públicas (Ipea).",
+                "series": [{
+                    "name": "Decreto",
+                    "data": []
+                }, {
+                    "name": "Lei ordinária",
+                    "data": []
+                }, {
+                    "name": "Portaria",
+                    "data": []
+                }, {
+                    "name": "Decreto-Lei",
+                    "data": []
+                }, {
+                    "name": "Resolução",
+                    "data": []
+                }, {
+                    "name": "Lei Complementar",
+                    "data": []
+                }, {
+                    "name": "Instrução Normativa",
+                    "data": []
+                }, {
+                    "name": "Medida Provisória",
+                    "data": []
+                }, {
+                    "name": "Projeto de Lei",
+                    "data": []
+                }, {
+                    "name": "Norma de execução",
+                    "data": []
+                }, {
+                    "name": "Norma operacional",
+                    "data": []
+                }, {
+                    "name": "Não se aplica",
+                    "data": []
+                }],
+                "labels": ["Diretrizes", "Estratégia", "Plano", ["Política", "nacional"], ["Programa", "governamental"], "Projeto"]
+            }',true);
+        // associar instrumentos legais
+        foreach ($response['series'] as $k=>$v){
+            $labels = ["Diretrizes", "Estratégia", "Plano", "Política nacional", "Programa governamental", "Projeto"];
+            $mask = [0,0,0,0,0,0];
+            foreach ($result as $res){
+                // decide em que tipo de politica vai colocar
+                if($res->instrumento_legal == $v["name"]){
+                    $idx = array_search($res->nome,$labels);
+                    if($idx === false)
+                        continue;
+                    $mask[$idx] = $res->count_tipo_politica;
+                }
+                $response['series'][$k]["data"] = $mask;
+            }
+
+        }
+        return  $response;
+    }
 
     /**
      * Adicionar um novo

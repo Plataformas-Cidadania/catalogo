@@ -47,6 +47,14 @@ class PoliticaRepository extends BaseRepository
         FROM catalogo.politica
         GROUP BY EXTRACT(year FROM ano) ORDER BY year;");
     }
+
+    public function getFrequenciaPoliticaPorInstrumento(){
+        return DB::select("SELECT COUNT(tipo_politica) AS count_tipo_politica, instrumento_legal,tipo_politica.nome
+        FROM catalogo.politica
+        JOIN catalogo.tipo_politica ON tipo_politica = catalogo.tipo_politica.id
+        GROUP BY instrumento_legal,tipo_politica.nome
+        ORDER BY instrumento_legal;");
+    }
     public function buscaAvancada($data, $paginar = true)
     {
 
