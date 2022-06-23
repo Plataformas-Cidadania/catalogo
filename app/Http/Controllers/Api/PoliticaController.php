@@ -68,31 +68,11 @@ class PoliticaController extends Controller
     }
 
 
-    public function getSeriePoliticaAno()
+
+
+    public function getFrequenciaPoliticaPorTipo()
     {
-        $result = $this->repo->getSeriePoliticaAno();
-        $response = json_decode('{
-            "id": 2,
-            "tipo": "mix",
-            "titulo": "Frequência de políticas segundo ano",
-            "fonte": "Catálogo de Políticas Públicas (Ipea).",
-            "series": [{
-                "name": "Ano",
-                "type": "line",
-                "data": []
-            }],
-            "labels": []
-            }',true);
-
-        $response["labels"] = array_column($result, 'year');
-        $response["series"][0]["data"]  = array_column($result, 'politicas_totais');
-
-        return  $response;
-    }
-
-    public function getFrequenciaPoliticaPortTipo()
-    {
-        $result = $this->repo->getFrequenciaPoliticaPortTipo();
+        $result = $this->repo->getFrequenciaPoliticaPorTipo();
         $countPolitica = array_column($result, 'count_tipo_politica');
         $tot = array_sum($countPolitica);
 
@@ -122,6 +102,27 @@ class PoliticaController extends Controller
         return  $response;
     }
 
+    public function getSeriePoliticaAno()
+    {
+        $result = $this->repo->getSeriePoliticaAno();
+        $response = json_decode('{
+            "id": 2,
+            "tipo": "mix",
+            "titulo": "Frequência de políticas segundo ano",
+            "fonte": "Catálogo de Políticas Públicas (Ipea).",
+            "series": [{
+                "name": "Ano",
+                "type": "line",
+                "data": []
+            }],
+            "labels": []
+            }',true);
+
+        $response["labels"] = array_column($result, 'year');
+        $response["series"][0]["data"]  = array_column($result, 'politicas_totais');
+
+        return  $response;
+    }
 
     public function getFrequenciaPoliticaPorInstrumento()
     {
@@ -186,6 +187,40 @@ class PoliticaController extends Controller
             }
 
         }
+        return  $response;
+    }
+
+    function mergeKeysArray($arr){
+        $arr['Minorias sociais (negros, mulheres, comunidade LGBTQIA+, pessoas com deficiência, Crianças e Idosos)'] = $arr['Crianças e Idosos'] + $arr['Minorias sociais (negros, mulheres, comunidade LGBTQIA+ e pessoas com deficiência)'];
+        foreach($arr as $k => $v){
+            if($v <= 11){
+                unset($arr[$k]);
+                $arr['Outros'] += $v;
+            }
+        }
+        arsort($arr,0);
+        $temp = $arr['Outros'];
+        unset($arr['Outros']);
+        $arr['Outros'] = $temp;
+        return $arr;
+    }
+    public function getFrequenciaPoliticaPorPublicoAlvo()
+    {
+        $result = $this->repo->getFrequenciaPoliticaPorPublicoAlvo();
+        $response = json_decode(' {
+            "id": 4,
+            "tipo": "pie",
+            "titulo": "Frequência absoluta e relativa de políticas segundo público alvo",
+            "fonte": "Catálogo de Políticas Públicas (Ipea)",
+            "series": [],
+            "labels": []
+        }',true);
+
+        $combinedRes = array_combine(array_column($result, 'nome'), array_column($result, 'count_politicas'));
+        $combinedRes = $this->mergeKeysArray($combinedRes);
+        $response["series"] = array_values($combinedRes);
+        $response["labels"]  = array_keys($combinedRes);
+
         return  $response;
     }
 

@@ -40,7 +40,7 @@ class PoliticaRepository extends BaseRepository
         return $arr;
     }
 
-    public function getFrequenciaPoliticaPortTipo(){
+    public function getFrequenciaPoliticaPorTipo(){
         return DB::select("SELECT COUNT(tipo_politica) AS count_tipo_politica, tipo_politica.nome
         FROM catalogo.politica
         JOIN catalogo.tipo_politica ON tipo_politica = catalogo.tipo_politica.id
@@ -62,6 +62,17 @@ class PoliticaRepository extends BaseRepository
         GROUP BY instrumento_legal,tipo_politica.nome
         ORDER BY instrumento_legal;");
     }
+
+    public function getFrequenciaPoliticaPorPublicoAlvo(){
+        return DB::select("SELECT  COUNT(politica_id) as count_politicas, publico_alvo.nome
+        FROM catalogo.politica_publico_alvo
+        INNER JOIN catalogo.politica ON politica_id = catalogo.politica.id
+        INNER JOIN catalogo.publico_alvo on publico_alvo_id = catalogo.publico_alvo.id
+        GROUP BY publico_alvo.nome
+        ORDER BY count_politicas DESC;");
+    }
+
+
     public function buscaAvancada($data, $paginar = true)
     {
 
