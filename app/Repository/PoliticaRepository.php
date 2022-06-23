@@ -40,6 +40,13 @@ class PoliticaRepository extends BaseRepository
         return $arr;
     }
 
+    public function getFrequenciaPoliticaPortTipo(){
+        return DB::select("SELECT COUNT(tipo_politica) AS count_tipo_politica, tipo_politica.nome
+        FROM catalogo.politica
+        JOIN catalogo.tipo_politica ON tipo_politica = catalogo.tipo_politica.id
+        GROUP BY tipo_politica.nome
+        ORDER BY count_tipo_politica DESC;");
+    }
     public function getSeriePoliticaAno(){
         return DB::select("SELECT
           COUNT(id) AS politicas_totais,

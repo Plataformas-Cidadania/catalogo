@@ -173,7 +173,8 @@ Route::group([
     Route::get('/frequencia_politica_por_instrumento', [App\Http\Controllers\Api\PoliticaController::class, 'getFrequenciaPoliticaPorInstrumento'])
         ->name('api.politica.getFrequenciaPoliticaPorInstrumento');
 
-
+    Route::get('/frequencia_politica_por_tipo', [App\Http\Controllers\Api\PoliticaController::class, 'getFrequenciaPoliticaPortTipo'])
+        ->name('api.politica.getFrequenciaPoliticaPortTipo');
 
 
 });

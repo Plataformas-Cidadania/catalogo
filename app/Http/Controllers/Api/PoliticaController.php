@@ -90,6 +90,37 @@ class PoliticaController extends Controller
         return  $response;
     }
 
+    public function getFrequenciaPoliticaPortTipo()
+    {
+        $result = $this->repo->getFrequenciaPoliticaPortTipo();
+        $countPolitica = array_column($result, 'count_tipo_politica');
+        $tot = array_sum($countPolitica);
+
+        $frequenciaPolitica = array_map(function ($a) use (&$tot) { return ($a/$tot)*100;},$countPolitica);
+
+        $response = json_decode('"id": 1,
+                "tipo": "mix",
+                "titulo": "Frequência absoluta e relativa de políticas segundo tipo da política",
+                "fonte": "Catálogo de Políticas Públicas (Ipea).",
+                "series": [{
+                    "name": "Nº",
+                    "type": "column",
+                    "data": []
+                }, {
+                    "name": "%",
+                    "type": "column",
+                    "data": []
+                }],
+                "labels": [["Programa", "governamental"], ["Política", "nacional"], "Plano", "Projeto", "Estratégia", "Diretrizes"]
+            }',true);
+        $labels = array_column($result, 'nome');
+        $labels = array_map(function ($a){ return preg_split('/\s+/', $a);},$labels);
+        $response["series"][0]["data"] = $countPolitica;
+        $response["series"][1]["data"] = $frequenciaPolitica;
+        $response["labels"] = $labels;
+
+        return  $response;
+    }
 
 
     public function getFrequenciaPoliticaPorInstrumento()
