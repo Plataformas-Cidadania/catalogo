@@ -72,6 +72,22 @@ class PoliticaRepository extends BaseRepository
         ORDER BY count_politicas DESC;");
     }
 
+    public function getFrequenciaPoliticaPorGrandeArea(){
+        return DB::select("SELECT  COUNT(politica.id) as count_politicas, grande_area.nome
+        FROM catalogo.politica
+        INNER JOIN catalogo.grande_area ON grande_area.id = catalogo.politica.grande_area
+        GROUP BY grande_area.nome
+        ORDER BY count_politicas DESC;");
+    }
+
+    public function getFrequenciaPoliticaPorCategoria(){
+        return DB::select("SELECT  COUNT(politica_id) as count_politicas, categoria.nome
+        FROM catalogo.politica_categoria
+        INNER JOIN catalogo.politica ON politica_id = catalogo.politica.id
+        INNER JOIN catalogo.categoria on categoria_id = catalogo.categoria.id
+        GROUP BY categoria.nome
+        ORDER BY count_politicas DESC;");
+    }
 
     public function buscaAvancada($data, $paginar = true)
     {

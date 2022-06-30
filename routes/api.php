@@ -177,6 +177,10 @@ Route::group([
         ->name('api.politica.getFrequenciaPoliticaPorTipo');
     Route::get('/frequencia_politica_por_publico_alvo', [App\Http\Controllers\Api\PoliticaController::class, 'getFrequenciaPoliticaPorPublicoAlvo'])
         ->name('api.politica.getFrequenciaPoliticaPorPublicoAlvo');
+    Route::get('/frequencia_politica_por_grande_area', [App\Http\Controllers\Api\PoliticaController::class, 'getFrequenciaPoliticaPorGrandeArea'])
+        ->name('api.politica.getFrequenciaPoliticaPorGrandeArea');
+    Route::get('/frequencia_politica_por_area', [App\Http\Controllers\Api\PoliticaController::class, 'getFrequenciaPoliticaPorCategoria'])
+        ->name('api.politica.getFrequenciaPoliticaPorCategoria');
 
 
 });
