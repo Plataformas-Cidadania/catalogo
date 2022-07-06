@@ -224,6 +224,41 @@ class PoliticaController extends Controller
         return  $response;
     }
 
+    public function getFrequenciaPoliticaPorGrandeArea()
+    {
+        $result = $this->repo->getFrequenciaPoliticaPorGrandeArea();
+        $response = json_decode(' {
+            "id": 5,
+            "tipo": "pie",
+            "titulo": "Frequência absoluta e relativa de políticas segundo Grande Área",
+            "fonte": "Catálogo de Políticas Públicas (Ipea)",
+            "series": [],
+            "labels": []
+        }',true);
+
+        $response["series"] = array_column($result, 'count_politicas');
+        $response["labels"]  = array_column($result, 'nome');
+
+        return  $response;
+    }
+
+    public function getFrequenciaPoliticaPorCategoria()
+    {
+        $result = $this->repo->getFrequenciaPoliticaPorCategoria();
+        $response = json_decode(' {
+            "id": 6,
+            "tipo": "pie",
+            "titulo": "Frequência absoluta e relativa de políticas segundo a Área",
+            "fonte": "Catálogo de Políticas Públicas (Ipea)",
+            "series": [],
+            "labels": []
+        }',true);
+
+        $response["series"] = array_column($result, 'count_politicas');
+        $response["labels"]  = array_column($result, 'nome');
+
+        return  $response;
+    }
     /**
      * Adicionar um novo
      *
