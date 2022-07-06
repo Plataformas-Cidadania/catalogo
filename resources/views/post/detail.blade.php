@@ -44,7 +44,17 @@
                         <source srcset="imagens/posts/sm-{{$detail->imagem}}" media="(max-width: 468px)">
                         <source srcset="imagens/posts/sm-{{$detail->imagem}}" media="(max-width: 768px)">
                         <source srcset="imagens/posts/md-{{$detail->imagem}}" class="img-responsive">
-                        <img src="img/loading.gif" data-src="imagens/posts/lg-{{$detail->imagem}}" alt="Imagem sobre {{$detail->titulo}}" title="Imagem sobre {{$detail->titulo}}" width="100%" class="img-fluid lazyload" data-message="Imagem sobre {{$detail->titulo}}" tabindex="0">
+                        <img
+                            src="img/loading.gif"
+                            data-src="imagens/posts/lg-{{$detail->imagem}}"
+                            alt="Imagem sobre {{$detail->titulo}}"
+                            title="Imagem sobre {{$detail->titulo}}"
+                            width="100%"
+                            class="img-fluid lazyload"
+                            data-message="Imagem sobre {{$detail->titulo}}"
+                            tabindex="0"
+                            style="float:left; width: 50%; margin-right: 15px;"
+                        >
                         <br><br><!-- <figcaption data-message="Fig.1 - Trulli, Puglia, Italy." tabindex="0">Fig.1 - Trulli, Puglia, Italy.</figcaption>-->
                     </picture>
                     @endif
