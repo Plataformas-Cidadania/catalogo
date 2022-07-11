@@ -53,9 +53,9 @@
                             class="img-fluid lazyload"
                             data-message="Imagem sobre {{$detail->titulo}}"
                             tabindex="0"
-                            style="float:left; width: 50%; margin-right: 15px;"
+                            style="float:left; width: 33%; margin-right: 15px;"
                         >
-                        <br><br><!-- <figcaption data-message="Fig.1 - Trulli, Puglia, Italy." tabindex="0">Fig.1 - Trulli, Puglia, Italy.</figcaption>-->
+                        <!-- <figcaption data-message="Fig.1 - Trulli, Puglia, Italy." tabindex="0">Fig.1 - Trulli, Puglia, Italy.</figcaption>-->
                     </picture>
                     @endif
 
