@@ -78,7 +78,8 @@ class PoliticaController extends Controller
 
         $frequenciaPolitica = array_map(function ($a) use (&$tot) { return ($a/$tot)*100;},$countPolitica);
 
-        $response = json_decode('"id": 1,
+        $response = json_decode('{
+                "id": 1,
                 "tipo": "mix",
                 "titulo": "Frequência absoluta e relativa de políticas segundo tipo da política",
                 "fonte": "Catálogo de Políticas Públicas (Ipea).",
@@ -191,6 +192,7 @@ class PoliticaController extends Controller
     }
 
     function mergeKeysArray($arr){
+        Log::info($arr);
         $arr['Minorias sociais (negros, mulheres, comunidade LGBTQIA+, pessoas com deficiência, Crianças e Idosos)'] = $arr['Crianças e Idosos'] + $arr['Minorias sociais (negros, mulheres, comunidade LGBTQIA+ e pessoas com deficiência)'];
         foreach($arr as $k => $v){
             if($v <= 11){
