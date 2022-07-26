@@ -10,31 +10,116 @@ const Home = () => {
   const [divSelectedTipo, setDivSelectedTipo] = useState("mix");
   const [icon, setIcon] = useState('chart');
   useEffect(() => {
-    listaData();
+    //listaData()
+    frequenciaPoliticaPorTipo();
   }, []);
   useEffect(() => {
     if (json) {
-      politicasPorAno();
+      //politicasPorAno();
+      console.log[lista];
     }
   }, [lista]);
+  /*const listaData = async () => {
+      try {
+          const result = await axios.get('json/analise.json');
+          setJson(true);
+          setLista(result.data);
+          politicasPorAno()
+      } catch (error) {
+          console.log(error);
+      }
+  }*/
 
-  const listaData = async () => {
+  const frequenciaPoliticaPorTipo = async () => {
+    //console.log('frequenciaPoliticaPorTipo');
+    setJson(false);
+
     try {
-      const result = await axios.get('json/analise.json');
+      const result = await axios.get('api/metricas/frequencia_politica_por_tipo');
+      let newLista = lista;
+      newLista[0] = result.data; //console.log('frequencia_politica_por_tipo', result.data);
+
       setJson(true);
-      setLista(result.data); //politicasPorAno()
+      setListaAtualizado(newLista);
+      politicasPorAno();
     } catch (error) {
       console.log(error);
     }
   };
 
   const politicasPorAno = async () => {
+    //console.log('politicasPorAno');
     setJson(false);
 
     try {
       const result = await axios.get('api/metricas/politicas_por_ano');
       let newLista = lista;
       newLista[1] = result.data;
+      setJson(true);
+      setListaAtualizado(newLista);
+      frequenciaPoliticaPorInstrumento();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const frequenciaPoliticaPorInstrumento = async () => {
+    //console.log('frequenciaPoliticaPorInstrumento');
+    setJson(false);
+
+    try {
+      const result = await axios.get('api/metricas/frequencia_politica_por_instrumento');
+      let newLista = lista;
+      newLista[2] = result.data;
+      setJson(true);
+      setListaAtualizado(newLista);
+      frequenciaPoliticaPorPublicoAlvo();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const frequenciaPoliticaPorPublicoAlvo = async () => {
+    //console.log('frequenciaPoliticaPorPublicoAlvo');
+    setJson(false);
+
+    try {
+      const result = await axios.get('api/metricas/frequencia_politica_por_publico_alvo');
+      let newLista = lista;
+      newLista[3] = result.data;
+      setJson(true);
+      setListaAtualizado(newLista);
+      frequenciaPoliticaPorGrandeArea();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const frequenciaPoliticaPorGrandeArea = async () => {
+    //console.log('frequenciaPoliticaPorGrandeArea');
+    setJson(false);
+
+    try {
+      const result = await axios.get('api/metricas/frequencia_politica_por_grande_area');
+      let newLista = lista;
+      newLista[4] = result.data;
+      setJson(true);
+      setListaAtualizado(newLista);
+      frequenciaPoliticaPorCategoria();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const frequenciaPoliticaPorCategoria = async () => {
+    //console.log('frequenciaPoliticaPorCategoria');
+    setJson(false);
+
+    try {
+      const result = await axios.get('api/metricas/frequencia_politica_por_area');
+      let newLista = lista;
+      newLista[5] = result.data;
+      setJson(true);
       setListaAtualizado(newLista);
     } catch (error) {
       console.log(error);
