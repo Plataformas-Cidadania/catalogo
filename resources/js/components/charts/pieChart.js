@@ -24,7 +24,18 @@ class PieChart extends React.Component {
                             position: 'right'
                         }
                     }
-                }]
+                }],
+                colors: [
+                            "#008FFB", "#00E396", "#FEB019", "#FF4560", "#775DD0", "#3F51B5", "#03A9F4", "#4CAF50", "#F9CE1D", "#FF9800",
+                            "#33B2DF", "#546E7A", "#D4526E", "#13D8AA", "#A5978B", "#4ECDC4", "#C7F464", "#81D4FA", "#1B998B", "#FD6A6A",
+                            "#2B908F", "#F9A3A4", "#90EE7E", "#FA4443", "#69D2E7", "#449DD1", "#F86624", "#EA3546", "#662E9B", "#C5D86D",
+                            "#F9C80E", "#43BCCD"
+                ],
+                stroke: {
+                    show: false,
+                    width:0
+                },
+
             },
         }
     }
