@@ -76,7 +76,8 @@ class PoliticaController extends Controller
         $countPolitica = array_column($result, 'count_tipo_politica');
         $tot = array_sum($countPolitica);
 
-        $frequenciaPolitica = array_map(function ($a) use (&$tot) { return ($a/$tot)*100;},$countPolitica);
+        $frequenciaPolitica = array_map(function ($a) use (&$tot) { return  (float) number_format((($a/$tot)*100),2);},$countPolitica);
+        dd($frequenciaPolitica);
 
         $response = json_decode('{
                 "id": 1,
