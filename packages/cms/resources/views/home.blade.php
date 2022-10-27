@@ -5,7 +5,7 @@
     {!! Html::script(config('app.url').'assets-cms/js/controllers/alterarSettingCtrl.js') !!}
     <div ng-controller="alterarSettingCtrl">
         <div class="box-padrao text-center">
-            <h1 style="color:#ccc; margin-top: 200px;">Catalogo - CMS</h1>
+            <h1 style="color:#ccc; margin-top: 200px;">Catálogo - CMS</h1>
         </div>
     </div>
 @endsection
