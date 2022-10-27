@@ -162,7 +162,7 @@ class UrlController extends Controller
         if($data['removerImagem']){
             $data['url']['imagem'] = '';
             if(file_exists($this->pathImagem."/".$url->imagem)) {
-                unurl($this->pathImagem . "/" . $url->imagem);
+                unlink($this->pathImagem . "/" . $url->imagem);
             }
         }
 
@@ -200,7 +200,7 @@ class UrlController extends Controller
         if($data['removerImagem']){
             $data['url']['imagem'] = '';
             if(file_exists($this->pathImagem."/".$url->imagem)) {
-                unurl($this->pathImagem . "/" . $url->imagem);
+                unlink($this->pathImagem . "/" . $url->imagem);
             }
         }
 
@@ -208,7 +208,7 @@ class UrlController extends Controller
         if($data['removerArquivo']){
             $data['url']['arquivo'] = '';
             if(file_exists($this->pathArquivo."/".$url->arquivo)) {
-                unurl($this->pathArquivo . "/" . $url->arquivo);
+                unlink($this->pathArquivo . "/" . $url->arquivo);
             }
         }
 
@@ -262,7 +262,7 @@ class UrlController extends Controller
 
         if(!empty($url->arquivo)) {
             if (file_exists($this->pathArquivo . "/" . $url->arquivo)) {
-                unurl($this->pathArquivo . "/" . $url->arquivo);
+                unlink($this->pathArquivo . "/" . $url->arquivo);
             }
         }
 
