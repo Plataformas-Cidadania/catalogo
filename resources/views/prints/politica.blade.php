@@ -61,7 +61,7 @@
         <div class="boxContainer">
             <p class="box">
                 <strong>Objetivos:</strong><br><br>
-                {{$politica->objetivos}}<br>
+                {!! $politica->objetivos !!}<br>
             </p>
         </div>
 
@@ -69,7 +69,7 @@
         <div class="row">
             <div class="col">
                 <strong>Público alvo legislação:</strong><br>
-                {{$politica->publico_alvo_legislacao}}
+                {!! $politica->publico_alvo_legislacao !!}
                 <br><br><br>
 
                 <strong>Público alvo agregado:</strong>

@@ -15,10 +15,10 @@
         <div class="row">
             <div class="col-6 celHider">
                 <ul id="atalhos" class="top-links">
-                    <li><a href="<?php if($rota != '/'){?>{{$rota}}<?php }?>#iniciodoconteudo" accesskey="1">Ir para o Conteúdo [1]</a></li>
-                    <li><a href="<?php if($rota != '/'){?>{{$rota}}<?php }?>#iniciodomenu" accesskey="2">Ir para o Menu [2]</a></li>
-                    <li><a href="<?php if($rota != '/'){?>{{$rota}}<?php }?>#search" accesskey="3">Ir para a busca [3]</a></li>
-                    <li><a href="<?php if($rota != '/'){?>{{$rota}}<?php }?>#iniciodorodape" accesskey="4" class="link-to-menu">Ir para o rodapé [4]</a></li>
+                    <li><a href="<?php if($rota != '/'){?>{{Request::url()}}<?php }?>#iniciodoconteudo" accesskey="1">Ir para o Conteúdo [1]</a></li>
+                    <li><a href="<?php if($rota != '/'){?>{{Request::url()}}<?php }?>#iniciodomenu" accesskey="2">Ir para o Menu [2]</a></li>
+                    {{--<li><a href="<?php if($rota != '/'){?>{{$rota}}<?php }?>#search" accesskey="3">Ir para a busca [3]</a></li>--}}
+                    <li><a href="<?php if($rota != '/'){?>{{Request::url()}}<?php }?>#iniciodorodape" accesskey="4" class="link-to-menu">Ir para o rodapé [4]</a></li>
                 </ul>
             </div>
             <div class="col text-lg-right text-md-right">
