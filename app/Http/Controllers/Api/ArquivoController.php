@@ -22,8 +22,8 @@ class ArquivoController extends Controller
 
     private $rules =[
         'titulo' => 'string|min:1',
-        'imagem' => 'required|mimes:png,gif,jpg|max:2048',
-        'caminho_arquivo' => 'required|mimes:pdf,xlx,csv,jpg,png|max:4048',
+        'imagem' => 'nullable|mimes:png,gif,jpg|max:2048',
+        'caminho_arquivo' => 'required|mimes:pdf,xlx,csv,jpg,png|max:10240',
         'politica_id' => 'required|int',
     ];
 

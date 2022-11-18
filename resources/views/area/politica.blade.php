@@ -230,7 +230,7 @@
                         @endif
                             <div class=" @if($arquivo->imagem) col-md-9 @else col-md-12 @endif ">
                                 <a href="/uploads/{{$arquivo->caminho_arquivo}}" target="_blank">
-                                    {{$arquivo->titulo}}
+                                    {{$arquivo->titulo}} <i class="fa fa-chevron-right" style="float: right;"></i>
                                 </a>
                             </div>
 
