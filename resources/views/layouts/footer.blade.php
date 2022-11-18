@@ -109,7 +109,7 @@
         <br>
 
         <div>
-            <a href="<?php echo $rota;?>#iniciodoconteudo" class="link-to-menu bg-pri btn-circle rounded-circle">
+            <a href="<?php echo Request::url();?>#iniciodoconteudo" class="link-to-menu bg-pri btn-circle rounded-circle">
                 <p>Topo</p>
                 <i class="fas fa-angle-up"></i>
             </a>
