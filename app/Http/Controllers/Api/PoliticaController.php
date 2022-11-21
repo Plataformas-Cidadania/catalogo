@@ -31,6 +31,7 @@ class PoliticaController extends Controller
         'objetivos' => 'string|nullable',
         'observacao' => 'string|nullable',
         'acao_orcamentaria_assoc' => 'string|nullable',
+        'instrumento_legal' => 'string|nullable',
         'publico_alvo_legislacao' => 'string|nullable',
         'tipo_politica' => 'int|min:1|nullable',
         'grande_area' => 'int|min:1|nullable',
