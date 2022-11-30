@@ -122,6 +122,10 @@ mix.scripts('packages/cms/resources/assets/js/controllers/alterarSettingCtrl.js'
 mix.scripts('packages/cms/resources/assets/js/controllers/parceiroCtrl.js', 'public/assets-cms/js/controllers/parceiroCtrl.js');
 mix.scripts('packages/cms/resources/assets/js/controllers/alterarParceiroCtrl.js', 'public/assets-cms/js/controllers/alterarParceiroCtrl.js');
 
+//Popups
+mix.scripts('packages/cms/resources/assets/js/controllers/popupCtrl.js', 'public/assets-cms/js/controllers/popupCtrl.js');
+mix.scripts('packages/cms/resources/assets/js/controllers/alterarPopupCtrl.js', 'public/assets-cms/js/controllers/alterarPopupCtrl.js');
+
 
 //Midias
 mix.scripts('packages/cms/resources/assets/js/controllers/midiaCtrl.js', 'public/assets-cms/js/controllers/midiaCtrl.js');

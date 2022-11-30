@@ -36,6 +36,8 @@
             gtag('config', 'G-3PB2SNYSCF');
         </script>
 
+
+
      </head>
     <body id="contrast" >
         @include('layouts.layout1')

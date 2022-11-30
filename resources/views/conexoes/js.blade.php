@@ -236,7 +236,11 @@
     <script src="js/components/home/index.js" ></script>
 
 
-
+    <script type="text/javascript">
+        $(window).on('load',function(){
+            $('#exampleModal').modal('show');
+        });
+    </script>
 
 
 

@@ -31,6 +31,7 @@ class HomeController extends Controller{
         $text3 = \App\Models\Text::where('slug', 'recursos')->first();
         $destaques = \App\Models\Modulo::where('tipo_id', 3)->orderBy('id')->get();
         $partners = \App\Models\Parceiro::orderBy('id')->get();
+        $popup = \App\Models\Popup::where('status', 1)->orderBy('id', 'desc')->first();
 
 
         return view('home', [
@@ -41,6 +42,7 @@ class HomeController extends Controller{
             'partners' => $partners,
             'areas' => $areas,
             'destaques' => $destaques,
+            'popup' => $popup,
         ]);
 
 

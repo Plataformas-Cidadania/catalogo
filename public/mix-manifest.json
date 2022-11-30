@@ -32,6 +32,8 @@
     "/assets-cms/js/controllers/alterarSettingCtrl.js": "/assets-cms/js/controllers/alterarSettingCtrl.js",
     "/assets-cms/js/controllers/parceiroCtrl.js": "/assets-cms/js/controllers/parceiroCtrl.js",
     "/assets-cms/js/controllers/alterarParceiroCtrl.js": "/assets-cms/js/controllers/alterarParceiroCtrl.js",
+    "/assets-cms/js/controllers/popupCtrl.js": "/assets-cms/js/controllers/popupCtrl.js",
+    "/assets-cms/js/controllers/alterarPopupCtrl.js": "/assets-cms/js/controllers/alterarPopupCtrl.js",
     "/assets-cms/js/controllers/midiaCtrl.js": "/assets-cms/js/controllers/midiaCtrl.js",
     "/assets-cms/js/controllers/alterarMidiaCtrl.js": "/assets-cms/js/controllers/alterarMidiaCtrl.js",
     "/assets-cms/js/controllers/categoriaCtrl.js": "/assets-cms/js/controllers/categoriaCtrl.js",
