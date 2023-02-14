@@ -370,11 +370,12 @@ class PoliticaController extends Controller
                     $subareas .= $item->categoria->nome;
                 }
                 fputcsv($fp, [
-                    $politica->nome,
-                    $politica->grande_area->nome,
-                    $politica->area->nome,
-                    $subareas, substr($politica->ano, 0, 4),
-                    $politica->vigencia_inicio
+                    $politica->nome ?? '',
+                    $politica->grande_area->nome ?? '',
+                    $politica->area->nome ?? '',
+                    $subareas ?? '',
+                    substr($politica->ano, 0, 4) ?? '',
+                    $politica->vigencia_inicio ?? ''
                 ], $separador);
             endforeach;
 
