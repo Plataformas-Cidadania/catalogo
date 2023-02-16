@@ -49,11 +49,11 @@
 <input type="number" name="ano" class="form-control width-pequeno <% validar(politica.ano)%>" ng-model="politica.ano" ng-required="true" min="1900" max="2100">
 <br>
 
-<label for="medida_provisoria">Medida Provisória</label>
+<label for="medida_provisoria">Medida Provisória *</label>
 <input type="text" name="medida_provisoria" class="form-control width-medio <% validar(politica.medida_provisoria)%>" ng-model="politica.medida_provisoria" ng-required="true">
 <br>
 
-<label for="medida_provisoria_inicio_vigencia">Medida Provisória Início Vigência</label>
+<label for="medida_provisoria_inicio_vigencia">Medida Provisória Início Vigência *</label>
 <input type="text" name="medida_provisoria_inicio_vigencia" class="form-control width-medio <% validar(politica.medida_provisoria_inicio_vigencia)%>" ng-model="politica.medida_provisoria_inicio_vigencia" ng-required="true">
 <br>
 
@@ -66,7 +66,7 @@
 <br>
 
 <label for="vigencia_fim">Vigência Fim</label>
-<input type="date" name="vigencia_fim" class="form-control width-medio <% validar(politica.vigencia_fim)%>" ng-model="politica.vigencia_fim" ng-required="true">
+<input type="date" name="vigencia_fim" class="form-control width-medio <% validar(politica.vigencia_fim)%>" ng-model="politica.vigencia_fim" ng-required="false">
 <br>
 
 {{--<label for="objetivos">Objetivos</label>
@@ -92,7 +92,7 @@
         'Decreto','Decreto-Lei','Instrução Normativa','Lei Complementar','Não se aplica'];
 ?>
 
-<label for="acao_orcamentaria_assoc">Ação Orçamentária Assoc</label>
+<label for="acao_orcamentaria_assoc">Ação Orçamentária Assoc *</label>
 <input type="text" name="acao_orcamentaria_assoc" class="form-control width-grande <% validar(politica.acao_orcamentaria_assoc)%>" ng-model="politica.acao_orcamentaria_assoc" ng-required="true">
 <br>
 
