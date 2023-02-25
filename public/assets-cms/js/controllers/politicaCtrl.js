@@ -93,22 +93,26 @@ cmsApp.controller('politicaCtrl', ['$scope', '$http', 'Upload', '$timeout', func
     var listarPoliticas = function(){
         $scope.processandoListagem = true;
         $http({
-            url: 'api/politica/',
-            method: 'GET',
+            url: 'api/politica/buscaAvancada',
+            method: 'POST',
+            data: {
+                page: $scope.currentPage,
+                politica: $scope.dadoPesquisa,
+            },
             params: {
-                /*page: $scope.currentPage,
+                /*politica: $scope.campoPesquisa,
+                page: $scope.currentPage,
                 itensPorPagina: $scope.itensPerPage,
                 dadoPesquisa: $scope.dadoPesquisa,
                 campos: $scope.campos,
-                campoPesquisa: $scope.campoPesquisa,
                 ordem: $scope.ordem,
                 sentido: $scope.sentidoOrdem*/
             }
         }).success(function(data, status, headers, config){
             //console.log(data.data);
-            $scope.politicas = data;//data.data
+            $scope.politicas = data.data;//data.data
             //$scope.lastPage = pesquisa ? 1 : data.last_page;
-            $scope.totalItens = data.length;//data.data.length
+            $scope.totalItens = data.total;//data.data.length
             /*$scope.primeiroDaPagina = pesquisa ? 1 : data.from;
             $scope.ultimoDaPagina = pesquisa ? 1 : data.to;*/
             $listar = true;
