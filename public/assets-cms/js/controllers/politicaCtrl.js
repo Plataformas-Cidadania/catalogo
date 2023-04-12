@@ -158,7 +158,10 @@ cmsApp.controller('politicaCtrl', ['$scope', '$http', 'Upload', '$timeout', func
         $scope.politica.grande_area = $scope.grande_area.id;
         $scope.politica.area = $scope.area.id;
         $scope.politica.tipo_politica = $scope.tipo_politica.id;
-        $scope.politica.ano = $scope.politica.ano + '-01-01';
+        if($scope.politica.ano.toString().length === 4){
+            $scope.politica.ano = $scope.politica.ano + '-01-01';
+        }
+
 
         //console.log($scope.politica);
 
