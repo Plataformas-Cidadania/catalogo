@@ -95,7 +95,7 @@ class Filters extends React.Component {
       archivesUrl: this.props.archivesUrl
     })), /*#__PURE__*/React.createElement("div", {
       style: {
-        display: parseInt(this.state.qtdCat) < 1 ? 'none' : ''
+        display: parseInt(this.state.qtdCat) < 2 ? 'none' : ''
       }
     }, /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("div", {
       className: "line-color"

@@ -82,7 +82,7 @@ class Filters extends React.Component{
                     <ArchivesFilter filterArchives={this.filterArchives} archivesUrl={this.props.archivesUrl}/>
                 </div>
 
-                <div style={{display: parseInt(this.state.qtdCat) < 1 ? 'none' : ''}}>
+                <div style={{display: parseInt(this.state.qtdCat) < 2 ? 'none' : ''}}>
                     <br/><br/>
                     <div className="line-color"/>
                     <h2><i className="far fa-folder-open"/> Categorias</h2>
