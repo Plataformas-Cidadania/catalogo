@@ -13,7 +13,9 @@ class Arquivo extends Model
         'titulo',
         'imagem',
         'caminho_arquivo',
-        'politica_id'
+        'politica_id',
+        'tipo',
+        'url_externa'
     ];
     public function politica()
     {

@@ -100,24 +100,28 @@ cmsApp.controller('arquivoPoliticaCtrl', ['$scope', '$http', 'Upload', '$timeout
     $scope.inserir = function (file, arquivo){
 
         $scope.mensagemInserir = "";
+        $scope.arquivo.politica_id = $scope.politica_id;
 
         if(file==null && arquivo==null){
-            /*$scope.processandoInserir = true;
+            $scope.processandoInserir = true;
             $http.post("api/arquivo", $scope.arquivo).success(function (data){
-                 listarArquivos();
+                 listarArquivos($scope.politica_id);
                  //delete $scope.arquivo;//limpa o form
-                $scope.arquivo = {};//limpa o form
+                $scope.arquivo = {
+                    tipo: '0'
+                };//limpa o form
+                delete $scope.picFile
+                $scope.fileArquivo = null;//limpa o file
                 $scope.mensagemInserir =  "Gravado com sucesso!";
                 $scope.processandoInserir = false;
              }).error(function(data){
                 $scope.mensagemInserir = "Ocorreu um erro!";
                 $scope.processandoInserir = false;
-             });*/
+             });
         }else{
             //arquivo.file = file;
             $scope.arquivo.imagem = file;
             $scope.arquivo.caminho_arquivo = arquivo;
-            $scope.arquivo.politica_id = $scope.politica_id;
             Upload.upload({
                 url: 'api/arquivo',
                 data: $scope.arquivo,
@@ -128,8 +132,10 @@ cmsApp.controller('arquivoPoliticaCtrl', ['$scope', '$http', 'Upload', '$timeout
                     $scope.result = response.data;
                 });
                 console.log(response.data);
-                delete $scope.arquivo;//limpa o form
-                $scope.picFile = null;//limpa o file
+                $scope.arquivo = {
+                    tipo: '0'
+                };//limpa o form
+                delete $scope.picFile
                 $scope.fileArquivo = null;//limpa o file
                 listarArquivos($scope.politica_id);
                 $scope.mensagemInserir =  "Gravado com sucesso!";

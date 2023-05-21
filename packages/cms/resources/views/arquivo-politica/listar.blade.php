@@ -30,7 +30,7 @@
 
                 <br><br>
 
-                <span class="btn btn-primary btn-file" ng-show="!fileArquivo">
+                <span class="btn btn-primary btn-file" ng-show="!fileArquivo && arquivo.tipo==0">
                     Escolher Arquivo <input  type="file" ngf-select ng-model="fileArquivo" name="fileArquivo" accept="application/pdf,.zip,.rar,.doc,.docx,.xlsx,.xls" ngf-max-size="100MB" ngf-model-invalid="errorFile">
                 </span>
                 <a ng-show="fileArquivo"><% fileArquivo.name %></a>
@@ -91,6 +91,7 @@
                                 <i ng-if="ordem=='arquivo' && sentidoOrdem=='asc'" class="fa fa-angle-double-down"></i>
                                 <i ng-if="ordem=='arquivo' && sentidoOrdem=='desc'" class="fa fa-angle-double-up"></i>
                             </th>
+                            <th>Url Externa</th>
                             <th></th>
                         </tr>
                         </thead>
@@ -100,6 +101,7 @@
                             <td><% arquivo.titulo %></td>
                             <td><img ng-show="arquivo.imagem" ng-src="uploads/<% arquivo.imagem %>" width="60"></td>
                             <td><a href="uploads/<% arquivo.caminho_arquivo %>" target="_blank"><% arquivo.caminho_arquivo %></a></td>
+                            <td><a href="<% arquivo.url_externa %>" target="_blank"><% arquivo.url_externa %></a></td>
                             <td class="text-right">
                                 <div>
                                     {{--<a href="cms/arquivo/<% arquivo.id %>"><i class="fa fa-edit fa-2x" title="Editar"></i></a>&nbsp;&nbsp;--}}
