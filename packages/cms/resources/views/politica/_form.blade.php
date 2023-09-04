@@ -61,6 +61,13 @@
 <input type="text" name="medida_provisoria_inicio_vigencia" class="form-control width-medio <% validar(politica.medida_provisoria_inicio_vigencia)%>" ng-model="politica.medida_provisoria_inicio_vigencia" ng-required="true">
 <br>
 
+
+<?php
+$instrumentos_legais = ['Resolução','Projeto de Lei','Portaria',
+    'Norma de execução','Norma operacional','Lei ordinária','Medida Provisória',
+    'Decreto','Decreto-Lei','Instrução Normativa','Lei Complementar','Não se aplica'];
+?>
+
 <label for="instrumento_legal">Instrumento Legal</label>
 <select
     name="instrumento_legal"
@@ -73,6 +80,7 @@
     <?php foreach ($instrumentos_legais as $instrumento_legal) { ?>
     <option value="{{$instrumento_legal}}">{{$instrumento_legal}}</option>
     <?php } ?>
+
 </select>
 <br>
 
@@ -106,11 +114,6 @@
 {!! Form::textarea('observacao', null, ['class'=>"form-control width-grande <% validar(politica.observacao) %>", 'ui-tinymce'=>'tinymceOptions', 'ng-required'=>'false', 'ng-model'=>'politica.observacao', 'init-model'=>'politica.observacao']) !!}
 <br>
 
-<?php
-    $instrumentos_legais = ['Resolução','Projeto de Lei','Portaria',
-        'Norma de execução','Norma operacional','Lei ordinária','Medida Provisória',
-        'Decreto','Decreto-Lei','Instrução Normativa','Lei Complementar','Não se aplica'];
-?>
 
 <label for="acao_orcamentaria_assoc">Ação Orçamentária Assoc *</label>
 <input type="text" name="acao_orcamentaria_assoc" class="form-control width-grande <% validar(politica.acao_orcamentaria_assoc)%>" ng-model="politica.acao_orcamentaria_assoc" ng-required="true">
