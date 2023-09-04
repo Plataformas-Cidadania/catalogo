@@ -47,6 +47,9 @@ Route::group([
      Route::get('/', [App\Http\Controllers\Api\OrgaoController::class, 'getAll'])
           ->name('api.orgao.getAll');
 
+     Route::get('/paginado', [App\Http\Controllers\Api\OrgaoController::class, 'getAllPaginate'])
+          ->name('api.orgao.getAllPaginate');
+
      Route::get('/{orgao}',[App\Http\Controllers\Api\OrgaoController::class, 'get'])
           ->name('api.orgao.get');
 

@@ -40,10 +40,11 @@ cmsApp.controller('orgaoCtrl', ['$scope', '$http', 'Upload', '$timeout', functio
     var listarOrgaos = function(){
         $scope.processandoListagem = true;
         $http({
-            url: 'api/orgao/',
+            url: 'api/orgao/paginado',
             method: 'GET',
             params: {
-                /*page: $scope.currentPage,
+                page: $scope.currentPage,
+                /*
                 itensPorPagina: $scope.itensPerPage,
                 dadoPesquisa: $scope.dadoPesquisa,
                 campos: $scope.campos,
@@ -53,9 +54,9 @@ cmsApp.controller('orgaoCtrl', ['$scope', '$http', 'Upload', '$timeout', functio
             }
         }).success(function(data, status, headers, config){
             //console.log(data.data);
-            $scope.orgaos = data;//data.data
+            $scope.orgaos = data.data; //data
             //$scope.lastPage = pesquisa ? 1 : data.last_page;
-            $scope.totalItens = data.length;//data.data.length
+            $scope.totalItens = data.data.length; //data.length
             /*$scope.primeiroDaPagina = pesquisa ? 1 : data.from;
             $scope.ultimoDaPagina = pesquisa ? 1 : data.to;*/
             $listar = true;

@@ -289,7 +289,8 @@ cmsApp.controller('politicaCtrl', ['$scope', '$http', 'Upload', '$timeout', func
             }
         }).success(function(data, status, headers, config){
             //console.log(data.data);
-            $scope.categorias = data;
+            //$scope.categorias = data;
+            $scope.categorias = data.sort((a, b) => (a.nome > b.nome) ? 1 : -1);
             $scope.processandoCategorias = false;
         }).error(function(data){
             $scope.message = "Ocorreu um erro: "+data;
@@ -412,7 +413,8 @@ cmsApp.controller('politicaCtrl', ['$scope', '$http', 'Upload', '$timeout', func
             }
         }).success(function(data, status, headers, config){
             //console.log(data.data);
-            $scope.orgaos = data;
+            //$scope.orgaos = data;
+            $scope.orgaos = data.sort((a, b) => (a.nome > b.nome) ? 1 : -1);
             $scope.processandoOrgaos = false;
         }).error(function(data){
             $scope.message = "Ocorreu um erro: "+data;
@@ -535,7 +537,8 @@ cmsApp.controller('politicaCtrl', ['$scope', '$http', 'Upload', '$timeout', func
             }
         }).success(function(data, status, headers, config){
             //console.log(data.data);
-            $scope.publicoAlvos = data;
+            //$scope.publicoAlvos = data;
+            $scope.publicoAlvos = data.sort((a, b) => (a.nome > b.nome) ? 1 : -1);
             $scope.processandoPublicoAlvos = false;
         }).error(function(data){
             $scope.message = "Ocorreu um erro: "+data;

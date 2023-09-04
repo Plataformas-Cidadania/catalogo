@@ -41,6 +41,18 @@ class OrgaoController extends Controller
     }
 
     /**
+     * Mostrar todos paginado.
+     *
+     * @param null
+     *
+     */
+
+    public function getAllPaginate()
+    {
+        return $this->repo->allPaginate();
+    }
+
+    /**
      * Adicionar um novo
      *
      * @param Request $request

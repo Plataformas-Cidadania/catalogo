@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Models\Api\Orgao;
+use Illuminate\Database\Eloquent\Collection;
 
 class OrgaoRepository extends BaseRepository
 {
@@ -20,4 +21,9 @@ class OrgaoRepository extends BaseRepository
     {
         $this->model = $model;
     }
+
+    public function allPaginate(){
+        return $this->model->orderBy("nome")->paginate(30);
+    }
+
 }
