@@ -223,13 +223,21 @@
                     @foreach($arquivos as $arquivo)
                         @if(!empty($arquivo->imagem))
                             <div class="col-md-3">
+                                @if($arquivo->tipo === 1)
+                                <a href="{{$arquivo->url_externa}}" target="_blank">
+                                @else
                                 <a href="/uploads/{{$arquivo->caminho_arquivo}}" target="_blank">
+                                @endif
                                     <img src="/uploads/{{$arquivo->imagem}}" alt="" width="100%">
                                 </a>
                             </div>
                         @endif
                             <div class=" @if($arquivo->imagem) col-md-9 @else col-md-12 @endif ">
+                                @if($arquivo->tipo === 1)
+                                <a href="{{$arquivo->url_externa}}" target="_blank">
+                                @else
                                 <a href="/uploads/{{$arquivo->caminho_arquivo}}" target="_blank">
+                                @endif
                                     {{$arquivo->titulo}} <i class="fa fa-chevron-right" style="float: right;"></i>
                                 </a>
                             </div>
