@@ -41,7 +41,7 @@ class GrandeAreaController extends Controller
     }
 
     /**
-     * Mostrar com pesquisa e paginado.
+     * Mostrar pesquisados e paginado.
      *
      * @param null
      *

@@ -26,4 +26,8 @@ class AreaRepository extends BaseRepository
         return $this->model->with($relations)->orderBy('nome')->get($columns);
     }
 
+    public function searchPaginate($search){
+        return $this->model->where('nome', 'ilike', '%'.$search.'%')->orderBy("nome")->paginate(30);
+    }
+
 }

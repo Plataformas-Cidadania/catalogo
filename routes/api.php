@@ -72,6 +72,9 @@ Route::group([
      Route::get('/', [App\Http\Controllers\Api\AreaController::class, 'getAll'])
           ->name('api.area.getAll');
 
+    Route::get('/paginado', [App\Http\Controllers\Api\AreaController::class, 'getSearchPaginate'])
+        ->name('api.area.getAllPaginate');
+
      Route::get('/{area}',[App\Http\Controllers\Api\AreaController::class, 'get'])
           ->name('api.area.get');
 
