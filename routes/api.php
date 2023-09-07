@@ -47,7 +47,7 @@ Route::group([
      Route::get('/', [App\Http\Controllers\Api\OrgaoController::class, 'getAll'])
           ->name('api.orgao.getAll');
 
-     Route::get('/paginado', [App\Http\Controllers\Api\OrgaoController::class, 'getAllPaginate'])
+     Route::get('/paginado', [App\Http\Controllers\Api\OrgaoController::class, 'getSearchPaginate'])
           ->name('api.orgao.getAllPaginate');
 
      Route::get('/{orgao}',[App\Http\Controllers\Api\OrgaoController::class, 'get'])
@@ -92,6 +92,9 @@ Route::group([
 
      Route::get('/', [App\Http\Controllers\Api\GrandeAreaController::class, 'getAll'])
           ->name('api.grande_area.getAll');
+
+     Route::get('/paginado', [App\Http\Controllers\Api\GrandeAreaController::class, 'getSearchPaginate'])
+         ->name('api.grande_area.getAllPaginate');
 
      Route::get('/{grande_area}',[App\Http\Controllers\Api\GrandeAreaController::class, 'get'])
           ->name('api.grande_area.get');

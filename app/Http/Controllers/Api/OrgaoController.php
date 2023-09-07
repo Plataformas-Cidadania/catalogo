@@ -47,9 +47,9 @@ class OrgaoController extends Controller
      *
      */
 
-    public function getAllPaginate(Request $request)
+    public function getSearchPaginate(Request $request)
     {
-        return $this->repo->allPaginate($request->search);
+        return $this->repo->searchPaginate($request->search);
     }
 
     /**

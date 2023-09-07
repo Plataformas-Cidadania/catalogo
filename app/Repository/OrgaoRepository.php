@@ -22,7 +22,7 @@ class OrgaoRepository extends BaseRepository
         $this->model = $model;
     }
 
-    public function allPaginate($search){
+    public function searchPaginate($search){
         return $this->model->where('nome', 'ilike', '%'.$search.'%')->orderBy("nome")->paginate(30);
     }
 

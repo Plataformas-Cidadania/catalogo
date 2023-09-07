@@ -41,6 +41,18 @@ class GrandeAreaController extends Controller
     }
 
     /**
+     * Mostrar com pesquisa e paginado.
+     *
+     * @param null
+     *
+     */
+
+    public function getSearchPaginate(Request $request)
+    {
+        return $this->repo->searchPaginate($request->search);
+    }
+
+    /**
      * Adicionar um novo
      *
      * @param Request $request
