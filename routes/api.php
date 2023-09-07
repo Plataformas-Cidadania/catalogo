@@ -123,6 +123,9 @@ Route::group([
      Route::get('/', [App\Http\Controllers\Api\TipoPoliticaController::class, 'getAll'])
           ->name('api.tipo_politica.getAll');
 
+     Route::get('/paginado', [App\Http\Controllers\Api\TipoPoliticaController::class, 'getSearchPaginate'])
+         ->name('api.tipo_politica.getAllPaginate');
+
      Route::get('/{tipo_politica}',[App\Http\Controllers\Api\TipoPoliticaController::class, 'get'])
           ->name('api.tipo_politica.get');
 

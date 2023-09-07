@@ -37,6 +37,7 @@ class CategoriaController extends Controller
     {
         return $this->repo->all();
     }
+
     /**
      * Mostrar pesquisados e paginado.
      *
@@ -48,7 +49,6 @@ class CategoriaController extends Controller
     {
         return $this->repo->searchPaginate($request->search);
     }
-
 
     /**
      * Adicionar um novo

@@ -98,7 +98,7 @@
                         <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Área</th>
+                            <th>Nome</th>
                         </tr>
                         </thead>
                         <tbody>
