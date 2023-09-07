@@ -41,6 +41,18 @@ class PublicoAlvoController extends Controller
     }
 
     /**
+     * Mostrar pesquisados e paginado.
+     *
+     * @param Request $request
+     *
+     */
+
+    public function getSearchPaginate(Request $request)
+    {
+        return $this->repo->searchPaginate($request->search);
+    }
+
+    /**
      * Adicionar um novo
      *
      * @param Request $request

@@ -209,6 +209,9 @@ Route::group([
     Route::get('/', [App\Http\Controllers\Api\PublicoAlvoController::class, 'getAll'])
         ->name('api.publico_alvo.getAll');
 
+    Route::get('/paginado', [App\Http\Controllers\Api\PublicoAlvoController::class, 'getSearchPaginate'])
+        ->name('api.publico_alvo.getAllPaginate');
+
     Route::get('/{public_alvo}',[App\Http\Controllers\Api\PublicoAlvoController::class, 'get'])
         ->name('api.publico_alvo.get');
 
