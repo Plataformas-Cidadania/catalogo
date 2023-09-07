@@ -43,10 +43,10 @@ cmsApp.controller('orgaoCtrl', ['$scope', '$http', 'Upload', '$timeout', functio
             url: 'api/orgao/paginado',
             method: 'GET',
             params: {
+                search: $scope.dadoPesquisa,
                 page: $scope.currentPage,
                 /*
                 itensPorPagina: $scope.itensPerPage,
-                dadoPesquisa: $scope.dadoPesquisa,
                 campos: $scope.campos,
                 campoPesquisa: $scope.campoPesquisa,
                 ordem: $scope.ordem,
@@ -67,8 +67,6 @@ cmsApp.controller('orgaoCtrl', ['$scope', '$http', 'Upload', '$timeout', functio
             $scope.processandoListagem = false;
         });
     };
-
-
 
     $scope.ordernarPor = function(ordem){
         $scope.ordem = ordem;
