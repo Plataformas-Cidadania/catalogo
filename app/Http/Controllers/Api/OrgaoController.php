@@ -41,9 +41,9 @@ class OrgaoController extends Controller
     }
 
     /**
-     * Mostrar todos paginado.
+     * Mostrar pesquisados paginado.
      *
-     * @param null
+     * @param Request $request
      *
      */
 

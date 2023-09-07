@@ -50,7 +50,7 @@ class AreaController extends Controller
     /**
      * Mostrar pesquisados e paginado.
      *
-     * @param null
+     * @param Request $request
      *
      */
 

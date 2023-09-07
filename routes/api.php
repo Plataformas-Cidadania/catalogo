@@ -26,6 +26,9 @@ Route::group([
      Route::get('/', [App\Http\Controllers\Api\CategoriaController::class, 'getAll'])
           ->name('api.categoria.getAll');
 
+    Route::get('/paginado', [App\Http\Controllers\Api\CategoriaController::class, 'getSearchPaginate'])
+        ->name('api.categoria.getAllPaginate');
+
      Route::get('/{categoria}',[App\Http\Controllers\Api\CategoriaController::class, 'get'])
           ->name('api.categoria.get');
 
