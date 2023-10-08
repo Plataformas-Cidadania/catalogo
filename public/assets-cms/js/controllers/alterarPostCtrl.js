@@ -2,6 +2,8 @@ cmsApp.controller('alterarPostCtrl', ['$scope', '$http', 'Upload', '$timeout', f
 
     $scope.processandoSalvar = false;
 
+
+
     //ALTERAR/////////////////////////////
 
     $scope.tinymceOptions = tinymceOptions;
@@ -12,20 +14,20 @@ cmsApp.controller('alterarPostCtrl', ['$scope', '$http', 'Upload', '$timeout', f
     $scope.removerArquivo = 0;
 
     $scope.stringToDate = stringToDate;
+    console.log($scope);
 
     $scope.alterar = function (file, arquivo){
         $scope.progress = 0;
         $scope.processandoSalvar = true;
         $scope.mensagemSalvar = "";
-
         if(file==null && arquivo==null){
 
-            //console.log($scope.post);
             $http.post("cms/alterar-post/"+$scope.id, {
                 'post': $scope.post,
                 'removerImagem': $scope.removerImagem,
                 'removerArquivo': $scope.removerArquivo,
                 'integrante_post': $scope.integrante_post,
+                'categoria_post': $scope.categoria_post,
             }).success(function (data){
                 //console.log(data);
                 $scope.processandoSalvar = false;
@@ -37,6 +39,7 @@ cmsApp.controller('alterarPostCtrl', ['$scope', '$http', 'Upload', '$timeout', f
                 $scope.processandoSalvar = false;
             });
 
+
         }else{
 
             var data1 = {
@@ -44,7 +47,9 @@ cmsApp.controller('alterarPostCtrl', ['$scope', '$http', 'Upload', '$timeout', f
                 'removerImagem': $scope.removerImagem,
                 'removerArquivo': $scope.removerArquivo,
                 'integrante_post': $scope.integrante_post,
+                'categoria_post': $scope.categoria_post,
             };
+
 
             if(file!=null){
                 data1.file = file;
@@ -112,6 +117,5 @@ cmsApp.controller('alterarPostCtrl', ['$scope', '$http', 'Upload', '$timeout', f
         return "";
     };
     /////////////////////////////////
-
 
 }]);

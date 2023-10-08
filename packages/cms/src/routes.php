@@ -124,6 +124,14 @@ Route::group(['middleware' => 'cms'], function () {
         Route::post('/cms/alterar-integrante/{id}', 'Cms\Controllers\IntegranteController@alterar');
         Route::get('/cms/excluir-integrante/{id}', 'Cms\Controllers\IntegranteController@excluir');
 
+        //CATEGORIAS
+        Route::get('/cms/categorias', 'Cms\Controllers\CategoriaController@index');
+        Route::get('/cms/listar-categorias', 'Cms\Controllers\CategoriaController@listar');
+        Route::post('/cms/inserir-categoria', 'Cms\Controllers\CategoriaController@inserir');
+        Route::get('/cms/categoria/{id}', 'Cms\Controllers\CategoriaController@detalhar');
+        Route::post('/cms/alterar-categoria/{id}', 'Cms\Controllers\CategoriaController@alterar');
+        Route::get('/cms/excluir-categoria/{id}', 'Cms\Controllers\CategoriaController@excluir');
+
         //PUBLICATIONS
         Route::get('/cms/publications', 'Cms\Controllers\PublicationController@index');
         Route::get('/cms/listar-publications', 'Cms\Controllers\PublicationController@listar');

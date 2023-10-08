@@ -40,10 +40,11 @@ class PostController extends Controller
         $categoria = \App\Models\Categoria::where('id', $categoria_id)->first();
         $posts = \App\Models\Post::all();
         $authors = \App\Models\Integrante::where('conteudo', 1)->pluck('titulo', 'id')->all();
+        $categorias = \App\Models\Categoria::pluck('titulo', 'id')->all();
         //$idiomas = \App\Models\Idioma::lists('titulo', 'id')->all();
 
 
-        return view('cms::post.listar', ['posts' => $posts, 'categoria_id' => $categoria->id, 'authors' => $authors]);
+        return view('cms::post.listar', ['posts' => $posts, 'categoria_id' => $categoria->id, 'authors' => $authors, 'categorias' => $categorias]);
         //return view('cms::post.listar', ['posts' => $posts, 'idiomas' => $idiomas]);
     }
 
@@ -114,12 +115,25 @@ class PostController extends Controller
             $dadosAuthorArtigo = Array();
             $dadosAuthorArtigo['post_id'] = $insert->id;
 
+
             //if($data['post']['integrante_post']!=1){
             foreach($data["integrante_post"] as $autor => $marcado){
                 if($marcado=='true'){
                     $array_autor = explode('_', $autor);
                     $dadosAuthorArtigo['integrante_id'] = $array_autor[1];
                     $authorArtigo->create($dadosAuthorArtigo);
+                }
+            }
+
+            $catArtigo = new \App\Models\CategoriaPost;
+            $dadosCatArtigo = Array();
+            $dadosCatArtigo['post_id'] = $insert->id;
+
+            foreach($data["categoria_post"] as $cat => $marcado){
+                if($marcado=='true'){
+                    $array_cat = explode('_', $cat);
+                    $dadosCatArtigo['categoria_id'] = $array_cat[1];
+                    $catArtigo->create($dadosCatArtigo);
                 }
             }
             //}
@@ -137,14 +151,32 @@ class PostController extends Controller
 
     public function detalhar($id)
     {
-        $categorias = \App\Models\Categoria::pluck('titulo', 'id')->all();
+        $categoria = \App\Models\Categoria::pluck('titulo', 'id')->all();
         $authors = \App\Models\Integrante::where('conteudo', 1)->pluck('titulo', 'id')->all();
+        $categorias = \App\Models\Categoria::pluck('titulo', 'id')->all();
         $post = $this->post->where([
             ['id', '=', $id],
         ])->firstOrFail();
         //$idiomas = \App\Idioma::lists('titulo', 'id')->all();
 
-        return view('cms::post.detalhar', ['post' => $post, 'categorias' => $categorias, 'authors' => $authors]);
+        $autors_post = \App\Models\IntegrantePost::where('post_id', $id)->get();
+
+        foreach($autors_post as $row){
+            $post->{"integrante".$row->integrante_id} = true; //Ex.: $artigo->autor1
+        }
+
+        $cat_post = \App\Models\CategoriaPost::where('post_id', $id)->get();
+
+        foreach($cat_post as $row){
+            $post->{"categoria".$row->categoria_id} = true; //Ex.: $artigo->autor1
+        }
+
+        return view('cms::post.detalhar', [
+            'post' => $post,
+            'categoria' => $categoria,
+            'authors' => $authors,
+            'categorias' => $categoria
+        ]);
         //return view('cms::post.detalhar', ['post' => $post, 'idiomas' => $idiomas]);
     }
 
@@ -218,7 +250,6 @@ class PostController extends Controller
         $dadosAuthorArtigo['post_id'] = $id;
 
         //Log::info(in_array("true", $data["integrante_post"]));
-
         //if($data['artigo']['publicacao_atlas']!=1) {
             foreach ($data["integrante_post"] as $autor => $marcado) {
                 if ($marcado == 'true') {
@@ -228,6 +259,27 @@ class PostController extends Controller
                 }
             }
         //}
+        //////////////////////
+
+        //////////////////////
+        $catArtigo = new \App\Models\CategoriaPost();
+        DB::table('cms.categorias_posts')->where('post_id', $id)->delete();
+        $dadosCatArtigo = Array();
+        $dadosCatArtigo['post_id'] = $id;
+
+
+        foreach ($data["categoria_post"] as $cat => $marcado) {
+            /*Log::info('---------------');
+            Log::info($data["categoria_post"]);
+            Log::info('---------------');*/
+            if ($marcado == 'true') {
+                $array_cat = explode('_', $cat);
+                $dadosCatArtigo['categoria_id'] = $array_cat[1];
+                $catArtigo->create($dadosCatArtigo);
+            }
+
+        }
+
         //////////////////////
 
         if($successFile && $successArquivo){
