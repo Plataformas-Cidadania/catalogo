@@ -53,7 +53,7 @@ class PostController extends Controller{
 
     public function categories(Request $request){
 
-        $categories = \App\Models\Categoria::select(
+        /*$categories = \App\Models\Categoria::select(
             DB::Raw("
                 cms.categorias.id,
                 cms.categorias.titulo,
@@ -61,6 +61,21 @@ class PostController extends Controller{
             "))
             ->join('cms.midias', 'cms.midias.id', '=', 'cms.categorias.midia_id')
             ->join('cms.posts', 'cms.categorias.id', '=', 'cms.posts.categoria_id')
+            ->where('cms.posts.titulo', 'ilike', $request->search.'%')
+            ->where('cms.midias.id', $request->midia_id)
+            ->groupBy('cms.categorias.id', 'cms.categorias.titulo')
+            ->distinct()
+            ->get();*/
+
+        $categories = \App\Models\Categoria::select(
+            DB::Raw("
+            cms.categorias.id,
+            cms.categorias.titulo,
+            count(cms.categorias.id) as qtd
+        "))
+            ->join('cms.midias', 'cms.midias.id', '=', 'cms.categorias.midia_id')
+            ->join('cms.categorias_posts', 'cms.categorias.id', '=', 'cms.categorias_posts.categoria_id')
+            ->join('cms.posts', 'cms.categorias_posts.post_id', '=', 'cms.posts.id')
             ->where('cms.posts.titulo', 'ilike', $request->search.'%')
             ->where('cms.midias.id', $request->midia_id)
             ->groupBy('cms.categorias.id', 'cms.categorias.titulo')
@@ -119,11 +134,11 @@ class PostController extends Controller{
 
     public function getList(Request $request){
 
-        Log::info('///////////////////////////');
+        /*Log::info('///////////////////////////');
         Log::info('cms.posts.'.$request->order);
         Log::info($request->order);
         Log::info($request->directionOrder);
-        Log::info('///////////////////////////');
+        Log::info('///////////////////////////');*/
 
 
         $columnsOby = 'cms.posts.'.$request->order;
@@ -157,6 +172,36 @@ class PostController extends Controller{
         $total = count($total);
 
         $result = \App\Models\Post::select(
+            DB::Raw("
+            cms.posts.*,
+            to_char(cms.posts.data, 'HH12:MI:SS') as hour,
+            to_char(cms.posts.data, 'DD') as date,
+            to_char(cms.posts.data, 'TMMonth') as month,
+            to_char(cms.posts.data, 'YYYY') as year,
+            cms.posts.titulo,
+            cms.posts.resumida,
+            cms.posts.descricao
+        "))
+            ->join('cms.categorias_posts', 'cms.categorias_posts.post_id', '=', 'cms.posts.id')
+            ->join('cms.categorias', 'cms.categorias.id', '=', 'cms.categorias_posts.categoria_id')
+            ->join('cms.midias', 'cms.midias.id', '=', 'cms.categorias.midia_id')
+            ->when(count($categories) > 0, function($query) use ($categories){
+                return $query->whereIn('cms.categorias_posts.categoria_id', $categories);
+            })
+            ->when(count($members) > 0, function($query) use ($members){
+                return $query->whereIn('cms.posts.member_id', $members);
+            })
+            ->when(count($archives) > 0, function($query) use ($archives){
+                return $query->whereIn(DB::Raw("to_char(cms.posts.data, 'YYYY-MM')"), $archives);
+            })
+            ->where('cms.posts.titulo', 'ilike', '%'.$search.'%')
+            ->where('cms.midias.id', $request->midia_id)
+            ->orderBy($columnsOby, $request->directionOrder)
+            ->distinct('cms.posts.id')
+            ->take($request->qtdItemsLoad)
+            ->get();
+
+        /*$result = \App\Models\Post::select(
                 DB::Raw("
                 cms.posts.*,
                 to_char(cms.posts.data, 'HH12:MI:SS') as hour,
@@ -184,7 +229,7 @@ class PostController extends Controller{
             ->orderby($columnsOby, $request->directionOrder)
             ->distinct('cms.posts.id')
             ->take($request->qtdItemsLoad)
-            ->get();
+            ->get();*/
 
 
         $ads['total'] = $total;
@@ -200,7 +245,7 @@ class PostController extends Controller{
             $ads['data'][$index]->categories = $categories;
         }
 
-        Log::info($ads);
+        //Log::info($ads);
 
         return $ads;
     }
