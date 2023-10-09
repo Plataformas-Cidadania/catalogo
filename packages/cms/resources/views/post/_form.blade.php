@@ -27,6 +27,17 @@
     <br><br>
 {{--@endif--}}
 
+{!! Form::label('video', 'Vídeo') !!}<br>
+{!! Form::text('video', null, ['class'=>"form-control width-grande <% validar(post.video) %>", 'ng-model'=>'post.video', 'init-model'=>'post.video', 'placeholder' => '']) !!}<br>
+
+{!! Form::label('image_detail', 'Imagem na página de detalhes?') !!}<br>
+{!! Form::select('image_detail',
+        array(
+            '0' => 'Sim',
+            '1' => 'Não'
+        ),
+null, ['class'=>"form-control width-medio <% validar(post.image_detail) %>", 'ng-model'=>'post.image_detail', 'init-model'=>'post.image_detail', 'placeholder' => 'Selecione']) !!}<br>
+
 
 <p><strong>Categorias</strong></p>
 @foreach($categorias as $id => $categoria)

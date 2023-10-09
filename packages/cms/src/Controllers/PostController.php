@@ -20,7 +20,7 @@ class PostController extends Controller
     {
         $this->post = new \App\Models\Post;
         $this->campos = [
-            'imagem', 'titulo', 'resumida', 'descricao', 'arquivo', 'data', 'cmsuser_id'
+            'imagem', 'titulo', 'resumida', 'descricao', 'arquivo', 'data', 'cmsuser_id', 'video', 'image_detail'
         ];
         $this->pathImagem = public_path().'/imagens/posts';
         $this->sizesImagem = [
