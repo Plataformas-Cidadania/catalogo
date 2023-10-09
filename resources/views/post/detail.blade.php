@@ -60,6 +60,10 @@
                         <br><br>
                     @endif
 
+                    @if($detail->video)
+                        <iframe width="100%" height="450" src="https://www.youtube.com/embed/{{substr(parse_url($detail->video, PHP_URL_QUERY), 2)}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    @endif
+
                     <div class="row">
                         <div class="col-md-6 item-calendar">
                             <time pubdate class="item-calendar" data-message="Imagem sobre {{formatBr($detail->date, 'ext', 'hs')}}" tabindex="0"><i class="far fa-clock"></i> {{formatBr($detail->data, 'run')}}{{-- {{formatBr($detail->date, 'ext', 'hs')}}--}}</time>
