@@ -1,6 +1,7 @@
 @if(!empty($categoria_id))
 {!! Form::hidden('categoria_id', $categoria_id, ['class'=>"form-control width-grande <% validar(post.categoria_id) %>", 'ng-model'=>'post.categoria_id', 'ng-required'=>'true', 'init-model'=>'post.categoria_id', 'placeholder' => '']) !!}<br>
 @endif
+
 <label for="data">Data</label><br>
 <input type="date" name="data" class="form-control width-medio <% validar(post.data) %>" ng-model="post.data" ng-required="true" @if(!empty($post))ng-init="post.data=stringToDate('{{$post->data}}')"@endif ><br>
 
@@ -25,4 +26,26 @@
     @endforeach
     <br><br>
 {{--@endif--}}
+
+{!! Form::label('video', 'Vídeo') !!}<br>
+{!! Form::text('video', null, ['class'=>"form-control width-grande <% validar(post.video) %>", 'ng-model'=>'post.video', 'init-model'=>'post.video', 'placeholder' => '']) !!}<br>
+
+{!! Form::label('image_detail', 'Imagem na página de detalhes?') !!}<br>
+{!! Form::select('image_detail',
+        array(
+            '0' => 'Sim',
+            '1' => 'Não'
+        ),
+null, ['class'=>"form-control width-medio <% validar(post.image_detail) %>", 'ng-model'=>'post.image_detail', 'init-model'=>'post.image_detail', 'placeholder' => 'Selecione']) !!}<br>
+
+
+<p><strong>Categorias</strong></p>
+@foreach($categorias as $id => $categoria)
+    {{$id}}
+    <div class="checkbox-inline">
+        {!! Form::checkbox('categoria'.$id, true, null, ['class'=>"checkbox-inline width-grande <% validar(categoria_post.categoria_$id) %>", 'ng-model'=>"categoria_post.categoria_$id", 'init-model'=>"categoria_post.categoria_$id", 'style'=>"width: 30px; height: 30px;"]) !!}
+        {!! Form::label('categoria'.$id, $categoria, ['style'=>"padding: 8px 20px 0 20px;"]) !!}
+    </div>
+@endforeach
+<br><br>
 

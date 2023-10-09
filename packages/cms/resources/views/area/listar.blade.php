@@ -86,7 +86,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="box-padrao">
-                    <div class="input-group" ng-hide="true" >
+                    <div class="input-group" ng-hide="false" >
                         <div class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></div>
                         <input class="form-control" type="text" ng-model="dadoPesquisa" placeholder="Faça sua busca"/>
                     </div>
@@ -98,7 +98,7 @@
                         <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Área</th>
+                            <th>Nome</th>
                         </tr>
                         </thead>
                         <tbody>

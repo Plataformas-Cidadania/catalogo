@@ -7,7 +7,7 @@ cmsApp.controller('orgaoCtrl', ['$scope', '$http', 'Upload', '$timeout', functio
     $scope.lastPage = 0;
     $scope.totalItens = 0;
     $scope.maxSize = 5;
-    $scope.itensPerPage = 10;
+    $scope.itensPerPage = 30;
     $scope.dadoPesquisa = '';
     $scope.campos = "id, nome";
     $scope.campoPesquisa = "nome";
@@ -43,10 +43,10 @@ cmsApp.controller('orgaoCtrl', ['$scope', '$http', 'Upload', '$timeout', functio
             url: 'api/orgao/paginado',
             method: 'GET',
             params: {
+                search: $scope.dadoPesquisa,
                 page: $scope.currentPage,
                 /*
                 itensPorPagina: $scope.itensPerPage,
-                dadoPesquisa: $scope.dadoPesquisa,
                 campos: $scope.campos,
                 campoPesquisa: $scope.campoPesquisa,
                 ordem: $scope.ordem,
@@ -56,9 +56,9 @@ cmsApp.controller('orgaoCtrl', ['$scope', '$http', 'Upload', '$timeout', functio
             //console.log(data.data);
             $scope.orgaos = data.data; //data
             //$scope.lastPage = pesquisa ? 1 : data.last_page;
-            $scope.totalItens = data.data.length; //data.length
-            /*$scope.primeiroDaPagina = pesquisa ? 1 : data.from;
-            $scope.ultimoDaPagina = pesquisa ? 1 : data.to;*/
+            $scope.totalItens = data.total; //data.length
+            $scope.primeiroDaPagina = data.from;
+            $scope.ultimoDaPagina = data.to;
             $listar = true;
             console.log($scope.orgaos);
             $scope.processandoListagem = false;
@@ -67,7 +67,6 @@ cmsApp.controller('orgaoCtrl', ['$scope', '$http', 'Upload', '$timeout', functio
             $scope.processandoListagem = false;
         });
     };
-
 
 
     $scope.ordernarPor = function(ordem){

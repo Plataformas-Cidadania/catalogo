@@ -7,7 +7,7 @@ cmsApp.controller('areaCtrl', ['$scope', '$http', 'Upload', '$timeout', function
     $scope.lastPage = 0;
     $scope.totalItens = 0;
     $scope.maxSize = 5;
-    $scope.itensPerPage = 10;
+    $scope.itensPerPage = 30;
     $scope.dadoPesquisa = '';
     $scope.campos = "id, nome";
     $scope.campoPesquisa = "nome";
@@ -40,9 +40,11 @@ cmsApp.controller('areaCtrl', ['$scope', '$http', 'Upload', '$timeout', function
     var listarAreas = function(){
         $scope.processandoListagem = true;
         $http({
-            url: 'api/area/',
+            url: 'api/area/paginado',
             method: 'GET',
             params: {
+                page: $scope.currentPage,
+                search: $scope.dadoPesquisa,
                 /*page: $scope.currentPage,
                 itensPorPagina: $scope.itensPerPage,
                 dadoPesquisa: $scope.dadoPesquisa,
@@ -53,11 +55,11 @@ cmsApp.controller('areaCtrl', ['$scope', '$http', 'Upload', '$timeout', function
             }
         }).success(function(data, status, headers, config){
             //console.log(data.data);
-            $scope.areas = data;//data.data
+            $scope.areas = data.data;//data
             //$scope.lastPage = pesquisa ? 1 : data.last_page;
-            $scope.totalItens = data.length;//data.data.length
-            /*$scope.primeiroDaPagina = pesquisa ? 1 : data.from;
-            $scope.ultimoDaPagina = pesquisa ? 1 : data.to;*/
+            $scope.totalItens = data.total;//data.length
+            $scope.primeiroDaPagina = data.from;
+            $scope.ultimoDaPagina = data.to;
             $listar = true;
             console.log($scope.areas);
             $scope.processandoListagem = false;

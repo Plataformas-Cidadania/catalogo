@@ -1,13 +1,14 @@
 const Column = () => {
-  const {
-    useState,
-    useEffect
-  } = React;
-  return /*#__PURE__*/React.createElement("div", {
-    className: "container"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "row"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "col-md-12"
-  })));
+
+    const { useState, useEffect } = React;
+
+    return React.createElement(
+        "div",
+        { className: "container" },
+        React.createElement(
+            "div",
+            { className: "row" },
+            React.createElement("div", { className: "col-md-12" })
+        )
+    );
 };

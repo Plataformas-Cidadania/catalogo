@@ -7,7 +7,7 @@ cmsApp.controller('grandeAreaCtrl', ['$scope', '$http', 'Upload', '$timeout', fu
     $scope.lastPage = 0;
     $scope.totalItens = 0;
     $scope.maxSize = 5;
-    $scope.itensPerPage = 10;
+    $scope.itensPerPage = 30;
     $scope.dadoPesquisa = '';
     $scope.campos = "id, nome";
     $scope.campoPesquisa = "nome";
@@ -40,9 +40,11 @@ cmsApp.controller('grandeAreaCtrl', ['$scope', '$http', 'Upload', '$timeout', fu
     var listarGrandeAreas = function(){
         $scope.processandoListagem = true;
         $http({
-            url: 'api/grande_area/',
+            url: 'api/grande_area/paginado',
             method: 'GET',
             params: {
+                search: $scope.dadoPesquisa,
+                page: $scope.currentPage,
                 /*page: $scope.currentPage,
                 itensPorPagina: $scope.itensPerPage,
                 dadoPesquisa: $scope.dadoPesquisa,
@@ -53,13 +55,13 @@ cmsApp.controller('grandeAreaCtrl', ['$scope', '$http', 'Upload', '$timeout', fu
             }
         }).success(function(data, status, headers, config){
             //console.log(data.data);
-            $scope.grandeAreas = data;//data.data
+            $scope.grandeAreas = data.data;//data
             //$scope.lastPage = pesquisa ? 1 : data.last_page;
-            $scope.totalItens = data.length;//data.data.length
-            /*$scope.primeiroDaPagina = pesquisa ? 1 : data.from;
-            $scope.ultimoDaPagina = pesquisa ? 1 : data.to;*/
+            $scope.totalItens = data.total; //data.length
+            $scope.primeiroDaPagina = data.from;
+            $scope.ultimoDaPagina = data.to;
             $listar = true;
-            console.log($scope.grandeAreas);
+            //console.log($scope.grandeAreas);
             $scope.processandoListagem = false;
         }).error(function(data){
             $scope.message = "Ocorreu um erro: "+data;

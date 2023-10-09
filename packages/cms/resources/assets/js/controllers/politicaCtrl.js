@@ -13,7 +13,7 @@ cmsApp.controller('politicaCtrl', ['$scope', '$http', 'Upload', '$timeout', func
     $scope.lastPage = 0;
     $scope.totalItens = 0;
     $scope.maxSize = 5;
-    $scope.itensPerPage = 10;
+    $scope.itensPerPage = 30;
     $scope.dadoPesquisa = '';
     $scope.campos = "id, nome";
     $scope.campoPesquisa = "nome";
@@ -113,8 +113,8 @@ cmsApp.controller('politicaCtrl', ['$scope', '$http', 'Upload', '$timeout', func
             $scope.politicas = data.data;//data.data
             //$scope.lastPage = pesquisa ? 1 : data.last_page;
             $scope.totalItens = data.total;//data.data.length
-            /*$scope.primeiroDaPagina = pesquisa ? 1 : data.from;
-            $scope.ultimoDaPagina = pesquisa ? 1 : data.to;*/
+            $scope.primeiroDaPagina = data.from;
+            $scope.ultimoDaPagina = data.to;
             $listar = true;
             //console.log($scope.politicas);
             $scope.processandoListagem = false;

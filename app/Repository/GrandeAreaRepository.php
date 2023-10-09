@@ -20,4 +20,8 @@ class GrandeAreaRepository extends BaseRepository
     {
         $this->model = $model;
     }
+
+    public function searchPaginate($search){
+        return $this->model->where('nome', 'ilike', '%'.$search.'%')->orderBy("nome")->paginate(30);
+    }
 }

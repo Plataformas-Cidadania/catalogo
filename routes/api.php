@@ -26,6 +26,9 @@ Route::group([
      Route::get('/', [App\Http\Controllers\Api\CategoriaController::class, 'getAll'])
           ->name('api.categoria.getAll');
 
+    Route::get('/paginado', [App\Http\Controllers\Api\CategoriaController::class, 'getSearchPaginate'])
+        ->name('api.categoria.getAllPaginate');
+
      Route::get('/{categoria}',[App\Http\Controllers\Api\CategoriaController::class, 'get'])
           ->name('api.categoria.get');
 
@@ -47,7 +50,7 @@ Route::group([
      Route::get('/', [App\Http\Controllers\Api\OrgaoController::class, 'getAll'])
           ->name('api.orgao.getAll');
 
-     Route::get('/paginado', [App\Http\Controllers\Api\OrgaoController::class, 'getAllPaginate'])
+     Route::get('/paginado', [App\Http\Controllers\Api\OrgaoController::class, 'getSearchPaginate'])
           ->name('api.orgao.getAllPaginate');
 
      Route::get('/{orgao}',[App\Http\Controllers\Api\OrgaoController::class, 'get'])
@@ -72,6 +75,9 @@ Route::group([
      Route::get('/', [App\Http\Controllers\Api\AreaController::class, 'getAll'])
           ->name('api.area.getAll');
 
+    Route::get('/paginado', [App\Http\Controllers\Api\AreaController::class, 'getSearchPaginate'])
+        ->name('api.area.getAllPaginate');
+
      Route::get('/{area}',[App\Http\Controllers\Api\AreaController::class, 'get'])
           ->name('api.area.get');
 
@@ -93,6 +99,9 @@ Route::group([
      Route::get('/', [App\Http\Controllers\Api\GrandeAreaController::class, 'getAll'])
           ->name('api.grande_area.getAll');
 
+     Route::get('/paginado', [App\Http\Controllers\Api\GrandeAreaController::class, 'getSearchPaginate'])
+         ->name('api.grande_area.getAllPaginate');
+
      Route::get('/{grande_area}',[App\Http\Controllers\Api\GrandeAreaController::class, 'get'])
           ->name('api.grande_area.get');
 
@@ -113,6 +122,9 @@ Route::group([
 
      Route::get('/', [App\Http\Controllers\Api\TipoPoliticaController::class, 'getAll'])
           ->name('api.tipo_politica.getAll');
+
+     Route::get('/paginado', [App\Http\Controllers\Api\TipoPoliticaController::class, 'getSearchPaginate'])
+         ->name('api.tipo_politica.getAllPaginate');
 
      Route::get('/{tipo_politica}',[App\Http\Controllers\Api\TipoPoliticaController::class, 'get'])
           ->name('api.tipo_politica.get');
@@ -196,6 +208,9 @@ Route::group([
 
     Route::get('/', [App\Http\Controllers\Api\PublicoAlvoController::class, 'getAll'])
         ->name('api.publico_alvo.getAll');
+
+    Route::get('/paginado', [App\Http\Controllers\Api\PublicoAlvoController::class, 'getSearchPaginate'])
+        ->name('api.publico_alvo.getAllPaginate');
 
     Route::get('/{public_alvo}',[App\Http\Controllers\Api\PublicoAlvoController::class, 'get'])
         ->name('api.publico_alvo.get');

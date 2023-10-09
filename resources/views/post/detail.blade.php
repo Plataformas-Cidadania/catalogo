@@ -39,7 +39,7 @@
             <div class="col-md-8">
                 <article>
                     <br>
-                    @if($detail->imagem!="")
+                    @if($detail->imagem!="" && $detail->image_detail  == 0)
                     <picture>
                         <source srcset="imagens/posts/sm-{{$detail->imagem}}" media="(max-width: 468px)">
                         <source srcset="imagens/posts/sm-{{$detail->imagem}}" media="(max-width: 768px)">
@@ -53,10 +53,15 @@
                             class="img-fluid lazyload"
                             data-message="Imagem sobre {{$detail->titulo}}"
                             tabindex="0"
-                            style="float:left; width: 33%; margin-right: 15px;"
+                           {{-- style="float:left; width: 33%; margin-right: 15px;"--}}
                         >
                         <!-- <figcaption data-message="Fig.1 - Trulli, Puglia, Italy." tabindex="0">Fig.1 - Trulli, Puglia, Italy.</figcaption>-->
                     </picture>
+                        <br><br>
+                    @endif
+
+                    @if($detail->video)
+                        <iframe width="100%" height="450" src="https://www.youtube.com/embed/{{substr(parse_url($detail->video, PHP_URL_QUERY), 2)}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     @endif
 
                     <div class="row">

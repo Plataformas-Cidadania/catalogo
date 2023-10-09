@@ -103,7 +103,7 @@ cmsApp.controller('postCtrl', ['$scope', '$http', 'Upload', '$timeout', function
             $scope.progress = 0;
 
             //console.log($scope.post);
-            $http.post("cms/inserir-post", {post: $scope.post, integrante_post: $scope.integrante_post}).success(function (data){
+            $http.post("cms/inserir-post", {post: $scope.post, integrante_post: $scope.integrante_post, categoria_post: $scope.categoria_post}).success(function (data){
                  listarPosts();
                 //delete $scope.post;//limpa o form
                 delete $scope.post.data;
@@ -119,10 +119,9 @@ cmsApp.controller('postCtrl', ['$scope', '$http', 'Upload', '$timeout', function
              });
         }else{
 
-
             Upload.upload({
                 url: 'cms/inserir-post',
-                data: {post: $scope.post, file: file, arquivo: arquivo, integrante_post: $scope.integrante_post},
+                data: {post: $scope.post, file: file, arquivo: arquivo, integrante_post: $scope.integrante_post, categoria_post: $scope.categoria_post},
             }).then(function (response) {
                 $timeout(function () {
                     $scope.result = response.data;
