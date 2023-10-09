@@ -26,6 +26,7 @@ class PoliticaController extends Controller
         'medida_provisoria' => 'string|min:1|nullable',
         'medida_provisoria_inicio_vigencia' => 'string|min:1|nullable',
         'legislacao' => 'string|nullable',
+        'link_legislacao' => 'string|nullable',
         'vigencia_inicio' => 'date|nullable',
         'vigencia_fim' => 'date|nullable',
         'objetivos' => 'string|nullable',

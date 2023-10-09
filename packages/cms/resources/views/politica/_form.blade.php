@@ -89,6 +89,10 @@ $instrumentos_legais = ['Resolução','Projeto de Lei','Portaria',
 <input type="text" name="legislacao" class="form-control width-grande <% validar(politica.legislacao)%>" ng-model="politica.legislacao" ng-required="false">
 <br>
 
+<label for="link_legislacao">Link da legislação</label>
+<input type="text" name="link_legislacao" class="form-control width-grande <% validar(politica.link_legislacao)%>" ng-model="politica.link_legislacao" ng-required="false">
+<br>
+
 <label for="vigencia_inicio">Vigência Início</label>
 <input type="date" name="vigencia_inicio" class="form-control width-medio <% validar(politica.vigencia_inicio)%>" ng-model="politica.vigencia_inicio" ng-required="false">
 <br>
