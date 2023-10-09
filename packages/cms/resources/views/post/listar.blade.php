@@ -7,7 +7,8 @@
         $('[data-toggle="popover"]').popover()
     })
 </script>
-    <div ng-controller="postCtrl" ng-init="categoria_id({{$categoria_id}})">
+    {{--<div ng-controller="postCtrl" ng-init="categoria_id({{$categoria_id}})">--}}
+    <div ng-controller="postCtrl" >
         <div class="box-padrao">
             <h1><i class="fa fa-post" aria-hidden="true"></i>&nbsp;Posts</h1>
             <button class="btn btn-primary" ng-click="mostrarForm=!mostrarForm" ng-show="!mostrarForm">Nova Post</button>

@@ -34,17 +34,17 @@ class PostController extends Controller
         $this->pathArquivo = public_path().'/arquivos/posts';
     }
 
-    function index($categoria_id)
+    function index()
     {
 
-        $categoria = \App\Models\Categoria::where('id', $categoria_id)->first();
+        //$categoria = \App\Models\Categoria::where('id', $categoria_id)->first();
         $posts = \App\Models\Post::all();
         $authors = \App\Models\Integrante::where('conteudo', 1)->pluck('titulo', 'id')->all();
         $categorias = \App\Models\Categoria::pluck('titulo', 'id')->all();
         //$idiomas = \App\Models\Idioma::lists('titulo', 'id')->all();
 
 
-        return view('cms::post.listar', ['posts' => $posts, 'categoria_id' => $categoria->id, 'authors' => $authors, 'categorias' => $categorias]);
+        return view('cms::post.listar', ['posts' => $posts, 'authors' => $authors, 'categorias' => $categorias]);
         //return view('cms::post.listar', ['posts' => $posts, 'idiomas' => $idiomas]);
     }
 
@@ -60,8 +60,8 @@ class PostController extends Controller
         $posts = DB::table('cms.posts')
             ->select($campos)
             ->where([
-                [$request->campoPesquisa, 'ilike', "%$request->dadoPesquisa%"],
-                ['categoria_id', $request->categoria_id],
+                [$request->campoPesquisa, 'ilike', "%$request->dadoPesquisa%"]/*,
+                ['categoria_id', $request->categoria_id],*/
             ])
             ->orderBy($request->ordem, $request->sentido)
             ->paginate($request->itensPorPagina);
