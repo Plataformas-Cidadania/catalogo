@@ -104,7 +104,8 @@
                             <td class="text-right">
                                 <div>
                                     {{--<a href="cms/categorias/<% midia.id %>"><i class="fa fa-sitemap fa-2x" title="Categorias"></i></a>&nbsp;&nbsp;--}}
-                                    <a href="cms/posts"><i class="fa fa-sitemap fa-2x" title="Posts"></i></a>&nbsp;&nbsp;
+                                    <a href="cms/categorias/<% midia.id %>"><i class="fa fa-sitemap fa-2x" title="Categorias"></i></a>&nbsp;&nbsp;
+                                    <a href="cms/posts"><i class="fa fa-plus fa-2x" title="Posts"></i></a>&nbsp;&nbsp;
                                     <a href="cms/midia/<% midia.id %>"><i class="fa fa-edit fa-2x" title="Editar"></i></a>&nbsp;&nbsp;{{--<% mensagemStatus %><% idStatus %>--}}
                                     <a  ng-class="<% midia.status %> == 1 ? 'color-success' : 'color-success-inactive'"  style="cursor: pointer;"><i class="fa fa-check-circle fa-2x" aria-hidden="true" ng-click="status(midia.id);"></i></a>&nbsp;&nbsp;
                                     <a><i data-toggle="modal" data-target="#modalExcluir" class="fa fa-remove fa-2x" ng-click="perguntaExcluir(midia.id, midia.titulo, midia.imagem)"></i></a>
