@@ -67,11 +67,5 @@
         "sort-packages": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "author": "",
-    "createAt": "",
-    "homepage": "",
-    "identifier": "",
-    "meta": {},
-    "schemaVersion": 0
+    "prefer-stable": true
 }
