@@ -20,7 +20,6 @@ class CreatePoliticaTable extends Migration
             $table->string('medida_provisoria')->nullable();
             $table->string('medida_provisoria_inicio_vigencia')->nullable();
             $table->string('legislacao')->nullable();
-            $table->string('link_legislacao')->nullable();
             $table->date('vigencia_inicio')->nullable();
             $table->date('vigencia_fim')->nullable();
             $table->text('objetivos')->nullable();
