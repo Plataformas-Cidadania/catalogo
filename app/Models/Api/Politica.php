@@ -12,7 +12,7 @@ class Politica extends Model
     protected $fillable = [
         'nome','ano','medida_provisoria','medida_provisoria_inicio_vigencia','legislacao',
         'vigencia_inicio','vigencia_fim','objetivos','observacao','acao_orcamentaria_assoc',
-        'instrumento_legal', 'publico_alvo_legislacao','tipo_politica','grande_area','area',
+        'instrumento_legal', 'publico_alvo_legislacao','tipo_politica','grande_area','area','link_legislacao',
     ];
 
 	public function tipo_politica()

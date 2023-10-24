@@ -92,10 +92,10 @@
                         @endif
 
                         @if($politica->instrumento_legal != 'Não se aplica')
-                            <h4><strong>Legislação</strong> 
+                            <h4><strong>Legislação</strong>
                             @if($politica->link_legislacao != '')
-                                <a class="btn btn-primary offset-1" href="{{$politica->link_legislacao}}">Site da legislação</a></h4>
-                            @endif    
+                                <a class="btn btn-primary offset-1 position-relative " style="float: right" href="{{$politica->link_legislacao}}" target="_blank">Site da legislação</a></h4>
+                            @endif
                             <h2><strong>{!! $politica->instrumento_legal !!} - {{$politica->legislacao}}</strong>
                             </h2>
                             <hr>
