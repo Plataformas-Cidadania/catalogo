@@ -38,8 +38,6 @@
 
     <div class="container">
         <div class="row">
-
-
             <table class="table">
                 <caption></caption>
                 <thead>
@@ -55,7 +53,7 @@
                 @foreach($posts as $key =>  $post)
                     <tr>
                         {{--<th scope="row">{{$key+ 1}}</th>--}}
-                        <td><strong>{{$post->titulo}}</strong></td>
+                        <td>{{$post->titulo}}</td>
                         <td>{{$post->data}}</td>
                         <td><a href="post/{{$post->id}}/{{clean($post->titulo)}}"> > </a></td>
                     </tr>
