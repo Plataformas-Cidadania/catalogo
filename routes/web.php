@@ -126,6 +126,9 @@ Route::get('posts/{midia}', [PostController::class , 'post']);
 Route::get('posts/{midia_id}/{midia}', [PostController::class , 'post']);
 Route::get('post/{id}/{titulo}', [PostController::class , 'details']);
 
+Route::get('posts-categorias/{midia_id}/{midia}', [PostController::class , 'listCat']);
+Route::get('posts-tabela/{category_id}/{category}', [PostController::class , 'listTable']);
+
 Route::post('/list-posts', [PostController::class , 'getList']);
 Route::post('/categories', [PostController::class , 'categories']);
 Route::post('/members', [PostController::class , 'members']);
