@@ -116,7 +116,7 @@
 
         <li role="presentation"><a href="" accesskey="h" @if($rota=='/') class="corrente" @endif>Início</a></li>
         @foreach($midias as $midia)
-            <li role="presentation"><a href="posts/{{$midia->id}}/{{clean($midia->titulo)}}" @if($rota=='quem') class="corrente" @endif>{{$midia->titulo}}</a></li>
+            <li role="presentation"><a href="{{$midia->tipo === 0 ? 'posts/' : 'posts-categorias/'}}{{$midia->id}}/{{clean($midia->titulo)}}" @if($rota=='quem') class="corrente" @endif>{{$midia->titulo}}</a></li>
         @endforeach
         <li role="presentation"><a href="https://www.siop.planejamento.gov.br"  @if($rota=='sobre') class="corrente" @endif target="_blank">Orçamento</a></li>
         <li role="presentation"><a href="sobre" accesskey="q" @if($rota=='sobre') class="corrente" @endif>Sobre</a></li>

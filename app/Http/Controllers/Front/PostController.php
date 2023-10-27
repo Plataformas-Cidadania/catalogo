@@ -71,8 +71,9 @@ class PostController extends Controller{
     }
     public function listTable($category_id = null){
 
-        $posts = \App\Models\Post::select('cms.posts.*')
-            ->where('cms.posts.categoria_id', $category_id)
+        $posts = \App\Models\Post::select("cms.posts.*")
+            ->join('cms.categorias_posts', 'cms.posts.id', '=', 'cms.categorias_posts.post_id')
+            ->where('cms.categorias_posts.categoria_id', $category_id)
             ->paginate(15);
 
 
@@ -81,19 +82,6 @@ class PostController extends Controller{
 /*///////////////////*/
     public function categories(Request $request){
 
-        /*$categories = \App\Models\Categoria::select(
-            DB::Raw("
-                cms.categorias.id,
-                cms.categorias.titulo,
-                count(cms.categorias.id) as qtd
-            "))
-            ->join('cms.midias', 'cms.midias.id', '=', 'cms.categorias.midia_id')
-            ->join('cms.posts', 'cms.categorias.id', '=', 'cms.posts.categoria_id')
-            ->where('cms.posts.titulo', 'ilike', $request->search.'%')
-            ->where('cms.midias.id', $request->midia_id)
-            ->groupBy('cms.categorias.id', 'cms.categorias.titulo')
-            ->distinct()
-            ->get();*/
 
         $categories = \App\Models\Categoria::select(
             DB::Raw("
