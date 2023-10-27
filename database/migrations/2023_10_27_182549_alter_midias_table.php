@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AlterPoliticaTable2 extends Migration
+class AlterMidiasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AlterPoliticaTable2 extends Migration
      */
     public function up()
     {
-        Schema::table('catalogo.politica', function (Blueprint $table) {
-            $table->string('link_legislacao')->nullable();
+        Schema::table('cms.midias', function (Blueprint $table) {
+            $table->integer('tipo')->default(0);
         });
     }
 
@@ -25,8 +25,8 @@ class AlterPoliticaTable2 extends Migration
      */
     public function down()
     {
-        Schema::table('catalogo.politica', function (Blueprint $table) {
-            $table->dropColumn('link_legislacao');
+        Schema::table('cms.midias', function (Blueprint $table) {
+            $table->dropColumn('tipo');
         });
     }
 }

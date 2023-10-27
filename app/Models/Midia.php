@@ -9,6 +9,6 @@ class Midia extends Model
     protected $table = 'cms.midias';
 
     protected $fillable = [
-        'imagem', 'titulo', 'arquivo', 'cmsuser_id',
+        'imagem', 'titulo', 'arquivo', 'tipo', 'cmsuser_id',
     ];
 }
