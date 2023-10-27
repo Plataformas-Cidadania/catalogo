@@ -147,7 +147,7 @@
                                 <li role="presentation"><a href="posts/1/biblioteca" @if($rota=='sobre') class="publicacoes" @endif>Biblioteca</a>
                                     <ul class="noJS menu-desk-sub">
                                         @foreach($midias as $midia)
-                                            <li role="presentation"><a href="posts/{{$midia->id}}/{{clean($midia->titulo)}}" @if($rota=='quem') class="corrente" @endif>{{$midia->titulo}}</a></li>
+                                            <li role="presentation"><a href="{{$midia->tipo === 0 ? 'posts/' : 'posts-categorias/'}}{{$midia->id}}/{{clean($midia->titulo)}}" @if($rota=='quem') class="corrente" @endif>{{$midia->titulo}}</a></li>
                                         @endforeach
                                     </ul>
                                 </li>
