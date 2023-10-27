@@ -76,7 +76,6 @@ class PostController extends Controller{
             ->where('cms.categorias_posts.categoria_id', $category_id)
             ->paginate(15);
 
-
         return view('post.list-table', ['category_id' => $category_id, 'posts' => $posts]);
     }
 /*///////////////////*/
