@@ -14,6 +14,7 @@ cmsApp.controller('postCtrl', ['$scope', '$http', 'Upload', '$timeout', function
     $scope.ordem = "titulo";
     $scope.sentidoOrdem = "asc";
     $scope.categoria_id = 0;
+    $scope.midia_id = 0;
     var $listar = false;//para impedir de carregar o conteúdo dos watchs no carregamento da página.
 
     $scope.$watch('currentPage', function(){
@@ -35,6 +36,26 @@ cmsApp.controller('postCtrl', ['$scope', '$http', 'Upload', '$timeout', function
         $scope.categoria_id = categoria_id;
         listarPosts();
     };
+    $scope.midia_id = function(midia_id){
+        $scope.midia_id = midia_id;
+        listarPosts();
+    };
+
+    /*//////////////////////*/
+    $scope.categoria_post = {};
+    $scope.peloMenosUmSelecionado = true; // Inicialmente, todos são obrigatórios
+
+    $scope.verificarSelecao = function() {
+        $scope.peloMenosUmSelecionado = false;
+
+        for (var key in $scope.categoria_post) {
+            if ($scope.categoria_post[key]) {
+                $scope.peloMenosUmSelecionado = false;
+                break; // Se pelo menos um checkbox estiver marcado, definimos como true e saímos do loop
+            }
+        }
+    };
+    /*//////////////////////*/
 
 
     var listarPosts = function(){
@@ -50,7 +71,8 @@ cmsApp.controller('postCtrl', ['$scope', '$http', 'Upload', '$timeout', function
                 campoPesquisa: $scope.campoPesquisa,
                 ordem: $scope.ordem,
                 sentido: $scope.sentidoOrdem,
-                categoria_id: $scope.categoria_id
+                categoria_id: $scope.categoria_id,
+                midia_id: $scope.midia_id
             }
         }).success(function(data, status, headers, config){
             $scope.posts = data.data;

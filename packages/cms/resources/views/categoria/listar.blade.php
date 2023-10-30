@@ -94,7 +94,7 @@
                             <td><a href="cms/categoria/<% categoria.id %>"><% categoria.titulo %></a></td>
                             <td class="text-right">
                                 <div>
-                                    <a href="cms/posts/<% categoria.id %>"><i class="fa fa-plus fa-2x" title="Editar"></i></a>&nbsp;&nbsp;
+                                    {{--<a href="cms/posts/<% categoria.id %>"><i class="fa fa-plus fa-2x" title="Editar"></i></a>&nbsp;&nbsp;--}}
                                     <a href="cms/categoria/<% categoria.id %>"><i class="fa fa-edit fa-2x" title="Editar"></i></a>&nbsp;&nbsp;
                                     <a><i data-toggle="modal" data-target="#modalExcluir" class="fa fa-remove fa-2x" ng-click="perguntaExcluir(categoria.id, categoria.titulo, categoria.imagem)"></i></a>
                                 </div>

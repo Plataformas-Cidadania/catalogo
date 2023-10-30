@@ -34,34 +34,44 @@ class PostController extends Controller
         $this->pathArquivo = public_path().'/arquivos/posts';
     }
 
-    function index()
+    function index($midia_id)
     {
 
-        //$categoria = \App\Models\Categoria::where('id', $categoria_id)->first();
         $posts = \App\Models\Post::all();
         $authors = \App\Models\Integrante::where('conteudo', 1)->pluck('titulo', 'id')->all();
-        $categorias = \App\Models\Categoria::pluck('titulo', 'id')->all();
+        //$categorias = \App\Models\Categoria::pluck('titulo', 'id')->all();
         //$idiomas = \App\Models\Idioma::lists('titulo', 'id')->all();
 
+        $categorias = \App\Models\Categoria::select('cms.categorias.id', 'cms.categorias.titulo')
+            ->where('cms.categorias.midia_id', $midia_id)
+            ->pluck('cms.categorias.titulo', 'cms.categorias.id')
+            ->all();
 
-        return view('cms::post.listar', ['posts' => $posts, 'authors' => $authors, 'categorias' => $categorias]);
+
+        return view('cms::post.listar', ['posts' => $posts, 'authors' => $authors, 'categorias' => $categorias, 'midia_id' => $midia_id]);
         //return view('cms::post.listar', ['posts' => $posts, 'idiomas' => $idiomas]);
     }
 
     public function listar(Request $request)
     {
 
-        //Log::info('CAMPOS: '.$request->campos);
-
-        //Auth::loginUsingId(2);
-
         $campos = explode(", ", $request->campos);
+        $prefix = 'cms.posts';
+        $newCampos = array();
+
+        // Percorre o array $campos e concatena com a string desejada
+        foreach ($campos as $campo) {
+            $newCampos[] = $prefix . '.' . $campo;
+        }
 
         $posts = DB::table('cms.posts')
-            ->select($campos)
+            ->join('cms.categorias_posts', 'cms.categorias_posts.post_id', '=', 'cms.posts.id')
+            ->join('cms.categorias', 'cms.categorias.id', '=', 'cms.categorias_posts.categoria_id')
+            ->join('cms.midias', 'cms.midias.id', '=', 'cms.categorias.midia_id')
+            ->where('cms.categorias.midia_id', '=', $request->midia_id)
+            ->select($newCampos)
             ->where([
-                [$request->campoPesquisa, 'ilike', "%$request->dadoPesquisa%"]/*,
-                ['categoria_id', $request->categoria_id],*/
+                ['cms.posts.'.$request->campoPesquisa, 'ilike', "%$request->dadoPesquisa%"]
             ])
             ->orderBy($request->ordem, $request->sentido)
             ->paginate($request->itensPorPagina);
@@ -153,7 +163,17 @@ class PostController extends Controller
     {
         $categoria = \App\Models\Categoria::pluck('titulo', 'id')->all();
         $authors = \App\Models\Integrante::where('conteudo', 1)->pluck('titulo', 'id')->all();
-        $categorias = \App\Models\Categoria::pluck('titulo', 'id')->all();
+
+        $cat = \App\Models\Categoria::select('cms.categorias.midia_id')
+            ->leftJoin('cms.categorias_posts', 'cms.categorias.id', '=', 'cms.categorias_posts.categoria_id')
+            ->where('cms.categorias_posts.post_id', $id)
+            ->first();
+
+        $categorias = \App\Models\Categoria::select('cms.categorias.id', 'cms.categorias.titulo')
+            ->where('cms.categorias.midia_id', $cat->midia_id)
+            ->pluck('cms.categorias.titulo', 'cms.categorias.id')
+            ->all();
+
         $post = $this->post->where([
             ['id', '=', $id],
         ])->firstOrFail();
@@ -175,7 +195,7 @@ class PostController extends Controller
             'post' => $post,
             'categoria' => $categoria,
             'authors' => $authors,
-            'categorias' => $categoria
+            'categorias' => $categorias
         ]);
         //return view('cms::post.detalhar', ['post' => $post, 'idiomas' => $idiomas]);
     }

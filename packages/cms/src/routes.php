@@ -107,7 +107,8 @@ Route::group(['middleware' => 'cms'], function () {
 
         //POSTS
         Route::get('/cms/posts', 'Cms\Controllers\PostController@index');
-        Route::get('/cms/posts/{categoria_id}', 'Cms\Controllers\PostController@index');
+        //Route::get('/cms/posts/{categoria_id}', 'Cms\Controllers\PostController@index');
+        Route::get('/cms/posts/{midia_id}', 'Cms\Controllers\PostController@index');
         Route::get('/cms/listar-posts', 'Cms\Controllers\PostController@listar');
         Route::post('/cms/inserir-post', 'Cms\Controllers\PostController@inserir');
         Route::get('/cms/post/{id}', 'Cms\Controllers\PostController@detalhar');

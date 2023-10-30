@@ -9,6 +9,6 @@ class Post extends Model
     protected $table = 'cms.posts';
 
     protected $fillable = [
-        'imagem', 'titulo', 'resumida', 'descricao', 'arquivo', 'data', 'categoria_id', 'cmsuser_id', 'video', 'image_detail',
+        'imagem', 'titulo', 'resumida', 'descricao', 'arquivo', 'data', 'categoria_id', 'cmsuser_id', 'video', 'url', 'image_detail',
     ];
 }

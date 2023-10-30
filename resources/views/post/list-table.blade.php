@@ -51,11 +51,13 @@
                 <tbody>
 
                 @foreach($posts as $key =>  $post)
+                    <?php $url = $post->url ? $post->url : 'post/' . $post->id . '/' . clean($post->titulo);?>
+                    <?php $blank = $post->url ? '_blank' : ''?>
                     <tr>
                         {{--<th scope="row">{{$key+ 1}}</th>--}}
-                        <td>{{$post->titulo}}</td>
-                        <td>{{$post->data}}</td>
-                        <td><a href="post/{{$post->id}}/{{clean($post->titulo)}}"> > </a></td>
+                        <td><a href={{$url}} target={{$blank}}>{{$post->titulo}}</a></td>
+                        <td><a href={{$url}} target={{$blank}}>{{$post->data}}</a></td>
+                        <td><a href={{$url}} target={{$blank}}> <i class="fas fa-angle-right"></i></a> </td>
                     </tr>
                 @endforeach
 
