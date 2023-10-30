@@ -43,8 +43,8 @@
                 <thead>
                 <tr>
                     {{--<th scope="col"></th>--}}
-                    <th scope="col">Primeiro</th>
-                    <th scope="col">Último</th>
+                    <th scope="col">Título</th>
+                    <th scope="col">Data</th>
                     <th scope="col"></th>
                 </tr>
                 </thead>
@@ -56,7 +56,11 @@
                     <tr>
                         {{--<th scope="row">{{$key+ 1}}</th>--}}
                         <td><a href={{$url}} target={{$blank}}>{{$post->titulo}}</a></td>
-                        <td><a href={{$url}} target={{$blank}}>{{$post->data}}</a></td>
+                        <td><a href={{$url}} target={{$blank}}>
+
+                            <?php $dataFormatada = DateTime::createFromFormat('Y-m-d', $post->data);
+                                  echo $dataFormatada->format('d/m/Y'); ?>
+                            </a></td>
                         <td><a href={{$url}} target={{$blank}}> <i class="fas fa-angle-right"></i></a> </td>
                     </tr>
                 @endforeach

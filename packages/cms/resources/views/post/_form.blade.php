@@ -32,7 +32,7 @@
 {!! Form::label('url', 'Link') !!}<br>
 {!! Form::text('url', null, ['class'=>"form-control width-grande <% validar(post.url) %>", 'ng-model'=>'post.url', 'init-model'=>'post.url', 'placeholder' => '']) !!}<br>
 
-{!! Form::label('image_detail', 'Imagem na página de detalhes?') !!}<br>
+{!! Form::label('image_detail', 'Imagem na página de detalhes? *', ['ng-required'=>'true']) !!}<br>
 {!! Form::select('image_detail',
         array(
             '0' => 'Sim',
