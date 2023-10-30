@@ -5,6 +5,9 @@
         </li>
     </ul>
 </div>--}}
+<?php
+    $midias = DB::table('cms.midias')->where('status', 1)->orderBy('titulo')->get();
+?>
 
 <div class="progress">
     <div  id="progress" class="progress-bar bg-success" role="progressbar"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -112,7 +115,9 @@
         <br>
 
         <li role="presentation"><a href="" accesskey="h" @if($rota=='/') class="corrente" @endif>Início</a></li>
-        <li role="presentation"><a href="posts/1/biblioteca" @if($rota=='sobre') class="publicacoes" @endif>Biblioteca</a></li>
+        @foreach($midias as $midia)
+            <li role="presentation"><a href="{{$midia->tipo === 0 ? 'posts/' : 'posts-categorias/'}}{{$midia->id}}/{{clean($midia->titulo)}}" @if($rota=='quem') class="corrente" @endif>{{$midia->titulo}}</a></li>
+        @endforeach
         <li role="presentation"><a href="https://www.siop.planejamento.gov.br"  @if($rota=='sobre') class="corrente" @endif target="_blank">Orçamento</a></li>
         <li role="presentation"><a href="sobre" accesskey="q" @if($rota=='sobre') class="corrente" @endif>Sobre</a></li>
         <li role="presentation"><a href="mapa-do-site" accesskey="c" @if($rota=='contato') class="contato" @endif>Ajuda</a></li>
@@ -139,7 +144,13 @@
                         <div class="btn-group">
                             <ul id="menu-desk">
                                 <li role="presentation"><a href="" accesskey="h" @if($rota=='/') class="corrente" @endif>Início</a></li>
-                                <li role="presentation"><a href="posts/1/biblioteca" @if($rota=='sobre') class="publicacoes" @endif>Biblioteca</a></li>
+                                <li role="presentation"><a href="posts/1/biblioteca" @if($rota=='sobre') class="publicacoes" @endif>Biblioteca</a>
+                                    <ul class="noJS menu-desk-sub">
+                                        @foreach($midias as $midia)
+                                            <li role="presentation"><a href="{{$midia->tipo === 0 ? 'posts/' : 'posts-categorias/'}}{{$midia->id}}/{{clean($midia->titulo)}}" @if($rota=='quem') class="corrente" @endif>{{$midia->titulo}}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </li>
                                 <li role="presentation"><a href="https://www.siop.planejamento.gov.br"  @if($rota=='sobre') class="corrente" @endif target="_blank">Orçamento</a></li>
                                 <li role="presentation"><a href="sobre" accesskey="q" @if($rota=='sobre') class="corrente" @endif>Sobre</a></li>
                                 <li role="presentation"><a href="mapa-do-site" accesskey="c" @if($rota=='contato') class="contato" @endif>Ajuda</a></li>
