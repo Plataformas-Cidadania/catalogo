@@ -95,8 +95,8 @@
                             <h4><strong>Legislação</strong></h4>
                             <h2>
                             @if($politica->link_legislacao != '')
-                                <a class="btn-link" href="{{$politica->link_legislacao}}" target="_blank">
-                                    <strong>{!! $politica->instrumento_legal !!} - {{$politica->legislacao}}</strong>
+                                <a class="btn-link" href="{{$politica->link_legislacao}}" target="_blank" style="color: #3490dc">
+                                    <strong>{!! $politica->instrumento_legal !!} - {{$politica->legislacao}} <i class="fas fa-external-link-alt" style="font-size: 10px; top: -15px; position: relative;"></i></strong>
                                 </a>
                             @else
                                 <strong>{!! $politica->instrumento_legal !!} - {{$politica->legislacao}}</strong>
