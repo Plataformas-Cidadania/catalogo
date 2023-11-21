@@ -43,6 +43,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $twitter
  * @property string $instagram
  * @property string $blog
+ * @property string $bd_atualizado
  * @property int $cmsuser_id
  * @property timestamp $created_at
  * @property timestamp $updated_at
@@ -84,7 +85,8 @@ class Setting extends Model
 		'pinterest' => 'string',
 		'twitter' => 'string',
 		'instagram' => 'string',
-		'blog' => 'string'
+		'blog' => 'string',
+		'bd_atualizado' => 'string'
 	];
 
 	protected $fillable = [
@@ -118,6 +120,7 @@ class Setting extends Model
 		'pinterest',
 		'twitter',
 		'instagram',
-		'blog'
+		'blog',
+		'bd_atualizado'
 	];
 }

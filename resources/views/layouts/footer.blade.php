@@ -100,6 +100,13 @@
                         </div>
                     @endif
 
+                    <div class="col-md-12">
+                        <?php
+                        $timestamp = strtotime($setting->bd_atualizado);
+                        $dataFormatada = date('d/m/Y', $timestamp);
+?>
+                        <p style="text-align: center"><br><br>Última atualização da base de dados em {{$dataFormatada}} </p>
+                    </div>
                 </div>
             </div>
 

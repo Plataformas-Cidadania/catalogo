@@ -1,4 +1,10 @@
 {{--É NECESSÁRIO RODAR O COMANDO composer require illuminate/html E ALTERAR ACRESCENTAR LINHA NO ARQUIVO config/app.php--}}
+{!! Form::label('bd_atualizado', 'Data de atualização base de dados') !!}<br>
+{{--{!! Form::text('bd_atualizado', null, ['class'=>"form-control width-grande <% validar(setting.bd_atualizado) %>", 'ng-model'=>'setting.bd_atualizado', 'ng-required'=>'true', 'init-model'=>'setting.bd_atualizado']) !!}<br>--}}
+
+<input type="date" name="bd_atualizado"  class="form-control width-medio <% validar(setting.bd_atualizado) %>" ng-model="setting.bd_atualizado"  @if(!empty($setting)) ng-init="setting.bd_atualizado='{{$setting->bd_atualizado}}'"@endif value={{$setting->bd_atualizado}}><br>
+
+
 {!! Form::label('titulo', 'Nome') !!}<br>
 {!! Form::text('titulo', null, ['class'=>"form-control width-grande <% validar(setting.titulo) %>", 'ng-model'=>'setting.titulo', 'ng-required'=>'true', 'init-model'=>'setting.titulo']) !!}<br>
 
