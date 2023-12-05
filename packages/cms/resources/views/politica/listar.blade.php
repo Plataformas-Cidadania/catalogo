@@ -11,6 +11,7 @@
         <div class="box-padrao">
             <h1><i class="fa fa-politica" aria-hidden="true"></i>&nbsp;Politicas</h1>
             <button class="btn btn-primary" ng-click="mostrarForm=!mostrarForm" ng-show="!mostrarForm">Nova Politica</button>
+            <a class="btn btn-success" href="/api/politica/export" ng-show="!mostrarForm">Download CSV</a>
             <button class="btn btn-warning" ng-click="mostrarForm=!mostrarForm" ng-show="mostrarForm">Cancelar</button>
             <br><br>
             <div ng-show="mostrarForm">
