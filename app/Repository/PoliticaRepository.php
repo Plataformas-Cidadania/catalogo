@@ -24,6 +24,24 @@ class PoliticaRepository extends BaseRepository
         $this->model = $model;
     }
 
+    public function getAllRelationsWithNames()
+    {
+
+        return DB::select("SELECT id, 
+        (SELECT nome FROM catalogo.categoria c WHERE c.id = pc.categoria_id) AS cat_nome,
+        (SELECT nome FROM catalogo.orgao o WHERE o.id = po.orgao_id) AS orgao_nome,
+        (SELECT nome FROM catalogo.publico_alvo pa WHERE pa.id = ppa.publico_alvo_id) AS publico_alvo_nome,
+        nome, ano, medida_provisoria, medida_provisoria_inicio_vigencia, legislacao, vigencia_inicio, vigencia_fim, objetivos, observacao, acao_orcamentaria_assoc, instrumento_legal, 
+        (SELECT nome FROM catalogo.tipo_politica tp WHERE tp.id = p.tipo_politica) AS tipo_politica,
+        (SELECT nome FROM catalogo.grande_area ga WHERE ga.id = p.grande_area) AS grande_area,
+        (SELECT nome FROM catalogo.area a WHERE a.id = p.area) AS area,
+        created_at, updated_at, publico_alvo_legislacao
+     FROM catalogo.politica p
+     LEFT JOIN catalogo.politica_categoria pc ON pc.politica_id = p.id
+     LEFT JOIN catalogo.politica_orgao po ON po.politica_id = p.id
+     LEFT JOIN catalogo.politica_publico_alvo ppa ON ppa.politica_id = p.id;");
+    }
+
     public function getAllTimeline()
     {
         $models = $this->model->with('area')->get();

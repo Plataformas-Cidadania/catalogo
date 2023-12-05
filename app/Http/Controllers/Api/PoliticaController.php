@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use Exception;
 use App\Repository\PoliticaRepository;
+use Illuminate\Support\Facades\Response;
 
 class PoliticaController extends Controller
 {
@@ -56,6 +57,42 @@ class PoliticaController extends Controller
         $models =  $this->repo->all(relations: ['politica_orgao']);
         return $models;
     }
+
+    public function getAllRelationsWithNames()
+    {
+        $models =  $this->repo->getAllRelationsWithNames();
+
+        $fileName = 'politica.csv';
+        $headers = array(
+            "Content-type"        => "text/csv",
+            "Content-Disposition" => "attachment; filename=$fileName",
+            "Pragma"              => "no-cache",
+            "Cache-Control"       => "must-revalidate, post-check=0, pre-check=0",
+            "Expires"             => "0"
+        );
+
+        $columns = [];
+        $callback = function() use($models, $columns) {            
+            foreach ($models[0] as $key => $value) {
+                array_push($columns, $key);                
+            }
+            $file = fopen('php://output', 'w');
+            fputcsv($file, $columns);
+
+            foreach ($models as $model) {
+                $row = [];
+                foreach ($columns as $key => $value) {
+                    array_push($row, $model->$value);
+                }
+                fputcsv($file, $row);
+            }
+
+            fclose($file);
+        };
+
+        return response()->stream($callback, 200, $headers);
+    }
+
 
     public function getAllTimeline()
     {
