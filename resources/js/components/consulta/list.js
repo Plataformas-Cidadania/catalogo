@@ -38,7 +38,7 @@ const List = (props) => {
                                 return (
                                     <tr>
                                         <td><a href={"politica/"+item.id+"/"+clean(item.nome)}>{item.nome}</a></td>
-                                        <td>{item.grande_area?.nome}</td>
+                                        <td>{item.grande_area.nome}</td>
                                         <td>{item.area.nome}</td>
                                         <td>
                                             {

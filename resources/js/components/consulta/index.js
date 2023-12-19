@@ -39,7 +39,7 @@ const Consulta = () => {
     useEffect(() => {
         //Quando troca para consulta básica
         if(tipoConsulta === 1){
-            let newFilters = {...filters};
+            let newFilters = filters;
             delete newFilters.ano;
             delete newFilters.grande_area;
             delete newFilters.area;
@@ -49,14 +49,14 @@ const Consulta = () => {
             delete newFilters.tipo_politica;
             setFilters(newFilters);
             //Remove política do backup para não trocar o que for digitado na básica ao voltar pra consulta avançada
-            let newBackupFilters = {...backupFilters};
+            let newBackupFilters = backupFilters;
             delete newBackupFilters.politica;
             setBackupFilters(newBackupFilters);
             return;
         }
         //Quando o usuário volta pra consulta avançada então pega os filtros do backup com exceção de política
         if(tipoConsulta === 2){
-            let newFilters = {...backupFilters};
+            let newFilters = backupFilters;
             if(filters.politica){
                 newFilters.politica = filters.politica;
             }
@@ -73,7 +73,7 @@ const Consulta = () => {
         setDisabledAplicarFiltros(false);
 
         //Faz um backup dos filtros anteriores (exceto política) para retornar caso o usuário volte pra consulta avançada
-        let newBackupFilters = {...filters};
+        let newBackupFilters = filters;
         setBackupFilters(newBackupFilters);
 
         //verifica se existe backupFilters para mostrar a mensagem de que precisa aplicar os filtros para os filtros serem aplicados
@@ -94,14 +94,14 @@ const Consulta = () => {
     }, [page]);
 
     const addFilter = (item) => {
-        let newFilters = {...filters};
+        let newFilters = filters;
         newFilters[item.filter] = item.value;
         setFilters(newFilters);
         console.log(newFilters);
     }
 
     const removeFilter = (filter) => {
-        let newFilters = {...filters};
+        let newFilters = filters;
         //console.log(filter);
         delete newFilters[filter];
         //console.log('removeFilter', newFilters);
@@ -311,7 +311,7 @@ const Consulta = () => {
                                 {
                                     !loadingExportar ? (
                                         <button className="btn btn-primary" onClick={() => exportar()}>
-                                            <i className="fa fa-file-csv"/> Exportar
+                                            <i className="fa fa-file-csv"/> Exportar pesquisa
                                         </button>
                                     ) : (
                                         <button className="btn btn-primary" disabled>

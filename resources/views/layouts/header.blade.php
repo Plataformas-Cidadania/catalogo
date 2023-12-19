@@ -7,6 +7,10 @@
 </div>--}}
 <?php
     $midias = DB::table('cms.midias')->where('status', 1)->orderBy('titulo')->get();
+    $setting = DB::table('cms.settings')->orderBy('id', 'desc')->first();
+
+    $timestamp = strtotime($setting->bd_atualizado);
+    $dataFormatada = date('d/m/Y', $timestamp);
 ?>
 
 <div class="progress">
@@ -133,6 +137,9 @@
 
     <div class="container d-none d-xl-block d-sm-block">
         <div class="row">
+
+                <div style="text-align: right; margin-top: 10px;"><strong>Última atualização da base de dados em {{$dataFormatada}}</strong> </div>
+
             <div class="col-md-12">
                 <nav class="navbar navbar-light">
                     <a class="navbar-brand" href="#">

@@ -1,5 +1,26 @@
 const mix = require('laravel-mix');
+mix.webpackConfig({
+    target: ['web', 'es5'],
+});
 
+/*mix.webpackConfig({
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['es2015']
+                        /!*presets: ['@babel/preset-env'],
+                        plugins: ['@babel/plugin-proposal-object-rest-spread']*!/
+                    }
+                }
+            }
+        ]
+    }
+});*/
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -16,6 +37,7 @@ const mix = require('laravel-mix');
     require('tailwindcss'),
     require('autoprefixer'),
 ]);*/
+
 
 mix.scripts([
     'node_modules/@fortawesome/fontawesome-free/js/all.js',
