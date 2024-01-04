@@ -68,3 +68,28 @@ $(document).ready(function() {
     });
 
 })
+
+
+$(document).ready(function() {
+    var owl = $('.owl-carousel-top');
+    owl.owlCarousel({
+        margin: 10,
+        nav: false,
+        loop: true,
+        autoplay:true,
+        navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+        autoplayTimeout:15000,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 4
+            }
+        }
+    });
+
+})

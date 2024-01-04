@@ -178,18 +178,23 @@
 </style>
 
     @if($rota=='/')
-        <div class="owl-carousel owl-theme">
+        <div class="owl-carousel-top owl-theme">
+
+            {{--<img  src="https://catalogo.ipea.gov.br/imagens/webdoors/lg-2731-catalogo-1.png" alt="" width="100%">--}}
             @foreach($webdoors as $webdoor)
                 <a href="{{$webdoor->link}}">
-                    <picture>
+                    <img class="owl-lazy" src="imagens/webdoors/lg-{{$webdoor->imagem}}" alt={{$webdoor->titulo}} title={{$webdoor->titulo}} width="100%" />
+                    {{--<picture>
                         <source class="owl-lazy" media="(min-width: 350px)" data-srcset="imagens/webdoors/lg-{{$webdoor->imagem}}">
                         <source class="owl-lazy" media="(min-width: 650px)" data-srcset="imagens/webdoors/md-{{$webdoor->imagem}}">
                         <img class="owl-lazy" data-src="imagens/webdoors/lg-{{$webdoor->imagem}}" alt="">
-                    </picture>
+                        <img src="https://catalogo.ipea.gov.br/imagens/webdoors/lg-2731-catalogo-1.png" alt="">
+                    </picture>--}}
                 </a>
             @endforeach
 
         </div>
+        {{--<img class="owl-lazy" data-src="https://catalogo.ipea.gov.br/imagens/webdoors/lg-2731-catalogo-1.png" alt="">--}}
     @endif
 
 
