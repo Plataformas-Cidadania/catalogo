@@ -178,23 +178,40 @@
 </style>
 
     @if($rota=='/')
-        <div class="owl-carousel-top owl-theme">
+        <div class="owl-carousel owl-carousel-top owl-theme">
+            {{--<a href="">
+                <picture>
+                    <img  src="https://catalogo.ipea.gov.br/imagens/webdoors/lg-2731-catalogo-1.png" alt="" width="100%">
+                </picture>
+            </a>
+            <a href="">
+                <picture>
+                    <img  src="https://catalogo.ipea.gov.br/imagens/webdoors/lg-2731-catalogo-1.png" alt="" width="100%">
+                </picture>
+            </a>
+            <a href="">
+                <picture>
+                    <img  src="https://catalogo.ipea.gov.br/imagens/webdoors/lg-2731-catalogo-1.png" alt="" width="100%">
+                </picture>
+            </a>--}}
 
             {{--<img  src="https://catalogo.ipea.gov.br/imagens/webdoors/lg-2731-catalogo-1.png" alt="" width="100%">--}}
             @foreach($webdoors as $webdoor)
                 <a href="{{$webdoor->link}}">
-                    <img class="owl-lazy" src="imagens/webdoors/lg-{{$webdoor->imagem}}" alt={{$webdoor->titulo}} title={{$webdoor->titulo}} width="100%" />
-                    {{--<picture>
+                    {{--<img class="owl-lazy" src="imagens/webdoors/lg-{{$webdoor->imagem}}" alt={{$webdoor->titulo}} title={{$webdoor->titulo}} width="100%" />--}}
+                    <picture>
                         <source class="owl-lazy" media="(min-width: 350px)" data-srcset="imagens/webdoors/lg-{{$webdoor->imagem}}">
                         <source class="owl-lazy" media="(min-width: 650px)" data-srcset="imagens/webdoors/md-{{$webdoor->imagem}}">
-                        <img class="owl-lazy" data-src="imagens/webdoors/lg-{{$webdoor->imagem}}" alt="">
-                        <img src="https://catalogo.ipea.gov.br/imagens/webdoors/lg-2731-catalogo-1.png" alt="">
-                    </picture>--}}
+                        <img class="owl-lazy" data-src="imagens/webdoors/lg-{{$webdoor->imagem}}" alt="" width="100%">
+                        {{--<img src="https://catalogo.ipea.gov.br/imagens/webdoors/lg-2731-catalogo-1.png" alt="" width="100%">--}}
+                    </picture>
                 </a>
             @endforeach
 
         </div>
         {{--<img class="owl-lazy" data-src="https://catalogo.ipea.gov.br/imagens/webdoors/lg-2731-catalogo-1.png" alt="">--}}
+
+        <br /><br />
     @endif
 
 
