@@ -42,6 +42,28 @@ class PoliticaRepository extends BaseRepository
      LEFT JOIN catalogo.politica_publico_alvo ppa ON ppa.politica_id = p.id;");
     }
 
+    public function getAllInformation()
+    {
+
+        return DB::select("SELECT p.id, 
+            (SELECT nome FROM catalogo.categoria c WHERE c.id = pc.categoria_id) AS cat_nome,
+            o.nome as orgao_nome,
+            (SELECT nome FROM catalogo.publico_alvo pa WHERE pa.id = ppa.publico_alvo_id) AS publico_alvo_nome,
+            p.nome, p.ano, p.medida_provisoria, p.medida_provisoria_inicio_vigencia, p.legislacao, p.vigencia_inicio, p.vigencia_fim, p.objetivos, p.observacao, p.acao_orcamentaria_assoc, p.instrumento_legal, p.link_legislacao,
+            (SELECT nome FROM catalogo.tipo_politica tp WHERE tp.id = p.tipo_politica) AS tipo_politica,
+            (SELECT nome FROM catalogo.grande_area ga WHERE ga.id = p.grande_area) AS grande_area,
+            area.nome as area_nome, area.icone as area_icone, area.caminho_arquivo as area_arquivo,
+            aq.titulo as arquivo_nome, aq.tipo as arquivo_tipo, aq.caminho_arquivo as arquivo_caminho, aq.url_externa as arquivo_url, 
+            p.created_at, p.updated_at, p.publico_alvo_legislacao
+        FROM catalogo.politica p
+        LEFT JOIN catalogo.politica_categoria pc ON pc.politica_id = p.id
+        LEFT JOIN catalogo.politica_orgao po ON po.politica_id = p.id
+        INNER JOIN catalogo.orgao o ON o.id = po.orgao_id
+        LEFT JOIN catalogo.politica_publico_alvo ppa ON ppa.politica_id = p.id
+        LEFT JOIN catalogo.area area ON area.id = p.id
+        LEFT JOIN catalogo.arquivo aq ON aq.politica_id = p.id");
+    }
+
     public function getAllTimeline()
     {
         $models = $this->model->with('area')->get();

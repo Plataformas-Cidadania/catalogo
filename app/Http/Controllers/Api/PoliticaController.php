@@ -58,9 +58,15 @@ class PoliticaController extends Controller
         return $models;
     }
 
-    public function getAllRelationsWithNames()
+    public function getAllRelationsWithNames($allInformation=null)
     {
-        $models =  $this->repo->getAllRelationsWithNames();
+        if($allInformation == 'all')
+            $models =  $this->repo->getAllRelationsWithNames();
+        elseif($allInformation == null)
+            $models =  $this->repo->getAllInformation();
+        else
+            return $this->errorResponse('Not found');
+        
 
         $fileName = 'politica.csv';
         $headers = array(
@@ -84,6 +90,7 @@ class PoliticaController extends Controller
                 foreach ($columns as $key => $value) {
                     array_push($row, $model->$value);
                 }
+                
                 fputcsv($file, $row);
             }
 
