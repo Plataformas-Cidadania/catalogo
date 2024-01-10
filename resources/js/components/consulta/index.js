@@ -13,6 +13,7 @@ const Consulta = () => {
     const [politicas, setPoliticas] = useState([]);
     const [loading, setLoading] = useState(false);
     const [loadingExportar, setLoadingExportar] = useState(false);
+    const [loadingExportar2, setLoadingExportar2] = useState(false);
     const [disabledAplicarFiltros, setDisabledAplicarFiltros] = useState(true);
     const [showMessageFiltroPolitica, setShowMessageFiltroPolitica] = useState(false);
     const [total, setTotal] = useState(0);
@@ -196,6 +197,30 @@ const Consulta = () => {
         setLoadingExportar(false);
     }
 
+    const exportarAll = async () => {
+        setLoadingExportar2(true);
+
+        const result = await axios.get('api/politica/export/all');
+
+        let downloadLink = document.createElement("a");
+        let fileData = ['\ufeff' + result.data];
+
+        let blobObject = new Blob(fileData, {
+            type: "text/csv;charset=utf-8;"
+        });
+
+        let url = URL.createObjectURL(blobObject);
+        downloadLink.href = url;
+        downloadLink.download = "politicas-base.csv";
+
+        /* Actually download CSV */
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+
+        setLoadingExportar2(false);
+    };
+
     return (
         <div onClick={() => setCloseSearch(true)}>
             <div className="row">
@@ -315,6 +340,17 @@ const Consulta = () => {
                                         </button>
                                     ) : (
                                         <button className="btn btn-primary" disabled>
+                                            <i className="fa fa-spinner fa-spin"/> Processando
+                                        </button>
+                                    )
+                                }
+                                {
+                                    !loadingExportar2 ? (
+                                        <button className="btn btn-success text-white" style="margin-left=10px" onClick={() => exportarAll()}>
+                                            <i className="fa fa-file-csv"/> Exportar base
+                                        </button>
+                                    ) : (
+                                        <button className="btn btn-success text-white" disabled>
                                             <i className="fa fa-spinner fa-spin"/> Processando
                                         </button>
                                     )
