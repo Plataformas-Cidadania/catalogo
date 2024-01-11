@@ -12,6 +12,7 @@ const Politica = (props) => {
         if(search.length === 0){
             props.removeFilter('politica');
         }
+
     }, [search]);
 
     const handleSearch = (event) => {

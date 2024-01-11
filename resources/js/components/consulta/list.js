@@ -35,6 +35,14 @@ const List = (props) => {
                     ) : (
                         items.length > 0 ? (
                             items.map((item) => {
+
+                                var dataOriginal = item.vigencia_inicio;
+                                var dataObj = new Date(dataOriginal);
+
+                                var dia = ('0' + dataObj.getDate()).slice(-2);
+                                var mes = ('0' + (dataObj.getMonth() + 1)).slice(-2);
+                                var ano = dataObj.getFullYear();
+                                var dataFormatada = dia + '/' + mes + '/' + ano;
                                 return (
                                     <tr>
                                         <td><a href={"politica/"+item.id+"/"+clean(item.nome)}>{item.nome}</a></td>
@@ -48,7 +56,7 @@ const List = (props) => {
                                             }
                                         </td>
                                         <td>{item.ano.substring(0, 4)}</td>
-                                        <td>{item.vigencia_inicio}</td>
+                                        <td>{dataFormatada}</td>
                                     </tr>
                                 );
                             })

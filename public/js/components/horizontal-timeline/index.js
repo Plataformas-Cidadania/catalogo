@@ -1,7 +1,7 @@
 import React from 'react';
 
 const HorizontalTimeline = () => {
-    return React.createElement('div', null);
+  return /*#__PURE__*/React.createElement("div", null);
 };
 
 export default HorizontalTimeline;
