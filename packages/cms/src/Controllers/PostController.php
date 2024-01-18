@@ -64,6 +64,18 @@ class PostController extends Controller
             $newCampos[] = $prefix . '.' . $campo;
         }
 
+        /*$posts = DB::table('cms.posts')
+            ->join('cms.categorias_posts', 'cms.categorias_posts.post_id', '=', 'cms.posts.id')
+            ->join('cms.categorias', 'cms.categorias.id', '=', 'cms.categorias_posts.categoria_id')
+            ->join('cms.midias', 'cms.midias.id', '=', 'cms.categorias.midia_id')
+            ->where('cms.categorias.midia_id', '=', $request->midia_id)
+            ->select($newCampos)
+            ->where([
+                ['cms.posts.'.$request->campoPesquisa, 'ilike', "%$request->dadoPesquisa%"]
+            ])
+            ->orderBy($request->ordem, $request->sentido)
+            ->paginate($request->itensPorPagina);*/
+
         $posts = DB::table('cms.posts')
             ->join('cms.categorias_posts', 'cms.categorias_posts.post_id', '=', 'cms.posts.id')
             ->join('cms.categorias', 'cms.categorias.id', '=', 'cms.categorias_posts.categoria_id')
@@ -74,7 +86,10 @@ class PostController extends Controller
                 ['cms.posts.'.$request->campoPesquisa, 'ilike', "%$request->dadoPesquisa%"]
             ])
             ->orderBy($request->ordem, $request->sentido)
+            ->groupBy('cms.posts.id') // Agrupa pelos IDs dos posts
             ->paginate($request->itensPorPagina);
+
+
         return $posts;
     }
 
@@ -120,13 +135,13 @@ class PostController extends Controller
 
         if($successFile && $successArquivo){
             $insert =  $this->post->create($data['post']);
-            /////////////////////////
+
             $authorArtigo = new \App\Models\IntegrantePost;
             $dadosAuthorArtigo = Array();
             $dadosAuthorArtigo['post_id'] = $insert->id;
 
 
-            //if($data['post']['integrante_post']!=1){
+
             foreach($data["integrante_post"] as $autor => $marcado){
                 if($marcado=='true'){
                     $array_autor = explode('_', $autor);
@@ -146,15 +161,12 @@ class PostController extends Controller
                     $catArtigo->create($dadosCatArtigo);
                 }
             }
-            //}
+
         }else{
             return "erro";
         }
 
-
         //$insert = $this->post->create($data['post']);
-
-
         return $insert;
 
     }

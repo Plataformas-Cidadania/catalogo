@@ -65,7 +65,7 @@ class PostController extends Controller{
             ->where('cms.midias.id', $midia_id)
             ->groupBy('cms.categorias.id', 'cms.categorias.titulo')
             ->distinct()
-            ->paginate(15);
+            ->paginate(1000);
 
         return view('post.list-cat', ['midia_id' => $midia_id, 'categories' => $categories]);
     }
@@ -74,7 +74,7 @@ class PostController extends Controller{
         $posts = \App\Models\Post::select("cms.posts.*")
             ->join('cms.categorias_posts', 'cms.posts.id', '=', 'cms.categorias_posts.post_id')
             ->where('cms.categorias_posts.categoria_id', $category_id)
-            ->paginate(15);
+            ->paginate(1000);
 
         return view('post.list-table', ['category_id' => $category_id, 'posts' => $posts]);
     }

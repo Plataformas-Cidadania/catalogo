@@ -38,7 +38,7 @@
             '0' => 'Sim',
             '1' => 'Não'
         ),
-null, ['class'=>"form-control width-medio <% validar(post.image_detail) %>", 'ng-model'=>'post.image_detail', 'init-model'=>'post.image_detail', 'placeholder' => 'Selecione']) !!}<br>
+null, ['class'=>"form-control width-medio <% validar(post.image_detail) %>", 'ng-required'=>'true', 'ng-model'=>'post.image_detail', 'init-model'=>'post.image_detail', 'placeholder' => 'Selecione']) !!}<br>
 
 
 <p><strong>Categorias *</strong></p>
