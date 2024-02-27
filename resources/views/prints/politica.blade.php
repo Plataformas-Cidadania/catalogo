@@ -95,17 +95,14 @@
                     @endforeach
 
                 </div>
+
             </div>
         </div>
 
 
 
         <div class="row break">
-
             <div class="bg-title2">Ministérios</div>
-
-
-
             <div class="boxContainer" style="margin: 15px 15px 15px 15px;">
                 @foreach($politica->orgaos as $orgao)
                     <div class="box" style="min-width: 350px;">
@@ -114,6 +111,13 @@
                 @endforeach
             </div>
         </div>
+
+        @if($politica->observacao)
+            <div>
+                <p class="line-title"><strong>Observação</strong></p>
+                <p class="" style="padding: 0 15px">{!! $politica->observacao !!}</p>
+            </div>
+        @endif
 
 
     </div>

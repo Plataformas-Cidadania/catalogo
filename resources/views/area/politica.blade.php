@@ -220,11 +220,13 @@
                 </div>
 
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <h3>Arquivos</h3>
+                @if(count($arquivos) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Arquivos</h3>
+                        </div>
                     </div>
-                </div>
+                @endif
 
                 <div class="row">
                     @foreach($arquivos as $arquivo)
@@ -254,6 +256,13 @@
 
                 </div>
 
+                @if($politica->observacao)
+                    <div class="p-2 mb-4 linsBor">
+                        <strong>Observação</strong><br>
+                        {!! $politica->observacao !!}
+                    </div>
+                @endif
+
 
             </div>
 
@@ -271,8 +280,6 @@
             flex: 1;
             justify-content: space-between;
             margin: 5px 15px;
-            min-width: 17%;
-
         }
     </style>
 
