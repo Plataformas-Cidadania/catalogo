@@ -45,17 +45,17 @@ const List = (props) => {
                                 var dataFormatada = dia + '/' + mes + '/' + ano;
                                 return (
                                     <tr>
-                                        <td><a href={"politica/"+item.id+"/"+clean(item.nome)}>{item.nome}</a></td>
-                                        <td>{item.grande_area.nome}</td>
-                                        <td>{item.area.nome}</td>
+                                        <td><a href={"politica/"+item.id+"/"+clean(item?.nome)}>{item?.nome}</a></td>
+                                        <td>{item.grande_area?.nome}</td>
+                                        <td>{item.area?.nome}</td>
                                         <td>
                                             {
                                                 item.politica_categoria.map((categoria, index) => {
-                                                    return categoria.categoria.nome + (index < item.politica_categoria.length-1 ? " - " : "");
+                                                    return categoria.categoria?.nome + (index < item.politica_categoria?.length-1 ? " - " : "");
                                                 })
                                             }
                                         </td>
-                                        <td>{item.ano.substring(0, 4)}</td>
+                                        <td>{item.ano?.substring(0, 4)}</td>
                                         <td>{dataFormatada}</td>
                                     </tr>
                                 );

@@ -29,10 +29,10 @@ const List = props => {
     var ano = dataObj.getFullYear();
     var dataFormatada = dia + '/' + mes + '/' + ano;
     return /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("a", {
-      href: "politica/" + item.id + "/" + clean(item.nome)
-    }, item.nome)), /*#__PURE__*/React.createElement("td", null, item.grande_area.nome), /*#__PURE__*/React.createElement("td", null, item.area.nome), /*#__PURE__*/React.createElement("td", null, item.politica_categoria.map((categoria, index) => {
-      return categoria.categoria.nome + (index < item.politica_categoria.length - 1 ? " - " : "");
-    })), /*#__PURE__*/React.createElement("td", null, item.ano.substring(0, 4)), /*#__PURE__*/React.createElement("td", null, dataFormatada));
+      href: "politica/" + item.id + "/" + clean(item?.nome)
+    }, item?.nome)), /*#__PURE__*/React.createElement("td", null, item.grande_area?.nome), /*#__PURE__*/React.createElement("td", null, item.area?.nome), /*#__PURE__*/React.createElement("td", null, item.politica_categoria.map((categoria, index) => {
+      return categoria.categoria?.nome + (index < item.politica_categoria?.length - 1 ? " - " : "");
+    })), /*#__PURE__*/React.createElement("td", null, item.ano?.substring(0, 4)), /*#__PURE__*/React.createElement("td", null, dataFormatada));
   }) : /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {
     colSpan: 6
   }, /*#__PURE__*/React.createElement("h4", {
