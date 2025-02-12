@@ -20,7 +20,7 @@
 <div class="bg-lgt d-print-none topM" id="acessibilidade" >
     <div class="container">
         <div class="row">
-            <div class="col-6 celHider">
+            <div class="col-5 celHider">
                 <ul id="atalhos" class="top-links">
                     <?php
                     $currentRequest = Request::url();
@@ -44,6 +44,10 @@
                     <li class="bg-ter box-font-size rounded-circle cursor"><a id="reduz_fonte">A-</a></li>
                     <li><a class="btn-constrat cursor"><i class="fas fa-adjust fa-2x" style="vertical-align: middle;"></i> {{--Alto contraste--}}</a></li>
                     <li><a href="acessibilidade"><i class="fas fa-universal-access fa-2x" style="vertical-align: middle;"></i> <!--Acessibilidade--></a></li>
+
+                    <a href="javascript:trocarIdioma('pt')"><img alt="português" src="img/pt.jpg"></a>
+                    <a href="javascript:trocarIdioma('es')"><img alt="espanhol" src="img/es.jpg"></a>
+                    <a href="javascript:trocarIdioma('en')"><img alt="ingles" src="img/en.jpg"></a>
                 </ul>
             </div>
         </div>
@@ -82,6 +86,55 @@
 
     }());
 </script>
+<script type="text/javascript">
+    var comboGoogleTradutor = null; //Varialvel global
+
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'pt',
+            includedLanguages: 'en,es,pt',
+            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+        }, 'google_translate_element');
+
+        comboGoogleTradutor = document.getElementById("google_translate_element").querySelector(".goog-te-combo");
+    }
+
+    function changeEvent(el) {
+        if (el.fireEvent) {
+            el.fireEvent('onchange');
+        } else {
+            var evObj = document.createEvent("HTMLEvents");
+
+            evObj.initEvent("change", false, true);
+            el.dispatchEvent(evObj);
+        }
+    }
+
+    function trocarIdioma(sigla) {
+        if (comboGoogleTradutor) {
+            comboGoogleTradutor.value = sigla;
+            changeEvent(comboGoogleTradutor);//Dispara a troca
+        }
+    }
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<style type="text/css">
+    #google_translate_element {
+        display: none;
+    }
+
+    .skiptranslate {
+        display: none !important;
+    }
+    .goog-te-banner-frame {
+        display: none !important;
+    }
+    body {
+        position: static !important;
+        top: 0 !important;
+    }
+
+</style>
 
 <style>
     .box-font-size{
