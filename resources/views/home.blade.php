@@ -4,7 +4,7 @@
 @section('content')
 
     <?php
-        $colors = ['bg-pri', 'bg-sec', 'bg-ter'];
+        $colors = ['bg-pri', 'bg-sec', 'bg-ter', 'bg-qua', 'bg-qui', 'bg-sex'];
     ?>
 
 
@@ -21,9 +21,9 @@
                             <i class="far fa-gem fa-4x mt-5 mb-4 "></i>
                         @endif
 
-                        {{--<i class="far fa-gem fa-4x m-5"></i>--}}
+                        <i class="far fa-gem fa-4x m-5"></i>
                         <h2>{{$destaque->titulo}}<br><br></h2>
-                        {{--<p>{{$destaque->resumida}}</p>--}}
+                        <p>{{$destaque->resumida}}</p>
                     </div>
                 </a>
             </div>
