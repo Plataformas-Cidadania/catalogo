@@ -264,6 +264,13 @@
                 @endif
 
 
+                    <div class="p-2 mb-4 linsBor" style="max-height: 500px; overflow-y: auto;">
+                        <strong>Ação orçamentária</strong><br>
+                        {!! $politica->acao_orcamentaria_assoc !!}
+                    </div>
+
+
+
             </div>
 
         </div>

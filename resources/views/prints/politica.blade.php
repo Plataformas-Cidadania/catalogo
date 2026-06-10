@@ -119,6 +119,11 @@
             </div>
         @endif
 
+        <div style="padding: 0 15px;">
+            <p class="line-title"><strong>Ação orçamentária</strong></p>
+            {!! $politica->acao_orcamentaria_assoc !!}
+        </div>
+
 
     </div>
 
