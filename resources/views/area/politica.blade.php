@@ -263,7 +263,7 @@
                     </div>
                 @endif
 
-                    @if($politica->acao_orcamentaria_assoc==='Não se aplica:')
+
                     <div class="p-2 mb-4 linsBor" >
                         <strong>Ação orçamentária</strong><br><br>
                         <div style="max-height: 500px; overflow-y: auto;">
@@ -280,7 +280,7 @@
                             @endforeach
                         </div>
                     </div>
-                    @endif
+
 
 
 
