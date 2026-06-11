@@ -263,11 +263,24 @@
                     </div>
                 @endif
 
-
-                    <div class="p-2 mb-4 linsBor" style="max-height: 500px; overflow-y: auto;">
-                        <strong>Ação orçamentária</strong><br>
-                        {!! $politica->acao_orcamentaria_assoc !!}
+                    @if($politica->acao_orcamentaria_assoc==='Não se aplica:')
+                    <div class="p-2 mb-4 linsBor" >
+                        <strong>Ação orçamentária</strong><br><br>
+                        <div style="max-height: 500px; overflow-y: auto;">
+                            @foreach(explode("\n", $politica->acao_orcamentaria_assoc) as $linha)
+                                @if(trim($linha))
+                                    @php
+                                        $partes = explode(':', trim($linha), 2);
+                                    @endphp
+                                    <div style="margin-bottom: 8px;">
+                                        <strong>{{ $partes[0] }}:</strong>
+                                        <span>{{ isset($partes[1]) ? trim($partes[1]) : '' }}</span>
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
                     </div>
+                    @endif
 
 
 

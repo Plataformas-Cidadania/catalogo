@@ -119,10 +119,22 @@
             </div>
         @endif
 
+        @if(trim($politica->acao_orcamentaria_assoc ?? ''))
         <div style="padding: 0 15px;">
             <p class="line-title"><strong>Ação orçamentária</strong></p>
-            {!! $politica->acao_orcamentaria_assoc !!}
+            @foreach(explode("\n", $politica->acao_orcamentaria_assoc) as $linha)
+                @if(trim($linha))
+                    @php
+                        $partes = explode(':', trim($linha), 2);
+                    @endphp
+                    <div style="margin-bottom: 8px; padding: 0 15px;">
+                        <strong>{{ $partes[0] }}:</strong>
+                        <span>{{ isset($partes[1]) ? trim($partes[1]) : '' }}</span>
+                    </div>
+                @endif
+            @endforeach
         </div>
+        @endif
 
 
     </div>
