@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $descricao
  * @property string|null $arquivo
  * @property string|null $slug
+ * @property int $posicao
  * @property int $status
  * @property int $show
  * @property int $tipo_id
@@ -37,6 +38,7 @@ class Modulo extends Model
 	protected $casts = [
 		'imagem' => 'string',
 		'titulo' => 'string',
+		'posicao' => 'int',
 		'status' => 'int',
 		'show' => 'int',
 		'tipo_id' => 'int'
@@ -49,6 +51,7 @@ class Modulo extends Model
 		'resumida',
 		'arquivo',
 		'slug',
+		'posicao',
 		'status',
 		'show',
 		'tipo_id'

@@ -1,7 +1,18 @@
-import React from 'react';
+'use strict';
 
-const HorizontalTimeline = () => {
-  return /*#__PURE__*/React.createElement("div", null);
+Object.defineProperty(exports, '__esModule', {
+    value: true
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var HorizontalTimeline = function HorizontalTimeline() {
+    return _react2['default'].createElement('div', null);
 };
 
-export default HorizontalTimeline;
+exports['default'] = HorizontalTimeline;
+module.exports = exports['default'];

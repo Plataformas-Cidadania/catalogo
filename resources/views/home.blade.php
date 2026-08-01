@@ -4,7 +4,7 @@
 @section('content')
 
     <?php
-        $colors = ['bg-pri', 'bg-sec', 'bg-ter', 'bg-qua', 'bg-qui', 'bg-sex'];
+        $colors = ['bg-pri', 'bg-sec', 'bg-qui', 'bg-ter'];
     ?>
 
 
@@ -12,9 +12,9 @@
         <div class="row">
 
             @foreach($destaques as $key => $destaque)
-            <div class="col-md-4 mb-4">
+            <div class="col-md-3 mb-3">
                 <a href="{{$destaque->slug}}">
-                    <div class="box {{$colors[$key]}}">
+                    <div class="box {{$colors[$key % count($colors)]}}">
                         @if(!empty($destaque->imagem))
                             <img src="/img/pre-img.gif" data-src="/imagens/modulos/md-{{$destaque->imagem}}" alt="Imagem sobre {{$destaque->titulo}}" title="Imagem sobre {{$destaque->titulo}}" width="170" class="lazyload">
                         @else

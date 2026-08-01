@@ -1,90 +1,165 @@
-const Timeline = props => {
-  const {
-    useEffect,
-    useState
-  } = React;
-  const [anoModal, setAnoModal] = useState(null);
-  const [politicasModal, setPoliticasModal] = useState([]);
-  const style = {
-    politica: {
-      maxWidth: "15ch",
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
-    }
-  };
-  useEffect(() => {
-    if (props.item) {
-      timeline(document.querySelectorAll('#' + props.id), {
-        mode: 'horizontal',
-        visibleItems: 4
-      });
-    }
-  }, [props]);
+"use strict";
 
-  const modalPoliticas = (ano, politicas) => {
-    setAnoModal(ano);
-    setPoliticasModal(politicas);
-    $("#modal" + props.id).modal('show');
-  };
+var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; })();
 
-  return props.item ? /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-    className: "modal fade",
-    id: "modal" + props.id,
-    tabIndex: "-1",
-    "aria-labelledby": "modal" + props.id + "Label",
-    "aria-hidden": "true"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "modal-dialog modal-dialog-centered"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "modal-content"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "modal-header"
-  }, /*#__PURE__*/React.createElement("h5", {
-    className: "modal-title",
-    id: "modal" + props.id + "Label"
-  }, props.area, " - ", anoModal)), /*#__PURE__*/React.createElement("div", {
-    className: "modal-body"
-  }, politicasModal.map((politica, key) => {
-    return /*#__PURE__*/React.createElement("p", {
-      key: props.item.area + "_modal_politica_" + key
-    }, /*#__PURE__*/React.createElement("a", {
-      href: "politica/1/titulo"
-    }, politica.nome_politica));
-  }))))), /*#__PURE__*/React.createElement("div", {
-    className: "timeline",
-    id: props.id
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "timeline__wrap",
-    style: {
-      minHeight: '450px'
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "timeline__items"
-  }, Object.entries(props.item.anos).map((subitem, key) => {
-    const ano = subitem[0];
-    const politicas = subitem[1];
-    return /*#__PURE__*/React.createElement("div", {
-      key: props.item.area + "_ano_" + key,
-      className: "timeline__item"
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "timeline__content"
-    }, /*#__PURE__*/React.createElement("h3", {
-      className: key % 2 === 0 ? 'timeline-ano' : 'timeline-ano-2'
-    }, ano), /*#__PURE__*/React.createElement("div", {
-      className: "tariffCards",
-      style: {
-        top: key % 2 === 0 ? 0 : 0
-      }
-    }, politicas.map((politica, key) => {
-      let id = 1;
-      let partePolitica = politica.nome_politica.substr(0, 50); //partePolitica += politica.nome_politica.length > 30 ? ' ...' : ''
+var Timeline = function Timeline(props) {
+    var _React = React;
+    var useEffect = _React.useEffect;
+    var useState = _React.useState;
 
-      partePolitica += politica.nome_politica.length > 30 ? ' ' : '';
-      return /*#__PURE__*/React.createElement("div", {
-        className: "cor" + key,
-        key: props.item.area + "_politica_" + key
-      }, /*#__PURE__*/React.createElement("h3", null, partePolitica), /*#__PURE__*/React.createElement("span", null, "Full Insurance"));
-    }))));
-  }))))) : /*#__PURE__*/React.createElement("div", null, "\xA0");
+    var _useState = useState(null);
+
+    var _useState2 = _slicedToArray(_useState, 2);
+
+    var anoModal = _useState2[0];
+    var setAnoModal = _useState2[1];
+
+    var _useState3 = useState([]);
+
+    var _useState32 = _slicedToArray(_useState3, 2);
+
+    var politicasModal = _useState32[0];
+    var setPoliticasModal = _useState32[1];
+
+    var style = {
+        politica: {
+            maxWidth: "15ch",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            whiteSpace: "nowrap"
+        }
+    };
+
+    useEffect(function () {
+        if (props.item) {
+            timeline(document.querySelectorAll('#' + props.id), {
+                mode: 'horizontal',
+                visibleItems: 4
+            });
+        }
+    }, [props]);
+
+    var modalPoliticas = function modalPoliticas(ano, politicas) {
+        setAnoModal(ano);
+        setPoliticasModal(politicas);
+        $("#modal" + props.id).modal('show');
+    };
+
+    return props.item ? React.createElement(
+        "div",
+        null,
+        React.createElement(
+            "div",
+            { className: "modal fade", id: "modal" + props.id, tabIndex: "-1", "aria-labelledby": "modal" + props.id + "Label", "aria-hidden": "true" },
+            React.createElement(
+                "div",
+                { className: "modal-dialog modal-dialog-centered" },
+                React.createElement(
+                    "div",
+                    { className: "modal-content" },
+                    React.createElement(
+                        "div",
+                        { className: "modal-header" },
+                        React.createElement(
+                            "h5",
+                            { className: "modal-title", id: "modal" + props.id + "Label" },
+                            props.area,
+                            " - ",
+                            anoModal
+                        )
+                    ),
+                    React.createElement(
+                        "div",
+                        { className: "modal-body" },
+                        politicasModal.map(function (politica, key) {
+                            return React.createElement(
+                                "p",
+                                { key: props.item.area + "_modal_politica_" + key },
+                                React.createElement(
+                                    "a",
+                                    { href: "politica/1/titulo" },
+                                    politica.nome_politica
+                                )
+                            );
+                        })
+                    )
+                )
+            )
+        ),
+        React.createElement(
+            "div",
+            { className: "timeline", id: props.id },
+            React.createElement(
+                "div",
+                { className: "timeline__wrap", style: { minHeight: '450px' } },
+                React.createElement(
+                    "div",
+                    { className: "timeline__items" },
+                    Object.entries(props.item.anos).map(function (subitem, key) {
+                        var ano = subitem[0];
+                        var politicas = subitem[1];
+                        return React.createElement(
+                            "div",
+                            { key: props.item.area + "_ano_" + key, className: "timeline__item" },
+                            React.createElement(
+                                "div",
+                                { className: "timeline__content" },
+                                React.createElement(
+                                    "h3",
+                                    { className: key % 2 === 0 ? 'timeline-ano' : 'timeline-ano-2' },
+                                    ano
+                                ),
+                                React.createElement(
+                                    "div",
+                                    { className: "tariffCards", style: { top: key % 2 === 0 ? 0 : 0 } },
+                                    politicas.map(function (politica, key) {
+                                        var id = 1;
+                                        var partePolitica = politica.nome_politica.substr(0, 50);
+                                        //partePolitica += politica.nome_politica.length > 30 ? ' ...' : ''
+                                        partePolitica += politica.nome_politica.length > 30 ? ' ' : '';
+                                        return React.createElement(
+                                            "div",
+                                            { className: "cor" + key, key: props.item.area + "_politica_" + key },
+                                            React.createElement(
+                                                "h3",
+                                                null,
+                                                partePolitica
+                                            ),
+                                            React.createElement(
+                                                "span",
+                                                null,
+                                                "Full Insurance"
+                                            )
+                                        );
+                                    })
+                                )
+                            )
+                        );
+                    })
+                )
+            )
+        )
+    ) : React.createElement(
+        "div",
+        null,
+        " "
+    );
 };
+/*<div className="tariffCards">
+   <div className="economy">
+       <h3>Programa Nacional do Milho (PROMILHO)</h3>
+       <span>Full Insurance</span>
+   </div>
+   <div className="premiumeconomy">
+       <h3>Programa Nacional de Irrigação (PRONI)</h3>
+       <span>Full Insurance</span>
+   </div>
+   <div className="business">
+       <h3>Programa FINOR-ALIMENTOS</h3>
+       <span>Full Insurance</span>
+   </div>
+   <div className="first">
+       <h3>Programa de Irrigação do Nordeste (PROINE)</h3>
+       <span>Full Insurance</span>
+   </div>
+</div>*/ /*<button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"/>*/ /*<div className="tariffCards" style={{top: key % 2 === 0 ? 35 : 175}}>*/

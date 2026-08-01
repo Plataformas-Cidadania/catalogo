@@ -7,11 +7,11 @@ cmsApp.controller('moduloCtrl', ['$scope', '$http', 'Upload', '$timeout', functi
     $scope.maxSize = 5;
     $scope.itensPerPage = 10;
     $scope.dadoPesquisa = '';
-    $scope.campos = "id, titulo, imagem, status";
+    $scope.campos = "id, titulo, imagem, status, posicao";
     $scope.campoPesquisa = "titulo";
     $scope.processandoListagem = false;
     $scope.processandoExcluir = false;
-    $scope.ordem = "titulo";
+    $scope.ordem = "posicao";
     $scope.sentidoOrdem = "asc";
     var $listar = false;//para impedir de carregar o conteúdo dos watchs no carregamento da página.
 
@@ -195,6 +195,28 @@ cmsApp.controller('moduloCtrl', ['$scope', '$http', 'Upload', '$timeout', functi
             $scope.message = "Ocorreu um erro: "+data;
             $scope.processandoStatus = false;
             $scope.mensagemStatus = "Erro ao tentar status!";
+        });
+    };
+
+    $scope.positionUp = function(id){
+        $scope.idPositionUp = '';
+        $http({
+            url: 'cms/positionUp-modulo/'+id,
+            method: 'GET'
+        }).success(function(data, positionUp, headers, config){
+            $scope.idPositionUp = id;
+            listarModulos();
+        });
+    };
+
+    $scope.positionDown = function(id){
+        $scope.idPositionDown = '';
+        $http({
+            url: 'cms/positionDown-modulo/'+id,
+            method: 'GET'
+        }).success(function(data, positionDown, headers, config){
+            $scope.idPositionDown = id;
+            listarModulos();
         });
     };
 

@@ -16,6 +16,8 @@ null, ['class'=>"form-control width-medio <% validar(modulo.tipo_id) %>", 'ng-mo
 
 {!! Form::label('slug', 'slug *') !!}<br>
 {!! Form::text('slug', null, ['class'=>"form-control width-medio <% validar(modulo.slug) %>", 'ng-model'=>'modulo.slug', 'ng-required'=>'true', 'init-model'=>'modulo.slug', 'placeholder' => '']) !!}<br>
+{!! Form::label('posicao', 'Posição *') !!}<br>
+{!! Form::number('posicao', null, ['class'=>"form-control width-pequeno <% validar(modulo.posicao) %>", 'ng-model'=>'modulo.posicao', 'ng-required'=>'true', 'init-model'=>'modulo.posicao', 'placeholder' => '']) !!}<br>
 
 {!! Form::label('descricao', 'Descrição *') !!}<br>
 {!! Form::textarea('descricao', null, ['class'=>"form-control width-grande <% validar(modulo.descricao) %>", 'ui-tinymce'=>'tinymceOptions', 'ng-model'=>'modulo.descricao', 'init-model'=>'modulo.descricao']) !!}<br>

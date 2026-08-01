@@ -20,7 +20,7 @@ class ModuloController extends Controller
     {
         $this->modulo = new \App\Models\Modulo;
         $this->campos = [
-            'imagem', 'titulo', 'descricao', 'arquivo', 'slug', 'tipo_id', 'show', 'cmsuser_id', 'resumida',
+            'imagem', 'titulo', 'descricao', 'arquivo', 'slug', 'tipo_id', 'show', 'cmsuser_id', 'resumida', 'posicao',
         ];
         $this->pathImagem = public_path().'/imagens/modulos';
         $this->sizesImagem = [
@@ -38,7 +38,7 @@ class ModuloController extends Controller
     {
 
         $tipos = \App\Models\Tipo::pluck('titulo', 'id')->all();
-        $modulos = \App\Models\Modulo::all();
+        $modulos = \App\Models\Modulo::orderBy('posicao')->orderBy('id')->get();
         //$idiomas = \App\Idioma::lists('titulo', 'id')->all();
 
 
@@ -280,6 +280,26 @@ class ModuloController extends Controller
         $status = $tipo_atual->status == 0 ? 1 : 0;
         DB::table('cms.modulos')->where('id', $id)->update(['status' => $status]);
 
+    }
+
+    public function positionUp($id)
+    {
+        $posicao_atual = DB::table('cms.modulos')->where('id', $id)->first();
+        $upPosicao = $posicao_atual->posicao - 1;
+        $posicao = $posicao_atual->posicao;
+
+        DB::table('cms.modulos')->where('posicao', $upPosicao)->update(['posicao' => $posicao]);
+        DB::table('cms.modulos')->where('id', $id)->update(['posicao' => $upPosicao]);
+    }
+
+    public function positionDown($id)
+    {
+        $posicao_atual = DB::table('cms.modulos')->where('id', $id)->first();
+        $downPosicao = $posicao_atual->posicao + 1;
+        $posicao = $posicao_atual->posicao;
+
+        DB::table('cms.modulos')->where('posicao', $downPosicao)->update(['posicao' => $posicao]);
+        DB::table('cms.modulos')->where('id', $id)->update(['posicao' => $downPosicao]);
     }
 
 
