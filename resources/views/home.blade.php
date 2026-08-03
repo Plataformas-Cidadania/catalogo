@@ -12,8 +12,9 @@
         <div class="row">
 
             @foreach($destaques as $key => $destaque)
+            @php($href = !empty($destaque->slug) ? $destaque->slug : $destaque->url)
             <div class="col-md-3 mb-3">
-                <a href="{{$destaque->slug}}">
+                <a href="{{$href}}">
                     <div class="box {{$colors[$key % count($colors)]}}">
                         @if(!empty($destaque->imagem))
                             <img src="/img/pre-img.gif" data-src="/imagens/modulos/md-{{$destaque->imagem}}" alt="Imagem sobre {{$destaque->titulo}}" title="Imagem sobre {{$destaque->titulo}}" width="170" class="lazyload">

@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $descricao
  * @property string|null $arquivo
  * @property string|null $slug
+ * @property string|null $url
  * @property int $posicao
  * @property int $status
  * @property int $show
@@ -51,6 +52,7 @@ class Modulo extends Model
 		'resumida',
 		'arquivo',
 		'slug',
+		'url',
 		'posicao',
 		'status',
 		'show',
