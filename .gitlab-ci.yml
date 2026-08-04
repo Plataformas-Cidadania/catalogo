@@ -4,7 +4,7 @@ stages:
 build:
   stage: build
   tags:
-    - linux
+    - catalogo-desenv
   image:
     name: gcr.io/kaniko-project/executor:debug
     entrypoint: [""]
