@@ -34,3 +34,11 @@ null, ['class'=>"form-control width-medio <% validar(modulo.tipo_id) %>", 'ng-mo
             '2' => 'Colunas',
         ),
 null, ['class'=>"form-control width-medio <% validar(modulo.show) %>", 'ng-model'=>'modulo.show', 'init-model'=>'modulo.show', 'placeholder' => 'Sem Tipo']) !!}<br>
+
+{!! Form::label('ativo', 'Ativo') !!}<br>
+{!! Form::select('ativo',
+        array(
+            '1' => 'Sim',
+            '0' => 'Nao',
+        ),
+null, ['class'=>"form-control width-medio <% validar(modulo.ativo) %>", 'ng-model'=>'modulo.ativo', 'init-model'=>'modulo.ativo']) !!}<br>

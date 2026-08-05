@@ -22,6 +22,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $posicao
  * @property int $status
  * @property int $show
+ * @property int $ativo
  * @property int $tipo_id
  * @property int $cmsuser_id
  * @property timestamp $created_at
@@ -42,6 +43,7 @@ class Modulo extends Model
 		'posicao' => 'int',
 		'status' => 'int',
 		'show' => 'int',
+		'ativo' => 'int',
 		'tipo_id' => 'int'
 	];
 
@@ -56,6 +58,7 @@ class Modulo extends Model
 		'posicao',
 		'status',
 		'show',
+		'ativo',
 		'tipo_id'
 	];
 

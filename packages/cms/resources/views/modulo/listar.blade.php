@@ -98,6 +98,7 @@
                                 <i ng-if="ordem=='posicao' && sentidoOrdem=='asc'" class="fa fa-angle-double-down"></i>
                                 <i ng-if="ordem=='posicao' && sentidoOrdem=='desc'" class="fa fa-angle-double-up"></i>
                             </th>
+                            <th>Ativo</th>
                             <th></th>
                         </tr>
                         </thead>
@@ -107,6 +108,7 @@
                             <td><img ng-show="modulo.imagem" ng-src="imagens/modulos/xs-<% modulo.imagem %>" width="60"></td>
                             <td><a href="cms/modulo/<% modulo.id %>"><% modulo.titulo %></a></td>
                             <td><a href="cms/modulo/<% modulo.id %>"><% modulo.posicao %></a></td>
+                            <td><span ng-class="modulo.ativo == 1 ? 'label label-success' : 'label label-default'"><% modulo.ativo == 1 ? 'Sim' : 'Nao' %></span></td>
                             <td class="text-right">
                                 <div>
                                     <a><i class="fa fa-arrow-circle-up fa-2x" title="Posição" ng-click="positionUp(modulo.id);" style="cursor: pointer;" ng-hide="<% $first %>"></i></a>

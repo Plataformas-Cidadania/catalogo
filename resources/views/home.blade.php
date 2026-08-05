@@ -7,14 +7,59 @@
         $colors = ['bg-pri', 'bg-sec', 'bg-qui', 'bg-ter'];
     ?>
 
+    <style>
+        .home-destaque-link,
+        .home-destaque-static {
+            display: block;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+        .home-destaque-link:hover {
+            text-decoration: none;
+        }
+        .home-destaque-static {
+            cursor: default;
+        }
+        .home-destaque-static .box {
+            background: #b8b8b8 !important;
+            color: #f7f7f7;
+        }
+        .home-destaque-static img,
+        .home-destaque-static i,
+        .home-destaque-static h2,
+        .home-destaque-static p {
+            opacity: 0.75;
+        }
+        .home-destaque-ribbon {
+            position: absolute;
+            top: 18px;
+            right: -42px;
+            width: 170px;
+            padding: 6px 0;
+            background: #6c757d;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-align: center;
+            text-transform: uppercase;
+            transform: rotate(45deg);
+            z-index: 2;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
 
     <div class="container">
         <div class="row">
 
             @foreach($destaques as $key => $destaque)
             @php($href = !empty($destaque->slug) ? $destaque->slug : $destaque->url)
+            @php($ativo = (int) ($destaque->ativo ?? 1) === 1)
             <div class="col-md-3 mb-3">
-                <a href="{{$href}}">
+                @if($ativo)
+                <a href="{{$href}}" class="home-destaque-link">
                     <div class="box {{$colors[$key % count($colors)]}}">
                         @if(!empty($destaque->imagem))
                             <img src="/img/pre-img.gif" data-src="/imagens/modulos/md-{{$destaque->imagem}}" alt="Imagem sobre {{$destaque->titulo}}" title="Imagem sobre {{$destaque->titulo}}" width="170" class="lazyload">
@@ -25,6 +70,20 @@
                         <p>{{$destaque->resumida}}</p>
                     </div>
                 </a>
+                @else
+                <div class="home-destaque-static">
+                    <span class="home-destaque-ribbon">Em breve</span>
+                    <div class="box">
+                        @if(!empty($destaque->imagem))
+                            <img src="/img/pre-img.gif" data-src="/imagens/modulos/md-{{$destaque->imagem}}" alt="Imagem sobre {{$destaque->titulo}}" title="Imagem sobre {{$destaque->titulo}}" width="170" class="lazyload">
+                        @else
+                            <i class="far fa-gem fa-4x mt-5 mb-4 "></i>
+                        @endif
+                        <h2>{{$destaque->titulo}}<br><br></h2>
+                        <p>{{$destaque->resumida}}</p>
+                    </div>
+                </div>
+                @endif
             </div>
             @endforeach
 

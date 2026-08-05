@@ -20,7 +20,7 @@ class ModuloController extends Controller
     {
         $this->modulo = new \App\Models\Modulo;
         $this->campos = [
-            'imagem', 'titulo', 'descricao', 'arquivo', 'slug', 'url', 'tipo_id', 'show', 'cmsuser_id', 'resumida', 'posicao',
+            'imagem', 'titulo', 'descricao', 'arquivo', 'slug', 'url', 'tipo_id', 'show', 'ativo', 'cmsuser_id', 'resumida', 'posicao',
         ];
         $this->pathImagem = public_path().'/imagens/modulos';
         $this->sizesImagem = [
@@ -82,6 +82,10 @@ class ModuloController extends Controller
 
         if(empty($data['modulo']['tipo_id'])){
             $data['modulo']['tipo_id'] = 0;
+        }
+
+        if(!isset($data['modulo']['ativo']) || $data['modulo']['ativo'] === ''){
+            $data['modulo']['ativo'] = 1;
         }
 
         $file = $request->file('file');
@@ -196,6 +200,10 @@ class ModuloController extends Controller
 
         if(empty($data['modulo']['tipo_id'])){
             $data['modulo']['tipo_id'] = 0;
+        }
+
+        if(!isset($data['modulo']['ativo']) || $data['modulo']['ativo'] === ''){
+            $data['modulo']['ativo'] = 1;
         }
 
         $file = $request->file('file');

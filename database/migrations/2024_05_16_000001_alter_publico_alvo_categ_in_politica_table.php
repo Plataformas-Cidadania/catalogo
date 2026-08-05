@@ -5,6 +5,15 @@ use Illuminate\Support\Facades\DB;
 
 class AlterPublicoAlvoCategInPoliticaTable extends Migration
 {
+    private function hasColumn(string $schema, string $table, string $column): bool
+    {
+        return DB::table('information_schema.columns')
+            ->where('table_schema', $schema)
+            ->where('table_name', $table)
+            ->where('column_name', $column)
+            ->exists();
+    }
+
     /**
      * Run the migrations.
      *
@@ -12,7 +21,9 @@ class AlterPublicoAlvoCategInPoliticaTable extends Migration
      */
     public function up()
     {
-        DB::statement('ALTER TABLE catalogo.politica ALTER COLUMN publico_alvo_categ TYPE text USING publico_alvo_categ::text');
+        if ($this->hasColumn('catalogo', 'politica', 'publico_alvo_categ')) {
+            DB::statement('ALTER TABLE catalogo.politica ALTER COLUMN publico_alvo_categ TYPE text USING publico_alvo_categ::text');
+        }
     }
 
     /**
@@ -22,6 +33,8 @@ class AlterPublicoAlvoCategInPoliticaTable extends Migration
      */
     public function down()
     {
-        DB::statement('ALTER TABLE catalogo.politica ALTER COLUMN publico_alvo_categ TYPE varchar(255) USING publico_alvo_categ::varchar');
+        if ($this->hasColumn('catalogo', 'politica', 'publico_alvo_categ')) {
+            DB::statement('ALTER TABLE catalogo.politica ALTER COLUMN publico_alvo_categ TYPE varchar(255) USING publico_alvo_categ::varchar');
+        }
     }
 }
