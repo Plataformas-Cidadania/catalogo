@@ -1,4 +1,4 @@
-FROM node:16-bullseye AS assets
+FROM node:12.18-buster AS assets
 
 WORKDIR /app
 
