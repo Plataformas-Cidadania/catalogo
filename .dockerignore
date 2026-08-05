@@ -1,0 +1,15 @@
+.git
+.github
+vendor
+node_modules
+
+storage/logs/*
+storage/framework/cache/*
+storage/framework/views/*
+storage/framework/sessions/*
+
+bootstrap/cache/*
+
+.env
+Dockerfile
+README.md
