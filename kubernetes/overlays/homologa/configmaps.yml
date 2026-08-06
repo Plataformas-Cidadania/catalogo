@@ -10,7 +10,7 @@ data:
     APP_ENV=local
     APP_KEY=base64:xD62pPI/q7JEOClIHIqOztbpXaYMtJkXf8Agfz5rGho=
     APP_DEBUG=true
-    APP_URL=http://catalogo.dev.ipea.gov.br/
+    APP_URL=http://catalogo-hom.ipea.gov.br/
     DYNAMIC_ROUTES=true
 
     LOG_CHANNEL=stack
