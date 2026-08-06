@@ -11,7 +11,7 @@ spec:
         paths:
           - backend:
               service:
-                name: atlasbrasil
+                name: catalogo
                 port:
                   number: 80
             path: /
