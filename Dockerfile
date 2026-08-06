@@ -30,7 +30,8 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install \
         pdo \
-        pdo_mysql \
+        pdo_pgsql \
+        pgsql \
         bcmath \
         exif \
         gd \
@@ -43,6 +44,7 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
 
+COPY . .
 
 COPY composer.json composer.lock ./
 
@@ -52,8 +54,6 @@ RUN composer install \
         --optimize-autoloader \
         --no-interaction
 
-
-COPY . .
 
 
 COPY --from=assets /app/public ./public

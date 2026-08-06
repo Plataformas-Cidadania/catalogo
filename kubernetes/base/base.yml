@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  name: catalogo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: catalogo
+  strategy:
+  template:
+    metadata:
+      labels:
+        app: catalogo
+    spec:
+      containers:
+        - envFrom:
+            - secretRef:
+                name: catalogo-secret
+            - configMapRef:
+                name: catalogo-config
+          image: gitlab.ipea.gov.br:4567/plataformas/catalogo-de-politicas-publicas/catalogo:latest
+          imagePullPolicy: IfNotPresent
+          name: catalogo
+          ports:
+            - containerPort: 80
+              name: 80tcp
+              protocol: TCP
+          volumeMounts:
+            - mountPath: /var/www/html/storage
+              name: catalogo-data
+            - mountPath: /var/www/html/.env
+              name: catalogo-config
+              subPath: .env
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+        - name: gitlab-registry
+      initContainers:
+        - command:
+            - sh
+            - '-c'
+            - |
+              php artisan migrate --force
+          envFrom:
+            - secretRef:
+                name: catalogo-migrate-secret
+            - configMapRef:
+                name: catalogo-config
+          image: gitlab.ipea.gov.br:4567/plataformas/catalogo-de-politicas-publicas/catalogo:latest
+          imagePullPolicy: Always
+          name: migrate
+          volumeMounts:
+            - mountPath: /var/www/html/.env
+              name: catalogo-config
+              subPath: .env
+      restartPolicy: Always
+      volumes:
+        - name: catalogo-data
+          persistentVolumeClaim:
+            claimName: catalogo-data
+        - configMap:
+            name: catalogo-config
+          name: catalogo-config
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: catalogo
+spec:
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    app: catalogo
+  type: ClusterIP

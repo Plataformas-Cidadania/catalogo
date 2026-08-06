@@ -1,5 +1,55 @@
 stages:
+  - pre-build
   - build
+  - deploy
+
+
+# Ambiente de desenvolvimento
+.env-desenv:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: never
+
+    - if: '$CI_COMMIT_TAG'
+      when: never
+
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: never
+
+    - when: on_success
+  tags:
+    - catalogo-desenv
+  environment:
+    name: desenv
+    deployment_tier: development
+
+# Ambiente de homologação
+.env-homologa:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+  tags:
+    - catalogo-homologa
+  environment:
+    name: homologa
+    deployment_tier: staging
+
+
+.prepare-job-template:
+  stage: pre-build
+  image:
+    name: registry-nexus.ipea.gov.br/devops/k8s-utils:latest
+    entrypoint: [ "" ]
+  dependencies: []
+  artifacts:
+    paths: [ "kubernetes/" ]
+  environment:
+    action: prepare
+  script: 
+    - cd "$CI_PROJECT_DIR/kubernetes/overlays/$CI_ENVIRONMENT_NAME"
+    - kustomize edit set image "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHA"
+    - kustomize edit add annotation --force "app.gitlab.com/app:${CI_PROJECT_PATH_SLUG}" "app.gitlab.com/env:${CI_ENVIRONMENT_SLUG}" "app.gitlab.com/commit-short-sha:${CI_COMMIT_SHORT_SHA}"
+    - kubectl apply --dry-run=client -k .
+
 
 build:
   stage: build
@@ -16,3 +66,46 @@ build:
     - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
     - echo "CI_REGISTRY=$CI_REGISTRY CI_REGISTRY_IMAGE=$CI_REGISTRY_IMAGE CI_COMMIT_SHA=$CI_COMMIT_SHA"
     - /kaniko/executor --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile --destination $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+
+.deploy-job-template:
+  stage: deploy
+  image:
+    name: registry-nexus.ipea.gov.br/devops/k8s-utils:latest
+    entrypoint: [ "" ]
+  variables:
+    GIT_STRATEGY: none
+  retry:
+    max: 2
+    when: stuck_or_timeout_failure
+  environment:
+    action: start
+  script:
+    - cd "$CI_PROJECT_DIR/kubernetes/overlays/$CI_ENVIRONMENT_NAME"
+    - kubectl apply -k . || (kubectl delete --ignore-not-found --wait -k . && kubectl apply -k .)
+
+prepare-desenv:
+  extends:
+    - .prepare-job-template
+    - .env-desenv
+ 
+deploy-desenv:
+  tags:
+    - catalogo-desenv
+  extends:
+    - .deploy-job-template
+    - .env-desenv
+  dependencies: [ "prepare-desenv" ]
+
+
+prepare-homologa:
+  extends:
+    - .prepare-job-template
+    - .env-homologa
+ 
+deploy-homologa:
+  tags:
+    - catalogo-homologa
+  extends:
+    - .deploy-job-template
+    - .env-homologa
+  dependencies: [ "prepare-homologa" ]
