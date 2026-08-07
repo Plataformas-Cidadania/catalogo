@@ -33,6 +33,15 @@ spec:
             - mountPath: /var/www/html/.env
               name: catalogo-config
               subPath: .env
+            - mountPath: /var/www/html/public/imagens
+              name: catalogo-data
+              subPath: imagens
+            - mountPath: /var/www/html/public/arquivos
+              name: catalogo-data
+              subPath: arquivos
+            - mountPath: /var/www/html/public/uploads
+              name: catalogo-data
+              subPath: uploads
       dnsPolicy: ClusterFirst
       imagePullSecrets:
         - name: gitlab-registry
